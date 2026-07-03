@@ -24,6 +24,22 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-03 — Brand-craft revision (v3 direction) + layered hero direction locked
+
+**Context:** Founder grilling session on design/brand craft ("show professional"), then a 39-agent think-only exploration workflow on hero/landing concept directions (report: `docs/05-marketing/HERO_CONCEPT_EXPLORATION.md`). Founder supplied live references (Anthropic=closest, Bumble=colors, Ramp, Diamo) and three hero seed visions.
+**Decision — brand craft (revises BRAND_AND_LANDING_DESIGN.md v2 → needs v3):**
+- **Concept:** stay "Warm Hive Futurism" but **hex-forward** — hexagon/honeycomb is the owned system; the literal bee is **minimized to a small abstract device** (favicon/avatar scale), **no cartoon mascot**. Cartoon bee retired.
+- **Logo:** split — everyday = clean **`Bee⬡nd`** logotype (single hex-"o"); filed/small device = honeycomb cell with a minimal abstract bee. Drop the "ee"-cells ligature.
+- **Palette (CHANGED from cream/honey/espresso):** warm off-white **#FAF9F5** ground · near-black **#141413** ink · ONE warm-yellow accent **#FFDB5B** (Bumble hue; fill/highlight only, never body text) · cream **#F0EEE6** moment panels · optional true-black moment sections · black-pill CTAs. Espresso-forward ~90/10 ratio.
+- **Type (CHANGED):** **Rubik only** (HE+EN parity), all-sans, **monospace/Geist Mono DROPPED entirely**. Hero H1 = Rubik 700 bold+tight, left-aligned, one key word yellow-underlined (static-first CSS).
+- **Motion:** swarm converges **once, then rests** (no perpetual loop). Layout: asymmetric left-aligned editorial, confident-restrained (~variance 6), validated by refs.
+**Decision — hero/landing direction (founder chose "the combination"):** ship a LAYERED site, not one concept: **C8 restrained fast SSR hero + founders as proof up top → C7 code-driven honeycomb channel-map as mid-page scroll spine (= the relocated "bees building the hive" storyline) → C6 answer-engine proof block near conversion → C5 build-time "we grade ourselves" trust badge.** Engineering rule: **LCP = the H1 SSR text; all motion is progressive enhancement; 95+ PageSpeed target** (the site must prove the visibility Beeond sells). Seed verdicts: robotic-bees Blender scroll = **MODIFY** (keep storyline, swap Blender-video → code-driven procedural hex-build, relocate off LCP hero, revisit cinematic as award-grade v2); bee-character narrator = **DROP**; conventional hero = its LCP=H1 rule survives as the foundation.
+**Rationale:** Weighting customer-trust + visibility highest (this is a launch-held B2B site whose pitch IS visibility); a spectacle hero that tanks CWV/SEO refutes the product. References pulled warm→crisp (white/yellow/black) while keeping Anthropic's warmth via off-white not pure white.
+**Reversibility:** reversible (pre-launch; design-only, still launch-held on TM clearance).
+**Owner:** ceo (founder decisions)
+**Affects:** Design-Lead (revise BRAND_AND_LANDING_DESIGN.md to v3: palette, type, hex-forward logo, motion); CMO (hero copy already locked — unaffected; anti-slop copy is now load-bearing); CTO Phase-0 gates before any build (self-host+subset Rubik HE+EN, C7 map prototype, LCP=H1, JSON-LD/llms.txt, budget manual craft-polish cycles); founders (commission editorial founder photography — launch-blocking; approve Playwright MCP via `/mcp`).
+**Detail:** docs/05-marketing/HERO_CONCEPT_EXPLORATION.md
+
 ## 2026-06-30 — Hero copy locked: descriptive (no coined term) + speed/AI-era headline
 
 **Context:** Founder wanted "one word combining everything we do" + a hero that signals "we move fast in the new AI world." CMO coined candidates (Hiveprint, Quorum). Founder reviewed and reversed — genuinely prefers descriptive language over a coined term.
