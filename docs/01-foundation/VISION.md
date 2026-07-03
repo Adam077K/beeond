@@ -1,24 +1,11 @@
 # Vision
 
 > The north star — why this company exists, where it's going, and what it stands for.
-
-<!--
-AGENT INSTRUCTIONS
-Agent: ceo (primary author) | business-lead (co-author on Why Now and Why Us)
-When:
-  - Written once at founding. Changes only on major strategic pivots.
-  - If anything in this document changes, ceo must update DECISIONS.md with the rationale.
-How:
-  1. Mission Statement should be 1-2 sentences max. If you need more, it's not a mission statement.
-  2. Vision is the 3-5 year picture — ambitious but grounded, not science fiction.
-  3. Core Values must be demonstrated by decisions already made, not aspirational wishes.
-  4. "Why Now" must cite real market conditions — timing arguments without evidence are weak.
-  5. "Why Us" must be honest — if the moat is thin today, say so and reference MOAT.md for the plan.
--->
+> Authored by CEO at founding (2026-06-29). Changes only on major strategic pivots → log in DECISIONS.md.
 
 ## Mission Statement
 
-_[1-2 sentences. Format: "We [verb] [who] so they can [outcome]." Or "To [verb] [outcome] for [who]. Avoid jargon and superlatives. This should make sense to a non-technical person in your target market.]_
+We run a B2B/SaaS company's entire digital footprint with a coordinated swarm of AI agents and expert humans, so they get agency-quality marketing and growth at a speed and price no traditional agency can match.
 
 ---
 
@@ -26,66 +13,60 @@ _[1-2 sentences. Format: "We [verb] [who] so they can [outcome]." Or "To [verb] 
 
 **3-5 year picture:**
 
-_[3-5 sentences describing the world as it looks if this company fully succeeds. What has changed for customers? What does the market look like? What has this company become? Be specific enough to be inspiring and directional, not so specific you're writing a product roadmap.]_
+Beeond becomes the default way ambitious B2B and SaaS companies build their presence — not by hiring an agency or stitching together ten tools, but by handing their whole digital footprint to one coordinated swarm. Clients are found everywhere their buyers look: Google, AI answer engines, social, and beyond. The work that used to take an agency a month and a five-figure retainer happens in days at a fraction of the cost, without ever feeling generic — because human creative judgment rides on top of the automation. Beeond proves that AI-native delivery beats human-only agencies on speed, price, and consistency simultaneously.
 
 **The future we're building toward:**
 
-_[Optional: 1-2 sentences on the longer-term societal or market transformation this company is part of — the big wave we're riding or creating]_
+A world where great marketing isn't gated by agency budgets — where an AI swarm, directed by a small team of experts, gives any serious company a world-class digital footprint.
 
 ---
 
 ## Core Values
 
-> These are the principles that govern how we make decisions under pressure. If they don't change how you act, they're not real values.
+**Swarm over silos**
+Every agent, automation, and human works toward one goal — the client's footprint. We don't ship disconnected point-services; we coordinate. (Guides: we'd rather decline a one-off task than deliver it disconnected from the client's whole footprint.)
 
-**_[Value 1 name]_**
-_[1-sentence description of what this value means in practice — include a specific example of a decision it would guide]_
+**Automate the volume, never the taste**
+Automation does the scale; humans do the creative judgment and brand-specific thinking. We refuse to ship generic output. (Guides: a flow only gets automated once a human has defined what "on-brand, not generic" means for it.)
 
-**_[Value 2 name]_**
-_[1-sentence description of what this value means in practice]_
+**Speed is a feature**
+We ship and adapt faster than any agency, because automation collapses turnaround. Slow is a bug.
 
-**_[Value 3 name]_**
-_[1-sentence description of what this value means in practice]_
-
-**_[Value 4 name (optional)]_**
-_[1-sentence description of what this value means in practice]_
-
-**_[Value 5 name (optional)]_**
-_[1-sentence description of what this value means in practice]_
+**Honest about the machine**
+We don't oversell what's automated today vs. tomorrow. We codify flows first, then automate — and we say which is which.
 
 ---
 
 ## The Problem We Solve
 
-_[3-5 sentences making the problem viscerally real. Describe the broken workflow, the frustration, the cost — in the language your target customers use. Reference a specific persona from PERSONAS.md if possible. This should make someone in the target market nod and say "yes, that's exactly it."]_
+B2B and SaaS companies need to be visible everywhere — Google, AI answer engines, LinkedIn, content, ads, their own site — but the options are all bad. A traditional agency is slow, expensive, and siloed across vendors. Doing it in-house means hiring a whole team. Using AI tools yourself risks generic, off-brand output that makes the company look like everyone else. So most companies do a fraction of what they should, inconsistently, and lose ground to competitors who are simply more *findable*.
 
-**The cost of not solving it:** _[What does it cost users in time, money, or outcomes to live with the current situation? Quantify where possible.]_
+**The cost of not solving it:** Invisible in the searches and AI answers where buyers now make decisions; pipeline left on the table; five-figure agency retainers for partial coverage, or a marketing hire that takes months to ramp.
 
 ---
 
 ## Why Now
 
-> Market timing is a real competitive advantage. What has changed in the last 1-3 years that makes this the right moment to build this?
-
-- _[Technology shift — e.g., "LLM inference costs dropped 10x in 18 months, making AI-first products economically viable at SMB price points for the first time"]_
-- _[Behavior shift — e.g., "Remote-first work normalized async-first tooling; our target users now expect integrations that didn't exist 3 years ago"]_
-- _[Market shift — e.g., "Incumbent raised prices 40% post-acquisition, opening a gap in the mid-market segment"]_
-- _[Regulatory or structural shift — if applicable]_
+- **AI-search shift:** Buyers increasingly ask ChatGPT, Perplexity, and Google AI Overviews — a brand-new visibility surface (GEO) that almost no agency is built to win yet.
+- **Agent maturity:** AI agent swarms can now do real marketing work end-to-end, making AI-native agency delivery economically viable for the first time.
+- **Cost pressure:** Companies want agency-quality output without agency-sized retainers — the gap automation can fill.
+- **AI-quality skepticism:** The market fears generic AI output — a team that pairs automation with human creative judgment can own the "AI that doesn't look like AI" position.
 
 ---
 
 ## Why Us
 
-> What makes this team the right group to win this specific market? Be honest — venture-ready founders know the difference between real advantage and hopeful narrative.
+**Unique insight:** The winning model isn't "an agency that uses AI" or "an AI tool you run yourself" — it's a swarm that runs your *whole* footprint toward one goal, with humans owning taste. Integration and coordination are the advantage, not any single channel.
 
-**Unique insight:** _[What do we understand about this problem or market that most people don't see yet? This is the non-obvious bet.]_
+**Unfair advantages:**
+- Adam — AI agents, swarms, and systems: can build the orchestration that compounds cost/speed advantage over time.
+- Yarden — marketing & growth expertise: knows the real pain points and how B2B companies actually get and convert attention.
+- The pairing itself — few teams have both the marketing judgment AND the ability to automate it.
 
-**Unfair advantages:** _[List 2-3 concrete advantages — founder domain expertise, existing distribution, proprietary data, key partnerships, community relationships. Vague answers like "passion" or "great team" don't count.]_
+**Execution track record:** _[To fill — founders' prior work / proof points.]_
 
-**Execution track record:** _[What evidence exists that this team can ship — prior companies built, relevant metrics, proof points]_
-
-**Moat in progress:** _[Brief reference to the moat being built — full detail in docs/02-competitive/MOAT.md]_
+**Moat in progress:** Thin today (new agency). Built via proprietary swarm orchestration + full-footprint integration/switching cost. See `docs/02-competitive/MOAT.md` (to be authored).
 
 ---
 
-_Last updated: [date] | Updated by: [agent]_
+_Last updated: 2026-06-29 | Updated by: ceo (ceo-beeond-discovery)_

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beeond — Brand Board &amp; Landing Concept (v2 — critique pass)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..800;1,400&family=Geist+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --honey:        #F2A52C;
+    --honey-glow:   #FCC65A;
+    --amber-deep:   #B36A06;  /* honey-as-LARGE-text on light (AA large) */
+    --amber-text:   #7A4A05;  /* honey-as-SMALL-text on light (6.6:1 — AA) */
+    --comb-wash:    #FBEFD7;
+    --comb-wash-2:  #FDF7EC;
+    --cream:        #FBF8F2;
+    --surface:      #FFFFFF;
+    --ink:          #1C1714;
+    --hive-dark:    #15110E;
+    --hive-dark-2:  #221A14;
+    --muted:        #6F665C;  /* secondary text — 5.3:1 on cream (AA) */
+    --muted-soft:   #9B9286;  /* DECORATIVE ONLY — never load-bearing text */
+    --border:       #ECE3D4;
+    --border-dark:  rgba(252,198,90,0.16);
+    --radius:       1.5rem;
+    --font-sans: 'Rubik', system-ui, sans-serif;
+    --font-mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+    --hexmask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1 22 6.5 22 17.5 12 23 2 17.5 2 6.5Z'/%3E%3C/svg%3E");
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--font-sans); background:var(--cream); color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; font-feature-settings:"kern" 1,"liga" 1; line-height:1.5; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  .eyebrow{ font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--amber-text); display:inline-flex; align-items:center; gap:8px; }
+  .eyebrow::before{ content:""; width:13px; height:13px; background:var(--honey); -webkit-mask:var(--hexmask); mask:var(--hexmask); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; }
+
+  .board-section{ padding:64px 0; border-bottom:1px solid var(--border); }
+  .board-section h2.kicker{ font-size:13px; font-family:var(--font-mono); letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+
+  /* WORDMARK — applied logotype: o = honeycomb cell */
+  .wordmark{ font-weight:600; letter-spacing:-0.03em; color:var(--ink); display:inline-flex; align-items:center; font-size:40px; }
+  .wm-o{ width:0.66em; height:0.74em; margin:0 0.015em; }
+  .wm-o path{ stroke:currentColor; stroke-width:3; fill:none; }
+  .logo-lockup{ display:flex; align-items:center; gap:13px; direction:ltr; } /* logo + Latin wordmark never mirror in RTL */
+  .hexmark{ flex:none; width:52px; height:58px; }
+  .logo-card{ padding:36px; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); }
+  .logo-card.dark{ background:var(--hive-dark); border-color:var(--border-dark); }
+  .logo-card.dark .wordmark{ color:var(--cream); }
+  .logo-card.honey{ background:var(--honey); border:none; }
+  .logo-card.honey .wordmark{ color:var(--hive-dark); }
+  .logo-cap{ font-family:var(--font-mono); font-size:11px; color:var(--muted); letter-spacing:0.1em; margin-top:18px; text-transform:uppercase; }
+  .logo-row{ display:flex; flex-wrap:wrap; gap:32px; align-items:center; }
+
+  .swatches{ display:grid; grid-template-columns:repeat(6,1fr); gap:14px; }
+  .sw{ border-radius:14px; overflow:hidden; border:1px solid var(--border); }
+  .sw .chip{ height:84px; }
+  .sw .meta{ padding:10px 12px; background:var(--surface); }
+  .sw .name{ font-size:13px; font-weight:500; }
+  .sw .hex{ font-family:var(--font-mono); font-size:11px; color:var(--muted); margin-top:2px; }
+
+  .type-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .spec-disp{ font-size:46px; font-weight:700; letter-spacing:-0.03em; line-height:1.02; }
+  .spec-body{ font-size:17px; color:var(--muted); max-width:46ch; margin-top:14px; line-height:1.6; }
+  .spec-label{ font-family:var(--font-mono); font-size:11px; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:14px; }
+  .he{ direction:rtl; text-align:right; }
+
+  .hero{ background:var(--cream); position:relative; overflow:hidden; }
+  .hero-inner{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center; min-height:600px; padding:40px 0 64px; }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:24px 0; }
+  .nav .links{ display:flex; gap:26px; align-items:center; font-size:14px; }
+  .nav .links a{ color:var(--ink); text-decoration:none; opacity:0.82; }
+  .hamburger{ display:none; width:46px; height:50px; align-items:center; justify-content:center; flex-direction:column; gap:5px; background:var(--honey); border:none; border-radius:11px; cursor:pointer; }
+  .hamburger span{ width:20px; height:2.2px; background:var(--hive-dark); border-radius:2px; }
+  .pill-cta{ font-family:var(--font-sans); font-weight:500; font-size:14px; background:var(--ink); color:var(--cream); border:none; border-radius:999px; padding:11px 18px 11px 20px; display:inline-flex; align-items:center; gap:10px; cursor:pointer; }
+  .pill-cta .ic{ width:26px; height:26px; border-radius:999px; background:rgba(252,198,90,0.24); display:inline-flex; align-items:center; justify-content:center; }
+  .pill-cta.honey{ background:var(--honey); color:var(--hive-dark); }
+  .pill-cta.honey .ic{ background:rgba(21,17,14,0.16); }
+
+  .hero h1{ font-size:clamp(40px,5vw,68px); font-weight:700; letter-spacing:-0.035em; line-height:1.0; }
+  .hero h1 .accent{ color:var(--amber-deep); }
+  .hero .sub{ font-size:19px; color:var(--muted); max-width:48ch; margin-top:24px; line-height:1.55; }
+  .hero .cta-row{ display:flex; gap:16px; align-items:center; margin-top:34px; flex-wrap:wrap; }
+  .hero .micro{ font-family:var(--font-mono); font-size:12px; color:var(--muted); margin-top:18px; letter-spacing:0; }
+  .badge{ font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--amber-text); background:var(--comb-wash); border:1px solid #EBD9B4; border-radius:999px; padding:7px 14px; display:inline-flex; gap:9px; align-items:center; margin-bottom:24px; }
+  .badge::before{ content:""; width:7px; height:7px; border-radius:999px; background:var(--honey); box-shadow:0 0 0 4px rgba(242,165,44,0.18); }
+  .badge.he-badge{ font-family:var(--font-sans); font-weight:500; text-transform:none; letter-spacing:0; font-size:13px; }
+  .text-cta{ font-size:14px; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--honey); padding-bottom:2px; }
+
+  .swarm-art{ position:relative; aspect-ratio:1/1; border-radius:2rem; background:radial-gradient(120% 120% at 70% 30%, var(--comb-wash) 0%, var(--cream) 60%); border:1px solid var(--border); overflow:hidden; }
+  .swarm-art .glow{ position:absolute; width:60%; height:60%; right:-10%; top:-10%; background:radial-gradient(circle, rgba(252,198,90,0.5), transparent 70%); filter:blur(8px); }
+
+  .swarm-sec{ background:var(--hive-dark); color:var(--cream); padding:96px 0; }
+  .swarm-sec h2{ font-size:clamp(30px,3.4vw,46px); font-weight:700; letter-spacing:-0.03em; line-height:1.05; max-width:18ch; }
+  .swarm-sec .lede{ color:#D3C8B8; font-size:18px; max-width:52ch; margin-top:22px; line-height:1.6; }
+  .swarm-sec .eyebrow{ color:var(--honey-glow); }
+  .swarm-sec .eyebrow::before{ background:var(--honey-glow); }
+  .founders{ display:flex; gap:18px; margin-top:40px; flex-wrap:wrap; }
+  .founder{ display:flex; align-items:center; gap:16px; background:var(--hive-dark-2); border:1px solid var(--border-dark); border-radius:18px; padding:18px 22px; min-width:300px; }
+  .founder .av{ width:54px; height:60px; flex:none; }
+  .founder .nm{ font-size:18px; font-weight:600; }
+  .founder .rl{ font-family:var(--font-mono); font-size:11px; color:var(--honey-glow); letter-spacing:0.04em; margin-top:3px; }
+  .founder .cred{ font-size:13px; color:#B7AC9B; margin-top:5px; max-width:30ch; line-height:1.4; }
+
+  .svc-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:34px; flex-wrap:wrap; gap:20px; }
+  .svc-head h2{ font-size:clamp(28px,3vw,42px); font-weight:700; letter-spacing:-0.03em; max-width:20ch; }
+  .bento{ display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:148px; gap:16px; }
+  .tile{ border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); padding:24px; display:flex; flex-direction:column; justify-content:space-between; }
+  .tile .t-eye{ font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber-text); }
+  .tile .t-title{ font-size:19px; font-weight:600; letter-spacing:-0.01em; }
+  .tile .t-desc{ font-size:14px; color:var(--muted); line-height:1.5; }
+  .tile.wide{ grid-column:span 4; } .tile.mid{ grid-column:span 3; }
+  .tile.tall{ grid-column:span 2; grid-row:span 2; } .tile.sm{ grid-column:span 2; }
+  .tile.feature{ background:var(--hive-dark); color:var(--cream); border:none; }
+  .tile.feature .t-desc{ color:#D3C8B8; } .tile.feature .t-eye{ color:var(--honey-glow); }
+  .tile.honey{ background:var(--comb-wash); border-color:#EBD9B4; }
+
+  .hero.rtl{ direction:rtl; }
+  .hero.rtl .hero-inner{ grid-template-columns:0.85fr 1.15fr; }
+  .hero.rtl .sub, .hero.rtl h1{ text-align:right; }
+  .rtl-note{ position:absolute; top:14px; left:14px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; color:var(--muted); background:var(--comb-wash-2); border:1px solid var(--border); border-radius:8px; padding:4px 9px; z-index:4; direction:ltr; }
+
+  .frame-tag{ font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); padding:40px 0 8px; }
+
+  .phones{ display:flex; gap:28px; flex-wrap:wrap; }
+  .phone{ width:300px; height:560px; border-radius:34px; border:1px solid var(--border); background:var(--cream); overflow:hidden; position:relative; box-shadow:0 24px 50px -28px rgba(28,23,20,0.22); }
+  .phone .pnav{ display:flex; align-items:center; justify-content:space-between; padding:18px 18px; }
+  .phone .pbody{ padding:8px 20px; }
+  .phone h3{ font-size:30px; font-weight:700; letter-spacing:-0.03em; line-height:1.03; margin-top:14px; }
+  .phone h3 .accent{ color:var(--amber-deep); }
+  .phone .pcta{ margin-top:20px; }
+  .phone-cap{ font-family:var(--font-mono); font-size:11px; color:var(--muted); letter-spacing:0.06em; margin-top:12px; }
+  .menu-open{ position:absolute; inset:0; background:rgba(251,239,215,0.94); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); padding:18px 20px; display:flex; flex-direction:column; }
+  .menu-open .top{ display:flex; align-items:center; justify-content:space-between; }
+  .menu-open .x{ width:46px; height:50px; background:var(--honey); border-radius:11px; display:flex; align-items:center; justify-content:center; }
+  .menu-open .x svg{ width:18px; height:18px; }
+  .menu-open .mlinks{ display:flex; flex-direction:column; gap:4px; margin-top:42px; }
+  .menu-open .mlinks a{ font-size:30px; font-weight:600; letter-spacing:-0.02em; color:var(--ink); text-decoration:none; padding:10px 0; border-bottom:1px solid #EBD9B4; }
+  .menu-open .mfoot{ margin-top:auto; display:flex; flex-direction:column; gap:14px; }
+  .lang-tog{ font-family:var(--font-mono); font-size:12px; color:var(--ink); }
+
+  @media (max-width:860px){
+    .type-grid{ grid-template-columns:1fr; }
+    .swatches{ grid-template-columns:repeat(3,1fr); }
+    .hero-inner, .hero.rtl .hero-inner{ grid-template-columns:1fr; gap:28px; }
+    .bento{ grid-template-columns:1fr 1fr; }
+    .tile.wide,.tile.mid,.tile.tall,.tile.sm{ grid-column:span 2; grid-row:span 1; }
+  }
+  @media (max-width:768px){
+    .nav .links{ display:none; }
+    .hamburger{ display:flex; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bee" viewBox="0 0 40 40">
+    <ellipse cx="12.5" cy="15.5" rx="6.2" ry="8.6" fill="#FFFFFF" opacity="0.92" transform="rotate(-20 12.5 15.5)"/>
+    <ellipse cx="27.5" cy="15.5" rx="6.2" ry="8.6" fill="#FFFFFF" opacity="0.92" transform="rotate(20 27.5 15.5)"/>
+    <path d="M17.4 7.4 Q15.2 3.2 12.8 3.8" stroke="#1C1714" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M22.6 7.4 Q24.8 3.2 27.2 3.8" stroke="#1C1714" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <rect x="14.4" y="8.6" width="11.2" height="23.4" rx="5.6" fill="#1C1714"/>
+    <rect x="14.4" y="14.6" width="11.2" height="2.7" fill="#F2A52C"/>
+    <rect x="14.4" y="20.4" width="11.2" height="2.7" fill="#F2A52C"/>
+    <rect x="14.4" y="26.2" width="11.2" height="2.7" fill="#F2A52C"/>
+  </symbol>
+  <symbol id="bee-inv" viewBox="0 0 40 40">
+    <ellipse cx="12.5" cy="15.5" rx="6.2" ry="8.6" fill="#FBF8F2" opacity="0.5" transform="rotate(-20 12.5 15.5)"/>
+    <ellipse cx="27.5" cy="15.5" rx="6.2" ry="8.6" fill="#FBF8F2" opacity="0.5" transform="rotate(20 27.5 15.5)"/>
+    <path d="M17.4 7.4 Q15.2 3.2 12.8 3.8" stroke="#F2A52C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M22.6 7.4 Q24.8 3.2 27.2 3.8" stroke="#F2A52C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <rect x="14.4" y="8.6" width="11.2" height="23.4" rx="5.6" fill="#F2A52C"/>
+    <rect x="14.4" y="14.6" width="11.2" height="2.7" fill="#15110E"/>
+    <rect x="14.4" y="20.4" width="11.2" height="2.7" fill="#15110E"/>
+    <rect x="14.4" y="26.2" width="11.2" height="2.7" fill="#15110E"/>
+  </symbol>
+</svg>
+
+<header class="wrap" style="padding-top:56px;">
+  <span class="eyebrow">Brand System · v2 — critique pass</span>
+  <h1 style="font-size:clamp(34px,5vw,58px); font-weight:700; letter-spacing:-0.035em; line-height:1.02; margin-top:18px;">Beeond — Warm&nbsp;Hive Futurism</h1>
+  <p style="font-size:18px; color:var(--muted); max-width:62ch; margin-top:16px;">One swarm, one goal. A brand built to prove the promise: AI that doesn&rsquo;t look generic. v2 locks one friendly bee, a distinctive applied wordmark, a real mobile nav, and AA-clean microcopy.</p>
+</header>
+
+<section class="wrap board-section">
+  <h2 class="kicker">01 · Logo — figurative device (registrable) + distinctive wordmark</h2>
+  <div class="logo-row">
+    <div class="logo-card">
+      <div class="logo-lockup">
+        <svg class="hexmark" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#F2A52C"/><use href="#bee" x="6" y="9" width="40" height="40"/></svg>
+        <span class="wordmark">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span>
+      </div>
+      <div class="logo-cap">Primary · device + wordmark (o = cell)</div>
+    </div>
+    <div class="logo-card dark">
+      <div class="logo-lockup">
+        <svg class="hexmark" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#F2A52C"/><use href="#bee" x="6" y="9" width="40" height="40"/></svg>
+        <span class="wordmark">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span>
+      </div>
+      <div class="logo-cap">Reversed · on Hive Dark</div>
+    </div>
+    <div class="logo-card honey">
+      <div class="logo-lockup">
+        <svg class="hexmark" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#15110E"/><use href="#bee-inv" x="6" y="9" width="40" height="40"/></svg>
+        <span class="wordmark">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span>
+      </div>
+      <div class="logo-cap">Honey field · inverted device</div>
+    </div>
+  </div>
+  <p style="font-size:14px;color:var(--muted);margin-top:26px;max-width:66ch;">The <strong>hive + bee device</strong> is the primary distinctive, registrable figurative mark &mdash; one locked, friendly top-down bee (striped body, wings, antennae; no face), identical at every size. The applied <strong>wordmark</strong> sets the &ldquo;o&rdquo; as a honeycomb cell, so applied brand reads as a designed logotype, never stock Rubik. (Premium &ldquo;ee&rdquo;-cells ligature stays a flagged type-designer enhancement &mdash; out of applied use until vectored, to avoid a &ldquo;Beoond&rdquo; misread.)</p>
+</section>
+
+<section class="wrap board-section">
+  <h2 class="kicker">02 · Palette — one honey accent, warm neutral system</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#F2A52C"></div><div class="meta"><div class="name">Hive Honey</div><div class="hex">#F2A52C</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FCC65A"></div><div class="meta"><div class="name">Honey Glow</div><div class="hex">#FCC65A</div></div></div>
+    <div class="sw"><div class="chip" style="background:#B36A06"></div><div class="meta"><div class="name">Amber Deep</div><div class="hex">#B36A06</div></div></div>
+    <div class="sw"><div class="chip" style="background:#7A4A05"></div><div class="meta"><div class="name">Amber Text</div><div class="hex">#7A4A05</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FBEFD7"></div><div class="meta"><div class="name">Comb Wash</div><div class="hex">#FBEFD7</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FBF8F2;border-bottom:1px solid #ECE3D4"></div><div class="meta"><div class="name">Cream Canvas</div><div class="hex">#FBF8F2</div></div></div>
+    <div class="sw"><div class="chip" style="background:#1C1714"></div><div class="meta"><div class="name">Espresso Ink</div><div class="hex">#1C1714</div></div></div>
+    <div class="sw"><div class="chip" style="background:#15110E"></div><div class="meta"><div class="name">Hive Dark</div><div class="hex">#15110E</div></div></div>
+    <div class="sw"><div class="chip" style="background:#6F665C"></div><div class="meta"><div class="name">Taupe Muted</div><div class="hex">#6F665C</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ECE3D4"></div><div class="meta"><div class="name">Hairline</div><div class="hex">#ECE3D4</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #ECE3D4"></div><div class="meta"><div class="name">Surface</div><div class="hex">#FFFFFF</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FDF7EC"></div><div class="meta"><div class="name">Faint Tint</div><div class="hex">#FDF7EC</div></div></div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:22px;font-family:var(--font-mono);">Contrast tiers — body/labels Espresso or Taupe (AA+). Amber Text #7A4A05 for small honey-toned labels (6.6:1). Soft Caption #9B9286 is decorative only, never load-bearing.</p>
+</section>
+
+<section class="wrap board-section">
+  <h2 class="kicker">03 · Type — Rubik bilingual superfamily (HE + EN parity)</h2>
+  <div class="type-grid">
+    <div>
+      <div class="spec-label">Latin · Rubik / Display 700</div>
+      <div class="spec-disp">One swarm.<br>Every channel.<br><span style="color:var(--amber-deep)">Your brand.</span></div>
+      <div class="spec-body">Beeond runs your SEO, content, paid, LinkedIn, email and AI-search presence &mdash; not as separate vendors, but as one swarm working toward one goal. <span style="font-family:var(--font-mono);font-size:13px;color:var(--muted);">Aa Bb Cc &mdash; 0123456789</span></div>
+    </div>
+    <div class="he">
+      <div class="spec-label" style="direction:ltr;text-align:right;">Hebrew · Rubik / Display 700</div>
+      <div class="spec-disp">נחיל אחד.<br>כל ערוץ.<br><span style="color:var(--amber-deep)">המותג שלכם.</span></div>
+      <div class="spec-body" style="font-size:18px;">Beeond מנהלת את כל הנוכחות הדיגיטלית שלכם &mdash; SEO, תוכן, מדיה ממומנת, לינקדאין ואימייל &mdash; כנחיל אחד שעובד למטרה אחת.</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:26px;font-family:var(--font-mono);">EN eyebrows/data · Geist Mono. // HE eyebrows · Rubik 500 (no caps, no letterspacing). HE body set ~1px larger for optical parity.</p>
+</section>
+
+<section class="wrap board-section">
+  <h2 class="kicker">04 · Mobile navigation — collapsed hamburger + open menu (375px)</h2>
+  <div class="phones">
+    <div class="phone">
+      <div class="pnav">
+        <div class="logo-lockup"><svg class="hexmark" style="width:30px;height:34px;" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#F2A52C"/><use href="#bee" x="6" y="9" width="40" height="40"/></svg><span class="wordmark" style="font-size:21px;">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span></div>
+        <button class="hamburger" style="display:flex;width:42px;height:46px;"><span></span><span></span><span></span></button>
+      </div>
+      <div class="pbody">
+        <span class="badge" style="margin-top:14px;">AI-native · founder-led</span>
+        <h3>The AI era moves fast. <span class="accent">Your presence needs to match.</span></h3>
+        <div class="pcta"><button class="pill-cta honey" style="font-size:15px;">Get a free footprint audit <span class="ic">→</span></button></div>
+        <p class="phone-cap">Closed · hex hamburger, links collapsed</p>
+      </div>
+    </div>
+    <div class="phone">
+      <div class="menu-open">
+        <div class="top">
+          <div class="logo-lockup"><svg class="hexmark" style="width:30px;height:34px;" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#F2A52C"/><use href="#bee" x="6" y="9" width="40" height="40"/></svg><span class="wordmark" style="font-size:21px;">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span></div>
+          <div class="x"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5 19 19 M19 5 5 19" stroke="#15110E" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="mlinks">
+          <a href="#">How it works</a><a href="#">Services</a><a href="#">The swarm</a><a href="#">The founders</a>
+        </div>
+        <div class="mfoot">
+          <span class="lang-tog">EN&nbsp;&nbsp;/&nbsp;&nbsp;עברית</span>
+          <button class="pill-cta honey" style="justify-content:center;font-size:16px;padding:15px;">Get a free footprint audit <span class="ic">→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:14px;color:var(--muted);margin-top:22px;max-width:64ch;">Below 768px the nav collapses into a hex hamburger; tapping opens a full-screen honey-tinted glass menu with stacked links (staggered fade-up in build), language toggle, and the primary CTA pinned to the bottom. In RTL the hamburger sits on the left and the menu mirrors.</p>
+</section>
+
+<div class="frame-tag wrap">▼ Landing concept · Hero — English (LTR)</div>
+<section class="hero">
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo-lockup">
+        <svg class="hexmark" style="width:34px;height:38px;" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#F2A52C"/><use href="#bee" x="6" y="9" width="40" height="40"/></svg>
+        <span class="wordmark" style="font-size:24px;">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span>
+      </div>
+      <div class="links">
+        <a href="#">How it works</a><a href="#">Services</a><a href="#">The swarm</a>
+        <a href="#" style="font-family:var(--font-mono);font-size:12px;">EN / עב</a>
+        <button class="pill-cta">Free footprint audit <span class="ic">→</span></button>
+      </div>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="hero-inner">
+      <div>
+        <span class="badge">AI-native · founder-led</span>
+        <h1>The AI era moves fast.<br><span class="accent">Your presence needs to match.</span></h1>
+        <p class="sub">Beeond runs your whole digital presence &mdash; every channel your buyers use to find and evaluate vendors &mdash; as one coordinated swarm that adapts as fast as the market moves.</p>
+        <div class="cta-row">
+          <button class="pill-cta honey" style="font-size:16px;padding:14px 22px 14px 26px;">Get a free footprint audit <span class="ic">→</span></button>
+          <a href="#" class="text-cta">See how the swarm works</a>
+        </div>
+        <p class="micro">No agency pitch. No deck. We show you where your presence has gaps.</p>
+      </div>
+      <div class="swarm-art">
+        <div class="glow"></div>
+        <svg width="100%" height="100%" viewBox="0 0 420 420" preserveAspectRatio="xMidYMid slice">
+          <defs><pattern id="combp2" width="58" height="66" patternUnits="userSpaceOnUse"><path d="M29 1 57 17 57 49 29 65 1 49 1 17Z" fill="none" stroke="#EAD9B6" stroke-width="1.2"/></pattern></defs>
+          <rect width="420" height="420" fill="url(#combp2)" opacity="0.6"/>
+          <g stroke="#F2A52C" stroke-width="1.4" fill="none" opacity="0.55">
+            <path d="M60 70 Q 200 60 250 220"/><path d="M340 90 Q 240 120 250 220"/>
+            <path d="M70 340 Q 180 300 250 220"/><path d="M360 330 Q 270 290 250 220"/><path d="M40 210 Q 150 210 250 220"/>
+          </g>
+          <g fill="#F2A52C"><circle cx="60" cy="70" r="4"/><circle cx="340" cy="90" r="4"/><circle cx="70" cy="340" r="4"/><circle cx="360" cy="330" r="4"/><circle cx="40" cy="210" r="4"/><circle cx="180" cy="140" r="3"/><circle cx="300" cy="260" r="3"/></g>
+          <path d="M250 184 286 205 286 247 250 268 214 247 214 205Z" fill="#F2A52C"/>
+          <use href="#bee" x="229" y="205" width="42" height="42"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="frame-tag wrap">▼ Section 3 · Meet your swarm (dark, warm) — founders weighted as the proof</div>
+<section class="swarm-sec">
+  <div class="wrap">
+    <span class="eyebrow">One swarm · one goal</span>
+    <h2 style="margin-top:20px;">Not three vendors and a Slack thread. One system that sees the whole picture.</h2>
+    <p class="lede">A coordinated system of AI agents and two expert founders, all moving toward the same goal: your brand, everywhere your buyers look &mdash; in search, in AI answers, across every channel.</p>
+    <div class="founders">
+      <div class="founder">
+        <svg class="av" viewBox="0 0 54 60"><path d="M27 1 51 14.5 51 45.5 27 59 3 45.5 3 14.5Z" fill="#2A2017" stroke="rgba(252,198,90,0.3)" stroke-width="1.2"/><text x="27" y="38" text-anchor="middle" font-family="Rubik" font-weight="700" font-size="22" fill="#FCC65A">A</text></svg>
+        <div><div class="nm">Adam</div><div class="rl">AI SYSTEMS · THE BUILDER</div><div class="cred">Builds the agent swarm. &ldquo;When I say we use AI &mdash; I built the AI.&rdquo;</div></div>
+      </div>
+      <div class="founder">
+        <svg class="av" viewBox="0 0 54 60"><path d="M27 1 51 14.5 51 45.5 27 59 3 45.5 3 14.5Z" fill="#2A2017" stroke="rgba(252,198,90,0.3)" stroke-width="1.2"/><text x="27" y="38" text-anchor="middle" font-family="Rubik" font-weight="700" font-size="22" fill="#FCC65A">Y</text></svg>
+        <div><div class="nm">Yarden Morgan</div><div class="rl">GROWTH · KEEPER OF STANDARDS</div><div class="cred">Sets the bar the swarm is calibrated to. B2B marketing &amp; growth.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="frame-tag wrap">▼ Section 5 · The full footprint (asymmetric bento)</div>
+<section class="wrap" style="padding:64px 0;">
+  <div class="svc-head">
+    <h2>Every channel your buyers use to find &amp; evaluate vendors.</h2>
+    <span class="eyebrow">Coordinated, not a menu</span>
+  </div>
+  <div class="bento">
+    <div class="tile feature tall"><span class="t-eye">Visibility</span><div><div class="t-title" style="color:var(--cream)">SEO + GEO + Schema</div><p class="t-desc">Be the answer when your buyer asks an AI which vendor to choose.</p></div></div>
+    <div class="tile wide"><span class="t-eye">Content engine</span><div><div class="t-title">Blog · LinkedIn · YouTube · Newsletter</div><p class="t-desc">A content system where each piece feeds the next.</p></div></div>
+    <div class="tile sm honey"><span class="t-eye">Paid</span><div class="t-title">Google · LinkedIn Ads</div></div>
+    <div class="tile sm"><span class="t-eye">Email</span><div class="t-title">Lifecycle &amp; deliverability</div></div>
+    <div class="tile mid"><span class="t-eye">Trust</span><div><div class="t-title">G2 · PR · case studies · founder brand</div><p class="t-desc">B2B&rsquo;s real reviews and authority signals.</p></div></div>
+    <div class="tile mid honey"><span class="t-eye">Reporting</span><div><div class="t-title">Dashboards &amp; pipeline attribution</div><p class="t-desc">Tied to revenue &mdash; not vanity metrics.</p></div></div>
+  </div>
+</section>
+
+<div class="frame-tag wrap">▼ Landing concept · Hero — Hebrew (RTL mirror) · art column swaps left · HE eyebrow = Rubik 500</div>
+<section class="hero rtl">
+  <span class="rtl-note">dir=&quot;rtl&quot; · layout mirrors · logo + Latin terms + numerals do NOT mirror</span>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo-lockup">
+        <svg class="hexmark" style="width:34px;height:38px;" viewBox="0 0 52 58"><path d="M26 2 48 14.5 48 43.5 26 56 4 43.5 4 14.5Z" fill="#F2A52C"/><use href="#bee" x="6" y="9" width="40" height="40"/></svg>
+        <span class="wordmark" style="font-size:24px;">Bee<svg class="wm-o" viewBox="0 0 24 26"><path d="M12 1 22 6.5 22 19.5 12 25 2 19.5 2 6.5Z"/></svg>nd</span>
+      </div>
+      <div class="links">
+        <a href="#">איך זה עובד</a><a href="#">שירותים</a><a href="#">הנחיל</a>
+        <a href="#" style="font-family:var(--font-mono);font-size:12px;">עב / EN</a>
+        <button class="pill-cta">אבחון נוכחות חינם <span class="ic">←</span></button>
+      </div>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="hero-inner">
+      <div class="swarm-art">
+        <div class="glow" style="right:auto;left:-10%;"></div>
+        <svg width="100%" height="100%" viewBox="0 0 420 420" preserveAspectRatio="xMidYMid slice">
+          <rect width="420" height="420" fill="url(#combp2)" opacity="0.6"/>
+          <g stroke="#F2A52C" stroke-width="1.4" fill="none" opacity="0.55"><path d="M60 70 Q 200 60 250 220"/><path d="M340 90 Q 240 120 250 220"/><path d="M70 340 Q 180 300 250 220"/></g>
+          <g fill="#F2A52C"><circle cx="60" cy="70" r="4"/><circle cx="340" cy="90" r="4"/><circle cx="70" cy="340" r="4"/><circle cx="40" cy="210" r="4"/></g>
+          <path d="M250 184 286 205 286 247 250 268 214 247 214 205Z" fill="#F2A52C"/>
+          <use href="#bee" x="229" y="205" width="42" height="42"/>
+        </svg>
+      </div>
+      <div>
+        <span class="badge he-badge">AI-native · מבוסס מייסדים</span>
+        <h1>עידן ה-AI זז מהר.<br><span class="accent">הנוכחות שלכם צריכה לעמוד בקצב.</span></h1>
+        <p class="sub">Beeond מנהלת את כל הנוכחות הדיגיטלית שלכם &mdash; כל ערוץ שבו הלקוחות מחפשים ובוחנים ספקים &mdash; כנחיל אחד מתואם שמסתגל מהר כמו השוק.</p>
+        <div class="cta-row">
+          <button class="pill-cta honey" style="font-size:16px;padding:14px 22px 14px 26px;">קבלו אבחון נוכחות חינם <span class="ic">←</span></button>
+          <a href="#" class="text-cta">איך הנחיל עובד</a>
+        </div>
+        <p class="micro" style="direction:rtl;">בלי מצגות. בלי פיץ&rsquo;. מראים לכם איפה יש פערים בנוכחות שלכם.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap" style="padding:48px 0 70px;border-top:1px solid var(--border);margin-top:8px;">
+  <span class="eyebrow">Beeond brand board · concept v2 · design-only — not for public launch pending TM clearance</span>
+</footer>
+
+</body>
+</html>
