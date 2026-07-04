@@ -24,6 +24,16 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-04 — Landing MERGED to main: QA-Lead PASS (independent, full tier)
+
+**Context:** Founder directed "do it all" + a quality bar raise against reference sites (Diamo/Anthropic/Ramp/paper-cut). Three quality waves ran: composition/editorial grammar, independent design-critic remediation (verdict NEEDS_WORK → all P1/P2 resolved), and a material visual-craft pass (comb with wall thickness + honey pools, stacked-paper C7 tiles, glowing keystone room).
+**Gate:** QA-Lead retry (first spawn died on account limit) returned **PASS — 0×P1, 0×P2, 2×P3** (both fixed). Founder confirmation standing. Merged `3eba843` (111 files), pushed to origin.
+**Measured at merge:** LH mobile 97 perf / 100 a11y · real-trace LCP 0.67s · CLS 0 · INP 40ms · e2e 18/18 · brand-lint 0.
+**Reversibility:** revert-able merge commit; site remains LAUNCH-HELD (TM clearance + founder gates: photography, credential microlines, booking link/hello@ mailbox, native-HE review).
+**Owner:** ceo
+**Affects:** CTO (deploy to staging when ready — apps/web, `pnpm build`); CMO (HE adaptations D4 + C7 proof-line wording review); founders (launch gates above); Design-Lead (bee-visibility beyond dots requires amending brand-lock A1 — open founder proposal).
+**Detail:** apps/web/BUILD_LOG.md · docs/08-agents_work/sessions/2026-07-04-ceo-landing-fable5.md
+
 ## 2026-07-04 — Landing build SHIPPED on feat/landing-fable5 (staging; QA + founder gate open)
 
 **Context:** The single Fable-5 designer session ran per the 2026-07-03 brief v2 (founder chose "build in this session"; effort max). Full page built at `apps/web`, all §7 hard gates measured green.
