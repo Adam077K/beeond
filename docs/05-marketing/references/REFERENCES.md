@@ -1,98 +1,69 @@
-# Beeond Design References Index
+# Beeond design references — pack for the Fable-5 build
 
-Captured: 2026-07-04  
-Viewport: 1440 × 900 px, deviceScaleFactor 2 (retina), above-the-fold clip  
-Screenshot root: `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/`
+Captured 2026-07-04 · 1440×900 @2×, above-the-fold. **All images live in this folder** (`docs/05-marketing/references/`); paths below are filenames.
 
----
-
-## Priority 1 — Must-study foundations
-
-### 1. Anthropic
-- **URL:** https://anthropic.com
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-1-anthropic.png`
-- **What to learn:** The palette twin: warm off-white ground, near-black ink, one restrained accent, editorial type doing the work with zero decoration. Proof that restraint + warmth reads premium, not empty, and never cool-SaaS-blue.
-- **Mapped Beeond section:** Global palette + C8 hero restraint
-
-### 2. Linear
-- **URL:** https://linear.app
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-2-linear.png`
-- **What to learn:** Restraint that still sells to a technical buyer; how little motion and how deliberate each move; a dark closing moment used as scarcity. Match the rhythm and inspect computed transition values — not the dark/purple palette.
-- **Mapped Beeond section:** Global motion discipline + dark final CTA
-
-### 3. Family
-- **URL:** https://family.co
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-3-family.png`
-- **What to learn:** Gold standard for spring-physics choreography: physical, weighted, authored motion with overshoot-and-settle. The quality bar for the hero converge and the keystone lock — study easing, not visual style.
-- **Mapped Beeond section:** Swarm convergence + keystone lock
-
-### 4. Emil Kowalski
-- **URL:** https://emilkowal.ski
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-4-emilkowal.png`
-- **What to learn:** The doctrine to encode into the motion-token file: asymmetric enter/exit easing, exits faster than entrances, ~150-200 ms not 300 ms, spring feel, reduced-motion done right. Source of the emilkowal-animations skill.
-- **Mapped Beeond section:** Motion token file + easing doctrine
-
-### 5. NEGATIVE SET — generic AI-SaaS templates (godly.website gallery)
-- **URL:** https://godly.website
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-5-godly.png`
-- **What to learn:** Harvest 3-4 purple/blue gradient-mesh, centered-hero, three-equal-card, Inter/Geist templates. Label explicitly as the slop this brand exists to reject and diff against before every section. Negative references prevent mean-regression more reliably than positive ones.
-- **Mapped Beeond section:** Whole build (anti-reference) — diff against this before committing any section
+**How to use (playbook §2):** before building each award section, open its 1-2 mapped `board-*.png` **and the negative set**. **BORROW** the one noted thing — never copy layout. **Diff every section against the negatives** — if it resembles them (gradient mesh, centered hero, three equal cards, Inter/Geist, glass pills), redo it.
 
 ---
 
-## Priority 2 — Craft + rhythm
+## Positive references
 
-### 6. basement.studio
-- **URL:** https://basement.studio
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-6-basement.png`
-- **What to learn:** Fearless big-type editorial + GSAP ScrollTrigger craft with performance discipline: scrubbed where it should scrub, triggered where it should trigger, never scroll-jacked. The agency-proving-itself energy.
-- **Mapped Beeond section:** C7 scroll spine + typographic voice
+### 1. Anthropic — GLOBAL PALETTE + C8 HERO  · `board-1-anthropic.png` · anthropic.com
+- **BORROW:** the palette twin — warm off-white ground, near-black ink, one restrained accent, editorial type doing all the work with zero decoration. Proof that restraint + warmth reads *premium*, not empty.
+- **AVOID:** their serif body / botanical imagery — not our system.
 
-### 7. Rauno Freiberg — /craft
-- **URL:** https://rauno.me/craft
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-7-rauno.png`
-- **What to learn:** The living catalog of the 10% juries reward: radius-following focus rings, optical alignment, hover/press precision, keyboard-perfect components — the detail layer separating SOTD from competent.
-- **Mapped Beeond section:** Micro-interactions (FAQ, focus, cursor, optical alignment)
+### 2. Linear — GLOBAL MOTION DISCIPLINE + DARK FINAL CTA · `board-2-linear.png` · linear.app
+- **BORROW:** how *little* motion, how deliberate each move; a dark closing moment used as scarcity; inspect computed `transition` values.
+- **AVOID:** the dark/purple palette and cool-tech register.
 
-### 8. Stripe
-- **URL:** https://stripe.com
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-8-stripe.png`
-- **What to learn:** Beauty serves clarity at scale: every section advances the sell, offer comprehensible in seconds, warm-tinted (never flat-gray) elevation, single-accent discipline.
-- **Mapped Beeond section:** Section rhythm + warm elevation + comprehension
+### 3. Family — SWARM CONVERGE + KEYSTONE LOCK · `board-3-family.png` · family.co
+- **BORROW:** the gold standard for spring-physics choreography — physical, weighted, overshoot-and-settle. The quality bar for the hero converge + keystone. Study *easing*, not visual style.
 
-### 9. Igloo Inc
-- **URL:** https://igloo.inc
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-9-igloo.png`
-- **What to learn:** Ceiling reference for scroll-choreographed assembly storytelling. CAUTION: a multi-MB Three.js perf anti-pattern — take the choreography, reject the weight, deliver the feeling at 1/10th the cost.
-- **Mapped Beeond section:** C7 award-moment choreography (with perf caution)
+### 4. Emil Kowalski — MOTION-TOKEN FILE + EASING DOCTRINE · `board-4-emilkowal.png` · emilkowal.ski
+- **BORROW:** asymmetric enter/exit easing, exits faster than entrances, ~150-200ms not 300ms, spring feel, reduced-motion done right. Open when writing ANY `transition`/`spring` value.
 
----
+### 5. basement.studio — C7 SCROLL SPINE + TYPO VOICE · `board-6-basement.png` · basement.studio
+- **BORROW:** fearless big-type editorial + GSAP ScrollTrigger craft with perf discipline; scrubbed where it should scrub, never scroll-jacked. The "agency proving itself through its own site" energy.
 
-## Priority 3 — Supporting references
+### 6. Rauno Freiberg — MICRO-INTERACTIONS · `board-7-rauno.png` · rauno.me/craft
+- **BORROW:** the 10% juries reward — radius-following focus rings, optical alignment, hover/press precision, keyboard-perfect components (FAQ, cursor, focus).
 
-### 10. Lusion
-- **URL:** https://lusion.co
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-10-lusion.png`
-- **What to learn:** How elements build/converge under scrub with reversible, buttery choreography. Study the choreography of assembly, then deliberately under-build the payload to hold the perf gates.
-- **Mapped Beeond section:** C7 assembling geometry
+### 7. Stripe — SECTION RHYTHM + WARM ELEVATION · `board-8-stripe.png` · stripe.com
+- **BORROW:** beauty serves clarity — every section advances the sell; warm-tinted (never flat-gray) elevation; single-accent discipline.
 
-### 11. Resend
-- **URL:** https://resend.com
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-11-resend.png`
-- **What to learn:** A B2B/dev brand that is fast, editorial, single-accent, crafted — and states proof honestly without fake logos. Models the-craft-is-the-proof thesis and the we're-selective empty-state.
-- **Mapped Beeond section:** C6 proof block + testimonial empty-state
+### 8. Igloo Inc — C7 AWARD CHOREOGRAPHY (⚠ PERF) · `board-9-igloo.png` · igloo.inc
+- **BORROW:** the ceiling for scroll-choreographed "assembly" storytelling.
+- **AVOID:** its multi-MB Three.js weight — a perf anti-pattern. Take the choreography, deliver the feeling at 1/10th the cost.
 
-### 12. Mercury
-- **URL:** https://mercury.com
-- **Screenshot:** `/private/tmp/claude-501/-Users-adamks-VibeCoding-beeond--worktrees-ceo-3-1782745040/42273ee5-1fa5-4694-b151-570acfdaa3b2/scratchpad/refs/board-12-mercury.png`
-- **What to learn:** Warm, editorial, high-consideration B2B: trust signals for an expensive, trust-sensitive purchase; restrained motion that reads premium not empty.
-- **Mapped Beeond section:** Founders / trust strip
+### 9. Lusion — C7 ASSEMBLING GEOMETRY · `board-10-lusion.png` · lusion.co
+- **BORROW:** reversible, buttery build/converge-under-scrub choreography.
+- **AVOID:** the payload — deliberately under-build to hold the perf gates.
+
+### 10. Resend — C6 PROOF + TESTIMONIAL EMPTY-STATE · `board-11-resend.png` · resend.com
+- **BORROW:** a B2B/dev brand that's fast, editorial, single-accent, crafted, and states proof honestly without fake logos. Models the "we're selective" empty-state.
+
+### 11. Mercury — FOUNDERS / TRUST STRIP · `board-12-mercury.png` · mercury.com
+- **BORROW:** warm, editorial, high-consideration B2B trust signals for an expensive, trust-sensitive purchase; restrained motion that reads premium.
+
+### 12. GSAP ScrollTrigger docs — C7 MECHANISM · gsap.com/docs/v3/Plugins/ScrollTrigger
+- **BORROW:** canonical pin + `scrub:true` (deterministic/reversible) + `ScrollTrigger.batch` staggered reveals. Technique, not taste. (No screenshot — read the live docs.)
 
 ---
 
-## Usage notes
+## NEGATIVE SET — the slop to reject (diff against these before committing ANY section)
 
-- **Anti-reference protocol:** Open `board-5-godly.png` alongside any in-progress section. If the section resembles what you see there (gradient mesh, centered layout, three equal cards, Inter/Geist), redo it.
-- **Perf gates:** Igloo (9) and Lusion (10) are choreography-only references. Their runtime payload is explicitly rejected — the feeling at 1/10th the weight is the target.
-- **Motion token file:** Emil (4) is the doctrinal source; Family (3) is the choreography quality bar. Both must be open when writing any `transition` or `spring` value.
-- **Palette gate:** Any section must pass the Anthropic (1) + Stripe (8) palette test before it passes the Mercury (12) trust test. Cool-SaaS-blue fails all three.
+These are Framer template demo pages ("Made in Framer" badge) — the platonic generic "AI SaaS template." **If an in-progress section resembles any of these, redo it.**
+
+- **`negative-1-landio.png`** · landio.framer.website — dark near-black hero + centered logo-glow + centered stacked headline + token italic-serif "With AI" flourish + spark-icon "Get Started" + "Book A Free Call". The default AI-agency template.
+- **`negative-2-nexus.png`** · nexus-template.framer.website — black bg + faint grid mesh + glassmorphism nav pill + centered giant sans + one acid-lime accent word + "Version 2.1 Out Now" pill + tilted product-UI mockup. Textbook Framer SaaS.
+- **`negative-3-omrix.png`** · omrix.framer.ai — **the platonic one:** light gradient-grid wash + centered hero + "JOIN 10,000+ TEAMS" pill + Inter sans + blue "Start Free Trial" + black "Book a Demo" + trust row + **three equal pastel bento stat cards** + dashboard mockup.
+- **`negative-4-hiview.png`** · hiview.framer.ai — saturated blue gradient + isometric grid illustration + glass floating nav pill + centered hero + "Get a Demo →" + glass award-badge eyebrow + marquee logo strip. Same skeleton, blue skin.
+
+**The tells to never reproduce:** centered hero · gradient mesh / grid wash · glassmorphism pills · three-equal-card bento · Inter/Geist · blue/purple/acid accent · "Book a Demo" dual-CTA · "no credit card / setup in 5 min" trust row · marquee logo strip · tilted product-UI mockup.
+
+---
+
+## Gates (from the board)
+- **Palette gate:** every section passes the Anthropic + Stripe warm-neutral + single-accent test before it passes the Mercury trust test. Cool-SaaS-blue fails all three.
+- **Motion gate:** Emil (doctrine) + Family (quality bar) open when writing any `transition`/`spring`.
+- **Perf gate:** Igloo + Lusion are choreography-only — their runtime payload is explicitly rejected.
