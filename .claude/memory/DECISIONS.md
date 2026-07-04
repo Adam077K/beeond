@@ -24,6 +24,30 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-03 — Design Excellence Board: build-enablement playbook + motion posture refined + brief v2
+
+**Context:** 16-agent board meeting (7 designer/enablement personas → cross-critique → synthesis → reference capture) on how to make the site award-grade + selling + on-brand + non-slop, and how to set up the autonomous Fable-5 build for max quality. Playbook: `docs/05-marketing/DESIGN_EXCELLENCE_PLAYBOOK.md`.
+**Key decisions (refine the prior "have-both" motion entry):**
+- **Motion tech narrowed:** Canvas-2D + GSAP/ScrollTrigger is the **required default**; **Three.js/R3F BANNED** unless prototype-proven ≥90 mobile Lighthouse first (OGL ~9kb the only gated WebGL ceiling; Lenis gated on INP). Hard hero JS <15kb. Supersedes the brief's "GSAP and/or Three.js welcome."
+- **Signature idea:** ONE motif, THREE chapters (hero scatter→converge→rest · C7 release→build scroll-scrubbed · dark rested hive), continuity via **parametric identity** not shared state. **The KEYSTONE** = single yellow GEO anchor cell locks LAST; ~40% of polish budget.
+- **Autonomy setup (founder's ask):** brand encoded as **executable code** (`brand.lock.ts` + `brand-lint` build-failing gate); a labeled **NEGATIVE reference set** (strongest anti-slop move); **Charter of Autonomy** (invent one flourish, log deviations, stop-and-propose on invariants); **evidence-mandatory** build→screenshot→score→fix loop; grant Playwright+Refero+WebFetch, exclude generative-UI/raster-gen MCPs; Fable 5 max thinking, 1M ctx, no /compact.
+- **Resolved calls:** build C7 standalone first; photography = LAUNCH gate not build gate; C5 badge = real measured artifact or dropped; mandatory brand-voiced category eyebrow above the locked H1.
+- **Reference pack captured** → `docs/05-marketing/references/` (12 PNGs + REFERENCES.md). **Brief rewritten to v2** with all 21 edits: `docs/08-agents_work/briefs/2026-07-03-fable5-landing-build.md`.
+**Reversibility:** reversible (internal staging build; launch-held; no merge without QA-Lead PASS).
+**Owner:** ceo (design-excellence board synthesis)
+**Affects:** the Fable-5 build session (brief v2 governs); founders (8 pre-session to-provides in playbook §6 — esp. reference annotations + negative set, logotype SVG, Rubik HE subset, category eyebrow, credential microlines); Design-Lead (playbook supersedes v3 doc's motion notes); QA-Lead (rubric §7/§8 = the merge bar).
+**Detail:** docs/05-marketing/DESIGN_EXCELLENCE_PLAYBOOK.md
+
+## 2026-07-03 — Build path: single Fable-5 designer session + motion posture revised to "have-both"
+
+**Context:** Founder moved from planning to building the landing page; wants awwwards-grade craft, chose to run it as ONE Claude Code designer session on the **Fable 5** model (`claude-fable-5`) using a paste-ready brief (not the CTO worker swarm).
+**Decision:** (1) **Motion posture revised** from the v3 "no GSAP/Three.js in v1, minimal-motion" note → **"have-both, disciplined":** GSAP and/or Three.js are allowed for the C7 channel-map + transitions, BUT **LCP = hero H1 in SSR text, heavy libs dynamically imported + lazy below the fold, prefers-reduced-motion rested fallback, and mobile Lighthouse perf ≥ 90 / a11y ≥ 95 / LCP < 2.5s / CLS < 0.02 as hard acceptance gates.** (2) Build via a single Fable-5 session; brief at `docs/08-agents_work/briefs/2026-07-03-fable5-landing-build.md`. (3) Founder photography deferred — build uses hex-cell avatar placeholders, no photo dependency. (4) Scope EN-first, RTL/i18n-ready (logical CSS), HE content a fast-follow.
+**Rationale:** Founder wants award-winning wow; the discipline gates keep the site from refuting the visibility Beeond sells. Single-session Fable-5 build is a founder-directed execution path.
+**Reversibility:** reversible (internal staging build; still launch-held on TM clearance; no merge to main without QA-Lead PASS).
+**Owner:** ceo (founder decision)
+**Affects:** the Fable-5 designer session (brief); CTO/QA-Lead (QA-Lead PASS required before any merge — build lands on a feat branch only); Design-Lead (v3 doc's "no heavy libs in v1" note is superseded by this posture).
+**Detail:** docs/08-agents_work/briefs/2026-07-03-fable5-landing-build.md
+
 ## 2026-07-03 — Brand-craft revision (v3 direction) + layered hero direction locked
 
 **Context:** Founder grilling session on design/brand craft ("show professional"), then a 39-agent think-only exploration workflow on hero/landing concept directions (report: `docs/05-marketing/HERO_CONCEPT_EXPLORATION.md`). Founder supplied live references (Anthropic=closest, Bumble=colors, Ramp, Diamo) and three hero seed visions.
