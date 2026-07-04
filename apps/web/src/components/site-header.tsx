@@ -3,12 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "./logo";
 import { LocaleToggle } from "./locale-toggle";
+import { I18n } from "./i18n";
 
 const NAV = [
-  { href: "#channel-map", label: "The swarm" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#founders", label: "Founders" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#channel-map", label: "The swarm", labelHe: "הנחיל" },
+  { href: "#how-it-works", label: "How it works", labelHe: "איך זה עובד" },
+  { href: "#founders", label: "Founders", labelHe: "המייסדים" },
+  { href: "#faq", label: "FAQ", labelHe: "שאלות" },
 ] as const;
 
 /**
@@ -72,7 +73,7 @@ export function SiteHeader() {
           <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
             {NAV.map((item) => (
               <a key={item.href} href={item.href} className="nav-link text-[14px] font-medium">
-                {item.label}
+                <I18n en={item.label} he={item.labelHe} />
               </a>
             ))}
             <LocaleToggle />
@@ -86,7 +87,7 @@ export function SiteHeader() {
               scrolled ? "" : "header-cta-hidden"
             }`}
           >
-            Get a free footprint audit
+            <I18n en="Get a free footprint audit" he="קבלו אבחון נוכחות חינם" />
           </a>
           <button
             ref={burgerRef}
@@ -161,7 +162,7 @@ export function SiteHeader() {
               className="m-link py-3 text-[32px] font-bold tracking-[-0.02em]"
               style={{ "--i": i } as React.CSSProperties}
             >
-              {item.label}
+              <I18n en={item.label} he={item.labelHe} />
             </a>
           ))}
           <div className="m-link mt-4" style={{ "--i": NAV.length } as React.CSSProperties}>
@@ -175,7 +176,7 @@ export function SiteHeader() {
             tabIndex={menuOpen ? 0 : -1}
             className="cta block rounded-full bg-ink px-7 py-4 text-center text-[16px] font-semibold text-ground"
           >
-            Get a free footprint audit
+            <I18n en="Get a free footprint audit" he="קבלו אבחון נוכחות חינם" />
           </a>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { I18n } from "../i18n";
+
 /**
  * Section — social proof, honestly empty. No fake logos, no invented
  * testimonials: the "we're selective" framing from POSITIONING §5 Section 7.
@@ -19,13 +21,16 @@ export function SocialProofSection() {
           <circle cx="10" cy="11" r="2.2" fill="var(--color-yellow)" />
         </svg>
         <h2 className="mx-auto mt-6 max-w-[26ch] text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.12] tracking-[-0.025em]">
-          We&apos;ll earn our reviews. Ask us for references.
+          <I18n
+            en="We'll earn our reviews. Ask us for references."
+            he="את הביקורות שלנו נרוויח. בקשו מאיתנו ממליצים."
+          />
         </h2>
         <p className="mx-auto mt-4 max-w-[52ch] text-[15px] leading-[1.55] text-muted">
-          Beeond is new — the founders&apos; work isn&apos;t. We&apos;re
-          selective about who we take on, because at this depth the founders
-          are the system. The logos will come; we&apos;d rather show you real
-          work on the call than paste borrowed badges here.
+          <I18n
+            en="Beeond is new — the founders' work isn't. We're selective about who we take on, because at this depth the founders are the system. The logos will come; we'd rather show you real work on the call than paste borrowed badges here."
+            he="Beeond חדשה — העבודה של המייסדים לא. אנחנו סלקטיביים לגבי מי שאנחנו לוקחים, כי בעומק הזה המייסדים הם המערכת. הלוגואים יגיעו; נעדיף להראות לכם עבודה אמיתית בשיחה מאשר להדביק כאן תגים מושאלים."
+          />
         </p>
       </div>
     </section>

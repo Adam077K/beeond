@@ -2,6 +2,7 @@ import { hexPath } from "@/lib/hex";
 import { CHANNELS, TILE, stageBounds, tileOffset } from "./channels";
 import { ChannelMapScrub } from "./scrub";
 import { Eyebrow } from "../eyebrow";
+import { I18n } from "../i18n";
 import { HiveMark } from "../hive-mark";
 
 /**
@@ -25,15 +26,19 @@ export function ChannelMapSection() {
           <HoneyField />
           <div className="relative mx-auto w-full max-w-[1180px] px-7 pt-24">
             <Eyebrow n="02" hex>
-              The swarm
+              <I18n en="The swarm" he="הנחיל" />
             </Eyebrow>
             <h2 className="mt-4 max-w-[24ch] text-[clamp(30px,3.2vw,46px)] font-bold leading-[1.05] tracking-[-0.03em]">
-              Every channel your buyers use — one coordinated system.
+              <I18n
+                en="Every channel your buyers use — one coordinated system."
+                he="כל ערוץ שהקונים שלכם משתמשים בו — מערכת אחת מתואמת."
+              />
             </h2>
             <p className="mt-3 max-w-[52ch] text-[15.5px] leading-[1.5] text-muted">
-              Not a menu of services, and not three vendors with three briefs.
-              The whole footprint, built as one hive — and it assembles around
-              the channel your competitors haven&apos;t mapped yet.
+              <I18n
+                en="Not a menu of services, and not three vendors with three briefs. The whole footprint, built as one hive — and it assembles around the channel your competitors haven't mapped yet."
+                he="לא תפריט שירותים, ולא שלושה ספקים עם שלושה בריפים. כל הנוכחות הדיגיטלית, בנויה כנחיל אחד — והיא נבנית סביב הערוץ שהמתחרים שלכם עוד לא מיפו."
+              />
             </p>
           </div>
           <div className="relative flex min-h-0 flex-1 items-center justify-center">
@@ -77,14 +82,14 @@ export function ChannelMapSection() {
                       <span className="hex-rim" aria-hidden="true" />
                       <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
                         <h3 className="text-[14.5px] font-semibold leading-[1.2] tracking-[-0.01em]">
-                          {ch.name}
+                          <I18n en={ch.name} he={ch.nameHe} />
                         </h3>
                         <p
                           className={`mt-2 text-[11.5px] leading-[1.4] ${
                             ch.anchor ? "text-ink/75" : "text-muted"
                           }`}
                         >
-                          {ch.proof}
+                          <I18n en={ch.proof} he={ch.proofHe} />
                         </p>
                       </div>
                     </div>
@@ -98,7 +103,10 @@ export function ChannelMapSection() {
             data-c7-hint
             className="pointer-events-none pb-6 text-center text-[12px] font-medium text-muted"
           >
-            The hive assembles as you scroll — GEO locks it together.
+            <I18n
+              en="The hive assembles as you scroll — GEO locks it together."
+              he="הכוורת נבנית תוך כדי גלילה — GEO נועל אותה למקומה."
+            />
           </p>
         </div>
       </div>
@@ -107,17 +115,26 @@ export function ChannelMapSection() {
              survives the breakpoint (design-critic P1) ── */}
       <div className="px-7 py-20 lg:hidden">
         <Eyebrow n="02" hex>
-          The swarm
+          <I18n en="The swarm" he="הנחיל" />
         </Eyebrow>
         <h2 className="mt-4 text-[clamp(28px,7.4vw,34px)] font-bold leading-[1.08] tracking-[-0.03em]">
-          Every channel your buyers use — one coordinated system.
+          <I18n
+            en="Every channel your buyers use — one coordinated system."
+            he="כל ערוץ שהקונים שלכם משתמשים בו — מערכת אחת מתואמת."
+          />
         </h2>
         <p className="mt-3 text-[15px] leading-[1.5] text-muted">
-          The whole footprint, built as one hive — not a menu of services.
+          <I18n
+            en="The whole footprint, built as one hive — not a menu of services."
+            he="כל הנוכחות, בנויה ככוורת אחת — לא תפריט שירותים."
+          />
         </p>
         <HiveMark className="mx-auto mt-9 w-full max-w-[300px]" />
         <p className="mt-2 text-center text-[12px] font-medium text-muted">
-          GEO — AI-search visibility — locks the hive together.
+          <I18n
+            en="GEO — AI-search visibility — locks the hive together."
+            he="GEO — נראות בחיפוש AI — נועל את הכוורת יחד."
+          />
         </p>
         <ul className="mt-9">
           {[...CHANNELS].sort((a, b) => (a.anchor ? -1 : b.anchor ? 1 : 0)).map((ch) => (
@@ -137,8 +154,12 @@ export function ChannelMapSection() {
                 />
               </svg>
               <div>
-                <h3 className="text-[15px] font-semibold leading-tight">{ch.name}</h3>
-                <p className="mt-1 text-[13px] leading-[1.45] text-muted">{ch.proof}</p>
+                <h3 className="text-[15px] font-semibold leading-tight">
+                  <I18n en={ch.name} he={ch.nameHe} />
+                </h3>
+                <p className="mt-1 text-[13px] leading-[1.45] text-muted">
+                  <I18n en={ch.proof} he={ch.proofHe} />
+                </p>
               </div>
             </li>
           ))}

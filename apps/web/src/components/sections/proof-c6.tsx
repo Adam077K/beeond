@@ -1,4 +1,5 @@
 import { Eyebrow } from "../eyebrow";
+import { I18n } from "../i18n";
 
 /**
  * Section 6 — C6 answer-engine proof block. Editorial reinterpretation of a
@@ -14,15 +15,18 @@ export function ProofC6Section() {
         <div className="grid gap-y-10 lg:grid-cols-[1fr_1.1fr] lg:gap-x-12">
           <div>
             <div data-reveal>
-              <Eyebrow n="05">The GEO story</Eyebrow>
+              <Eyebrow n="05"><I18n en="The GEO story" he="סיפור ה-GEO" /></Eyebrow>
               <h2 className="mt-4 max-w-[16ch] text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">
-                Be the answer when your buyer asks an AI.
+                <I18n
+                  en="Be the answer when your buyer asks an AI."
+                  he="להיות התשובה כשהקונה שלכם שואל AI."
+                />
               </h2>
               <p className="mt-4 max-w-[44ch] text-[15.5px] leading-[1.55] text-muted">
-                Your buyers ask ChatGPT, Perplexity, and Google&apos;s AI who
-                to use. Most agencies have no answer for this. It&apos;s the
-                first channel we map — and the keystone of the hive you just
-                scrolled.
+                <I18n
+                  en="Your buyers ask ChatGPT, Perplexity, and Google's AI who to use. Most agencies have no answer for this. It's the first channel we map — and the keystone of the hive you just scrolled."
+                  he="הקונים שלכם שואלים את ChatGPT, את Perplexity ואת ה-AI של גוגל את מי לקחת. לרוב הסוכנויות אין תשובה לזה. זה הערוץ הראשון שאנחנו ממפים — ואבן הראשה של הכוורת שהרגע גללתם."
+                />
               </p>
             </div>
 
@@ -32,15 +36,19 @@ export function ProofC6Section() {
               className="mt-10 border border-hairline bg-ground px-8 py-8"
             >
               <p className="text-[11.5px] font-medium text-muted">
-                The question your buyer asks
+                <I18n en="The question your buyer asks" he="השאלה שהקונה שלכם שואל" />
               </p>
               <p className="mt-5 text-[clamp(20px,2vw,26px)] font-bold leading-[1.25] tracking-[-0.02em]">
-                &ldquo;Who should a B2B SaaS company hire to run its
-                marketing?&rdquo;
+                <I18n
+                  en={<>&ldquo;Who should a B2B SaaS company hire to run its marketing?&rdquo;</>}
+                  he={<>&rdquo;את מי כדאי לחברת SaaS B2B לקחת לניהול השיווק?&rdquo;</>}
+                />
               </p>
               <p className="mt-5 text-[12.5px] text-muted">
-                Asked thousands of times a day, answered without a single ad
-                impression.
+                <I18n
+                  en="Asked thousands of times a day, answered without a single ad impression."
+                  he="נשאלת אלפי פעמים ביום — ונענית בלי אימפרשן אחד של פרסום."
+                />
               </p>
             </div>
           </div>
@@ -48,24 +56,30 @@ export function ProofC6Section() {
           {/* the method — top-aligned with the heading, carries equal weight */}
           <div data-reveal className="border border-hairline bg-ground px-8 py-8 lg:px-10 lg:py-10">
             <p className="text-[11.5px] font-medium text-muted">
-              What makes a company the cited answer
+              <I18n en="What makes a company the cited answer" he="מה הופך חברה לתשובה המצוטטת" />
             </p>
             <ul className="mt-7 space-y-7">
               {[
                 {
                   n: "01",
                   k: "Citable structure",
+                  kHe: "מבנה שאפשר לצטט",
                   v: "Answer-shaped pages: TL;DRs, Q&A blocks, schema that machines can quote.",
+                  vHe: "עמודים בצורת תשובה: תקצירים, בלוקים של שאלה-תשובה, סכמה שמכונות יכולות לצטט.",
                 },
                 {
                   n: "02",
                   k: "Machine-readable trust",
+                  kHe: "אמון קריא-מכונה",
                   v: "Structured data, llms.txt, entity consistency across every profile that AIs read.",
+                  vHe: "דאטה מובנה, llms.txt, ועקביות ישות בכל פרופיל שמנועי AI קוראים.",
                 },
                 {
                   n: "03",
                   k: "Authority signals",
+                  kHe: "אותות סמכות",
                   v: "The mentions, reviews and placements that make you the safe answer to give.",
+                  vHe: "האזכורים, הביקורות והפרסומים שהופכים אתכם לתשובה הבטוחה לתת.",
                 },
               ].map((row) => (
                 <li key={row.k} className="flex gap-4 border-t border-hairline pt-6 first:border-t-0 first:pt-0">
@@ -79,17 +93,19 @@ export function ProofC6Section() {
                     />
                   </svg>
                   <div>
-                    <h3 className="text-[15.5px] font-semibold">{row.k}</h3>
+                    <h3 className="text-[15.5px] font-semibold"><I18n en={row.k} he={row.kHe} /></h3>
                     <p className="mt-1.5 max-w-[44ch] text-[13.5px] leading-[1.55] text-muted">
-                      {row.v}
+                      <I18n en={row.v} he={row.vHe} />
                     </p>
                   </div>
                 </li>
               ))}
             </ul>
             <p className="mt-8 border-t border-hairline pt-5 text-[12.5px] leading-relaxed text-muted">
-              This is what we build toward — a methodology, not a screenshot.
-              No platform UIs imitated, no rankings claimed.
+              <I18n
+                en="This is what we build toward — a methodology, not a screenshot. No platform UIs imitated, no rankings claimed."
+                he="לזה אנחנו בונים — מתודולוגיה, לא צילום מסך. בלי חיקוי של ממשקים, בלי טענות דירוג."
+              />
             </p>
           </div>
         </div>
