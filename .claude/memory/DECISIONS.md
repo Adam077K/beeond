@@ -24,6 +24,15 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-04 — Visual direction v4: illustrated ink+watercolor system (founder decision)
+
+**Context:** Founder reviewed the shipped code-driven visuals against a hand-drawn ink+watercolor honeycomb reference and chose to REPLACE the visual layer with AI-generated illustration in that style, founder-generated from CEO-authored prompts; motion delivered as short videos cut to frames (load-play for hero, scroll-scrub for C7).
+**Decision:** (1) Brand-lock A1 AMENDED — illustrated naturalistic bees allowed at hero scale (no cartoon faces; the abstract device stays the filed mark). (2) AI image/video generation APPROVED for brand art with founder-in-the-loop; the anti-slop defense moves from "code-only assets" to the locked style system + founder curation. (3) Code-driven layer retained for UI chrome, logotype, yellow underline, and SSR text — illustrations never carry load-bearing copy.
+**Reversibility:** reversible (assets swappable; code visuals remain in git history).
+**Owner:** founder (adam) · CEO executes
+**Affects:** Design-Lead (style lock = docs/05-marketing/ART_DIRECTION_PROMPTS.md), CTO (frame-scrub pipeline, perf gates re-verified on integration), QA-Lead (palette audit on raster assets at next gate).
+**Detail:** docs/05-marketing/ART_DIRECTION_PROMPTS.md
+
 ## 2026-07-04 — Landing MERGED to main: QA-Lead PASS (independent, full tier)
 
 **Context:** Founder directed "do it all" + a quality bar raise against reference sites (Diamo/Anthropic/Ramp/paper-cut). Three quality waves ran: composition/editorial grammar, independent design-critic remediation (verdict NEEDS_WORK → all P1/P2 resolved), and a material visual-craft pass (comb with wall thickness + honey pools, stacked-paper C7 tiles, glowing keystone room).
