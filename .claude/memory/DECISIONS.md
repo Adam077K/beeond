@@ -24,6 +24,16 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-05 — v4 hero shipped: generated Field Journal art, deterministic brand pipeline
+
+**Context:** Founder funded direct gpt-image-1 access ("send the messages and get the images directly to you"). First v4 asset (hero) generated, art-directed and integrated in one session on `feat/journal-hero`.
+**Options considered:** (a) trust prompts for brand color — rejected, model drifts sepia/gloss; (b) transparent-background art — rejected for large pieces (sticker-halo + etching drift), kept for small sprites; (c) **opaque art + deterministic post-processing** — chosen.
+**Decision:** Brand fidelity is enforced by code after generation, not begged from the model: `normalize_paper.py` white-balances the art's paper to ground `#FAF9F5` exactly (seamless on-page), `despecular.py` (hue-aware) mattes the honey. Bees are separate transparent sprites composited in `journal-comb.tsx` at true scale — the model consistently ignores bee-scale/no-eyes instructions at hero sizes. EN ships the annotated variant; HE ships the clean variant mirrored by one CSS transform. Old canvas swarm deleted (zero hero JS).
+**Rationale:** Every failure mode we hit (sepia paper, candy gloss, giant storybook bees, clipped lettering) was fixed deterministically or by decomposition — regeneration lotteries were spent only on composition. Real CDP trace: LCP 732ms / CLS 0.003; LH 95/100/96/100; e2e 18/18.
+**Reversibility:** reversible — swarm components live in git history; art regenerable from committed prompts.
+**Owner:** ceo (acting designer-engineer, founder-mandated single session)
+**Affects:** design-lead (remaining v4 assets: anti-generic, night-page, C7), QA-Lead (gate pending), CMO (OG image swap later).
+
 ## 2026-07-04 — Visual direction v4: illustrated ink+watercolor system (founder decision)
 
 **Context:** Founder reviewed the shipped code-driven visuals against a hand-drawn ink+watercolor honeycomb reference and chose to REPLACE the visual layer with AI-generated illustration in that style, founder-generated from CEO-authored prompts; motion delivered as short videos cut to frames (load-play for hero, scroll-scrub for C7).

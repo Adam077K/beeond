@@ -1,8 +1,7 @@
 import { COPY } from "@/lib/brand.lock";
 import { CtaButton } from "../cta-button";
 import { I18n } from "../i18n";
-import { SwarmRested } from "./swarm-rested";
-import { SwarmChapterOne } from "./swarm";
+import { JournalComb } from "./journal-comb";
 
 /** Small yellow hex bullet — legit fill use. */
 function HexBullet() {
@@ -52,10 +51,10 @@ const FOUNDERS = [
 ] as const;
 
 /**
- * Hero (C8) — restrained, fast, editorial, asymmetric. H1 is real SSR text
- * and IS the LCP. Committed composition: V-A split with the ledger-row
- * founders graft (BUILD_LOG). The swarm art is the rested SSR composition;
- * Chapter-1 motion mounts over it as progressive enhancement.
+ * Hero (C8 v4) — restrained, fast, editorial, asymmetric. H1 is real SSR text.
+ * Committed composition: V-A split with the ledger-row founders graft
+ * (BUILD_LOG). The art column is the Field Journal page (journal-comb.tsx):
+ * paper == ground token, bee sprites converge once via CSS — zero hero JS.
  */
 export function Hero() {
   const [line1, line2] = COPY.h1.en;
@@ -111,14 +110,10 @@ export function Hero() {
           </p>
         </div>
 
-        {/* swarm column — rested composition from first paint; Chapter 1 plays over it */}
+        {/* art column — the Field Journal page; bees converge once, then rest */}
         <div className="relative mt-14 lg:mt-0">
-          <div
-            data-swarm-stage
-            className="relative mx-auto aspect-[560/620] w-full max-w-[430px] lg:absolute lg:inset-x-0 lg:top-1/2 lg:max-w-none lg:-translate-y-[44%]"
-          >
-            <SwarmRested className="absolute inset-0 h-full w-full" />
-            <SwarmChapterOne />
+          <div className="relative mx-auto w-full max-w-[520px] lg:absolute lg:inset-x-0 lg:top-1/2 lg:max-w-none lg:-translate-y-[46%]">
+            <JournalComb />
           </div>
         </div>
 

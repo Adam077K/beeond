@@ -355,6 +355,64 @@ html.js [data-reveal].in .flight-dot {
   }
 }
 
+/* ── C8 v4: Field Journal hero art. Bees converge once, then rest.
+   Base state (no-JS, reduced-motion, post-flight) IS the rested swarm.
+   .journal-page always spans the FULL 1536×1024 journal page (one bee
+   coordinate system); on desktop .journal-crop clips to the comb spread.
+   Physical left/right on purpose: RTL mirrors via one scaleX(-1). ── */
+.journal-stage {
+  pointer-events: none;
+  user-select: none;
+}
+.journal-crop {
+  aspect-ratio: 1536 / 1024;
+}
+.journal-page {
+  width: 100%;
+  left: 0; /* brand-lint-allow: stage mirrors via scaleX(-1); logical would double-flip */
+}
+@media (min-width: 1024px) {
+  .journal-crop {
+    aspect-ratio: 1198 / 1024; /* right 78% of the page — "one swarm" stays whole */
+  }
+  .journal-page {
+    width: 128.2%; /* 1536 / 1198 */
+    left: auto; /* brand-lint-allow: stage mirrors via scaleX(-1) */
+    right: 0; /* brand-lint-allow: stage mirrors via scaleX(-1) */
+  }
+}
+.journal-bee {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+}
+html.js .journal-bee {
+  animation: journal-bee-in 900ms var(--ease-settle) var(--d, 0ms) both;
+}
+@keyframes journal-bee-in {
+  from {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--tx, -120px)), calc(-50% + var(--ty, -30px)))
+      rotate(calc(var(--r, 0deg) - 9deg));
+  }
+  45% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  }
+}
+/* HE mirrors the page so flight paths enter from the reading direction;
+   the HE artwork variant is letter-free, so the flip is typographically legal. */
+html[lang="he"] .journal-stage {
+  transform: scaleX(-1);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .journal-bee {
+    animation: none;
+  }
+}
+
 /* ── i18n: both languages are SSR'd; html[lang] picks one.
    Hebrew rules: no aggressive tracking (Rubik HE collides), same type scale. ── */
 html:not([lang="he"]) .i18n-he,
