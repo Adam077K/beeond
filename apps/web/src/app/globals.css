@@ -309,6 +309,25 @@ html.js [data-reveal].in .flight-path {
   }
 }
 
+/* ── i18n: both languages are SSR'd; html[lang] picks one.
+   Hebrew rules: no aggressive tracking (Rubik HE collides), same type scale. ── */
+html:not([lang="he"]) .i18n-he,
+html[lang="he"] .i18n-en {
+  display: none !important;
+}
+html[lang="he"] .hero-h1 {
+  letter-spacing: -0.015em;
+}
+.locale-toggle {
+  border: 1px solid var(--color-hairline);
+  transition:
+    border-color var(--dur-2) var(--ease-swift),
+    background-color var(--dur-2) var(--ease-swift);
+}
+.locale-toggle:hover {
+  border-color: var(--color-ink);
+}
+
 /* ── FAQ: hex marker morphs + ⇄ ×, exits at ~0.8× their entrance ── */
 :root {
   interpolate-size: allow-keywords;

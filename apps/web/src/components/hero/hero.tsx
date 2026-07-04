@@ -54,12 +54,39 @@ const FOUNDERS = [
  * founders graft (BUILD_LOG). The swarm art is the rested SSR composition;
  * Chapter-1 motion mounts over it as progressive enhancement.
  */
+/** bilingual pair — both SSR'd; CSS shows one based on html[lang] */
+function I18n({
+  en,
+  he,
+  block = false,
+}: {
+  en: React.ReactNode;
+  he: React.ReactNode;
+  block?: boolean;
+}) {
+  const Tag = block ? "span" : "span";
+  return (
+    <>
+      <Tag className={`i18n-en ${block ? "block" : ""}`}>{en}</Tag>
+      <Tag className={`i18n-he ${block ? "block" : ""}`} lang="he">
+        {he}
+      </Tag>
+    </>
+  );
+}
+
 export function Hero() {
   const [line1, line2] = COPY.h1.en;
   const accent = COPY.h1AccentWord.en; // "match"
   // deliberate 3-line break: "The AI era moves fast." / "Your presence" / "needs to match."
   const [line2a, line2b] = ["Your presence", line2.replace("Your presence ", "")];
   const line2bLead = line2b.slice(0, line2b.lastIndexOf(accent)).trimEnd();
+  // locked HE strings, same 3-line architecture, accent on בקצב
+  const [heL1, heL2] = COPY.h1.he;
+  const heAccent = COPY.h1AccentWord.he;
+  const heL2a = "הנוכחות שלכם צריכה";
+  const heL2b = heL2.replace(`${heL2a} `, ""); // "לעמוד בקצב."
+  const heL2bLead = heL2b.slice(0, heL2b.lastIndexOf(heAccent)).trimEnd();
 
   return (
     <section className="relative">
@@ -68,32 +95,46 @@ export function Hero() {
         <div className="relative z-10">
           <p className="flex items-center gap-2.5 text-[13.5px] font-medium tracking-[0.01em]">
             <HexBullet />
-            {COPY.eyebrow.en}
+            <I18n en={COPY.eyebrow.en} he={COPY.eyebrow.he} />
           </p>
-          <h1 className="mt-7 text-[clamp(44px,5vw,74px)] font-bold leading-[1.02] tracking-[-0.035em] lg:w-[128%] lg:max-w-none">
-            <span className="block lg:whitespace-nowrap">{line1}</span>
-            <span className="block">{line2a}</span>
-            <span className="block">
-              {line2bLead} <span className="u-accent">{accent}</span>.
+          <h1 className="hero-h1 mt-7 text-[clamp(44px,5vw,74px)] font-bold leading-[1.02] tracking-[-0.035em] lg:w-[128%] lg:max-w-none">
+            <span className="i18n-en">
+              <span className="block lg:whitespace-nowrap">{line1}</span>
+              <span className="block">{line2a}</span>
+              <span className="block">
+                {line2bLead} <span className="u-accent">{accent}</span>.
+              </span>
+            </span>
+            <span className="i18n-he" lang="he">
+              <span className="block lg:whitespace-nowrap">{heL1}</span>
+              <span className="block">{heL2a}</span>
+              <span className="block">
+                {heL2bLead} <span className="u-accent">{heAccent}</span>.
+              </span>
             </span>
           </h1>
           <p className="mt-7 max-w-[46ch] text-[17px] leading-[1.55] text-muted lg:text-[18px]">
-            {COPY.subhead.en}
+            <I18n en={COPY.subhead.en} he={COPY.subhead.he} />
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
-            <CtaButton href="#footprint-call">{COPY.ctaPrimary.en}</CtaButton>
+            <CtaButton href="#footprint-call">
+              <I18n en={COPY.ctaPrimary.en} he={COPY.ctaPrimary.he} />
+            </CtaButton>
             <a href="#channel-map" className="link-quiet text-[15px] font-medium">
-              {COPY.ctaSecondary.en}
+              <I18n en={COPY.ctaSecondary.en} he={COPY.ctaSecondary.he} />
             </a>
           </div>
           <p className="mt-5 max-w-[52ch] text-[13px] leading-relaxed text-muted">
-            {COPY.ctaMicro.en}
+            <I18n en={COPY.ctaMicro.en} he={COPY.ctaMicro.he} />
           </p>
         </div>
 
         {/* swarm column — rested composition from first paint; Chapter 1 plays over it */}
         <div className="relative mt-14 lg:mt-0">
-          <div className="relative mx-auto aspect-[560/620] w-full max-w-[430px] lg:absolute lg:inset-x-0 lg:top-1/2 lg:max-w-none lg:-translate-y-[44%]">
+          <div
+            data-swarm-stage
+            className="relative mx-auto aspect-[560/620] w-full max-w-[430px] lg:absolute lg:inset-x-0 lg:top-1/2 lg:max-w-none lg:-translate-y-[44%]"
+          >
             <SwarmRested className="absolute inset-0 h-full w-full" />
             <SwarmChapterOne />
           </div>

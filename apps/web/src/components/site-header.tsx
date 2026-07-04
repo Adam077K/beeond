@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "./logo";
+import { LocaleToggle } from "./locale-toggle";
 
 const NAV = [
   { href: "#channel-map", label: "The swarm" },
@@ -54,6 +55,7 @@ export function SiteHeader() {
                 {item.label}
               </a>
             ))}
+            <LocaleToggle />
           </nav>
           {/* header CTA fades in once the hero CTA scrolls away — one CTA per fold */}
           <a
