@@ -328,3 +328,92 @@ Import trace:
 [ 2206419ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 2206455ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 2533189ms] [WARNING] The resource http://localhost:3001/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3001/:0
+[ 3002685ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3002732ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3025635ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3025764ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3235865ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3235924ms] [LOG] [Fast Refresh] done in 120ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3246594ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3246774ms] [LOG] [Fast Refresh] done in 187ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3261124ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3261189ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3275368ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3275405ms] [LOG] [Fast Refresh] done in 4ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3286123ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3286169ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3290146ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3290188ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3292754ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3292797ms] [LOG] [Fast Refresh] done in 16ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3296045ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3296081ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3296109ms] ReferenceError: Eyebrow is not defined
+    at AntiGenericSection (about://React/Server/file:///Users/adamks/VibeCoding/beeond/.worktrees/landing-fable5/apps/web/.next/dev/server/chunks/ssr/%255Broot-of-the-server%255D__04mjq4_._.js?id=%255Bproject%255D%252FVibeCoding%252Fbeeond%252F.worktrees%252Flanding-fable5%252Fapps%252Fweb%252Fsrc%252Fcomponents%252Fsections%252Fanti-generic.tsx+%255Bapp-rsc%255D+%2528ecmascript%2529?734:22:549)
+    at resolveErrorDev (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:1919:150)
+    at processFullStringRow (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2434:29)
+    at processFullBinaryRow (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2393:9)
+    at processBinaryChunk (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2502:221)
+    at progress (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2689:13)
+[ 3299275ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3299317ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3299659ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3299669ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3303083ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3303122ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3303154ms] ReferenceError: Eyebrow is not defined
+    at FoundersSection (about://React/Server/file:///Users/adamks/VibeCoding/beeond/.worktrees/landing-fable5/apps/web/.next/dev/server/chunks/ssr/%255Broot-of-the-server%255D__04mjq4_._.js?id=%255Bproject%255D%252FVibeCoding%252Fbeeond%252F.worktrees%252Flanding-fable5%252Fapps%252Fweb%252Fsrc%252Fcomponents%252Fsections%252Ffounders.tsx+%255Bapp-rsc%255D+%2528ecmascript%2529?306:101:549)
+    at resolveErrorDev (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:1919:150)
+    at processFullStringRow (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2434:29)
+    at processFullBinaryRow (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2393:9)
+    at processBinaryChunk (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2502:221)
+    at progress (http://localhost:3000/_next/static/chunks/0pc7_next_dist_compiled_react-server-dom-turbopack_057_kbf._.js:2689:13)
+[ 3306845ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3306911ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3306959ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3306966ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3310013ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 3317178ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3317214ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3319054ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3319089ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3321689ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3321727ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3348355ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3348394ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3359037ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3359080ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3362866ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3362902ms] [LOG] [Fast Refresh] done in 36ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3364686ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3364722ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3367019ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3367057ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3370362ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3370404ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3372286ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3372318ms] [LOG] [Fast Refresh] done in 50ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3376677ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3376753ms] [LOG] [Fast Refresh] done in 54ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3378832ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3378869ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3380867ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3380917ms] [LOG] [Fast Refresh] done in 70ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3383312ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3383350ms] [LOG] [Fast Refresh] done in 21ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3420952ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3420965ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3424030ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 3478936ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3478980ms] [LOG] [Fast Refresh] done in 41ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3483114ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3483165ms] [LOG] [Fast Refresh] done in 62ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3502887ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3502900ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3505981ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 3572889ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3572936ms] [LOG] [Fast Refresh] done in 21ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3575951ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 3585576ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3585586ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3588642ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0

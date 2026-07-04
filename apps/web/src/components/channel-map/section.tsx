@@ -1,6 +1,7 @@
 import { hexPath } from "@/lib/hex";
 import { CHANNELS, TILE, stageBounds, tileOffset } from "./channels";
 import { ChannelMapScrub } from "./scrub";
+import { Eyebrow } from "../eyebrow";
 
 /**
  * C7 — the honeycomb channel-map. The page's ONE full-bleed section and its
@@ -22,8 +23,8 @@ export function ChannelMapSection() {
           {/* full-bleed hairline honeycomb field */}
           <HoneyField />
           <div className="relative mx-auto w-full max-w-[1180px] px-7 pt-24">
-            <p className="text-[13.5px] font-medium tracking-[0.01em]">The swarm</p>
-            <h2 className="mt-3 max-w-[24ch] text-[clamp(30px,3.2vw,46px)] font-bold leading-[1.05] tracking-[-0.03em]">
+            <Eyebrow n="02">The swarm</Eyebrow>
+            <h2 className="mt-4 max-w-[24ch] text-[clamp(30px,3.2vw,46px)] font-bold leading-[1.05] tracking-[-0.03em]">
               Every channel your buyers use — one coordinated system.
             </h2>
             <p className="mt-3 max-w-[52ch] text-[15.5px] leading-[1.5] text-muted">
@@ -98,8 +99,8 @@ export function ChannelMapSection() {
 
       {/* ── Mobile: hive ledger — every channel + proof, plain flow ── */}
       <div className="px-7 py-20 lg:hidden">
-        <p className="text-[13px] font-medium">The swarm</p>
-        <h2 className="mt-3 text-[clamp(28px,7.4vw,34px)] font-bold leading-[1.08] tracking-[-0.03em]">
+        <Eyebrow n="02">The swarm</Eyebrow>
+        <h2 className="mt-4 text-[clamp(28px,7.4vw,34px)] font-bold leading-[1.08] tracking-[-0.03em]">
           Every channel your buyers use — one coordinated system.
         </h2>
         <p className="mt-3 text-[15px] leading-[1.5] text-muted">

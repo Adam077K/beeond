@@ -1,3 +1,5 @@
+import { Eyebrow } from "../eyebrow";
+
 /**
  * Section 5 — the anti-generic promise. The page's dense/tight beat:
  * narrowest column, manifesto register. Copy: POSITIONING.md §5 Section 6 +
@@ -8,8 +10,8 @@ export function AntiGenericSection() {
   return (
     <section className="mx-auto max-w-[760px] px-7 py-20 lg:py-24">
       <div data-reveal>
-        <p className="text-[13px] font-medium">The anti-generic promise</p>
-        <h2 className="mt-3 text-[clamp(28px,3.6vw,44px)] font-bold leading-[1.05] tracking-[-0.03em]">
+        <Eyebrow n="04">The anti-generic promise</Eyebrow>
+        <h2 className="mt-4 text-[clamp(28px,3.6vw,44px)] font-bold leading-[1.05] tracking-[-0.03em]">
           AI that doesn&apos;t make you sound like{" "}
           <span className="u-accent">everyone else</span>.
         </h2>

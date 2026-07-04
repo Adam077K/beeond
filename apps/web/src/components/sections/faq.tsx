@@ -1,4 +1,5 @@
 import { FAQ } from "./faq-data";
+import { Eyebrow } from "../eyebrow";
 
 /**
  * Section 9 — FAQ. Native <details> accordion (answers stay in the DOM for
@@ -10,8 +11,8 @@ export function FaqSection() {
   return (
     <section id="faq" className="mx-auto max-w-[760px] px-7 py-24 lg:py-28">
       <div data-reveal>
-        <p className="text-[13px] font-medium">Questions founders actually ask</p>
-        <h2 className="mt-3 text-[clamp(28px,3.4vw,40px)] font-bold leading-[1.08] tracking-[-0.03em]">
+        <Eyebrow n="07">Questions founders actually ask</Eyebrow>
+        <h2 className="mt-4 text-[clamp(28px,3.4vw,40px)] font-bold leading-[1.08] tracking-[-0.03em]">
           The answers, without the pitch.
         </h2>
       </div>

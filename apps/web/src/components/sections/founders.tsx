@@ -1,3 +1,6 @@
+import { axialToPixel, hexPath, hexRing } from "@/lib/hex";
+import { Eyebrow } from "../eyebrow";
+
 /**
  * Section 7 — Founders, deep editorial treatment. Mirrored asymmetry vs the
  * hero (art start / copy end). Hex placeholders are designed brand objects —
@@ -23,11 +26,25 @@ const FOUNDERS = [
 ] as const;
 
 function FounderCell({ initials }: { initials: string }) {
+  const C = { x: 100, y: 112, r: 106 };
   return (
-    <div className="relative mx-auto w-full max-w-[240px]">
-      <svg viewBox="0 0 200 224" className="w-full" aria-hidden="true">
+    <div className="relative mx-auto w-full max-w-[260px]">
+      <svg viewBox="-56 -44 312 312" className="w-full" aria-hidden="true">
+        {/* the cell's hive neighborhood — same lattice grammar as the hero */}
+        <g fill="none" stroke="var(--color-hairline)" strokeWidth="1.3">
+          {hexRing(1).map(([q, r], i) => {
+            const p = axialToPixel(q, r, C.r + 4);
+            return (
+              <path
+                key={`${q}-${r}`}
+                d={hexPath(C.x + p.x, C.y + p.y, C.r)}
+                opacity={0.3 + (i % 3) * 0.12}
+              />
+            );
+          })}
+        </g>
         <path
-          d="M100 6 194 61v102L100 218 6 163V61Z"
+          d={hexPath(C.x, C.y, C.r)}
           fill="var(--color-panel)"
           stroke="var(--color-ink)"
           strokeWidth="2.5"
@@ -35,13 +52,13 @@ function FounderCell({ initials }: { initials: string }) {
         />
         {/* faint inner cell — the placeholder is a designed object */}
         <path
-          d="M100 40 160 75v70l-60 35-60-35V75Z"
+          d={hexPath(C.x, C.y, 68)}
           fill="none"
           stroke="var(--color-hairline)"
           strokeWidth="1.5"
           strokeLinejoin="round"
         />
-        <circle cx="100" cy="176" r="4" fill="var(--color-yellow)" />
+        <circle cx="100" cy="178" r="4" fill="var(--color-yellow)" />
       </svg>
       <span className="absolute inset-0 flex items-center justify-center text-[44px] font-bold tracking-[-0.02em]">
         {initials}
@@ -54,8 +71,8 @@ export function FoundersSection() {
   return (
     <section id="founders" className="mx-auto max-w-[1180px] px-7 py-24 lg:py-28">
       <div data-reveal className="lg:ms-[38%]">
-        <p className="text-[13px] font-medium">Founders</p>
-        <h2 className="mt-3 max-w-[22ch] text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">
+        <Eyebrow n="06">Founders</Eyebrow>
+        <h2 className="mt-4 max-w-[22ch] text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">
           Built by the people who actually do it.
         </h2>
       </div>

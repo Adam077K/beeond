@@ -11,7 +11,7 @@ import { Logo } from "../logo";
 function HiveMini() {
   const size = 30; // circumradius per cell
   return (
-    <svg viewBox="-160 -140 320 280" className="w-full max-w-[420px]" aria-hidden="true">
+    <svg viewBox="-160 -140 320 280" className="w-full" aria-hidden="true">
       {CHANNELS.map((ch) => {
         const p = axialToPixel(ch.q, ch.r, size + 1.5);
         return (
@@ -32,6 +32,8 @@ function HiveMini() {
         [10, -52],
         [58, 30],
         [2, 6],
+        [-96, -8],
+        [72, -60],
       ].map(([x, y], i) => (
         <circle key={i} cx={x} cy={y} r="2.6" fill="var(--color-yellow)" opacity="0.9" />
       ))}
@@ -64,7 +66,7 @@ export function FinalCtaSection() {
             because we have to be — the founders are the system.
           </p>
         </div>
-        <div data-reveal className="mx-auto w-full max-w-[420px]">
+        <div data-reveal className="mx-auto w-full max-w-[500px]">
           <HiveMini />
         </div>
       </div>

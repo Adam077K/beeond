@@ -11,9 +11,9 @@ export const SWARM_VB = { w: 560, h: 620 } as const;
 /** The hero cell — the hex the swarm settles into. */
 export const CELL = { cx: 288, cy: 332, r: 146 } as const;
 
-const DOT_COUNT = 64;
-const EDGE_PERCHERS = 7;
-const MIN_DIST = 11.5;
+const DOT_COUNT = 66;
+const EDGE_PERCHERS = 10;
+const MIN_DIST = 10.5;
 
 function buildRestDots(): Pt[] {
   const rnd = mulberry32(7);
@@ -28,7 +28,7 @@ function buildRestDots(): Pt[] {
     if (!pointInHex(x, y, CELL.cx, CELL.cy, CELL.r - 12)) continue;
     // gravity: settle density grows steeply toward the cell floor
     const depth = (y - (CELL.cy - CELL.r)) / (2 * CELL.r); // 0 top → 1 bottom
-    if (rnd() > 0.1 + 0.9 * depth * depth * depth) continue;
+    if (rnd() > 0.06 + 0.94 * depth * depth * depth) continue;
     if (dots.some((d) => (d.x - x) ** 2 + (d.y - y) ** 2 < MIN_DIST ** 2)) continue;
     dots.push({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 });
   }

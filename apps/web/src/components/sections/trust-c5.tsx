@@ -42,7 +42,7 @@ export function TrustC5Section() {
     scores
       ? {
           k: "Built to the standard we sell",
-          v: `This page measured ${scores.mobilePerformance}/100 mobile performance and ${scores.lcpSeconds.toFixed(1)}s LCP at build time — the bar every client site gets held to.`,
+          v: `This page measured ${scores.mobilePerformance}/100 mobile performance at build time (${scores.measuredAt.slice(0, 10)}) — the bar every client site gets held to.`,
         }
       : null,
   ];
