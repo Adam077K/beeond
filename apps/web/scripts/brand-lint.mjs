@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * brand-lint — the executable Constitution gate. FAILS the build on:
- *   1. any hex color outside the 8-token allowlist (incl. #000/#fff)
+ *   1. any hex color outside the 7-token allowlist (incl. #000/#fff)
  *   2. any Google-Fonts URL or next/font/google import
  *   3. `transition: all` / Tailwind `transition-all`
  *   4. raw `ease-in-out` / `linear` easing (CSS values or Tailwind classes)
@@ -29,7 +29,6 @@ const ALLOWED_HEX = new Set([
   "#0a0a0a", // deep
   "#e3ddd5", // hairline
   "#5c5751", // muted
-  "#b28834", // gold — v5 founder amendment: watercolor-gold DISPLAY accent (H1 line 2, eyebrow via ink-mix); sampled from the founder's hero mock, deepened to ≥3:1 on ground
 ]);
 
 const EXTS = new Set([".ts", ".tsx", ".css", ".mjs", ".js", ".jsx"]);
@@ -134,7 +133,7 @@ function scanFile(file, { distMode = false } = {}) {
     for (const m of line.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) {
       const hex = m[0].toLowerCase();
       if (!ALLOWED_HEX.has(hex)) {
-        const f = `${loc}  off-palette color ${m[0]} — only the 8 brand tokens exist`;
+        const f = `${loc}  off-palette color ${m[0]} — only the 7 brand tokens exist`;
         if (allowed) findings.ALLOW.push(`${f}  (allowed: ${allowed[1].trim()})`);
         else findings[distMode ? "WARN" : "FAIL"].push(f);
       }

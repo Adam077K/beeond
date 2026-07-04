@@ -6,10 +6,9 @@ import { LocaleToggle } from "./locale-toggle";
 import { I18n } from "./i18n";
 
 const NAV = [
+  { href: "#channel-map", label: "The swarm", labelHe: "הנחיל" },
   { href: "#how-it-works", label: "How it works", labelHe: "איך זה עובד" },
-  { href: "#channel-map", label: "What we do", labelHe: "מה אנחנו עושים" },
-  { href: "#proof", label: "Results", labelHe: "תוצאות" },
-  { href: "#founders", label: "About us", labelHe: "מי אנחנו" },
+  { href: "#founders", label: "Founders", labelHe: "המייסדים" },
   { href: "#faq", label: "FAQ", labelHe: "שאלות" },
 ] as const;
 
@@ -69,12 +68,7 @@ export function SiteHeader() {
           }`}
         >
           <a href="#main" className="text-[19px] text-ink" aria-label="Beeond — home">
-            <span className="flex flex-col leading-none">
-              <Logo />
-              <span className="eyebrow-gold mt-1 text-[8.5px] font-semibold uppercase tracking-[0.26em]">
-                <I18n en="AI-native growth" he="צמיחה AI-נייטיב" />
-              </span>
-            </span>
+            <Logo />
           </a>
           <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
             {NAV.map((item) => (
@@ -84,12 +78,16 @@ export function SiteHeader() {
             ))}
             <LocaleToggle />
           </nav>
-          {/* v5 (founder mock): the header CTA is always present */}
+          {/* header CTA fades in once the hero CTA scrolls away — one CTA per fold */}
           <a
             href="#footprint-call"
-            className="cta hidden rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-semibold text-ground md:inline-block"
+            tabIndex={scrolled ? 0 : -1}
+            aria-hidden={!scrolled}
+            className={`header-cta cta hidden rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-semibold text-ground md:inline-block ${
+              scrolled ? "" : "header-cta-hidden"
+            }`}
           >
-            <I18n en="Get a free audit" he="קבלו אבחון חינם" />
+            <I18n en="Get a free footprint audit" he="קבלו אבחון נוכחות חינם" />
           </a>
           <button
             ref={burgerRef}

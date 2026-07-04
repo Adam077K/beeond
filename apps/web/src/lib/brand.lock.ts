@@ -11,7 +11,7 @@
  * never a silent edit. (See docs/08-agents_work/briefs/2026-07-03-fable5-landing-build.md §3.)
  */
 
-/** The 8-token palette. Nothing else exists. No pure black, no pure white, no blue/purple. */
+/** The 7-token palette. Nothing else exists. No pure black, no pure white, no blue/purple. */
 export const COLORS = {
   /** Primary page background — warm white, never cool, never pure */
   ground: "#FAF9F5",
@@ -19,13 +19,6 @@ export const COLORS = {
   ink: "#141413",
   /** THE single accent. Fill / highlight / underline ONLY — never body text, never a CTA background. */
   yellow: "#FFDB5B",
-  /**
-   * Watercolor-gold DISPLAY accent — v5 founder amendment (2026-07-05 hero mock).
-   * Sampled from the founder mock's headline gold and deepened to ≥3:1 on
-   * ground for large display text. Usage: H1 second sentence + eyebrow caps
-   * (eyebrow mixes toward ink for ≥4.5:1). Never body text, never a surface.
-   */
-  gold: "#B28834",
   /** Cream moment panels, alternate section beats */
   panel: "#F0EEE6",
   /** Optional deep-moment sections (final CTA). 1–2 per page max. */
@@ -103,14 +96,14 @@ export type Locale = "en" | "he";
 /** The Constitution — encoded here, enforced by brand-lint + this module.
  *  If an invariant genuinely hurts the outcome: STOP, write a founder proposal. */
 export const INVARIANTS = [
-  "8-token palette (v5: +gold display accent) + ~90/10 ink-and-ground to yellow",
+  "7-token palette + ~90/10 ink-and-ground to yellow",
   "Rubik only, self-hosted + subset (latin + hebrew via unicode-range)",
   "Yellow = fill/highlight/underline ONLY — never body text, never CTA background",
   "Swarm converges ONCE then rests — zero perpetual loops",
   "Bee⬡nd hex-'o' logotype (inline SVG), no bee mascot in headers",
   "Locked H1 copy, verbatim",
   "No bento-grid-of-services",
-  "LCP = SSR hero content (H1 text or the journal art)",
+  "LCP = the hero H1 in SSR HTML",
   "All copy traceable to POSITIONING.md",
   "Mobile perf ≥90 / a11y ≥95 gates",
 ] as const;

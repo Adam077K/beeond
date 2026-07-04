@@ -103,8 +103,7 @@ test.describe("landing — hard gates", () => {
     await page.locator("header .locale-toggle").click();
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
     await expect(page.locator("html")).toHaveAttribute("lang", "he");
-    // the logotype lockup itself never mirrors (tagline wrapper may precede it)
-    await expect(page.locator("header [aria-label] span[dir='ltr']").first()).toBeVisible();
+    await expect(page.locator("header [aria-label] span").first()).toHaveAttribute("dir", "ltr");
     await expect(page.locator("h1 .i18n-he")).toContainText("עידן ה-AI זז מהר.");
   });
 
