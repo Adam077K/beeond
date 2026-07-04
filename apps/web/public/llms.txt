@@ -1,0 +1,42 @@
+# Beeond
+
+> Beeond is an AI-native, done-for-you marketing and growth agency for B2B,
+> SaaS and tech companies. It runs a company's whole digital presence — every
+> channel buyers use to find and evaluate vendors — as one coordinated swarm
+> of AI agents calibrated and directed by the two founders. Bilingual:
+> English and Hebrew authored in parallel at first-language quality.
+
+## What Beeond runs
+
+- GEO / AI-search visibility: be the answer when buyers ask ChatGPT,
+  Perplexity or Google AI who to use (the anchor channel)
+- SEO content engine: long-form built to rank and be cited by AI, in the
+  client's voice
+- LinkedIn organic and founder-led content
+- Paid campaigns (Google, LinkedIn) run on documented hypotheses
+- Email lifecycle, landing pages and CRO
+- Digital PR and backlinks; trust, reviews and case studies
+- Rank tracking, reporting and brand monitoring
+
+## How it works
+
+Phased onboarding over ~90 days: Foundation (weeks 1–4: audits, tracking,
+schema, voice calibration) → Content Engine (weeks 4–8) → Amplification
+(weeks 8–12). The foundation is built before channels are lit up.
+
+## Who it's for
+
+B2B and SaaS founders, heads of marketing and heads of growth who need the
+breadth of an agency without the agency price, and AI-speed output that
+still sounds like them. Not generic — every automated flow is calibrated to
+the client's brand before it ships.
+
+## Founders
+
+- Adam — AI systems and agent swarms; built the swarm that runs the channels
+- Yarden Morgan — B2B marketing and growth; the standard output is calibrated to
+
+## Status
+
+Pre-launch (trademark clearance in progress). Primary market: Israel + US,
+Hebrew + English at parity. Site: https://beeond.ai

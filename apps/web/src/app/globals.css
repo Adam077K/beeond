@@ -1,0 +1,480 @@
+@import "tailwindcss";
+
+/* ════════════════════════════════════════════════════════════════════
+   Bee⬡nd — executable brand constitution (CSS layer)
+   Source of truth: src/lib/brand.lock.ts + src/lib/motion.ts
+   Enforced by: scripts/brand-lint.mjs (run `pnpm brand-lint`)
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Rubik: self-hosted variable subsets — the ONLY typeface ──────── */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 900;
+  src: url("/fonts/rubik-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Hebrew loads via unicode-range ONLY — zero bytes on the EN default path */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 900;
+  src: url("/fonts/rubik-hebrew.woff2") format("woff2-variations");
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC,
+    U+FB1D-FB4F;
+}
+/* Metric-matched local fallback — kills font-swap CLS on the LCP H1 */
+@font-face {
+  font-family: "Rubik Fallback";
+  src: local("Arial");
+  size-adjust: 100.46%;
+  ascent-override: 93.07%;
+  descent-override: 24.89%;
+  line-gap-override: 0%;
+}
+
+@theme {
+  /* Executable palette lockdown: Tailwind's default palette is DELETED.
+     Only the 7 brand tokens compile — `bg-blue-500` is not a class here. */
+  --color-*: initial;
+  --color-ground: #faf9f5;
+  --color-ink: #141413;
+  --color-yellow: #ffdb5b; /* fill/highlight/underline ONLY — never a text utility */
+  --color-panel: #f0eee6;
+  --color-deep: #0a0a0a; /* true-black moment sections, 1–2 per page max */
+  --color-hairline: #e3ddd5;
+  --color-muted: #5c5751;
+
+  /* Rubik only */
+  --font-*: initial;
+  --font-sans: "Rubik", "Rubik Fallback", ui-sans-serif, system-ui, sans-serif;
+
+  /* Zero perpetual loops: Tailwind's infinite animations are deleted */
+  --animate-*: initial;
+  /* No drop shadows beyond the hairline */
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+
+  /* Named easing per intent — motion.ts mirrors these */
+  --ease-*: initial;
+  --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-swift: cubic-bezier(0.32, 0.72, 0.36, 1);
+  --ease-exit: cubic-bezier(0.5, 0, 0.75, 0.4);
+}
+
+:root {
+  /* 6-step duration ladder — pick by travel distance, never uniform */
+  --dur-1: 120ms; /* exits, micro */
+  --dur-2: 180ms; /* hovers */
+  --dur-3: 240ms; /* small travel */
+  --dur-4: 400ms; /* medium reveals */
+  --dur-5: 640ms; /* section entrances */
+  --dur-6: 1600ms; /* hero convergence */
+
+  /* Focus ring color — sections override via data-scheme */
+  --focus-ring: var(--color-ink);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  section[id] {
+    scroll-margin-block-start: 88px;
+  }
+  body {
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    hanging-punctuation: first;
+  }
+  p,
+  li {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-yellow);
+    color: var(--color-ink);
+  }
+  /* :focus-visible only — ring follows border-radius, inverts per scheme */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+  [data-scheme="dark"] {
+    --focus-ring: var(--color-ground);
+  }
+  [data-scheme="yellow"] {
+    --focus-ring: var(--color-ink);
+  }
+}
+
+/* ── Signature yellow underline — hand-tuned bar, NOT text-decoration ──
+   thickness ~0.09em, sits ~0.12em below the baseline, clones across wraps.
+   Tuning vars let the evidence loop true the terminals to Rubik. */
+.u-accent {
+  --u-thickness: 0.09em;
+  --u-offset-y: 0.94em; /* distance from top of em box to top of bar */
+  background-image: linear-gradient(
+    var(--color-yellow),
+    var(--color-yellow)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% var(--u-thickness);
+  background-position: 0 var(--u-offset-y);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-inline: 0.03em;
+  margin-inline: -0.03em;
+}
+
+/* ── CTA physics: pill + nested orb, per-intent curves, tactile press ── */
+.cta {
+  transition:
+    transform var(--dur-2) var(--ease-swift),
+    background-color var(--dur-2) var(--ease-swift),
+    color var(--dur-2) var(--ease-swift);
+}
+.cta:active {
+  transform: scale(0.98);
+}
+.cta-orb {
+  transition: transform var(--dur-2) var(--ease-swift);
+}
+.cta:hover .cta-orb {
+  transform: translate(2px, -2px);
+}
+[dir="rtl"] .cta:hover .cta-orb {
+  transform: translate(-2px, -2px); /* brand-lint-allow: mirrored hover vector for RTL */
+}
+[dir="rtl"] .cta-arrow {
+  transform: scaleX(-1); /* brand-lint-allow: arrow glyph mirrors with reading direction */
+}
+
+/* Quiet text link — hairline underline that inks on hover */
+.link-quiet {
+  border-block-end: 1px solid var(--color-hairline);
+  padding-block-end: 2px;
+  transition: border-color var(--dur-2) var(--ease-swift);
+}
+.link-quiet:hover {
+  border-block-end-color: var(--color-ink);
+}
+
+/* Header nav link — bare at rest, hairline rises on hover */
+.nav-link {
+  border-block-end: 1px solid transparent;
+  padding-block-end: 2px;
+  color: color-mix(in oklab, var(--color-ink) 82%, var(--color-ground));
+  transition:
+    color var(--dur-2) var(--ease-swift),
+    border-color var(--dur-2) var(--ease-swift);
+}
+.nav-link:hover {
+  color: var(--color-ink);
+  border-block-end-color: var(--color-ink);
+}
+
+/* Header CTA appears only once the hero CTA has left the stage */
+.header-cta {
+  transition:
+    opacity var(--dur-3) var(--ease-settle),
+    transform var(--dur-3) var(--ease-settle),
+    background-color var(--dur-2) var(--ease-swift);
+}
+.header-cta-hidden {
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+}
+
+/* Header: transparent over hero → the ONE sanctioned glass pill on scroll */
+.header-shell {
+  border: 1px solid transparent;
+  transition:
+    background-color var(--dur-3) var(--ease-settle),
+    border-color var(--dur-3) var(--ease-settle),
+    backdrop-filter var(--dur-3) var(--ease-settle);
+}
+.header-glass {
+  background-color: color-mix(in oklab, var(--color-ground) 78%, transparent);
+  border-color: var(--color-hairline);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── C7 hex tiles — clip-path hexagons with real wrapping DOM text ── */
+.hex-tile {
+  will-change: transform, opacity;
+}
+.hex-hover {
+  transition: transform var(--dur-2) var(--ease-swift);
+}
+.hex-tile:not(.hex-tile-anchor):hover .hex-hover {
+  transform: translateY(-3px);
+}
+.hex-border,
+.hex-face,
+.hex-stack {
+  position: absolute;
+  pointer-events: none;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+/* stacked-paper depth: a hairline sheet peeking below each tile */
+.hex-stack {
+  inset: 0;
+  background: var(--color-hairline);
+  transform: translateY(5px);
+}
+.hex-border {
+  inset: 0;
+  background: var(--color-ink);
+  opacity: 0.85;
+  transition: opacity var(--dur-2) var(--ease-swift);
+}
+.hex-tile:hover .hex-border {
+  opacity: 1;
+}
+.hex-face {
+  inset: 1.5px;
+  background: var(--color-ground);
+}
+/* wall thickness: an inner hairline ring makes the tile a cell, not a sticker */
+.hex-rim {
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: color-mix(in oklab, var(--color-hairline) 85%, var(--color-ground));
+}
+.hex-rim::after {
+  content: "";
+  position: absolute;
+  inset: 1.3px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--color-ground);
+}
+.hex-tile-anchor .hex-border {
+  opacity: 1;
+}
+.hex-tile-anchor .hex-face {
+  inset: 2px;
+  /* honey as material — single-hue depth, not a flat sticker.
+     brand-lint-allow: both gradient stops derive from brand tokens */
+  background: linear-gradient(
+    180deg,
+    var(--color-yellow) 52%,
+    color-mix(in oklab, var(--color-yellow) 84%, var(--color-ink))
+  );
+}
+.hex-tile-anchor .hex-rim {
+  display: none;
+}
+/* anchor hover = inner glow, not lift — it is already "on" */
+.hex-tile-anchor .hex-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 62% at 50% 46%,
+    color-mix(in oklab, var(--color-yellow) 72%, var(--color-ground)),
+    transparent 78%
+  );
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-swift);
+}
+.hex-tile-anchor:hover .hex-face::after {
+  opacity: 1;
+}
+/* the keystone's one hairline pulse — driven by the scrub timeline only */
+.hex-pulse {
+  position: absolute;
+  inset: -8%;
+  opacity: 0;
+  pointer-events: none;
+}
+/* scroll hint exists only when the scrub is running (set by JS) */
+[data-c7-hint] {
+  opacity: 0;
+}
+
+/* ── Scroll reveals — CSS owns the motion, JS only flips the class.
+   Hidden state exists ONLY under html.js + motion-ok (JS-off = visible). ── */
+html.js [data-reveal] {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity var(--dur-5) var(--ease-settle),
+    translate var(--dur-5) var(--ease-settle);
+}
+html.js [data-reveal].in {
+  opacity: 1;
+  translate: 0 0;
+}
+/* the flight path draws once on reveal; the landing dot arrives last */
+html.js .flight-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--dur-6) var(--ease-settle) 120ms;
+}
+html.js [data-reveal].in .flight-path {
+  stroke-dashoffset: 0;
+}
+html.js .flight-dot {
+  opacity: 0;
+  transition: opacity var(--dur-3) var(--ease-settle) calc(var(--dur-6) - 120ms);
+}
+html.js [data-reveal].in .flight-dot {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .flight-dot {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    translate: none;
+  }
+  html.js .flight-path {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ── i18n: both languages are SSR'd; html[lang] picks one.
+   Hebrew rules: no aggressive tracking (Rubik HE collides), same type scale. ── */
+html:not([lang="he"]) .i18n-he,
+html[lang="he"] .i18n-en {
+  display: none !important;
+}
+html[lang="he"] .hero-h1 {
+  letter-spacing: -0.015em;
+}
+.locale-toggle {
+  border: 1px solid var(--color-hairline);
+  transition:
+    border-color var(--dur-2) var(--ease-swift),
+    background-color var(--dur-2) var(--ease-swift);
+}
+.locale-toggle:hover {
+  border-color: var(--color-ink);
+}
+
+/* ── FAQ: hex marker morphs + ⇄ ×, exits at ~0.8× their entrance ── */
+:root {
+  interpolate-size: allow-keywords;
+}
+.faq-plus {
+  transition: transform calc(var(--dur-3) * 0.8) var(--ease-exit);
+}
+.faq-item[open] .faq-plus {
+  transform: rotate(45deg);
+  transition: transform var(--dur-3) var(--ease-settle);
+}
+.faq-item::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size calc(var(--dur-4) * 0.8) var(--ease-exit),
+    content-visibility calc(var(--dur-4) * 0.8) allow-discrete;
+}
+.faq-item[open]::details-content {
+  block-size: auto;
+  transition:
+    block-size var(--dur-4) var(--ease-settle),
+    content-visibility var(--dur-4) allow-discrete;
+}
+
+/* ── Mobile menu: glass overlay, staggered reveal, exits at 0.8× ── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  /* opaque surface — a full-screen menu is its own room, nothing bleeds
+     through (design-critic P1); the grain layer keeps it physical */
+  background-color: var(--color-ground);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity calc(var(--dur-4) * 0.8) var(--ease-exit),
+    visibility 0s linear calc(var(--dur-4) * 0.8);
+}
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--dur-4) var(--ease-settle),
+    visibility 0s;
+}
+.mobile-menu .m-link {
+  opacity: 0;
+  translate: 0 14px;
+  transition:
+    opacity calc(var(--dur-3) * 0.8) var(--ease-exit),
+    translate calc(var(--dur-3) * 0.8) var(--ease-exit);
+}
+.mobile-menu.open .m-link {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity var(--dur-4) var(--ease-settle),
+    translate var(--dur-4) var(--ease-settle);
+  transition-delay: calc(70ms + var(--i, 0) * 45ms);
+}
+/* hamburger lines morph to guide the eye toward the hex close */
+.burger-line {
+  transition: transform var(--dur-2) var(--ease-swift);
+}
+.burger:hover .burger-line:first-child {
+  transform: translateY(1px);
+}
+.burger:hover .burger-line:last-child {
+  transform: translateY(-1px);
+}
+
+/* footer quiet links on the dark moment */
+.footer-link {
+  transition: color var(--dur-2) var(--ease-swift);
+}
+.footer-link:hover {
+  color: var(--color-ground);
+}
+
+/* ── Warm paper grain — code-driven feTurbulence, fixed layer, never on a
+   scrolling container (playbook-sanctioned physical texture) ── */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.032;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Reduced motion: rested end-state from first paint, everywhere ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -24,6 +24,16 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-04 — Landing build SHIPPED on feat/landing-fable5 (staging; QA + founder gate open)
+
+**Context:** The single Fable-5 designer session ran per the 2026-07-03 brief v2 (founder chose "build in this session"; effort max). Full page built at `apps/web`, all §7 hard gates measured green.
+**Decision (implementation-level, D1–D8 detailed in `apps/web/BUILD_LOG.md`):** app lives at `apps/web` (repo root is the agent-kit package); 7-token allowlist resolved = ground/ink/yellow/panel/deep/hairline/**muted** with pure white dropped; Tailwind default palette/shadows/animations deleted at `@theme` (Constitution is compile-time); C7 proof lines render statically (no `<details>` expand) so JS-off/AI crawlers see all 11; C7 mobile = hive ledger, no pin (floor protection); fonts via `@fontsource-variable/rubik` copied to `public/fonts`; C5 badge renders only from measured `public/scores.json` (LH 13.4: perf 97 / a11y 100). Flourish shipped: "the hive tightens" at keystone lock.
+**Measured:** real-trace LCP 668ms / CLS 0.0026 (slow-4G + 4× CPU, 390px) · INP worst 40ms · C7 scrub 60fps at 4× CPU · e2e 18/18 · brand-lint 0/33 files.
+**Reversibility:** fully — branch only, NO merge (QA-Lead PASS + founder confirmation required; risk tier full).
+**Owner:** ceo (Fable-5 build session)
+**Affects:** QA-Lead (review next: branch feat/landing-fable5, evidence in BUILD_LOG + build-evidence/); CMO (HE adaptations D4 + C7 proof-line wording review); founders (launch gates: credential microlines, photography, booking link/hello@ mailbox, TM clearance, native-HE device review); CTO (deploy only after gates).
+**Detail:** apps/web/BUILD_LOG.md · docs/08-agents_work/sessions/2026-07-04-ceo-landing-fable5.md
+
 ## 2026-07-03 — Design Excellence Board: build-enablement playbook + motion posture refined + brief v2
 
 **Context:** 16-agent board meeting (7 designer/enablement personas → cross-critique → synthesis → reference capture) on how to make the site award-grade + selling + on-brand + non-slop, and how to set up the autonomous Fable-5 build for max quality. Playbook: `docs/05-marketing/DESIGN_EXCELLENCE_PLAYBOOK.md`.
