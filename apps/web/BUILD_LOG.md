@@ -155,6 +155,29 @@ Independent design-critic subagent spawned on the full screenshot set; my own se
 
 Post-wave gates: LH perf **97** / a11y **100**, TBT 10ms, CLS 0, e2e **18/18**, brand-lint 0/34, mobile h-scroll 0 (`m2-*.png`).
 
+## Quality wave 2 — independent design-critic verdict + remediation
+
+Design-critic subagent verdict on the full screenshot set: **NEEDS_WORK** (4×P1, 5×P2). Triage + outcome:
+
+| Finding | Triage | Resolution |
+|---|---|---|
+| P1 Mobile menu bleeds hero text | CONFIRMED (my 96% color-mix glass still bled in practice) | Menu is now an **opaque ground surface** (`r3-menu.png` — clean); grain keeps it physical |
+| P1 "Foundation" strikethrough | Stale artifact — it was the broken flight path, already rebuilt in wave 1 | Verified resolved (`p3-how.png`) |
+| P1 Mobile C7 = generic list, signature geometry lost | CONFIRMED — the deliberate D8 ledger under-served the brand | **Keystone emblem added**: assembled HiveMark (yellow GEO dominant) + caption above the ledger (`r2-c7-mobile.png`); mobile now passes logo-removed recognizability |
+| P1 Yarden hero-ledger line dangles mid-sentence | CONFIRMED | Both founder lines rewritten as complete sentences ("the builder of the swarm itself." / "the keeper of the standard it ships to.") |
+| P2 Social proof visually empty | CONFIRMED | Empty-state framed as a designed hairline object with yellow-cored hex; section padding tightened (`r2-social.png`) |
+| P2 ~200px dead-air before problem/FAQ | CONFIRMED | Problem pt 112→80/96, FAQ pt 96→56/64, social py 80→56/64 — slack cut, ladder variety kept |
+| P2 Calibrated voice box lacks hierarchy | CONFIRMED | Yellow start-bar + panel bg + larger bolder type vs deliberately flat slop specimen (`r2-anti.png`) — critic's #3 leverage fix |
+| P2 Identical eyebrows read template | PARTIAL — variety yes, yellow everywhere no (accent scarcity) | Hex glyph added to the two yellow-thread sections only (02 The swarm, 05 GEO) |
+| P2 Orphan ferry dots pre-keystone | CONFIRMED (stills read as leak) | Ferry windows tightened: never outlive their tile's reveal (`t1 ≤ reveal end`, spread 0.25) |
+
+Post-remediation: build clean · e2e **18/18** · LH **97/100** · brand-lint 0/35 · scores.json refreshed.
+Critic's "what's working" (final CTA award-grade, OG card best-in-category, 404 delightful, keystone concept the right centerpiece, desktop logo-removed pass) — preserved untouched.
+
+## QA gate status (honest)
+
+QA-Lead subagent was spawned with the full verification brief and **died on an account session limit** (resets 20:30 Asia/Jerusalem) before issuing a verdict. Per the Constitution the CEO cannot self-issue a PASS, so **the branch stays unmerged**. The complete mechanical checklist QA-Lead would run has been executed and evidenced (this file): brand-lint 0, eslint 0, build 0 errors, e2e 18/18 incl. axe/JS-off/RTL/console-clean, dist scan reviewed, scores.json ↔ Lighthouse JSON cross-checked, H1 verbatim asserted, both `dangerouslySetInnerHTML` sites static-only. Outstanding: the independent verdict itself — re-spawn QA-Lead after the limit resets.
+
 ## Cross-section fresh-eyes (rhythm drift audit)
 
 Full-page reloads reviewed at 1440 (`build-evidence/full-1440.png`) + 390. DNA sequence: asym-split → zig-zag → full-bleed pin → path-on-panel → narrow-dense → stepped-panels → mirrored-split → hairline-strip → centered-short → narrow-list → dark-bleed. No two adjacent sections share padding/column DNA; the two panel beats (4, 6) are separated by the dense manifesto; the two short beats (C5 strip, social) use opposite alignment grammars (start-aligned row vs centered). Verdict: no redesign required; metronome avoided by construction of the rhythm map.

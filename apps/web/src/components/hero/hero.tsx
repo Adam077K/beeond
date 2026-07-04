@@ -39,12 +39,12 @@ const FOUNDERS = [
   {
     initials: "A",
     name: "Adam",
-    line: "AI systems & agent swarms — builds the swarm that runs your channels",
+    line: "AI systems & agent swarms — the builder of the swarm itself.",
   },
   {
     initials: "YM",
     name: "Yarden Morgan",
-    line: "B2B marketing & growth — the standard every piece of output is calibrated to",
+    line: "B2B marketing & growth — the keeper of the standard it ships to.",
   },
 ] as const;
 

@@ -375,9 +375,9 @@ html[lang="he"] .hero-h1 {
   z-index: 50;
   display: flex;
   flex-direction: column;
-  background-color: color-mix(in oklab, var(--color-ground) 96%, transparent);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  /* opaque surface — a full-screen menu is its own room, nothing bleeds
+     through (design-critic P1); the grain layer keeps it physical */
+  background-color: var(--color-ground);
   opacity: 0;
   visibility: hidden;
   transition:

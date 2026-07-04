@@ -9,7 +9,7 @@ import { Eyebrow } from "../eyebrow";
  */
 export function FaqSection() {
   return (
-    <section id="faq" className="mx-auto max-w-[760px] px-7 py-24 lg:py-28">
+    <section id="faq" className="mx-auto max-w-[760px] px-7 pb-24 pt-14 lg:pb-28 lg:pt-16">
       <div data-reveal>
         <Eyebrow n="07">Questions founders actually ask</Eyebrow>
         <h2 className="mt-4 text-[clamp(28px,3.4vw,40px)] font-bold leading-[1.08] tracking-[-0.03em]">

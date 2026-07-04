@@ -1,45 +1,12 @@
 import { COPY } from "@/lib/brand.lock";
-import { hexPath, axialToPixel } from "@/lib/hex";
-import { CHANNELS } from "../channel-map/channels";
 import { CtaButton } from "../cta-button";
+import { HiveMark } from "../hive-mark";
 import { Logo } from "../logo";
 
 /**
  * Section 10 — final CTA + footer. Chapter 3: the rested hive, static payoff
  * on the page's one deep-black moment. Copy: POSITIONING §5 Section 10.
  */
-function HiveMini() {
-  const size = 30; // circumradius per cell
-  return (
-    <svg viewBox="-160 -140 320 280" className="w-full" aria-hidden="true">
-      {CHANNELS.map((ch) => {
-        const p = axialToPixel(ch.q, ch.r, size + 1.5);
-        return (
-          <path
-            key={ch.id}
-            d={hexPath(p.x, p.y, size)}
-            fill={ch.anchor ? "var(--color-yellow)" : "none"}
-            stroke={ch.anchor ? "var(--color-yellow)" : "var(--color-ground)"}
-            strokeOpacity={ch.anchor ? 1 : 0.38}
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-        );
-      })}
-      {/* a few rested bees on the hive — Chapter 3's quiet echo */}
-      {[
-        [-64, 44],
-        [10, -52],
-        [58, 30],
-        [2, 6],
-        [-96, -8],
-        [72, -60],
-      ].map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="2.6" fill="var(--color-yellow)" opacity="0.9" />
-      ))}
-    </svg>
-  );
-}
 
 export function FinalCtaSection() {
   return (
@@ -67,7 +34,7 @@ export function FinalCtaSection() {
           </p>
         </div>
         <div data-reveal className="mx-auto w-full max-w-[500px]">
-          <HiveMini />
+          <HiveMark scheme="dark" className="w-full" />
         </div>
       </div>
 

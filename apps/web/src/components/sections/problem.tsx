@@ -25,7 +25,7 @@ const OPTIONS = [
 
 export function ProblemSection() {
   return (
-    <section className="mx-auto max-w-[1180px] px-7 py-28 lg:py-32">
+    <section className="mx-auto max-w-[1180px] px-7 pb-28 pt-20 lg:pb-32 lg:pt-24">
       <div className="grid gap-y-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-x-16">
         <div data-reveal>
           <Eyebrow n="01">The problem</Eyebrow>

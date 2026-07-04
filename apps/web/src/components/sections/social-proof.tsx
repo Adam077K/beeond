@@ -5,8 +5,9 @@
  */
 export function SocialProofSection() {
   return (
-    <section className="mx-auto max-w-[900px] px-7 py-20 lg:py-24">
-      <div data-reveal className="text-center">
+    <section className="mx-auto max-w-[900px] px-7 py-14 lg:py-16">
+      {/* a designed object, not floating text — the empty state IS the claim */}
+      <div data-reveal className="border border-hairline px-8 py-12 text-center lg:px-14">
         <svg viewBox="0 0 20 22" className="mx-auto size-5" aria-hidden="true">
           <path
             d="M10 1 18 6.5v9L10 21l-8-5.5v-9Z"
@@ -15,6 +16,7 @@ export function SocialProofSection() {
             strokeWidth="1.6"
             strokeLinejoin="round"
           />
+          <circle cx="10" cy="11" r="2.2" fill="var(--color-yellow)" />
         </svg>
         <h2 className="mx-auto mt-6 max-w-[26ch] text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.12] tracking-[-0.025em]">
           We&apos;ll earn our reviews. Ask us for references.

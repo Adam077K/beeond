@@ -120,7 +120,7 @@ export function ChannelMapScrub() {
             const len = Math.max(Math.hypot(dx, dy), 1);
             const bow = (0.15 + rnd() * 0.25) * len * (rnd() < 0.5 ? -1 : 1);
             const span = t1 - t0;
-            const dt0 = t0 + rnd() * span * 0.35;
+            const dt0 = t0 + rnd() * span * 0.25;
             ferries.push({
               ox,
               oy,
@@ -128,8 +128,10 @@ export function ChannelMapScrub() {
               cy: my + (dx / len) * bow,
               tx,
               ty,
+              // ferries never outlive their tile's reveal — no orphan dots
+              // hanging in the pre-keystone beat (design-critic P2)
               t0: dt0,
-              t1: Math.min(dt0 + span * 0.75, t1 + 0.01),
+              t1: Math.min(dt0 + span * 0.7, t1),
             });
           }
         });

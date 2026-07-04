@@ -45,11 +45,11 @@ export function AntiGenericSection() {
             next-level growth and transformative synergy.
           </p>
         </div>
-        <div className="bg-panel px-7 py-6">
+        <div className="border-s-[3px] border-yellow bg-panel px-8 py-8">
           <p className="text-[11.5px] font-medium text-muted">
             What calibrated sounds like
           </p>
-          <p className="mt-2.5 text-[17px] font-semibold leading-[1.45]">
+          <p className="mt-3 max-w-[30ch] text-[clamp(17px,1.8vw,21px)] font-bold leading-[1.4] tracking-[-0.01em]">
             Automation does the volume. Humans do the taste. Not generic.
             Never generic.
           </p>

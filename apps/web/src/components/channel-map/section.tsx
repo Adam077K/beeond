@@ -2,6 +2,7 @@ import { hexPath } from "@/lib/hex";
 import { CHANNELS, TILE, stageBounds, tileOffset } from "./channels";
 import { ChannelMapScrub } from "./scrub";
 import { Eyebrow } from "../eyebrow";
+import { HiveMark } from "../hive-mark";
 
 /**
  * C7 — the honeycomb channel-map. The page's ONE full-bleed section and its
@@ -23,7 +24,9 @@ export function ChannelMapSection() {
           {/* full-bleed hairline honeycomb field */}
           <HoneyField />
           <div className="relative mx-auto w-full max-w-[1180px] px-7 pt-24">
-            <Eyebrow n="02">The swarm</Eyebrow>
+            <Eyebrow n="02" hex>
+              The swarm
+            </Eyebrow>
             <h2 className="mt-4 max-w-[24ch] text-[clamp(30px,3.2vw,46px)] font-bold leading-[1.05] tracking-[-0.03em]">
               Every channel your buyers use — one coordinated system.
             </h2>
@@ -97,16 +100,23 @@ export function ChannelMapSection() {
         </div>
       </div>
 
-      {/* ── Mobile: hive ledger — every channel + proof, plain flow ── */}
+      {/* ── Mobile: keystone emblem + hive ledger — the signature geometry
+             survives the breakpoint (design-critic P1) ── */}
       <div className="px-7 py-20 lg:hidden">
-        <Eyebrow n="02">The swarm</Eyebrow>
+        <Eyebrow n="02" hex>
+          The swarm
+        </Eyebrow>
         <h2 className="mt-4 text-[clamp(28px,7.4vw,34px)] font-bold leading-[1.08] tracking-[-0.03em]">
           Every channel your buyers use — one coordinated system.
         </h2>
         <p className="mt-3 text-[15px] leading-[1.5] text-muted">
           The whole footprint, built as one hive — not a menu of services.
         </p>
-        <ul className="mt-8">
+        <HiveMark className="mx-auto mt-9 w-full max-w-[300px]" />
+        <p className="mt-2 text-center text-[12px] font-medium text-muted">
+          GEO — AI-search visibility — locks the hive together.
+        </p>
+        <ul className="mt-9">
           {[...CHANNELS].sort((a, b) => (a.anchor ? -1 : b.anchor ? 1 : 0)).map((ch) => (
             <li
               key={ch.id}
