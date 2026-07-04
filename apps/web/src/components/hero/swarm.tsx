@@ -13,8 +13,9 @@
  */
 import { useEffect, useRef } from "react";
 import { mulberry32 } from "@/lib/hex";
+import { bakeGlowSprite, GLOW_R } from "@/lib/glow";
 import { DOT, DUR, SPRING, prefersReducedMotion } from "@/lib/motion";
-import { CELL, REST_DOTS, SWARM_VB } from "./swarm-data";
+import { REST_DOTS, SWARM_VB } from "./swarm-data";
 
 type Flight = {
   sx: number; // scatter origin
@@ -69,20 +70,6 @@ function buildFlights(): Flight[] {
       v: 0,
     };
   });
-}
-
-/** Bake the additive glow sprite once — never per-frame shadowBlur. */
-function bakeGlowSprite(scale: number): HTMLCanvasElement {
-  const r = (DOT.radius + DOT.glowRadius) * scale;
-  const c = document.createElement("canvas");
-  c.width = c.height = Math.ceil(r * 2);
-  const ctx = c.getContext("2d")!;
-  const g = ctx.createRadialGradient(r, r, DOT.radius * scale * 0.6, r, r, r);
-  g.addColorStop(0, `${DOT.color}5e`); /* brand-lint-allow: alpha channel appended to the brand yellow token */
-  g.addColorStop(1, `${DOT.color}00`); /* brand-lint-allow: alpha channel appended to the brand yellow token */
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, c.width, c.height);
-  return c;
 }
 
 export function SwarmChapterOne() {
@@ -157,13 +144,7 @@ export function SwarmChapterOne() {
         const alpha = Math.min(local / 120, 1); // no pop at the origin
         ctx.globalAlpha = alpha;
         ctx.globalCompositeOperation = DOT.composite;
-        ctx.drawImage(
-          glow,
-          x - (DOT.radius + DOT.glowRadius),
-          y - (DOT.radius + DOT.glowRadius),
-          glow.width / scale,
-          glow.height / scale,
-        );
+        ctx.drawImage(glow, x - GLOW_R, y - GLOW_R, GLOW_R * 2, GLOW_R * 2);
         ctx.globalCompositeOperation = "source-over";
         ctx.fillStyle = DOT.color;
         ctx.beginPath();

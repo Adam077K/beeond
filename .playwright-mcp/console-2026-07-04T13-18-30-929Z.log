@@ -18,3 +18,66 @@
 [  291769ms] [LOG] [Fast Refresh] done in 35ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [  369316ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [  369350ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  571596ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  571625ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  674821ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  674850ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  720256ms] [ERROR] ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx:76:10
+the name `bakeGlowSprite` is defined multiple times
+  74 |
+  75 | /** Bake the additive glow sprite once — never per-frame shadowBlur. */
+> 76 | function bakeGlowSprite(scale: number): HTMLCanvasElement {
+     |          ^^^^^^^^^^^^^^
+  77 |   const r = (DOT.radius + DOT.glowRadius) * scale;
+  78 |   const c = document.createElement("canvas");
+  79 |   c.width = c.height = Math.ceil(r * 2);
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/hero.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/app/page.tsx @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:3318
+[  720333ms] [ERROR] ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx:76:10
+the name `bakeGlowSprite` is defined multiple times
+  74 |
+  75 | /** Bake the additive glow sprite once — never per-frame shadowBlur. */
+> 76 | function bakeGlowSprite(scale: number): HTMLCanvasElement {
+     |          ^^^^^^^^^^^^^^
+  77 |   const r = (DOT.radius + DOT.glowRadius) * scale;
+  78 |   const c = document.createElement("canvas");
+  79 |   c.width = c.height = Math.ceil(r * 2);
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/hero.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/app/page.tsx @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:3318
+[  720385ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  723942ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  724040ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  726774ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  726803ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  735322ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  735351ms] [LOG] [Fast Refresh] done in 38ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  738083ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  738176ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  773170ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  773196ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  775544ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  775572ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  781974ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  781983ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  893352ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  893378ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  919596ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  919606ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  996411ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[  996420ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1026610ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1026638ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1068467ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1068495ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477

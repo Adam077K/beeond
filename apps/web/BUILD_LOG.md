@@ -85,9 +85,34 @@ DNA audit: split → zig-zag → bleed-stage → path → single → steps → m
 
 ---
 
-## Motion-budget ledger (filled at gate time)
+### C7 — Round 0 (scrub live, progress mismapped)
+- Evidence: `build-evidence/c7-r0-mismapped.png`
+- Bug found by observation: tween positions were authored as progress fractions but GSAP scrub normalizes to timeline duration (~0.56) — everything played at ~half speed, keystone never fired inside the pin.
+- Fix: `tl.set({}, {}, 1)` pins timeline duration to exactly 1 → positions ARE progress fractions, and 0.56→1 becomes the assembled-hold half of the pin. Progress instrumented on `[data-c7-root]` (`data-p`) for e2e.
 
-| Island | JS kb (gz) | INP (4× CPU, 390px) | FPS during scrub |
+### C7 — Round 1 (mapping exact: requested 0.2/0.38/0.43/0.46/0.5/0.75 → measured identical)
+- Evidence: `build-evidence/c7b-0_2.png … c7b-0_75.png` (assembly → hole-in-hive → lock → hold)
+- The pre-keystone frame (0.38) is the thesis made visual: the full hive stands with a HOLE at its center until GEO locks it. Keystone at 0.43–0.5: yellow face arrives with ferry dots, pulse fires, only yellow in an ink hive.
+- Scores (buyer first): comprehension/sell **3.5** (11 channels + delivery-standard proof lines = the scope IS the map) · C7 award moment **3** · distinctiveness **4** (hex-as-IA at full strength) · motion quality **3.5** (deterministic, reversible, 60fps)
+- **Single weakest thing:** the keystone pulse is barely perceptible (0.55 opacity hairline).
+- Fix applied: pulse opacity 0.55→0.85, expansion 1.42→1.55, longer fade window (still <400ms at natural scroll; scrub-mapped so fully reversible).
+
+### C7 — acceptance checks (measured)
+- **JS-off (1440):** 11/11 proof lines present, assembled hive visible — `build-evidence/c7-jsoff-1440.png`
+- **Mobile (390):** 11-row hive ledger, anchor row emphasized, `scrollWidth == clientWidth` (no h-scroll) — `build-evidence/c7-mobile-390.png`
+- **Reduced-motion:** scrub never mounts; 260vh runway collapses to one viewport; assembled SSR hive stands.
+
+---
+
+## Motion-budget ledger
+
+| Island | JS kb (gz) | INP (4× CPU, 390px) | FPS during scrub (4× CPU, 1440) |
 |--------|-----------|--------------------|------------------|
-| hero swarm | — | — | — |
-| C7 stage | — | — | — |
+| hero swarm | measured at gate | n/a (no interaction) | one-shot, 1.6s, then dead |
+| C7 stage (GSAP+ST dynamic import) | measured at gate | n/a (no C7 expand — D7) | **avg 16.7ms / worst 17.7ms / 0 frames >33ms over 99 frames = locked 60fps** |
+
+| # | Deviation (appended) | Rationale | Gate still honored |
+|---|-----------|-----------|-------------------|
+| D6 | Mobile hero order: copy→CTA→art (v3 wanted H1→art→CTA) | CTA in first viewport on a conversion page; occlusion passes text-only | LCP=H1, founders adjacent |
+| D7 | C7 tiles show proof lines statically — no `<details>` expand | Proof always visible beats hidden-behind-interaction for GEO/crawlability and the 5-second scan; INP gets measured on FAQ accordion + mobile menu instead | "JS-off shows every proof one-liner" (stronger than the letter of the gate) |
+| D8 | C7 mobile = plain-flow hive ledger, no pin/scrub/canvas | Text-in-hex unreadable at 390; pin+canvas is the INP risk on mid-range Android; yellow anchor row keeps the keystone emphasis | Floor-protection authority (§9); all 11 proofs SSR |
