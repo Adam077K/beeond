@@ -250,3 +250,37 @@ It can also happen if the client has a browser extension installed which messes 
 [ 1706483ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 1706495ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 1709538ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 1798353ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1798368ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1822274ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1822564ms] [LOG] [Fast Refresh] done in 143ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1823084ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1823119ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1828378ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1828500ms] [LOG] [Fast Refresh] done in 147ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1828871ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1828876ms] [LOG] [Fast Refresh] done in 105ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1868144ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1868176ms] [LOG] [Fast Refresh] done in 35ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1874635ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1874675ms] [LOG] [Fast Refresh] done in 35ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1931532ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1931572ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1958168ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1958206ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1960532ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1960571ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1964294ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1964321ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1998630ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1998730ms] [LOG] [Fast Refresh] done in 201ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1998930ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/nonexistent:0
+[ 1998948ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1998955ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1999117ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1999366ms] [LOG] [Fast Refresh] done in 351ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1999385ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 1999393ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2002448ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 2029239ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2029273ms] [LOG] [Fast Refresh] done in 58ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477

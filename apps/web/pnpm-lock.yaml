@@ -24,6 +24,9 @@ importers:
       '@axe-core/playwright':
         specifier: ^4
         version: 4.12.1(playwright-core@1.61.1)
+      '@expo-google-fonts/rubik':
+        specifier: ^0.4.2
+        version: 0.4.2
       '@fontsource-variable/rubik':
         specifier: ^5
         version: 5.2.8
@@ -182,6 +185,9 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@expo-google-fonts/rubik@0.4.2':
+    resolution: {integrity: sha512-WJtpQEw4lDKjCVnVIBF9qiZn+BTOB3juWvSchpZ+mnHFFV0gh4PyOvLLJCOMmKVgSj/pzFDtNe4apqexrD0+pA==}
 
   '@fontsource-variable/rubik@5.2.8':
     resolution: {integrity: sha512-vGDExLzB4a2Fj9mca5LqNoA2ZKcU9o+x5FEBLte/nxYkCB9hOQwZS6ZlItUv+Ssn7YMzKauGuI/Po+YueFuZbg==}
@@ -2166,6 +2172,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@expo-google-fonts/rubik@0.4.2': {}
 
   '@fontsource-variable/rubik@5.2.8': {}
 

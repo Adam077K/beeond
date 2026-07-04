@@ -353,6 +353,55 @@ html[lang="he"] .hero-h1 {
     content-visibility var(--dur-4) allow-discrete;
 }
 
+/* ── Mobile menu: glass overlay, staggered reveal, exits at 0.8× ── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background-color: color-mix(in oklab, var(--color-ground) 96%, transparent);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity calc(var(--dur-4) * 0.8) var(--ease-exit),
+    visibility 0s linear calc(var(--dur-4) * 0.8);
+}
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--dur-4) var(--ease-settle),
+    visibility 0s;
+}
+.mobile-menu .m-link {
+  opacity: 0;
+  translate: 0 14px;
+  transition:
+    opacity calc(var(--dur-3) * 0.8) var(--ease-exit),
+    translate calc(var(--dur-3) * 0.8) var(--ease-exit);
+}
+.mobile-menu.open .m-link {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity var(--dur-4) var(--ease-settle),
+    translate var(--dur-4) var(--ease-settle);
+  transition-delay: calc(70ms + var(--i, 0) * 45ms);
+}
+/* hamburger lines morph to guide the eye toward the hex close */
+.burger-line {
+  transition: transform var(--dur-2) var(--ease-swift);
+}
+.burger:hover .burger-line:first-child {
+  transform: translateY(1px);
+}
+.burger:hover .burger-line:last-child {
+  transform: translateY(-1px);
+}
+
 /* footer quiet links on the dark moment */
 .footer-link {
   transition: color var(--dur-2) var(--ease-swift);
