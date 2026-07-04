@@ -24,6 +24,17 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-05 — Constitution amendment: gold display token + hero-as-artwork (founder mock)
+
+**Context:** Founder rejected the v4 contained-illustration hero ("this was more like my vision — the main hero statement") and supplied a full mock: full-bleed comb bleeding off three edges, channel icons+labels inside the cells, two-tone gold headline, prominent bees, always-on header CTA.
+**Options considered:** (a) mock's literal gold #CDA555 — rejected, 2.19:1 fails WCAG even for display text; (b) keep yellow-underline H1 — rejected, founder's mock is explicit; (c) **same hue deepened to pass**: gold #B28834 (3.08:1 display) + ink-mix for small caps (4.56:1) — chosen.
+**Decision:** 8th brand token `gold` (display accent only: H1 sentence 2, eyebrow, logo tagline — never body text, never a surface). Hero rebuilt as full-viewport artwork with the comb as the literal channel map: hand-inked icon sheet + real bilingual text labels pinned to CV-measured empty-cell centroids; window-clip architecture hides the model's stubborn left-zone bees; RTL via one mirror + chip counter-flip.
+**Rationale:** The founder owns the constitution; a11y-100 is a hard gate the mock's literal color would break — hue preserved, lightness earned the pass. All gates re-proven: e2e 18/18, LH 93/100/96/100, real CDP LCP 632ms, CLS 0.
+**Reversibility:** reversible (token removal is one commit; v4 hero lives in git history).
+**Owner:** ceo (founder-mandated single designer-engineer session)
+**Affects:** design-lead (gold usage rules in future sections), QA-Lead (v5 delta needs a fresh gate before merge), CMO (nav copy: What we do / Results / About us).
+
+
 ## 2026-07-05 — v4 hero shipped: generated Field Journal art, deterministic brand pipeline
 
 **Context:** Founder funded direct gpt-image-1 access ("send the messages and get the images directly to you"). First v4 asset (hero) generated, art-directed and integrated in one session on `feat/journal-hero`.

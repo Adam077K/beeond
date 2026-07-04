@@ -1,36 +1,37 @@
 import { COPY } from "@/lib/brand.lock";
 import { CtaButton } from "../cta-button";
 import { I18n } from "../i18n";
-import { JournalComb } from "./journal-comb";
+import { JournalHeroArt, JournalFreeBees } from "./journal-hero";
 
-/** Small yellow hex bullet — legit fill use. */
-function HexBullet() {
+/** Hand-inked hex-bee glyph for the micro-proof row (gold stroke). */
+function HexBeeGlyph() {
   return (
-    <svg viewBox="0 0 20 22" className="size-3" aria-hidden="true">
+    <svg viewBox="0 0 44 48" className="size-11 shrink-0" aria-hidden="true">
       <path
-        d="M10 1 18 6.5v9L10 21l-8-5.5v-9Z"
-        fill="var(--color-yellow)"
-        stroke="var(--color-ink)"
-        strokeWidth="1.4"
+        d="M22 3 39 13v22L22 45 5 35V13Z"
+        fill="none"
+        stroke="var(--color-gold)"
+        strokeWidth="1.5"
         strokeLinejoin="round"
       />
+      <g stroke="var(--color-gold)" strokeWidth="1.4" fill="none" strokeLinecap="round">
+        <ellipse cx="22" cy="26" rx="4.2" ry="6" />
+        <path d="M18.4 24.4h7.2M18.6 27h6.8M19.4 29.6h5.2" />
+        <circle cx="22" cy="18.4" r="1.8" />
+        <path d="M17.8 21.5c-3.4-1.4-5.8-.6-6.6 1.2 1.8 1.6 4.4 1.4 6.9-.1M26.2 21.5c3.4-1.4 5.8-.6 6.6 1.2-1.8 1.6-4.4 1.4-6.9-.1" />
+        <path d="M20.9 16.9c-.7-1.1-1.6-1.7-2.6-1.9M23.1 16.9c.7-1.1 1.6-1.7 2.6-1.9" />
+      </g>
     </svg>
   );
 }
 
-function FounderMark({ initials }: { initials: string }) {
+/** Play glyph nested in its own circle (secondary CTA, mock pattern). */
+function PlayOrb() {
   return (
-    <span className="relative inline-flex size-11 shrink-0 items-center justify-center">
-      <svg viewBox="0 0 40 44" className="absolute inset-0 size-full" aria-hidden="true">
-        <path
-          d="M20 2 37 12.5v19L20 42 3 31.5v-19Z"
-          fill="var(--color-panel)"
-          stroke="var(--color-ink)"
-          strokeWidth="1.6"
-          strokeLinejoin="round"
-        />
+    <span className="cta-play inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-ink/25">
+      <svg viewBox="0 0 10 12" className="ms-0.5 size-2.5" aria-hidden="true">
+        <path d="M1 1.2v9.6L9 6Z" fill="var(--color-ink)" />
       </svg>
-      <span className="relative text-[13px] font-bold tracking-[-0.01em]">{initials}</span>
     </span>
   );
 }
@@ -50,88 +51,114 @@ const FOUNDERS = [
   },
 ] as const;
 
+function FounderMark({ initials }: { initials: string }) {
+  return (
+    <span className="relative inline-flex size-11 shrink-0 items-center justify-center">
+      <svg viewBox="0 0 40 44" className="absolute inset-0 size-full" aria-hidden="true">
+        <path
+          d="M20 2 37 12.5v19L20 42 3 31.5v-19Z"
+          fill="var(--color-panel)"
+          stroke="var(--color-ink)"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <span className="relative text-[13px] font-bold tracking-[-0.01em]">{initials}</span>
+    </span>
+  );
+}
+
 /**
- * Hero (C8 v4) — restrained, fast, editorial, asymmetric. H1 is real SSR text.
- * Committed composition: V-A split with the ledger-row founders graft
- * (BUILD_LOG). The art column is the Field Journal page (journal-comb.tsx):
- * paper == ground token, bee sprites converge once via CSS — zero hero JS.
+ * Hero (C8 v5) — the founder's mock: the Field Journal artwork IS the hero.
+ * Full-bleed comb runs off three page edges (journal-hero.tsx); text column
+ * left; H1 two-tone (line 1 ink, sentence 2 watercolor-gold — v5 amendment);
+ * micro-proof row anchors the fold. H1 copy stays verbatim per brand.lock.
  */
 export function Hero() {
   const [line1, line2] = COPY.h1.en;
-  const accent = COPY.h1AccentWord.en; // "match"
-  // deliberate 3-line break: "The AI era moves fast." / "Your presence" / "needs to match."
-  const [line2a, line2b] = ["Your presence", line2.replace("Your presence ", "")];
-  const line2bLead = line2b.slice(0, line2b.lastIndexOf(accent)).trimEnd();
-  // locked HE strings, same 3-line architecture, accent on בקצב
+  const [line2a] = ["Your presence"];
+  const line2b = line2.replace("Your presence ", "");
   const [heL1, heL2] = COPY.h1.he;
-  const heAccent = COPY.h1AccentWord.he;
-  const heL2a = "הנוכחות שלכם צריכה";
-  const heL2b = heL2.replace(`${heL2a} `, ""); // "לעמוד בקצב."
-  const heL2bLead = heL2b.slice(0, heL2b.lastIndexOf(heAccent)).trimEnd();
+  // break at the natural phrase boundary so HE holds 3 lines like EN
+  const heL2a = "הנוכחות שלכם";
+  const heL2b = heL2.replace(`${heL2a} `, "");
 
   return (
-    <section className="relative">
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 px-7 pb-16 pt-28 lg:grid-cols-[1.5fr_1fr] lg:gap-x-4 lg:pb-20 lg:pt-36">
-        {/* copy column */}
-        <div className="relative z-10">
-          <p className="flex items-center gap-2.5 text-[13.5px] font-medium tracking-[0.01em]">
-            <HexBullet />
+    <section className="hero-v5 relative flex min-h-[100dvh] flex-col">
+      {/* the artwork layer — bleeds off top/right/bottom; sr-only description inside */}
+      <div className="journal-stage">
+        <JournalHeroArt />
+      </div>
+      <JournalFreeBees />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-1 flex-col justify-center px-7 pb-14 pt-32 lg:pt-36">
+        <div className="max-w-[560px]">
+          <p className="eyebrow-gold text-[13px] font-semibold uppercase tracking-[0.18em]">
             <I18n en={COPY.eyebrow.en} he={COPY.eyebrow.he} />
           </p>
-          <h1 className="hero-h1 mt-7 text-[clamp(44px,5vw,74px)] font-bold leading-[1.02] tracking-[-0.035em] lg:w-[128%] lg:max-w-none">
+          <h1 className="hero-h1 mt-6 text-[clamp(42px,4.8vw,72px)] font-bold leading-[1.04] tracking-[-0.035em]">
             <span className="i18n-en">
-              <span className="block lg:whitespace-nowrap">{line1}</span>
-              <span className="block">{line2a}</span>
-              <span className="block">
-                {line2bLead} <span className="u-accent">{accent}</span>.
-              </span>
+              <span className="block">{line1}</span>
+              <span className="block text-gold">{line2a}</span>
+              <span className="block text-gold">{line2b}</span>
             </span>
             <span className="i18n-he" lang="he">
-              <span className="block lg:whitespace-nowrap">{heL1}</span>
-              <span className="block">{heL2a}</span>
-              <span className="block">
-                {heL2bLead} <span className="u-accent">{heAccent}</span>.
-              </span>
+              <span className="block">{heL1}</span>
+              <span className="block text-gold">{heL2a}</span>
+              <span className="block text-gold">{heL2b}</span>
             </span>
           </h1>
-          <p className="mt-7 max-w-[46ch] text-[17px] leading-[1.55] text-muted lg:text-[18px]">
+          <p className="mt-6 max-w-[44ch] text-[16.5px] leading-[1.6] text-muted lg:text-[17.5px]">
             <I18n en={COPY.subhead.en} he={COPY.subhead.he} />
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-5">
+          <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-4">
             <CtaButton href="#footprint-call">
               <I18n en={COPY.ctaPrimary.en} he={COPY.ctaPrimary.he} />
             </CtaButton>
-            <a href="#channel-map" className="link-quiet text-[15px] font-medium">
+            <a
+              href="#channel-map"
+              className="cta-ghost inline-flex items-center gap-3 rounded-full border border-ink/30 py-2.5 pe-2.5 ps-6 text-[15px] font-medium"
+            >
               <I18n en={COPY.ctaSecondary.en} he={COPY.ctaSecondary.he} />
+              <PlayOrb />
             </a>
           </div>
-          <p className="mt-5 max-w-[52ch] text-[13px] leading-relaxed text-muted">
-            <I18n en={COPY.ctaMicro.en} he={COPY.ctaMicro.he} />
-          </p>
-        </div>
-
-        {/* art column — the Field Journal page; bees converge once, then rest */}
-        <div className="relative mt-14 lg:mt-0">
-          <div className="relative mx-auto w-full max-w-[520px] lg:absolute lg:inset-x-0 lg:top-1/2 lg:max-w-none lg:-translate-y-[46%]">
-            <JournalComb />
+          <div className="mt-10 flex max-w-[52ch] items-start gap-4">
+            <HexBeeGlyph />
+            <p className="text-[13px] leading-relaxed text-muted">
+              <span className="block font-semibold text-ink">
+                <I18n en="No agency pitch. No deck." he="בלי פיץ׳ של סוכנות, בלי מצגת." />
+              </span>
+              <I18n
+                en="We'll show you where your footprint has gaps — and what it would take to close them."
+                he="נראה לכם איפה יש פערים בנוכחות — ומה נדרש כדי לסגור אותם."
+              />
+            </p>
           </div>
         </div>
 
-        {/* founders ledger — full-width proof row (V-C graft) */}
-        <div className="mt-12 border-t border-hairline pt-6 lg:col-span-2 lg:mt-10">
+        {/* mobile: the comb rides below the copy */}
+        <div className="journal-mobile mt-12" aria-hidden="true">
+          <JournalHeroArt />
+        </div>
+      </div>
+
+      {/* founders ledger — proof row at the fold's edge */}
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-7 pb-8">
+        <div className="border-t border-hairline pt-5 lg:max-w-[640px]">
           <p className="text-[12px] font-medium text-muted">
             <I18n
               en="Built by the people who actually do it."
               he="נבנה על ידי האנשים שבאמת עושים את זה."
             />
           </p>
-          <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:gap-14">
+          <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:gap-12">
             {FOUNDERS.map((f) => (
               <div key={f.name} className="flex items-center gap-4">
                 <FounderMark initials={f.initials} />
                 <div>
-                  <p className="text-[15px] font-bold">{f.name}</p>
-                  <p className="mt-0.5 max-w-[38ch] text-[12.5px] leading-snug text-muted">
+                  <p className="text-[14.5px] font-bold">{f.name}</p>
+                  <p className="mt-0.5 max-w-[38ch] text-[12px] leading-snug text-muted">
                     <I18n en={f.line} he={f.lineHe} />
                   </p>
                 </div>

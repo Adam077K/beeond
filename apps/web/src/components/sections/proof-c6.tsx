@@ -10,7 +10,7 @@ import { I18n } from "../i18n";
  */
 export function ProofC6Section() {
   return (
-    <section className="bg-panel">
+    <section id="proof" className="bg-panel">
       <div className="mx-auto max-w-[1180px] px-7 py-28 lg:py-32">
         <div className="grid gap-y-10 lg:grid-cols-[1fr_1.1fr] lg:gap-x-12">
           <div>
