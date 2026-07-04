@@ -19,7 +19,7 @@ from pathlib import Path
 from PIL import Image
 
 
-def paper_white(im: Image.Image, band: int = 48) -> tuple[float, float, float]:
+def paper_white(im: Image.Image, band: int = 48) -> tuple[int, int, int]:
     rgb = im.convert("RGB")
     w, h = rgb.size
     px = rgb.load()

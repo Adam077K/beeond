@@ -186,8 +186,8 @@ async function generate(name, { quality, qualityExplicit, n, transparent }) {
 const args = process.argv.slice(2);
 const name = args[0];
 const qualityExplicit = args.includes("--quality");
-const quality = qualityExplicit ? args[args.indexOf("--quality") + 1] : "high";
-const n = args.includes("--n") ? Number(args[args.indexOf("--n") + 1]) : 1;
+const quality = qualityExplicit ? (args[args.indexOf("--quality") + 1] ?? "high") : "high";
+const n = args.includes("--n") ? Number(args[args.indexOf("--n") + 1] ?? 1) : 1;
 const transparent = args.includes("--transparent");
 const opts = { quality, qualityExplicit, n, transparent };
 

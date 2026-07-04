@@ -70,6 +70,8 @@ function ArtPage({ lang, eager }: { lang: "en" | "he"; eager?: boolean }) {
         <img
           src={`/art/hero-comb-${lang}.webp`}
           srcSet={`/art/hero-comb-${lang}-768.webp 768w, /art/hero-comb-${lang}-1024.webp 1024w, /art/hero-comb-${lang}.webp 1536w`}
+          // 700px ≈ .journal-page at desktop: right column (~472px at the
+          // 1180px container) × 128.2% crop overflow + growth headroom
           sizes="(min-width: 1024px) 700px, 100vw"
           width={IMG_W}
           height={IMG_H}
@@ -83,7 +85,7 @@ function ArtPage({ lang, eager }: { lang: "en" | "he"; eager?: boolean }) {
         {BEES.map((b) => (
           // eslint-disable-next-line @next/next/no-img-element -- tiny alpha sprite, pre-sized
           <img
-            key={b.sprite}
+            key={`bee-${b.sprite}-${b.x}-${b.y}`}
             src={`/art/bee-${b.sprite}.webp`}
             alt=""
             width={220}
