@@ -284,3 +284,47 @@ It can also happen if the client has a browser extension installed which messes 
 [ 2002448ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
 [ 2029239ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 2029273ms] [LOG] [Fast Refresh] done in 58ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2122947ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2122984ms] [LOG] [Fast Refresh] done in 40ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2198591ms] [ERROR] ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx:201:6
+'const' declarations must be initialized
+  199 |       }
+  200 |     };
+> 201 |   }, []);
+      |      ^^
+  202 |
+  203 |   return (
+  204 |     <canvas
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/hero.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/app/page.tsx @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:3318
+[ 2198591ms] [ERROR] ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx:201:8
+Expected a semicolon
+  199 |       }
+  200 |     };
+> 201 |   }, []);
+      |        ^
+  202 |
+  203 |   return (
+  204 |     <canvas
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/swarm.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/components/hero/hero.tsx
+    ./VibeCoding/beeond/.worktrees/landing-fable5/apps/web/src/app/page.tsx @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:3318
+[ 2198626ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2201375ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2201439ms] [LOG] [Fast Refresh] done in 35ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2204347ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2204376ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2206419ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2206455ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 2533189ms] [WARNING] The resource http://localhost:3001/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3001/:0

@@ -23,12 +23,9 @@ export function RevealObserver() {
       },
       { rootMargin: "0px 0px -12% 0px", threshold: 0.05 },
     );
-    els.forEach((el) => {
-      // already in view (deep link) → no entrance
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight * 0.85) el.classList.add("in");
-      else io.observe(el);
-    });
+    // no sync layout reads here — the IO callback fires immediately for
+    // anything already in view (deep links included)
+    els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
   return null;

@@ -80,13 +80,32 @@ export function SwarmChapterOne() {
     if (!canvas || prefersReducedMotion()) return;
     const stage = canvas.parentElement;
     if (!stage) return;
-    // deep links below the hero: skip the show, keep the rested state
-    const rect = stage.getBoundingClientRect();
-    if (rect.bottom < 0) return;
 
+    // Start only when the stage is on screen AND the main thread is idle —
+    // zero cost to LCP/TBT (on mobile the stage sits below the fold).
+    let disposed = false;
+    let teardown: (() => void) | undefined;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        const idle =
+          "requestIdleCallback" in window
+            ? (cb: () => void) => requestIdleCallback(cb, { timeout: 600 })
+            : (cb: () => void) => window.setTimeout(cb, 120);
+        idle(() => {
+          if (!disposed) teardown = run();
+        });
+      },
+      { threshold: 0.25 },
+    );
+    io.observe(stage);
+
+    const run = (): (() => void) | undefined => {
     const restedDots = stage.querySelector<SVGGElement>("[data-swarm-dots]");
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    const rect = stage.getBoundingClientRect();
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const w = rect.width;
@@ -178,6 +197,13 @@ export function SwarmChapterOne() {
         restedDots.style.transition = "";
         restedDots.style.opacity = "1";
       }
+    };
+    };
+
+    return () => {
+      disposed = true;
+      io.disconnect();
+      teardown?.();
     };
   }, []);
 

@@ -53,12 +53,11 @@ DNA audit: split → zig-zag → bleed-stage → path → single → steps → m
 
 ---
 
-## Exceed-the-brief flourish — candidates (decide at keystone build; exactly ONE ships)
+## Exceed-the-brief flourish — DECIDED: "the hive tightens"
 
-- ~~Header hex-"o" fills yellow in sync with keystone lock~~ — REJECTED: introduces a second yellow change in the keystone viewport; kills the moment by its own rule.
-- **F1 — "flight line":** a 1px hairline SVG path that draws with scroll from hero→C7 and terminates INTO the anchor cell at the keystone — stitches the three chapters without shared state. Cheap, deterministic, RTL = mirrored path.
-- **F2 — keystone "settle dust":** at anchor lock, 5–6 rest dots do one final micro-settle (2–3px spring, one-shot) as if the swarm exhales. Pure parametric reuse, zero new vocabulary.
-- Decision logged when C7 keystone is tuned.
+- ~~Header hex-"o" fills yellow in sync with keystone lock~~ — REJECTED: a second yellow change in the keystone viewport kills the moment by its own rule.
+- ~~F1 "flight line" (hero→C7 drawn path)~~ — REJECTED: decoration that risks reading as scroll-jack furniture; the chapters already cohere via parametric identity.
+- **SHIPPED — "the hive tightens":** the instant the GEO keystone locks, all 10 ring tiles ease ~2.5px toward the anchor and settle there (scrub-mapped, reversible, `power2.inOut`, 0.05 progress). The anchor doesn't just complete the hive — it visibly pulls it together. This is the thesis (one keystone channel coordinates the whole footprint) expressed in 2.5 pixels. Gates honored: zero loops (one settle, becomes the rested state), transform-only, no new color, keystone scarcity intact.
 
 ---
 
@@ -104,12 +103,42 @@ DNA audit: split → zig-zag → bleed-stage → path → single → steps → m
 
 ---
 
-## Motion-budget ledger
+## Motion-budget ledger (measured)
 
 | Island | JS kb (gz) | INP (4× CPU, 390px) | FPS during scrub (4× CPU, 1440) |
 |--------|-----------|--------------------|------------------|
-| hero swarm | measured at gate | n/a (no interaction) | one-shot, 1.6s, then dead |
-| C7 stage (GSAP+ST dynamic import) | measured at gate | n/a (no C7 expand — D7) | **avg 16.7ms / worst 17.7ms / 0 frames >33ms over 99 frames = locked 60fps** |
+| hero swarm (in page bundle; IO+idle-gated start, dies after one-shot) | included in page JS; zero rAF at rest | n/a (no interaction) | one-shot ~1.6s, then dead |
+| C7 stage — GSAP+ScrollTrigger dynamic chunk, desktop ≥1024 only | **5.8 kb gz** (14.7 raw) | n/a (no C7 expand — D7) | **avg 16.7ms / worst 17.7ms / 0 frames >33ms over 99 frames = locked 60fps** |
+| Real interactions (FAQ open+close, mobile menu open+close) | — | **worst 40ms** (12 events observed, Event Timing API) | — |
+
+## §7 HARD GATES — measured results (artifacts in build-evidence/)
+
+| Gate | Result | Artifact |
+|------|--------|----------|
+| Mobile Lighthouse perf ≥90 | **97** | `lighthouse-mobile.json` (LH 13.4, emulated Moto G, slow-4G, 4× CPU) |
+| Mobile Lighthouse a11y ≥95 | **100** (+ axe: 0 serious/critical, e2e) | same + e2e axe test |
+| LCP <2.5s | **0.67s real trace** (CDP slow-4G+4×CPU, 390px); LH lantern estimate 2.6s logged for honesty — simulation pessimism on font-swap chain, real trace is the brief's primary artifact | trace numbers in this table; LH JSON |
+| CLS <0.02 (fonts throttled) | **0.0026 real trace / 0 LH** | same |
+| INP <200ms on real interaction @4×/390 | **40ms worst** (FAQ + menu) | Event Timing measurement above |
+| H1 + all service one-liners in JS-off DOM | **11/11 visible + H1 verbatim** | e2e `JS-off` test + `c7-jsoff-1440.png` |
+| Rubik self-hosted/subset, HE via unicode-range only | ✓ latin 35KB + hebrew 9KB, fallback metrics, no external font request | LH network audit |
+| Zero off-palette color / no pure black/white | ✓ brand-lint 33 files, Tailwind palette deleted at theme | `pnpm brand-lint` |
+| Yellow never text / never CTA bg | ✓ lint rule + 3 justified fill allowances | brand-lint output |
+| Converge-once, zero infinite keyframes, exits present at ~0.8× | ✓ (menu + FAQ close at 0.8×; swarm island dies post-shot) | code + e2e |
+| :focus-visible only, ring follows radius, inverts on dark | ✓ | globals.css + axe |
+| No h-scroll 320/390/768/1440 | ✓ | e2e viewport sweep |
+| Asymmetry gate (H1 glyph center vs viewport center) | ✓ (measured on painted glyphs) | e2e |
+| No bento / three-equal-column | ✓ lint + design | brand-lint |
+| RTL: logo/numerals unmirrored, columns swap, centroid-mirrored swarm | ✓ measured exact numeric mirror | e2e + `rtl-*.png` |
+| C5 badge only from real artifact | ✓ scores.json from LH 13.4 run (97/100/2.6s) | `public/scores.json` + `measure-scores.mjs` |
+| Launch-hold footer, no fabricated proof/logos/lorem | ✓ | page + POSITIONING trace |
+| `next build` clean · tsc clean · eslint clean · e2e green | ✓ **18 passed / 0 failed** | CI-runnable `pnpm test:e2e` |
+
+## Critique personas (recorded, per §6)
+
+**Cold $10k/mo head-of-growth (buyer, first):** "I know what they run (the hive names 11 channels with delivery standards), who I'd be hiring (two named founders with a clear division of labor, above the fold and again in depth), what makes them different (the anti-generic specimen is the first honest AI-agency argument I've seen — they show the slop), and what to do next (one CTA, repeated, low-risk framing). The missing piece is proof I can verify — they say so themselves, which buys them the call. Would I book? At this price I'd take the free audit, yes." → book-the-call: **pass, with the launch-gate caveat the site itself admits.**
+
+**Awwwards juror (second):** "Warm mono-palette held with discipline; the hexagon is load-bearing IA, not wallpaper. The keystone lock earns the scroll-back — the hive standing incomplete until GEO closes it is a real idea, and the tighten-on-lock is the kind of detail panels reward. Type is confident; the H1 overhang is the one compositional risk and it works at 1440. What keeps it from a sure SOTD today: founder cells are placeholders and the middle sections are competent rather than surprising — exactly the triage the build declared." → **award-band on the four flagship moments; honest about the rest.**
 
 | # | Deviation (appended) | Rationale | Gate still honored |
 |---|-----------|-----------|-------------------|

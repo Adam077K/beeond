@@ -18,6 +18,7 @@ export default function RootLayout({
     as: "font",
     type: "font/woff2",
     crossOrigin: "anonymous",
+    fetchPriority: "high",
   });
   return (
     <html lang="en" suppressHydrationWarning>

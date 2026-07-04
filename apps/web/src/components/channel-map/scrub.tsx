@@ -225,6 +225,33 @@ export function ChannelMapScrub() {
       }
       if (hint) tl.to(hint, { opacity: 0, duration: 0.05 }, ANCHOR_START + 0.06);
 
+      // FLOURISH (Charter of Autonomy, the one invention): "the hive
+      // tightens" — the instant the keystone locks, every ring tile eases
+      // ~2.5px toward the anchor and settles there. The GEO cell doesn't
+      // just complete the hive; it visibly pulls it together. Scrub-mapped,
+      // deterministic, reversible; the tightened hive IS the rested state.
+      {
+        const aRect = anchor.getBoundingClientRect();
+        const ax = aRect.left + aRect.width / 2;
+        const ay = aRect.top + aRect.height / 2;
+        nonAnchor.forEach((tile) => {
+          const r = tile.getBoundingClientRect();
+          const dx = ax - (r.left + r.width / 2);
+          const dy = ay - (r.top + r.height / 2);
+          const len = Math.max(Math.hypot(dx, dy), 1);
+          tl.to(
+            tile,
+            {
+              x: (dx / len) * 2.5,
+              y: (dy / len) * 2.5,
+              duration: 0.05,
+              ease: "power2.inOut",
+            },
+            ANCHOR_START + 0.055,
+          );
+        });
+      }
+
       const onResize = () => buildFerries();
       window.addEventListener("resize", onResize);
 
