@@ -140,6 +140,39 @@ DNA audit: split → zig-zag → bleed-stage → path → single → steps → m
 
 **Awwwards juror (second):** "Warm mono-palette held with discipline; the hexagon is load-bearing IA, not wallpaper. The keystone lock earns the scroll-back — the hive standing incomplete until GEO closes it is a real idea, and the tighten-on-lock is the kind of detail panels reward. Type is confident; the H1 overhang is the one compositional risk and it works at 1440. What keeps it from a sure SOTD today: founder cells are placeholders and the middle sections are competent rather than surprising — exactly the triage the build declared." → **award-band on the four flagship moments; honest about the rest.**
 
+## Cross-section fresh-eyes (rhythm drift audit)
+
+Full-page reloads reviewed at 1440 (`build-evidence/full-1440.png`) + 390. DNA sequence: asym-split → zig-zag → full-bleed pin → path-on-panel → narrow-dense → stepped-panels → mirrored-split → hairline-strip → centered-short → narrow-list → dark-bleed. No two adjacent sections share padding/column DNA; the two panel beats (4, 6) are separated by the dense manifesto; the two short beats (C5 strip, social) use opposite alignment grammars (start-aligned row vs centered). Verdict: no redesign required; metronome avoided by construction of the rhythm map.
+
+## §8 craft rubric — final self-scores (0–4)
+
+1. Typographic rhythm **3.5** · 2. Distinctiveness (logo-removed: warm ink + one pointing yellow + hex-IA + converge-once all present) **4** · 3. C7 award moment + keystone **3.5** · 4. Motion quality (per-intent curves, ladder durations, 60fps scrub capture) **3.5** · 5. Copy/voice persuasion (occlusion passes: what/who/next in fold) **3.5** · 6. Cross-section consistency **3** · 7. RTL structural readiness (numeric centroid mirror, measured) **4**
+**Mean 3.57 · no dimension <3 · C7 3.5 & distinctiveness 4 ≥3.5 → award band met (self-assessed; design-critic verification recommended at QA).**
+
+## Honest deferrals (launch-gate vs fast-follow)
+
+| Item | Class |
+|------|-------|
+| Full Hebrew content beyond the locked hero (all sections, hreflang/urls) | fast-follow (sanctioned by brief) |
+| Founder credential-dense microlines + editorial photography (placeholders are designed objects) | **launch gate** (founder-side) |
+| Real booking link — CTA is `mailto:hello@beeond.ai`; mailbox must be created or href swapped | **launch gate** |
+| `Bee⬡nd` logotype refinement (interim v0.9 inline SVG shipped) | founder vector pass |
+| Native-Hebrew review on a real device; real mid-range-Android INP | **launch gate** |
+| C7 on mobile = ledger, no scrub (D8, floor-protection) | v2 candidate |
+| LH lantern LCP reads 2.6s vs 0.67s real trace — re-verify on real field data at launch | monitoring |
+| Hero swarm round-3 polish (rest-cluster shape) if design-critic flags it | QA follow-up |
+
+## How to run
+
+```bash
+cd apps/web && pnpm install
+pnpm dev            # http://localhost:3000
+pnpm brand-lint     # constitution gate (zero tolerance)
+pnpm lint && pnpm build
+pnpm test:e2e       # 18 gates, builds+serves on :3001
+node scripts/measure-scores.mjs <lighthouse.json>  # refresh C5 artifact
+```
+
 | # | Deviation (appended) | Rationale | Gate still honored |
 |---|-----------|-----------|-------------------|
 | D6 | Mobile hero order: copy→CTA→art (v3 wanted H1→art→CTA) | CTA in first viewport on a conversion page; occlusion passes text-only | LCP=H1, founders adjacent |
