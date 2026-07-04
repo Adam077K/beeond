@@ -417,3 +417,11 @@ Import trace:
 [ 3585576ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 3585586ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
 [ 3588642ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 3723348ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3723363ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3726404ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 3759690ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3759728ms] [LOG] [Fast Refresh] done in 37ms @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3843157ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3843172ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0pc7_next_dist_0n5a9ki._.js:2477
+[ 3846234ms] [WARNING] The resource http://localhost:3000/fonts/rubik-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0

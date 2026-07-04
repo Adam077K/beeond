@@ -140,6 +140,21 @@ DNA audit: split → zig-zag → bleed-stage → path → single → steps → m
 
 **Awwwards juror (second):** "Warm mono-palette held with discipline; the hexagon is load-bearing IA, not wallpaper. The keystone lock earns the scroll-back — the hive standing incomplete until GEO closes it is a real idea, and the tighten-on-lock is the kind of detail panels reward. Type is confident; the H1 overhang is the one compositional risk and it works at 1440. What keeps it from a sure SOTD today: founder cells are placeholders and the middle sections are competent rather than surprising — exactly the triage the build declared." → **award-band on the four flagship moments; honest about the rest.**
 
+## Quality wave 1 (founder directive: "a lot more quality") — evidence
+
+Independent design-critic subagent spawned on the full screenshot set; my own section-by-section pass ran in parallel. Findings fixed, before/after in `build-evidence/`:
+
+| Section | Before | Finding | After |
+|---|---|---|---|
+| how-it-works | `q-how.png` — flight path STRUCK THROUGH the "Foundation" heading; wave unanchored | P1 broken geometry | `p3-how.png` — one continuous line strung under all three nodes on a shared baseline, sags between, yellow landing dot at 03; editorial stagger moved to the text blocks |
+| problem | `q-problem.png` — full-width heading with a dead right zone; invisible hairline bullets | P2 composition | `p2-problem.png` — cost panel rises beside the heading (stepped 2-col), options become a numbered hairline ledger |
+| C6 proof | `q-c6.png` — same dead-zone pattern | P2 composition | `p2-c6.png` — method panel top-aligns with the heading; question specimen below-left; numbered enabler rows |
+| page-wide | flat digital ground; unrelated section headers | P2 texture/grammar | feTurbulence paper grain (3.2% multiply, fixed layer — perf re-verified 97) + numbered eyebrow grammar 01–07 with hairline dash |
+| founders / final | plain placeholder cells; small hive | P3 | cells get their ring-1 lattice neighborhood (`p3-founders.png`); final hive enlarged + more rested bees; C5 badge dates its measurement |
+| hero | rest cluster "spotty" (round-2 note) | P3 | 66 dots, 10 edge perchers, steeper gravity (`p2-hero.png`) |
+
+Post-wave gates: LH perf **97** / a11y **100**, TBT 10ms, CLS 0, e2e **18/18**, brand-lint 0/34, mobile h-scroll 0 (`m2-*.png`).
+
 ## Cross-section fresh-eyes (rhythm drift audit)
 
 Full-page reloads reviewed at 1440 (`build-evidence/full-1440.png`) + 390. DNA sequence: asym-split → zig-zag → full-bleed pin → path-on-panel → narrow-dense → stepped-panels → mirrored-split → hairline-strip → centered-short → narrow-list → dark-bleed. No two adjacent sections share padding/column DNA; the two panel beats (4, 6) are separated by the dense manifesto; the two short beats (C5 strip, social) use opposite alignment grammars (start-aligned row vs centered). Verdict: no redesign required; metronome avoided by construction of the rhythm map.
