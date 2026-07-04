@@ -277,6 +277,71 @@
   opacity: 0;
 }
 
+/* ── Scroll reveals — CSS owns the motion, JS only flips the class.
+   Hidden state exists ONLY under html.js + motion-ok (JS-off = visible). ── */
+html.js [data-reveal] {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity var(--dur-5) var(--ease-settle),
+    translate var(--dur-5) var(--ease-settle);
+}
+html.js [data-reveal].in {
+  opacity: 1;
+  translate: 0 0;
+}
+/* the flight path draws once on reveal */
+html.js .flight-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--dur-6) var(--ease-settle) 120ms;
+}
+html.js [data-reveal].in .flight-path {
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    translate: none;
+  }
+  html.js .flight-path {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ── FAQ: hex marker morphs + ⇄ ×, exits at ~0.8× their entrance ── */
+:root {
+  interpolate-size: allow-keywords;
+}
+.faq-plus {
+  transition: transform calc(var(--dur-3) * 0.8) var(--ease-exit);
+}
+.faq-item[open] .faq-plus {
+  transform: rotate(45deg);
+  transition: transform var(--dur-3) var(--ease-settle);
+}
+.faq-item::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size calc(var(--dur-4) * 0.8) var(--ease-exit),
+    content-visibility calc(var(--dur-4) * 0.8) allow-discrete;
+}
+.faq-item[open]::details-content {
+  block-size: auto;
+  transition:
+    block-size var(--dur-4) var(--ease-settle),
+    content-visibility var(--dur-4) allow-discrete;
+}
+
+/* footer quiet links on the dark moment */
+.footer-link {
+  transition: color var(--dur-2) var(--ease-swift);
+}
+.footer-link:hover {
+  color: var(--color-ground);
+}
+
 /* ── Reduced motion: rested end-state from first paint, everywhere ── */
 @media (prefers-reduced-motion: reduce) {
   *,

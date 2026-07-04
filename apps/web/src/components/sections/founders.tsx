@@ -1,0 +1,102 @@
+/**
+ * Section 7 — Founders, deep editorial treatment. Mirrored asymmetry vs the
+ * hero (art start / copy end). Hex placeholders are designed brand objects —
+ * founder photography is a launch-gate item, never a sad gray box.
+ * Copy: POSITIONING §5 Section 8 (credential-dense lines = founder-supplied,
+ * launch gate; the quotes below are POSITIONING's own).
+ */
+const FOUNDERS = [
+  {
+    initials: "A",
+    name: "Adam",
+    role: "AI systems & agent swarms",
+    quote:
+      "I build the thing that makes everything run. When I tell you we use AI to do your marketing, I mean I built the AI.",
+  },
+  {
+    initials: "YM",
+    name: "Yarden Morgan",
+    role: "B2B marketing & growth",
+    quote:
+      "I know what great B2B marketing looks like because I've shipped it. That's the standard the swarm is calibrated to.",
+  },
+] as const;
+
+function FounderCell({ initials }: { initials: string }) {
+  return (
+    <div className="relative mx-auto w-full max-w-[240px]">
+      <svg viewBox="0 0 200 224" className="w-full" aria-hidden="true">
+        <path
+          d="M100 6 194 61v102L100 218 6 163V61Z"
+          fill="var(--color-panel)"
+          stroke="var(--color-ink)"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
+        />
+        {/* faint inner cell — the placeholder is a designed object */}
+        <path
+          d="M100 40 160 75v70l-60 35-60-35V75Z"
+          fill="none"
+          stroke="var(--color-hairline)"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <circle cx="100" cy="176" r="4" fill="var(--color-yellow)" />
+      </svg>
+      <span className="absolute inset-0 flex items-center justify-center text-[44px] font-bold tracking-[-0.02em]">
+        {initials}
+      </span>
+    </div>
+  );
+}
+
+export function FoundersSection() {
+  return (
+    <section id="founders" className="mx-auto max-w-[1180px] px-7 py-24 lg:py-28">
+      <div data-reveal className="lg:ms-[38%]">
+        <p className="text-[13px] font-medium">Founders</p>
+        <h2 className="mt-3 max-w-[22ch] text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">
+          Built by the people who actually do it.
+        </h2>
+      </div>
+
+      <div className="mt-14 space-y-16">
+        {FOUNDERS.map((f, i) => (
+          <div
+            key={f.name}
+            data-reveal
+            className="grid items-center gap-9 lg:grid-cols-[0.38fr_0.62fr] lg:gap-16"
+          >
+            <div className={i === 1 ? "lg:order-2" : ""}>
+              <FounderCell initials={f.initials} />
+            </div>
+            <div className={i === 1 ? "lg:order-1 lg:text-end" : ""}>
+              <h3 className="text-[22px] font-bold tracking-[-0.01em]">{f.name}</h3>
+              <p className="mt-1 text-[13.5px] font-medium text-muted">{f.role}</p>
+              <blockquote
+                className={`mt-5 max-w-[44ch] text-[clamp(17px,1.7vw,21px)] font-medium leading-[1.45] tracking-[-0.01em] ${
+                  i === 1 ? "lg:ms-auto" : ""
+                }`}
+              >
+                {f.quote}
+              </blockquote>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div data-reveal className="mt-16 border-t border-hairline pt-8 lg:ms-[38%]">
+        <p className="max-w-[52ch] text-[16px] leading-[1.55]">
+          We didn&apos;t find each other at a networking event. We built Beeond
+          because we couldn&apos;t find an agency that did what we knew was{" "}
+          <span className="u-accent">possible</span>.
+        </p>
+        <p className="mt-4 max-w-[52ch] text-[13.5px] leading-[1.55] text-muted">
+          Built for founders who move fast and spend seriously on growth. We
+          talk to every potential client personally — we&apos;re selective
+          because we have to be.
+        </p>
+      </div>
+    </section>
+  );
+}
