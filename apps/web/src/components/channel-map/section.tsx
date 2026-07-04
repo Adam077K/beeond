@@ -69,9 +69,12 @@ export function ChannelMapSection() {
                         </svg>
                       </span>
                     ) : null}
+                    {/* the paper sheet stays put; the cell lifts off it on hover */}
+                    <span className="hex-stack" aria-hidden="true" />
                     <div className="hex-hover relative h-full w-full">
                       <span className="hex-border" aria-hidden="true" />
                       <span className="hex-face" aria-hidden="true" />
+                      <span className="hex-rim" aria-hidden="true" />
                       <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
                         <h3 className="text-[14.5px] font-semibold leading-[1.2] tracking-[-0.01em]">
                           {ch.name}

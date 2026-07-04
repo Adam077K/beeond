@@ -227,10 +227,17 @@
   transform: translateY(-3px);
 }
 .hex-border,
-.hex-face {
+.hex-face,
+.hex-stack {
   position: absolute;
   pointer-events: none;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+/* stacked-paper depth: a hairline sheet peeking below each tile */
+.hex-stack {
+  inset: 0;
+  background: var(--color-hairline);
+  transform: translateY(5px);
 }
 .hex-border {
   inset: 0;
@@ -245,12 +252,36 @@
   inset: 1.5px;
   background: var(--color-ground);
 }
+/* wall thickness: an inner hairline ring makes the tile a cell, not a sticker */
+.hex-rim {
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: color-mix(in oklab, var(--color-hairline) 85%, var(--color-ground));
+}
+.hex-rim::after {
+  content: "";
+  position: absolute;
+  inset: 1.3px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--color-ground);
+}
 .hex-tile-anchor .hex-border {
   opacity: 1;
 }
 .hex-tile-anchor .hex-face {
   inset: 2px;
-  background: var(--color-yellow); /* brand-lint-allow: THE anchor cell — the single yellow fill in the hive */
+  /* honey as material — single-hue depth, not a flat sticker.
+     brand-lint-allow: both gradient stops derive from brand tokens */
+  background: linear-gradient(
+    180deg,
+    var(--color-yellow) 52%,
+    color-mix(in oklab, var(--color-yellow) 84%, var(--color-ink))
+  );
+}
+.hex-tile-anchor .hex-rim {
+  display: none;
 }
 /* anchor hover = inner glow, not lift — it is already "on" */
 .hex-tile-anchor .hex-face::after {

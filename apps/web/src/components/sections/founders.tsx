@@ -50,15 +50,32 @@ function FounderCell({ initials }: { initials: string }) {
           strokeWidth="2.5"
           strokeLinejoin="round"
         />
-        {/* faint inner cell — the placeholder is a designed object */}
+        {/* comb wall thickness — the placeholder is a built cell */}
         <path
-          d={hexPath(C.x, C.y, 68)}
-          fill="none"
+          d={hexPath(C.x, C.y, C.r - 12)}
+          fill="var(--color-ground)"
           stroke="var(--color-hairline)"
-          strokeWidth="1.5"
+          strokeWidth="1.4"
           strokeLinejoin="round"
         />
-        <circle cx="100" cy="178" r="4" fill="var(--color-yellow)" />
+        {/* a small honey pool at the cell floor */}
+        <path
+          d={`M ${C.x - 62} 172 L ${C.x + 62} 172 L ${C.x + 47} 199 L ${C.x - 47} 199 Z`}
+          fill="var(--color-yellow)"
+        />
+        <line
+          x1={C.x - 62}
+          y1={172}
+          x2={C.x + 62}
+          y2={172}
+          stroke="var(--color-ink)"
+          strokeOpacity="0.3"
+          strokeWidth="1.4"
+        />
+        <circle cx={C.x - 20} cy={182} r="3" fill="var(--color-ground)" opacity="0.5" />
+        {/* two rested bees on the rim */}
+        <circle cx={C.x - 74} cy={78} r="2.8" fill="var(--color-yellow)" />
+        <circle cx={C.x + 63} cy={64} r="2.8" fill="var(--color-yellow)" />
       </svg>
       <span className="absolute inset-0 flex items-center justify-center text-[44px] font-bold tracking-[-0.02em]">
         {initials}

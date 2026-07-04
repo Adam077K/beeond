@@ -178,6 +178,25 @@ Critic's "what's working" (final CTA award-grade, OG card best-in-category, 404 
 
 QA-Lead subagent was spawned with the full verification brief and **died on an account session limit** (resets 20:30 Asia/Jerusalem) before issuing a verdict. Per the Constitution the CEO cannot self-issue a PASS, so **the branch stays unmerged**. The complete mechanical checklist QA-Lead would run has been executed and evidenced (this file): brand-lint 0, eslint 0, build 0 errors, e2e 18/18 incl. axe/JS-off/RTL/console-clean, dist scan reviewed, scores.json ↔ Lighthouse JSON cross-checked, H1 verbatim asserted, both `dangerouslySetInnerHTML` sites static-only. Outstanding: the independent verdict itself — re-spawn QA-Lead after the limit resets.
 
+## Quality wave 3 — founder reference audit → visual-craft act (2026-07-04 evening)
+
+**Founder verdict:** visuals (bees/hives) not at target grade; references supplied: Diamo (motif threaded everywhere + dimensional ending), Anthropic Fable-5 page (specimen artwork composing a glyph), Ramp (density/proof), paper-cut Ocean hero (carved layered depth).
+
+**Audit conclusion (professional-designer lens, dissatisfied by default):** the page had typographic discipline but its visual artifacts were WIREFRAMES — outline hexes + 3px dots read as a technical diagram; the references build grade from *material richness*: depth, layering, density, a crafted centerpiece. Constraint honored: v3 brand lock keeps literal bee illustration at favicon scale (hex-forward), so the grade lever is the COMB itself.
+
+**Act — every hive artifact got a material pass (7 tokens only, layered fills, zero drop shadows):**
+| Artifact | Before → After |
+|---|---|
+| Hero art | outline hex + floating dots → **"the comb under construction"**: main cell with real wall thickness (outer wall/inner face), a HONEY POOL with meniscus shade, surface line and ground-token bubbles; swarm hovers above the surface with a sitter row ON it and rim perchers; attached neighbor cells at three construction states; distant lattice + far cells for atmosphere (`v2-hero.png`) |
+| C7 tiles | flat outline stickers → **stacked-paper cells**: hairline sheet peeking beneath each tile (tile lifts OFF its sheet on hover), inner rim = wall thickness, anchor face = honey material (single-hue token-derived gradient, deeper toward the floor) (`v2-c7.png`) |
+| Final CTA hive | thin line drawing → **the glowing room**: cells carry faint face fills (built comb in shadow), the keystone emits a real blur-halo glow — the one lit cell; bees perched on walls not floating (`v2-final.png`) |
+| Founder cells | flat panel hex → built cell with wall thickness, a small honey pool at the floor, rim bees |
+| HiveMark (mobile emblem + dark) | outline → face-filled comb with honey-shaded keystone |
+
+Deviation **D9**: two single-hue gradients (C7 anchor honey; both stops token-derived via color-mix) — the playbook bans gradient *mesh* and gradient *text*; material shading inside the brand yellow is neither. Logged, reversible.
+Post-wave gates: e2e **18/18** · LH **97/100** · CLS 0 · brand-lint 0/35.
+**Open founder proposal:** if visible bees (beyond dots) are wanted at hero scale, that requires amending brand-lock A1 (bee device is favicon-scale only today) — one line from the founder unlocks it.
+
 ## Cross-section fresh-eyes (rhythm drift audit)
 
 Full-page reloads reviewed at 1440 (`build-evidence/full-1440.png`) + 390. DNA sequence: asym-split → zig-zag → full-bleed pin → path-on-panel → narrow-dense → stepped-panels → mirrored-split → hairline-strip → centered-short → narrow-list → dark-bleed. No two adjacent sections share padding/column DNA; the two panel beats (4, 6) are separated by the dense manifesto; the two short beats (C5 strip, social) use opposite alignment grammars (start-aligned row vs centered). Verdict: no redesign required; metronome avoided by construction of the rhythm map.
