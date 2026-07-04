@@ -1,5 +1,6 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { I18n } from "../i18n";
 
 /**
  * Section — C5 build-time trust strip. HONESTY RULE: the performance signal
@@ -30,19 +31,25 @@ function readScores(): Scores | null {
 export function TrustC5Section() {
   const scores = readScores();
 
-  const signals: Array<{ k: string; v: string } | null> = [
+  const signals: Array<{ k: string; kHe: string; v: string; vHe: string } | null> = [
     {
       k: "Machine-readable by design",
+      kHe: "קריא-מכונה בתכנון",
       v: "Organization, Service and FAQ structured data ship on this page — the same markup we build for clients.",
+      vHe: "דאטה מובנה של ארגון, שירות ושאלות נשלח בעמוד הזה — אותו מרקאפ שאנחנו בונים ללקוחות.",
     },
     {
       k: "AI crawlers welcome",
+      kHe: "סוכני AI מוזמנים",
       v: "GPTBot, ClaudeBot and PerplexityBot are explicitly allowed here. Being readable is the point.",
+      vHe: "GPTBot, ClaudeBot ו-PerplexityBot מורשים כאן במפורש. להיות קריאים זו הנקודה.",
     },
     scores
       ? {
           k: "Built to the standard we sell",
+          kHe: "נבנה לסטנדרט שאנחנו מוכרים",
           v: `This page measured ${scores.mobilePerformance}/100 mobile performance at build time (${scores.measuredAt.slice(0, 10)}) — the bar every client site gets held to.`,
+          vHe: `העמוד הזה נמדד ${scores.mobilePerformance}/100 בביצועי מובייל בזמן הבילד (${scores.measuredAt.slice(0, 10)}) — הרף שכל אתר לקוח מוחזק אליו.`,
         }
       : null,
   ];
@@ -51,10 +58,10 @@ export function TrustC5Section() {
     <section className="mx-auto max-w-[1180px] px-7 py-16 lg:py-20">
       <div data-reveal className="border-y border-hairline py-9">
         <p className="text-[13px] font-medium">
-          We grade ourselves.{" "}
-          <span className="font-normal text-muted">
-            These are the signals we build into every client&apos;s site — live on ours.
-          </span>
+          <I18n
+            en={<>We grade ourselves.{" "}<span className="font-normal text-muted">These are the signals we build into every client&apos;s site — live on ours.</span></>}
+            he={<>אנחנו נותנים לעצמנו ציון.{" "}<span className="font-normal text-muted">אלה הסיגנלים שאנחנו בונים לכל אתר של לקוח — חיים אצלנו.</span></>}
+          />
         </p>
         <div className="mt-7 grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1.1fr]">
           {signals.filter(Boolean).map((s) => (
@@ -70,8 +77,8 @@ export function TrustC5Section() {
                 <circle cx="10" cy="11" r="2.4" fill="var(--color-yellow)" />
               </svg>
               <div>
-                <h3 className="text-[14.5px] font-semibold">{s!.k}</h3>
-                <p className="mt-1 text-[13px] leading-[1.5] text-muted">{s!.v}</p>
+                <h3 className="text-[14.5px] font-semibold"><I18n en={s!.k} he={s!.kHe} /></h3>
+                <p className="mt-1 text-[13px] leading-[1.5] text-muted"><I18n en={s!.v} he={s!.vHe} /></p>
               </div>
             </div>
           ))}

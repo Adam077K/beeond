@@ -1,5 +1,6 @@
 import { COPY } from "@/lib/brand.lock";
 import { CtaButton } from "../cta-button";
+import { I18n } from "../i18n";
 import { HiveMark } from "../hive-mark";
 import { Logo } from "../logo";
 
@@ -13,24 +14,35 @@ export function FinalCtaSection() {
     <section id="footprint-call" data-scheme="dark" className="bg-deep text-ground">
       <div className="mx-auto grid max-w-[1180px] gap-14 px-7 pb-16 pt-28 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pb-20 lg:pt-40">
         <div data-reveal>
-          <p className="text-[13px] font-medium text-ground/60">The next step</p>
+          <p className="text-[13px] font-medium text-ground/60">
+            <I18n en="The next step" he="הצעד הבא" />
+          </p>
           <h2 className="mt-4 max-w-[18ch] text-[clamp(34px,4.4vw,62px)] font-bold leading-[1.04] tracking-[-0.035em]">
-            Your buyers are looking. Let&apos;s make sure they{" "}
-            <span className="u-accent">find you</span>.
+            <span className="i18n-en">
+              Your buyers are looking. Let&apos;s make sure they{" "}
+              <span className="u-accent">find you</span>.
+            </span>
+            <span className="i18n-he" lang="he">
+              הקונים שלכם מחפשים. בואו נדאג שהם{" "}
+              <span className="u-accent">ימצאו אתכם</span>.
+            </span>
           </h2>
           <p className="mt-6 max-w-[48ch] text-[16px] leading-[1.55] text-ground/70">
-            A 30-minute call with Yarden and Adam. We&apos;ll show you where
-            your footprint has gaps, what it would take to close them, and
-            whether Beeond is the right fit — no pitch deck, no pressure.
+            <I18n
+              en="A 30-minute call with Yarden and Adam. We'll show you where your footprint has gaps, what it would take to close them, and whether Beeond is the right fit — no pitch deck, no pressure."
+              he="שיחה של 30 דקות עם ירדן ואדם. נראה לכם איפה יש פערים בנוכחות, מה נדרש כדי לסגור אותם, והאם Beeond היא ההתאמה הנכונה — בלי מצגת, בלי לחץ."
+            />
           </p>
           <div className="mt-9">
             <CtaButton href="mailto:hello@beeond.ai?subject=Footprint%20call" invert>
-              {COPY.ctaFinal.en}
+              <I18n en={COPY.ctaFinal.en} he={COPY.ctaFinal.he} />
             </CtaButton>
           </div>
           <p className="mt-5 text-[13px] leading-relaxed text-ground/55">
-            We talk to every potential client personally. We&apos;re selective
-            because we have to be — the founders are the system.
+            <I18n
+              en="We talk to every potential client personally. We're selective because we have to be — the founders are the system."
+              he="אנחנו מדברים עם כל לקוח פוטנציאלי אישית. אנחנו סלקטיביים כי אנחנו חייבים להיות — המייסדים הם המערכת."
+            />
           </p>
         </div>
         <div data-reveal className="mx-auto w-full max-w-[500px]">
@@ -44,13 +56,13 @@ export function FinalCtaSection() {
             <Logo hexFill="yellow" />
           </a>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-7 gap-y-2 text-[13px] text-ground/70">
-            <a className="footer-link" href="#channel-map">The swarm</a>
-            <a className="footer-link" href="#how-it-works">How it works</a>
-            <a className="footer-link" href="#founders">Founders</a>
-            <a className="footer-link" href="#faq">FAQ</a>
+            <a className="footer-link" href="#channel-map"><I18n en="The swarm" he="הנחיל" /></a>
+            <a className="footer-link" href="#how-it-works"><I18n en="How it works" he="איך זה עובד" /></a>
+            <a className="footer-link" href="#founders"><I18n en="Founders" he="המייסדים" /></a>
+            <a className="footer-link" href="#faq"><I18n en="FAQ" he="שאלות" /></a>
           </nav>
           <p className="text-[11px] font-light tracking-[0.01em] text-ground/50">
-            {COPY.launchHold.en}
+            <I18n en={COPY.launchHold.en} he={COPY.launchHold.he} />
           </p>
         </div>
       </footer>

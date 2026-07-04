@@ -1,5 +1,6 @@
 import { axialToPixel, hexPath, hexRing } from "@/lib/hex";
 import { Eyebrow } from "../eyebrow";
+import { I18n } from "../i18n";
 
 /**
  * Section 7 — Founders, deep editorial treatment. Mirrored asymmetry vs the
@@ -13,15 +14,21 @@ const FOUNDERS = [
     initials: "A",
     name: "Adam",
     role: "AI systems & agent swarms",
+    roleHe: "מערכות AI ונחילי סוכנים",
     quote:
       "I build the thing that makes everything run. When I tell you we use AI to do your marketing, I mean I built the AI.",
+    quoteHe:
+      "אני בונה את הדבר שמריץ הכול. כשאני אומר שאנחנו עושים לכם שיווק עם AI — אני מתכוון שאני בניתי את ה-AI.",
   },
   {
     initials: "YM",
     name: "Yarden Morgan",
     role: "B2B marketing & growth",
+    roleHe: "שיווק וצמיחה B2B",
     quote:
       "I know what great B2B marketing looks like because I've shipped it. That's the standard the swarm is calibrated to.",
+    quoteHe:
+      "אני יודעת איך נראה שיווק B2B מצוין כי שלחתי כזה. זה הסטנדרט שאליו הנחיל מכויל.",
   },
 ] as const;
 
@@ -88,9 +95,12 @@ export function FoundersSection() {
   return (
     <section id="founders" className="mx-auto max-w-[1180px] px-7 py-24 lg:py-28">
       <div data-reveal className="lg:ms-[38%]">
-        <Eyebrow n="06">Founders</Eyebrow>
+        <Eyebrow n="06"><I18n en="Founders" he="המייסדים" /></Eyebrow>
         <h2 className="mt-4 max-w-[22ch] text-[clamp(28px,3.4vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">
-          Built by the people who actually do it.
+          <I18n
+            en="Built by the people who actually do it."
+            he="נבנה על ידי האנשים שבאמת עושים את זה."
+          />
         </h2>
       </div>
 
@@ -106,13 +116,13 @@ export function FoundersSection() {
             </div>
             <div className={i === 1 ? "lg:order-1 lg:text-end" : ""}>
               <h3 className="text-[22px] font-bold tracking-[-0.01em]">{f.name}</h3>
-              <p className="mt-1 text-[13.5px] font-medium text-muted">{f.role}</p>
+              <p className="mt-1 text-[13.5px] font-medium text-muted"><I18n en={f.role} he={f.roleHe} /></p>
               <blockquote
                 className={`mt-5 max-w-[44ch] text-[clamp(17px,1.7vw,21px)] font-medium leading-[1.45] tracking-[-0.01em] ${
                   i === 1 ? "lg:ms-auto" : ""
                 }`}
               >
-                {f.quote}
+                <I18n en={f.quote} he={f.quoteHe} />
               </blockquote>
             </div>
           </div>
@@ -121,14 +131,21 @@ export function FoundersSection() {
 
       <div data-reveal className="mt-16 border-t border-hairline pt-8 lg:ms-[38%]">
         <p className="max-w-[52ch] text-[16px] leading-[1.55]">
-          We didn&apos;t find each other at a networking event. We built Beeond
-          because we couldn&apos;t find an agency that did what we knew was{" "}
-          <span className="u-accent">possible</span>.
+          <span className="i18n-en">
+            We didn&apos;t find each other at a networking event. We built Beeond
+            because we couldn&apos;t find an agency that did what we knew was{" "}
+            <span className="u-accent">possible</span>.
+          </span>
+          <span className="i18n-he" lang="he">
+            לא מצאנו זה את זה באירוע נטוורקינג. בנינו את Beeond כי לא מצאנו
+            סוכנות שעושה את מה שידענו שהוא <span className="u-accent">אפשרי</span>.
+          </span>
         </p>
         <p className="mt-4 max-w-[52ch] text-[13.5px] leading-[1.55] text-muted">
-          Built for founders who move fast and spend seriously on growth. We
-          talk to every potential client personally — we&apos;re selective
-          because we have to be.
+          <I18n
+            en="Built for founders who move fast and spend seriously on growth. We talk to every potential client personally — we're selective because we have to be."
+            he="נבנה למייסדים שזזים מהר ומשקיעים ברצינות בצמיחה. אנחנו מדברים עם כל לקוח פוטנציאלי אישית — אנחנו סלקטיביים כי אנחנו חייבים להיות."
+          />
         </p>
       </div>
     </section>

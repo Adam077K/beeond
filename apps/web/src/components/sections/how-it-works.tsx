@@ -1,4 +1,5 @@
 import { Eyebrow } from "../eyebrow";
+import { I18n } from "../i18n";
 
 /**
  * Section 4 — Phased onboarding. All three hex nodes sit on ONE flight line
@@ -10,22 +11,31 @@ const STEPS = [
   {
     n: "01",
     range: "Weeks 1–4",
+    rangeHe: "שבועות 1–4",
     name: "Foundation",
+    nameHe: "יסודות",
     line: "Brand intake, technical + GEO audit, tracking, schema, voice calibration. Before anything publishes, the infrastructure holds the weight.",
+    lineHe: "אינטייק מותג, אודיט טכני ו-GEO, מדידה, סכמה, כיול קול. לפני שמשהו מתפרסם — התשתית מחזיקה את המשקל.",
     offset: "",
   },
   {
     n: "02",
     range: "Weeks 4–8",
+    rangeHe: "שבועות 4–8",
     name: "Content engine",
+    nameHe: "מנוע תוכן",
     line: "SEO articles, LinkedIn cadence, email lifecycle. The swarm starts to coordinate — each piece feeds the next.",
+    lineHe: "מאמרי SEO, קצב לינקדאין, מייל לייפסייקל. הנחיל מתחיל לפעול כאחד — כל פריט מזין את הבא.",
     offset: "md:mt-9",
   },
   {
     n: "03",
     range: "Weeks 8–12",
+    rangeHe: "שבועות 8–12",
     name: "Amplification",
+    nameHe: "הגברה",
     line: "Paid campaigns, digital PR, AI-citation content. Every core channel active, optimizing on real signal.",
+    lineHe: "קמפיינים ממומנים, יח״צ דיגיטלי, תוכן לציטוט AI. כל ערוץ ליבה פעיל, מתייעל על סיגנל אמיתי.",
     offset: "md:mt-4",
   },
 ] as const;
@@ -35,9 +45,12 @@ export function HowItWorksSection() {
     <section id="how-it-works" className="bg-panel">
       <div className="mx-auto max-w-[980px] px-7 py-24 lg:py-28">
         <div data-reveal>
-          <Eyebrow n="03">How it works</Eyebrow>
+          <Eyebrow n="03"><I18n en="How it works" he="איך זה עובד" /></Eyebrow>
           <h2 className="mt-4 max-w-[26ch] text-[clamp(28px,3.2vw,42px)] font-bold leading-[1.06] tracking-[-0.03em]">
-            Your footprint, built in layers — not lit up all at once.
+            <I18n
+              en="Your footprint, built in layers — not lit up all at once."
+              he="הנוכחות שלכם נבנית בשכבות — לא נדלקת בבת אחת."
+            />
           </h2>
         </div>
 
@@ -76,13 +89,13 @@ export function HowItWorksSection() {
                     </svg>
                     <span className="relative text-[12.5px] font-bold">{s.n}</span>
                   </span>
-                  <span className="text-[12px] font-medium text-muted">{s.range}</span>
+                  <span className="text-[12px] font-medium text-muted"><I18n en={s.range} he={s.rangeHe} /></span>
                 </div>
                 {/* the editorial stagger lives below the line */}
                 <div className={s.offset}>
-                  <h3 className="mt-5 text-[19px] font-bold tracking-[-0.01em]">{s.name}</h3>
+                  <h3 className="mt-5 text-[19px] font-bold tracking-[-0.01em]"><I18n en={s.name} he={s.nameHe} /></h3>
                   <p className="mt-2 max-w-[34ch] text-[14px] leading-[1.55] text-muted">
-                    {s.line}
+                    <I18n en={s.line} he={s.lineHe} />
                   </p>
                 </div>
               </li>
@@ -91,8 +104,10 @@ export function HowItWorksSection() {
         </div>
 
         <p data-reveal className="mt-14 border-t border-hairline pt-6 text-[14.5px] font-medium">
-          We don&apos;t light up 20 channels in week one. We build the
-          foundation that makes all 20 work.
+          <I18n
+            en="We don't light up 20 channels in week one. We build the foundation that makes all 20 work."
+            he="אנחנו לא מדליקים 20 ערוצים בשבוע הראשון. אנחנו בונים את היסודות שגורמים לכל ה-20 לעבוד."
+          />
         </p>
       </div>
     </section>

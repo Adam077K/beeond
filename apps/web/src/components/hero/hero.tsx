@@ -1,5 +1,6 @@
 import { COPY } from "@/lib/brand.lock";
 import { CtaButton } from "../cta-button";
+import { I18n } from "../i18n";
 import { SwarmRested } from "./swarm-rested";
 import { SwarmChapterOne } from "./swarm";
 
@@ -40,11 +41,13 @@ const FOUNDERS = [
     initials: "A",
     name: "Adam",
     line: "AI systems & agent swarms — the builder of the swarm itself.",
+    lineHe: "מערכות AI ונחילי סוכנים — הבונה של הנחיל עצמו.",
   },
   {
     initials: "YM",
     name: "Yarden Morgan",
     line: "B2B marketing & growth — the keeper of the standard it ships to.",
+    lineHe: "שיווק וצמיחה B2B — שומרת הסטנדרט שאליו הוא מכויל.",
   },
 ] as const;
 
@@ -54,27 +57,6 @@ const FOUNDERS = [
  * founders graft (BUILD_LOG). The swarm art is the rested SSR composition;
  * Chapter-1 motion mounts over it as progressive enhancement.
  */
-/** bilingual pair — both SSR'd; CSS shows one based on html[lang] */
-function I18n({
-  en,
-  he,
-  block = false,
-}: {
-  en: React.ReactNode;
-  he: React.ReactNode;
-  block?: boolean;
-}) {
-  const Tag = block ? "span" : "span";
-  return (
-    <>
-      <Tag className={`i18n-en ${block ? "block" : ""}`}>{en}</Tag>
-      <Tag className={`i18n-he ${block ? "block" : ""}`} lang="he">
-        {he}
-      </Tag>
-    </>
-  );
-}
-
 export function Hero() {
   const [line1, line2] = COPY.h1.en;
   const accent = COPY.h1AccentWord.en; // "match"
@@ -143,7 +125,10 @@ export function Hero() {
         {/* founders ledger — full-width proof row (V-C graft) */}
         <div className="mt-12 border-t border-hairline pt-6 lg:col-span-2 lg:mt-10">
           <p className="text-[12px] font-medium text-muted">
-            Built by the people who actually do it.
+            <I18n
+              en="Built by the people who actually do it."
+              he="נבנה על ידי האנשים שבאמת עושים את זה."
+            />
           </p>
           <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:gap-14">
             {FOUNDERS.map((f) => (
@@ -152,7 +137,7 @@ export function Hero() {
                 <div>
                   <p className="text-[15px] font-bold">{f.name}</p>
                   <p className="mt-0.5 max-w-[38ch] text-[12.5px] leading-snug text-muted">
-                    {f.line}
+                    <I18n en={f.line} he={f.lineHe} />
                   </p>
                 </div>
               </div>
