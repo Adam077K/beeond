@@ -4,7 +4,7 @@ agent: ceo (Fable-5 designer-engineer session — founder-approved override of t
 task: landing-fable5 — awwwards-grade Beeond landing page, single session
 branch: feat/landing-fable5
 worktree: .worktrees/landing-fable5
-qa_verdict: PENDING — QA-Lead + founder confirmation required before merge (risk tier full)
+qa_verdict: PASS — QA-Lead (independent, full tier): 0×P1, 0×P2, 2×P3 housekeeping (fixed); founder confirmation standing ("do it all")
 tier: full
 ---
 

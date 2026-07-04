@@ -174,9 +174,9 @@ Design-critic subagent verdict on the full screenshot set: **NEEDS_WORK** (4×P1
 Post-remediation: build clean · e2e **18/18** · LH **97/100** · brand-lint 0/35 · scores.json refreshed.
 Critic's "what's working" (final CTA award-grade, OG card best-in-category, 404 delightful, keystone concept the right centerpiece, desktop logo-removed pass) — preserved untouched.
 
-## QA gate status (honest)
+## QA gate status — CLOSED: PASS
 
-QA-Lead subagent was spawned with the full verification brief and **died on an account session limit** (resets 20:30 Asia/Jerusalem) before issuing a verdict. Per the Constitution the CEO cannot self-issue a PASS, so **the branch stays unmerged**. The complete mechanical checklist QA-Lead would run has been executed and evidenced (this file): brand-lint 0, eslint 0, build 0 errors, e2e 18/18 incl. axe/JS-off/RTL/console-clean, dist scan reviewed, scores.json ↔ Lighthouse JSON cross-checked, H1 verbatim asserted, both `dangerouslySetInnerHTML` sites static-only. Outstanding: the independent verdict itself — re-spawn QA-Lead after the limit resets.
+First QA-Lead spawn died on an account session limit; retry ran post-reset on the final state (12 commits, all three quality waves). **Independent verdict: PASS, full tier — 0×P1, 0×P2, 2×P3** (both fixed in the close-out commit: `.playwright-mcp/` runtime artifacts removed + gitignored; scores.json re-derived from the final Lighthouse artifact so timestamps are co-incident). QA confirmed independently: all four mechanical gates, canvas/GSAP lifecycle cleanliness, hydration-safe seeded PRNGs, both `dangerouslySetInnerHTML` sites static-only, scores.json ↔ Lighthouse consistency, FAQ JSON-LD verbatim mirror, D9 gradient deviation rationale upheld, mobile-menu focus flow, decorative-SVG aria discipline. Merged to main with founder confirmation standing.
 
 ## Quality wave 3 — founder reference audit → visual-craft act (2026-07-04 evening)
 
