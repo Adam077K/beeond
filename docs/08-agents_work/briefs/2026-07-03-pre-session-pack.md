@@ -46,7 +46,7 @@ Rule: prefer one dated/attributed number over three adjectives. If a fact isn't 
 ## 3. Still owed by founder (needs you / a design pass)
 
 - [ ] **Versioned `Bee⬡nd` logotype SVG** — inline-SVG component with header / OG / favicon variants, +4-6% optical size on the hex-"o", color-scheme variants. Needs a focused design pass (Design-Lead or Figma). If not ready, the build ships a clean interim hex-"o" and flags it — but a real logotype is the single most brand-defining asset.
-- [ ] **Rubik Hebrew woff2 subset** present in-repo and covering every glyph in the locked HE H1 ("עידן ה-AI זז מהר. הנוכחות שלכם צריכה לעמוד בקצב."). Quick check; fail-fast at §0 pre-flight if missing.
+- [x] **Rubik Hebrew woff2 subset** — NOT a founder chore. No app/fonts exist in-repo yet; the **build session self-hosts + `unicode-range`-subsets Rubik (Latin+Hebrew) itself** (brief §7 hard gate). Founder only needs to eyeball, at the end, that the HE H1 ("עידן ה-AI זז מהר. הנוכחות שלכם צריכה לעמוד בקצב.") renders with no missing glyphs.
 
 ---
 
