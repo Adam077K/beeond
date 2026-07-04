@@ -1,7 +1,13 @@
+import { SiteHeader } from "@/components/site-header";
+import { Hero } from "@/components/hero/hero";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Beeond</h1>
-    </main>
+    <>
+      <SiteHeader />
+      <main id="main">
+        <Hero />
+      </main>
+    </>
   );
 }

@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Beeond — home" [ref=e6] [cursor=pointer]:
+        - /url: "#main"
+        - generic [ref=e7]:
+          - text: Bee
+          - img [ref=e8]
+          - text: nd
+      - navigation "Primary" [ref=e10]:
+        - link "The swarm" [ref=e11] [cursor=pointer]:
+          - /url: "#channel-map"
+        - link "How it works" [ref=e12] [cursor=pointer]:
+          - /url: "#how-it-works"
+        - link "Founders" [ref=e13] [cursor=pointer]:
+          - /url: "#founders"
+        - link "FAQ" [ref=e14] [cursor=pointer]:
+          - /url: "#faq"
+      - link "Get a free footprint audit" [ref=e15] [cursor=pointer]:
+        - /url: "#footprint-call"
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]:
+          - img [ref=e21]
+          - text: Done-for-you growth, AI-native
+        - heading "The AI era moves fast. Your presence needs to match." [level=1] [ref=e23]:
+          - generic [ref=e24]: The AI era moves fast.
+          - generic [ref=e25]: Your presence needs to match.
+        - paragraph [ref=e26]: Beeond runs your whole digital presence — every channel your buyers use to find and evaluate vendors — as one coordinated swarm that adapts as fast as the market moves.
+        - generic [ref=e27]:
+          - link "Get a free footprint audit" [ref=e28] [cursor=pointer]:
+            - /url: "#footprint-call"
+            - generic [ref=e29]: Get a free footprint audit
+            - img [ref=e31]
+          - link "See how the swarm works" [ref=e33] [cursor=pointer]:
+            - /url: "#channel-map"
+        - paragraph [ref=e34]: No agency pitch. No deck. We'll show you where your footprint has gaps — and what it would take to close them.
+      - img [ref=e36]
+      - generic [ref=e158]:
+        - paragraph [ref=e159]: Built by the people who actually do it.
+        - generic [ref=e160]:
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - img [ref=e163]
+              - generic [ref=e165]: A
+            - generic [ref=e166]:
+              - paragraph [ref=e167]: Adam
+              - paragraph [ref=e168]: AI systems & agent swarms — builds the swarm that runs your channels
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - img [ref=e171]
+              - generic [ref=e173]: YM
+            - generic [ref=e174]:
+              - paragraph [ref=e175]: Yarden Morgan
+              - paragraph [ref=e176]: B2B marketing & growth — the standard every piece of output is calibrated to
+  - alert [ref=e177]
