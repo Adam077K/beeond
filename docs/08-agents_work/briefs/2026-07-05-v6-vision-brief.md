@@ -1,5 +1,7 @@
 # Beeond Landing v6 — Vision & Build Brief (handoff)
 
+> **SUPERSEDED (same day):** the binding build prompt is now [`2026-07-05-v6-designer-handoff.md`](2026-07-05-v6-designer-handoff.md) — founder-approved blueprint + full practices. This file remains as provenance for the vision pivot.
+
 **From:** the Fable-5 v4/v5 designer-engineer session (2026-07-03 → 2026-07-05)
 **To:** the next single designer-engineer session (one agent, full ownership, founder in the loop)
 **Status:** VISION LOCKED BY FOUNDER IN PRINCIPLE — hero concept pick + section arc confirmation are the two open founder decisions (§8).
