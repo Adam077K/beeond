@@ -402,6 +402,8 @@ Three cosmetic directives from the founder's :3010 review, applied post-QA with 
 3. Dark-chapters headline forced to a deliberate 2-line break at desktop ("Not a services menu." / "Three jobs — shown as the documents they arrive in."), EN+HE, clamp 44→42.
 Evidence: `v62-hero-1440.png` · `v62-chapters-0_5.png`.
 
+**Hero art v2 (founder: "not basic, more the DESIGN"):** `hero-signal-v2` prompt committed — same meaning, master-plan draftsman craft: five framed specimen call-outs fan dashed leaders that braid into the honey HEART CELL of a comb under construction (pencil ghosts, wall hatching, compass arc, ruler ticks, one slow drip), the whole sheet drawn with its own border and taped into the journal — a pinned plan, rhyming with the page's work-artifact language. high n=2 (~14k tok); candidate 0 shipped (candidate 1's bottom cell sliced at the image edge — reads as a crop without a frame). Pipeline: despecular (5,452 gloss px repainted — model added white shine again) → normalize → flatten. 103KB/1024w + 45KB/640w. Evidence: `v62-hero-r1.png`.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |
