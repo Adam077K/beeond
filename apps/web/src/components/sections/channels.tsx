@@ -81,6 +81,7 @@ export function ChannelsSection() {
               return (
                 <div
                   key={ch.id}
+                  data-channel={ch.id}
                   className={`hex-tile absolute ${ch.anchor ? "hex-tile-anchor" : ""}`}
                   data-reveal
                   style={{

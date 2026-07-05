@@ -31,11 +31,36 @@ test.describe("landing — hard gates", () => {
     await expect(page.locator("h1")).toContainText("The AI era moves fast.");
     const isDesktop = (page.viewportSize()?.width ?? 0) >= 1024;
     const proofs = page.locator(
-      isDesktop ? "[data-c7-tile] p" : "#channel-map li p",
+      isDesktop ? "[data-channel] p" : "#channel-map li p",
     );
     await expect(proofs).toHaveCount(11);
     for (const p of await proofs.all()) await expect(p).toBeVisible();
+    // v6: the swarm's rested state (agents + human chips) is SSR too
+    const agents = page.locator(
+      isDesktop ? "[data-swarm-stage] .swarm-back" : "#swarm li",
+    );
+    await expect(agents).toHaveCount(5);
     await ctx.close();
+  });
+
+  test("artifact strip: the sample audit is SSR text with 5 scored rows", async ({ page }) => {
+    await page.goto("/");
+    const sheet = page.locator("#deliverable");
+    await expect(sheet.getByText("Footprint audit", { exact: true })).toBeVisible();
+    await expect(sheet.locator("ul > li")).toHaveCount(5);
+    await expect(sheet.getByText("AI-answer visibility")).toBeVisible();
+    // the locked facts strip, verbatim wording
+    await expect(sheet.getByText("channels, run as one system")).toBeVisible();
+    await expect(sheet.getByText("not months, to stand your footprint up")).toBeVisible();
+  });
+
+  test("dark chapters: three chapters, every artifact carries the attribution chip", async ({ page }) => {
+    await page.goto("/");
+    const section = page.locator("#what-we-do");
+    await expect(section.locator("h3")).toHaveCount(3);
+    await expect(
+      section.getByText("drafted by the swarm · calibrated by Yarden"),
+    ).toHaveCount(4);
   });
 
   test("no horizontal scroll at 320/390/768/1440", async ({ page }) => {
@@ -64,26 +89,26 @@ test.describe("landing — hard gates", () => {
     expect(Math.abs(centerX - 720)).toBeGreaterThan(144);
   });
 
-  test("C7 scrub assembles and the GEO anchor locks last", async ({ page }, testInfo) => {
+  test("swarm showpiece: hires face up mid-chart, agents face up at rest", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "desktop", "scrub is desktop-only");
     await page.goto("/", { waitUntil: "networkidle" });
-    const root = page.locator("[data-c7-root]");
+    const root = page.locator("[data-swarm-root]");
     const box = await root.boundingBox();
     const runway = box!.height - 900;
-    // pre-keystone: hive minus anchor
-    await page.evaluate(([t, r]) => window.scrollTo(0, t + r * 0.38), [box!.y, runway]);
+    const m11 = () =>
+      page.locator("[data-swarm-flip]").first().evaluate((el) => {
+        const t = getComputedStyle(el).transform;
+        if (t === "none") return 1;
+        return Number(t.replace(/matrix(3d)?\(/, "").split(",")[0]);
+      });
+    // chart phase: fronts up (rotationY ≈ 0 → m11 ≈ 1)
+    await page.evaluate(([t, r]) => window.scrollTo(0, t + r * 0.28), [box!.y, runway]);
     await page.waitForTimeout(350);
-    const anchorAt038 = await page
-      .locator("[data-c7-anchor]")
-      .evaluate((el) => Number(getComputedStyle(el).opacity));
-    expect(anchorAt038).toBeLessThan(0.2);
-    // post-keystone: locked
-    await page.evaluate(([t, r]) => window.scrollTo(0, t + r * 0.6), [box!.y, runway]);
+    expect(await m11()).toBeGreaterThan(0.9);
+    // after the flips: agents up (rotationY ≈ 180 → m11 ≈ -1)
+    await page.evaluate(([t, r]) => window.scrollTo(0, t + r * 0.64), [box!.y, runway]);
     await page.waitForTimeout(350);
-    const anchorAt06 = await page
-      .locator("[data-c7-anchor]")
-      .evaluate((el) => Number(getComputedStyle(el).opacity));
-    expect(anchorAt06).toBeGreaterThan(0.95);
+    expect(await m11()).toBeLessThan(-0.9);
     expect(await root.getAttribute("data-p")).toBeTruthy();
   });
 

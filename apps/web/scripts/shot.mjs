@@ -19,6 +19,17 @@ if (lang === "he") {
 if (mode && mode !== "fullpage" && !Number.isNaN(Number(mode))) {
   await page.evaluate((y) => window.scrollTo(0, y), Number(mode));
 }
+if (mode === "fullpage") {
+  // walk the page so every [data-reveal] fires and scrubs reach rest
+  await page.evaluate(async () => {
+    const step = window.innerHeight / 2;
+    for (let y = 0; y <= document.body.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 90));
+    }
+    window.scrollTo(0, 0);
+  });
+}
 await page.waitForTimeout(2200); // let one-shot reveals settle
 await page.screenshot({ path: out, fullPage: mode === "fullpage" });
 await browser.close();

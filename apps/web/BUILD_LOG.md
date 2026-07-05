@@ -321,6 +321,25 @@ Evidence: `v6-channels-1440.png` · `v6-channels-he.png` · `v6-channels-390.png
 Deferrals logged: build-line ink art for the timeline (art-src/ not present in this worktree; regeneration = founder-funded asset task, section stands without it) · two-dark-beats check rides the W9 full-page evidence review.
 Evidence: `v6-honesty-1440.png` · `v6-honesty-390.png` · `v6-full-1440.png`. Gates: tsc ✓ eslint ✓ brand-lint 34 clean.
 
+## v6 Wave 9 — measured gates (2026-07-05)
+
+e2e suite reworked for the v6 arc: C7 scrub test → swarm showpiece test (flip matrix m11 ≈ 1 mid-chart / ≈ −1 at rest, data-p live); JS-off now also asserts the 5 SSR agent cards; new artifact-strip + dark-chapters gates (locked facts verbatim, 4 attribution chips). Fix found by axe: struck hire-titles in the mobile ledger at opacity-70 hit 3.35:1 → full-strength muted (AA). Env lesson repeated: a stale prod server on :3001 got reused by `reuseExistingServer` mid-rebuild and flaked 3 mobile tests — killed, re-ran clean (the brief's "stale servers already burned one session" line remains true).
+
+| Gate | Result | Artifact |
+|------|--------|----------|
+| e2e | **22 passed / 0 failed** (4 project-skips) | `pnpm test:e2e` |
+| LH mobile (12.8.2, prod) | **perf 96 · a11y 100 · bp 100 · seo 100** · CLS 0 · TBT 40ms | `lighthouse-mobile-v6.json` |
+| Real CDP trace (Slow-4G 150ms/1.6Mbps + 4× CPU, 412px) | **LCP 800ms · CLS 0.0022** (LH lantern 2.7s logged beside it for honesty) | `scripts/cdp-trace.mjs` output |
+| INP-style worst interaction @4×/412 (FAQ open+close, menu open+close, 63 events) | **40ms** | same trace |
+| Swarm scrub frame budget @4× CPU, 1440, full runway | **avg 16.7ms · worst 18.3ms · 0 frames >33ms = locked 60fps** | `scripts/scrub-fps.mjs` output |
+| axe serious/critical | **0** (desktop + mobile) | e2e |
+| brand-lint | **34 files clean** (audited allowances only) | `pnpm brand-lint` |
+| tsc / eslint / build | clean | CI-runnable |
+| scores.json | refreshed from the v6 LH artifact (96/100) — C5 tile live | `public/scores.json` |
+| Two-dark-beats (§9.5) | PASS — deep chapters + dark close ~7000px apart, two cream beats between | `v6-full-1440.png` |
+
+Capture note: full-page screenshots show the swarm stage empty by design — the scrub is reversible, and walking back to top rewinds it; frame-step evidence (`v6-swarm-0_*.png`) is the section's artifact.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

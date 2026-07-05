@@ -319,7 +319,7 @@ export function SwarmSection() {
                 <div className="flex items-center gap-3">
                   <AgentMark className="size-7 shrink-0" />
                   <div>
-                    <p className="text-[11px] text-muted line-through opacity-70" aria-hidden="true">
+                    <p className="text-[11px] text-muted line-through" aria-hidden="true">
                       {r.frontEn}
                     </p>
                     <p className="text-[14px] font-bold">
