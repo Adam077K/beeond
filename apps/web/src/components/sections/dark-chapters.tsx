@@ -1,5 +1,6 @@
 import { Eyebrow } from "../eyebrow";
 import { I18n } from "../i18n";
+import { ChaptersScrub } from "./chapters-scrub";
 
 /**
  * Dark chapters (v6 §2.3) — "what we actually do." The page's ONE long deep
@@ -287,8 +288,8 @@ const CHAPTERS = [
 
 export function DarkChaptersSection() {
   return (
-    <section id="what-we-do" data-scheme="dark" className="bg-deep text-ground">
-      <div className="mx-auto max-w-[1180px] px-7 py-24 lg:py-32">
+    <section id="what-we-do" data-ch-root data-scheme="dark" className="relative bg-deep text-ground">
+      <div data-ch-sticky className="mx-auto max-w-[1180px] px-7 py-24 lg:py-32">
         <div data-reveal className="max-w-[52ch]">
           <Eyebrow n="02">
             <I18n en="What we actually do" he="מה אנחנו באמת עושים" />
@@ -301,9 +302,9 @@ export function DarkChaptersSection() {
           </h2>
         </div>
 
-        <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-28">
-          {CHAPTERS.map((ch) => (
-            <div key={ch.k} className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div data-ch-stage className="mt-16 space-y-20 lg:mt-20 lg:space-y-28">
+          {CHAPTERS.map((ch, chIndex) => (
+            <div key={ch.k} data-ch={chIndex} className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div data-reveal>
                 <p aria-hidden="true" className="text-[13px] font-medium text-ground/40">
                   {ch.k}.
@@ -334,13 +335,14 @@ export function DarkChaptersSection() {
           ))}
         </div>
 
-        <p data-reveal className="mt-16 border-t border-ground/15 pt-6 text-[13.5px] text-ground/60 lg:mt-20">
+        <p data-reveal className="ch-rule mt-16 border-t border-ground/15 pt-6 text-[13.5px] text-ground/60 lg:mt-20">
           <I18n
             en={<>Automation does the volume. Humans do the taste. <span className="text-ground/40">— the rule every artifact above was made under.</span></>}
             he={<>האוטומציה עושה את הכמות. בני אדם עושים את הטעם. <span className="text-ground/40">— הכלל שלפיו נוצר כל מסמך שלמעלה.</span></>}
           />
         </p>
       </div>
+      <ChaptersScrub />
     </section>
   );
 }

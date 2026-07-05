@@ -415,6 +415,45 @@ html.js [data-reveal].in .flight-dot {
   }
 }
 
+/* ── Dark chapters — pinned crossfade (v6.1). The pinned layout exists
+   ONLY under .chapters-pinned, which the scrub adds after it initializes:
+   mobile / JS-off / reduced-motion keep the plain stacked flow. ── */
+@media (min-width: 1024px) {
+  [data-ch-root].chapters-pinned {
+    height: 340vh;
+  }
+  .chapters-pinned [data-ch-sticky] {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    /* clear the fixed header pill; keep the stage centered in what remains */
+    padding-block: 96px 32px;
+  }
+  .chapters-pinned [data-ch-stage] {
+    position: relative;
+    height: 460px;
+    margin-top: 2rem;
+  }
+  /* the closing rule-line belongs to the stacked flow — inside the pin it
+     would push the stage under the header */
+  .chapters-pinned .ch-rule {
+    display: none;
+  }
+  .chapters-pinned [data-ch-stage] > [data-ch] {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    will-change: transform, opacity;
+  }
+  /* inside the pin the crossfade owns the motion — freeze the drift */
+  .chapters-pinned .float-card {
+    animation: none;
+  }
+}
+
 /* ── Swarm showpiece — pin runway + card-flip machinery.
    Runway exists only under html.js at desktop; JS-off / reduced-motion /
    mobile = one viewport, rested hive. ── */
