@@ -188,17 +188,9 @@
   border-block-end-color: var(--color-ink);
 }
 
-/* Header CTA appears only once the hero CTA has left the stage */
+/* Header CTA — always on (founder directive, v6.2) */
 .header-cta {
-  transition:
-    opacity var(--dur-3) var(--ease-settle),
-    transform var(--dur-3) var(--ease-settle),
-    background-color var(--dur-2) var(--ease-swift);
-}
-.header-cta-hidden {
-  opacity: 0;
-  transform: translateY(-4px);
-  pointer-events: none;
+  transition: background-color var(--dur-2) var(--ease-swift);
 }
 
 /* Header: transparent over hero → the ONE sanctioned glass pill on scroll */

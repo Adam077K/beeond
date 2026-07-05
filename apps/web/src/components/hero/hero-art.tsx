@@ -12,7 +12,7 @@
  */
 export function HeroArt() {
   return (
-    <div className="pointer-events-none absolute top-20 hidden w-[330px] select-none end-8 lg:block">
+    <div className="pointer-events-none absolute top-[46%] hidden w-[350px] -translate-y-1/2 select-none end-10 lg:block">
       {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized WebP, paper==ground makes seams impossible */}
       <img
         src="/art/hero-signal.webp"

@@ -290,15 +290,24 @@ export function DarkChaptersSection() {
   return (
     <section id="what-we-do" data-ch-root data-scheme="dark" className="relative bg-deep text-ground">
       <div data-ch-sticky className="mx-auto max-w-[1180px] px-7 py-24 lg:py-32">
-        <div data-reveal className="max-w-[52ch]">
+        <div data-reveal>
           <Eyebrow n="02">
             <I18n en="What we actually do" he="מה אנחנו באמת עושים" />
           </Eyebrow>
-          <h2 className="mt-5 text-[clamp(28px,3.2vw,44px)] font-bold leading-[1.06] tracking-[-0.03em]">
-            <I18n
-              en="Not a services menu. Three jobs — shown as the documents they arrive in."
-              he="לא תפריט שירותים. שלוש עבודות — מוצגות כמסמכים שבהם הן מגיעות."
-            />
+          {/* deliberate 2-line break at desktop (founder directive, v6.2) */}
+          <h2 className="mt-5 text-[clamp(28px,3vw,42px)] font-bold leading-[1.08] tracking-[-0.03em]">
+            <span className="i18n-en">
+              <span className="block">Not a services menu.</span>
+              <span className="block lg:whitespace-nowrap">
+                Three jobs — shown as the documents they arrive in.
+              </span>
+            </span>
+            <span className="i18n-he" lang="he">
+              <span className="block">לא תפריט שירותים.</span>
+              <span className="block lg:whitespace-nowrap">
+                שלוש עבודות — מוצגות כמסמכים שבהם הן מגיעות.
+              </span>
+            </span>
           </h2>
         </div>
 

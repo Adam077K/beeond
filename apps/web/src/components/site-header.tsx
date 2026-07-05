@@ -101,14 +101,11 @@ export function SiteHeader() {
             ))}
             <LocaleToggle />
           </nav>
-          {/* header CTA fades in once the hero CTA scrolls away — one CTA per fold */}
+          {/* header CTA is always on — founder directive 2026-07-05 (v6.2);
+              the v4 one-CTA-per-fold rule yielded to conversion access */}
           <a
             href="#footprint-call"
-            tabIndex={scrolled ? 0 : -1}
-            aria-hidden={!scrolled}
-            className={`header-cta cta hidden rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-semibold text-ground md:inline-block ${
-              scrolled ? "" : "header-cta-hidden"
-            }`}
+            className="header-cta cta hidden rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-semibold text-ground md:inline-block"
           >
             <I18n en="Get a free footprint audit" he="קבלו אבחון נוכחות חינם" />
           </a>

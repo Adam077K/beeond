@@ -394,6 +394,14 @@ Independent QA-Lead delta verdict: **PASS — full tier, 0×P1, 1×P2, 2×P3**; 
 Close-out (all findings fixed): P2 dead duplicate `[data-ch]` CSS rule merged — `top:16px` breathing floor now actually applies with a truthful comment · P3 hero art `loading` eager→lazy (phones skip the hidden download; desktop in-viewport lazy loads immediately) · P3 vessel recompressed 81→38KB (220w), width/height attrs corrected. Gates re-run after fixes: tsc ✓ brand-lint 34 ✓ build ✓ e2e 23/0 ✓.
 **v6.1 complete. Awaiting the founder's merge word.**
 
+## v6.2 — founder review notes (2026-07-05)
+
+Three cosmetic directives from the founder's :3010 review, applied post-QA with full mechanical gates re-run (tsc ✓ eslint ✓ brand-lint 34 ✓ build ✓ e2e 23/0):
+1. Hero art vertically CENTERED against the copy block (top-[46%] translate, 350px) — was top-hung with dead space below.
+2. Header CTA always-on (v4 "one CTA per fold" rule retired by founder directive; `.header-cta-hidden` machinery deleted).
+3. Dark-chapters headline forced to a deliberate 2-line break at desktop ("Not a services menu." / "Three jobs — shown as the documents they arrive in."), EN+HE, clamp 44→42.
+Evidence: `v62-hero-1440.png` · `v62-chapters-0_5.png`.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |
