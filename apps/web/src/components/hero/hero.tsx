@@ -1,7 +1,7 @@
 import { COPY } from "@/lib/brand.lock";
 import { CtaButton } from "../cta-button";
 import { I18n } from "../i18n";
-import { JournalComb } from "./journal-comb";
+import { HeroGesture } from "./hero-gesture";
 
 /** Small yellow hex bullet — legit fill use. */
 function HexBullet() {
@@ -51,10 +51,12 @@ const FOUNDERS = [
 ] as const;
 
 /**
- * Hero (C8 v4) — restrained, fast, editorial, asymmetric. H1 is real SSR text.
- * Committed composition: V-A split with the ledger-row founders graft
- * (BUILD_LOG). The art column is the Field Journal page (journal-comb.tsx):
- * paper == ground token, bee sprites converge once via CSS — zero hero JS.
+ * Hero (C8 v6) — content first. v4 typography verbatim (locked H1, 3-line
+ * break, eyebrow, subhead, CTA pair, founders ledger); the art column is
+ * gone per the v6 doctrine: no art spectacle, no bee above the fold, LCP
+ * stays text. The only visual is a small supporting ink gesture in the
+ * right whitespace (hero-gesture.tsx) — a dashed flight line resolving
+ * into one hex cell: the era moves, the presence holds shape.
  */
 export function Hero() {
   const [line1, line2] = COPY.h1.en;
@@ -71,14 +73,15 @@ export function Hero() {
 
   return (
     <section className="relative">
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 px-7 pb-16 pt-28 lg:grid-cols-[1.5fr_1fr] lg:gap-x-4 lg:pb-20 lg:pt-36">
+      <div className="relative mx-auto max-w-[1180px] px-7 pb-16 pt-28 lg:pb-20 lg:pt-36">
+        <HeroGesture />
         {/* copy column */}
         <div className="relative z-10">
           <p className="flex items-center gap-2.5 text-[13.5px] font-medium tracking-[0.01em]">
             <HexBullet />
             <I18n en={COPY.eyebrow.en} he={COPY.eyebrow.he} />
           </p>
-          <h1 className="hero-h1 mt-7 text-[clamp(44px,5vw,74px)] font-bold leading-[1.02] tracking-[-0.035em] lg:w-[128%] lg:max-w-none">
+          <h1 className="hero-h1 mt-7 text-[clamp(44px,5vw,74px)] font-bold leading-[1.02] tracking-[-0.035em]">
             <span className="i18n-en">
               <span className="block lg:whitespace-nowrap">{line1}</span>
               <span className="block">{line2a}</span>
@@ -110,15 +113,8 @@ export function Hero() {
           </p>
         </div>
 
-        {/* art column — the Field Journal page; bees converge once, then rest */}
-        <div className="relative mt-14 lg:mt-0">
-          <div className="relative mx-auto w-full max-w-[520px] lg:absolute lg:inset-x-0 lg:top-1/2 lg:max-w-none lg:-translate-y-[46%]">
-            <JournalComb />
-          </div>
-        </div>
-
         {/* founders ledger — full-width proof row (V-C graft) */}
-        <div className="mt-12 border-t border-hairline pt-6 lg:col-span-2 lg:mt-10">
+        <div className="mt-12 border-t border-hairline pt-6 lg:mt-14">
           <p className="text-[12px] font-medium text-muted">
             <I18n
               en="Built by the people who actually do it."

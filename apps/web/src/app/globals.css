@@ -407,6 +407,10 @@ html.js .journal-bee {
 html[lang="he"] .journal-stage {
   transform: scaleX(-1);
 }
+/* Hero gesture mirrors the same way — abstract ink, no lettering. */
+html[lang="he"] .hero-gesture {
+  transform: scaleX(-1);
+}
 @media (prefers-reduced-motion: reduce) {
   html.js .journal-bee {
     animation: none;

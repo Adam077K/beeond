@@ -263,6 +263,25 @@ pnpm test:e2e       # 18 gates, builds+serves on :3001
 node scripts/measure-scores.mjs <lighthouse.json>  # refresh C5 artifact
 ```
 
+---
+
+# v6 — content-first rebuild (feat/landing-v6, designer-v6-content-first)
+
+Brief: `docs/08-agents_work/briefs/2026-07-05-v6-designer-handoff.md`. Session started 2026-07-05.
+
+**Skill-conflict log (§0.2 — constitution wins, conflicts recorded, not obeyed):**
+- `high-end-visual-design` demands non-Rubik "premium fonts" (Geist/Clash Display), heavy glass, banned-shadow aesthetics → Rubik-only + hairline-shadow constitution wins.
+- `design-taste-frontend` §4/§9 mandates PERPETUAL micro-interactions and infinite bento loops → converge-once-then-rest doctrine wins, zero loops.
+- Both push Framer Motion; repo's proven stack is CSS one-shots + GSAP/ScrollTrigger (desktop dynamic import) → stack unchanged.
+- `emilkowal-animations` aligns with the motion doctrine (ease-out defaults, ≤300ms UI, reduced-motion) — adopted where it doesn't touch locked tokens.
+
+## v6 Wave 1 — Hero: art column retired, small gesture (2026-07-05)
+
+§2.1: v4 typography verbatim (locked H1 3-line break, eyebrow, subhead, CTA pair, ledger). JournalComb removed from the hero — sprite bees sat above the fold, which v6 forbids. Replacement: `hero-gesture.tsx`, one inline-SVG ink gesture in the right whitespace — dashed flight line descending into a single wobbled hex cell with a yellow nucleus (movement → structure; seeds the optional One-Line spine). Decorative, desktop-only, `[data-reveal]` one-shot, RTL self-mirror (`html[lang=he] .hero-gesture`). H1 128%-overhang hack removed with its column; LCP stays SSR text; zero hero JS still.
+Evidence: `v6-hero-r0-1440.png` · `v6-hero-r0-he.png` · `v6-hero-r0-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 35 clean (3 audited allowances). Founder checkpoint: gesture keep/drop pending.
+
+---
+
 | # | Deviation (appended) | Rationale | Gate still honored |
 |---|-----------|-----------|-------------------|
 | D6 | Mobile hero order: copy→CTA→art (v3 wanted H1→art→CTA) | CTA in first viewport on a conversion page; occlusion passes text-only | LCP=H1, founders adjacent |
