@@ -437,11 +437,6 @@ html.js [data-reveal].in .flight-dot {
     height: 460px;
     margin-top: 3rem;
   }
-  /* breathing floor between the static heading and the crossfading zone —
-     the handoff between "never changes" and "changes" stays legible */
-  .chapters-pinned [data-ch-stage] > [data-ch] {
-    top: 16px;
-  }
   /* the closing rule-line belongs to the stacked flow — inside the pin it
      would push the stage under the header */
   .chapters-pinned .ch-rule {
@@ -450,7 +445,9 @@ html.js [data-reveal].in .flight-dot {
   .chapters-pinned [data-ch-stage] > [data-ch] {
     position: absolute;
     inset-inline: 0;
-    top: 0;
+    /* breathing floor between the static heading and the crossfading zone —
+       the handoff between "never changes" and "changes" stays legible */
+    top: 16px;
     will-change: transform, opacity;
   }
   /* inside the pin the crossfade owns the motion — freeze the drift */

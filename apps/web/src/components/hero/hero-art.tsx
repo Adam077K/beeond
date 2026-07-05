@@ -21,7 +21,9 @@ export function HeroArt() {
         width={1024}
         height={1536}
         alt=""
-        loading="eager"
+        // lazy: desktop-only element — in-viewport lazy loads immediately on
+        // desktop, and phones (display:none) skip the download entirely
+        loading="lazy"
         decoding="async"
         className="h-auto w-full"
       />

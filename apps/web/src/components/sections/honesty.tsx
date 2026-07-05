@@ -72,8 +72,8 @@ export function HonestySection() {
           <img
             src="/art/spot-vessel.webp"
             alt=""
-            width={320}
-            height={351}
+            width={220}
+            height={242}
             loading="lazy"
             decoding="async"
             className="mx-auto h-[100px] w-auto select-none"

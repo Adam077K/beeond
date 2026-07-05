@@ -388,6 +388,12 @@ Mechanical: tsc ✓ eslint ✓ brand-lint 34 ✓ build ✓ e2e **23/0** · LH **
 Design-critic DELTA verdict: **SHIP — 0×P1/P2, 3×P3**, all applied: caption 4 made literal ("And the chart settles — one system."), 16px+16px breathing floor between the static heading and the crossfading chapter zone, spots raised to editorial scale (phases h-90, vessel h-100). Critic's open HE item closed: captions verified live in RTL (`v61-swarm-he-0_45/0_85.png`) and the flip front-faces + mobile struck-titles were EN-only — now bilingual (frontHe strings were already authored).
 Evidence: `v61-how-r1.png` · `v61-chapters-r1-0_5.png` · `v61-swarm-he-*.png`. **QA-Lead delta gate next.**
 
+## v6.1 QA delta gate — CLOSED: PASS (2026-07-05)
+
+Independent QA-Lead delta verdict: **PASS — full tier, 0×P1, 1×P2, 2×P3**; all mechanical gates re-run independently (tsc/eslint/brand-lint/build/e2e 23-0), GSAP lifecycles, progressive-degradation gating (`.chapters-pinned`/`.swarm-live` strictly post-init), i18n parity of all new strings, and scores↔Lighthouse co-derivation all verified. Verdict file: `docs/08-agents_work/sessions/2026-07-05-qa-lead-landing-v61.md`.
+Close-out (all findings fixed): P2 dead duplicate `[data-ch]` CSS rule merged — `top:16px` breathing floor now actually applies with a truthful comment · P3 hero art `loading` eager→lazy (phones skip the hidden download; desktop in-viewport lazy loads immediately) · P3 vessel recompressed 81→38KB (220w), width/height attrs corrected. Gates re-run after fixes: tsc ✓ brand-lint 34 ✓ build ✓ e2e 23/0 ✓.
+**v6.1 complete. Awaiting the founder's merge word.**
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |
