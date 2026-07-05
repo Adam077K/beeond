@@ -5,8 +5,8 @@ import { useState } from "react";
 /**
  * EN ↔ HE toggle. Swaps lang+dir on <html> inside a View Transition; both
  * languages are SSR'd and CSS picks one (see i18n rules in globals.css).
- * The hero art mirrors itself via html[lang="he"] .journal-stage — the
- * toggle no longer touches any artwork.
+ * The hero gesture mirrors itself via html[lang="he"] .hero-gesture — the
+ * toggle never touches any artwork.
  */
 export function LocaleToggle({ className = "" }: { className?: string }) {
   // SSR always ships lang="en"; the toggle is the only writer of html[lang]

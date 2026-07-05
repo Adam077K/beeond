@@ -356,6 +356,12 @@ Independent design-critic verdict: **NEEDS_WORK — 1×P1, 3×P2, 3×P3** (prote
 
 Post-remediation gates: tsc ✓ eslint ✓ brand-lint 34 clean · build ✓ · e2e **23 passed / 0 failed**.
 
+## v6 QA gate — CLOSED: PASS (2026-07-05)
+
+Independent QA-Lead verdict: **PASS — full tier (LOC-forced), 0×P1, 0×P2, 2×P3.** All mechanical gates re-run independently; every BUILD_LOG claim verified against artifacts (scores.json ↔ Lighthouse timestamps identical); GSAP/IO lifecycle, hydration safety, honesty doctrine and RTL allowances confirmed clean. Verdict file: `docs/08-agents_work/sessions/2026-07-05-qa-lead-landing-v6.md`.
+Close-out (both P3s): dead `journal-comb.tsx` deleted with its CSS block and 21 orphaned art assets (v4 combs, bee sprites, v5 bleed + icon sheets — §9.4 asset pruning executed; all regenerable from committed prompts, all in git history). Gates re-run after prune: tsc ✓ eslint ✓ brand-lint 33 clean ✓ build ✓ e2e 23/0 ✓. (P3-2 test-brittleness note recorded — the 350ms waits are the C7-era pattern; follow-up, not a gate.)
+**Awaiting the founder's merge word.** Launch-hold unchanged.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |
