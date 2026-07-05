@@ -299,6 +299,14 @@ Evidence: `v6-dark-a/b/c-1440.png` · `v6-dark-390.png` · `v6-dark-he.png`. Gat
 §2.4. New `sections/outcomes.tsx`: the four jobs verbatim from the brief, one line each (traced VP1/VP2/VP3/VP5), four ink spot-glyphs that argue the job — the cited answer (yellow hex inside the answer lines), work shipping off the desk, two dots casting a bigger lattice, the one bar that's working (yellow). Offset 2×2 grid — right column drops `sm:mt-10`, so it never reads bento-of-equals. Bug found by screenshot: Tailwind v4 `translate-y-*` writes the same `translate` property the `[data-reveal].in` rule resets → stagger silently no-oped; switched to margin stagger (reveal owns `translate`, layout owns margin — noted for future sections).
 Evidence: `v6-outcomes-1440.png` · `v6-outcomes-390.png`. Gates: tsc ✓ brand-lint 38 clean.
 
+## v6 Wave 5 — Meet the swarm: THE showpiece (2026-07-05)
+
+§2.5, the page's one scroll-choreographed moment. New `swarm/section.tsx` + `swarm/scrub.tsx` (C7's proven lifecycle: SSR ships the RESTED hive — agents up, lattice drawn; desktop scrub rewinds to the org chart and replays under scroll; `tl.set({},{},1)` progress mapping measured EXACT on first run, 6/6 frames).
+Choreography: 0.03–0.26 the chart draws (7 cards pop, elbow wires stroke-draw) → 0.34–0.58 the five role cards FLIP rotationY (unfilled hires → "agents all along"; front faces: "the first hire you can't afford / the writer who burns out…"), human chips light at 0.58 (the section's one yellow: "Human — calibration layer") → 0.66–0.88 wires release, cards migrate to a hexagon ring around the Strategy agent, the lattice draws — the bee's one earned entrance → rest.
+r0 bugs fixed by evidence: (1) hive rows overlapped card heights → stage 560px, rows 14/44/76; (2) hidden lattice leaked dash fragments — getTotalLength returns viewBox units while non-scaling-stroke dashes in screen units → px-true viewBox (0 0 1060 560), exact dash math.
+Nav retargeted: "The swarm" (header/footer) + hero secondary CTA → #swarm. Mobile: no-pin stacked ledger (humans 2-up, agent rows with struck hire-titles). JS-off/reduced-motion: rested hive, runway collapses.
+Evidence: `v6-swarm-0_12/0_3/0_45/0_5/0_58/0_75/0_95.png` · `v6-swarm-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 40 clean. 60fps@4× capture deferred to the gates wave (W9) alongside C7's.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

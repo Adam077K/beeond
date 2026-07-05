@@ -104,7 +104,7 @@ export function Hero() {
             <CtaButton href="#footprint-call">
               <I18n en={COPY.ctaPrimary.en} he={COPY.ctaPrimary.he} />
             </CtaButton>
-            <a href="#channel-map" className="link-quiet text-[15px] font-medium">
+            <a href="#swarm" className="link-quiet text-[15px] font-medium">
               <I18n en={COPY.ctaSecondary.en} he={COPY.ctaSecondary.he} />
             </a>
           </div>

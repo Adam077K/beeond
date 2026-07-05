@@ -432,6 +432,43 @@ html[lang="he"] .hero-gesture {
     transform: translateY(calc(var(--drift, 24px) * -1));
   }
 }
+
+/* ── Swarm showpiece — pin runway + card-flip machinery.
+   Runway exists only under html.js at desktop; JS-off / reduced-motion /
+   mobile = one viewport, rested hive. ── */
+@media (min-width: 1024px) {
+  html.js [data-swarm-root] {
+    height: 260vh;
+  }
+  html.js [data-swarm-root] [data-swarm-sticky] {
+    position: sticky;
+    top: 0;
+  }
+}
+.swarm-anchor {
+  position: absolute;
+  width: 182px;
+  transform: translate(-50%, -50%);
+  perspective: 900px;
+}
+.swarm-flip {
+  position: relative;
+  transform-style: preserve-3d;
+  /* rested default shows the BACK face (the agent) — the scrub rewinds to 0 */
+  transform: rotateY(180deg);
+}
+.swarm-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.swarm-front {
+  position: absolute;
+  inset: 0;
+}
+.swarm-back {
+  position: relative;
+  transform: rotateY(180deg);
+}
 @media (prefers-reduced-motion: reduce) {
   html.js .journal-bee {
     animation: none;

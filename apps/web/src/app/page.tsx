@@ -5,6 +5,7 @@ import { Hero } from "@/components/hero/hero";
 import { ArtifactStripSection } from "@/components/sections/artifact-strip";
 import { DarkChaptersSection } from "@/components/sections/dark-chapters";
 import { OutcomesSection } from "@/components/sections/outcomes";
+import { SwarmSection } from "@/components/swarm/section";
 import { ChannelMapSection } from "@/components/channel-map/section";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { AntiGenericSection } from "@/components/sections/anti-generic";
@@ -66,6 +67,7 @@ export default function Home() {
         <ArtifactStripSection />
         <DarkChaptersSection />
         <OutcomesSection />
+        <SwarmSection />
         <ChannelMapSection />
         <HowItWorksSection />
         <AntiGenericSection />

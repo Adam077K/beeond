@@ -6,7 +6,7 @@ import { LocaleToggle } from "./locale-toggle";
 import { I18n } from "./i18n";
 
 const NAV = [
-  { href: "#channel-map", label: "The swarm", labelHe: "הנחיל" },
+  { href: "#swarm", label: "The swarm", labelHe: "הנחיל" },
   { href: "#how-it-works", label: "How it works", labelHe: "איך זה עובד" },
   { href: "#founders", label: "Founders", labelHe: "המייסדים" },
   { href: "#faq", label: "FAQ", labelHe: "שאלות" },
