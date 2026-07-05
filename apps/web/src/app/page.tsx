@@ -2,6 +2,7 @@ import { COPY } from "@/lib/brand.lock";
 import { SiteHeader } from "@/components/site-header";
 import { RevealObserver } from "@/components/reveal-observer";
 import { Hero } from "@/components/hero/hero";
+import { ArtifactStripSection } from "@/components/sections/artifact-strip";
 import { ProblemSection } from "@/components/sections/problem";
 import { ChannelMapSection } from "@/components/channel-map/section";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
@@ -61,6 +62,7 @@ export default function Home() {
       <RevealObserver />
       <main id="main">
         <Hero />
+        <ArtifactStripSection />
         <ProblemSection />
         <ChannelMapSection />
         <HowItWorksSection />

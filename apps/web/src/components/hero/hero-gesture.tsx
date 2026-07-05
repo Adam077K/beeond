@@ -1,27 +1,36 @@
 /**
- * Hero gesture (v6) — the ONE small supporting drawing above the fold.
- * A dashed ink flight line dropping out of the fast-moving era, resolving
- * into a single hex cell with a yellow nucleus: movement becomes structure —
- * "your presence needs to match." Inline SVG, brand tokens only, decorative
- * (aria-hidden), desktop-only; reveals once via the shared [data-reveal]
- * system. RTL: the stage mirrors itself (abstract, no lettering).
+ * Hero gesture (v6, r1 per founder adjust) — the ONE small supporting
+ * drawing above the fold. Scattered ink dots — a presence in pieces —
+ * fall in along a dashed flight line and converge into a single hex cell
+ * with a yellow nucleus: scatter becomes structure, "your presence needs
+ * to match." Chapter-1 of the old swarm story, retold in still ink.
+ * Inline SVG, brand tokens only, decorative (aria-hidden), desktop-only;
+ * reveals once via the shared [data-reveal] system. RTL: self-mirrors.
  */
 export function HeroGesture() {
   return (
     <div
       data-reveal
       aria-hidden="true"
-      className="hero-gesture pointer-events-none absolute top-36 hidden w-[280px] end-7 lg:block"
+      className="hero-gesture pointer-events-none absolute top-32 hidden w-[320px] end-6 lg:block"
     >
       <svg viewBox="0 0 300 430" fill="none" className="h-auto w-full">
-        {/* speed ticks — the era passing */}
-        <g stroke="var(--color-ink)" strokeWidth="1.4" strokeLinecap="round" opacity="0.3">
-          <path d="M251 26l-11 13" />
-          <path d="M262 47l-11 13" />
+        {/* scattered presence — loose dots, not yet a system */}
+        <g fill="var(--color-ink)">
+          <circle cx="206" cy="26" r="2.6" opacity="0.3" />
+          <circle cx="257" cy="44" r="2.2" opacity="0.28" />
+          <circle cx="176" cy="62" r="2.9" opacity="0.34" />
+          <circle cx="268" cy="92" r="2.3" opacity="0.32" />
+          <circle cx="222" cy="104" r="2.6" opacity="0.4" />
+          {/* falling in — tighter, darker, joining the line */}
+          <circle cx="243" cy="158" r="2.7" opacity="0.52" />
+          <circle cx="219" cy="214" r="2.8" opacity="0.62" />
+          <circle cx="192" cy="266" r="2.9" opacity="0.74" />
+          <circle cx="168" cy="306" r="3" opacity="0.85" />
         </g>
-        {/* dashed flight line — hand-inked S descent */}
+        {/* dashed flight line — hand-inked descent the dots ride */}
         <path
-          d="M281 14C232 66 268 128 222 190c-40 54-88 82-74 128 6 20 12 26 2 40"
+          d="M262 40c-27 60-4 110-37 165-29 49-65 85-73 125"
           stroke="var(--color-ink)"
           strokeWidth="1.6"
           strokeLinecap="round"

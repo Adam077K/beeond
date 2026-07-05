@@ -280,6 +280,13 @@ Brief: `docs/08-agents_work/briefs/2026-07-05-v6-designer-handoff.md`. Session s
 §2.1: v4 typography verbatim (locked H1 3-line break, eyebrow, subhead, CTA pair, ledger). JournalComb removed from the hero — sprite bees sat above the fold, which v6 forbids. Replacement: `hero-gesture.tsx`, one inline-SVG ink gesture in the right whitespace — dashed flight line descending into a single wobbled hex cell with a yellow nucleus (movement → structure; seeds the optional One-Line spine). Decorative, desktop-only, `[data-reveal]` one-shot, RTL self-mirror (`html[lang=he] .hero-gesture`). H1 128%-overhang hack removed with its column; LCP stays SSR text; zero hero JS still.
 Evidence: `v6-hero-r0-1440.png` · `v6-hero-r0-he.png` · `v6-hero-r0-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 35 clean (3 audited allowances). Founder checkpoint: gesture keep/drop pending.
 
+**Founder checkpoint 1 (2026-07-05):** gesture = ADJUST → r1 ships scattered ink dots falling in along the dashed line and converging into the cell (scatter→structure, the Ch.1 story in still ink), larger + better anchored. Facts strip wording LOCKED: "11 channels · 1 swarm · weeks, not months". Audit scorecard: 5 dimensions APPROVED (AI-answer visibility leads as the keystone gap).
+
+## v6 Wave 2 — Artifact strip: the sample Footprint Audit (2026-07-05)
+
+§2.2, the tangibility slot. New `sections/artifact-strip.tsx` on a panel beat between hero and (interim) problem: a typeset SAMPLE audit sheet — double-hairline frame (border + offset outline = printed object), FOOTPRINT AUDIT header, rotated SAMPLE stamp, 5 founder-approved score rows (10-cell bars; the GEO row is the only yellow: u-accent on its name + yellow bar cells), gap note per row, 11-hex gap map with a yellow-cored keystone gap, "14 quick wins · 6 structural fixes". All sample data lives inside a page stamped SAMPLE — honesty doctrine holds. Beside it: locked facts ledger (11 / 1 / Weeks) + copy traced to POSITIONING §5/CTA-micro ("where your footprint has gaps"). Fully bilingual SSR; RTL fixes: score "2 / 10" wrapped dir=ltr (bidi reordered it), HE meta line re-authored Hebrew-first ("חברת B2B SaaS · כ-15 עובדים").
+Evidence: `v6-artifact-1440.png` · `v6-artifact-he.png` · `v6-artifact-390*.png` · hero r1 `v6-hero-r1-1440.png`. Gates: tsc ✓ brand-lint 36 clean.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |
