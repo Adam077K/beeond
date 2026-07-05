@@ -197,6 +197,39 @@ Deviation **D9**: two single-hue gradients (C7 anchor honey; both stops token-de
 Post-wave gates: e2e **18/18** · LH **97/100** · CLS 0 · brand-lint 0/35.
 **Open founder proposal:** if visible bees (beyond dots) are wanted at hero scale, that requires amending brand-lock A1 (bee device is favicon-scale only today) — one line from the founder unlocks it.
 
+## Quality wave 4 — v4 art direction: the Founders' Field Journal hero (2026-07-05)
+
+**Founder unlock:** reference image (ink+watercolor comb, hand-drawn bees, dashed paths, dark keystone cell with bee emblem) + "replace the current visuals… stay in the reference style" + funded direct gpt-image-1 access. A1's favicon-scale bee cap was explicitly lifted for generated art (DECISIONS).
+
+**Pipeline (all deterministic post-gen, brand-as-code):**
+1. `scripts/generate-art.mjs` — direct API; STYLE_LOCK hardened against sepia paper, gloss, eyes, oversized bees; `--transparent` mode.
+2. `scripts/normalize_paper.py` — per-channel white-balance so the art's paper hits ground `#FAF9F5` **exactly** → the image edge is invisible on-page (no sticker seam, no paper mismatch).
+3. `scripts/despecular.py` — hue-aware matte pass (only repaints bright pixels ringed by honey hue; letter counters/empty cells untouched — v1 flood-fill approach damaged the "GEO" O and was rejected on evidence).
+4. Layered hero: comb generated WITHOUT bees; 6 bee poses generated once on transparent alpha (`bee-sheet`), cropped by connected-components, composited in code at true field-sketch scale (~half a cell), where the model itself kept drawing storybook-sized bees with eyes.
+
+**Integration (`journal-comb.tsx` + globals):** zero hero JS (old canvas island deleted — TBT 10ms→0–10ms). One `.journal-page` coordinate system for art+bees; desktop crops to the comb spread via pure CSS (`.journal-crop`), mobile shows the full page. EN art = annotated variant (hand-lettered "every channel"/"one swarm"/"GEO" with painted-yellow underline — the artist's `.u-accent`); HE = clean letter-free variant, mirrored by one `html[lang=he] .journal-stage{scaleX(-1)}` (all offsets physical, brand-lint allowance audited). Bees converge once via CSS keyframes (stagger 250–740ms, settle ease); no-JS/reduced-motion base state IS the rested swarm. `loading=lazy` bees; art eager without fetchPriority (below-fold on phones — must not outrank text-LCP fonts).
+
+**Evidence:** `hero-v3-desktop.png`, `hero-v2-he.png`, `hero-v2-mobile-art.png`. Gates: e2e **18/18** · brand-lint **34 clean +1 audited allowance** · LH **95/100/96/100** · CLS **0** · real CDP trace (Slow-4G, 4× CPU): **LCP 732ms / CLS 0.003** (baseline 668ms — +64ms for the art direction). Assets: EN comb 108KB + 47KB/1024w + 27KB/768w; HE 98/37/21KB; bees ~20KB each. `art-src/` raws gitignored; prompts + candidates reproducible via the script.
+
+**Dead code honestly removed:** `swarm.tsx`, `swarm-rested.tsx`, `swarm-data.ts`; locale-toggle swarm-mirroring pruned (art mirrors itself).
+
+## Quality wave 5 — founder mock: the artwork IS the hero (2026-07-05)
+
+**Founder verdict on wave 4:** "this was more like my vision. not just a small image — the main hero statement" + a full mock (full-bleed comb, channel icons+labels INSIDE cells, two-tone gold H1, big bees, always-on header CTA) + instruction to re-read the design/code skills. Skills loaded: high-end-visual-design, design-taste-frontend, emilkowal-animations, web-design-guidelines.
+
+**Constitution amendment (founder-driven):** 8th token `gold #B28834` — the mock's headline gold (#CDA555 sampled) fails WCAG at 2.19:1, so the hue was kept and deepened to 3.08:1 for display text; eyebrow/tagline use an ink-mix at 4.56:1. Yellow remains fill/underline-only; gold is display-text-only. INVARIANTS updated (8-token; LCP wording).
+
+**Architecture:**
+- `hero-bleed` art regenerated at mock cell density (regen v2 after v1's cells ran ~40% oversized); stray baked bee paper-patched; despecular matte pass; paper==ground normalization.
+- The comb IS the channel map: 6 chips (hand-inked icon sheet, cropped like the bee sheet + REAL bilingual text labels) pinned to **measured** empty-cell centroids (flood-fill CV on the final art — never eyeballed). Crawlable, i18n, crisp at any DPI.
+- `.journal-window` clips to the page's right ~62% (the model's insistent left-zone bees never render); left edge melts via mask fade. `.journal-page` = one coordinate system, container-query (cqh) scaling for chips/bees at every viewport. Mobile band shows the same 62% window below the copy.
+- RTL: one `scaleX(-1)` on the page; chip inners counter-flip so labels read correctly. HE H1 line-break moved to the natural phrase boundary (3 lines, verbatim text unchanged).
+- Header: always-on CTA pill ("Get a free audit"), logo tagline caps ("AI-native growth"), mock nav (How it works / What we do / Results / About us / FAQ → real section ids, `#proof` added).
+- Bees: 2 on-comb + 3 free over hero whitespace, one-shot converge (existing keyframes).
+- LCP lesson RE-learned: `fetchPriority=high` on art that phones hide dropped perf to 88; removed (93). Mobile `sizes` capped to 1024w.
+
+**Evidence:** `hero-v5-final.png` (vs founder mock), `hero-v5-he2.png` (RTL mirror + counter-flipped labels), `hero-v5-mobile2.png`. Gates: e2e **18/18** (RTL logo-selector updated for the tagline wrapper) · brand-lint **34 clean** · LH **93/100/96/100** · CLS **0** · real CDP trace: **LCP 632ms / CLS 0**. Art 135KB + icons ~13KB each.
+
 ## Cross-section fresh-eyes (rhythm drift audit)
 
 Full-page reloads reviewed at 1440 (`build-evidence/full-1440.png`) + 390. DNA sequence: asym-split → zig-zag → full-bleed pin → path-on-panel → narrow-dense → stepped-panels → mirrored-split → hairline-strip → centered-short → narrow-list → dark-bleed. No two adjacent sections share padding/column DNA; the two panel beats (4, 6) are separated by the dense manifesto; the two short beats (C5 strip, social) use opposite alignment grammars (start-aligned row vs centered). Verdict: no redesign required; metronome avoided by construction of the rhythm map.

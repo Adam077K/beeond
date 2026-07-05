@@ -24,6 +24,36 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-05 — v6 vision pivot: "bees become agents" + full-page storytelling rethink (founder)
+
+**Context:** Founder judged the v5 labeled-honeycomb hero "too bee — not the advanced agency we're trying to show"; v5 typography/layout reverted same-day (`e5d83a6`), gold token rolled back. Direction reset: minimal meaningful ink drawings (Anthropic register), bees transforming into named/roled agents ("robotic view"), one immersive scroll showpiece mid-page, Diamo as structural reference.
+**Decision:** Vision + handoff encoded in `docs/08-agents_work/briefs/2026-07-05-v6-vision-brief.md` — the next single-designer session executes it (mandatory skills reads, evidence loops, all gates, QA-Lead + founder merge word). Two concept probes generated (metamorphosis / specimen schematic) awaiting founder pick.
+**Reversibility:** reversible — v4 live on branch, v5 in history, art regenerable.
+**Owner:** ceo (this session) → next designer session
+**Affects:** design-lead/next designer (execute §4 arc), QA-Lead (fresh gate for v6), CMO (stat-strip wording, POSITIONING traceability), founder (4 open decisions in brief §8).
+
+
+## 2026-07-05 — Constitution amendment: gold display token + hero-as-artwork (founder mock)
+
+**Context:** Founder rejected the v4 contained-illustration hero ("this was more like my vision — the main hero statement") and supplied a full mock: full-bleed comb bleeding off three edges, channel icons+labels inside the cells, two-tone gold headline, prominent bees, always-on header CTA.
+**Options considered:** (a) mock's literal gold #CDA555 — rejected, 2.19:1 fails WCAG even for display text; (b) keep yellow-underline H1 — rejected, founder's mock is explicit; (c) **same hue deepened to pass**: gold #B28834 (3.08:1 display) + ink-mix for small caps (4.56:1) — chosen.
+**Decision:** 8th brand token `gold` (display accent only: H1 sentence 2, eyebrow, logo tagline — never body text, never a surface). Hero rebuilt as full-viewport artwork with the comb as the literal channel map: hand-inked icon sheet + real bilingual text labels pinned to CV-measured empty-cell centroids; window-clip architecture hides the model's stubborn left-zone bees; RTL via one mirror + chip counter-flip.
+**Rationale:** The founder owns the constitution; a11y-100 is a hard gate the mock's literal color would break — hue preserved, lightness earned the pass. All gates re-proven: e2e 18/18, LH 93/100/96/100, real CDP LCP 632ms, CLS 0.
+**Reversibility:** reversible (token removal is one commit; v4 hero lives in git history).
+**Owner:** ceo (founder-mandated single designer-engineer session)
+**Affects:** design-lead (gold usage rules in future sections), QA-Lead (v5 delta needs a fresh gate before merge), CMO (nav copy: What we do / Results / About us).
+
+
+## 2026-07-05 — v4 hero shipped: generated Field Journal art, deterministic brand pipeline
+
+**Context:** Founder funded direct gpt-image-1 access ("send the messages and get the images directly to you"). First v4 asset (hero) generated, art-directed and integrated in one session on `feat/journal-hero`.
+**Options considered:** (a) trust prompts for brand color — rejected, model drifts sepia/gloss; (b) transparent-background art — rejected for large pieces (sticker-halo + etching drift), kept for small sprites; (c) **opaque art + deterministic post-processing** — chosen.
+**Decision:** Brand fidelity is enforced by code after generation, not begged from the model: `normalize_paper.py` white-balances the art's paper to ground `#FAF9F5` exactly (seamless on-page), `despecular.py` (hue-aware) mattes the honey. Bees are separate transparent sprites composited in `journal-comb.tsx` at true scale — the model consistently ignores bee-scale/no-eyes instructions at hero sizes. EN ships the annotated variant; HE ships the clean variant mirrored by one CSS transform. Old canvas swarm deleted (zero hero JS).
+**Rationale:** Every failure mode we hit (sepia paper, candy gloss, giant storybook bees, clipped lettering) was fixed deterministically or by decomposition — regeneration lotteries were spent only on composition. Real CDP trace: LCP 732ms / CLS 0.003; LH 95/100/96/100; e2e 18/18.
+**Reversibility:** reversible — swarm components live in git history; art regenerable from committed prompts.
+**Owner:** ceo (acting designer-engineer, founder-mandated single session)
+**Affects:** design-lead (remaining v4 assets: anti-generic, night-page, C7), QA-Lead (gate pending), CMO (OG image swap later).
+
 ## 2026-07-04 — Visual direction v4: illustrated ink+watercolor system (founder decision)
 
 **Context:** Founder reviewed the shipped code-driven visuals against a hand-drawn ink+watercolor honeycomb reference and chose to REPLACE the visual layer with AI-generated illustration in that style, founder-generated from CEO-authored prompts; motion delivered as short videos cut to frames (load-play for hero, scroll-scrub for C7).

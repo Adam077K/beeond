@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { SWARM_VB } from "./hero/swarm-data";
 
 /**
- * EN ↔ HE toggle — proves the RTL architecture with the founder-locked HE
- * hero strings (full Hebrew content is a fast-follow). Swaps lang+dir on
- * <html> inside a View Transition, and mirrors the rested swarm's dot
- * CENTROIDS numerically (cx' = w − cx) — a coordinate mirror, never a CSS
- * dir flip of the canvas/SVG.
+ * EN ↔ HE toggle. Swaps lang+dir on <html> inside a View Transition; both
+ * languages are SSR'd and CSS picks one (see i18n rules in globals.css).
+ * The hero art mirrors itself via html[lang="he"] .journal-stage — the
+ * toggle no longer touches any artwork.
  */
 export function LocaleToggle({ className = "" }: { className?: string }) {
   // SSR always ships lang="en"; the toggle is the only writer of html[lang]
@@ -19,20 +17,6 @@ export function LocaleToggle({ className = "" }: { className?: string }) {
       const html = document.documentElement;
       html.lang = next;
       html.dir = next === "he" ? "rtl" : "ltr";
-      // Chapter-1 canvas (if still mid-flight) yields to the rested state
-      document
-        .querySelectorAll<HTMLCanvasElement>("[data-swarm-stage] canvas")
-        .forEach((c) => (c.style.display = "none"));
-      document
-        .querySelectorAll<SVGGElement>("[data-swarm-dots]")
-        .forEach((g) => (g.style.opacity = "1"));
-      // mirror the rested swarm centroids numerically
-      document
-        .querySelectorAll<SVGCircleElement>("[data-swarm-rested] circle")
-        .forEach((c) => {
-          const cx = Number(c.getAttribute("cx"));
-          c.setAttribute("cx", String(Math.round((SWARM_VB.w - cx) * 10) / 10));
-        });
       setLocale(next);
     };
     if (document.startViewTransition) document.startViewTransition(run);
