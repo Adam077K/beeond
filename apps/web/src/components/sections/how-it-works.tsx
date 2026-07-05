@@ -10,6 +10,7 @@ import { I18n } from "../i18n";
 const STEPS = [
   {
     n: "01",
+    spot: "foundation",
     range: "Weeks 1–4",
     rangeHe: "שבועות 1–4",
     name: "Foundation",
@@ -20,6 +21,7 @@ const STEPS = [
   },
   {
     n: "02",
+    spot: "engine",
     range: "Weeks 4–8",
     rangeHe: "שבועות 4–8",
     name: "Content engine",
@@ -30,6 +32,7 @@ const STEPS = [
   },
   {
     n: "03",
+    spot: "amplify",
     range: "Weeks 8–12",
     rangeHe: "שבועות 8–12",
     name: "Amplification",
@@ -93,7 +96,18 @@ export function HowItWorksSection() {
                 </div>
                 {/* the editorial stagger lives below the line */}
                 <div className={s.offset}>
-                  <h3 className="mt-5 text-[19px] font-bold tracking-[-0.01em]"><I18n en={s.name} he={s.nameHe} /></h3>
+                  {/* phase spot — hand-inked margin drawing (v6.1, generated) */}
+                  {/* eslint-disable-next-line @next/next/no-img-element -- tiny alpha spot, pre-sized */}
+                  <img
+                    src={`/art/spot-${s.spot}.webp`}
+                    alt=""
+                    width={320}
+                    height={280}
+                    loading="lazy"
+                    decoding="async"
+                    className="mt-6 h-auto w-[74px] select-none"
+                  />
+                  <h3 className="mt-3 text-[19px] font-bold tracking-[-0.01em]"><I18n en={s.name} he={s.nameHe} /></h3>
                   <p className="mt-2 max-w-[34ch] text-[14px] leading-[1.55] text-muted">
                     <I18n en={s.line} he={s.lineHe} />
                   </p>

@@ -67,16 +67,17 @@ export function HonestySection() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
         {/* the framed empty state — the honesty IS the proof */}
         <div data-reveal className="flex flex-col justify-center border border-hairline px-8 py-12 text-center lg:px-12 lg:py-14">
-          <svg viewBox="0 0 20 22" className="mx-auto size-5" aria-hidden="true">
-            <path
-              d="M10 1 18 6.5v9L10 21l-8-5.5v-9Z"
-              fill="none"
-              stroke="var(--color-ink)"
-              strokeWidth="1.6"
-              strokeLinejoin="round"
-            />
-            <circle cx="10" cy="11" r="2.2" fill="var(--color-yellow)" />
-          </svg>
+          {/* the vessel — a taped, waiting frame (v6.1 spot drawing) */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- tiny alpha spot, pre-sized */}
+          <img
+            src="/art/spot-vessel.webp"
+            alt=""
+            width={320}
+            height={351}
+            loading="lazy"
+            decoding="async"
+            className="mx-auto h-auto w-[88px] select-none"
+          />
           <h2 className="mx-auto mt-6 max-w-[24ch] text-[clamp(24px,2.6vw,34px)] font-bold leading-[1.12] tracking-[-0.025em]">
             <I18n
               en="First cohort in progress — their results will live here."

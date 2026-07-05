@@ -364,6 +364,26 @@ Close-out (both P3s): dead `journal-comb.tsx` deleted with its CSS block and 21 
 
 ---
 
+# v6.1 — founder review directives (2026-07-05, post-QA-PASS delta)
+
+Founder held the merge and directed four upgrades. Doctrine note: directive 2 adds a SECOND scroll-choreographed section — founder amendment of the one-scroll-moment rule, logged in DECISIONS.
+
+## v6.1 W11 — generated hero art (gpt-image-1, funded)
+`hero-signal` prompt committed to generate-art.mjs: five scattered channel pictograms (search / AI answer / email / page / chart) braid into ONE dashed line arriving at a single built honey cell — the offer as a drawing, zero bees, zero lettering (direction-neutral, no RTL mirror). Probe medium n=2 (~4.5k tok) → prompt hardened (5 DISTINCT pictograms once each, flat plan-view cell, matte honey) → high n=2 (~14k tok), candidate 1 shipped. New deterministic pipeline stage `scripts/flatten_paper.py`: after normalize, every near-paper pixel is pushed to EXACT ground (hard 14 / soft 46 blend) — kills texture+vignette; the first attempt's visible art rectangle disappeared without CSS masks. 111KB/1024w + 35KB/640w, eager unprioritized, LCP stays text. `hero-gesture.tsx` deleted.
+
+## v6.1 W12 — dark chapters pinned crossfade
+`chapters-scrub.tsx` + `.chapters-pinned` CSS: 340vh runway, sticky stage, chapters absolutely stacked and crossfaded one-at-a-time (windows 0–.30 / .38–.62 / .70–1, ±36px travel). The pinned layout exists ONLY after the scrub initializes — mobile/JS-off/reduced-motion keep the stacked flow (nothing hidden from crawlers). Float-card drift frozen inside the pin (crossfade owns the motion). Fit fixes measured: pinned padding-block 96/32 clears the night header; the closing rule-line is stacked-flow-only.
+
+## v6.1 W13 — swarm narrator + full-screen stage
+Four scrub-crossfaded captions replace the static sub while live (`.swarm-live`): "Five hires you can't make yet." → "Except — they were agents all along." → "Two stay human. The taste is theirs." → "And the chart relaxes into a hive. One system." SSR/JS-off rest = last caption via CSS; sticky got opaque bg-ground. Progress mapping exact on all frames.
+
+## v6.1 W14 — spot ink drawings
+`spot-sheet` prompt committed (foundation bricks / lifting sheets / radiating cell / taped vessel). Model ignored `background: transparent` twice (opaque tan; medium retry drifted worse) → new deterministic rescue `scripts/extract_spots.py`: background estimated by 60px gaussian blur, max-channel diff → soft alpha ramp, quadrant split, alpha-trim. Four clean spots shipped: 3 phase drawings into how-it-works nodes, the taped vessel over "First cohort in progress" (the waiting frame IS the message). ~10–14KB each.
+
+Evidence: `v61-hero-1440.png` · `v61-chapters-0_15/0_5/0_85.png` · `v61-swarm-0_15/0_45/0_62/0_85.png` · `v61-how-1440.png` · `v61-honesty-1440.png`. Art spend logged above (~24k image tokens total).
+
+---
+
 | # | Deviation (appended) | Rationale | Gate still honored |
 |---|-----------|-----------|-------------------|
 | D6 | Mobile hero order: copy→CTA→art (v3 wanted H1→art→CTA) | CTA in first viewport on a conversion page; occlusion passes text-only | LCP=H1, founders adjacent |
