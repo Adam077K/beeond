@@ -4,6 +4,7 @@ import { RevealObserver } from "@/components/reveal-observer";
 import { Hero } from "@/components/hero/hero";
 import { ArtifactStripSection } from "@/components/sections/artifact-strip";
 import { DarkChaptersSection } from "@/components/sections/dark-chapters";
+import { OutcomesSection } from "@/components/sections/outcomes";
 import { ChannelMapSection } from "@/components/channel-map/section";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { AntiGenericSection } from "@/components/sections/anti-generic";
@@ -64,6 +65,7 @@ export default function Home() {
         <Hero />
         <ArtifactStripSection />
         <DarkChaptersSection />
+        <OutcomesSection />
         <ChannelMapSection />
         <HowItWorksSection />
         <AntiGenericSection />

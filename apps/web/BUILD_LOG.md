@@ -294,6 +294,11 @@ Motion: `.float-card` gentle parallax — CSS scroll-driven (`animation-timeline
 Candidate for the critic loop: the fixed glass header reads heavy (opaque gray slab) over the deep background.
 Evidence: `v6-dark-a/b/c-1440.png` · `v6-dark-390.png` · `v6-dark-he.png`. Gates: tsc ✓ eslint ✓ brand-lint 37 clean.
 
+## v6 Wave 4 — Outcomes: four quiet JTBD cards (2026-07-05)
+
+§2.4. New `sections/outcomes.tsx`: the four jobs verbatim from the brief, one line each (traced VP1/VP2/VP3/VP5), four ink spot-glyphs that argue the job — the cited answer (yellow hex inside the answer lines), work shipping off the desk, two dots casting a bigger lattice, the one bar that's working (yellow). Offset 2×2 grid — right column drops `sm:mt-10`, so it never reads bento-of-equals. Bug found by screenshot: Tailwind v4 `translate-y-*` writes the same `translate` property the `[data-reveal].in` rule resets → stagger silently no-oped; switched to margin stagger (reveal owns `translate`, layout owns margin — noted for future sections).
+Evidence: `v6-outcomes-1440.png` · `v6-outcomes-390.png`. Gates: tsc ✓ brand-lint 38 clean.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |
