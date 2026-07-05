@@ -45,7 +45,7 @@ export function HowItWorksSection() {
     <section id="how-it-works" className="bg-panel">
       <div className="mx-auto max-w-[980px] px-7 py-24 lg:py-28">
         <div data-reveal>
-          <Eyebrow n="03"><I18n en="How it works" he="איך זה עובד" /></Eyebrow>
+          <Eyebrow n="07"><I18n en="How it works" he="איך זה עובד" /></Eyebrow>
           <h2 className="mt-4 max-w-[26ch] text-[clamp(28px,3.2vw,42px)] font-bold leading-[1.06] tracking-[-0.03em]">
             <I18n
               en="Your footprint, built in layers — not lit up all at once."

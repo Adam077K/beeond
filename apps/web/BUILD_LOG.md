@@ -315,6 +315,12 @@ Evidence: `v6-swarm-0_12/0_3/0_45/0_5/0_58/0_75/0_95.png` · `v6-swarm-390.png`.
 Also: Problem + Founders sections deleted from the page (v6 arc; founder-confirmed); nav/footer re-anchored — What we do (#what-we-do) · The swarm (#swarm) · How it works · FAQ.
 Evidence: `v6-channels-1440.png` · `v6-channels-he.png` · `v6-channels-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 36 clean.
 
+## v6 Waves 7+8 — Honesty block · arc order · numbering (2026-07-05)
+
+§2.7–2.10. New `sections/honesty.tsx` (id #proof): the framed empty state — headline moved to the blueprint's "First cohort in progress — their results will live here", body/microline reuse the approved social-proof copy — beside the who-it's-for / NOT-for card (3+3, disqualifying copy included: "genuinely the right call past ~50 people"). C5 trust strip kept verbatim as the block's coda. Deleted: `anti-generic.tsx` (its argument now lives in the dark-chapters tracked-changes draft), `proof-c6.tsx`, `social-proof.tsx` (absorbed). Page order now matches the blueprint arc: hero → 01 artifact → 02 dark chapters → 03 outcomes → 04 swarm → 05 channels → 06 proof & fit (+trust coda) → 07 how-it-works → 08 FAQ → close. FAQ untouched (JSON-LD parity load-bearing). The close keeps the glowing-room HiveMark (critic-rated award-grade in v4) — restrained, per §2.10.
+Deferrals logged: build-line ink art for the timeline (art-src/ not present in this worktree; regeneration = founder-funded asset task, section stands without it) · two-dark-beats check rides the W9 full-page evidence review.
+Evidence: `v6-honesty-1440.png` · `v6-honesty-390.png` · `v6-full-1440.png`. Gates: tsc ✓ eslint ✓ brand-lint 34 clean.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

@@ -12,7 +12,7 @@ export function FaqSection() {
   return (
     <section id="faq" className="mx-auto max-w-[760px] px-7 pb-24 pt-14 lg:pb-28 lg:pt-16">
       <div data-reveal>
-        <Eyebrow n="07"><I18n en="Questions founders actually ask" he="שאלות שמייסדים באמת שואלים" /></Eyebrow>
+        <Eyebrow n="08"><I18n en="Questions founders actually ask" he="שאלות שמייסדים באמת שואלים" /></Eyebrow>
         <h2 className="mt-4 text-[clamp(28px,3.4vw,40px)] font-bold leading-[1.08] tracking-[-0.03em]">
           <I18n en="The answers, without the pitch." he="התשובות, בלי הפיץ׳." />
         </h2>
