@@ -56,9 +56,9 @@ export function FinalCtaSection() {
             <Logo hexFill="yellow" />
           </a>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-7 gap-y-2 text-[13px] text-ground/70">
+            <a className="footer-link" href="#what-we-do"><I18n en="What we do" he="מה אנחנו עושים" /></a>
             <a className="footer-link" href="#swarm"><I18n en="The swarm" he="הנחיל" /></a>
             <a className="footer-link" href="#how-it-works"><I18n en="How it works" he="איך זה עובד" /></a>
-            <a className="footer-link" href="#founders"><I18n en="Founders" he="המייסדים" /></a>
             <a className="footer-link" href="#faq"><I18n en="FAQ" he="שאלות" /></a>
           </nav>
           <p className="text-[11px] font-light tracking-[0.01em] text-ground/50">

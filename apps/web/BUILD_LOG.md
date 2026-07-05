@@ -307,6 +307,14 @@ r0 bugs fixed by evidence: (1) hive rows overlapped card heights → stage 560px
 Nav retargeted: "The swarm" (header/footer) + hero secondary CTA → #swarm. Mobile: no-pin stacked ledger (humans 2-up, agent rows with struck hire-titles). JS-off/reduced-motion: rested hive, runway collapses.
 Evidence: `v6-swarm-0_12/0_3/0_45/0_5/0_58/0_75/0_95.png` · `v6-swarm-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 40 clean. 60fps@4× capture deferred to the gates wave (W9) alongside C7's.
 
+**Founder checkpoint 2 (2026-07-05):** C7 pinned scrub → REPLACE with the calm ecosystem (confirmed). Standalone Founders section → DROP (hero ledger + showpiece humans carry the layer).
+
+## v6 Wave 6 — Every channel: the calm ecosystem (2026-07-05)
+
+§2.6. New `sections/channels.tsx` replaces the C7 pinned scrub (260vh pin, GSAP stage, ferry canvas — deleted with `channel-map/section.tsx`, `channel-map/scrub.tsx`, `lib/glow.ts`; recoverable in git). The assembled hive is now STATIC and arranged around the Beeond mark: center cell = the one BUILT cell (ink walls, yellow hex-o, "one swarm, one goal" in ground-on-dark), GEO honey cell adjacent keeps the hive's single yellow face, 10 channels around. All 11 proofs SSR text; names TEXT-only pending the logo legal pass. Channel data model kept (`channels.ts`, GEO moved (0,0)→(0,−1), paid →(0,−2)); tile material CSS (stacked-paper, rim, hover lift) reused untouched. Mobile keeps the proven keystone-emblem + ledger verbatim.
+Also: Problem + Founders sections deleted from the page (v6 arc; founder-confirmed); nav/footer re-anchored — What we do (#what-we-do) · The swarm (#swarm) · How it works · FAQ.
+Evidence: `v6-channels-1440.png` · `v6-channels-he.png` · `v6-channels-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 36 clean.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

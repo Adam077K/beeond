@@ -6,11 +6,10 @@ import { ArtifactStripSection } from "@/components/sections/artifact-strip";
 import { DarkChaptersSection } from "@/components/sections/dark-chapters";
 import { OutcomesSection } from "@/components/sections/outcomes";
 import { SwarmSection } from "@/components/swarm/section";
-import { ChannelMapSection } from "@/components/channel-map/section";
+import { ChannelsSection } from "@/components/sections/channels";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { AntiGenericSection } from "@/components/sections/anti-generic";
 import { ProofC6Section } from "@/components/sections/proof-c6";
-import { FoundersSection } from "@/components/sections/founders";
 import { TrustC5Section } from "@/components/sections/trust-c5";
 import { SocialProofSection } from "@/components/sections/social-proof";
 import { FaqSection } from "@/components/sections/faq";
@@ -68,11 +67,10 @@ export default function Home() {
         <DarkChaptersSection />
         <OutcomesSection />
         <SwarmSection />
-        <ChannelMapSection />
+        <ChannelsSection />
         <HowItWorksSection />
         <AntiGenericSection />
         <ProofC6Section />
-        <FoundersSection />
         <TrustC5Section />
         <SocialProofSection />
         <FaqSection />
