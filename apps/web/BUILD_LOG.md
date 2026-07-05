@@ -287,6 +287,13 @@ Evidence: `v6-hero-r0-1440.png` · `v6-hero-r0-he.png` · `v6-hero-r0-390.png`. 
 §2.2, the tangibility slot. New `sections/artifact-strip.tsx` on a panel beat between hero and (interim) problem: a typeset SAMPLE audit sheet — double-hairline frame (border + offset outline = printed object), FOOTPRINT AUDIT header, rotated SAMPLE stamp, 5 founder-approved score rows (10-cell bars; the GEO row is the only yellow: u-accent on its name + yellow bar cells), gap note per row, 11-hex gap map with a yellow-cored keystone gap, "14 quick wins · 6 structural fixes". All sample data lives inside a page stamped SAMPLE — honesty doctrine holds. Beside it: locked facts ledger (11 / 1 / Weeks) + copy traced to POSITIONING §5/CTA-micro ("where your footprint has gaps"). Fully bilingual SSR; RTL fixes: score "2 / 10" wrapped dir=ltr (bidi reordered it), HE meta line re-authored Hebrew-first ("חברת B2B SaaS · כ-15 עובדים").
 Evidence: `v6-artifact-1440.png` · `v6-artifact-he.png` · `v6-artifact-390*.png` · hero r1 `v6-hero-r1-1440.png`. Gates: tsc ✓ brand-lint 36 clean.
 
+## v6 Wave 3 — Dark chapters: what we actually do (2026-07-05)
+
+§2.3, the page's one long deep block. New `sections/dark-chapters.tsx` REPLACES the old Problem section (v6 arc has no standalone problem beat — the pain lives inside the chapters). Three chapters (a/b/c, titles verbatim from the brief) with left copy traced to POSITIONING pillars 2/3/5 and right FLOATING WORK ARTIFACTS — light paper documents on the dark desk: (a) AI-search visibility check (qualitative cited/not-cited rows, no invented positions), (b) content calendar mid-fill (yellow "drafting…" cell) + tracked-changes draft — the strikethroughs delete agency slop ("leverage cutting-edge AI solutions") and the yellow inserts are the calibrated voice: the anti-generic promise as a document, (c) monthly report page (qualitative MoM bars, current month yellow). Every artifact: SAMPLE tag + the verbatim chip "drafted by the swarm · calibrated by Yarden". Closing rule-line: "Automation does the volume. Humans do the taste."
+Motion: `.float-card` gentle parallax — CSS scroll-driven (`animation-timeline: view()`), @supports-gated, desktop-only, reduced-motion rested; `linear` carries a brand-lint allowance (scroll position IS the easing, GSAP-scrub rule). Showpiece scarcity intact — §2.5 remains the only choreographed section.
+Candidate for the critic loop: the fixed glass header reads heavy (opaque gray slab) over the deep background.
+Evidence: `v6-dark-a/b/c-1440.png` · `v6-dark-390.png` · `v6-dark-he.png`. Gates: tsc ✓ eslint ✓ brand-lint 37 clean.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

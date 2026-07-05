@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { RevealObserver } from "@/components/reveal-observer";
 import { Hero } from "@/components/hero/hero";
 import { ArtifactStripSection } from "@/components/sections/artifact-strip";
-import { ProblemSection } from "@/components/sections/problem";
+import { DarkChaptersSection } from "@/components/sections/dark-chapters";
 import { ChannelMapSection } from "@/components/channel-map/section";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { AntiGenericSection } from "@/components/sections/anti-generic";
@@ -63,7 +63,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <ArtifactStripSection />
-        <ProblemSection />
+        <DarkChaptersSection />
         <ChannelMapSection />
         <HowItWorksSection />
         <AntiGenericSection />

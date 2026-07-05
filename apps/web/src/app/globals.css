@@ -411,6 +411,27 @@ html[lang="he"] .journal-stage {
 html[lang="he"] .hero-gesture {
   transform: scaleX(-1);
 }
+
+/* ── Dark-chapter papers: gentle parallax drift, CSS scroll-driven only.
+   Deterministic + reversible (scrub-like), no JS, no loop; unsupported
+   browsers and reduced-motion get the rested position. ── */
+@supports (animation-timeline: view()) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    .float-card {
+      animation: float-drift linear both; /* brand-lint-allow: scroll-scrubbed — scroll position IS the easing, same rule as GSAP scrub */
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+@keyframes float-drift {
+  from {
+    transform: translateY(var(--drift, 24px));
+  }
+  to {
+    transform: translateY(calc(var(--drift, 24px) * -1));
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html.js .journal-bee {
     animation: none;
