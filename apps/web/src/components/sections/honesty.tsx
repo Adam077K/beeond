@@ -76,7 +76,7 @@ export function HonestySection() {
             height={351}
             loading="lazy"
             decoding="async"
-            className="mx-auto h-auto w-[88px] select-none"
+            className="mx-auto h-[100px] w-auto select-none"
           />
           <h2 className="mx-auto mt-6 max-w-[24ch] text-[clamp(24px,2.6vw,34px)] font-bold leading-[1.12] tracking-[-0.025em]">
             <I18n

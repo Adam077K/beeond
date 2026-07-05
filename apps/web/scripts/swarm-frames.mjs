@@ -15,6 +15,12 @@ const targets = list.split(",").map(Number);
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 await page.goto(url, { waitUntil: "networkidle" });
+if (process.env.SHOT_LANG === "he") {
+  await page.evaluate(() => {
+    document.documentElement.lang = "he";
+    document.documentElement.dir = "rtl";
+  });
+}
 await page.waitForTimeout(1200);
 
 for (const p of targets) {

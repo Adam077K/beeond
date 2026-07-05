@@ -105,7 +105,7 @@ export function HowItWorksSection() {
                     height={280}
                     loading="lazy"
                     decoding="async"
-                    className="mt-6 h-auto w-[74px] select-none"
+                    className="mt-6 h-[90px] w-auto select-none"
                   />
                   <h3 className="mt-3 text-[19px] font-bold tracking-[-0.01em]"><I18n en={s.name} he={s.nameHe} /></h3>
                   <p className="mt-2 max-w-[34ch] text-[14px] leading-[1.55] text-muted">

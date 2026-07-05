@@ -382,6 +382,12 @@ Four scrub-crossfaded captions replace the static sub while live (`.swarm-live`)
 
 Evidence: `v61-hero-1440.png` · `v61-chapters-0_15/0_5/0_85.png` · `v61-swarm-0_15/0_45/0_62/0_85.png` · `v61-how-1440.png` · `v61-honesty-1440.png`. Art spend logged above (~24k image tokens total).
 
+## v6.1 delta gates + critic loop — CLOSED (2026-07-05)
+
+Mechanical: tsc ✓ eslint ✓ brand-lint 34 ✓ build ✓ e2e **23/0** · LH **95/100/100/100**, CLS 0, TBT 10ms (hero art cost 1 perf point, gate holds) · real CDP trace **LCP 820ms / CLS 0.0022 / worst interaction 32ms** · swarm scrub 4×CPU **0 frames >33ms** · scores.json refreshed from the v6.1 LH artifact.
+Design-critic DELTA verdict: **SHIP — 0×P1/P2, 3×P3**, all applied: caption 4 made literal ("And the chart settles — one system."), 16px+16px breathing floor between the static heading and the crossfading chapter zone, spots raised to editorial scale (phases h-90, vessel h-100). Critic's open HE item closed: captions verified live in RTL (`v61-swarm-he-0_45/0_85.png`) and the flip front-faces + mobile struck-titles were EN-only — now bilingual (frontHe strings were already authored).
+Evidence: `v61-how-r1.png` · `v61-chapters-r1-0_5.png` · `v61-swarm-he-*.png`. **QA-Lead delta gate next.**
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

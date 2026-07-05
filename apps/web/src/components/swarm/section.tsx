@@ -196,10 +196,14 @@ function RoleCard({ role, index }: { role: Role; index: number }) {
         <div data-swarm-flip className="swarm-flip">
           {/* front — the unfilled hire */}
           <div className="swarm-face swarm-front border border-dashed border-hairline bg-panel p-4" aria-hidden="true">
-            <p className="text-[13.5px] font-bold">{role.frontEn}</p>
-            <p className="mt-1 text-[11.5px] leading-snug text-muted">{role.frontLineEn}</p>
+            <p className="text-[13.5px] font-bold">
+              <I18n en={role.frontEn} he={role.frontHe} />
+            </p>
+            <p className="mt-1 text-[11.5px] leading-snug text-muted">
+              <I18n en={role.frontLineEn} he={role.frontLineHe} />
+            </p>
             <p className="mt-3 w-fit border border-hairline px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
-              Unfilled
+              <I18n en="Unfilled" he="לא מאויש" />
             </p>
           </div>
           {/* back — the agent, already working */}
@@ -250,7 +254,7 @@ const CAPTIONS = [
   { en: "Five hires you can't make yet.", he: "חמישה גיוסים שאתם עוד לא יכולים לעשות." },
   { en: "Except — they were agents all along.", he: "רק שהם — היו סוכנים כל הזמן." },
   { en: "Two stay human. The taste is theirs.", he: "שניים נשארים בני אדם. הטעם — שלהם." },
-  { en: "And the chart relaxes into a hive. One system.", he: "והתרשים נרגע לתוך כוורת. מערכת אחת." },
+  { en: "And the chart settles — one system.", he: "והתרשים נרגע — מערכת אחת." },
 ];
 
 export function SwarmSection() {
@@ -342,7 +346,7 @@ export function SwarmSection() {
                   <AgentMark className="size-7 shrink-0" />
                   <div>
                     <p className="text-[11px] text-muted line-through" aria-hidden="true">
-                      {r.frontEn}
+                      <I18n en={r.frontEn} he={r.frontHe} />
                     </p>
                     <p className="text-[14px] font-bold">
                       <I18n en={r.backEn} he={r.backHe} />
