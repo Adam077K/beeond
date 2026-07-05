@@ -24,6 +24,15 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-05 — v6 vision pivot: "bees become agents" + full-page storytelling rethink (founder)
+
+**Context:** Founder judged the v5 labeled-honeycomb hero "too bee — not the advanced agency we're trying to show"; v5 typography/layout reverted same-day (`e5d83a6`), gold token rolled back. Direction reset: minimal meaningful ink drawings (Anthropic register), bees transforming into named/roled agents ("robotic view"), one immersive scroll showpiece mid-page, Diamo as structural reference.
+**Decision:** Vision + handoff encoded in `docs/08-agents_work/briefs/2026-07-05-v6-vision-brief.md` — the next single-designer session executes it (mandatory skills reads, evidence loops, all gates, QA-Lead + founder merge word). Two concept probes generated (metamorphosis / specimen schematic) awaiting founder pick.
+**Reversibility:** reversible — v4 live on branch, v5 in history, art regenerable.
+**Owner:** ceo (this session) → next designer session
+**Affects:** design-lead/next designer (execute §4 arc), QA-Lead (fresh gate for v6), CMO (stat-strip wording, POSITIONING traceability), founder (4 open decisions in brief §8).
+
+
 ## 2026-07-05 — Constitution amendment: gold display token + hero-as-artwork (founder mock)
 
 **Context:** Founder rejected the v4 contained-illustration hero ("this was more like my vision — the main hero statement") and supplied a full mock: full-bleed comb bleeding off three edges, channel icons+labels inside the cells, two-tone gold headline, prominent bees, always-on header CTA.
