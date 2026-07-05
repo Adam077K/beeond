@@ -340,6 +340,22 @@ e2e suite reworked for the v6 arc: C7 scrub test → swarm showpiece test (flip 
 
 Capture note: full-page screenshots show the swarm stage empty by design — the scrub is reversible, and walking back to top rewinds it; frame-step evidence (`v6-swarm-0_*.png`) is the section's artifact.
 
+## v6 Wave 10 — design-critic loop: NEEDS_WORK → remediated (2026-07-05)
+
+Independent design-critic verdict: **NEEDS_WORK — 1×P1, 3×P2, 3×P3** (protected list: audit sheet, attribution chips, channel hive, honesty copy, yellow discipline, mobile — all untouched). Resolution:
+
+| Finding | Fix |
+|---|---|
+| P1 header = bright slab over dark sections (CONFIRMED, was pre-logged) | `.header-dark` night mode: IO watches `[data-scheme=dark]` against a viewport collapsed to the header band; pill flips to deep glass + ground text/logo/CTA/toggle/burger. Verified over chapters AND close (`v6-r1-header-dark.png`) |
+| P2 outcomes glyphs 2/4 read Lucide-generic | Redrawn in the hero-gesture ink language: the drafting loop that ships out (dashed release → yellow cell) · the signal curve with the one yellow reading (`v6-r1-outcomes.png`) |
+| P2 outcomes grid symmetric | `lg:grid-cols-[0.9fr_1.1fr]` + kept right-column drop — two-column composition, not a grid of equals |
+| P2 trust badge stale (95 / 07-04) | Was a stale-server artifact — scores.json already refreshed W9; rebuilt HTML verified: "measured 96/100 … (2026-07-05)" |
+| P3 keystone close modest | Radial token-derived glow behind the lit cell (D9 rule), `overflow-x-clip` on the section (the glow's -inset overflowed 320px by 28px — caught by e2e) (`v6-r1-close.png`) |
+| P3 hero gesture disconnected from H1 | Nudged toward "match." — top-28 / end-14 / 340px |
+| P3 swarm reduced-motion rest unconfirmed | New e2e: `reducedMotion: reduce` → first flip m11 < −0.9 (agents up, "Unfilled" rotated away). PASSES — rest state is ALREADY WORKING |
+
+Post-remediation gates: tsc ✓ eslint ✓ brand-lint 34 clean · build ✓ · e2e **23 passed / 0 failed**.
+
 ---
 
 | # | Deviation (appended) | Rationale | Gate still honored |

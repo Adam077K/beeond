@@ -23,6 +23,7 @@ export function SiteHeader() {
   const burgerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [overDark, setOverDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -33,6 +34,28 @@ export function SiteHeader() {
       { threshold: 0 },
     );
     io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // the header goes NIGHT while it floats over a deep section (critic P1):
+  // observe dark sections against a viewport collapsed to the header band
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-scheme="dark"]'),
+    );
+    if (sections.length === 0) return;
+    const over = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) over.add(e.target);
+          else over.delete(e.target);
+        }
+        setOverDark(over.size > 0);
+      },
+      { rootMargin: "0px 0px -93% 0px", threshold: 0 },
+    );
+    sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
   }, []);
 
@@ -65,7 +88,7 @@ export function SiteHeader() {
         <div
           className={`header-shell flex w-full max-w-[1132px] items-center justify-between gap-6 rounded-full py-2.5 ps-5 pe-2.5 ${
             scrolled ? "header-glass" : ""
-          }`}
+          } ${overDark ? "header-dark" : ""}`}
         >
           <a href="#main" className="text-[19px] text-ink" aria-label="Beeond — home">
             <Logo />

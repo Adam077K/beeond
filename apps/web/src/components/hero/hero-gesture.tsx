@@ -12,7 +12,7 @@ export function HeroGesture() {
     <div
       data-reveal
       aria-hidden="true"
-      className="hero-gesture pointer-events-none absolute top-32 hidden w-[320px] end-6 lg:block"
+      className="hero-gesture pointer-events-none absolute top-28 hidden w-[340px] end-14 lg:block"
     >
       <svg viewBox="0 0 300 430" fill="none" className="h-auto w-full">
         {/* scattered presence — loose dots, not yet a system */}

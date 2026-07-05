@@ -112,6 +112,22 @@ test.describe("landing — hard gates", () => {
     expect(await root.getAttribute("data-p")).toBeTruthy();
   });
 
+  test("swarm rested state under reduced motion: agents up, never unfilled", async ({ browser }, testInfo) => {
+    test.skip(testInfo.project.name !== "desktop", "stage is desktop-only");
+    const ctx = await browser.newContext({
+      reducedMotion: "reduce",
+      viewport: { width: 1440, height: 900 },
+    });
+    const page = await ctx.newPage();
+    await page.goto("http://localhost:3001/", { waitUntil: "networkidle" });
+    const m11 = await page.locator("[data-swarm-flip]").first().evaluate((el) => {
+      const t = getComputedStyle(el).transform;
+      return t === "none" ? 1 : Number(t.replace(/matrix(3d)?\(/, "").split(",")[0]);
+    });
+    expect(m11).toBeLessThan(-0.9); // agent faces up, "Unfilled" rotated away
+    await ctx.close();
+  });
+
   test("FAQ opens and closes (exit animation path)", async ({ page }) => {
     await page.goto("/");
     const first = page.locator(".faq-item").first();

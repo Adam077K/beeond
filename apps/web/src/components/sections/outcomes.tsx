@@ -27,14 +27,34 @@ function GlyphAnswer() {
   );
 }
 
-/** work leaving the desk, week after week */
+/** work leaving the desk, week after week — one ink stroke loops and ships out */
 function GlyphShip() {
   return (
     <svg viewBox="0 0 44 44" fill="none" className="size-11" aria-hidden="true">
-      <rect x="6" y="12" width="22" height="27" stroke="var(--color-ink)" strokeWidth="1.7" opacity="0.35" />
-      <rect x="12" y="6" width="22" height="27" fill="var(--color-ground)" stroke="var(--color-ink)" strokeWidth="1.7" />
-      <path d="M17 14h12M17 20h12M17 26h7" stroke="var(--color-ink)" strokeWidth="1.6" strokeLinecap="round" opacity="0.5" />
-      <path d="M37.5 16l4-4M37.5 24l4-4" stroke="var(--color-ink)" strokeWidth="1.6" strokeLinecap="round" />
+      {/* the drafting loop */}
+      <path
+        d="M4 33c3-10 11-15 16-10 4 4 0 10-4 8-5-2 0-11 8-13 5-1 9 1 12 4"
+        stroke="var(--color-ink)"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+      {/* the dashed release — off the page */}
+      <path
+        d="M33 20c2 1 4 1 6 0"
+        stroke="var(--color-ink)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeDasharray="3 5"
+        opacity="0.55"
+      />
+      {/* shipped — the cell at the terminus */}
+      <path
+        d="M38 8.5 42.5 11v5L38 18.5 33.5 16v-5Z"
+        fill="var(--color-yellow)" /* brand-lint-allow: spot-glyph fill accent — the shipped piece */
+        stroke="var(--color-ink)"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -54,23 +74,31 @@ function GlyphBigger() {
   );
 }
 
-/** the signal, read exactly */
+/** the signal, read exactly — one ink curve; the moment that worked, marked */
 function GlyphSignal() {
   return (
     <svg viewBox="0 0 44 44" fill="none" className="size-11" aria-hidden="true">
-      <path d="M7 39h30" stroke="var(--color-ink)" strokeWidth="1.7" strokeLinecap="round" opacity="0.35" />
-      <rect x="10" y="26" width="6" height="10" stroke="var(--color-ink)" strokeWidth="1.6" />
-      <rect x="20" y="18" width="6" height="18" stroke="var(--color-ink)" strokeWidth="1.6" />
+      {/* baseline */}
+      <path d="M5 37h34" stroke="var(--color-ink)" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
+      {/* the one reading that worked — marked under the curve */}
       <rect
-        x="30"
-        y="10"
-        width="6"
-        height="26"
-        fill="var(--color-yellow)" /* brand-lint-allow: spot-glyph fill accent — the channel that works */
+        x="29"
+        y="15"
+        width="5"
+        height="22"
+        fill="var(--color-yellow)" /* brand-lint-allow: spot-glyph fill accent — the reading that worked */
         stroke="var(--color-ink)"
-        strokeWidth="1.6"
+        strokeWidth="1.4"
       />
-      <path d="M33 5.5v-2" stroke="var(--color-ink)" strokeWidth="1.6" strokeLinecap="round" />
+      {/* the signal — rises, dips, then earns the peak */}
+      <path
+        d="M5 32c5 0 6-8 10-8s4 6 8 5 4-11 9-15c2-1.5 4-2 7-2"
+        stroke="var(--color-ink)"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+      {/* the read — a tick where the founders looked */}
+      <circle cx="31.5" cy="13" r="2.2" fill="var(--color-ink)" />
     </svg>
   );
 }
@@ -118,7 +146,9 @@ export function OutcomesSection() {
         </h2>
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:gap-x-10">
+      {/* asymmetric two-column composition: wider end column + dropped
+          rhythm — never a grid of equals (critic P2) */}
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-x-10">
         {OUTCOMES.map((o, i) => (
           <div
             key={o.tEn}

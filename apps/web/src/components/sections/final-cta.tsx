@@ -11,7 +11,7 @@ import { Logo } from "../logo";
 
 export function FinalCtaSection() {
   return (
-    <section id="footprint-call" data-scheme="dark" className="bg-deep text-ground">
+    <section id="footprint-call" data-scheme="dark" className="overflow-x-clip bg-deep text-ground">
       <div className="mx-auto grid max-w-[1180px] gap-14 px-7 pb-16 pt-28 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pb-20 lg:pt-40">
         <div data-reveal>
           <p className="text-[13px] font-medium text-ground/60">
@@ -45,8 +45,18 @@ export function FinalCtaSection() {
             />
           </p>
         </div>
-        <div data-reveal className="mx-auto w-full max-w-[500px]">
-          <HiveMark scheme="dark" className="w-full" />
+        <div data-reveal className="relative mx-auto w-full max-w-[500px]">
+          {/* earned warmth behind the one lit cell — focal weight without
+              breaking restraint (critic P3; token-derived, D9 precedent) */}
+          <div
+            aria-hidden="true"
+            className="absolute -inset-14"
+            style={{
+              background:
+                "radial-gradient(circle at 50% 48%, color-mix(in oklab, var(--color-yellow) 13%, transparent), transparent 62%)" /* brand-lint-allow: single-hue token-derived glow, D9 rule */,
+            }}
+          />
+          <HiveMark scheme="dark" className="relative w-full" />
         </div>
       </div>
 

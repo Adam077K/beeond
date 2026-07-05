@@ -215,6 +215,42 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+/* Night mode: while the pill floats over a deep section it joins the dark
+   instead of sitting on it as a bright slab (design-critic P1). */
+.header-dark {
+  color: var(--color-ground);
+}
+.header-dark a {
+  color: var(--color-ground);
+}
+.header-dark.header-glass {
+  background-color: color-mix(in oklab, var(--color-deep) 80%, transparent);
+  border-color: color-mix(in oklab, var(--color-ground) 16%, transparent);
+}
+.header-dark .nav-link {
+  color: color-mix(in oklab, var(--color-ground) 80%, var(--color-deep));
+}
+.header-dark .nav-link:hover {
+  color: var(--color-ground);
+  border-block-end-color: var(--color-ground);
+}
+.header-dark .locale-toggle {
+  color: var(--color-ground);
+  border-color: color-mix(in oklab, var(--color-ground) 30%, transparent);
+}
+.header-dark .locale-toggle:hover {
+  border-color: var(--color-ground);
+}
+.header-dark .header-cta {
+  background-color: var(--color-ground);
+  color: var(--color-ink);
+}
+.header-dark .burger path {
+  stroke: var(--color-ground);
+}
+.header-dark .burger-line {
+  background-color: var(--color-ground);
+}
 
 /* ── C7 hex tiles — clip-path hexagons with real wrapping DOM text ── */
 .hex-tile {
