@@ -466,6 +466,20 @@ html.js [data-reveal].in .flight-dot {
     top: 0;
   }
 }
+/* narrator captions: hidden until the scrub goes live; the rested state
+   (JS-off / reduced-motion keeps .swarm-sub instead) shows the last line */
+.swarm-live .swarm-sub {
+  display: none;
+}
+.swarm-live .swarm-caps {
+  display: block;
+}
+.swarm-cap {
+  opacity: 0;
+}
+.swarm-cap[data-swarm-cap="3"] {
+  opacity: 1;
+}
 .swarm-anchor {
   position: absolute;
   width: 182px;

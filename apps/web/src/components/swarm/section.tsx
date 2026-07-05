@@ -244,10 +244,19 @@ function HumanCard({ h, index }: { h: (typeof HUMANS)[number]; index: number }) 
   );
 }
 
+/** the narrator line — one caption per phase, scrub-crossfaded; the rested
+ *  (SSR / JS-off / reduced-motion) state shows the LAST caption via CSS */
+const CAPTIONS = [
+  { en: "Five hires you can't make yet.", he: "חמישה גיוסים שאתם עוד לא יכולים לעשות." },
+  { en: "Except — they were agents all along.", he: "רק שהם — היו סוכנים כל הזמן." },
+  { en: "Two stay human. The taste is theirs.", he: "שניים נשארים בני אדם. הטעם — שלהם." },
+  { en: "And the chart relaxes into a hive. One system.", he: "והתרשים נרגע לתוך כוורת. מערכת אחת." },
+];
+
 export function SwarmSection() {
   return (
     <section id="swarm" data-swarm-root className="relative">
-      <div data-swarm-sticky className="mx-auto max-w-[1180px] px-7 py-24 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:py-0">
+      <div data-swarm-sticky className="mx-auto max-w-[1180px] bg-ground px-7 py-24 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:py-0">
         <div data-reveal className="lg:shrink-0">
           <Eyebrow n="04" hex>
             <I18n en="Meet the swarm" he="הכירו את הנחיל" />
@@ -258,12 +267,25 @@ export function SwarmSection() {
               he="הצוות שאתם לא יכולים לגייס — כבר עובד."
             />
           </h2>
-          <p className="mt-4 max-w-[52ch] text-[15px] leading-[1.55] text-muted">
+          {/* the plain sub reads when the choreography can't run… */}
+          <p className="swarm-sub mt-4 max-w-[52ch] text-[15px] leading-[1.55] text-muted">
             <I18n
               en="Five roles a fifteen-person company can't staff. In Beeond they're agents — one coordinated swarm, calibrated by the two humans who built it."
               he="חמישה תפקידים שחברה של חמישה-עשר איש לא יכולה לאייש. ב-Beeond הם סוכנים — נחיל אחד מתואם, מכויל על ידי שני האנשים שבנו אותו."
             />
           </p>
+          {/* …and the narrator takes over while it runs (scrub adds .swarm-live) */}
+          <div className="swarm-caps relative mt-4 hidden h-[26px]" aria-hidden="true">
+            {CAPTIONS.map((c, i) => (
+              <p
+                key={c.en}
+                data-swarm-cap={i}
+                className="swarm-cap absolute inset-0 text-[17px] font-semibold tracking-[-0.01em]"
+              >
+                <I18n en={c.en} he={c.he} />
+              </p>
+            ))}
+          </div>
         </div>
 
         {/* ── desktop stage: the rested hive (SSR); the scrub rewinds it ── */}

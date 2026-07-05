@@ -53,7 +53,10 @@ export function SwarmScrub() {
       const wires = Array.from(root.querySelectorAll<SVGPathElement>("[data-swarm-wire]"));
       const lattice = Array.from(root.querySelectorAll<SVGPathElement>("[data-swarm-lat]"));
       const chips = Array.from(root.querySelectorAll<HTMLElement>("[data-swarm-chip]"));
+      const caps = Array.from(root.querySelectorAll<HTMLElement>("[data-swarm-cap]"));
       if (!stage || movers.length === 0) return;
+
+      root.classList.add("swarm-live"); // narrator captions replace the sub
 
       const prep = (paths: SVGPathElement[]) =>
         paths.forEach((p) => {
@@ -80,6 +83,7 @@ export function SwarmScrub() {
       prep(wires);
       prep(lattice);
       gsap.set(chips, { opacity: 0 });
+      caps.forEach((c, i) => gsap.set(c, { opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 10 }));
 
       const tl = gsap.timeline({
         defaults: { ease: "power3.out" },
@@ -120,11 +124,25 @@ export function SwarmScrub() {
       lattice.forEach((p, i) => {
         tl.to(p, { strokeDashoffset: 0, duration: 0.08, ease: "power1.inOut" }, 0.72 + i * 0.012);
       });
+
+      // ── the narrator: one caption per phase (founder directive) ──
+      const CAP_WINDOWS: Array<[number, number | null]> = [
+        [0, 0.3], // five hires you can't make yet
+        [0.33, 0.56], // agents all along
+        [0.58, 0.66], // two stay human
+        [0.7, null], // the chart relaxes into a hive
+      ];
+      caps.forEach((c, i) => {
+        const [tIn, tOut] = CAP_WINDOWS[i];
+        if (i > 0) tl.to(c, { opacity: 1, y: 0, duration: 0.025 }, tIn);
+        if (tOut !== null) tl.to(c, { opacity: 0, y: -10, duration: 0.025 }, tOut);
+      });
       // 0.88 → 1: rested hold — the hive stands, nothing loops
 
       cleanup = () => {
         tl.scrollTrigger?.kill();
         tl.kill();
+        root.classList.remove("swarm-live");
       };
     })();
 
