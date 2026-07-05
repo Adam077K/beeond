@@ -391,13 +391,8 @@ html.js [data-reveal].in .flight-dot {
   }
 }
 
-/* (v4 Field Journal hero CSS removed with journal-comb.tsx — QA P3-1;
-   the art system lives in git history at e5d83a6.) */
-/* HE mirrors the hero gesture so the flight line enters from the reading
-   direction — abstract ink, no lettering, so the flip is legal. */
-html[lang="he"] .hero-gesture {
-  transform: scaleX(-1);
-}
+/* (v4 Field Journal hero CSS removed with journal-comb.tsx — QA P3-1.
+   v6.1 hero art is direction-neutral — no RTL mirror rule needed.) */
 
 /* ── Dark-chapter papers: gentle parallax drift, CSS scroll-driven only.
    Deterministic + reversible (scrub-like), no JS, no loop; unsupported

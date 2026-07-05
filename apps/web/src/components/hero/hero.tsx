@@ -1,7 +1,7 @@
 import { COPY } from "@/lib/brand.lock";
 import { CtaButton } from "../cta-button";
 import { I18n } from "../i18n";
-import { HeroGesture } from "./hero-gesture";
+import { HeroArt } from "./hero-art";
 
 /** Small yellow hex bullet — legit fill use. */
 function HexBullet() {
@@ -74,7 +74,7 @@ export function Hero() {
   return (
     <section className="relative">
       <div className="relative mx-auto max-w-[1180px] px-7 pb-16 pt-28 lg:pb-20 lg:pt-36">
-        <HeroGesture />
+        <HeroArt />
         {/* copy column */}
         <div className="relative z-10">
           <p className="flex items-center gap-2.5 text-[13.5px] font-medium tracking-[0.01em]">
