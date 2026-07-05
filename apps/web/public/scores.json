@@ -1,8 +1,8 @@
 {
-  "measuredAt": "2026-07-05T01:25:56.098Z",
+  "measuredAt": "2026-07-05T10:47:48.108Z",
   "lighthouseVersion": "12.8.2",
-  "mobilePerformance": 96,
+  "mobilePerformance": 95,
   "mobileAccessibility": 100,
-  "lcpSeconds": 2.7,
+  "lcpSeconds": 2.9,
   "cls": 0
 }

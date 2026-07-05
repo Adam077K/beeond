@@ -24,6 +24,14 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-05 — v6.1 founder directives: motion doctrine amended (TWO scroll sections) + funded hero art
+
+**Context:** Founder reviewed the QA-PASSed v6 branch and directed four upgrades before merge: generated hero art via his OpenAI key, dark chapters as a one-at-a-time scroll crossfade, swarm stage full-screen with narrator captions, small ink spot drawings in quieter sections.
+**Decision:** (1) Motion doctrine AMENDED by the founder: the page carries TWO scroll-choreographed sections — the dark-chapters crossfade (depth) and the swarm showpiece (the story). Converge-once/zero-loops unchanged. (2) Hero art is a GENERATED drawing again ("hero-signal": five channel pictograms braid into one built cell — zero bees, zero lettering); pipeline gained two deterministic stages: `flatten_paper.py` (near-paper → exact ground; kills seams without masks) and `extract_spots.py` (alpha-keys spots when the model ignores transparent backgrounds).
+**Reversibility:** reversible — all pre-directive states in git history; prompts committed, art regenerable.
+**Owner:** designer-v6 session (founder directives verbatim)
+**Affects:** QA-Lead (fresh delta gate required — v6 PASS covers only through `bf14b1c`), design-critic (delta review), CMO (four new caption strings, POSITIONING-traced, HE authored).
+
 ## 2026-07-05 — Landing v6 built: content-first arc, QA-Lead PASS, awaiting founder merge word
 
 **Context:** The v6 designer handoff (2026-07-05 brief) executed in one Fable-5 session (designer-v6-content-first, branch `feat/landing-v6`, 13 commits).
