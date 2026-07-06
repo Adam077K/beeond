@@ -6,9 +6,9 @@ import { LocaleToggle } from "./locale-toggle";
 import { I18n } from "./i18n";
 
 const NAV = [
-  { href: "#channel-map", label: "The swarm", labelHe: "הנחיל" },
+  { href: "#what-we-do", label: "What we do", labelHe: "מה אנחנו עושים" },
+  { href: "#swarm", label: "The swarm", labelHe: "הנחיל" },
   { href: "#how-it-works", label: "How it works", labelHe: "איך זה עובד" },
-  { href: "#founders", label: "Founders", labelHe: "המייסדים" },
   { href: "#faq", label: "FAQ", labelHe: "שאלות" },
 ] as const;
 
@@ -23,6 +23,7 @@ export function SiteHeader() {
   const burgerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [overDark, setOverDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -33,6 +34,28 @@ export function SiteHeader() {
       { threshold: 0 },
     );
     io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // the header goes NIGHT while it floats over a deep section (critic P1):
+  // observe dark sections against a viewport collapsed to the header band
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-scheme="dark"]'),
+    );
+    if (sections.length === 0) return;
+    const over = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) over.add(e.target);
+          else over.delete(e.target);
+        }
+        setOverDark(over.size > 0);
+      },
+      { rootMargin: "0px 0px -93% 0px", threshold: 0 },
+    );
+    sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
   }, []);
 
@@ -65,7 +88,7 @@ export function SiteHeader() {
         <div
           className={`header-shell flex w-full max-w-[1132px] items-center justify-between gap-6 rounded-full py-2.5 ps-5 pe-2.5 ${
             scrolled ? "header-glass" : ""
-          }`}
+          } ${overDark ? "header-dark" : ""}`}
         >
           <a href="#main" className="text-[19px] text-ink" aria-label="Beeond — home">
             <Logo />
@@ -78,14 +101,11 @@ export function SiteHeader() {
             ))}
             <LocaleToggle />
           </nav>
-          {/* header CTA fades in once the hero CTA scrolls away — one CTA per fold */}
+          {/* header CTA is always on — founder directive 2026-07-05 (v6.2);
+              the v4 one-CTA-per-fold rule yielded to conversion access */}
           <a
             href="#footprint-call"
-            tabIndex={scrolled ? 0 : -1}
-            aria-hidden={!scrolled}
-            className={`header-cta cta hidden rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-semibold text-ground md:inline-block ${
-              scrolled ? "" : "header-cta-hidden"
-            }`}
+            className="header-cta cta hidden rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-semibold text-ground md:inline-block"
           >
             <I18n en="Get a free footprint audit" he="קבלו אבחון נוכחות חינם" />
           </a>

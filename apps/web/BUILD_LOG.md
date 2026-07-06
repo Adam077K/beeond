@@ -263,6 +263,149 @@ pnpm test:e2e       # 18 gates, builds+serves on :3001
 node scripts/measure-scores.mjs <lighthouse.json>  # refresh C5 artifact
 ```
 
+---
+
+# v6 — content-first rebuild (feat/landing-v6, designer-v6-content-first)
+
+Brief: `docs/08-agents_work/briefs/2026-07-05-v6-designer-handoff.md`. Session started 2026-07-05.
+
+**Skill-conflict log (§0.2 — constitution wins, conflicts recorded, not obeyed):**
+- `high-end-visual-design` demands non-Rubik "premium fonts" (Geist/Clash Display), heavy glass, banned-shadow aesthetics → Rubik-only + hairline-shadow constitution wins.
+- `design-taste-frontend` §4/§9 mandates PERPETUAL micro-interactions and infinite bento loops → converge-once-then-rest doctrine wins, zero loops.
+- Both push Framer Motion; repo's proven stack is CSS one-shots + GSAP/ScrollTrigger (desktop dynamic import) → stack unchanged.
+- `emilkowal-animations` aligns with the motion doctrine (ease-out defaults, ≤300ms UI, reduced-motion) — adopted where it doesn't touch locked tokens.
+
+## v6 Wave 1 — Hero: art column retired, small gesture (2026-07-05)
+
+§2.1: v4 typography verbatim (locked H1 3-line break, eyebrow, subhead, CTA pair, ledger). JournalComb removed from the hero — sprite bees sat above the fold, which v6 forbids. Replacement: `hero-gesture.tsx`, one inline-SVG ink gesture in the right whitespace — dashed flight line descending into a single wobbled hex cell with a yellow nucleus (movement → structure; seeds the optional One-Line spine). Decorative, desktop-only, `[data-reveal]` one-shot, RTL self-mirror (`html[lang=he] .hero-gesture`). H1 128%-overhang hack removed with its column; LCP stays SSR text; zero hero JS still.
+Evidence: `v6-hero-r0-1440.png` · `v6-hero-r0-he.png` · `v6-hero-r0-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 35 clean (3 audited allowances). Founder checkpoint: gesture keep/drop pending.
+
+**Founder checkpoint 1 (2026-07-05):** gesture = ADJUST → r1 ships scattered ink dots falling in along the dashed line and converging into the cell (scatter→structure, the Ch.1 story in still ink), larger + better anchored. Facts strip wording LOCKED: "11 channels · 1 swarm · weeks, not months". Audit scorecard: 5 dimensions APPROVED (AI-answer visibility leads as the keystone gap).
+
+## v6 Wave 2 — Artifact strip: the sample Footprint Audit (2026-07-05)
+
+§2.2, the tangibility slot. New `sections/artifact-strip.tsx` on a panel beat between hero and (interim) problem: a typeset SAMPLE audit sheet — double-hairline frame (border + offset outline = printed object), FOOTPRINT AUDIT header, rotated SAMPLE stamp, 5 founder-approved score rows (10-cell bars; the GEO row is the only yellow: u-accent on its name + yellow bar cells), gap note per row, 11-hex gap map with a yellow-cored keystone gap, "14 quick wins · 6 structural fixes". All sample data lives inside a page stamped SAMPLE — honesty doctrine holds. Beside it: locked facts ledger (11 / 1 / Weeks) + copy traced to POSITIONING §5/CTA-micro ("where your footprint has gaps"). Fully bilingual SSR; RTL fixes: score "2 / 10" wrapped dir=ltr (bidi reordered it), HE meta line re-authored Hebrew-first ("חברת B2B SaaS · כ-15 עובדים").
+Evidence: `v6-artifact-1440.png` · `v6-artifact-he.png` · `v6-artifact-390*.png` · hero r1 `v6-hero-r1-1440.png`. Gates: tsc ✓ brand-lint 36 clean.
+
+## v6 Wave 3 — Dark chapters: what we actually do (2026-07-05)
+
+§2.3, the page's one long deep block. New `sections/dark-chapters.tsx` REPLACES the old Problem section (v6 arc has no standalone problem beat — the pain lives inside the chapters). Three chapters (a/b/c, titles verbatim from the brief) with left copy traced to POSITIONING pillars 2/3/5 and right FLOATING WORK ARTIFACTS — light paper documents on the dark desk: (a) AI-search visibility check (qualitative cited/not-cited rows, no invented positions), (b) content calendar mid-fill (yellow "drafting…" cell) + tracked-changes draft — the strikethroughs delete agency slop ("leverage cutting-edge AI solutions") and the yellow inserts are the calibrated voice: the anti-generic promise as a document, (c) monthly report page (qualitative MoM bars, current month yellow). Every artifact: SAMPLE tag + the verbatim chip "drafted by the swarm · calibrated by Yarden". Closing rule-line: "Automation does the volume. Humans do the taste."
+Motion: `.float-card` gentle parallax — CSS scroll-driven (`animation-timeline: view()`), @supports-gated, desktop-only, reduced-motion rested; `linear` carries a brand-lint allowance (scroll position IS the easing, GSAP-scrub rule). Showpiece scarcity intact — §2.5 remains the only choreographed section.
+Candidate for the critic loop: the fixed glass header reads heavy (opaque gray slab) over the deep background.
+Evidence: `v6-dark-a/b/c-1440.png` · `v6-dark-390.png` · `v6-dark-he.png`. Gates: tsc ✓ eslint ✓ brand-lint 37 clean.
+
+## v6 Wave 4 — Outcomes: four quiet JTBD cards (2026-07-05)
+
+§2.4. New `sections/outcomes.tsx`: the four jobs verbatim from the brief, one line each (traced VP1/VP2/VP3/VP5), four ink spot-glyphs that argue the job — the cited answer (yellow hex inside the answer lines), work shipping off the desk, two dots casting a bigger lattice, the one bar that's working (yellow). Offset 2×2 grid — right column drops `sm:mt-10`, so it never reads bento-of-equals. Bug found by screenshot: Tailwind v4 `translate-y-*` writes the same `translate` property the `[data-reveal].in` rule resets → stagger silently no-oped; switched to margin stagger (reveal owns `translate`, layout owns margin — noted for future sections).
+Evidence: `v6-outcomes-1440.png` · `v6-outcomes-390.png`. Gates: tsc ✓ brand-lint 38 clean.
+
+## v6 Wave 5 — Meet the swarm: THE showpiece (2026-07-05)
+
+§2.5, the page's one scroll-choreographed moment. New `swarm/section.tsx` + `swarm/scrub.tsx` (C7's proven lifecycle: SSR ships the RESTED hive — agents up, lattice drawn; desktop scrub rewinds to the org chart and replays under scroll; `tl.set({},{},1)` progress mapping measured EXACT on first run, 6/6 frames).
+Choreography: 0.03–0.26 the chart draws (7 cards pop, elbow wires stroke-draw) → 0.34–0.58 the five role cards FLIP rotationY (unfilled hires → "agents all along"; front faces: "the first hire you can't afford / the writer who burns out…"), human chips light at 0.58 (the section's one yellow: "Human — calibration layer") → 0.66–0.88 wires release, cards migrate to a hexagon ring around the Strategy agent, the lattice draws — the bee's one earned entrance → rest.
+r0 bugs fixed by evidence: (1) hive rows overlapped card heights → stage 560px, rows 14/44/76; (2) hidden lattice leaked dash fragments — getTotalLength returns viewBox units while non-scaling-stroke dashes in screen units → px-true viewBox (0 0 1060 560), exact dash math.
+Nav retargeted: "The swarm" (header/footer) + hero secondary CTA → #swarm. Mobile: no-pin stacked ledger (humans 2-up, agent rows with struck hire-titles). JS-off/reduced-motion: rested hive, runway collapses.
+Evidence: `v6-swarm-0_12/0_3/0_45/0_5/0_58/0_75/0_95.png` · `v6-swarm-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 40 clean. 60fps@4× capture deferred to the gates wave (W9) alongside C7's.
+
+**Founder checkpoint 2 (2026-07-05):** C7 pinned scrub → REPLACE with the calm ecosystem (confirmed). Standalone Founders section → DROP (hero ledger + showpiece humans carry the layer).
+
+## v6 Wave 6 — Every channel: the calm ecosystem (2026-07-05)
+
+§2.6. New `sections/channels.tsx` replaces the C7 pinned scrub (260vh pin, GSAP stage, ferry canvas — deleted with `channel-map/section.tsx`, `channel-map/scrub.tsx`, `lib/glow.ts`; recoverable in git). The assembled hive is now STATIC and arranged around the Beeond mark: center cell = the one BUILT cell (ink walls, yellow hex-o, "one swarm, one goal" in ground-on-dark), GEO honey cell adjacent keeps the hive's single yellow face, 10 channels around. All 11 proofs SSR text; names TEXT-only pending the logo legal pass. Channel data model kept (`channels.ts`, GEO moved (0,0)→(0,−1), paid →(0,−2)); tile material CSS (stacked-paper, rim, hover lift) reused untouched. Mobile keeps the proven keystone-emblem + ledger verbatim.
+Also: Problem + Founders sections deleted from the page (v6 arc; founder-confirmed); nav/footer re-anchored — What we do (#what-we-do) · The swarm (#swarm) · How it works · FAQ.
+Evidence: `v6-channels-1440.png` · `v6-channels-he.png` · `v6-channels-390.png`. Gates: tsc ✓ eslint ✓ brand-lint 36 clean.
+
+## v6 Waves 7+8 — Honesty block · arc order · numbering (2026-07-05)
+
+§2.7–2.10. New `sections/honesty.tsx` (id #proof): the framed empty state — headline moved to the blueprint's "First cohort in progress — their results will live here", body/microline reuse the approved social-proof copy — beside the who-it's-for / NOT-for card (3+3, disqualifying copy included: "genuinely the right call past ~50 people"). C5 trust strip kept verbatim as the block's coda. Deleted: `anti-generic.tsx` (its argument now lives in the dark-chapters tracked-changes draft), `proof-c6.tsx`, `social-proof.tsx` (absorbed). Page order now matches the blueprint arc: hero → 01 artifact → 02 dark chapters → 03 outcomes → 04 swarm → 05 channels → 06 proof & fit (+trust coda) → 07 how-it-works → 08 FAQ → close. FAQ untouched (JSON-LD parity load-bearing). The close keeps the glowing-room HiveMark (critic-rated award-grade in v4) — restrained, per §2.10.
+Deferrals logged: build-line ink art for the timeline (art-src/ not present in this worktree; regeneration = founder-funded asset task, section stands without it) · two-dark-beats check rides the W9 full-page evidence review.
+Evidence: `v6-honesty-1440.png` · `v6-honesty-390.png` · `v6-full-1440.png`. Gates: tsc ✓ eslint ✓ brand-lint 34 clean.
+
+## v6 Wave 9 — measured gates (2026-07-05)
+
+e2e suite reworked for the v6 arc: C7 scrub test → swarm showpiece test (flip matrix m11 ≈ 1 mid-chart / ≈ −1 at rest, data-p live); JS-off now also asserts the 5 SSR agent cards; new artifact-strip + dark-chapters gates (locked facts verbatim, 4 attribution chips). Fix found by axe: struck hire-titles in the mobile ledger at opacity-70 hit 3.35:1 → full-strength muted (AA). Env lesson repeated: a stale prod server on :3001 got reused by `reuseExistingServer` mid-rebuild and flaked 3 mobile tests — killed, re-ran clean (the brief's "stale servers already burned one session" line remains true).
+
+| Gate | Result | Artifact |
+|------|--------|----------|
+| e2e | **22 passed / 0 failed** (4 project-skips) | `pnpm test:e2e` |
+| LH mobile (12.8.2, prod) | **perf 96 · a11y 100 · bp 100 · seo 100** · CLS 0 · TBT 40ms | `lighthouse-mobile-v6.json` |
+| Real CDP trace (Slow-4G 150ms/1.6Mbps + 4× CPU, 412px) | **LCP 800ms · CLS 0.0022** (LH lantern 2.7s logged beside it for honesty) | `scripts/cdp-trace.mjs` output |
+| INP-style worst interaction @4×/412 (FAQ open+close, menu open+close, 63 events) | **40ms** | same trace |
+| Swarm scrub frame budget @4× CPU, 1440, full runway | **avg 16.7ms · worst 18.3ms · 0 frames >33ms = locked 60fps** | `scripts/scrub-fps.mjs` output |
+| axe serious/critical | **0** (desktop + mobile) | e2e |
+| brand-lint | **34 files clean** (audited allowances only) | `pnpm brand-lint` |
+| tsc / eslint / build | clean | CI-runnable |
+| scores.json | refreshed from the v6 LH artifact (96/100) — C5 tile live | `public/scores.json` |
+| Two-dark-beats (§9.5) | PASS — deep chapters + dark close ~7000px apart, two cream beats between | `v6-full-1440.png` |
+
+Capture note: full-page screenshots show the swarm stage empty by design — the scrub is reversible, and walking back to top rewinds it; frame-step evidence (`v6-swarm-0_*.png`) is the section's artifact.
+
+## v6 Wave 10 — design-critic loop: NEEDS_WORK → remediated (2026-07-05)
+
+Independent design-critic verdict: **NEEDS_WORK — 1×P1, 3×P2, 3×P3** (protected list: audit sheet, attribution chips, channel hive, honesty copy, yellow discipline, mobile — all untouched). Resolution:
+
+| Finding | Fix |
+|---|---|
+| P1 header = bright slab over dark sections (CONFIRMED, was pre-logged) | `.header-dark` night mode: IO watches `[data-scheme=dark]` against a viewport collapsed to the header band; pill flips to deep glass + ground text/logo/CTA/toggle/burger. Verified over chapters AND close (`v6-r1-header-dark.png`) |
+| P2 outcomes glyphs 2/4 read Lucide-generic | Redrawn in the hero-gesture ink language: the drafting loop that ships out (dashed release → yellow cell) · the signal curve with the one yellow reading (`v6-r1-outcomes.png`) |
+| P2 outcomes grid symmetric | `lg:grid-cols-[0.9fr_1.1fr]` + kept right-column drop — two-column composition, not a grid of equals |
+| P2 trust badge stale (95 / 07-04) | Was a stale-server artifact — scores.json already refreshed W9; rebuilt HTML verified: "measured 96/100 … (2026-07-05)" |
+| P3 keystone close modest | Radial token-derived glow behind the lit cell (D9 rule), `overflow-x-clip` on the section (the glow's -inset overflowed 320px by 28px — caught by e2e) (`v6-r1-close.png`) |
+| P3 hero gesture disconnected from H1 | Nudged toward "match." — top-28 / end-14 / 340px |
+| P3 swarm reduced-motion rest unconfirmed | New e2e: `reducedMotion: reduce` → first flip m11 < −0.9 (agents up, "Unfilled" rotated away). PASSES — rest state is ALREADY WORKING |
+
+Post-remediation gates: tsc ✓ eslint ✓ brand-lint 34 clean · build ✓ · e2e **23 passed / 0 failed**.
+
+## v6 QA gate — CLOSED: PASS (2026-07-05)
+
+Independent QA-Lead verdict: **PASS — full tier (LOC-forced), 0×P1, 0×P2, 2×P3.** All mechanical gates re-run independently; every BUILD_LOG claim verified against artifacts (scores.json ↔ Lighthouse timestamps identical); GSAP/IO lifecycle, hydration safety, honesty doctrine and RTL allowances confirmed clean. Verdict file: `docs/08-agents_work/sessions/2026-07-05-qa-lead-landing-v6.md`.
+Close-out (both P3s): dead `journal-comb.tsx` deleted with its CSS block and 21 orphaned art assets (v4 combs, bee sprites, v5 bleed + icon sheets — §9.4 asset pruning executed; all regenerable from committed prompts, all in git history). Gates re-run after prune: tsc ✓ eslint ✓ brand-lint 33 clean ✓ build ✓ e2e 23/0 ✓. (P3-2 test-brittleness note recorded — the 350ms waits are the C7-era pattern; follow-up, not a gate.)
+**Awaiting the founder's merge word.** Launch-hold unchanged.
+
+---
+
+# v6.1 — founder review directives (2026-07-05, post-QA-PASS delta)
+
+Founder held the merge and directed four upgrades. Doctrine note: directive 2 adds a SECOND scroll-choreographed section — founder amendment of the one-scroll-moment rule, logged in DECISIONS.
+
+## v6.1 W11 — generated hero art (gpt-image-1, funded)
+`hero-signal` prompt committed to generate-art.mjs: five scattered channel pictograms (search / AI answer / email / page / chart) braid into ONE dashed line arriving at a single built honey cell — the offer as a drawing, zero bees, zero lettering (direction-neutral, no RTL mirror). Probe medium n=2 (~4.5k tok) → prompt hardened (5 DISTINCT pictograms once each, flat plan-view cell, matte honey) → high n=2 (~14k tok), candidate 1 shipped. New deterministic pipeline stage `scripts/flatten_paper.py`: after normalize, every near-paper pixel is pushed to EXACT ground (hard 14 / soft 46 blend) — kills texture+vignette; the first attempt's visible art rectangle disappeared without CSS masks. 111KB/1024w + 35KB/640w, eager unprioritized, LCP stays text. `hero-gesture.tsx` deleted.
+
+## v6.1 W12 — dark chapters pinned crossfade
+`chapters-scrub.tsx` + `.chapters-pinned` CSS: 340vh runway, sticky stage, chapters absolutely stacked and crossfaded one-at-a-time (windows 0–.30 / .38–.62 / .70–1, ±36px travel). The pinned layout exists ONLY after the scrub initializes — mobile/JS-off/reduced-motion keep the stacked flow (nothing hidden from crawlers). Float-card drift frozen inside the pin (crossfade owns the motion). Fit fixes measured: pinned padding-block 96/32 clears the night header; the closing rule-line is stacked-flow-only.
+
+## v6.1 W13 — swarm narrator + full-screen stage
+Four scrub-crossfaded captions replace the static sub while live (`.swarm-live`): "Five hires you can't make yet." → "Except — they were agents all along." → "Two stay human. The taste is theirs." → "And the chart relaxes into a hive. One system." SSR/JS-off rest = last caption via CSS; sticky got opaque bg-ground. Progress mapping exact on all frames.
+
+## v6.1 W14 — spot ink drawings
+`spot-sheet` prompt committed (foundation bricks / lifting sheets / radiating cell / taped vessel). Model ignored `background: transparent` twice (opaque tan; medium retry drifted worse) → new deterministic rescue `scripts/extract_spots.py`: background estimated by 60px gaussian blur, max-channel diff → soft alpha ramp, quadrant split, alpha-trim. Four clean spots shipped: 3 phase drawings into how-it-works nodes, the taped vessel over "First cohort in progress" (the waiting frame IS the message). ~10–14KB each.
+
+Evidence: `v61-hero-1440.png` · `v61-chapters-0_15/0_5/0_85.png` · `v61-swarm-0_15/0_45/0_62/0_85.png` · `v61-how-1440.png` · `v61-honesty-1440.png`. Art spend logged above (~24k image tokens total).
+
+## v6.1 delta gates + critic loop — CLOSED (2026-07-05)
+
+Mechanical: tsc ✓ eslint ✓ brand-lint 34 ✓ build ✓ e2e **23/0** · LH **95/100/100/100**, CLS 0, TBT 10ms (hero art cost 1 perf point, gate holds) · real CDP trace **LCP 820ms / CLS 0.0022 / worst interaction 32ms** · swarm scrub 4×CPU **0 frames >33ms** · scores.json refreshed from the v6.1 LH artifact.
+Design-critic DELTA verdict: **SHIP — 0×P1/P2, 3×P3**, all applied: caption 4 made literal ("And the chart settles — one system."), 16px+16px breathing floor between the static heading and the crossfading chapter zone, spots raised to editorial scale (phases h-90, vessel h-100). Critic's open HE item closed: captions verified live in RTL (`v61-swarm-he-0_45/0_85.png`) and the flip front-faces + mobile struck-titles were EN-only — now bilingual (frontHe strings were already authored).
+Evidence: `v61-how-r1.png` · `v61-chapters-r1-0_5.png` · `v61-swarm-he-*.png`. **QA-Lead delta gate next.**
+
+## v6.1 QA delta gate — CLOSED: PASS (2026-07-05)
+
+Independent QA-Lead delta verdict: **PASS — full tier, 0×P1, 1×P2, 2×P3**; all mechanical gates re-run independently (tsc/eslint/brand-lint/build/e2e 23-0), GSAP lifecycles, progressive-degradation gating (`.chapters-pinned`/`.swarm-live` strictly post-init), i18n parity of all new strings, and scores↔Lighthouse co-derivation all verified. Verdict file: `docs/08-agents_work/sessions/2026-07-05-qa-lead-landing-v61.md`.
+Close-out (all findings fixed): P2 dead duplicate `[data-ch]` CSS rule merged — `top:16px` breathing floor now actually applies with a truthful comment · P3 hero art `loading` eager→lazy (phones skip the hidden download; desktop in-viewport lazy loads immediately) · P3 vessel recompressed 81→38KB (220w), width/height attrs corrected. Gates re-run after fixes: tsc ✓ brand-lint 34 ✓ build ✓ e2e 23/0 ✓.
+**v6.1 complete. Awaiting the founder's merge word.**
+
+## v6.2 — founder review notes (2026-07-05)
+
+Three cosmetic directives from the founder's :3010 review, applied post-QA with full mechanical gates re-run (tsc ✓ eslint ✓ brand-lint 34 ✓ build ✓ e2e 23/0):
+1. Hero art vertically CENTERED against the copy block (top-[46%] translate, 350px) — was top-hung with dead space below.
+2. Header CTA always-on (v4 "one CTA per fold" rule retired by founder directive; `.header-cta-hidden` machinery deleted).
+3. Dark-chapters headline forced to a deliberate 2-line break at desktop ("Not a services menu." / "Three jobs — shown as the documents they arrive in."), EN+HE, clamp 44→42.
+Evidence: `v62-hero-1440.png` · `v62-chapters-0_5.png`.
+
+**Hero art v2 (founder: "not basic, more the DESIGN"):** `hero-signal-v2` prompt committed — same meaning, master-plan draftsman craft: five framed specimen call-outs fan dashed leaders that braid into the honey HEART CELL of a comb under construction (pencil ghosts, wall hatching, compass arc, ruler ticks, one slow drip), the whole sheet drawn with its own border and taped into the journal — a pinned plan, rhyming with the page's work-artifact language. high n=2 (~14k tok); candidate 0 shipped (candidate 1's bottom cell sliced at the image edge — reads as a crop without a frame). Pipeline: despecular (5,452 gloss px repainted — model added white shine again) → normalize → flatten. 103KB/1024w + 45KB/640w. Evidence: `v62-hero-r1.png`.
+
+---
+
 | # | Deviation (appended) | Rationale | Gate still honored |
 |---|-----------|-----------|-------------------|
 | D6 | Mobile hero order: copy→CTA→art (v3 wanted H1→art→CTA) | CTA in first viewport on a conversion page; occlusion passes text-only | LCP=H1, founders adjacent |

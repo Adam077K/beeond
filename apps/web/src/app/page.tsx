@@ -2,14 +2,14 @@ import { COPY } from "@/lib/brand.lock";
 import { SiteHeader } from "@/components/site-header";
 import { RevealObserver } from "@/components/reveal-observer";
 import { Hero } from "@/components/hero/hero";
-import { ProblemSection } from "@/components/sections/problem";
-import { ChannelMapSection } from "@/components/channel-map/section";
+import { ArtifactStripSection } from "@/components/sections/artifact-strip";
+import { DarkChaptersSection } from "@/components/sections/dark-chapters";
+import { OutcomesSection } from "@/components/sections/outcomes";
+import { SwarmSection } from "@/components/swarm/section";
+import { ChannelsSection } from "@/components/sections/channels";
+import { HonestySection } from "@/components/sections/honesty";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
-import { AntiGenericSection } from "@/components/sections/anti-generic";
-import { ProofC6Section } from "@/components/sections/proof-c6";
-import { FoundersSection } from "@/components/sections/founders";
 import { TrustC5Section } from "@/components/sections/trust-c5";
-import { SocialProofSection } from "@/components/sections/social-proof";
 import { FaqSection } from "@/components/sections/faq";
 import { FAQ } from "@/components/sections/faq-data";
 import { FinalCtaSection } from "@/components/sections/final-cta";
@@ -61,14 +61,14 @@ export default function Home() {
       <RevealObserver />
       <main id="main">
         <Hero />
-        <ProblemSection />
-        <ChannelMapSection />
-        <HowItWorksSection />
-        <AntiGenericSection />
-        <ProofC6Section />
-        <FoundersSection />
+        <ArtifactStripSection />
+        <DarkChaptersSection />
+        <OutcomesSection />
+        <SwarmSection />
+        <ChannelsSection />
+        <HonestySection />
         <TrustC5Section />
-        <SocialProofSection />
+        <HowItWorksSection />
         <FaqSection />
         <FinalCtaSection />
       </main>

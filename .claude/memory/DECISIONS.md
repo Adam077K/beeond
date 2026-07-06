@@ -24,6 +24,23 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-05 — v6.1 founder directives: motion doctrine amended (TWO scroll sections) + funded hero art
+
+**Context:** Founder reviewed the QA-PASSed v6 branch and directed four upgrades before merge: generated hero art via his OpenAI key, dark chapters as a one-at-a-time scroll crossfade, swarm stage full-screen with narrator captions, small ink spot drawings in quieter sections.
+**Decision:** (1) Motion doctrine AMENDED by the founder: the page carries TWO scroll-choreographed sections — the dark-chapters crossfade (depth) and the swarm showpiece (the story). Converge-once/zero-loops unchanged. (2) Hero art is a GENERATED drawing again ("hero-signal": five channel pictograms braid into one built cell — zero bees, zero lettering); pipeline gained two deterministic stages: `flatten_paper.py` (near-paper → exact ground; kills seams without masks) and `extract_spots.py` (alpha-keys spots when the model ignores transparent backgrounds).
+**Reversibility:** reversible — all pre-directive states in git history; prompts committed, art regenerable.
+**Owner:** designer-v6 session (founder directives verbatim)
+**Affects:** QA-Lead (fresh delta gate required — v6 PASS covers only through `bf14b1c`), design-critic (delta review), CMO (four new caption strings, POSITIONING-traced, HE authored).
+
+## 2026-07-05 — Landing v6 built: content-first arc, QA-Lead PASS, awaiting founder merge word
+
+**Context:** The v6 designer handoff (2026-07-05 brief) executed in one Fable-5 session (designer-v6-content-first, branch `feat/landing-v6`, 13 commits).
+**Decision:** The page is now the 10-block content-first arc — hero (v4 type + one ink gesture), SAMPLE Footprint Audit artifact strip (doubles as sales asset; scorecard dimensions + "11 channels · 1 swarm · weeks, not months" founder-locked), ONE dark chapters block with attributed work artifacts, outcomes, the org-chart→agents showpiece (the page's only scroll choreography), static channel hive around the mark, honesty block. RETIRED with founder confirmation: C7 pinned scrub, standalone Founders/Problem/Anti-generic/Proof-C6/Social-proof sections, v4 journal hero art + all unused art assets (git history keeps everything).
+**Gates:** design-critic NEEDS_WORK → 7/7 findings remediated; QA-Lead independent **PASS (full tier, 0×P1/P2)** with all mechanical gates re-run; LH 96/100/100/100 · real CDP LCP 800ms · e2e 23/0 · brand-lint clean. Merge still awaits the founder's word; launch-hold gates unchanged.
+**Reversibility:** reversible — branch only until founder word; every retired system in git history.
+**Owner:** designer-v6 session (CEO-chaired)
+**Affects:** QA-Lead (verdict filed: sessions/2026-07-05-qa-lead-landing-v6.md), CMO (new section copy is POSITIONING-traced; HE authored — needs the native-HE read), CTO (deploy after merge), founder (merge word + standing launch gates).
+
 ## 2026-07-05 — v6 vision pivot: "bees become agents" + full-page storytelling rethink (founder)
 
 **Context:** Founder judged the v5 labeled-honeycomb hero "too bee — not the advanced agency we're trying to show"; v5 typography/layout reverted same-day (`e5d83a6`), gold token rolled back. Direction reset: minimal meaningful ink drawings (Anthropic register), bees transforming into named/roled agents ("robotic view"), one immersive scroll showpiece mid-page, Diamo as structural reference.

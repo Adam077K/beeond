@@ -83,7 +83,7 @@ export const CHANNELS: Channel[] = [
     nameHe: "ממומן — גוגל ולינקדאין",
     proof: "Documented hypotheses, tracked against your own baseline.",
     proofHe: "היפותזות מתועדות, שנמדדות מול הבייסליין שלכם.",
-    q: 0, r: -1, reveal: 7,
+    q: 0, r: -2, reveal: 7,
   },
   {
     id: "email",
@@ -109,14 +109,15 @@ export const CHANNELS: Channel[] = [
     proofHe: "נכתב מהמייסד — אף פעם לא פוסט רפאים עם שם מוחלף.",
     q: 0, r: 1, reveal: 10,
   },
-  // ── THE ANCHOR — locks last, the keystone (reveal 11) ──
+  // ── THE ANCHOR — the keystone channel, adjacent to the mark (v6: the
+  //    center cell belongs to the Beeond mark; GEO keeps the only yellow) ──
   {
     id: "geo",
     name: "GEO — AI-search visibility",
     nameHe: "GEO — נראות בחיפוש AI",
     proof: "Be the answer when your buyer asks an AI.",
     proofHe: "להיות התשובה כשהקונה שלכם שואל AI.",
-    q: 0, r: 0, reveal: 11, anchor: true,
+    q: 0, r: -1, reveal: 11, anchor: true,
   },
 ];
 
