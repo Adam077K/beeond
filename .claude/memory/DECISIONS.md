@@ -24,6 +24,17 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-06 — v6 landing MERGED to main + pushed to GitHub (founder-directed)
+
+**Context:** The Vercel-deployed site (`beeond-preview.vercel.app`) lived only on the local branch `feat/landing-v6` (21 commits, 124 files, ~24.9k ins) — never on GitHub; main was still v4 (`dedd16f`). Founder asked to save it to GitHub, then to update main directly.
+**Options considered:** (a) push branch only (backup, no merge) — insufficient, founder wants main current; (b) fresh full QA gate on the whole branch — redundant, QA-Lead already PASSed v6 + v6.1; (c) **verify existing QA PASS + trivial post-PASS delta, then merge** — chosen.
+**Decision:** Pushed `feat/landing-v6` to origin, then `git merge --no-ff` into main → `bf33355`, pushed. QA gate honored: QA-Lead PASS on file (Full tier, 0 P0/P1 across v6 + v6.1); post-PASS delta = 4 files of visual tweaks, no critical-path files; founder confirmation explicit.
+**Rationale:** main was a strict ancestor (clean merge). The gate's two conditions (QA-Lead PASS + founder sign-off) were both satisfied; a fresh full gate on already-passed work would be wasteful.
+**Reversibility:** reversible — merge commit `bf33355` revertable; v4 (`dedd16f`) in history.
+**Owner:** ceo (session ceo-1-1783366470)
+**Affects:** CTO/DevOps (confirm Vercel `main`→prod target before it auto-deploys; site still LAUNCH-HELD on TM clearance + founder gates), Design-Lead (P2/P3 cleanup: dead journal-comb.tsx, dead CSS rule, mobile hero eager-load, oversized spot-vessel.webp).
+**Detail:** docs/08-agents_work/sessions/2026-07-06-ceo-merge-v6-to-main.md
+
 ## 2026-07-05 — v6.1 founder directives: motion doctrine amended (TWO scroll sections) + funded hero art
 
 **Context:** Founder reviewed the QA-PASSed v6 branch and directed four upgrades before merge: generated hero art via his OpenAI key, dark chapters as a one-at-a-time scroll crossfade, swarm stage full-screen with narrator captions, small ink spot drawings in quieter sections.
