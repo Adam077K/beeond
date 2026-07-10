@@ -16,9 +16,9 @@ Central index of all agent tasks — active, queued, and completed.
 
 ## Task Queue (Next Up)
 
-1. _[next task — brief description + who will own it]_
-2. _[next task]_
-3. _[next task]_
+1. **Website v7 — Phase 3 (BUILD), READY TO START** — GATE 3 PASSED 2026-07-09: SPEC LOCKED at `docs/05-marketing/website-v7-design-kit/SPEC.md` (Blueprint world · Rubik Black display · hero A-3-line · critic directives folded in). One Fable-5 session in a fresh worktree builds from the SPEC. Trigger: "CEO, start Phase 3 — build from the locked SPEC.md". Pending founder input: M5 credential paragraphs (async).
+2. Website v7 — Phase 3 (Build): one Fable-5 session + helper loop → QA-Lead → merge (Gate 4) → ship.
+3. Founder inputs pending: warm-prospect interviews (optional) · founders public-credentials paragraph (required before Phase-2 copy locks M5).
 
 ---
 
@@ -34,7 +34,9 @@ Central index of all agent tasks — active, queued, and completed.
 
 | Task | Lead | Completed | Output |
 |------|------|-----------|--------|
-| _[task name]_ | _[agent]_ | _[date]_ | _[link to session log or PR]_ |
+| Website v7 — Phase 1 Strategy → GATE-1 APPROVED | ceo (cmo+cpo synthesis) | 2026-07-08 | `briefs/2026-07-08-v7-strategy.md` · `research/01-03` · USER-INSIGHTS.md |
+| Website v7 — process runbook (plan the planning) | ceo | 2026-07-08 | `briefs/2026-07-08-v7-process-runbook.md` · `sessions/2026-07-08-ceo-v7-process-runbook.md` |
+| Website v7 — Design Re-Planning Kit + captured refs | ceo | 2026-07-07 | `docs/05-marketing/website-v7-design-kit/` |
 
 ---
 
@@ -46,4 +48,4 @@ Format: `YYYY-MM-DD-[lead]-[task].md`
 
 ---
 
-_Last updated: — | Updated by: —_
+_Last updated: 2026-07-08 | Updated by: ceo (v7 process runbook)_
