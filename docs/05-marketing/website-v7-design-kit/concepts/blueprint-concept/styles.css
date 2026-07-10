@@ -1,0 +1,1091 @@
+/* ══════════════════════════════════════════════════════════════════════
+   Beeond v7 · The Blueprint — concept page
+   Direction E (Gate-2). Oriol × Speakeasy register, RTL-primary Hebrew.
+   Self-contained concept. Production build re-skins the v6 components.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Fonts: self-hosted, unicode-range split (HE ships zero bytes on EN) ── */
+
+/* Rubik — body/UI in both candidates + display in candidate B */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 900;
+  src: url("fonts/rubik-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 900;
+  src: url("fonts/rubik-hebrew.woff2") format("woff2-variations");
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC,
+    U+FB1D-FB4F;
+}
+/* Metric-matched local fallback — kills swap CLS on the LCP H1 */
+@font-face {
+  font-family: "Rubik Fallback";
+  src: local("Arial");
+  size-adjust: 100.46%;
+  ascent-override: 93.07%;
+  descent-override: 24.89%;
+  line-gap-override: 0%;
+}
+
+/* Frank Ruhl Libre — display candidate A (serif warmth, native HE + Latin) */
+@font-face {
+  font-family: "Frank Ruhl Libre";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url("fonts/frl-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+@font-face {
+  font-family: "Frank Ruhl Libre";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url("fonts/frl-hebrew.woff2") format("woff2-variations");
+  unicode-range: U+0590-05FF, U+FB1D-FB4F, U+200C-2010, U+20AA;
+}
+
+/* ── Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* 7-token palette — locked */
+  --ground: #faf9f5;
+  --ink: #141413;
+  --yellow: #ffdb5b;
+  --panel: #f0eee6;
+  --deep: #0a0a0a;
+  --hairline: #e3ddd5;
+  --muted: #5c5751;
+
+  /* vellum-line: gold-tinted drafting ink, derived from tokens (spec §8.2
+     color-mix fallback, never a text color) */
+  --vellum-line: color-mix(in oklab, var(--yellow) 34%, var(--muted));
+  --vellum-line-soft: color-mix(in oklab, var(--yellow) 26%, var(--muted) 55%);
+  /* dark-register drafting ink — gold on near-black */
+  --gold-line: color-mix(in oklab, var(--yellow) 66%, #6b5a2e);
+
+  /* fonts */
+  --font-sans: "Rubik", "Rubik Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
+  --font-display: var(--font-serif); /* candidate A default; JS flips to B */
+  --display-weight: 500;
+  --display-tracking: -0.005em;
+  --display-lh: 1.0;
+
+  /* type scale (spec §2.2, one named scale) — Hebrew reads heavier, so the
+     hero display is tuned so a full-sentence HE headline breathes over ~4
+     lines without overflowing the fold (long copy vs. e1's 2-word bar) */
+  --text-display: clamp(2.5rem, 1.5rem + 3vw, 4.15rem);
+  --text-h1: clamp(2.15rem, 1.5rem + 2.6vw, 3.5rem);
+  --text-h2: clamp(1.85rem, 1.3rem + 2.2vw, 2.75rem);
+  --text-h3: clamp(1.35rem, 1.1rem + 1vw, 1.625rem);
+  --text-body-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+  --text-body: 1.0625rem;
+  --text-caption: 0.8125rem;
+  --text-eyebrow: 0.6875rem;
+
+  /* motion */
+  --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-swift: cubic-bezier(0.32, 0.72, 0.36, 1);
+  --ease-exit: cubic-bezier(0.5, 0, 0.75, 0.4);
+  --dur-2: 180ms;
+  --dur-3: 240ms;
+  --dur-4: 400ms;
+  --dur-5: 640ms;
+  --dur-6: 1200ms;
+
+  --focus-ring: var(--ink);
+  --page-x: clamp(1.25rem, 5vw, 5.5rem);
+}
+
+/* ── Reset ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+}
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, p, figure {
+  margin: 0;
+}
+h1, h2, h3 {
+  text-wrap: balance;
+  hanging-punctuation: first;
+}
+p {
+  text-wrap: pretty;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+::selection {
+  background: var(--yellow);
+  color: var(--ink);
+}
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+[data-scheme="dark"] {
+  --focus-ring: var(--ground);
+}
+
+/* ── i18n: both languages SSR'd; html[lang] picks one ─────────────────── */
+html:not([lang="he"]) .i18n-he,
+html[lang="he"] .i18n-en {
+  display: none !important;
+}
+/* SVG variant */
+html:not([lang="he"]) text.i18n-he,
+html[lang="he"] text.i18n-en {
+  display: none !important;
+}
+
+/* ── Display face candidates + hero-copy switch (JS toggles body classes) ─ */
+.font-b {
+  --font-display: var(--font-sans);
+  --display-weight: 800;
+  --display-tracking: -0.02em;
+}
+html[lang="he"] .font-b {
+  --display-weight: 700; /* HE reads heavier — drop a step (spec §2.3) */
+  --display-tracking: -0.015em;
+}
+html[lang="he"] {
+  --display-tracking: -0.006em; /* serif HE: gentle tighten */
+}
+/* hero copy A/B */
+.hero-copy .copy-b { display: none; }
+.copy-choice-b .hero-copy .copy-a { display: none; }
+.copy-choice-b .hero-copy .copy-b { display: block; }
+
+/* ── Grain — fixed feTurbulence paper tooth ───────────────────────────── */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.032;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Shared type helpers ──────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+html[lang="he"] .eyebrow {
+  letter-spacing: 0.08em; /* Rubik HE collides under aggressive tracking */
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  line-height: var(--display-lh);
+}
+.u-accent {
+  --u-thickness: 0.10em;
+  --u-offset-y: 0.9em;
+  background-image: linear-gradient(var(--yellow), var(--yellow));
+  background-repeat: no-repeat;
+  background-size: 100% var(--u-thickness);
+  background-position: 0 var(--u-offset-y);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-inline: 0.04em;
+  margin-inline: -0.04em;
+}
+
+/* ── CTA — ink text on yellow fill (the law); nested orb ───────────────── */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.4rem 0.9rem 1.5rem;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  border-radius: 999px;
+  transition:
+    transform var(--dur-2) var(--ease-swift),
+    filter var(--dur-2) var(--ease-swift);
+}
+.cta:hover {
+  filter: brightness(1.03);
+}
+.cta:active {
+  transform: scale(0.98);
+}
+.cta-orb {
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--ink) 92%, var(--yellow));
+  color: var(--yellow);
+  transition: transform var(--dur-2) var(--ease-swift);
+}
+.cta:hover .cta-orb {
+  transform: translate(2px, -2px);
+}
+[dir="rtl"] .cta:hover .cta-orb {
+  transform: translate(-2px, -2px);
+}
+.cta-orb svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+[dir="rtl"] .cta-arrow {
+  transform: scaleX(-1);
+}
+/* dark-register CTA orb keeps ink text on honey (still on-law) */
+[data-scheme="dark"] .cta-orb {
+  background: color-mix(in oklab, var(--ink) 88%, var(--yellow));
+}
+
+.link-quiet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-block-end: 1px solid var(--hairline);
+  padding-block-end: 2px;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  transition: color var(--dur-2) var(--ease-swift),
+    border-color var(--dur-2) var(--ease-swift);
+}
+.link-quiet:hover {
+  color: var(--ink);
+  border-block-end-color: var(--ink);
+}
+[data-scheme="dark"] .link-quiet {
+  color: color-mix(in oklab, var(--ground) 62%, var(--deep));
+  border-block-end-color: color-mix(in oklab, var(--ground) 22%, transparent);
+}
+[data-scheme="dark"] .link-quiet:hover {
+  color: var(--ground);
+  border-block-end-color: var(--ground);
+}
+
+/* ══ HEADER ════════════════════════════════════════════════════════════ */
+.site-header {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem var(--page-x);
+  transition: color var(--dur-3) var(--ease-settle);
+}
+.header-inner {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.9rem 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  transition:
+    background-color var(--dur-3) var(--ease-settle),
+    border-color var(--dur-3) var(--ease-settle),
+    backdrop-filter var(--dur-3) var(--ease-settle);
+}
+.header-glass {
+  background-color: color-mix(in oklab, var(--ground) 80%, transparent);
+  border-color: var(--hairline);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+.brand-mark {
+  width: 30px;
+  height: 30px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.9rem;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: color-mix(in oklab, var(--ink) 82%, var(--ground));
+  border-block-end: 1px solid transparent;
+  padding-block-end: 3px;
+  transition: color var(--dur-2) var(--ease-swift),
+    border-color var(--dur-2) var(--ease-swift);
+}
+.nav-link:hover {
+  color: var(--ink);
+  border-block-end-color: var(--ink);
+}
+.locale-toggle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  transition: border-color var(--dur-2) var(--ease-swift),
+    color var(--dur-2) var(--ease-swift);
+}
+.locale-toggle:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  transition: filter var(--dur-2) var(--ease-swift);
+}
+.header-cta:hover {
+  filter: brightness(1.04);
+}
+/* night mode over deep sections */
+.site-header.on-dark {
+  color: var(--ground);
+}
+.site-header.on-dark .nav-link {
+  color: color-mix(in oklab, var(--ground) 82%, var(--deep));
+}
+.site-header.on-dark .nav-link:hover {
+  color: var(--ground);
+  border-block-end-color: var(--ground);
+}
+.site-header.on-dark .brand,
+.site-header.on-dark .brand-mark {
+  color: var(--ground);
+}
+.site-header.on-dark .locale-toggle {
+  color: var(--ground);
+  border-color: color-mix(in oklab, var(--ground) 32%, transparent);
+}
+.site-header.on-dark.header-scrolled .header-inner.header-glass {
+  background-color: color-mix(in oklab, var(--deep) 78%, transparent);
+  border-color: color-mix(in oklab, var(--ground) 16%, transparent);
+}
+
+.nav-mobile-hide {
+  display: flex;
+}
+
+/* ══ HERO ══════════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding-block: clamp(8rem, 14vh, 11rem) clamp(3rem, 8vh, 6rem);
+  padding-inline: var(--page-x);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+/* faint page-wide drafting grid (spec §1.5 optional layer) */
+.draft-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(var(--vellum-line-soft) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--vellum-line-soft) 0.5px, transparent 0.5px);
+  background-size: 96px 96px;
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 30%, #000 25%, transparent 82%);
+  mask-image: radial-gradient(120% 100% at 50% 30%, #000 25%, transparent 82%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+}
+.hero-text {
+  max-width: 100%;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-block-end: 1.6rem;
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--vellum-line);
+}
+.hero-h1 {
+  font-size: var(--text-display);
+  margin-block-end: 1.5rem;
+}
+.hero-h1 .line {
+  display: block;
+}
+.hero-h1 .line-2 {
+  color: color-mix(in oklab, var(--ink) 90%, var(--ground));
+}
+.hero-sub {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--ink) 78%, var(--ground));
+  max-width: 46ch;
+  margin-block-end: 2rem;
+}
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.1rem 1.4rem;
+}
+.hero-micro {
+  margin-block-start: 1.6rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 42ch;
+  display: flex;
+  gap: 0.6rem;
+}
+.hero-micro::before {
+  content: "";
+  flex: none;
+  width: 2px;
+  align-self: stretch;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+/* comb column */
+.hero-art {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 520px;
+}
+.comb-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* construction linework */
+.comb-line {
+  fill: none;
+  stroke: var(--vellum-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.comb-line.faint {
+  stroke: var(--vellum-line-soft);
+  stroke-width: 0.75;
+}
+.comb-cell {
+  fill: none;
+  stroke: var(--vellum-line);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+.leader {
+  stroke: var(--muted);
+  stroke-width: 0.75;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+}
+.leader-dot {
+  fill: var(--muted);
+}
+.anno {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  fill: var(--muted);
+}
+.anno-tag {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: color-mix(in oklab, var(--muted) 88%, var(--ground));
+}
+
+/* the ONE built honey cell */
+.built-face {
+  fill: url(#honeyGrad);
+}
+.built-rim {
+  fill: none;
+  stroke: color-mix(in oklab, var(--yellow) 70%, var(--ink));
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.55;
+}
+
+/* ══ LOAD ANIMATION — drawn → built (once, ~1.2s) ══════════════════════ */
+html.js .comb-cell,
+html.js .comb-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.9s var(--ease-settle);
+}
+html.js.hero-drawn .comb-cell,
+html.js.hero-drawn .comb-line {
+  stroke-dashoffset: 0;
+}
+html.js .built-cell {
+  opacity: 0;
+  transform: scale(0.86);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition:
+    opacity 0.5s var(--ease-settle),
+    transform 0.7s var(--ease-settle);
+}
+html.js.hero-drawn .built-cell {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.8s;
+}
+html.js .built-glow {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-settle);
+}
+html.js.hero-drawn .built-glow {
+  opacity: 1;
+  transition-delay: 0.95s;
+}
+html.js .hero-anno {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-settle);
+}
+html.js.hero-drawn .hero-anno {
+  opacity: 1;
+  transition-delay: 1.05s;
+}
+
+/* ══ SECTION scaffolding ═══════════════════════════════════════════════ */
+.section {
+  position: relative;
+  padding-block: clamp(5.5rem, 12vh, 9.5rem);
+  padding-inline: var(--page-x);
+}
+.section-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1360px;
+  margin-inline: auto;
+}
+.measure {
+  max-width: 62ch;
+}
+
+/* reveals */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--dur-5) var(--ease-settle),
+    transform var(--dur-5) var(--ease-settle);
+}
+html.js [data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ══ §2 THE PROBLEM — quiet editorial, cream ═══════════════════════════ */
+.problem {
+  background: var(--ground);
+}
+.problem .section-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+.problem-eyebrow {
+  margin-block-end: 1.5rem;
+}
+.problem-h2 {
+  font-size: var(--text-h1);
+  line-height: 1.05;
+  margin-block-end: 1.8rem;
+  max-width: 18ch;
+}
+.problem-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+  color: color-mix(in oklab, var(--ink) 80%, var(--ground));
+  max-width: 48ch;
+}
+.problem-art {
+  justify-self: center;
+  width: 100%;
+  max-width: 360px;
+}
+.empty-note {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  fill: var(--muted);
+}
+
+/* ══ §3 THE SWARM — dark showpiece ═════════════════════════════════════ */
+.swarm {
+  background: var(--deep);
+  color: var(--ground);
+  overflow: hidden;
+}
+.swarm .section-inner {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.swarm-eyebrow {
+  color: color-mix(in oklab, var(--ground) 64%, var(--deep));
+  margin-block-end: 1.5rem;
+}
+.swarm-h2 {
+  font-size: var(--text-h1);
+  line-height: 1.02;
+  margin-block-end: 1.8rem;
+}
+.swarm-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+  color: color-mix(in oklab, var(--ground) 74%, var(--deep));
+  max-width: 46ch;
+  margin-block-end: 2.4rem;
+}
+.swarm-close {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  font-size: var(--text-h3);
+  line-height: 1.25;
+  padding-block-start: 1.8rem;
+  border-block-start: 1px solid color-mix(in oklab, var(--ground) 14%, transparent);
+  max-width: 30ch;
+}
+/* on-law emphasis: honey UNDERLINE (fill/highlight), never yellow text */
+.swarm-close .accent {
+  background-image: linear-gradient(var(--yellow), var(--yellow));
+  background-repeat: no-repeat;
+  background-size: 100% 0.09em;
+  background-position: 0 0.93em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-inline: 0.04em;
+  margin-inline: -0.04em;
+}
+.swarm-founders {
+  margin-block-start: 1.4rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  letter-spacing: 0.02em;
+  color: color-mix(in oklab, var(--ground) 60%, var(--deep));
+}
+.swarm-art {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 560px;
+}
+/* dark comb linework */
+.dcomb-line {
+  fill: none;
+  stroke: var(--gold-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.4;
+}
+.dcell {
+  fill: color-mix(in oklab, var(--yellow) 6%, transparent);
+  stroke: var(--gold-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.55;
+}
+/* cells that light on reveal */
+html.js .dcell.lit {
+  opacity: 0.3;
+  transition: opacity var(--dur-5) var(--ease-settle),
+    fill var(--dur-5) var(--ease-settle);
+}
+html.js .swarm-art.in .dcell.lit {
+  opacity: 0.85;
+  fill: color-mix(in oklab, var(--yellow) 16%, transparent);
+}
+.dlink {
+  stroke: var(--gold-line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  opacity: 0;
+}
+html.js .dlink {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--dur-6) var(--ease-settle),
+    opacity var(--dur-4) var(--ease-settle);
+}
+html.js .swarm-art.in .dlink {
+  opacity: 0.6;
+  stroke-dashoffset: 0;
+}
+.dbuilt-face {
+  fill: url(#honeyGradDark);
+}
+.dbuilt-rim {
+  fill: none;
+  stroke: color-mix(in oklab, var(--yellow) 85%, var(--ink));
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+html.js .dbuilt {
+  opacity: 0;
+  transform: scale(0.85);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: opacity var(--dur-5) var(--ease-settle),
+    transform var(--dur-6) var(--ease-settle);
+}
+html.js .swarm-art.in .dbuilt {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.5s;
+}
+html.js .dbuilt-glow {
+  opacity: 0;
+  transition: opacity var(--dur-6) var(--ease-settle);
+}
+html.js .swarm-art.in .dbuilt-glow {
+  opacity: 1;
+  transition-delay: 0.7s;
+}
+.danno {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  fill: color-mix(in oklab, var(--ground) 72%, var(--deep));
+}
+.danno-lead {
+  stroke: color-mix(in oklab, var(--ground) 40%, var(--deep));
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+}
+.danno-dot {
+  fill: var(--yellow);
+}
+html.js .swarm-anno {
+  opacity: 0;
+  transition: opacity var(--dur-5) var(--ease-settle);
+}
+html.js .swarm-art.in .swarm-anno {
+  opacity: 1;
+  transition-delay: 0.85s;
+}
+
+/* ══ §4 FINAL CTA — dark, device resolves ══════════════════════════════ */
+.final {
+  background: var(--deep);
+  color: var(--ground);
+  text-align: center;
+  overflow: hidden;
+}
+.final .section-inner {
+  max-width: 940px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.final-art {
+  width: 130px;
+  height: 150px;
+  margin-block-end: 2.6rem;
+}
+.final-eyebrow {
+  color: color-mix(in oklab, var(--ground) 64%, var(--deep));
+  margin-block-end: 1.5rem;
+}
+.final-h2 {
+  font-size: var(--text-h1);
+  line-height: 1.05;
+  margin-block-end: 1.6rem;
+  max-width: 20ch;
+}
+.final-sub {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: 1.55;
+  color: color-mix(in oklab, var(--ground) 72%, var(--deep));
+  max-width: 52ch;
+  margin-block-end: 2.4rem;
+}
+.final-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+}
+html.js .final-built {
+  opacity: 0;
+  transform: scale(0.85);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: opacity var(--dur-5) var(--ease-settle),
+    transform var(--dur-6) var(--ease-settle);
+}
+html.js .final-art.in .final-built {
+  opacity: 1;
+  transform: scale(1);
+}
+html.js .final-glow {
+  opacity: 0;
+  transition: opacity var(--dur-6) var(--ease-settle);
+}
+html.js .final-art.in .final-glow {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+html.js .final-art .comb-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--dur-6) var(--ease-settle);
+  stroke: var(--gold-line);
+  opacity: 0.5;
+}
+html.js .final-art.in .comb-line {
+  stroke-dashoffset: 0;
+}
+
+/* ══ TOGGLE CONTROL (review only) ══════════════════════════════════════ */
+.toggle-dock {
+  position: fixed;
+  inset-block-end: 1rem;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.7rem;
+  background: color-mix(in oklab, var(--ground) 90%, transparent);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font-family: var(--font-sans);
+  box-shadow: 0 6px 24px -12px rgba(20, 20, 19, 0.4);
+}
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.toggle-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.seg {
+  display: inline-flex;
+  background: var(--panel);
+  border-radius: 999px;
+  padding: 2px;
+}
+.seg button {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  transition: background-color var(--dur-2) var(--ease-swift),
+    color var(--dur-2) var(--ease-swift);
+}
+.seg button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--ground);
+}
+.toggle-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--hairline);
+}
+
+/* ══ RESPONSIVE ════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .hero-inner,
+  .problem .section-inner,
+  .swarm .section-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-inner {
+    gap: 2.5rem;
+  }
+  .hero-art {
+    max-width: 420px;
+    order: 2;
+  }
+  .problem-art {
+    max-width: 300px;
+  }
+  .swarm-art {
+    order: -1;
+    max-width: 480px;
+  }
+}
+@media (max-width: 720px) {
+  .nav-links,
+  .nav-mobile-hide {
+    display: none;
+  }
+  .nav {
+    gap: 0.55rem;
+  }
+  .header-inner {
+    padding-inline: 0.4rem;
+  }
+  .header-cta {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.85rem;
+  }
+  .locale-toggle {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .brand {
+    font-size: 1.15rem;
+  }
+  .hero {
+    padding-block: 7rem 3rem;
+  }
+  .hero-text {
+    max-width: 100%;
+  }
+  .toggle-dock {
+    inset-inline: 0.5rem;
+    inset-block-end: 0.5rem;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 18px;
+  }
+}
+@media (max-width: 420px) {
+  .toggle-label {
+    display: none;
+  }
+}
+
+/* ── Reduced motion: rested end-state from first paint everywhere ─────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html.js .comb-cell,
+  html.js .comb-line,
+  html.js .dlink,
+  html.js .final-art .comb-line {
+    stroke-dashoffset: 0 !important;
+  }
+  html.js .built-cell,
+  html.js .built-glow,
+  html.js .dbuilt,
+  html.js .dbuilt-glow,
+  html.js .final-built,
+  html.js .final-glow,
+  html.js .hero-anno,
+  html.js .swarm-anno,
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html.js .dcell.lit {
+    opacity: 0.85 !important;
+    fill: color-mix(in oklab, var(--yellow) 16%, transparent) !important;
+  }
+}

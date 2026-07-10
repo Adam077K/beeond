@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Beeond — Website v7 Concept Boards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ground:#FAF9F5;
+  --ink:#141413;
+  --yellow:#FFDB5B;
+  --panel:#F0EEE6;
+  --deep:#0A0A0A;
+  --hairline:#E3DDD5;
+  --muted:#5C5751;
+  --bar-h:60px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ground);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:"Rubik",system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--yellow);color:var(--ink)}
+
+/* ---------- i18n visibility ---------- */
+.board[data-lang="he"] .en{display:none}
+.board[data-lang="en"] .he{display:none}
+
+/* ---------- direction visibility ---------- */
+.stage{display:none}
+.board[data-dir="d1"] .stage.d1,
+.board[data-dir="d2"] .stage.d2,
+.board[data-dir="d3"] .stage.d3{display:block}
+
+/* =========================================================
+   CONTROL BAR
+   ========================================================= */
+.controlbar{
+  position:fixed;inset-block-start:0;inset-inline:0;height:var(--bar-h);z-index:100;
+  display:flex;align-items:center;gap:14px;
+  padding-inline:clamp(14px,4vw,34px);
+  background:rgba(250,249,245,.82);backdrop-filter:saturate(1.4) blur(14px);
+  border-block-end:1px solid var(--hairline);
+}
+.brandmark{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-.02em;font-size:15px}
+.brandmark .dot{width:9px;height:9px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px rgba(255,219,91,.28)}
+.brandmark small{font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.controlbar .spacer{flex:1}
+.segment{display:flex;background:var(--panel);border:1px solid var(--hairline);border-radius:999px;padding:3px}
+.segment button{
+  font:inherit;font-size:13px;font-weight:600;color:var(--muted);
+  border:0;background:transparent;padding:7px 15px;border-radius:999px;cursor:pointer;
+  transition:color .18s ease, background .18s ease, box-shadow .18s ease;line-height:1;
+}
+.segment button:hover{color:var(--ink)}
+.segment button[aria-selected="true"],.segment button[aria-pressed="true"]{
+  background:var(--ink);color:var(--ground);box-shadow:0 1px 3px rgba(0,0,0,.18)
+}
+.segment.tabs button[aria-selected="true"]{background:var(--ink)}
+.seg-lang button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px;border-radius:6px}
+.seg-lang button:focus-visible,.segment.tabs button:focus-visible{outline-offset:2px}
+
+.dirmeta{
+  display:flex;flex-direction:column;line-height:1.15;gap:2px;min-width:0
+}
+.dirmeta .nm{font-weight:700;font-size:13px;letter-spacing:-.01em;white-space:nowrap}
+.dirmeta .ds{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40vw}
+
+/* =========================================================
+   SHARED STAGE / HERO SCAFFOLD
+   ========================================================= */
+.board{padding-block-start:var(--bar-h)}
+.hero{position:relative;min-height:calc(100svh - var(--bar-h));overflow:hidden;isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:2;max-width:1200px;margin-inline:auto;padding-inline:clamp(20px,5vw,56px)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;
+  letter-spacing:.02em;color:var(--muted);
+}
+.eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--ink)}
+
+.subline{color:var(--muted);max-width:46ch;line-height:1.6}
+
+.cta{
+  display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);
+  font-weight:700;border-radius:999px;padding:15px 26px;font-size:16px;cursor:pointer;border:0;font-family:inherit;
+  transition:transform .16s ease, box-shadow .16s ease;box-shadow:0 2px 0 rgba(20,20,19,.12)
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px -10px rgba(20,20,19,.4)}
+.cta .arw{transition:transform .2s ease}
+.board[data-lang="he"] .cta .arw{transform:scaleX(-1)}
+.cta:hover .arw{transform:translateX(3px)}
+.board[data-lang="he"] .cta:hover .arw{transform:scaleX(-1) translateX(3px)}
+.cta-micro{font-size:12.5px;color:var(--muted);margin-block-start:14px;max-width:38ch;line-height:1.5}
+
+/* proof strip */
+.proof{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;font-size:13.5px;color:var(--muted)}
+.proof .sep{width:4px;height:4px;border-radius:50%;background:var(--hairline)}
+.proof b{color:var(--ink);font-weight:600}
+
+/* dark peek shared */
+.darkpeek{background:var(--deep);color:var(--ground);position:relative;overflow:hidden}
+.darkpeek .wrap{padding-block:clamp(56px,9vw,104px)}
+.darkpeek .tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,249,245,.5);font-weight:600}
+.darkpeek h2{font-weight:400;letter-spacing:-.02em;line-height:1.08}
+.darkpeek .lede{color:rgba(250,249,245,.62);max-width:44ch;line-height:1.6;margin-block-start:18px}
+.darkpeek .swarmline{color:var(--yellow);font-weight:600}
+.dark-particles{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.9}
+.darkpeek .wrap{position:relative;z-index:2}
+
+/* artifact mock card (imagery = artifacts, not stock) */
+.mock{
+  background:linear-gradient(180deg,#141413,#0e0e0d);border:1px solid rgba(250,249,245,.1);
+  border-radius:14px;padding:18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)
+}
+.mock .mhead{display:flex;align-items:center;gap:8px;margin-block-end:14px}
+.mock .mhead i{width:9px;height:9px;border-radius:50%;background:rgba(250,249,245,.22);display:block}
+.mock .mhead i:first-child{background:var(--yellow)}
+.mock .mrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;border-block-end:1px solid rgba(250,249,245,.08);font-size:13px}
+.mock .mrow:last-child{border-block-end:0}
+.mock .mrow span:first-child{color:rgba(250,249,245,.82)}
+.mock .bar{height:6px;border-radius:999px;background:rgba(250,249,245,.14);width:120px;overflow:hidden;position:relative}
+.mock .bar em{position:absolute;inset-block:0;inset-inline-start:0;background:var(--yellow);border-radius:999px}
+.mock .val{color:rgba(250,249,245,.55);font-variant-numeric:tabular-nums;font-size:12px}
+
+/* transition seam between cream hero and dark */
+.seam{height:0}
+
+/* =========================================================
+   D1 — ELEGANT RESTRAINT  (Frank Ruhl Libre serif)
+   ========================================================= */
+.d1{font-family:"Heebo",system-ui,sans-serif}
+.d1 .hero .wrap{padding-block:clamp(40px,7vw,72px);min-height:calc(100svh - var(--bar-h));display:flex;flex-direction:column;justify-content:center}
+.d1 .eyebrow{margin-block-end:clamp(30px,6vw,58px)}
+.d1 h1{
+  font-family:"Frank Ruhl Libre",serif;font-weight:500;
+  font-size:clamp(40px,8.4vw,104px);line-height:.98;letter-spacing:-.015em;color:var(--ink)
+}
+.d1 h1 .l1{display:block}
+.d1 h1 .l2{display:block;margin-block-start:.1em}
+.board[data-lang="he"] .d1 h1 .l1{padding-inline-end:.06em}
+.board[data-lang="he"] .d1 h1 .l2{margin-inline-start:clamp(0px,10vw,168px)}
+.board[data-lang="en"] .d1 h1 .l2{margin-inline-start:clamp(0px,10vw,168px)}
+.d1 h1 .accent{position:relative;white-space:nowrap}
+.d1 h1 .accent::after{content:"";position:absolute;inset-block-end:.06em;inset-inline:0;height:.5em;background:var(--yellow);z-index:-1;opacity:.9;border-radius:2px}
+.d1 .heromid{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:34px;margin-block-start:clamp(34px,6vw,64px)}
+.d1 .subline{font-size:clamp(15px,1.7vw,18.5px)}
+.d1 .cta-col{flex-shrink:0}
+.d1 .proofwrap{margin-block-start:clamp(30px,5vw,54px);padding-block-start:22px;border-block-start:1px solid var(--hairline)}
+.d1 .darkpeek h2{font-size:clamp(30px,5vw,60px)}
+
+/* =========================================================
+   D2 — WARM SWARM  (Heebo 600-700, honey yellow)
+   ========================================================= */
+.d2{font-family:"Heebo",system-ui,sans-serif}
+.d2 .hero{background:
+  radial-gradient(120% 90% at 78% 8%, rgba(255,219,91,.20), transparent 55%),
+  radial-gradient(90% 70% at 12% 92%, rgba(255,219,91,.10), transparent 60%),
+  var(--ground)}
+.d2 .hero .wrap{padding-block:clamp(46px,8vw,86px);min-height:calc(100svh - var(--bar-h));display:flex;flex-direction:column;justify-content:center}
+.d2 .eyebrow{margin-block-end:26px}
+.d2 .eyebrow .pip{background:var(--yellow);box-shadow:0 0 0 3px rgba(255,219,91,.34)}
+.d2 h1{font-family:"Heebo",sans-serif;font-weight:700;font-size:clamp(38px,7.6vw,92px);line-height:1.02;letter-spacing:-.02em}
+.d2 h1 .l1{display:block}
+.d2 h1 .l2{display:block}
+.d2 .brush{position:relative;white-space:nowrap;padding-inline:.04em}
+.d2 .brush::after{
+  content:"";position:absolute;inset-inline:-.04em;inset-block-end:-.02em;height:.34em;z-index:-1;
+  background:var(--yellow);border-radius:60% 40% 55% 45%/70% 60% 40% 30%;
+  transform:rotate(-1deg);box-shadow:0 6px 16px -6px rgba(255,219,91,.9)
+}
+.d2 .heromid{display:flex;flex-wrap:wrap;align-items:flex-end;gap:30px;margin-block-start:clamp(30px,5vw,50px);justify-content:space-between}
+.d2 .subline{font-size:clamp(15px,1.7vw,18px);font-weight:400}
+.d2 .proofwrap{margin-block-start:clamp(28px,5vw,48px)}
+.d2 .proof .hi{background:var(--yellow);color:var(--ink);font-weight:700;border-radius:6px;padding:2px 9px}
+.d2 .cta{box-shadow:0 4px 0 rgba(20,20,19,.12),0 14px 30px -12px rgba(255,219,91,.9)}
+.d2 .darkpeek h2{font-size:clamp(28px,4.8vw,58px);font-weight:600}
+.d2 .darkpeek{background:radial-gradient(90% 120% at 82% 0%,rgba(255,219,91,.16),transparent 55%),var(--deep)}
+
+/* =========================================================
+   D3 — BOLD EDITORIAL  (Rubik 800/900, yellow block)
+   ========================================================= */
+.d3{font-family:"Rubik",system-ui,sans-serif}
+.d3 .hero .wrap{padding-block:clamp(40px,7vw,68px);min-height:calc(100svh - var(--bar-h));display:flex;flex-direction:column;justify-content:center}
+.d3 .eyebrow{margin-block-end:clamp(22px,4vw,40px);font-weight:700}
+.d3 h1{font-family:"Rubik",sans-serif;font-weight:900;font-size:clamp(42px,9.4vw,120px);line-height:.9;letter-spacing:-.035em;text-transform:none}
+.d3 h1 .l1{display:block}
+.d3 h1 .l2{display:block;margin-block-start:.06em}
+.board[data-lang="he"] .d3 h1 .l2{padding-inline-start:0}
+.d3 .block{background:var(--yellow);color:var(--ink);display:inline;padding:.02em .16em;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:4px}
+.d3 .heromid{display:grid;grid-template-columns:1.4fr .9fr;gap:36px;align-items:end;margin-block-start:clamp(30px,5vw,56px)}
+.d3 .subline{font-size:clamp(15px,1.7vw,19px);font-weight:400;max-width:40ch}
+.d3 .cta{font-size:17px;padding:17px 30px;font-weight:700;border-radius:12px;box-shadow:0 5px 0 rgba(20,20,19,.16)}
+.d3 .cta:hover{box-shadow:0 12px 30px -10px rgba(20,20,19,.5)}
+.d3 .proofwrap{margin-block-start:clamp(28px,5vw,50px);padding-block-start:20px;border-block-start:2px solid var(--ink)}
+.d3 .proof{font-weight:500}
+.d3 .proof b{font-weight:800}
+.d3 .darkpeek h2{font-size:clamp(32px,6vw,74px);font-weight:800;letter-spacing:-.03em}
+.d3 .darkpeek .block{border-radius:4px}
+
+/* dark section layout (shared grid) */
+.dark-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:860px){
+  :root{--bar-h:56px}
+  .dirmeta{display:none}
+  .d3 .heromid{grid-template-columns:1fr}
+  .dark-grid{grid-template-columns:1fr}
+  .d1 .heromid,.d2 .heromid{flex-direction:column;align-items:stretch}
+  .board[data-lang="he"] .d1 h1 .l2,.board[data-lang="en"] .d1 h1 .l2{margin-inline-start:0}
+  .cta{width:100%;justify-content:center}
+  .d1 .cta-col,.d2 .cta-col{width:100%}
+}
+@media (max-width:520px){
+  .brandmark small{display:none}
+  .controlbar{gap:8px;padding-inline:12px}
+  .segment button{padding:7px 11px;font-size:12px}
+}
+
+/* reduced motion — canvas draws a static rest state (handled in JS); nothing else animates */
+@media (prefers-reduced-motion:reduce){
+  .cta,.cta .arw{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="board" id="board" data-lang="he" data-dir="d1" dir="rtl">
+
+  <!-- ===================== CONTROL BAR ===================== -->
+  <header class="controlbar">
+    <div class="brandmark"><span class="dot"></span>Beeond <small>v7 concepts</small></div>
+
+    <div class="segment tabs" role="tablist" aria-label="Direction">
+      <button role="tab" id="tab-d1" aria-selected="true"  data-dir="d1">D1</button>
+      <button role="tab" id="tab-d2" aria-selected="false" data-dir="d2">D2</button>
+      <button role="tab" id="tab-d3" aria-selected="false" data-dir="d3">D3</button>
+    </div>
+
+    <div class="dirmeta" id="dirmeta">
+      <span class="nm" id="dm-nm">Elegant restraint</span>
+      <span class="ds" id="dm-ds">Frank Ruhl Libre serif · premium, serious, airy · gravitas end</span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="segment seg-lang" role="group" aria-label="Language">
+      <button id="lang-he" aria-pressed="true"  data-lang="he">HE</button>
+      <button id="lang-en" aria-pressed="false" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       D1 — ELEGANT RESTRAINT
+       =================================================================== -->
+  <section class="stage d1" aria-labelledby="tab-d1">
+    <div class="hero">
+      <canvas data-particles="d1" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <span class="eyebrow"><span class="pip"></span><span class="he">נחיל אחד. מטרה אחת.</span><span class="en">One swarm. One goal.</span></span>
+
+        <h1>
+          <span class="l1"><span class="he">כל הנוכחות הדיגיטלית שלכם</span><span class="en">Your entire digital footprint</span></span>
+          <span class="l2"><span class="he">מנוהלת כמו <span class="accent">נחיל אחד</span>.</span><span class="en">run like <span class="accent">one swarm</span>.</span></span>
+        </h1>
+
+        <div class="heromid">
+          <p class="subline">
+            <span class="he">Beeond מנהלת את כל הנוכחות הדיגיטלית שלכם — כל ערוץ שבו קונים מחפשים ומעריכים ספקים — כנחיל אחד מתואם, בקצב של השוק.</span>
+            <span class="en">Beeond runs your whole digital presence — every channel buyers use to find and judge vendors — as one coordinated swarm, at the speed the market moves.</span>
+          </p>
+          <div class="cta-col">
+            <button class="cta"><span class="he">קבלו ניתוח נוכחות חינם</span><span class="en">Get your free Footprint Audit</span><span class="arw">→</span></button>
+            <p class="cta-micro"><span class="he">בלי מצגת. בלי פיץ׳. מבט אמיתי על הפערים בנוכחות שלכם.</span><span class="en">No deck. No pitch. A real look at where your footprint has gaps.</span></p>
+          </div>
+        </div>
+
+        <div class="proofwrap">
+          <div class="proof">
+            <span class="he"><b>11 ערוצים</b>, מנוהלים כמערכת אחת</span><span class="en"><b>11 channels</b>, run as one system</span>
+            <span class="sep"></span>
+            <span class="he">נחיל אחד עושה את הווליום</span><span class="en">one swarm doing the volume</span>
+            <span class="sep"></span>
+            <span class="he"><b>שבועות</b>, לא חודשים</span><span class="en"><b>weeks</b>, not months</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="darkpeek">
+      <canvas class="dark-particles" data-particles="d1dark" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div class="dark-grid">
+          <div>
+            <span class="tag"><span class="he">מנוע הנחיל</span><span class="en">The swarm engine</span></span>
+            <h2 style="margin-block-start:16px">
+              <span class="he">הצוות שאתם עוד לא יכולים לגייס — <span class="swarmline">כבר עובד.</span></span>
+              <span class="en">The team you can't hire yet — <span class="swarmline">is already working.</span></span>
+            </h2>
+            <p class="lede"><span class="he">האוטומציה עושה את הווליום. האנשים עושים את הטעם.</span><span class="en">Automation does the volume. Humans do the taste.</span></p>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mhead"><i></i><i></i><i></i><span style="margin-inline-start:auto;font-size:11px;color:rgba(250,249,245,.4)">footprint-audit</span></div>
+            <div class="mrow"><span>SEO &amp; organic</span><span class="bar"><em style="width:82%"></em></span><span class="val">82</span></div>
+            <div class="mrow"><span>AI answers</span><span class="bar"><em style="width:34%"></em></span><span class="val">34</span></div>
+            <div class="mrow"><span>Social presence</span><span class="bar"><em style="width:61%"></em></span><span class="val">61</span></div>
+            <div class="mrow"><span>Review sites</span><span class="bar"><em style="width:47%"></em></span><span class="val">47</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       D2 — WARM SWARM
+       =================================================================== -->
+  <section class="stage d2" aria-labelledby="tab-d2">
+    <div class="hero">
+      <canvas data-particles="d2" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <span class="eyebrow"><span class="pip"></span><span class="he">הנחיל שעובד בשבילכם</span><span class="en">The swarm that works for you</span></span>
+
+        <h1>
+          <span class="l1"><span class="he">כל הנוכחות הדיגיטלית שלכם</span><span class="en">Your entire digital footprint</span></span>
+          <span class="l2"><span class="he">מנוהלת כמו <span class="brush">נחיל אחד</span>.</span><span class="en">run like <span class="brush">one swarm</span>.</span></span>
+        </h1>
+
+        <div class="heromid">
+          <p class="subline">
+            <span class="he">Beeond מנהלת את כל הנוכחות הדיגיטלית שלכם — כל ערוץ שבו קונים מחפשים ומעריכים ספקים — כנחיל אחד מתואם, בקצב של השוק.</span>
+            <span class="en">Beeond runs your whole digital presence — every channel buyers use to find and judge vendors — as one coordinated swarm, at the speed the market moves.</span>
+          </p>
+          <div class="cta-col">
+            <button class="cta"><span class="he">קבלו ניתוח נוכחות חינם</span><span class="en">Get your free Footprint Audit</span><span class="arw">→</span></button>
+            <p class="cta-micro"><span class="he">בלי מצגת. בלי פיץ׳. מבט אמיתי על הפערים בנוכחות שלכם.</span><span class="en">No deck. No pitch. A real look at where your footprint has gaps.</span></p>
+          </div>
+        </div>
+
+        <div class="proofwrap">
+          <div class="proof">
+            <span class="he"><span class="hi">11 ערוצים</span> מנוהלים כמערכת אחת</span><span class="en"><span class="hi">11 channels</span> run as one system</span>
+            <span class="sep"></span>
+            <span class="he">נחיל אחד עושה את הווליום</span><span class="en">one swarm doing the volume</span>
+            <span class="sep"></span>
+            <span class="he">שבועות, לא חודשים</span><span class="en">weeks, not months</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="darkpeek">
+      <canvas class="dark-particles" data-particles="d2dark" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div class="dark-grid">
+          <div>
+            <span class="tag"><span class="he">מנוע הנחיל</span><span class="en">The swarm engine</span></span>
+            <h2 style="margin-block-start:16px">
+              <span class="he">הצוות שאתם עוד לא יכולים לגייס — <span class="swarmline">כבר עובד.</span></span>
+              <span class="en">The team you can't hire yet — <span class="swarmline">is already working.</span></span>
+            </h2>
+            <p class="lede"><span class="he">האוטומציה עושה את הווליום. האנשים עושים את הטעם.</span><span class="en">Automation does the volume. Humans do the taste.</span></p>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mhead"><i></i><i></i><i></i><span style="margin-inline-start:auto;font-size:11px;color:rgba(250,249,245,.4)">content-engine</span></div>
+            <div class="mrow"><span>Blog &amp; SEO</span><span class="bar"><em style="width:88%"></em></span><span class="val">wk 1–4</span></div>
+            <div class="mrow"><span>LinkedIn cadence</span><span class="bar"><em style="width:70%"></em></span><span class="val">wk 2–6</span></div>
+            <div class="mrow"><span>AI-answer coverage</span><span class="bar"><em style="width:52%"></em></span><span class="val">wk 4–8</span></div>
+            <div class="mrow"><span>Amplification</span><span class="bar"><em style="width:30%"></em></span><span class="val">wk 8–12</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       D3 — BOLD EDITORIAL
+       =================================================================== -->
+  <section class="stage d3" aria-labelledby="tab-d3">
+    <div class="hero">
+      <canvas data-particles="d3" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <span class="eyebrow"><span class="pip"></span><span class="he">נחיל אחד · מטרה אחת</span><span class="en">One swarm · one goal</span></span>
+
+        <h1>
+          <span class="l1"><span class="he">כל הנוכחות הדיגיטלית שלכם</span><span class="en">Your entire digital footprint</span></span>
+          <span class="l2"><span class="he">מנוהלת כמו <span class="block">נחיל אחד</span>.</span><span class="en">run like <span class="block">one swarm</span>.</span></span>
+        </h1>
+
+        <div class="heromid">
+          <p class="subline">
+            <span class="he">Beeond מנהלת את כל הנוכחות הדיגיטלית שלכם — כל ערוץ שבו קונים מחפשים ומעריכים ספקים — כנחיל אחד מתואם, בקצב של השוק.</span>
+            <span class="en">Beeond runs your whole digital presence — every channel buyers use to find and judge vendors — as one coordinated swarm, at the speed the market moves.</span>
+          </p>
+          <div class="cta-col">
+            <button class="cta"><span class="he">קבלו ניתוח נוכחות חינם</span><span class="en">Get your free Footprint Audit</span><span class="arw">→</span></button>
+            <p class="cta-micro"><span class="he">בלי מצגת. בלי פיץ׳. מבט אמיתי על הפערים.</span><span class="en">No deck. No pitch. A real look at the gaps.</span></p>
+          </div>
+        </div>
+
+        <div class="proofwrap">
+          <div class="proof">
+            <span class="he"><b>11 ערוצים</b>, מנוהלים כמערכת אחת</span><span class="en"><b>11 channels</b>, run as one system</span>
+            <span class="sep"></span>
+            <span class="he">נחיל אחד עושה את הווליום</span><span class="en">one swarm doing the volume</span>
+            <span class="sep"></span>
+            <span class="he"><b>שבועות</b>, לא חודשים</span><span class="en"><b>weeks</b>, not months</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="darkpeek">
+      <canvas class="dark-particles" data-particles="d3dark" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div class="dark-grid">
+          <div>
+            <span class="tag"><span class="he">מנוע הנחיל</span><span class="en">The swarm engine</span></span>
+            <h2 style="margin-block-start:16px">
+              <span class="he">האוטומציה עושה את הווליום.<br><span class="block">האנשים עושים את הטעם.</span></span>
+              <span class="en">Automation does the volume.<br><span class="block">Humans do the taste.</span></span>
+            </h2>
+            <p class="lede"><span class="he">הצוות שאתם עוד לא יכולים לגייס — כבר עובד.</span><span class="en">The team you can't hire yet is already working.</span></p>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mhead"><i></i><i></i><i></i><span style="margin-inline-start:auto;font-size:11px;color:rgba(250,249,245,.4)">channel-dashboard</span></div>
+            <div class="mrow"><span>Found in AI answers</span><span class="bar"><em style="width:76%"></em></span><span class="val">+76%</span></div>
+            <div class="mrow"><span>Organic reach</span><span class="bar"><em style="width:63%"></em></span><span class="val">+63%</span></div>
+            <div class="mrow"><span>Content shipped</span><span class="bar"><em style="width:91%"></em></span><span class="val">41/mo</span></div>
+            <div class="mrow"><span>Time to live</span><span class="bar"><em style="width:40%"></em></span><span class="val">wks</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var board = document.getElementById('board');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var META = {
+    d1:{nm:{he:'איפוק אלגנטי',en:'Elegant restraint'}, ds:{he:'Frank Ruhl Libre · פרימיום, רציני, אוורירי · קצה הגראביטס',en:'Frank Ruhl Libre serif · premium, serious, airy · gravitas end'}},
+    d2:{nm:{he:'נחיל חמים',en:'Warm swarm'}, ds:{he:'Heebo · עגול, ידידותי, דבש · האמצע החמים',en:'Heebo · rounder, friendly, honey · the warm middle'}},
+    d3:{nm:{he:'עריכתי נועז',en:'Bold editorial'}, ds:{he:'Rubik 900 · חד, מודרני, בלוק צהוב · קצה הביטחון',en:'Rubik 900 · punchy, modern, yellow block · confident end'}}
+  };
+
+  // ---------- toggles ----------
+  function setDir(dir){
+    board.setAttribute('data-dir', dir);
+    var tabs = board.querySelectorAll('.tabs [role="tab"]');
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.dir===dir ? 'true':'false'); });
+    var lang = board.getAttribute('data-lang');
+    document.getElementById('dm-nm').textContent = META[dir].nm[lang];
+    document.getElementById('dm-ds').textContent = META[dir].ds[lang];
+    window.scrollTo(0,0);
+    startActive();
+  }
+  function setLang(lang){
+    board.setAttribute('data-lang', lang);
+    board.setAttribute('dir', lang==='he' ? 'rtl':'ltr');
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang==='he' ? 'rtl':'ltr');
+    board.querySelectorAll('.seg-lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true':'false'); });
+    var dir = board.getAttribute('data-dir');
+    document.getElementById('dm-nm').textContent = META[dir].nm[lang];
+    document.getElementById('dm-ds').textContent = META[dir].ds[lang];
+  }
+  board.querySelectorAll('.tabs [role="tab"]').forEach(function(t){
+    t.addEventListener('click', function(){ setDir(t.dataset.dir); });
+  });
+  board.querySelectorAll('.seg-lang button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+
+  // ---------- particle signature device ----------
+  // A restrained, drifting swarm that slowly breathes toward a loose convergence
+  // (agents coalescing on one goal) then disperses. Never loud.
+  var CONF = {
+    d1:     {n:60, color:'20,20,19',   glow:false, min:.06, max:.16, size:[.7,1.9]},   // grey/ink, airy
+    d1dark: {n:70, color:'250,249,245',glow:false, min:.05, max:.12, size:[.6,1.7]},
+    d2:     {n:80, color:'214,168,40', glow:true,  min:.10, max:.26, size:[.8,2.4], honey:true}, // warm honey glow
+    d2dark: {n:80, color:'255,219,91', glow:true,  min:.08, max:.20, size:[.7,2.2], honey:true},
+    d3:     {n:64, color:'20,20,19',   glow:false, min:.08, max:.18, size:[.9,2.6]},   // stronger, confident
+    d3dark: {n:76, color:'255,219,91', glow:true,  min:.07, max:.16, size:[.8,2.2]}
+  };
+
+  var engines = {};
+  function makeEngine(canvas){
+    var key = canvas.dataset.particles;
+    var conf = CONF[key];
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    var W=0,H=0, parts=[], focus={x:0,y:0}, raf=null, t=0;
+
+    function resize(){
+      var r = canvas.getBoundingClientRect();
+      W = r.width; H = r.height;
+      canvas.width = Math.max(1,Math.round(W*dpr));
+      canvas.height= Math.max(1,Math.round(H*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      // focal point upper-third, offset to the side echoing Speakeasy's off-center swirl
+      focus.x = W*0.62; focus.y = H*0.34;
+      if(!parts.length) seed();
+    }
+    function seed(){
+      parts = [];
+      for(var i=0;i<conf.n;i++){
+        var a = Math.random()*Math.PI*2, rad = 40 + Math.random()*Math.min(W,H)*0.42;
+        parts.push({
+          hx: focus.x + Math.cos(a)*rad,           // home (dispersed) position
+          hy: focus.y + Math.sin(a)*rad*0.7,
+          ta: a, tr: 26 + Math.random()*70,        // converged orbit radius (loose cluster)
+          ph: Math.random()*Math.PI*2,
+          sp: 0.2 + Math.random()*0.5,
+          sz: conf.size[0] + Math.random()*(conf.size[1]-conf.size[0]),
+          op: conf.min + Math.random()*(conf.max-conf.min),
+          x:0,y:0
+        });
+      }
+    }
+    function draw(conv){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<parts.length;i++){
+        var p = parts[i];
+        // dispersed home slowly rotates; converged target orbits the focus tightly
+        var wob = Math.sin(t*0.0006*p.sp + p.ph);
+        var hx = p.hx + wob*10, hy = p.hy + Math.cos(t*0.0005*p.sp + p.ph)*10;
+        var cx = focus.x + Math.cos(p.ta + t*0.0004)*p.tr;
+        var cy = focus.y + Math.sin(p.ta + t*0.0004)*p.tr*0.7;
+        p.x = hx + (cx-hx)*conv;
+        p.y = hy + (cy-hy)*conv;
+        var op = p.op * (0.55 + conv*0.75);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.sz, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba('+conf.color+','+op.toFixed(3)+')';
+        if(conf.glow){ ctx.shadowColor='rgba('+conf.color+',0.9)'; ctx.shadowBlur=conf.honey?10:7; }
+        else { ctx.shadowBlur=0; }
+        ctx.fill();
+      }
+      // faint connecting threads when converged — the swarm reads as one system
+      if(conv>0.45){
+        ctx.shadowBlur=0;
+        ctx.lineWidth=0.5;
+        for(var j=0;j<parts.length;j+=2){
+          var a=parts[j], b=parts[(j+3)%parts.length];
+          var dx=a.x-b.x, dy=a.y-b.y, d=Math.sqrt(dx*dx+dy*dy);
+          if(d<70){
+            ctx.strokeStyle='rgba('+conf.color+','+((0.06)*(conv-0.45)*(1-d/70)).toFixed(3)+')';
+            ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+          }
+        }
+      }
+    }
+    function loop(){
+      t += 16;
+      // convergence breathes 0..1 over ~11s, easeInOut, with dwell at the dispersed end
+      var cycle = (Math.sin(t*0.00057) + 1)/2;      // 0..1
+      var conv = cycle*cycle*(3-2*cycle);           // smoothstep
+      draw(conv);
+      raf = requestAnimationFrame(loop);
+    }
+    function start(){
+      resize();
+      if(raf) cancelAnimationFrame(raf);
+      if(reduce){ draw(0.62); return; }             // static, mid-converged rest state
+      loop();
+    }
+    function stop(){ if(raf){cancelAnimationFrame(raf); raf=null;} }
+    return {start:start,stop:stop,resize:function(){resize(); if(reduce) draw(0.62);}};
+  }
+
+  function eachCanvas(cb){
+    board.querySelectorAll('canvas[data-particles]').forEach(cb);
+  }
+  eachCanvas(function(c){ engines[c.dataset.particles] = makeEngine(c); });
+
+  function startActive(){
+    var dir = board.getAttribute('data-dir');
+    for(var k in engines){ engines[k].stop && engines[k].stop(); }
+    // start only the active stage's canvases (perf)
+    board.querySelectorAll('.stage.'+dir+' canvas[data-particles]').forEach(function(c){
+      var e = engines[c.dataset.particles];
+      if(e) e.start();
+    });
+  }
+
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){
+      var dir = board.getAttribute('data-dir');
+      board.querySelectorAll('.stage.'+dir+' canvas[data-particles]').forEach(function(c){
+        var e = engines[c.dataset.particles]; if(e) e.resize();
+      });
+    }, 160);
+  });
+
+  // init
+  setLang('he');
+  setDir('d1');
+})();
+</script>
+</body>
+</html>

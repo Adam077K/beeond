@@ -24,6 +24,50 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-09 — GATE 3 PASSED: v7 SPEC LOCKED — design planning COMPLETE
+
+**Context:** Phase 2b produced the copy deck (HE-first), design spec, a coded concept prototype (real Hebrew type, font/lang/copy toggles), and an independent design-critic review (NEEDS_WORK: 2×P1 on comb boldness + CTA-resolve context). Founder re-anchored the boundary: this whole effort is *planning*; the site is built once, by one Fable-5 session.
+**Decision (founder, Gate 3):** (1) **Display font = Rubik Bold/Black** — founder overrode the critic's Frank Ruhl Libre recommendation (native-speaker call; one family site-wide; serif retired). (2) **Hero = Option-A idea rewritten as 3 lines** (CMO finalized in the deck). (3) **SPEC LOCKED** — critic findings folded into `SPEC.md §3` as binding build directives instead of another prototype round; prototype is reference-only, build starts from zero. SPEC at `docs/05-marketing/website-v7-design-kit/SPEC.md`.
+**Open (async, non-blocking to spec):** founders' credential paragraphs (M5) — the only unfilled copy slot.
+**Reversibility:** hard-to-reverse by convention (a locked gate; changes now require founder re-ruling).
+**Owner:** ceo (gate) · design-lead/CMO (artifacts)
+**Affects:** Phase-3 Fable-5 build session (consumes SPEC.md), QA-Lead (Full tier), founder (Gate 4 merge word + credentials input).
+
+## 2026-07-09 — GATE 2 PASSED: v7 visual direction = The Blueprint (Oriol×Speakeasy type register)
+
+**Context:** Phase 2a ran twice. Round 1 (written proposals + abstract greeked boards, 12 gpt-image-1 medium images) was REJECTED by the founder as "too basic and code-like." Round 2 genre-shifted to full award-caliber landing-page mockups (8 images, high quality, ~$2, prompts committed at `concepts/wow-prompts.md`) across B (Warm Signal swarm), D (White City Broadsheet), E (Blueprint) + 2 wildcards (liquid honey; dark constellation).
+**Decision (founder):** **E · The Blueprint** wins for the design visuals — drafted honeycomb, one honey-built glowing cell, vellum cream, honey-as-light. Amendments: (1) no engineering dimension numbers; (2) annotations may instead reference Beeond's real jobs (content/SEO/ads/AI-answers/email…) as drawn labels — implemented as real HE/EN HTML/SVG text, never raster-baked; (3) text layout/fonts/overall style per Oriol × Speakeasy-era references — editorial display type, tight accent discipline, cream↔dark rhythm. Hebrew display face (Frank Ruhl Libre serif vs bold Rubik) to be PROVEN with real type in Phase 2b; round-2 serif warmth is the bar. W2 dark-constellation kept as candidate flavor for the dark showpiece only.
+**Learning for the playbook:** for founder visual gates, generate full-fidelity mockups at high quality from the start — abstract art-direction boards do not communicate wow.
+**Reversibility:** reversible until Gate 3 (locked spec).
+**Owner:** ceo (gate), design-lead (Phase 2b execution)
+**Affects:** design-lead + product-designer (build-out), CMO (HE-first copy deck, M1–M6-traced), founder (Gate 3 next; founders-credentials paragraph still owed for M5).
+
+## 2026-07-08 — GATE 1 PASSED: v7 message + structure locked (founder-approved)
+
+**Context:** Phase 1 (Strategy) of the v7 runbook executed — 3 parallel desk-research tracks (competitor messaging, buyer/market, RTL/Hebrew) → CMO+CPO synthesis → Gate-1 brief presented to founder as Artifact.
+**Decision:** Founder APPROVED: 6-message hierarchy (M1 evaluation moved → M2 losing on fraction → M3 whole footprint one system [primary] → M4 won't-make-you-generic [only HIGH-confidence data-backed message] → M5 founders-are-the-proof + bilingual-native → M6 free Footprint Audit), 8-section arc (no stat strip — pre-revenue honesty), wizard structure (URL → context → honest templated reveal → capture, + founder escape hatch). Founder rulings: **hero = whole-picture lead** ("no GEO or single-service focus") — v6 hero frame retired; **white-label OFF** the main page; **Hebrew default** + EN toggle. POSITIONING.md amended: "AI-native" demoted from lead (7/11 competitors say it); "be the answer when AI asks" banned (Surfer SEO verbatim). USER-INSIGHTS.md populated with assumption-flagged personas (desk research, no interviews).
+**Still open (non-blocking):** warm-prospect interviews (optional pre-copy-lock upgrade) · founders public-credentials paragraph (REQUIRED before Phase-2 copy locks M5).
+**Reversibility:** reversible until build; message hierarchy now binds Phase 2.
+**Owner:** ceo (Gate-1), cmo+cpo synthesis (brief)
+**Affects:** design-lead (Phase 2a starts: moodboards + direction proposals → Gate 2), CMO (Phase-2 copy must trace to M1–M6 + banned list), founder (Gate 2 pick next).
+
+## 2026-07-08 — Website v7 process runbook locked (founder-approved via grill)
+
+**Context:** Founder corrected an over-execution (CEO had started producing concepts/copy) and asked to instead "plan the planning" — the macro process the agents + designer follow. Resolved via a one-question-at-a-time founder grill.
+**Decision — 9 locked choices:** (1) backbone **Strategy → Design → Build**; (2) research = **desk research + flagged persona assumptions**, no customer interviews (weight shifts to competitor-differentiation + anti-generic checklist to compensate); (3) copy = **message locked in Strategy, words written in Design** (co-evolve with art); (4) direction = **moodboards + written proposals → founder picks → build the one** (not rendered concepts up front); (5) **one Fable-5 session builds it all** + helper agents; (6) **image-gen-led** visuals (OpenAI, brand-post-processed, perf-optimized, spend-watched); (7) **one-off runbook, generalizable later**; (8) **4 approve-and-proceed founder gates** (message+structure · direction · spec · merge); (9) v1 scope = **full main page + lean-real wizard** (templated audit reveal + real lead capture; live agent-scan deferred). Runbook: `docs/08-agents_work/briefs/2026-07-08-v7-process-runbook.md`.
+**Reversibility:** reversible — process doc only; nothing built. The 2026-07-07 kit's seed copy + concept boards are now **non-binding scratch** (the process regenerates them).
+**Owner:** ceo (this session, founder-grilled)
+**Affects:** CMO/CPO + research-lead (Phase 1 Strategy → Gate-1 brief), design-lead (Phase 2), Fable-5 build session (Phase 3), QA-Lead (Full tier), founder (4 gates).
+
+## 2026-07-07 — Website v7 reboot: clean visual slate + Design Re-Planning Kit
+
+**Context:** Founder called for a from-scratch redesign of the Beeond site in the register of Speakeasy / rzlt.io / Jasper / Oriol, with a "Beeond touch." CEO grounded on the v6 site, the founding brief, and the four references, then locked four founder decisions and assembled a kit.
+**Options considered:** (a) refresh v6 in place — rejected, least "wow"; (b) evolve the soul, reboot the look — offered as CEO recommendation; (c) **clean visual slate** — founder chose (c): keep only the name, the bee/honey/swarm concept, and the cream+dark+yellow palette; retire the v6 field-journal ink look + all `public/art/*`.
+**Decision:** (1) Clean visual slate 🔒. (2) Hero CTA → a designed multi-step **Footprint-Audit onboarding wizard** (replaces the `mailto:` link) 🔒. (3) **Hebrew-first, English parity** — RTL is the primary design canvas 🔒. (4) Process is **three sessions**: Kit (this session) → Design-Planning (Opus, Design-Lead chair → founder-locked `SPEC.md`) → Build (single Fable-5 session, worktree, QA-gated). Kit delivered at `docs/05-marketing/website-v7-design-kit/` (8 docs + 18 captured reference screenshots across 6 sites). Carry-overs: 7-token palette (`ground #FAF9F5 · ink #141413 · yellow #FFDB5B` fill-only · `panel · deep · hairline · muted`), Rubik (native Hebrew), the generate→brand-post-process→integrate art method, all quality gates (LH ≥90/95/100/100, LCP <900ms, WCAG AA, RTL parity, brand-lint), bilingual SSR toggle.
+**Reversibility:** reversible — nothing built yet; v6 live on `main`, all retired systems in git history. The visual direction (3 candidates: Swarm / Comb-grid / Editorial-restraint) is intentionally NOT locked — it's founder gate B-a in the next session.
+**Owner:** ceo (this session)
+**Affects:** Design-Lead/CPO (run Session B, produce `SPEC.md`), CMO (HE-first copy deck; USER-INSIGHTS.md is an empty hard-gate to fill first), CTO (Session C Fable-5 build), QA-Lead (Full-tier gate — new site + lead-capture form), founder (gates B-a/b/c + merge word).
+
 ## 2026-07-06 — v6 landing MERGED to main + pushed to GitHub (founder-directed)
 
 **Context:** The Vercel-deployed site (`beeond-preview.vercel.app`) lived only on the local branch `feat/landing-v6` (21 commits, 124 files, ~24.9k ins) — never on GitHub; main was still v4 (`dedd16f`). Founder asked to save it to GitHub, then to update main directly.

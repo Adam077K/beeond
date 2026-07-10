@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beeond v7 · The Blueprint — concept</title>
+  <meta name="description" content="Beeond — כל הנוכחות הדיגיטלית שלכם, משורטטת ומנוהלת כנחיל אחד." />
+  <link rel="preload" as="font" type="font/woff2" href="fonts/frl-hebrew.woff2" crossorigin />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="copy-choice-b">
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Beeond">
+        <svg class="brand-mark" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <polygon points="15,2 27,9 27,21 15,28 3,21 3,9" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <polygon points="15,9.5 21,13 21,20 15,23.5 9,20 9,13" fill="#FFDB5B" stroke="#B8912E" stroke-width="0.8"/>
+        </svg>
+        <span>Beeond</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-links nav-mobile-hide">
+          <a class="nav-link" href="#swarm"><span class="i18n-he">הנחיל</span><span class="i18n-en">The swarm</span></a>
+          <a class="nav-link" href="#swarm"><span class="i18n-he">איך זה עובד</span><span class="i18n-en">How it works</span></a>
+          <a class="nav-link" href="#final"><span class="i18n-he">המייסדים</span><span class="i18n-en">The founders</span></a>
+          <a class="nav-link" href="#final"><span class="i18n-he">שאלות</span><span class="i18n-en">FAQ</span></a>
+        </div>
+        <button class="locale-toggle" data-locale-toggle type="button" aria-label="Switch language">
+          <span class="i18n-he">EN</span><span class="i18n-en">עברית</span>
+        </button>
+        <a class="header-cta" href="#final">
+          <span class="i18n-he">ניתוח נוכחות חינם</span><span class="i18n-en">Free Footprint Audit</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ §1 HERO ══ -->
+  <section class="hero" id="top">
+    <div class="draft-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow hero-eyebrow">
+          <span class="i18n-he">סוכנות דיגיטלית · נחיל של סוכני AI</span>
+          <span class="i18n-en">Digital agency · a swarm of AI agents</span>
+        </p>
+
+        <h1 class="hero-h1 display hero-copy">
+          <!-- Option A · "looking everywhere" -->
+          <span class="copy-a">
+            <span class="i18n-he"><span class="line">הקונים שלכם</span><span class="line">מחפשים בכל מקום.</span></span>
+            <span class="i18n-en"><span class="line">Your buyers are</span><span class="line line-2">looking everywhere.</span></span>
+          </span>
+          <!-- Option B · "drawn as one" (default) -->
+          <span class="copy-b">
+            <span class="i18n-he"><span class="line">כל הנוכחות הדיגיטלית שלכם,</span><span class="line line-2">משורטטת ומנוהלת <span class="u-accent">כנחיל אחד</span>.</span></span>
+            <span class="i18n-en"><span class="line">Your entire digital footprint,</span><span class="line line-2">drawn and run as <span class="u-accent">one swarm</span>.</span></span>
+          </span>
+        </h1>
+
+        <p class="hero-sub">
+          <span class="i18n-he">היום בודקים אתכם בחיפוש, ברשתות, באתרי ביקורות ובתשובות של ה-AI — בבת אחת. Beeond מנהלת את כל התמונה כמערכת אחת מתואמת.</span>
+          <span class="i18n-en">Today you're judged in search, on social, on review sites, and inside AI answers — all at once. Beeond runs the whole picture as one coordinated system.</span>
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="cta" href="#final">
+            <span class="i18n-he">קבלו ניתוח נוכחות חינם</span><span class="i18n-en">Get your free Footprint Audit</span>
+            <span class="cta-orb" aria-hidden="true"><svg class="cta-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+
+        <p class="hero-micro">
+          <span>
+            <span class="i18n-he">שני מייסדים, נחיל של סוכני AI, קוהורט ראשון נפתח. בלי מצגת — מבט אמיתי על איפה יש פערים.</span>
+            <span class="i18n-en">Two founders, a swarm of AI agents, first cohort opening. No deck — a real look at where the gaps are.</span>
+          </span>
+        </p>
+      </div>
+
+      <!-- the drafting comb + the ONE built cell -->
+      <div class="hero-art" aria-hidden="false">
+        <svg class="comb-svg" viewBox="-64 -44 474 500" role="img"
+             aria-label="A drafting honeycomb: fine construction outlines with one cell built and filled with honey — the Footprint Audit.">
+          <defs>
+            <linearGradient id="honeyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFE27A"/>
+              <stop offset="50%" stop-color="#FFDB5B"/>
+              <stop offset="100%" stop-color="#D9B84A"/>
+            </linearGradient>
+            <radialGradient id="honeyGlow" cx="50%" cy="46%" r="60%">
+              <stop offset="0%" stop-color="rgba(255,219,91,0.55)"/>
+              <stop offset="55%" stop-color="rgba(255,219,91,0.18)"/>
+              <stop offset="100%" stop-color="rgba(255,219,91,0)"/>
+            </radialGradient>
+          </defs>
+
+          <!-- faint drafting extension lines -->
+          <g class="comb-ext">
+            <line class="comb-line faint" x1="-40" y1="90" x2="120" y2="90"/>
+            <line class="comb-line faint" x1="170" y1="-30" x2="170" y2="32"/>
+            <line class="comb-line faint" x1="321" y1="264" x2="386" y2="264"/>
+            <line class="comb-line faint" x1="19.8" y1="293" x2="-44" y2="293"/>
+          </g>
+
+          <!-- drawn (un-built) cells -->
+          <polygon class="comb-cell" points="170.5,32 220.7,61 220.7,119 170.5,148 120.2,119 120.2,61"/>
+          <polygon class="comb-cell" points="120.2,119 170.5,148 170.5,206 120.2,235 70,206 70,148"/>
+          <polygon class="comb-cell" points="220.7,119 270.9,148 270.9,206 220.7,235 170.5,206 170.5,148"/>
+          <polygon class="comb-cell" points="70,206 120.2,235 120.2,293 70,322 19.8,293 19.8,235"/>
+          <polygon class="comb-cell" points="270.9,206 321.1,235 321.1,293 270.9,322 220.7,293 220.7,235"/>
+          <polygon class="comb-cell" points="120.2,293 170.5,322 170.5,380 120.2,409 70,380 70,322"/>
+          <polygon class="comb-cell" points="220.7,293 270.9,322 270.9,380 220.7,409 170.5,380 170.5,322"/>
+
+          <!-- THE ONE built honey cell (E, center-lower) -->
+          <ellipse class="built-glow" cx="170.5" cy="264" rx="86" ry="86" fill="url(#honeyGlow)" aria-hidden="true"/>
+          <g class="built-cell">
+            <polygon class="built-face" points="170.5,206 220.7,235 220.7,293 170.5,322 120.2,293 120.2,235"/>
+            <polygon class="built-rim" points="170.5,214 214,237.5 214,290.5 170.5,314 127,290.5 127,237.5"/>
+          </g>
+
+          <!-- job annotations (real text, HE/EN) -->
+          <g class="hero-anno">
+            <circle class="leader-dot" cx="170.5" cy="32" r="2.2"/>
+            <path class="leader" d="M170.5,32 L150,-4 L120,-4"/>
+            <text class="anno" x="116" y="-8" text-anchor="end"><tspan class="i18n-he">תוכן</tspan><tspan class="i18n-en">Content</tspan></text>
+
+            <circle class="leader-dot" cx="270.9" cy="177" r="2.2"/>
+            <path class="leader" d="M270.9,177 L330,150 L360,150"/>
+            <text class="anno" x="364" y="146" text-anchor="start"><tspan class="i18n-he">נראות ב-AI</tspan><tspan class="i18n-en">AI visibility</tspan></text>
+
+            <circle class="leader-dot" cx="19.8" cy="264" r="2.2"/>
+            <path class="leader" d="M19.8,264 L-34,296 L-52,296"/>
+            <text class="anno" x="-56" y="292" text-anchor="end"><tspan class="i18n-he">SEO</tspan><tspan class="i18n-en">SEO</tspan></text>
+
+            <!-- the built cell names itself -->
+            <path class="leader" d="M170.5,322 L170.5,352 L200,352"/>
+            <text class="anno-tag" x="204" y="349" text-anchor="start"><tspan class="i18n-he">הניתוח שלכם</tspan><tspan class="i18n-en">Your audit</tspan></text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §2 THE PROBLEM ══ -->
+  <section class="section problem" id="problem">
+    <div class="section-inner">
+      <div class="problem-copy">
+        <p class="eyebrow problem-eyebrow" data-reveal>
+          <span class="i18n-he">התמונה השלמה</span><span class="i18n-en">The whole picture</span>
+        </p>
+        <h2 class="problem-h2 display" data-reveal>
+          <span class="i18n-he">אתם עושים חלק מזה. המתחרים שנמצאים בכל מקום — לוקחים את השאר.</span>
+          <span class="i18n-en">You're covering part of it. The ones who cover all of it take the rest.</span>
+        </h2>
+        <p class="problem-body" data-reveal>
+          <span class="i18n-he">ערוץ פה, קמפיין שם, פרילנסר לתוכן, כלי ל-SEO, ושרשור אחד בסלאק שאף אחד לא באמת אחראי עליו. כל אלה עובדים בנפרד, ואף אחד לא רואה את התמונה השלמה. הקונה כן — והוא בוחר את מי שנראה לו שלם.</span>
+          <span class="i18n-en">A channel here, a campaign there, a freelancer for content, a tool for SEO, and one Slack thread nobody really owns. Each runs on its own, and no one sees the whole. Your buyer does — and picks whoever looks whole.</span>
+        </p>
+      </div>
+
+      <!-- empty drafting: all cells drawn, none built -->
+      <div class="problem-art" data-reveal>
+        <svg class="comb-svg" viewBox="-70 -20 400 380" role="img"
+             aria-label="An empty drafting honeycomb — outlines only, no cell built.">
+          <polygon class="comb-cell" points="150,10 194,36 194,88 150,114 106,88 106,36"/>
+          <polygon class="comb-cell" points="106,88 150,114 150,166 106,192 62,166 62,114"/>
+          <polygon class="comb-cell" points="194,88 238,114 238,166 194,192 150,166 150,114"/>
+          <polygon class="comb-cell" points="62,166 106,192 106,244 62,270 18,244 18,192"/>
+          <polygon class="comb-cell" points="150,166 194,192 194,244 150,270 106,244 106,192"/>
+          <polygon class="comb-cell" points="238,166 282,192 282,244 238,270 194,244 194,192"/>
+          <polygon class="comb-cell" points="106,244 150,270 150,322 106,348 62,322 62,270"/>
+          <polygon class="comb-cell" points="194,244 238,270 238,322 194,348 150,322 150,270"/>
+          <!-- one annotation: an empty channel -->
+          <circle class="leader-dot" cx="18" cy="218" r="2.2"/>
+          <path class="leader" d="M18,218 L-30,244 L-48,244"/>
+          <text class="empty-note" x="-52" y="240" text-anchor="end"><tspan class="i18n-he">רשתות — ריק</tspan><tspan class="i18n-en">Social — empty</tspan></text>
+          <circle class="leader-dot" cx="282" cy="218" r="2.2"/>
+          <path class="leader" d="M282,218 L326,192 L312,192"/>
+          <text class="empty-note" x="316" y="188" text-anchor="start"><tspan class="i18n-he">SEO — ריק</tspan><tspan class="i18n-en">SEO — empty</tspan></text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §3 THE SWARM — dark showpiece ══ -->
+  <section class="section swarm" id="swarm" data-scheme="dark" data-dark-section>
+    <div class="section-inner">
+      <div class="swarm-copy">
+        <p class="eyebrow swarm-eyebrow" data-reveal>
+          <span class="i18n-he">הנחיל</span><span class="i18n-en">The swarm</span>
+        </p>
+        <h2 class="swarm-h2 display" data-reveal>
+          <span class="i18n-he">לא כלי. לא שלושה ספקים. נחיל אחד.</span>
+          <span class="i18n-en">Not a tool. Not three vendors. One swarm.</span>
+        </h2>
+        <p class="swarm-body" data-reveal>
+          <span class="i18n-he">נחיל של סוכני AI מריץ את הווליום על פני כל ערוץ, ושני המייסדים שבנו את המכונה מכוונים את כולם למטרה אחת. הכול נמשך לאותו קו — כמו כוורת שבונה לפי שרטוט אחד.</span>
+          <span class="i18n-en">A swarm of AI agents runs the volume across every channel, and the two founders who built the machine point all of it at one goal. Everything pulls toward the same line — a hive building to a single drawing.</span>
+        </p>
+        <p class="swarm-close" data-reveal>
+          <span class="i18n-he">האוטומציה עושה את הווליום. <span class="accent">האנשים עושים את הטעם.</span></span>
+          <span class="i18n-en">Automation does the volume. <span class="accent">Humans do the taste.</span></span>
+        </p>
+        <p class="swarm-founders" data-reveal>
+          <span class="i18n-he">ירדן ואדם — שני המייסדים שמכוונים את הנחיל.</span>
+          <span class="i18n-en">Yarden &amp; Adam — the two founders who aim the swarm.</span>
+        </p>
+      </div>
+
+      <!-- inverted comb: gold schematic converging on one built cell -->
+      <div class="swarm-art" data-dark-art>
+        <svg class="comb-svg" viewBox="-40 0 620 470" role="img"
+             aria-label="A dark blueprint: a field of golden hex cells with channels converging into one bright built cell at the centre.">
+          <defs>
+            <linearGradient id="honeyGradDark" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFE480"/>
+              <stop offset="50%" stop-color="#FFDB5B"/>
+              <stop offset="100%" stop-color="#E0B33F"/>
+            </linearGradient>
+            <radialGradient id="honeyGlowDark" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="rgba(255,219,91,0.6)"/>
+              <stop offset="45%" stop-color="rgba(255,205,80,0.28)"/>
+              <stop offset="100%" stop-color="rgba(255,219,91,0)"/>
+            </radialGradient>
+          </defs>
+
+          <!-- all 19 drawn cells (faint gold) -->
+          <polygon class="dcomb-line" points="170.1,28 215.1,54 215.1,106 170.1,132 125,106 125,54"/>
+          <polygon class="dcomb-line" points="260.1,28 305.2,54 305.2,106 260.1,132 215.1,106 215.1,54"/>
+          <polygon class="dcomb-line" points="350.2,28 395.2,54 395.2,106 350.2,132 305.2,106 305.2,54"/>
+          <polygon class="dcomb-line" points="125,106 170.1,132 170.1,184 125,210 80,184 80,132"/>
+          <polygon class="dcomb-line" points="215.1,106 260.1,132 260.1,184 215.1,210 170.1,184 170.1,132"/>
+          <polygon class="dcomb-line" points="305.2,106 350.2,132 350.2,184 305.2,210 260.1,184 260.1,132"/>
+          <polygon class="dcomb-line" points="395.2,106 440.3,132 440.3,184 395.2,210 350.2,184 350.2,132"/>
+          <polygon class="dcomb-line" points="80,184 125,210 125,262 80,288 35,262 35,210"/>
+          <polygon class="dcomb-line" points="170.1,184 215.1,210 215.1,262 170.1,288 125,262 125,210"/>
+          <polygon class="dcomb-line" points="350.2,184 395.2,210 395.2,262 350.2,288 305.2,262 305.2,210"/>
+          <polygon class="dcomb-line" points="440.3,184 485.3,210 485.3,262 440.3,288 395.2,262 395.2,210"/>
+          <polygon class="dcomb-line" points="125,262 170.1,288 170.1,340 125,366 80,340 80,288"/>
+          <polygon class="dcomb-line" points="215.1,262 260.1,288 260.1,340 215.1,366 170.1,340 170.1,288"/>
+          <polygon class="dcomb-line" points="305.2,262 350.2,288 350.2,340 305.2,366 260.1,340 260.1,288"/>
+          <polygon class="dcomb-line" points="395.2,262 440.3,288 440.3,340 395.2,366 350.2,340 350.2,288"/>
+          <polygon class="dcomb-line" points="170.1,340 215.1,366 215.1,418 170.1,444 125,418 125,366"/>
+          <polygon class="dcomb-line" points="260.1,340 305.2,366 305.2,418 260.1,444 215.1,418 215.1,366"/>
+          <polygon class="dcomb-line" points="350.2,340 395.2,366 395.2,418 350.2,444 305.2,418 305.2,366"/>
+
+          <!-- lit job cells -->
+          <polygon class="dcell lit" points="170.1,28 215.1,54 215.1,106 170.1,132 125,106 125,54"/>
+          <polygon class="dcell lit" points="395.2,106 440.3,132 440.3,184 395.2,210 350.2,184 350.2,132"/>
+          <polygon class="dcell lit" points="440.3,184 485.3,210 485.3,262 440.3,288 395.2,262 395.2,210"/>
+          <polygon class="dcell lit" points="80,184 125,210 125,262 80,288 35,262 35,210"/>
+          <polygon class="dcell lit" points="350.2,340 395.2,366 395.2,418 350.2,444 305.2,418 305.2,366"/>
+
+          <!-- converging channels toward centre (260,236) -->
+          <path class="dlink" d="M170.1,80 C205,140 230,190 260,236"/>
+          <path class="dlink" d="M417.7,158 C360,180 300,210 260,236"/>
+          <path class="dlink" d="M462.8,236 C400,236 320,236 260,236"/>
+          <path class="dlink" d="M80,236 C150,236 210,236 260,236"/>
+          <path class="dlink" d="M350.2,392 C310,330 280,285 260,236"/>
+
+          <!-- the ONE built cell at the convergence -->
+          <ellipse class="dbuilt-glow" cx="260.1" cy="236" rx="92" ry="92" fill="url(#honeyGlowDark)" aria-hidden="true"/>
+          <g class="dbuilt">
+            <polygon class="dbuilt-face" points="260.1,184 305.2,210 305.2,262 260.1,288 215.1,262 215.1,210"/>
+            <polygon class="dbuilt-rim" points="260.1,191 299,213 299,259 260.1,281 221,259 221,213"/>
+          </g>
+
+          <!-- job annotations -->
+          <g class="swarm-anno">
+            <circle class="danno-dot" cx="170.1" cy="80" r="2.4"/>
+            <path class="danno-lead" d="M170.1,80 L150,44 L120,44"/>
+            <text class="danno" x="116" y="40" text-anchor="end"><tspan class="i18n-he">תוכן</tspan><tspan class="i18n-en">Content</tspan></text>
+
+            <circle class="danno-dot" cx="417.7" cy="158" r="2.4"/>
+            <path class="danno-lead" d="M417.7,158 L470,120 L500,120"/>
+            <text class="danno" x="504" y="116" text-anchor="start"><tspan class="i18n-he">ממומן</tspan><tspan class="i18n-en">Paid ads</tspan></text>
+
+            <circle class="danno-dot" cx="462.8" cy="236" r="2.4"/>
+            <path class="danno-lead" d="M462.8,236 L512,236 L528,236"/>
+            <text class="danno" x="532" y="240" text-anchor="start"><tspan class="i18n-he">אנליטיקס</tspan><tspan class="i18n-en">Analytics</tspan></text>
+
+            <circle class="danno-dot" cx="80" cy="236" r="2.4"/>
+            <path class="danno-lead" d="M80,236 L28,268 L2,268"/>
+            <text class="danno" x="-2" y="272" text-anchor="end"><tspan class="i18n-he">אימייל</tspan><tspan class="i18n-en">Email</tspan></text>
+
+            <circle class="danno-dot" cx="350.2" cy="392" r="2.4"/>
+            <path class="danno-lead" d="M350.2,392 L392,424 L418,424"/>
+            <text class="danno" x="422" y="428" text-anchor="start"><tspan class="i18n-he">רשתות</tspan><tspan class="i18n-en">Social</tspan></text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §4 FINAL CTA — dark, the device resolves ══ -->
+  <section class="section final" id="final" data-scheme="dark" data-dark-section>
+    <div class="section-inner">
+      <div class="final-art" data-dark-art>
+        <svg class="comb-svg" viewBox="0 0 130 150" role="img"
+             aria-label="One built honey cell, still — the audit, resolved.">
+          <defs>
+            <radialGradient id="finalGlow" cx="50%" cy="50%" r="62%">
+              <stop offset="0%" stop-color="rgba(255,219,91,0.6)"/>
+              <stop offset="50%" stop-color="rgba(255,205,80,0.25)"/>
+              <stop offset="100%" stop-color="rgba(255,219,91,0)"/>
+            </radialGradient>
+          </defs>
+          <line class="comb-line" x1="65" y1="4" x2="65" y2="26"/>
+          <line class="comb-line" x1="12" y1="75" x2="30" y2="75"/>
+          <line class="comb-line" x1="118" y1="75" x2="100" y2="75"/>
+          <ellipse class="final-glow" cx="65" cy="75" rx="60" ry="60" fill="url(#finalGlow)" aria-hidden="true"/>
+          <g class="final-built">
+            <polygon class="dbuilt-face" points="65,28 105,51 105,97 65,120 25,97 25,51"/>
+            <polygon class="dbuilt-rim" points="65,35 99,54.5 99,93.5 65,113 31,93.5 31,54.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <p class="eyebrow final-eyebrow" data-reveal>
+        <span class="i18n-he">ניתוח נוכחות חינם</span><span class="i18n-en">Free Footprint Audit</span>
+      </p>
+      <h2 class="final-h2 display" data-reveal>
+        <span class="i18n-he">הקונים שלכם מחפשים עכשיו. בואו נראה מה הם מוצאים.</span>
+        <span class="i18n-en">Your buyers are looking right now. Let's see what they find.</span>
+      </h2>
+      <p class="final-sub" data-reveal>
+        <span class="i18n-he">ניתוח נוכחות חינם — מפה של איפה אתם מופיעים, איפה לא, ומה צריך כדי לסגור את הפערים. בלי התחייבות.</span>
+        <span class="i18n-en">A free Footprint Audit — a map of where you show up, where you don't, and what it takes to close the gaps. No commitment.</span>
+      </p>
+      <div class="final-cta-row" data-reveal>
+        <a class="cta" href="#final">
+          <span class="i18n-he">התחילו את ניתוח הנוכחות</span><span class="i18n-en">Start your Footprint Audit</span>
+          <span class="cta-orb" aria-hidden="true"><svg class="cta-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="link-quiet" href="#final">
+          <span class="i18n-he">או פשוט דברו עם המייסדים</span><span class="i18n-en">Or just talk to the founders</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ REVIEW TOGGLE DOCK ══ -->
+  <div class="toggle-dock" role="group" aria-label="Concept review controls">
+    <div class="toggle-group">
+      <span class="toggle-label">Font</span>
+      <div class="seg" data-toggle="font">
+        <button type="button" data-val="a" aria-pressed="true">A · Serif</button>
+        <button type="button" data-val="b" aria-pressed="false">B · Rubik</button>
+      </div>
+    </div>
+    <span class="toggle-divider" aria-hidden="true"></span>
+    <div class="toggle-group">
+      <span class="toggle-label">Lang</span>
+      <div class="seg" data-toggle="lang">
+        <button type="button" data-val="he" aria-pressed="true">עברית</button>
+        <button type="button" data-val="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <span class="toggle-divider" aria-hidden="true"></span>
+    <div class="toggle-group">
+      <span class="toggle-label">Hero</span>
+      <div class="seg" data-toggle="copy">
+        <button type="button" data-val="a" aria-pressed="false">A</button>
+        <button type="button" data-val="b" aria-pressed="true">B</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <script src="main.js"></script>
+</body>
+</html>
