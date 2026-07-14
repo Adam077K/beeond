@@ -24,6 +24,17 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-07-14 — BOARD REVIEW: v7 Phase-3 build → PAUSE (advisory; founder decision pending)
+
+**Context:** Before opening the one-session v7 marquee build, the founder convened the board to stress-test the plan ("challenge the plan"). CEO ran the 4-round board-meeting protocol as a deterministic workflow — 6 personas (visionary, strategist, architect, risk-modeler, customer-voice, broad-adversary), framed one altitude up (*is building the locked marquee the right Phase-3 move*, not *is the spec good*), with a mandatory outside-the-box field so no seat could rubber-stamp.
+**Options considered:** Build v7 marquee now as spec'd (the plan) / PAUSE & re-sequence to validation-first / KILL the build-shape entirely.
+**Decision (board, advisory):** **PAUSE.** R1 tally 2 KILL / 1 PWC / 3 PAUSE → R2 **2 KILL / 4 PAUSE / 0 PROCEED** (risk-modeler withdrew PROCEED_WITH_CONDITIONS). Objection is to *sequence/timing*, not spec quality — the honeycomb world, M1–M6, and wizard are correct later-phase assets. Recommended re-sequence: 5-day validation sprint (interview + try to close both warm prospects, write M5) → ship the wizard first on live v6 (`/audit`, one live signal in the reveal) → build the marquee only after gate ≥15% wizard→call AND ≥1 paid engagement.
+**Rationale:** (1) live QA-passed v6 already exists — real alternative is "iterate v6," not "no site"; (2) M1–M6 locked without the prospect interviews it rests on; (3) M5 (only pre-revenue proof) still an empty placeholder; (4) wizard "wow" is templated at the conversion moment; (5) two warm prospects un-called on a ~10–14-day competitor clock; preserved KILL dissent — 7 locked site directions in 14 days → 0 revenue (supersession pattern is the real pathology).
+**Reversibility:** reversible (advisory record; no code changed, no build started, spec preserved intact).
+**Owner:** ceo
+**Affects:** CPO/CTO (build sequencing — marquee deferred pending gate), CMO (M1–M6 red-team vs. verbatim buyer language; M5 copy), CBO (paid-pilot SOWs to warm prospects). Founder ratification required before any action.
+**Detail:** docs/08-agents_work/board-review/2026-07-13-v7-phase3/ (R3-synthesis.md + R1-R2-verdicts.md); session docs/08-agents_work/sessions/2026-07-13-ceo-v7-phase3-board.md
+
 ## 2026-07-09 — GATE 3 PASSED: v7 SPEC LOCKED — design planning COMPLETE
 
 **Context:** Phase 2b produced the copy deck (HE-first), design spec, a coded concept prototype (real Hebrew type, font/lang/copy toggles), and an independent design-critic review (NEEDS_WORK: 2×P1 on comb boldness + CTA-resolve context). Founder re-anchored the boundary: this whole effort is *planning*; the site is built once, by one Fable-5 session.
