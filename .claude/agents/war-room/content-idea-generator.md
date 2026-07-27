@@ -25,7 +25,7 @@ skills:
   - copywriting
   - competitive-landscape
   - marketing-psychology
-  - beeond-voice-canon
+  - beamix-voice-canon
   - humanizer
 ---
 
