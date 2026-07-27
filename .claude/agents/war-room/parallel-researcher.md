@@ -22,7 +22,7 @@ skills:
   - deep-research
   - search-specialist
   - competitive-landscape
-  - pgvector-rag-beeond
+  - pgvector-rag-beamix
   - market-sizing-analysis
 ---
 
