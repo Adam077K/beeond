@@ -24,6 +24,25 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-08-08 — CLEAN-START RESET: execution decisions re-opened; 5-file handoff written
+
+**Context:** Founder: "I don't like the way that we are continuing in this project." Three parallel scout agents measured the state of the repo before any decision was taken. Findings: 2,070 markdown files; ~120,000 lines of agent framework + docs against ~6,766 lines of product code (18:1); **no database of any kind** (zero `.sql`, zero migrations, zero `supabase/` — Supabase exists only inside agent instruction files); product surface is one landing page on a Vercel *preview*, no auth/API/app; 7 locked website directions in 14 days (v3→v7), ~2-day average lifespan, **0/7 → revenue**; zero customer interviews and both warm prospects still un-called; `main` frozen at the 2026-07-14 PAUSE commit; root `package.json` still named `gsa-startup-kit`; `CLAUDE.md` Project State still the day-one placeholder across all 64 commits.
+**Options considered:** Process reset only (same strategy, cleaner execution) / re-open the execution decisions / near-total clean slate / reset the business shape (agency vs product).
+**Decision (founder):** **Re-open the execution decisions.** Seven sub-decisions, taken via structured grilling:
+1. Keep the germ — Beeond, the swarm thesis, the HE+EN B2B footprint agency shape. Re-open offer, tiers, pricing, service catalog, build sequence. The business *shape* (done-for-you agency) is NOT re-opened.
+2. **ICP is genuinely open** — three live candidates carried forward with the evidence for each: B2B/SaaS (all foundation docs), Hebrew-market lead-gen (Bonim Atid — the only real delivered work), international-startups-English-only (2026-08-06).
+3. The new project **keeps** the agent + skill system. No tooling post-mortem in the handoff; the documented failure is a decision-loop failure, not a tooling failure.
+4. The 2026-08-06 "international startups, English only" call was **site-scope, not company-scope.** The company remains **HE+EN bilingual**; the site goes English-first. Confirmed by that entry's own wording — "Hebrew is not in scope for *this build*."
+5. Five topic-split files, each standalone.
+6. **Strip all guesses.** A claim ships only if FOUNDER-decided, SOURCED (URL + date + confidence), MEASURED, or METHOD. Every untested number was cut and replaced with the method for deriving it.
+7. Output at `HANDOFF-CLEAN-START/` in the repo root.
+**Rationale:** Six weeks produced 2,070 docs, seven website directions, and zero revenue — the decisions were never the bottleneck, so preserving them buys nothing. The strip rule targets the specific observed mechanism by which the project stalled: agent estimate → repeated across docs → treated as fact → locked → superseded. Cut numbers include tier prices, gross margin, LTV, churn, capacity model, and all three synthesized personas.
+**Reversibility:** reversible — nothing deleted, no existing doc edited. The prior corpus stays intact on this branch; the handoff is additive.
+**Owner:** ceo (ceo-clean-start-handoff)
+**Affects:** the new project (these 5 files are its entire inherited context) · any future CPO/CBO work (pricing and catalog must be re-derived, not looked up) · Research-Lead (market sizing has never been attempted — method supplied, number owed).
+**Open blockers recorded in the handoff:** ICP undecided (blocks offer → pricing → positioning) · trademark clearance never completed (MEDIUM risk: exact-spelling Brazilian advertising agency in Class 35, plus two phonetic twins; six registries never queried) · `beeond.ai` unsecured · no TAM/SAM/SOM ever attempted.
+**Detail:** `HANDOFF-CLEAN-START/` (01-THE-IDEA, 02-THE-PROBLEM, 03-THE-MARKET, 04-THE-PRODUCT, 05-WHERE-WE-STAND); session `docs/08-agents_work/sessions/2026-08-08-ceo-clean-start-handoff.md`
+
 ## 2026-07-14 — BOARD REVIEW: v7 Phase-3 build → PAUSE (advisory; founder decision pending)
 
 **Context:** Before opening the one-session v7 marquee build, the founder convened the board to stress-test the plan ("challenge the plan"). CEO ran the 4-round board-meeting protocol as a deterministic workflow — 6 personas (visionary, strategist, architect, risk-modeler, customer-voice, broad-adversary), framed one altitude up (*is building the locked marquee the right Phase-3 move*, not *is the spec good*), with a mandatory outside-the-box field so no seat could rubber-stamp.
