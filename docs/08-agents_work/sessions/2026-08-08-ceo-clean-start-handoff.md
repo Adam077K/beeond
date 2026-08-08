@@ -55,6 +55,27 @@ Independently re-verified by CEO via git before shipping: commit count (64), fir
 
 ICP undecided (blocks offer → pricing → positioning) · trademark clearance never completed (MEDIUM risk; exact-spelling Brazilian advertising agency in Class 35 plus two phonetic twins; six registries never queried) · `beeond.ai` unsecured · no TAM/SAM/SOM ever attempted at any fidelity.
 
+## Review board + revision pass (same session)
+
+Founder asked for a second board to test whether the five files would install misconceptions in a new project — his example: the English-only website call being treated as strategy. Five Sonnet reviewers: cold-reader (five files only, no repo), contamination-hunter, omission-auditor, adversary, framing-auditor.
+
+**The founder's suspicion was correct and understated.** "International startups, English only" was traced to **one row in a flat five-row table of visual-reskin decisions** (palette, type, texture, layout) — no options considered, no rationale. And that session's own carried-forward note says Hebrew scope was *"deliberately deferred… cmo.md now says 'ask, don't assume.'"* File 01 had claimed the founder decision "confirms" a site-only reading — presenting as confirmed what the source deferred. Two errors pointing opposite ways.
+
+**Highest-severity findings:**
+- File 01's germ sentence embedded **B2B**, whole-footprint, and swarm-as-proven into the company identity, then said the ICP was reopened — silently overriding every REOPENED label downstream.
+- The cold-reader came away believing **the swarm already delivers client work**. It never has.
+- **"Hebrew is the only white space"** was CEO overstatement — `COMPETITIVE_LANDSCAPE.md` lists four co-equal differentiators, whole-footprint first. File 03 had it right; files 01/02 didn't. This overstatement was also the argument the CEO used to recommend the company-level bilingual decision.
+- **Over-strip:** the ~220 deliverable-hours/month capacity model is structural arithmetic, not a market guess, and the cheapest number in the model to verify. Cutting it left a hollow gesture. Also cut: seven operating flags including **bilingual delivery adds ~40–50% to content hours** — a direct cost of the HE+EN decision, absent everywhere.
+- **STANDS** conflated "untouched today" with "validated" on rows whose own rationale reads "not recorded."
+- The interview guide had **no price-anchoring question**.
+- The adversary's process point: this repo has a **measured 0-for-6** execution rate on board-ratified action items sitting in markdown. A sentence asking founders to hold a line is the mechanism that has already failed. The gate must be mechanical and external.
+
+**Founder decisions during the review:** transparency dashboard is **day-one offer scope** and build target #1 (resolves agency-vs-product as hybrid) · ICP collapses to **two segment branches** with language/geography as a separate axis · swarm stated as the bet it is · the "build the brain with Claude" line deliberately left out.
+
+**Revision:** four parallel writers on files 01/02/04/05 plus CEO edits to 03. 798 → ~975 lines. Writers corrected the CEO three times on unverified figures (competitor count 17 not 13; POSITIONING.md 425 not 429 lines; buyer-trust research is LOW confidence, not HIGH).
+
+**Verified by re-running the cold-read on the revised files.** Every contamination item from the first read is resolved. Residual pull is now limited to claims the files explicitly label unproven, and the reader is self-aware about each. Posture corrected from *chastened* to *disciplined* — free to research and to scope the dashboard, gated only from new marketing/brand builds.
+
 ## Next
 
 Founder-owned, per the handoff's own first-actions list: call the two warm prospects and Bonim Atid using the 14-question guide in file 02; commission the Class 35 + 42 trademark search; define what "locked" will mean before opening any new build direction.

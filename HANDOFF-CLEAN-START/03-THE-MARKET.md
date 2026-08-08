@@ -105,22 +105,24 @@ A prospective buyer evaluating Beeond compares it against four substitute catego
 
 **No TAM, SAM, or SOM exists anywhere in the prior repo.** `docs/01-foundation/TARGET_MARKET.md` is an unfilled template — every field down to the market-size table, the ICP, the geographic phasing, and the JTBD statements is still bracketed placeholder text (`_[$X billion]_`, `_[Source name + URL]_`, etc.). This was never attempted, not even with a rough or invented number. It is a real gap in the research, not a rounding error to gloss over.
 
-The ICP itself is also genuinely open. Three candidates remain live, per the founder's decision this session:
+The ICP itself is also genuinely open. Per the founder's decision on 2026-08-08, there are **two segment branches** — not three candidates. An earlier draft of this handoff listed "international, English-only" as a third candidate; that was a category error, and file 02 §4 explains why. Segment and language sit on different axes:
 
-- **A — B2B/SaaS** (the segment the competitive research above was scoped against)
-- **B — Hebrew-market lead-gen**
-- **C — International, English-only**
+- **Branch A — B2B/SaaS/tech** (the segment the competitive research above was scoped against)
+- **Branch B — Hebrew-market lead-gen** (evidence: the Bonim Atid engagement)
 
-Market size changes completely depending on which is chosen, so the sizing method below is stated per-candidate rather than as a single number.
+**Language and geography is a separate, also-open scope question** — HE+EN versus English-only. Treat it as a *filter applied to whichever branch is chosen*, not as a market of its own: either branch can be scoped to Israel/Hebrew, to international/English, or to both, and each scoping produces a different addressable population from the same segment definition. That is why it multiplies the sizing rather than replacing it.
+
+Market size changes completely depending on the branch AND the language scope, so the method below is stated per-branch, with the language filter applied as a second step rather than as a third market.
 
 ### A concrete bottom-up method to close the gap
 
 Do **not** start from a top-down industry report percentage — none of the "AI marketing agency TAM" figures circulating are sourced to anything Beeond can defend. Build bottom-up instead:
 
-**Step 1 — Count the addressable company population per ICP candidate.**
-- *Candidate A (B2B/SaaS, Israel + international):* Use IVC Data (ivc-online.com) or Start-Up Nation Central's finder for the Israeli company count by sector/stage; cross-check against Crunchbase or PitchBook cohort filters (funded B2B/SaaS companies, seed through Series B, a specific employee-count band) for the international slice. Filter to companies plausibly running an active marketing function — i.e. past pre-seed, with at least a small team.
-- *Candidate B (Hebrew-market lead-gen):* Scope to Israeli SMB/local-service and B2B companies that sell primarily to Hebrew-speaking buyers. Start-Up Nation Central and the Israeli government's business registry (Rasham HaChevarot) are the relevant public sources; this candidate's population is likely far larger than A but lower ARPU per account.
-- *Candidate C (international, English-only):* Use Crunchbase/PitchBook cohorts filtered to English-speaking markets (US, UK, EN-Canada, EN-Europe), same funded-B2B/SaaS filters as A, without the Hebrew constraint — the largest raw population of the three, but the most competitive band (all of Band 1 and Band 2 above compete directly here).
+**Step 1 — Count the addressable company population per segment branch.**
+- *Branch A (B2B/SaaS/tech):* Use IVC Data (ivc-online.com) or Start-Up Nation Central's finder for the Israeli company count by sector/stage; cross-check against Crunchbase or PitchBook cohort filters (funded B2B/SaaS companies, seed through Series B, a specific employee-count band) for the international slice. Filter to companies plausibly running an active marketing function — i.e. past pre-seed, with at least a small team.
+- *Branch B (Hebrew-market lead-gen):* Scope to Israeli SMB/local-service and B2B companies that sell primarily to Hebrew-speaking buyers. Start-Up Nation Central and the Israeli government's business registry (Rasham HaChevarot) are the relevant public sources; this branch's population is likely far larger than A but lower ARPU per account.
+
+**Step 1b — Apply the language/geography filter to whichever branch you counted.** This is the step that replaces the old "candidate C." For an international/English scoping of Branch A, use Crunchbase/PitchBook cohorts filtered to English-speaking markets (US, UK, EN-Canada, EN-Europe) with the same funded-B2B/SaaS filters and no Hebrew constraint — the largest raw population available, but also the most contested: every Band 1 and Band 2 competitor above competes directly there, and none of them is bilingual. For an Israel/Hebrew scoping of either branch, the population is far smaller but the Band 4 cluster is the only direct competition and none of it is AI-native. Note that Branch B is Hebrew-scoped by definition, so the filter is only a live choice for Branch A.
 
 **Step 2 — Apply a service-fit filter, not a blanket percentage.** From each population, exclude companies that are clear disqualifiers (pre-revenue with no marketing budget at all; enterprises with an in-house team large enough that a done-for-you swarm is the wrong fit). This produces the SAM population, not a SAM dollar figure yet.
 
@@ -130,7 +132,7 @@ Do **not** start from a top-down industry report percentage — none of the "AI 
 
 **Step 5 — Sanity-check against the substitute categories.** If the derived SAM price point sits far outside the range bounded by Band 1 (~$10K–$20K+/mo) and Band 3 ($29–$499/mo), that is a signal the positioning or the segment choice needs revisiting before the number is trusted.
 
-This method should be re-run for whichever ICP candidate the founder ultimately picks — the three will not produce comparable numbers, and picking the ICP is itself a precondition for a trustworthy market-size figure.
+This method should be re-run once for whichever segment branch the founder picks, at whichever language scope is chosen — the combinations will not produce comparable numbers, and settling both the branch and the scope is a precondition for a trustworthy market-size figure. Do not attempt a single blended number across branches; it would describe no real market.
 
 ---
 
