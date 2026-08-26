@@ -4,7 +4,7 @@
 
 **Sources:**
 - `FOUNDER-REFERENCE-NOTES.md` — the founder's verbatim notes, hash paths resolved
-- `founder-brain/_brief-01-websites.md` · `_brief-02-branding.md` · `_brief-03-artistic-direction.md` · `_brief-04-dreamy-nature-grids.md`
+- `founder-brain/_brief-01-websites.md` · `_brief-02-branding.md` · `_brief-03-artistic-direction.md` · `_brief-04-dreamy-nature-grids.md` · `_brief-05-addendum.md`
 
 This is **not a direction.** It is the evidence base G1 chooses a direction from.
 
@@ -125,8 +125,24 @@ Recorded so nothing propagates silently. In every case the founder's **instinct*
 
 ---
 
-## 9. Open — needs the founder
+## 9. Showing a capability without a screenshot
 
-1. **`B04` / orig `779f1ded`** — cited **three times** under three headings, carrying more weight than any other single reference. His note describes "a clean, minimal white website with cards and layered elements"; the file is an **OpenAI Codex key-art graphic** (sky-blue field, blurred iridescent clouds, scattered monospace code fragments, Codex/OpenAI wordmarks). Likely he meant the *page* it was lifted from. **Needs: the actual page, or confirmation the note attaches to the graphic only.**
-2. **`C18` Endex** — cited twice. Note (a) *"minimal, no flashy centrepiece, just colour and a bright beam of light"* is **confirmed exactly**. Note (b) *"a collection of imagery… colourful"* is a **mismatch** — it belongs to a collage reference, most likely `C03` (Perplexity) or `C09` (Framer gallery). **Needs: which one.**
-3. **Which mark** does Beeond actually use — glyph grid, dot-matrix, or stipple? See §7. **G1 decision.**
+Beeond has no product to photograph. Two references solve exactly this, and neither shows an app:
+
+- **`A03` (Fable)** — a capability shown as a loose stack of overlapping **asset cards** at varied depth on a soft gradient ground: a logo mid-edit with selection handles, a type swatch, an image on a transparency checkerboard, a glass "New Asset" button under a cursor.
+- **`C11` (Atlas)** — an identity shown as overlapping cards: type specimen, metrics diagram with hairline baseline rules, the mark on a flat colour tile, real nature photography.
+
+**Rule: depth comes from overlap and soft shadow, not from glass.** Only one element across both files is actually frosted. And the artefact — a thing mid-edit, a specimen, a diagram — does the explaining that a dashboard screenshot would otherwise do.
+
+*(This is the same device the landing-page teardown found in Ada, Agentwork, Speakeasy and Superside: show the work, not the tool.)*
+
+---
+
+## 10. Open
+
+**Resolved 2026-08-26 by founder revision:** the `779f1ded` triple-citation (glass-components note reassigned to `A03`, verified `CONFIRMED`) and the `C18` double-citation (collage note reassigned to `C11`, verified `CONFIRMED`).
+
+**Still open:**
+1. **Which mark does Beeond use** — glyph grid, circular dot-matrix, or irregular stipple? See §7. **G1 decision, must be made explicitly.**
+2. **`779f1ded` note-vs-image mismatch stands** — his note describes a white website with cards; the file is an OpenAI Codex key-art graphic. Now cited once and carrying no structural weight, so it is recorded rather than blocking.
+3. **Font licensing** — free-only, or is there budget?

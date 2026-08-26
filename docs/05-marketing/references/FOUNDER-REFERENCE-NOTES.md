@@ -37,8 +37,10 @@ The visual descriptions that accompany these notes live in `founder-brain/_brief
 
 ## Branding and overall feeling
 
-**`branding-feeling/B04-*`** — *orig `779f1ded…`* · **cited 3× under 3 headings — flagged for verification**
+**`branding-feeling/B04-blurred-cloud-code-text-openai-codex-graphic.jpg`** — *orig `779f1ded…`* · **cited once (revised 2026-08-26)**
 > A clean, minimal white website. Color is mostly introduced through images and cards in the hero section. Additional layered elements create a premium, high-quality, and polished feeling.
+
+*⚠️ Note-vs-image mismatch stands: the file is an OpenAI Codex key-art graphic, not a white website. Lower stakes now that the glass-components note has moved to `A03`.*
 
 ### Unique visual feeling and elements
 
@@ -104,24 +106,28 @@ Examples given:
 
 ## Components, grids and layout
 
-**`branding-feeling/B04-*`** — *orig `779f1ded…`* · same file as above
+**`branding-feeling/A03-fable-brand-asset-moodboard-ui.jpg`** — *orig `0dcfaec0…`* · **reassigned by founder 2026-08-26** · `CONFIRMED`
 > The use of glass components, images, and additional elements creates an expensive, high-quality feeling while showcasing a product feature through a layered stack of semi-organized visuals.
 
 **`branding-feeling/A22-music-app-card-ui-set.jpg`** — *orig `66ea1b5a…`*
 > I really like using grids to combine visual elements, base colors, correct typography, content, and imagery. Together, they create the most futuristic, clean, and premium feeling possible.
 
-**`branding-feeling/C18-endex-homepage-hero-full-capture.png`** — *orig `Screenshot 2026-08-05 at 3.17.19 PM`* · **cited 2× with two different notes — flagged**
-> (a) Homepage reference: very minimal, without a complex or flashy visual centerpiece — just color and a bright beam of light.
->
-> (b) A collection of imagery and visual elements that fully creates the response I want viewers to have toward our company: clean, high-quality, colorful, and refined.
+**`branding-feeling/C18-endex-homepage-hero-full-capture.png`** — *orig `Screenshot 2026-08-05 at 3.17.19 PM`* · `CONFIRMED`
+> Homepage reference: very minimal, without a complex or flashy visual centerpiece — just color and a bright beam of light.
+
+**`branding-feeling/C11-atlas-brand-typeface-logo-guide.png`** — *orig `Screenshot 2026-08-04 at 3.22.46 PM`* · **added by founder 2026-08-26** · `CONFIRMED`
+> A collection of imagery and visual elements that fully creates the response I want viewers to have toward our company: clean, high-quality, colorful, and refined.
 
 **`branding-feeling/C09-framer-shipped-sites-gallery-logos.png`** — *orig `Screenshot 2026-08-04 at 11.41.31 AM`*
 > Very effective use of a complex grid with lots of content, images, visual elements, and colors that work together in an interesting and cohesive way.
 
 ---
 
-## Reading note
+## Revision log
 
-Three citations are flagged above because the founder's note and the first-pass visual index disagree,
-or because one file carries two different notes. Those are being checked against the actual images
-rather than merged blind — a mis-mapped reference would propagate silently into every downstream gate.
+**2026-08-26 — founder revised these notes.** Two reassignments, both verified against the images and both now `CONFIRMED`:
+- The **glass-components / layered-stack** note moved off `779f1ded` (B04) onto **`0dcfaec0` (A03, Fable)**.
+- The **"collection of imagery"** note moved off `C18` (Endex) onto **`Screenshot 2026-08-04 at 3.22.46 PM` (C11, Atlas)**.
+
+`779f1ded` is now cited once. Its note-vs-image mismatch stands but no longer carries structural weight.
+Descriptions of both newly-cited files: `founder-brain/_brief-05-addendum.md`.
