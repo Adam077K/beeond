@@ -61,6 +61,27 @@ Free faces, Google Fonts.
 
 Running text near 65 characters. Uppercase labels get letter-spacing. Headings get `text-wrap: balance`.
 
+### Photography
+
+Photography is the through-line, so these are invariants — they apply to every image on the site.
+
+**Shape follows the photograph's JOB**, not the section. Bound to job because jobs are stable and sections are not:
+
+| Job | Shape |
+|---|---|
+| Hero / full-bleed statement | No crop. Runs off **at least two** frame edges |
+| Human presence — portraits, founders, people | **Organic cell-derived blob** — free-form irregular rounded polygon, derived from the mark's hive-cell geometry. One SVG clip-path |
+| Artefact card — a thing mid-edit, a specimen, a diagram | Hard rectangle at the system radius |
+| Evidence tile in a grid | Rectangle, uniform row height, widths free |
+| Section transition band | Full-bleed horizontal band |
+| Inline supporting image | Rectangle at the system radius |
+
+**Edge treatment: mosaic dissolve.** Where a photograph meets the ground, randomly-sized rectangular tiles appear and disappear across the boundary so the image **disintegrates into the ground rather than stopping at a line**.
+
+> This is deliberate: it is the same physics as the mark rule. Glyph and dot fields dissolve at their edges; photographs now do too. Photo and mark obey one law, which is what makes a page carrying both read as one surface.
+
+Exception: a photograph running full-bleed off a frame edge needs no treatment on that edge — it has no boundary there.
+
 ### Structure
 
 | Token | Value |
@@ -102,11 +123,11 @@ Each appears **exactly once** on the entire site.
 | 2 | **Dot-matrix halftone** — square grid, dot radius tracks brightness, thinning to nothing at the edges | B05, B11, C04, qintara |
 | 3 | **Motion blur / long exposure** — foliage and flowers smeared by a panning camera, heavy grain, warm gold against blue | A20, B18, Ada |
 | 4 | **Double-exposure blend** — two or three real things fused into one translucent image | C19, A21 |
-| 5 | **Wire-mesh screen** — canopy and sky shot through a fine window screen; the grid is a real object, not drawn | B14 |
+| 5 | **Honeycomb mesh screen** — photograph shot through a real hexagonal scale mesh; the grid is a physical object, not drawn, and it is the mark's own geometry | LOGO-06, B14 |
 | 6 | **Blueprint / construction overlay** — dimension lines, baseline and x-height rules, layout guides left visible. The page shows its own working | A05, C11 |
 | 7 | **Knockout logotype in a photo** — oversized letterforms cut out of a photograph, cropped hard by both edges | A17 |
 
-**Not used:** cross-stitch · ribbed glass · riso misregistration · pixel-mosaic destruction · text-as-shape · liquid chrome · photo-wall grid · inverted photography · mark-as-real-object. *(Available if a section later earns one — but adding one means removing one.)*
+**Not used:** cross-stitch · ribbed glass · riso misregistration · pixel-mosaic destruction · text-as-shape · liquid chrome · photo-wall grid · inverted photography · mark-as-real-object · square wire mesh *(superseded by honeycomb)*. *(Available if a section later earns one — but adding one means removing one.)*
 
 ### Compositing rules — apply to every moment
 
@@ -116,6 +137,20 @@ Each appears **exactly once** on the entire site.
 - **Sharp mark against imperfect photograph.** Grain, bokeh, blur, blown highlights. A clean photo under a clean grid is the weakest possible result.
 - **Colour, two modes, never conflated:** *overlay* (monochrome mark, colour through the gaps) vs *conversion* (the mark IS the pixel, samples colour). Preserve one warm accent untouched in both.
 - **Type stays quiet while the image is loud.** Small, plain, in negative space, never crossing the subject.
+
+---
+
+### Reserve — mined from the full set, not currently assigned
+
+Catalogued and available; taking one means giving one up. Sources in `founder-brain/_techniques-branding.md` and `_techniques-landing.md`.
+
+**Strong:** scientific/survey annotation overlay (contour lines, scale bars, plotted-dot callouts drawn flat over ordinary photographs as if surveyed — conceptually the best fit for a transparency pitch) · cyanotype and antique-process botanical prints (each image a *different* period chemical process, not one filter) · painted gouache texture as a backdrop (real brush-drag depth, the honest answer to "colour without a gradient mesh") · high-key threshold posterization · analog static grain.
+
+**Weaker or off-register:** glowing voxel construction (Three.js, fights the payload budget) · CRT monitor wall · self-assembling architecture · impossible object-in-landscape composite · laser-etched glass · brushed metal · granular stone fill · fanned paper-scrap pile.
+
+**Argued against:** scrambled letter-substitution copy (`B02` — headlines with interior letters transposed). Cheap and clever, and exactly the wrong joke for a company whose central claim is that it does not ship generic AI output.
+
+**Craft detail worth keeping:** a live ticking local-time stamp paired with a "(Scroll)" cue, set in the corner of a band (Form & Found). Small, functional, and the kind of thing that reads as care rather than decoration.
 
 ---
 
