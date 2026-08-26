@@ -12,7 +12,7 @@ placeholders and review a small set of files by hand.
 ## 1 — Fast path (recommended)
 
 Run the interactive init script. It prompts for every placeholder and runs the
-substitution across `.claude/`, `.agent/`, and the root template files.
+substitution across `.claude/` and the root template files.
 
 ```bash
 bash bin/init-from-template.sh
@@ -156,8 +156,7 @@ Then read both YAML files and confirm:
 |------|------------|
 | `.archive/pre-beamix-bundle-2026-05-25/` | The pre-existing GSA Startup Kit (31 agents, 426 skills, 10 commands) — preserved verbatim. Use as reference, do not modify. |
 | `.archive/pre-beamix-bundle-2026-05-25/beamix-only-skills/` | The 3 Beamix-specific skills that were too project-bound to template. |
-| `new agents-skills-workflows-system/` | The raw Beamix bundle as imported (5.2 MB). Useful for diff or re-install. Safe to delete once you're confident in the installed `.claude/` + `.agent/`. |
-| `.claude/` and `.agent/` | The active agent system. Identical mirrors. |
+| `.claude/` | The active agent system. Single source of truth (the `.agent/` mirror was retired 2026-08-26). |
 | `CLAUDE.md` | Auto-loaded by Claude Code every session. |
 | `AGENTS.md` | Routing table. |
 

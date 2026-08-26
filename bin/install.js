@@ -190,42 +190,13 @@ function installCursor(targetDir, force, dryRun) {
 
 function installAntigravity(targetDir, force, dryRun) {
   log.section('Antigravity / Cursor / Windsurf  (.agent/)');
-  const dest = path.join(targetDir, '.agent');
-
-  // agents — copy from .claude/agents/ (source of truth) and translate paths:
-  //   .claude/skills/  → .agent/skills/
-  //   .claude/memory/  → .agent/memory/
-  //   .claude/agents/  → .agent/agents/
-  const AGENT_PATH_MAP = {
-    '.claude/skills/':  '.agent/skills/',
-    '.claude/memory/':  '.agent/memory/',
-    '.claude/agents/':  '.agent/agents/',
-  };
-  copyDirAdapted(
-    path.join(PKG_DIR, '.claude', 'agents'),
-    path.join(dest, 'agents'),
-    force, dryRun, AGENT_PATH_MAP
-  );
-
-  // workflows and rules — straight copy (referenced via .claude/ paths; Claude Code feature)
-  copyDir(path.join(PKG_DIR, '.agent', 'workflows'), path.join(dest, 'workflows'), force, dryRun);
-  copyDir(path.join(PKG_DIR, '.agent', 'rules'),     path.join(dest, 'rules'),     force, dryRun);
-
-  // memory — empty templates (never overwrite existing)
-  const memTemplates = [
-    ['DECISIONS.md',    '# Architecture & Strategy Decisions\n\n*Updated by agents when making decisions that affect others.*\n\n---\n'],
-    ['CODEBASE-MAP.md', '# Codebase Map\n\n*Updated by Scout after audits.*\n\n---\n'],
-    ['USER-INSIGHTS.md','# User Insights\n\n*Updated by Rex after user research.*\n\n---\n'],
-  ];
-  for (const [file, content] of memTemplates) {
-    createTemplate(path.join(dest, 'memory', file), content, dryRun);
-  }
-
-  // skills — installed separately (too large for npm package)
-  const skillsDest = path.join(dest, 'skills');
-  if (!dryRun) fs.mkdirSync(skillsDest, { recursive: true });
-  log.info(`Skills not bundled (55MB+). Install separately:`);
-  log.info(`  ${c.cyan}npx antigravity-awesome-skills --path ${skillsDest}${c.reset}`);
+  // RETIRED 2026-08-26 (clean-start decontamination).
+  // The .agent/ tree was a byte-identical mirror of .claude/ and was deleted:
+  // it doubled the repo's markdown surface and gave agents two sources of truth.
+  // .claude/ is now the single location. Re-enabling this would recreate the
+  // duplicate tree, so it is intentionally a no-op.
+  log.info('The .agent/ mirror was retired on 2026-08-26. .claude/ is the single source.');
+  log.info('Nothing to install for this target.');
 }
 
 // ── Help ──────────────────────────────────────────────────────────────────────
@@ -240,7 +211,7 @@ ${c.bold}USAGE${c.reset}
 ${c.bold}TARGET${c.reset}
   ${c.cyan}--claude${c.reset}        Install for Claude Code  (.claude/)
   ${c.cyan}--cursor${c.reset}        Install for Cursor       (.cursor/rules/)
-  ${c.cyan}--antigravity${c.reset}   Install for Antigravity  (.agent/)
+  ${c.cyan}--antigravity${c.reset}   (retired — .agent/ mirror removed 2026-08-26)
   ${c.cyan}--all${c.reset}           Install for all tools
 
 ${c.bold}OPTIONS${c.reset}

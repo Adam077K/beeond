@@ -34,7 +34,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Removed
 - `.cursor/rules/` folder — Cursor integration removed; Claude Code + Antigravity are primary tools
 - `.vscode/settings.json` — not needed for public kit
-- `all_skills_stored/` excluded via .gitignore (55MB stale backup; live skills remain at `.agent/skills/`)
+- `all_skills_stored/` excluded via .gitignore (55MB stale backup; live skills remain at `.claude/skills/`)
 
 ### Fixed
 - package.json repository URL (was `YOUR_ORG` placeholder, now points to correct repo)
