@@ -29,6 +29,6 @@ Everything here was written while a different plan was in force. They are confid
 | `board-review/` | The 2026-07-13 v7 Phase-3 board review, R1–R3 |
 | `2026-07-12-v7-phase3-build-handoff.md` | The paste-ready v7 build prompt that was never run |
 
-Also frozen: [`.claude/memory/DECISIONS_ARCHIVE.md`](../../../.claude/memory/DECISIONS_ARCHIVE.md) — the 19 pre-reset decision-log entries.
+Also frozen: [`.claude/memory/DECISIONS_ARCHIVE.md`](../../../.claude/memory/DECISIONS_ARCHIVE.md) — the 24 pre-reset decision-log entries.
 
 *Archived 2026-08-26. Recovery anchor for everything deleted in that pass: git tag `pre-clean-start-2026-08-26`.*
