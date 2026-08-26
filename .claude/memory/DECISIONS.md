@@ -24,6 +24,26 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-08-26 — WEBSITE DESIGN PROCESS + DESIGN LANGUAGE locked
+
+**Context:** Founder opened the marketing-site work: plan → references → design → build, at the highest craft grade. Session was scoped to the *process*, then grew to cover G0 (the reference read) and the design language itself.
+**Options considered:** three-directions-pick-one (rejected mid-session by the founder — produces a site that looks like one reference) / **a design language assembled from parts, with a usage budget per element** (chosen) / defer everything to a build session (rejected — the documented failure mode).
+**Decision:**
+1. **Five gates** — G0 read · G1 direction · G2 shape · G3 full set · G4 live — plus a binding QA gate the CEO cannot override.
+2. **Consistency by budget:** once = a moment, twice = a style, everywhere = the through-line. This is what lets a dozen reference worlds coexist without reading as a scrapbook.
+3. **Through-line:** real documentary photography with the technological layer dialled subtle-to-dramatic. Humanity constant, tech variable.
+4. **Invariants:** alternating bone/black grounds · photography owns colour · one accent, CTA only, **two tokens bound to chapter** · Instrument Serif / Schibsted Grotesk / IBM Plex Mono · gutter-only separation · no borders, no shadows, no glass.
+5. **Seven signature moments**, each used exactly once; nine catalogued alternatives explicitly not used.
+6. **Photography invariants** — shape bound to the photograph's *job*; edge is mosaic dissolve, so photographs obey the same physics as marks.
+7. **Scroll set-piece** — Higgsfield video → frames → treated through the site's own mark renderer → GSAP scrub. ≤90 frames, ≤1.5MB, below the fold, must clear `scrub-fps.mjs` at 4× throttle.
+**Rationale:** the founder's correction is the load-bearing one — a monolithic style pick produces a derivative site; a budgeted system produces a combination. Every invariant is backed by measurement (WCAG computed, attention rhythm counted across six real sites) rather than assertion.
+**Reversibility:** reversible — docs only, no code touched.
+**Owner:** ceo (ceo-website-design-process)
+**Affects:** Design-Lead + product-designer (build against `DESIGN-LANGUAGE.md`, not against references directly) · CMO (copy lives in a typed content layer, never inline) · CTO (GSAP + frame-sequence payload is a binding perf risk) · QA-Lead (engineering floor unchanged: LH ≥95, LCP <1s, CLS 0, zero axe).
+**Founder overrides, logged as deliberate:** customer calls deferred until after launch · AI mockups before code · **no supersession brake** · no deadline.
+**Detail:** `docs/05-marketing/DESIGN-LANGUAGE.md` · `WEBSITE-DESIGN-PROCESS.md` · `references/ART-DIRECTION-BRIEF.md` · session `docs/08-agents_work/sessions/2026-08-26-ceo-website-design-process.md`
+
+
 ## 2026-08-26 — CONTEXT DECONTAMINATION: dead-direction context cut from the repo
 
 **Context:** Founder killed every prior website — *"All previous websites… we cannot use them any more — we need to start over."* The forward plan is: plan → references → design → build a new marketing site at top design/conversion grade → marketing → leads to a waitlist/book-a-call → product after. The 2026-08-08 reset had been deliberately **additive** ("nothing deleted, no existing doc edited"), so the handoff was correct while everything around it still instructed agents to do the dead work. Direct audit found: `docs/08-agents_work/INDEX.md` still listing "Website v7 Phase 3 — READY TO START" as task #1 with a paste-ready CEO trigger; ~2,000 of 2,076 markdown files sitting in three near-duplicate agent trees; `package.json` still the GSA-Vibe-Startup-Kit manifest; `AGENTS.md` routing to 18 agents that do not exist; `LONG-TERM.md` asserting a settled ICP; `USER-INSIGHTS.md` still holding the three personas the reset stripped.
