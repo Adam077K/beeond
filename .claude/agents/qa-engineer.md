@@ -116,7 +116,7 @@ Standard structure matching existing project patterns:
 describe('/api/agents/execute', () => {
   describe('POST — credit guard', () => {
     it('returns 402 when credit pool is empty', async () => {
-      // Arrange — mock supabase credit_pools.used_amount = base_allocation
+      // Arrange — mock the quota table so used == allocated
       // Act
       // Assert — 402, structured error body
     })

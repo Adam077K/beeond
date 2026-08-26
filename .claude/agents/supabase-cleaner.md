@@ -121,7 +121,7 @@ ORDER BY enumsortorder;
 SELECT enumlabel
 FROM pg_enum
 JOIN pg_type ON pg_type.oid = pg_enum.enumtypid
-WHERE pg_type.typname = 'plan_tier'
+WHERE pg_type.typname = '<enum_name>'
 ORDER BY enumsortorder;
 
 -- Stripe column survivors check
@@ -147,7 +147,7 @@ Cross-reference live state against declared schema. Flag drift in both direction
 - `stripe_*` columns (Stripe removed 2026-03-02)
 - `trial_*` columns on `subscriptions` (trial model retired in rethink)
 - `agent_type` enum values retired in rethink: `content_writer`, `blog_writer`, `social_strategy`, `review_analyzer`, `llms_txt_generator`, `schema_optimizer`
-- `plan_tier` enum values retired: `starter`, `pro`, `business` (replaced by `discover`, `build`, `scale`)
+- example only: an enum whose values were renamed (no such enum exists — there is no database)
 - `your_lead_table` rows older than 30 days past the 30-day conversion window (data retention)
 
 **Missing candidates (in migrations, not in DB):**

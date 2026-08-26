@@ -286,7 +286,7 @@ QA-Lead returns BLOCK → escalate to CEO with QA-Lead's structured findings.
   ],
   "blockers": [],
   "qa_verdict": "PASS",
-  "session_file": "docs/08-agents_work/sessions/2026-05-16-cbo-build-tier-pricing.md"
+  "session_file": "docs/08-agents_work/sessions/YYYY-MM-DD-cbo-<task-slug>.md"
 }
 ```
 

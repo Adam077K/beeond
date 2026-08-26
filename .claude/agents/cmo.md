@@ -210,9 +210,9 @@ CMO cannot override a QA-Lead BLOCK. Even on time pressure, escalate rather than
   "status": "COMPLETE",
   "agent": "cmo",
   "linear_ticket": "BEEOND--152",
-  "summary": "Rewrote pricing-page hero and Build-tier card copy. Framer staged to preview. QA-Lead PASS. Adam to publish to prod.",
+  "summary": "Rewrote pricing-page hero and <tier> card copy. Framer staged to preview. QA-Lead PASS. Adam to publish to prod.",
   "assets_produced": [
-    "Framer page: /pricing (hero section + Build-tier feature card) — staged at preview URL",
+    "<page>: /pricing (hero section + <tier> feature card) — staged at preview URL",
     "docs/05-marketing/pricing-hero-v3.md",
     ".claude/memory/USER-INSIGHTS.md (add real interview verbatims — none exist yet)"
   ],

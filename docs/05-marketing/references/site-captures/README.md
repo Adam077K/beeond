@@ -8,7 +8,7 @@
 > See `docs/05-marketing/references/README.md`.
 
 
-*Steal the **pattern**, not the look. Speakeasy/Jasper are dark; **Beeond is cream.** That contrast is our edge. Screenshots (desktop-hero, desktop-full, mobile-full) live in each site's folder.*
+*Steal the **pattern**, not the look. No Beeond direction is locked — where a note below says what Beeond "is" or should do, that is retired v3–v7 direction and carries no authority. Screenshots (desktop-hero, desktop-full, mobile-full) live in each site's folder.*
 
 ---
 
@@ -17,7 +17,7 @@
 ### 1 · Speakeasy — `speakeasy/` ⭐ FOUNDER PICK — the reference to orbit
 - **Two versions in this folder.** `speakeasy-FOUNDER-PICK-fullpage.png` is the **previous "Craft exceptional API experiences" era** that the founder chose — **this is canonical.** The auto-captured `speakeasy-desktop-full.png` is the *current* "enterprise control plane" site — **ignore it.** Full teardown in `speakeasy/NOTES.md`.
 - **Why it's the primary reference:** its structure already IS the Beeond structure — warm **cream ground with dark full-bleed showpiece sections**, huge **split editorial display headline**, a subtle **particle/swirl signature graphic** (almost literally a swarm) at hero + final CTA, and **product/artifact mocks as the imagery**. Restraint over loud color.
-- **The Beeond move:** take Speakeasy's cream/dark rhythm + editorial restraint, then add the one thing it lacks — **honey-yellow warmth** — plus Hebrew-first display type and the swarm *meaning*. Premium bones, warm skin. See `NOTES.md` for the two decisions it forces (Hebrew display typeface; warmth-vs-gravitas balance).
+- **What it demonstrates:** a light/dark rhythm with editorial restraint, and how much a single accent can carry against a calm ground. Whether any of that suits Beeond is undecided. See `NOTES.md` for the teardown.
 
 ### 2 · RZLT — `rzlt/`
 - **Positioning:** *"GROWING THE BRANDS OF THE FUTURE."* — AI-native growth agency, proof-loaded.
@@ -55,7 +55,7 @@
 
 1. **State a claim, not a tagline** — hero is a sentence with tension.
 2. **Proof directly under the hero** — logos or hard numbers before features.
-3. **One loud color** does the emotional work against a calm ground → for us, **`#FFDB5B` on cream**.
+3. **One loud colour** does the emotional work against a calm ground. Which colour, and on what ground, is an open question.
 4. **One signature device** carried through the whole page.
 5. **Alternate scannable capability cards with full-bleed proof** — density where it helps, air where it sells.
 6. **Restraint everywhere the accent isn't.**

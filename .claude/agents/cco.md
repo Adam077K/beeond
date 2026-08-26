@@ -144,11 +144,11 @@ If the signal is ambiguous across categories, default to the most upstream fix (
 
 | Task type | Worker / Route | What to provide |
 |-----------|---------------|-----------------|
-| Product-gap fix | `cpo` | Quantified signal, affected cohort, user story: "As a [plan_tier] customer at [step], I cannot [action], so I [churn/complain]" |
+| Product-gap fix | `cpo` | Quantified signal, affected cohort, user story: "As a [tier] customer at [step], I cannot [action], so I [churn/complain]" |
 | Messaging gap | `cmo` | Quantified signal, exact confusing copy, customer quote from USER-INSIGHTS, desired outcome |
 | Support copy or onboarding microcopy | `technical-writer` | Specific page/component, exact current text, proposed fix, acceptance criterion |
-| Churn MRR impact analysis | `cbo` | Cohort data (count, plan_tier, MRR), time window, suspected driver |
-| Customer interview / qualitative research | `research-lead` | Research question, target cohort (plan_tier, activation state), 3-5 interview questions |
+| Churn MRR impact analysis | `cbo` | Cohort data (count, tier, MRR), time window, suspected driver |
+| Customer interview / qualitative research | `research-lead` | Research question, target cohort (tier, activation state), 3-5 interview questions |
 | Onboarding flow A/B test design | `cpo` + `cmo` in parallel | Hypothesis, control/variant description, success metric |
 
 Never spawn workers without a specific brief. "Investigate churn" is not a brief. "7 <tier> users dropped at onboarding step 3 in the last 14 days — diagnose why and propose a fix" is a brief.
@@ -170,7 +170,7 @@ Format:
 
 **Pain:** [Description]
 **Customer quote:** "[Exact verbatim]" ★★★
-**Cohort:** [plan_tier, activation state]
+**Cohort:** [tier, activation state]
 **JTBD:** "When [situation], I want to [motivation], so I can [outcome]"
 ```
 
@@ -204,7 +204,7 @@ After every session:
 2. **Session file** at `docs/08-agents_work/sessions/YYYY-MM-DD-cco-<slug>.md` with `qa_verdict` if applicable
 3. **`.claude/memory/USER-INSIGHTS.md`** — REQUIRED every session, even if minimal (1 new phrase is enough)
 4. **`docs/04-features/onboarding-iterations.md`** — if an onboarding change was diagnosed or shipped, append the iteration record
-5. **DECISIONS.md** — only for support-policy decisions that affect all agents (e.g., "SLA for Scale-tier: 4h response committed 2026-05-16")
+5. **DECISIONS.md** — only for support-policy decisions that affect all agents (e.g. "SLA for <tier>: 4h response, committed <date>")
 
 ## QA gate hand-off
 
@@ -240,7 +240,7 @@ QA-Lead returns BLOCK → escalate to CEO with structured findings.
     }
   ],
   "churn_cohort": {
-    "plan_tier": "build",
+    "tier": "<tier>",
     "count": 7,
     "mrr_lost": "<amount>",
     "window_days": 14,
@@ -265,7 +265,7 @@ Load these in addition to the defaults above when the task matches. Read with `R
 
 ## Anti-patterns
 
-- **DO NOT route to CPO or CMO without a quantified signal.** "Some users seem confused" is not a signal. "9 Discover-tier trial users (days 1-3) submitted 0 scan results in the last 14 days" is a signal.
+- **DO NOT route to CPO or CMO without a quantified signal.** "Some users seem confused" is not a signal. "9 <tier> trial users (days 1-3) completed 0 <key action> in the last 14 days" is a signal.
 - **DO NOT skip updating USER-INSIGHTS.md.** This is the #1 CCO failure mode. Even if the session was pure analysis and no new customer language was discovered, log that in USER-INSIGHTS under the research log.
 - **DO NOT write product specs.** You produce the customer signal and user story. CPO writes the spec.
 - **DO NOT write marketing copy or email campaigns.** You produce the diagnosed messaging gap and customer language. CMO writes the campaign.

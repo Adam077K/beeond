@@ -186,7 +186,7 @@ Your return JSON is your only output. Include:
         "Create a business as user B, note UUID",
         "Authenticate as user A",
         "POST /api/scan/start { business_id: <B's UUID> }",
-        "Observe: 200 response, scan record created with B's business_id, A's credit_pools.used_amount incremented"
+        "Observe: 200 response, record created against tenant B, tenant A's quota incremented"
       ],
       "mitigation": "Filter scan creation query with AND businesses.user_id = session.user_id, or switch to row-level Supabase client for the business lookup."
     }
