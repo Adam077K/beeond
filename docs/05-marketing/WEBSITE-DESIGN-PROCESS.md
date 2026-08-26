@@ -85,9 +85,12 @@ Every direction is diffed against the anti-slop set **before** it reaches you.
 
 Page architecture across all four pages, and the homepage section spine. Per section: **the job**, **the belief the visitor holds after it**, and **the device that makes it legible without a screenshot** (diagram, process strip, before/after, numbers, treated photography, quote).
 
-Plus the two budgets:
-- **Attention budget** — every section marked LOUD / MEDIUM / QUIET. At most two LOUD per page. Never two LOUD adjacent. Everything else earns attention by contrast.
-- **Text budget** — a word cap per section, set before anyone writes.
+Plus the two budgets. Both are **evidence-backed**, not asserted — G0's teardown of six real outcome-selling sites (Ada, Agentwork, Base44, Jasper, Superside, Speakeasy) measured the rule:
+
+> **The loudest sections carry the least text.** Across all six pages prose clusters in the QUIET sections — testimonials, FAQ, comparison rows — while LOUD sections are made of image, scale and number. Observed LOUD count per page: 1, 1, 2, 3, 4, 5 (the 5 is a 14-section page).
+
+- **Attention budget** — every section marked LOUD / MEDIUM / QUIET. **1-3 LOUD per page.** Never two LOUD adjacent. The hero is one of them; the close is usually another.
+- **Text budget** — a word cap per section. **A section may be loud or wordy, never both.**
 
 Copy is drafted here, into the typed content layer — never inline in components, so any headline is a one-file change forever.
 
