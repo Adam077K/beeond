@@ -42,6 +42,12 @@ pre_flight_reads:
   - "docs/product-rethink/05-BOARD-DECISIONS-2026-04-15.md"
   - "mcp__supabase__list_tables (live state)"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # supabase-cleaner — Supabase schema custodian
 

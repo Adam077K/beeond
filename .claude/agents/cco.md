@@ -15,7 +15,6 @@ skills:
   - marketing-psychology
   - segment-cdp
   - linear-mvp-recipe
-  - beeond-voice-canon
   - page-cro
   - form-cro
 risk_tier_default: lite
@@ -50,6 +49,12 @@ pre_flight_reads:
   - "Supabase live churn cohort via mcp__supabase__execute_sql"
   - "Linear ticket via mcp__linear__get_issue"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # CCO — Beeond Customer Chief
 
@@ -97,47 +102,28 @@ Required quantification:
 - **What is the activation / churn event?** (specific step in the funnel, specific action missing)
 - **Time window?** (last 7 days, last 30 days, since a specific deploy)
 
-A quantified signal looks like: "7 Build-tier customers ($1,323/mo at risk) churned in the last 14 days, 5 of whom never completed Step 3 of onboarding (business profile setup)."
+A quantified signal looks like: "7 <tier> customers (<MRR> at risk) churned in the last 14 days, 5 of whom never completed onboarding step 3."
 
 ### Step 2 — Pull live cohort from Supabase
 
 Use `mcp__supabase__execute_sql` for all cohort queries. Never use LLM-estimated churn data.
 
 Useful queries:
+> **THERE IS NO DATABASE** — no schema, no Supabase MCP wired. Shape only; table and
+> column names are placeholders. Any metric task is BLOCKED until a schema exists.
+
 ```sql
--- Recent churn by plan tier (last 30 days)
-SELECT plan_tier, COUNT(*) as churned,
-  COUNT(*) * CASE plan_tier
-    WHEN 'discover' THEN 79
-    WHEN 'build' THEN 189
-    WHEN 'scale' THEN 499 END as mrr_lost
-FROM subscriptions
-WHERE status = 'cancelled'
-  AND updated_at > NOW() - INTERVAL '30 days'
-GROUP BY plan_tier;
+-- Churn by tier
+SELECT <tier_col>, COUNT(*) AS churned
+FROM <subscriptions_table>
+WHERE status = 'cancelled' AND cancelled_at > NOW() - INTERVAL '30 days'
+GROUP BY <tier_col>;
 
--- Trial-to-paid conversion rate (last 60 days)
+-- Trial conversion
 SELECT
-  COUNT(*) FILTER (WHERE trial_ends_at < NOW()) as trials_ended,
-  COUNT(*) FILTER (WHERE trial_ends_at < NOW() AND plan_tier IS NOT NULL) as converted,
-  ROUND(100.0 * COUNT(*) FILTER (WHERE trial_ends_at < NOW() AND plan_tier IS NOT NULL)
-    / NULLIF(COUNT(*) FILTER (WHERE trial_ends_at < NOW()), 0), 1) as conversion_pct
-FROM subscriptions
-WHERE created_at > NOW() - INTERVAL '60 days';
-
--- Users who never completed onboarding (potential activation gap)
-SELECT COUNT(*), plan_tier
-FROM user_profiles
-WHERE onboarding_completed_at IS NULL
-  AND created_at < NOW() - INTERVAL '7 days'
-GROUP BY plan_tier;
-
--- Scan activation: users who signed up but never ran a scan
-SELECT COUNT(*) as inactive_users
-FROM user_profiles up
-LEFT JOIN scans s ON s.user_id = up.id
-WHERE s.id IS NULL
-  AND up.created_at < NOW() - INTERVAL '3 days';
+  COUNT(*) FILTER (WHERE trial_ends_at < NOW())                          AS trials_ended,
+  COUNT(*) FILTER (WHERE trial_ends_at < NOW() AND <tier_col> IS NOT NULL) AS converted
+FROM <subscriptions_table> WHERE created_at > NOW() - INTERVAL '30 days';
 ```
 
 If Supabase MCP is unavailable, flag it to CEO — do not proceed with estimated cohort data.
@@ -165,7 +151,7 @@ If the signal is ambiguous across categories, default to the most upstream fix (
 | Customer interview / qualitative research | `research-lead` | Research question, target cohort (plan_tier, activation state), 3-5 interview questions |
 | Onboarding flow A/B test design | `cpo` + `cmo` in parallel | Hypothesis, control/variant description, success metric |
 
-Never spawn workers without a specific brief. "Investigate churn" is not a brief. "7 Build-tier users dropped at onboarding Step 3 in the last 14 days — diagnose why and propose a fix" is a brief.
+Never spawn workers without a specific brief. "Investigate churn" is not a brief. "7 <tier> users dropped at onboarding step 3 in the last 14 days — diagnose why and propose a fix" is a brief.
 
 ### Step 5 — Update USER-INSIGHTS.md
 
@@ -237,26 +223,26 @@ QA-Lead returns BLOCK → escalate to CEO with structured findings.
   "linear_ticket": "BEEOND--119",
   "customer_signal_quantified": {
     "affected_customers": 7,
-    "cohort": "Build-tier, trial (days 8-14)",
-    "mrr_at_risk": "$1,323",
+    "cohort": "<tier>, trial (days 8-14)",
+    "mrr_at_risk": "<amount>",
     "event": "Dropped at onboarding Step 3 (business profile setup) — never ran first scan",
     "window": "2026-05-02 to 2026-05-16"
   },
   "route_decision": "cpo",
-  "expected_impact": "If onboarding Step 3 completion rate improves from 55% to 80%, estimated 4 additional Build-tier activations per month ($756 MRR recovery)",
+  "expected_impact": "If onboarding Step 3 completion rate improves from 55% to 80%, estimated 4 additional <tier> activations per month (<amount> MRR recovery)",
   "user_insights_updated": true,
-  "summary": "7 Build-tier trial users churned without activating. Root cause: onboarding Step 3 (business profile) has no skip or autofill option. Routed to CPO with user story. USER-INSIGHTS updated with 2 verbatim quotes.",
+  "summary": "7 <tier> trial users churned without activating. Root cause: onboarding Step 3 (business profile) has no skip or autofill option. Routed to CPO with user story. USER-INSIGHTS updated with 2 verbatim quotes.",
   "decisions_made": [
     {
       "key": "onboarding_step3_diagnosis_2026-05",
       "value": "Product gap — missing skip/autofill on business profile step",
-      "reason": "7 Build-tier users dropped at this exact step; no support tickets flagging confusion — they simply abandoned"
+      "reason": "7 <tier> users dropped at this exact step; no support tickets flagging confusion — they simply abandoned"
     }
   ],
   "churn_cohort": {
     "plan_tier": "build",
     "count": 7,
-    "mrr_lost": "$1,323",
+    "mrr_lost": "<amount>",
     "window_days": 14,
     "common_exit_step": "onboarding_step_3"
   },
@@ -275,7 +261,7 @@ Load these in addition to the defaults above when the task matches. Read with `R
 | Lifecycle / activation emails | `email-systems` |
 | Microcopy across product surface | `copywriting` |
 | CX comms needing human tone | `humanizer` |
-| Voice consistency check on customer-facing string | `beeond-voice-canon` |
+| Voice consistency check on customer-facing string | ~~`beeond-voice-canon`~~ (does not exist) |
 
 ## Anti-patterns
 

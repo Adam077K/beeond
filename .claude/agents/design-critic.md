@@ -11,7 +11,6 @@ mcpServers:
   - refero
 skills:
   - ui-visual-validator
-  - beeond-brand-quality-bar
   - wcag-audit-patterns
   - design-taste-frontend
   - screenshots
@@ -42,6 +41,12 @@ pre_flight_reads:
   - (no design system exists)
   - ".claude/memory/DECISIONS.md (search by component or feature name)"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # design-critic — implemented design reviewer
 
@@ -204,8 +209,8 @@ Your deliverable is the findings report and return JSON. Before returning:
     {
       "severity": "CRITICAL",
       "location": "apps/web/src/app/(dashboard)/scans/[scanId]/page.tsx — ScanScore badge",
-      "issue": "Score badge text (#FFFFFF on #F59E0B) fails WCAG AA contrast ratio — measures 2.9:1, minimum 4.5:1",
-      "fix": "Use #7A4100 text on the Fair score badge, or use the standard Fair token from design system"
+      "issue": "Badge text fails WCAG AA contrast — measures 2.9:1, minimum 4.5:1",
+      "fix": "Darken the text until it clears 4.5:1 (no design-system token exists to fall back on)"
     },
     {
       "severity": "SHOULD_FIX",

@@ -51,6 +51,12 @@ pre_flight_reads:
   - .claude/memory/DECISIONS.md (search pricing/vendor/legal entries)
   - "Linear ticket via mcp__linear__get_issue"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # CBO — Beeond Business Chief
 
@@ -100,30 +106,29 @@ If DECISIONS.md already has a locked decision on this topic, reference it and st
 
 Use `mcp__supabase__execute_sql` to pull actual metrics. Never substitute with LLM-estimated values.
 
-Useful queries:
+> **THERE IS NO DATABASE.** Zero `.sql` files, no `supabase/` directory, no migrations exist in
+> this repo or on any branch, and no Supabase MCP is wired (`.mcp.json` registers only Playwright).
+> Every query below is **shape only** — the table and column names are placeholders. Earlier
+> versions of this file embedded a real-looking schema and price list for a retired product;
+> that was removed 2026-08-26. Any metric task is BLOCKED until a real schema exists.
+
+Query shapes:
 ```sql
--- Active subscriptions by plan tier
-SELECT plan_tier, COUNT(*), SUM(CASE WHEN status = 'active' THEN 1 END) as active
-FROM subscriptions GROUP BY plan_tier;
+-- Active subscriptions by tier
+SELECT <tier_col>, COUNT(*), COUNT(*) FILTER (WHERE status = 'active') AS active
+FROM <subscriptions_table> GROUP BY <tier_col>;
 
--- MRR by tier
-SELECT plan_tier, COUNT(*) * CASE plan_tier
-  WHEN 'discover' THEN 79
-  WHEN 'build' THEN 189
-  WHEN 'scale' THEN 499 END as mrr_usd
-FROM subscriptions WHERE status = 'active' GROUP BY plan_tier;
+-- MRR by tier — join real prices from the pricing source; never hardcode them
+SELECT s.<tier_col>, COUNT(*) * p.monthly_price AS mrr
+FROM <subscriptions_table> s
+JOIN <prices_table> p ON p.tier = s.<tier_col>
+WHERE s.status = 'active' GROUP BY s.<tier_col>, p.monthly_price;
 
--- Trial conversion rate (last 30 days)
+-- Trial conversion (last 30 days)
 SELECT
-  COUNT(*) FILTER (WHERE trial_ends_at < NOW()) as trials_ended,
-  COUNT(*) FILTER (WHERE trial_ends_at < NOW() AND plan_tier IS NOT NULL) as converted
-FROM subscriptions WHERE created_at > NOW() - INTERVAL '30 days';
-
--- Credit pool usage by tier (cost signal)
-SELECT u.plan_tier, AVG(cp.used_amount) as avg_used, MAX(cp.base_allocation) as alloc
-FROM credit_pools cp
-JOIN user_profiles u ON u.id = cp.user_id
-GROUP BY u.plan_tier;
+  COUNT(*) FILTER (WHERE trial_ends_at < NOW())                          AS trials_ended,
+  COUNT(*) FILTER (WHERE trial_ends_at < NOW() AND <tier_col> IS NOT NULL) AS converted
+FROM <subscriptions_table> WHERE created_at > NOW() - INTERVAL '30 days';
 ```
 
 If Supabase MCP is unavailable, escalate to CEO — do not substitute memorized numbers.

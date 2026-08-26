@@ -122,13 +122,19 @@ INTENDED, DOES NOT EXIST YET
 
 ## Models
 
-| Tier | Model | Use for |
-|------|-------|---------|
-| Opus | `claude-opus-5` | CEO, research synthesis, design, heavy orchestration |
-| Sonnet | `claude-sonnet-5` | **Default** — C-suite, leads, most workers |
-| Haiku | `claude-haiku-4-5` | Lookup only — lint, log parsing, classification. Not judgment. |
+| Tier | Use for | What the agent files actually specify |
+|------|---------|----------------------------------------|
+| Opus | CEO, research synthesis, design, heavy orchestration | `claude-opus-4-7` (19 files) |
+| Sonnet | **Default** — C-suite, leads, most workers | `claude-sonnet-4-6` (30 files) |
+| Haiku | Lookup only — lint, log parsing, classification. Not judgment. | `claude-haiku-4-5` (2 files) |
 
 The CEO names the model in every brief. Workers default to Sonnet.
+
+> **Stale model IDs — open decision.** The 51 agent definitions pin `claude-sonnet-4-6` and
+> `claude-opus-4-7`. The current families are Opus 5 (`claude-opus-5`) and Sonnet 5
+> (`claude-sonnet-5`). Bumping them changes which model every agent runs on — a behavioural
+> change, not a documentation fix — so it was deliberately **not** done during the 2026-08-26
+> cleanup. Decide and apply it in one deliberate pass.
 
 ---
 

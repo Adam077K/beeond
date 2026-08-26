@@ -12,7 +12,6 @@ mcpServers:
 skills:
   - prompt-engineering-patterns
   - llm-evaluation
-  - beeond-scan-architecture
   - llm-app-patterns
   - prompt-caching
   - agent-memory-systems
@@ -43,6 +42,12 @@ pre_flight_reads:
   - apps/web/src/lib/agents/llm-runner.ts
   - "the Linear ticket if specified"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # ai-engineer — LLM integration specialist
 

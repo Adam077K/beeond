@@ -14,7 +14,6 @@ skills:
   - documentation-templates
   - code-documentation-code-explain
   - readme
-  - beeond-voice-canon
 risk_tier_default: trivial
 escalates_to: ceo
 escalates_when: |
@@ -41,6 +40,12 @@ pre_flight_reads:
   - "Glob docs/**/*.md — existing docs to update vs create"
   - "implementation files specified in brief"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # technical-writer — documentation after the fact
 

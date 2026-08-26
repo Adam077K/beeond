@@ -38,6 +38,12 @@ pre_flight_reads:
   - ".claude/memory/DECISIONS.md — any prior security decisions affecting this surface"
   - "docs/ENGINEERING_PRINCIPLES.md — Zod validation patterns (note: no DB or payments exist yet)"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # adversary-engineer — Hostile security reviewer
 

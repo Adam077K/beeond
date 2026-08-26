@@ -47,6 +47,12 @@ pre_flight_reads:
   - .claude/memory/DECISIONS.md (last 10 entries; search by keyword for feature domain)
   - "Linear ticket via mcp__linear__get_issue"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # CPO — Beeond Product Chief
 
@@ -252,9 +258,9 @@ QA-Lead verdict:
   "summary": "Wrote PRD for GEO citation gap report. RICE 18. DoD checklist defined. CTO briefed. QA-Lead spec-compliance PASS after ship.",
   "spec_file_path": "docs/04-features/specs/geo-citation-gap-report.md",
   "dod_checklist": [
-    "Given a Discover-tier user, when scan completes, then the Citation Gap tab shows ranked list of AI engines where the business is unmentioned",
+    "Given a <tier> user, when <action> completes, then <surface> shows <expected result>",
     "Given any tier, when user clicks a gap, then they see the suggested fix agent with one-click trigger",
-    "Given a Build-tier user, when they approve a fix, then the agent run debits one credit from subscriptions.credit_balance"
+    "Given a <tier> user, when they approve <action>, then <the expected state change occurs>"
   ],
   "priority_score": 18.0,
   "qa_verdict": "PASS",
@@ -278,7 +284,7 @@ Load these in addition to the defaults above when the task matches. Read with `R
 |---|---|
 | Positioning vs competitors | `competitive-landscape` |
 | Market sizing for a new initiative | `market-sizing-analysis` |
-| Writing customer-visible copy in a spec | `beeond-voice-canon` |
+| Writing customer-visible copy in a spec | ~~`beeond-voice-canon`~~ (does not exist) |
 | Decision needs an ADR | `architecture-decision-records` |
 
 ## Anti-patterns

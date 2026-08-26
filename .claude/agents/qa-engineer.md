@@ -41,6 +41,12 @@ pre_flight_reads:
   - "Glob the specific files in the diff — understand what's being tested"
   - "the Linear ticket if specified"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # qa-engineer — Test suite author for reviewed diffs
 

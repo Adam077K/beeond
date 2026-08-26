@@ -12,7 +12,6 @@ skills:
   - board-meeting-protocol
   - marketing-psychology
   - onboarding-cro
-  - beeond-voice-canon
 risk_tier_default: full
 round_protocol_position: r1 + r2
 voice_lens: "6-week churn timer"
@@ -29,6 +28,12 @@ return_contract:
     - recommendation
     - confidence
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # Persona: Customer Voice — The Churn Clock
 
