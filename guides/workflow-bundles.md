@@ -1,5 +1,12 @@
 # Workflow Bundles
 
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
+
 Consolidated and granular workflow bundles that orchestrate multiple skills for specific development and operational scenarios.
 
 ## Granular Workflow Bundles (Specialized)

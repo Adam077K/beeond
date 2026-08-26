@@ -1,4 +1,11 @@
 # TEMPLATE-USAGE.md
+
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
 *First-run checklist for adopting this kit on a new project.*
 
 This kit ships the **Beamix agent system (2026-05-16 rethink baseline)**, generalized:

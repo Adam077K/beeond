@@ -1,5 +1,12 @@
 # Changelog
 
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
+
 All notable changes to GSA Startup Kit are documented here.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
