@@ -1,5 +1,15 @@
 # Beeond — Positioning & Messaging System v0.1
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 > **Status:** Greenfield v0.1 — hero headline locked by founder (2026-06-30). Customer language is founder-derived proxy. Sharpen to v1 after first customer discovery interviews populate `.claude/memory/USER-INSIGHTS.md`.
 >
 > **Authors:** CMO (cmo-wave1-positioning). Updated by: CMO + CPO only.
