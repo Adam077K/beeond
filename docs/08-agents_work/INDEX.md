@@ -1,51 +1,59 @@
 # Agents Work Index
 
-<!-- Agent: ceo | When: Start of every session + after major task completions | Instructions: Update the Active Tasks table. Add completed tasks to History. Keep this file as the single source of truth for what the agent team is working on. -->
+<!-- Agent: ceo | When: start of every session + after major task completions | Instructions: keep Active Tasks accurate; move finished work to History. -->
 
-Central index of all agent tasks — active, queued, and completed.
+Central index of agent work — active, queued, completed.
 
----
-
-## Active Tasks
-
-| Task | Lead | Status | Started | Branch / PR |
-|------|------|--------|---------|-------------|
-| _[task name]_ | _[agent]_ | In Progress | _[date]_ | _[branch]_ |
+> **Source of truth for the business is [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/)** (5 files). This file tracks *work*, not strategy.
 
 ---
 
-## Task Queue (Next Up)
+## Where the project actually is — 2026-08-26
 
-1. **Website v7 — Phase 3 (BUILD), READY TO START** — GATE 3 PASSED 2026-07-09: SPEC LOCKED at `docs/05-marketing/website-v7-design-kit/SPEC.md` (Blueprint world · Rubik Black display · hero A-3-line · critic directives folded in). One Fable-5 session in a fresh worktree builds from the SPEC. Trigger: "CEO, start Phase 3 — build from the locked SPEC.md". Pending founder input: M5 credential paragraphs (async).
-2. Website v7 — Phase 3 (Build): one Fable-5 session + helper loop → QA-Lead → merge (Gate 4) → ship.
-3. Founder inputs pending: warm-prospect interviews (optional) · founders public-credentials paragraph (required before Phase-2 copy locks M5).
+No revenue. No signed clients. **Zero customer interviews**; both warm prospects still un-called. No product: no database, no auth, no API, no billing, no dashboard. The marketing site is being rebuilt from scratch — `apps/web` is an empty instrumented Next 16 shell.
+
+**Open, not settled:** ICP (two branches) · offer and service catalog · pricing and tiers · language/geography scope · market sizing. Trademark uncleared; `beeond.ai` unsecured.
+
+---
+
+## Active
+
+| Task | Lead | Status | Started | Branch |
+|---|---|---|---|---|
+| Context decontamination — clean codebase + docs | ceo | Done | 2026-08-26 | `ceo-1-1787747601` |
+
+---
+
+## Next up
+
+1. **Marketing website — plan the new direction.** Gather references (`docs/05-marketing/references/` holds the surviving external captures and the anti-slop negative set), define the direction, design, then build. Highest design/quality/conversion grade.
+2. **Then:** marketing — put Beeond's thinking in front of the market and read the reaction.
+3. **Then:** collect leads into an internal waitlist / book-a-call.
+4. **After, or in parallel but second:** the product — agent system and the transparency dashboard (day-one offer scope, build target #1).
+
+**Unblocked and outstanding regardless of the above** — from handoff file 05 §8: call the two warm prospects · call Bonim Atid · write the founder-credential paragraphs · commission the Class 35+42 trademark search.
+
+---
+
+## Gate on any new direction
+
+Seven site directions were locked and superseded in 14 days; none reached a customer. **No direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration and cheap tests are not restricted — treating something as the plan of record is.
 
 ---
 
 ## Blocked
 
-| Task | Lead | Blocker | Since |
-|------|------|---------|-------|
-| _[task]_ | _[agent]_ | _[what's blocking it]_ | _[date]_ |
+| Task | Blocker | Since |
+|---|---|---|
+| Offer, pricing, positioning | ICP undecided — needs the two prospect interviews | 2026-08-08 |
+| Any public launch | Trademark never cleared (MEDIUM risk) | 2026-06-29 |
 
 ---
 
-## Completed Tasks
+## History
 
-| Task | Lead | Completed | Output |
-|------|------|-----------|--------|
-| Website v7 — Phase 1 Strategy → GATE-1 APPROVED | ceo (cmo+cpo synthesis) | 2026-07-08 | `briefs/2026-07-08-v7-strategy.md` · `research/01-03` · USER-INSIGHTS.md |
-| Website v7 — process runbook (plan the planning) | ceo | 2026-07-08 | `briefs/2026-07-08-v7-process-runbook.md` · `sessions/2026-07-08-ceo-v7-process-runbook.md` |
-| Website v7 — Design Re-Planning Kit + captured refs | ceo | 2026-07-07 | `docs/05-marketing/website-v7-design-kit/` |
+Everything before the 2026-08-08 reset — 21 sessions, 7 briefs, the v7 board review, the v7 build handoff — is archived at [`docs/07-history/pre-reset-archive/`](../07-history/pre-reset-archive/). **Historical only, never current instruction.**
 
 ---
 
-## Session Logs
-
-Recent session summaries are in `docs/08-agents_work/sessions/`.
-
-Format: `YYYY-MM-DD-[lead]-[task].md`
-
----
-
-_Last updated: 2026-07-08 | Updated by: ceo (v7 process runbook)_
+_Last updated: 2026-08-26 · ceo (context decontamination)_
