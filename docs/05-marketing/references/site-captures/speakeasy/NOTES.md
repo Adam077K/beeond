@@ -1,5 +1,13 @@
 # Speakeasy — FOUNDER PICK (the version to orbit)
 
+> **⚠️ Retired direction — read 2026-08-26 first.** This document was written for a
+> Beeond visual system that no longer exists (v4–v7, all retired by founder decision).
+> The observations about *other companies' sites* are still useful and are why the file
+> was kept. Every prescription about what **Beeond** should look like — palette, typeface,
+> cream/dark rhythm, Hebrew-first display type — is dead. The new direction is undecided.
+> See `docs/05-marketing/references/README.md`.
+
+
 **File:** `speakeasy-FOUNDER-PICK-fullpage.png` (1440×13704) — the founder-preferred version.
 **Important:** this is the **previous** Speakeasy era — *"Craft exceptional API experiences"* (developer API tooling). The auto-captured `speakeasy-desktop-full.png` is the **current** site ("enterprise control plane for AI") — a different, more corporate direction. **Ignore the current one; this is canonical.** The founder chose this specifically.
 

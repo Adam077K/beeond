@@ -1,5 +1,13 @@
 # Beeond design references — pack for the Fable-5 build
 
+> **⚠️ Retired direction — read 2026-08-26 first.** This document was written for a
+> Beeond visual system that no longer exists (v4–v7, all retired by founder decision).
+> The observations about *other companies' sites* are still useful and are why the file
+> was kept. Every prescription about what **Beeond** should look like — palette, typeface,
+> cream/dark rhythm, Hebrew-first display type — is dead. The new direction is undecided.
+> See `docs/05-marketing/references/README.md`.
+
+
 Captured 2026-07-04 · 1440×900 @2×, above-the-fold. **All images live in this folder** (`docs/05-marketing/references/`); paths below are filenames.
 
 **How to use (playbook §2):** before building each award section, open its 1-2 mapped `board-*.png` **and the negative set**. **BORROW** the one noted thing — never copy layout. **Diff every section against the negatives** — if it resembles them (gradient mesh, centered hero, three equal cards, Inter/Geist, glass pills), redo it.

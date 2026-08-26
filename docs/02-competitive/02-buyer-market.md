@@ -1,5 +1,13 @@
 # Buyer Truth — Desk Research (Phase 1 Strategy)
 
+> **Provenance.** Desk research produced 2026-07-08 for the (now retired) v7 site
+> planning cycle; relocated here 2026-08-26 from `docs/05-marketing/website-v7-design-kit/research/`
+> when that kit was deleted. Kept because it is **sourced research**, not design direction —
+> `HANDOFF-CLEAN-START/01` §1 and `04` §2 cite the buyer/market file as the evidence base for
+> the transparency-dashboard decision. Any v7 site conclusions drawn from it are dead;
+> the sourced findings stand. No customer interviews underlie any of it.
+
+
 **Question:** What is the buyer truth that must ground the site's message?
 **Method:** Desk research only (WebSearch/WebFetch), no customer interviews — per the 2026-07-08 process-runbook decision. Treat all figures as directional; many "AI adoption" stats below come from AI-search/GEO vendors with a commercial interest in the narrative (noted per row).
 

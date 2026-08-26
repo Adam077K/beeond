@@ -1,5 +1,13 @@
 # Reference Library — annotated
 
+> **⚠️ Retired direction — read 2026-08-26 first.** This document was written for a
+> Beeond visual system that no longer exists (v4–v7, all retired by founder decision).
+> The observations about *other companies' sites* are still useful and are why the file
+> was kept. Every prescription about what **Beeond** should look like — palette, typeface,
+> cream/dark rhythm, Hebrew-first display type — is dead. The new direction is undecided.
+> See `docs/05-marketing/references/README.md`.
+
+
 *Steal the **pattern**, not the look. Speakeasy/Jasper are dark; **Beeond is cream.** That contrast is our edge. Screenshots (desktop-hero, desktop-full, mobile-full) live in each site's folder.*
 
 ---
