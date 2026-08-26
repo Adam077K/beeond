@@ -19,19 +19,57 @@ That rule is what lets a dozen different reference worlds sit on one site withou
 
 Never change. Any section, any page. This is what makes it feel like one site even when the imagery changes completely.
 
-| Token | Value | Status |
+### Colour
+
+**Colour model: photography owns colour.** The system is neutral. Every drop of colour on the page comes from the images themselves. Exactly **one accent** exists and it appears **only on the primary CTA** — at most twice per page.
+
+| Token | Light chapters | Dark chapters |
 |---|---|---|
-| Ground palette | **Alternating, chapter by chapter** — the background marks the chapter; the column grid continues through it unchanged | **LOCKED** |
-| Light ground | — | open |
-| Dark ground | — | open |
-| Accent | — | open (palette board evidence: `#2A99F4`, but palette is not decided) |
-| Display type | — | open |
-| Body type | — | open |
-| Utility / mono type | — | open |
-| Radius + gutter | one number, gutter ≈ radius, same on every cell regardless of size | **LOCKED (rule)** |
-| Column grid | hairline full-height rules expose it; they carry no content | **LOCKED (rule)** |
-| Easing | asymmetric — exits faster than entrances, ~150-200ms | **LOCKED (rule)** |
-| Separator | the gutter only. **No borders. No drop shadows.** Depth comes from overlap and soft shadow, never from glass | **LOCKED** |
+| ground | `#F0EDE6` warm bone | `#000000` true black |
+| surface | `#FFFFFF` | `#0E0E0E` |
+| ink | `#141614` | `#EFEDE7` |
+| muted | `#5E625C` | `#8E938C` |
+| rule (hairline) | `#DCD8CF` | `#242624` |
+| **accent** | `#1F4D3D` deep pine | `#57B295` pine tint |
+
+**Measured contrast** (WCAG 2.1, computed not estimated):
+
+| pair | ratio | |
+|---|---|---|
+| ink on ground | 15.6 : 1 · 17.9 : 1 | AAA |
+| muted on ground | 5.3 : 1 · 6.7 : 1 | AA |
+| accent as text on ground | 8.2 : 1 both grounds | AAA |
+| ground on accent (CTA fill) | 8.2 : 1 both grounds | AAA |
+
+> **HARD RULE — the accent has two values and they are not interchangeable.**
+> `#1F4D3D` is light-chapters-only. `#57B295` is dark-chapters-only.
+> `#57B295` on bone measures **2.19 : 1** and fails. A single accent token used across both grounds will break contrast on every light chapter. Ship them as two tokens bound to the chapter, never as one.
+
+Hairline rules are deliberately below text-contrast threshold — they are decorative structure, never interactive and never carrying information. They must not be used for focus rings, borders on controls, or anything a user acts on.
+
+**True black is load-bearing, not a style choice.** The ground showing through between marks *is* the mechanism of every glyph and dot treatment. A softened near-black weakens every signature moment on the site.
+
+### Type
+
+Free faces, Google Fonts.
+
+| Role | Face | Notes |
+|---|---|---|
+| Display | **Instrument Serif** | Editorial, high contrast, real character. Regular + italic only — **no bold**, so display emphasis comes from size and italic, never weight. That constraint is a feature. |
+| Body | **Schibsted Grotesk** | Deliberately not Inter or Geist — both are named tells on the anti-slop list. |
+| Utility | **IBM Plex Mono** | Eyebrows, labels, data, captions, the running head. |
+
+Running text near 65 characters. Uppercase labels get letter-spacing. Headings get `text-wrap: balance`.
+
+### Structure
+
+| Token | Value |
+|---|---|
+| Ground strategy | **Alternating, chapter by chapter** — the background marks the chapter; the column grid continues through it unchanged |
+| Radius + gutter | One number. Gutter ≈ radius. Same radius on every cell regardless of size |
+| Column grid | Hairline full-height rules expose it; they carry no content |
+| Easing | Asymmetric — exits faster than entrances, ~150-200ms |
+| Separator | The gutter only. **No borders. No drop shadows.** Depth comes from overlap and soft shadow, never from glass |
 
 ---
 
@@ -140,9 +178,7 @@ Measured from six real outcome-selling sites (Ada, Agentwork, Base44, Jasper, Su
 
 ## Open
 
-1. Palette — light ground, dark ground, accent
-2. Type — display, body, mono
-3. Role assignments (Layer 4) — needs the section spine, so G2
+1. Role assignments (Layer 4) — needs the section spine, so G2
 4. Additional material/surface techniques — reference mining in progress
 5. Scroll set-piece — *what* it shows (subject and narrative) and which section it pins to; the pipeline and budget above are settled, the content is not
 
