@@ -13,6 +13,13 @@
  * Escape hatch: append a comment containing `brand-lint-allow: <reason>`
  * on the same line. Every allow is printed so it stays auditable.
  *
+ * ── STATUS 2026-08-26 ─────────────────────────────────────────────────────
+ * DORMANT. The 7-token allowlist below was the v3–v7 brand constitution
+ * (src/lib/brand.lock.ts), retired with every prior visual system. The rules
+ * are kept because the *mechanism* — a build-failing gate on brand drift — is
+ * worth reusing. Repoint the allowlist at the new brand lock file once the
+ * new direction is locked; until then this will flag the placeholder shell.
+ *
  * Usage: node scripts/brand-lint.mjs [--dist]   (--dist also scans .next CSS, report-only)
  */
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";

@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://beeond.ai",
-      lastModified: new Date("2026-07-04"),
+      lastModified: new Date("2026-08-26"),
       changeFrequency: "weekly",
       priority: 1,
     },
