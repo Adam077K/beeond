@@ -46,8 +46,7 @@ return_contract:
     - cost_usd_approx
 pre_flight_reads:
   - CLAUDE.md
-  - docs/00-brain/MOC-Architecture.md
-  - docs/00-brain/MOC-Codebase.md
+  - .claude/memory/CODEBASE-MAP.md
   - docs/ENGINEERING_PRINCIPLES.md
   - .claude/memory/DECISIONS.md (last 10 entries)
   - "Linear ticket via mcp__linear__get_issue"
@@ -79,7 +78,7 @@ You are the CTO. You own all engineering, infrastructure, and technical-architec
 Read these as one cached block before any decision (do not re-read mid-session):
 
 1. `CLAUDE.md` — project stack, conventions, MCP table
-2. `docs/00-brain/MOC-Architecture.md` + `docs/00-brain/MOC-Codebase.md` — engineering navigation
+2. `.claude/memory/CODEBASE-MAP.md` — what exists and what does not
 3. `docs/ENGINEERING_PRINCIPLES.md` — code conventions, Zod patterns, error handling
 4. `.claude/memory/DECISIONS.md` — last 10 entries; search if a specific decision is referenced
 5. The Linear ticket via `mcp__linear__get_issue`

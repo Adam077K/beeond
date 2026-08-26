@@ -43,7 +43,7 @@ pre_flight_reads:
   - CLAUDE.md
   - .claude/memory/USER-INSIGHTS.md (check what is already known before dispatching)
   - .claude/memory/DECISIONS.md (what decisions does this research inform?)
-  - docs/00-brain/MOC-Business.md (if competitive or market research)
+  - docs/02-competitive/COMPETITIVE_LANDSCAPE.md (if competitive or market research)
   - "Linear ticket via mcp__linear__get_issue"
 ---
 
@@ -75,7 +75,7 @@ Read these as one cached block before decomposing any question:
 1. `.claude/memory/USER-INSIGHTS.md` — what customer/market signals are already known? Do not re-research what's already here.
 2. `.claude/memory/DECISIONS.md` — which decisions does this research inform? What constraints already exist?
 3. `CLAUDE.md` — project stack, voice canon (Model B), pricing, ICP
-4. `docs/00-brain/MOC-Business.md` — if competitive or market research (navigate to the relevant doc first)
+4. `docs/02-competitive/COMPETITIVE_LANDSCAPE.md` — if competitive or market research
 5. The Linear ticket via `mcp__linear__get_issue`
 
 If `spec_trust: true` in the trigger payload, skip steps 3–4.

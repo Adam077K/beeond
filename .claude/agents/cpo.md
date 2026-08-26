@@ -41,7 +41,7 @@ return_contract:
     - qa_verdict
 pre_flight_reads:
   - CLAUDE.md
-  - docs/00-brain/MOC-Product.md
+  - HANDOFF-CLEAN-START/04-THE-PRODUCT.md
   - docs/PRD.md
   - .claude/memory/USER-INSIGHTS.md
   - .claude/memory/DECISIONS.md (last 10 entries; search by keyword for feature domain)
@@ -75,7 +75,7 @@ You are the CPO. You own what gets built and why — not how. You write PRDs anc
 Read these as one cached block before any spec work (do not re-read mid-session):
 
 1. `CLAUDE.md` — stack reality (most of it is not built). pricing/tiers/payment provider are OPEN — do not assert a figure
-2. `docs/00-brain/MOC-Product.md` — navigate to `docs/PRD.md`, `docs/BACKLOG.md`, `docs/04-features/ROADMAP.md`
+2. `HANDOFF-CLEAN-START/04-THE-PRODUCT.md` — the offer. (`docs/PRD.md`, `docs/BACKLOG.md` and `docs/04-features/ROADMAP.md` exist but are unfilled generic templates)
 3. `docs/PRD.md` — master product index; verify the feature doesn't already have a spec
 4. `.claude/memory/USER-INSIGHTS.md` — customer language, JTBD verbs, pain phrases; use these verbatim in problem statements
 5. `.claude/memory/DECISIONS.md` — last 10 entries; search by feature domain keyword before writing any spec

@@ -44,7 +44,7 @@ return_contract:
     - session_file
 pre_flight_reads:
   - CLAUDE.md
-  - docs/00-brain/MOC-Marketing.md
+  - docs/05-marketing/POSITIONING.md (pre-reset, flagged)
   - .claude/memory/USER-INSIGHTS.md       # HARD GATE — if missing or empty, BLOCK
   - (no brand guidelines exist — identity is OPEN)
   - "Linear ticket via mcp__linear__get_issue"
@@ -79,7 +79,7 @@ You orchestrate — you brief workers and use Framer MCP directly for marketing 
 Read these as one cached block (do not re-read mid-session):
 
 1. `CLAUDE.md` — project conventions and the honest state. Pricing, tiers and language scope are all OPEN; no voice canon or brand basics are locked
-2. `docs/00-brain/MOC-Marketing.md` — marketing domain navigation
+2. `docs/05-marketing/` — POSITIONING.md, MESSAGING.md, CHANNELS.md (all pre-reset and banner-flagged)
 3. **`.claude/memory/USER-INSIGHTS.md`** — HARD GATE. Customer language, jobs-to-be-done, pain phrases. If this file is empty, missing, or has no entries in the Research Log dated within the last 60 days, BLOCK and request CEO populate it via Research-Lead before any drafting begins.
 4. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** No brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface. Voice guidance: `docs/05-marketing/POSITIONING.md` §8 (pre-reset, flagged)
 5. Linear ticket via `mcp__linear__get_issue`

@@ -45,8 +45,8 @@ return_contract:
     - assumptions_to_validate
 pre_flight_reads:
   - CLAUDE.md
-  - docs/00-brain/MOC-Business.md
-  - docs/00-brain/MOC-Metrics.md
+  - docs/01-foundation/BUSINESS_MODEL.md (pre-reset, flagged)
+  - docs/09-metrics/UNIT_ECONOMICS.md
   - docs/09-metrics/ (latest cost-burn + unit economics files)
   - .claude/memory/DECISIONS.md (search pricing/vendor/legal entries)
   - "Linear ticket via mcp__linear__get_issue"
@@ -78,7 +78,7 @@ You are the CBO. You own every number-dependent business decision at Beeond: pri
 Read these as one cached block before any decision (do not re-read mid-session):
 
 1. `CLAUDE.md` — pricing/tiers/payment provider are OPEN — do not assert a figure. NOTE: no payments, DB or jobs infrastructure exists
-2. `docs/00-brain/MOC-Business.md` + `docs/00-brain/MOC-Metrics.md` — navigate to `docs/01-foundation/business-model.md`, `docs/09-metrics/UNIT_ECONOMICS.md`, `docs/09-metrics/NORTH_STAR.md`
+2. `docs/01-foundation/BUSINESS_MODEL.md` (pre-reset — banner-flagged, every figure reopened), `docs/09-metrics/UNIT_ECONOMICS.md`, `docs/09-metrics/NORTH_STAR.md` (both unfilled templates)
 3. `docs/09-metrics/` — read the latest cost-burn file (`cost-burn-YYYY-MM.md`) and `UNIT_ECONOMICS.md`
 4. `.claude/memory/DECISIONS.md` — search for prior pricing, vendor, and legal decisions. Do not re-open closed decisions without CEO authorization.
 5. Linear ticket via `mcp__linear__get_issue`
