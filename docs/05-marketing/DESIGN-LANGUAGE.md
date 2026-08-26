@@ -95,6 +95,38 @@ Each appears **exactly once** on the entire site.
 
 ---
 
+## Layer 4b — The scroll set-piece (founder, 2026-08-26)
+
+**One pinned, scroll-scrubbed frame sequence.** Source video generated in Higgsfield, split to frames, scrubbed against scroll progress. This is the site's signature motion moment.
+
+### The rule that keeps it inside the system
+
+**Do not ship it as "a video section."** Run every extracted frame through the same treatment as the rest of the site — the glyph or dot renderer, at the dial setting that section calls for — so the scrub is *the visual system in motion*, not a foreign element dropped into it. A raw generated video would be the one place the journey jumps, which is exactly what this language exists to prevent.
+
+### Pipeline
+
+1. **Generate** — Higgsfield video model, 4-6s, framed for the crop we actually need (tight on the moving subject, not full-bleed).
+2. **Extract** — ffmpeg, N frames at even intervals.
+3. **Treat** — run each frame through the site's mark renderer. Frame-to-frame the grid pitch stays constant; only per-cell values change, so the sequence reads as one continuous field rather than a flicker.
+4. **Encode** — AVIF or WebP, tightly cropped, modest pixel dimensions scaled up by canvas.
+5. **Drive** — GSAP ScrollTrigger, `pin` + `scrub: true` (deterministic and reversible), `drawImage` to canvas.
+6. **Verify** — `scrub-fps.mjs` at 4x CPU throttle, `swarm-frames.mjs` for per-progress visual evidence. **Both already exist in `apps/web/scripts/`.**
+
+### Budget — this is the heaviest thing that can go on the site
+
+| Constraint | Limit |
+|---|---|
+| Frame count | **≤ 90.** Beyond that is diminishing return for real payload |
+| Total sequence weight | **≤ 1.5 MB** after encoding |
+| Position | **Below the fold.** It must never be the LCP element |
+| Loading | Lazy; preload a first batch, stream the rest |
+| `prefers-reduced-motion` | Static poster frame, no canvas, no listener |
+| Gate | Must clear `scrub-fps.mjs` under 4x throttle before it merges |
+
+The reference notes are explicit that this technique is where craft turns into an anti-pattern: take the choreography, reject the payload. The binding perf floor does not move for it.
+
+---
+
 ## Layer 5 — Attention & text budget
 
 Measured from six real outcome-selling sites (Ada, Agentwork, Base44, Jasper, Superside, Speakeasy):
@@ -112,6 +144,7 @@ Measured from six real outcome-selling sites (Ada, Agentwork, Base44, Jasper, Su
 2. Type — display, body, mono
 3. Role assignments (Layer 4) — needs the section spine, so G2
 4. Additional material/surface techniques — reference mining in progress
+5. Scroll set-piece — *what* it shows (subject and narrative) and which section it pins to; the pipeline and budget above are settled, the content is not
 
 ---
 
