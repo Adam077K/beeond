@@ -138,22 +138,22 @@ of the conversation that produced this kit (or write your own walk).
 
 ## 6 — CI (not installed by default)
 
-The Beamix kit shipped `.github/workflows/qa-lead-pass.yml` and `promptfoo-eval.yml`.
-They are staged in `new agents-skills-workflows-system/.github/workflows/` but not
-copied to `.github/` at the repo root, because the workflow references conventions
-(session-file frontmatter, label vocabulary) you should validate first.
+**No longer available in this repo.** The kit shipped `qa-lead-pass.yml` and
+`promptfoo-eval.yml` staged under `new agents-skills-workflows-system/.github/workflows/`.
+That directory was deleted on 2026-08-26 (it was a different company's agent kit and a
+documented brand-contamination source), so those workflow files are no longer on disk.
 
-When ready:
+They remain recoverable:
 
 ```bash
-mkdir -p .github/workflows
-cp "new agents-skills-workflows-system/.github/workflows/"*.yml .github/workflows/
+git show pre-clean-start-2026-08-26:"new agents-skills-workflows-system/.github/workflows/qa-lead-pass.yml"
 ```
 
-Then read both YAML files and confirm:
-- Required GitHub labels (`risk:lite`, `risk:full`, `risk:irreversible`) exist in your repo settings
+There is currently **no `.github/` directory and no CI in this repo** — the QA gate is
+enforced by agents, not by a workflow. If you wire CI later, confirm:
+- Required GitHub labels (`risk:lite`, `risk:full`, `risk:irreversible`) exist in repo settings
 - Required secrets are configured (Claude API key for the multi-judge step)
-- The session-file path convention (`docs/08-agents_work/sessions/`) matches your docs layout
+- The session-file path convention (`docs/08-agents_work/sessions/`) matches the docs layout
 
 ---
 
