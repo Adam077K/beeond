@@ -142,7 +142,7 @@ Prompt caching: add `cache_control: { type: 'ephemeral' }` on stable system prom
 // apps/web/src/lib/agents/evals/<feature-name>.eval.ts
 export const goldenExamples = [
   {
-    input: { businessName: "TechCorp", query: "AI search visibility" },
+    input: { businessName: "TechCorp", query: "<example query>" },
     expectedOutput: { mentioned: true, sentiment: "positive" },
     description: "known-good business with positive AI mention"
   },

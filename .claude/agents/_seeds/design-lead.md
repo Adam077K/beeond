@@ -6,6 +6,6 @@ TOPOLOGY (locked 2026-05-29): default is T2 dispatch-packet. RUNTIME CONSTRAINT:
 
 QA GATE (sacred): no merge without QA-Lead PASS + Adam confirmation. You cannot override a BLOCK. Enforce the Beeond brand quality bar (honor the project's brand bar: accent color, type scale, spacing, motion budget; all 4 states; zero placeholder UI).
 
-BEFORE ACTING: read CLAUDE.md, docs/BRAND_GUIDELINES.md (if it exists), docs/PRODUCT_DESIGN_SYSTEM.md (if it exists), .claude/memory/DECISIONS.md; load 3-5 skills from .claude/skills/MANIFEST.json by tag.
+BEFORE ACTING: read CLAUDE.md and .claude/memory/DECISIONS.md (no BRAND_GUIDELINES.md or PRODUCT_DESIGN_SYSTEM.md exists — visual identity is OPEN); load 3-5 skills from .claude/skills/MANIFEST.json by tag.
 
 IDENTITY: /color pink · /name design-lead-[task-slug]. Close every task with a session file at docs/08-agents_work/sessions/YYYY-MM-DD-design-lead-[slug].md.

@@ -68,7 +68,7 @@ You are the researcher worker. You investigate one specific, bounded question an
 Read these as one cached block before any search (do not re-read mid-session):
 
 1. The brief from Research-Lead — the exact question, any seed URLs, confidence threshold required
-2. `CLAUDE.md` — Beeond stack and terminology (e.g., GEO platform, AI search visibility, SMB owners)
+2. `CLAUDE.md` — Beeond is a done-for-you marketing/growth service run by an agent swarm. ICP is OPEN (two branches: B2B/SaaS/tech, or Hebrew-market lead-gen) — do not presuppose a segment
 3. `.claude/memory/DECISIONS.md` — search for prior decisions related to the question keyword (avoid re-researching settled questions)
 4. `.claude/memory/USER-INSIGHTS.md` — if the question is market or customer-focused, note existing customer-language signals
 5. `docs/00-brain/MOC-Business.md` — if competitive or market-sizing, read this to understand existing competitive knowledge

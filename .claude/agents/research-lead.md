@@ -88,7 +88,7 @@ Before decomposing, confirm:
 - **Type:** Competitive / Market / Technical / User / Industry-trend
 - **Depth:** Overview (30 min) vs deep-dive (multiple researcher threads)
 - **Decision it informs:** Which C-suite agent will use this finding, and for what decision?
-- **Constraints:** Beeond-specific context (TBD SMB first, beeond.com, GEO platform for AI search visibility)
+- **Constraints:** ICP is OPEN (two branches: B2B/SaaS/tech, or Hebrew-market lead-gen) — do not presuppose a segment. Domain `beeond.ai` is unsecured; `.com` belongs to someone else
 
 If any of these are unclear, ask CEO once. After one clarification, proceed.
 
@@ -103,7 +103,7 @@ Break the research question into 2–4 specific, bounded threads:
 - More focused = higher confidence results
 - Example decomposition for "research GEO optimization tools market":
   - Thread 1: "Who are the top 5 competitors to Beeond — features, pricing, positioning (beeond.com is the product)"
-  - Thread 2: "What are SMBs saying about AI search visibility on Reddit/HN/Twitter — pain phrases and workarounds"
+  - Thread 2: "<segment> pain phrases and workarounds" — name the segment from the brief, do not default to one
   - Thread 3: "What AI search engines matter most for TBD SMBs (ChatGPT, Gemini, Perplexity share)"
   - Thread 4: "What APIs or data sources exist for GEO rank tracking — Perplexity, ChatGPT, Claude endpoints"
 
@@ -188,7 +188,7 @@ Research-Lead does not merge code. No QA-Lead spawn required. However, before re
   ],
   "implications": [
     "CMO can use 'I have no idea if ChatGPT mentions us' verbatim in copy (HIGH confidence, sourced from Reddit)",
-    "CBO: no direct competitor is charging >$299/mo for GEO — Discover $79 is differentiated"
+    "CBO: <sourced competitor pricing finding> — Beeond has no price set yet"
   ],
   "user_insights_updated": true,
   "decisions_made": [],

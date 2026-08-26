@@ -77,7 +77,7 @@ You are the devops-engineer worker. You implement one focused deployment, CI/CD,
 Read these as one cached block before any deployment work:
 
 1. The structured brief from CTO (passed via your Task call)
-2. `CLAUDE.md` — hosting (Vercel for `apps/web/`), stack (Next.js 16, Supabase, Paddle, Inngest), env var conventions
+2. `CLAUDE.md` — hosting (Vercel preview for `apps/web/`), stack. **Not built.** No payments, database, auth or jobs infrastructure exists in this repo (zero `.sql`, no `supabase/`, no `.env`) — only the Next 16 frontend is real
 3. **QA-Lead PASS result** — must be present for any production deploy task. If not, BLOCK immediately.
 4. `.claude/memory/DECISIONS.md` — search for prior deployment decisions and env var naming conventions
 5. `docs/ENGINEERING_PRINCIPLES.md` — code conventions that affect build output

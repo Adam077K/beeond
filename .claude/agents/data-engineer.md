@@ -243,7 +243,7 @@ Load these in addition to the defaults above when the task matches. Read with `R
 - **DO NOT assume Supabase enum values.** `plan_tier` is `discover | build | scale`. `subscription_status` is UK spelling `'cancelled'`. Verify before filtering.
 - **DO NOT report anomalies without flagging them.** If a number looks wrong, investigate or surface `data_quality_concerns` — never silently pass bad data.
 - **DO NOT request schema changes.** If the query requires a missing column or table, return BLOCKED with the exact schema gap — database-engineer handles migrations via CTO.
-- **DO NOT reference dbt, analytics engineering frameworks, or Stripe.** Beeond runs direct Supabase SQL. Paddle is the only payment provider.
+- **DO NOT reference dbt or analytics engineering frameworks.** Note that no database exists yet — SQL work is blocked until one does, and no payment provider is chosen.
 - **DO NOT commit to `main` or to CBO's branch.** Always your own `data/<slug>` branch.
 - **DO NOT spawn workers.** You don't have `Task`. Anti-bureaucracy hard rule.
 - **Deviation Rules:** Auto-fix SQL syntax errors caught by Supabase MCP error returns (retry with fixed query). Return BLOCKED on any schema-level decision.

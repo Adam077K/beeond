@@ -117,7 +117,7 @@ across all agent files — the examples are written assuming specific API shapes
 
 ## 5 — Skill library (147 → 144 after scrub)
 
-3 Beamix-only skills were archived to `.archive/pre-beamix-bundle-2026-05-25/beamix-only-skills/`:
+3 Beamix-only skills were excluded from the install (the `.archive/pre-beamix-bundle-2026-05-25/` path referenced here **does not exist** in this repo):
 - `beamix-scan-architecture` — Beamix's GEO scan pipeline (project-specific)
 - `beamix-voice-canon` — Beamix Model B voice canon (project-specific)
 - `beamix-brand-quality-bar` — Beamix design system v4.0 (project-specific)
@@ -161,8 +161,6 @@ enforced by agents, not by a workflow. If you wire CI later, confirm:
 
 | Path | What it is |
 |------|------------|
-| `.archive/pre-beamix-bundle-2026-05-25/` | The pre-existing GSA Startup Kit (31 agents, 426 skills, 10 commands) — preserved verbatim. Use as reference, do not modify. |
-| `.archive/pre-beamix-bundle-2026-05-25/beamix-only-skills/` | The 3 Beamix-specific skills that were too project-bound to template. |
 | `.claude/` | The active agent system. Single source of truth (the `.agent/` mirror was retired 2026-08-26). |
 | `CLAUDE.md` | Auto-loaded by Claude Code every session. |
 | `AGENTS.md` | Routing table. |

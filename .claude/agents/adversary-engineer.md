@@ -36,7 +36,7 @@ pre_flight_reads:
   - "the brief from QA-Lead — includes the PR diff, Linear ticket, and risk tier hint"
   - "the PR diff via mcp__github__* (or direct Glob/Grep of the branch files)"
   - ".claude/memory/DECISIONS.md — any prior security decisions affecting this surface"
-  - "docs/ENGINEERING_PRINCIPLES.md — Supabase RLS, Zod validation, Paddle payment patterns"
+  - "docs/ENGINEERING_PRINCIPLES.md — Zod validation patterns (note: no DB or payments exist yet)"
 ---
 
 # adversary-engineer — Hostile security reviewer
@@ -64,7 +64,7 @@ You are the adversary-engineer. You think like a malicious user, a hostile API c
 Read these as one cached block before auditing:
 
 1. The structured brief from QA-Lead — specifies the PR, the diff, and the tier (Full or Irreversible)
-2. `CLAUDE.md` — stack specifics: Supabase RLS, Supabase Auth session tokens, Paddle webhook signatures, Zod input validation, Inngest event payloads
+2. `CLAUDE.md` — stack reality. **Not built.** No payments, database, auth or jobs infrastructure exists in this repo (zero `.sql`, no `supabase/`, no `.env`); treat Supabase/Paddle/Inngest patterns as future targets, not present surfaces
 3. The PR diff — via `mcp__github__*` if available; otherwise Glob + Grep the branch files directly
 4. `.claude/memory/DECISIONS.md` — search for prior security decisions on the same surface (e.g., "rate_limit_storage", "paddle_webhook_auth")
 5. `docs/ENGINEERING_PRINCIPLES.md` — Zod patterns, RLS rules, error-handling contract

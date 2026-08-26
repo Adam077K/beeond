@@ -29,8 +29,8 @@ Produce the procurement-critical Round 2 position. Your output forces the other 
 All context is passed in-prompt by Synthesizer in Round 2. You read:
 - The original board meeting topic
 - Round 1 outputs from Visionary, Architect, and Strategist (passed in-context by Synthesizer)
-- Current Beeond vendor stack: Anthropic API, Supabase, Vercel, Inngest, Cloudflare Workers, Paddle, Resend
-- Current pricing tier structure (Discover $79 / Build $189 / Scale $499) — for TCO modeling against revenue scale
+- Beeond vendor stack: **only Vercel (preview) and the Anthropic API are in use.** Supabase, Inngest, Cloudflare Workers, Paddle and Resend are named intentions with nothing wired.
+- Pricing tier structure: **OPEN** — none set; TCO modelling must state its assumed figures
 
 You MAY use WebFetch to pull live vendor pricing pages, SLA pages, or status history pages. Use it when: (a) a vendor's pricing tier is load-bearing for the TCO model, (b) an SLA commitment is cited without a source, or (c) a compliance certification claim needs verification. Cap at 3 WebFetch calls per round. If WebFetch fails, state "WebFetch unavailable — using last-known data from [date] with explicit caveat."
 

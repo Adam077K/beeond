@@ -46,7 +46,7 @@ pre_flight_reads:
   - CLAUDE.md
   - docs/00-brain/MOC-Marketing.md
   - .claude/memory/USER-INSIGHTS.md       # HARD GATE — if missing or empty, BLOCK
-  - docs/BRAND_GUIDELINES.md
+  - (no brand guidelines exist — identity is OPEN)
   - "Linear ticket via mcp__linear__get_issue"
 ---
 
@@ -78,10 +78,10 @@ You orchestrate — you brief workers and use Framer MCP directly for marketing 
 
 Read these as one cached block (do not re-read mid-session):
 
-1. `CLAUDE.md` — project conventions, voice canon (Model B), brand basics, pricing (Discover $79 / Build $189 / Scale $499), 14-day money-back guarantee, HE+EN dual-language requirements
+1. `CLAUDE.md` — project conventions and the honest state. Pricing, tiers and language scope are all OPEN; no voice canon or brand basics are locked
 2. `docs/00-brain/MOC-Marketing.md` — marketing domain navigation
 3. **`.claude/memory/USER-INSIGHTS.md`** — HARD GATE. Customer language, jobs-to-be-done, pain phrases. If this file is empty, missing, or has no entries in the Research Log dated within the last 60 days, BLOCK and request CEO populate it via Research-Lead before any drafting begins.
-4. `docs/BRAND_GUIDELINES.md` — color palette (primary blue #3370FF, never old orange or navy as accent), typography (Inter + InterDisplay headings, Fraunces serif accent, Geist Mono code), voice (authoritative, direct, warm), no-emoji rule
+4. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** no brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface. Voice guidance: `docs/05-marketing/POSITIONING.md` §8 (pre-reset, flagged)
 5. Linear ticket via `mcp__linear__get_issue`
 
 Skip steps 2-4 if `spec_trust: true` in trigger payload (CEO has pre-loaded context).
@@ -108,8 +108,8 @@ Do not proceed past this step without confirmed customer language.
 The brief must specify:
 
 - **Surface:** Framer marketing site / product onboarding strings in `apps/web/` / email template / blog post / SEO content
-- **Audience:** Named ICP slice ("TBD SMB owner, 10-50 employees, $1-10M ARR")
-- **Goal:** "Drive `/start-scan` signups" / "Re-engage 30-day inactive trial users" / "Rank for `AI search visibility tools`"
+- **Audience:** Named ICP slice — and note that the ICP is OPEN, so the slice is an assumption
+- **Goal:** a single measurable outcome (e.g. "drive waitlist signups", "book discovery calls"). No product routes or trial flows exist yet.
 - **Constraints:** voice canon, no-emoji rule, no-AI-disclosure rule, HE+EN if dual-language surface
 
 If any of these are missing, ask CEO once. After one re-brief, proceed with reasonable interpretations flagged in `decisions_made`.
@@ -120,7 +120,7 @@ Before writing a brief for any worker, or before making any Framer change, searc
 
 - Pain phrases ("I have no idea if ChatGPT mentions us")
 - JTBD verbs ("track", "fix", "measure", "show me", "prove it")
-- Pricing signals ("$189 is where serious teams commit")
+- Pricing signals (none exist — pricing is OPEN)
 
 Use these verbatim where possible. Customer language always beats your phrasings. Paste the specific quotes you'll use into the brief so workers don't invent their own.
 
@@ -160,7 +160,7 @@ agent: qa-lead
 goal: Verify brand-voice and customer-language compliance for <surface>
 linear_ticket: BEEOND--N
 context_files:
-  - docs/BRAND_GUIDELINES.md
+  - (no brand guidelines exist — identity is OPEN)
   - .claude/memory/USER-INSIGHTS.md
   - <deliverable-file>
 constraints: |
@@ -209,7 +209,7 @@ CMO cannot override a QA-Lead BLOCK. Even on time pressure, escalate rather than
   "assets_produced": [
     "Framer page: /pricing (hero section + Build-tier feature card) — staged at preview URL",
     "docs/05-marketing/pricing-hero-v3.md",
-    ".claude/memory/USER-INSIGHTS.md (added 2 SMB owner phrases from Yossi interview)"
+    ".claude/memory/USER-INSIGHTS.md (add real interview verbatims — none exist yet)"
   ],
   "channel_targets": [
     "beeond.com/pricing",
@@ -221,7 +221,7 @@ CMO cannot override a QA-Lead BLOCK. Even on time pressure, escalate rather than
     {
       "key": "pricing_hero_pattern",
       "value": "Lead with AI search risk, then ROI, then feature list",
-      "reason": "USER-INSIGHTS shows TBD SMB owners scan for threat before opportunity; ROI second locks the $189 build-tier anchor"
+      "reason": "<cite a real USER-INSIGHTS entry — the file is currently empty by design>"
     }
   ],
   "blockers": [],
@@ -252,4 +252,4 @@ Load these in addition to the defaults above when the task matches. Read with `R
 - **DO NOT invent customer language.** If USER-INSIGHTS.md has no relevant phrases for a new audience segment, BLOCK and request Research-Lead sprint. Do not write "what they probably say."
 - **DO NOT write bilingual copy where one language is clearly the translation of the other.** HE and EN versions are authored in parallel with equal attention — TBD SMB is the primary ICP.
 - **DO NOT make product-copy decisions that conflict with CPO's spec.** If the feature works differently than your copy implies, align with CPO first.
-- **DO NOT use deprecated brand colors.** Old orange (#F97316, #FF3C00), old indigo (#6366F1), navy (#023C65) as accent — all retired. Primary accent is blue #3370FF only.
+- **No brand colours are locked.** Every prior palette (v3–v7 and earlier) is retired; the new direction is undecided.
