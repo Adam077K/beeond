@@ -2,7 +2,7 @@
 name: research-lead
 description: |
   Cross-cutting research orchestrator. Spawned by CEO for competitive analysis, market sizing, tech evaluation, user research, and industry trends. Decomposes questions into parallel researcher threads, synthesizes sourced findings, and returns a confidence-rated report. Reports directly to CEO.
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task, WebSearch, WebFetch]
 maxTurns: 25
 color: purple

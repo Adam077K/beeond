@@ -4,7 +4,7 @@ description: >
   Spawned by cto-daily-plan. Runs E2E and integration tests using Playwright
   against a staging branch. Reads test fixtures from Supabase. Returns PASS/FAIL
   with a structured test report.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: yellow
 spawned_by: cto-daily-plan
 isolation: worktree

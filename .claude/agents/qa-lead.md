@@ -2,7 +2,7 @@
 name: qa-lead
 description: |
   Independent quality gate. Spawned before any merge to main. Risk-tiers the diff (Trivial/Lite/Full), spawns the right reviewers in parallel, produces a single PASS or BLOCK verdict with actionable findings. CEO and CTO can never override a BLOCK verdict.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Grep, Glob, Bash, Task]
 maxTurns: 25
 color: red

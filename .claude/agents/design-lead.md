@@ -2,7 +2,7 @@
 name: design-lead
 description: |
   Cross-cutting design orchestrator. Reports to CPO. Spawned for screens, components, design systems, visual polish, and design audits. Classifies the task type, gathers references, brainstorms direction, implements or delegates to frontend-engineer, verifies visually with Playwright, loops through design-critic feedback until quality bar is met.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task]
 maxTurns: 30
 color: pink

@@ -52,7 +52,7 @@ const REQUIRED_FRONTMATTER = [
 // escalates_to + escalates_when are required for non-personas
 // return_contract + pre_flight_reads are required for everyone
 
-const VALID_MODELS = ['claude-opus-4-7', 'claude-sonnet-4-6', 'claude-haiku-4-5'];
+const VALID_MODELS = ['claude-opus-5', 'claude-sonnet-5', 'claude-haiku-4-5'];
 const VALID_ISOLATION = ['worktree', 'none'];
 const VALID_TIERS = ['trivial', 'lite', 'full', 'irreversible'];
 

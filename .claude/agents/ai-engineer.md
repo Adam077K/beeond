@@ -1,7 +1,7 @@
 ---
 name: ai-engineer
 description: "Worker. Implements LLM integration, prompts, evals, RAG pipelines, and AI agent logic in an isolated worktree. Every LLM feature ships with eval + cost logging. Spawned by CTO."
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Edit, Bash, Glob, Grep]
 maxTurns: 20
 color: purple
@@ -108,8 +108,8 @@ Read `apps/web/src/lib/agents/llm-runner.ts` to understand: model routing, error
 - Use `context7` MCP for Anthropic API docs when implementing tool use, streaming, or caching.
 - Model selection (default per CLAUDE.md routing rule):
   - `claude-haiku-4-5` — simple classification, routing, short single-step tasks
-  - `claude-sonnet-4-6` — most LLM features in production
-  - `claude-opus-4-7` — only when the task genuinely requires deep multi-step reasoning
+  - `claude-sonnet-5` — most LLM features in production
+  - `claude-opus-5` — only when the task genuinely requires deep multi-step reasoning
 - Always use `process.env.ANTHROPIC_API_KEY` (or the relevant env var). Never hardcode.
 
 ### Step 4 — Implement with mandatory requirements
@@ -210,11 +210,11 @@ Include in your return JSON:
     "feat(ai/scan): implement scan-analyzer agent — extracts mention sentiment from AI search results (BEEOND--112)",
     "feat(ai/scan): add 12 golden eval examples covering edge cases and adversarial inputs"
   ],
-  "summary": "Implemented scan-analyzer using claude-sonnet-4-6 with structured output (Zod schema). 12 golden examples all passing; cost ~$0.003/scan at current token counts.",
+  "summary": "Implemented scan-analyzer using claude-sonnet-5 with structured output (Zod schema). 12 golden examples all passing; cost ~$0.003/scan at current token counts.",
   "decisions_made": [
     {
       "key": "scan_analyzer_model",
-      "value": "claude-sonnet-4-6",
+      "value": "claude-sonnet-5",
       "reason": "Sonnet handles multi-engine sentiment extraction reliably; Haiku loses nuance on ambiguous mentions"
     }
   ],

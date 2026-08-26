@@ -1,7 +1,7 @@
 ---
 name: frontend-engineer
 description: "Worker. Implements one focused React/UI task — components, pages, Tailwind, Shadcn/UI — in an isolated worktree. Zero placeholder UI, all 4 states, brand-compliant. Spawned by CTO."
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Bash, Glob, Grep]
 maxTurns: 20
 color: pink

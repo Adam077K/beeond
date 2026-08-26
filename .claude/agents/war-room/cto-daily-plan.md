@@ -6,7 +6,7 @@ description: >
   Adam" — a day's parallel-ready work breakdown that Adam reviews and dispatches
   interactively (CTO Plan is a Routine — fire-and-terminate — and cannot spawn
   workers itself; workers are Task subagents Adam spawns in his CEO session).
-model: claude-opus-4-7
+model: claude-opus-5
 color: blue
 maxTurns: 30
 schedule: "30 10 * * *"

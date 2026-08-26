@@ -4,7 +4,7 @@ description: >
   Fires daily at 05:40. Fetches competitor pricing pages, blog posts, social posts,
   and AI-search rankings. Posts a diff summary to Linear only when material changes
   are detected — silent on no-change days.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: orange
 maxTurns: 15
 schedule: "40 5 * * *"

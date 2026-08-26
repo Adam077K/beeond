@@ -33,7 +33,7 @@ How:
 | **Email** | _[e.g., Resend]_ | _[e.g., latest]_ | _[e.g., React Email component model means email templates are testable code, not fragile HTML strings; strong deliverability reputation]_ |
 | **Jobs** | _[e.g., Inngest]_ | _[e.g., latest]_ | _[e.g., Serverless-native background jobs with built-in retry, step functions, and local dev tooling; no Redis or worker infrastructure to manage]_ |
 | **Hosting** | _[e.g., Vercel]_ | _[e.g., —]_ | _[e.g., Zero-config deployment for Next.js; Edge Network reduces global latency; preview deployments on every PR]_ |
-| **AI** | _[e.g., Anthropic Claude API]_ | _[e.g., claude-sonnet-4-6]_ | _[e.g., Best instruction-following for structured output use cases; Messages API with streaming; competitive context window]_ |
+| **AI** | _[e.g., Anthropic Claude API]_ | _[e.g., claude-sonnet-5]_ | _[e.g., Best instruction-following for structured output use cases; Messages API with streaming; competitive context window]_ |
 | **Monitoring** | _[e.g., Vercel Analytics + Sentry]_ | _[e.g., latest]_ | _[e.g., Vercel Analytics for Web Vitals with zero config; Sentry for error tracking with source maps and session replay]_ |
 | **Testing** | _[e.g., Vitest + Playwright]_ | _[e.g., latest]_ | _[e.g., Vitest is fast and Jest-compatible for unit/integration; Playwright for E2E with multi-browser support]_ |
 

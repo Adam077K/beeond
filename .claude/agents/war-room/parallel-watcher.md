@@ -4,7 +4,7 @@ description: >
   Spawned by cto-daily-plan or auto-unblock. Monitors audit_log and
   claude_progress tables for runaway or stuck Routines. Read-only Supabase access
   only. Reports anomalies back to the spawning agent.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: gray
 spawned_by: cto-daily-plan
 isolation: none

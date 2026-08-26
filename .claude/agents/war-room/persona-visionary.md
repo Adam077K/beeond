@@ -4,7 +4,7 @@ description: >
   Board meeting persona. Invoked via @visionary in a board meeting comment.
   Horizon-3 thinker — surfaces contrarian opportunities, category-defining moves,
   and future market shifts. All data passed in-context; no MCP calls.
-model: claude-opus-4-7
+model: claude-opus-5
 color: purple
 invoke_via: "@visionary"
 round_protocol: "round-1-horizon"

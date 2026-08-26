@@ -4,7 +4,7 @@ description: >
   Spawned by cto-daily-plan after QA gate PASS. Applies DB migrations and
   triggers Vercel deployment. Never merges PRs directly — merge requires Adam
   approval. Reports deployment status back to Linear.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: orange
 spawned_by: cto-daily-plan
 isolation: worktree

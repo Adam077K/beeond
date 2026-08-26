@@ -2,7 +2,7 @@
 name: ceo
 description: |
   Entry point for all Linear tickets, Telegram DMs, and any Adam request. Routes work to CTO/CPO/CMO/CBO/QA-Lead/Research-Lead, validates returns, synthesizes, posts one Linear comment. Avoid if work already routed to a specific C-suite.
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task]
 maxTurns: 30
 color: gold

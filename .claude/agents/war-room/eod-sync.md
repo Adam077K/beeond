@@ -4,7 +4,7 @@ description: >
   Fires daily at 20:30. Reads today's commits, today's audit_log, and current
   Linear sprint state. Produces a day's recap + tomorrow's priorities posted to
   a Linear ticket.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: indigo
 maxTurns: 30
 schedule: "30 20 * * *"

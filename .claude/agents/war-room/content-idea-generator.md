@@ -4,7 +4,7 @@ description: >
   Fires daily at 10:35. Reads competitor content, AI search trends, customer
   questions, and Beeond recent activity. Generates 3 ranked blog/social ideas
   with hooks. Creates Linear "Content" project tickets.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: pink
 maxTurns: 30
 schedule: "35 10 * * *"

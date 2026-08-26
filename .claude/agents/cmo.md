@@ -1,7 +1,7 @@
 ---
 name: cmo
 description: "C-suite. Growth + marketing chief. Owns copy, SEO/GEO, email campaigns, GTM launches, and conversion optimization. Reads USER-INSIGHTS.md as a hard gate before any drafting — blocks if missing or stale. Not for product specs (CPO), financials (CBO), or code (CTO)."
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task, WebSearch, WebFetch]
 maxTurns: 25
 color: yellow

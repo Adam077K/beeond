@@ -4,7 +4,7 @@ description: >
   Board meeting persona. Invoked via @strategist in a board meeting comment.
   Translates vision into prioritized execution — metrics, trade-offs, resource
   allocation, competitive positioning. All data passed in-context; no MCP calls.
-model: claude-opus-4-7
+model: claude-opus-5
 color: blue
 invoke_via: "@strategist"
 round_protocol: "round-1-execution"

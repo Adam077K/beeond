@@ -4,7 +4,7 @@ description: >
   Fires daily at 05:30. Synthesizes HackerNews, AI/SEO news, X/Twitter, TechCrunch,
   Beeond Mem0, and last 7d audit_log into a multi-domain Advisor Brief. Posts to
   Linear "Advisor" project so Adam reads it on the 06:30-07:45 commute.
-model: claude-opus-4-7
+model: claude-opus-5
 color: gold
 maxTurns: 30
 schedule: "30 5 * * *"

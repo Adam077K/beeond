@@ -2,7 +2,7 @@
 name: persona-customer-voice
 description: >
   Board meeting persona. Simulates the paying customer's perspective across 3 archetypes (Marcus B2B founder, Dani solo DTC, Yossi agency owner). Use for `decision_type: strategic` or `decision_type: product` board meetings. Quantifies churn clocks and refund-trigger thresholds. Do not use for vendor evaluations.
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Glob, Grep]
 maxTurns: 12
 color: bronze

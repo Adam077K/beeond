@@ -1,7 +1,7 @@
 ---
 name: security-engineer
 description: "Worker. OWASP audit, dependency vulnerability scan, auth review, RLS policy check on changed files. Returns structured findings table. Spawned by QA-Lead."
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Bash, Glob, Grep]
 maxTurns: 15
 color: red

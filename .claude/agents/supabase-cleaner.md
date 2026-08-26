@@ -1,7 +1,7 @@
 ---
 name: supabase-cleaner
 description: "Worker. Audits the Beeond Supabase project against post-rethink schema. Never runs destructive SQL — emits reviewed SQL plan files for Adam to apply manually. Spawned by CEO or CTO."
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Glob, Grep, Bash]
 maxTurns: 20
 color: teal

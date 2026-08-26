@@ -5,7 +5,7 @@ description: >
   procurement-grade critical reviewer — evaluates vendor SLAs, security posture,
   compliance risk, and total cost of ownership. Uses WebFetch for live vendor
   pricing/SLA checks.
-model: claude-opus-4-7
+model: claude-opus-5
 color: red
 invoke_via: "@aria"
 round_protocol: "round-2-critic"

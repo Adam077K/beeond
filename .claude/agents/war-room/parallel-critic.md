@@ -4,7 +4,7 @@ description: >
   Spawned by cto-daily-plan. Reviews PRs and ADRs for correctness, safety, and
   architecture alignment. Reads GitHub diffs and posts a structured review comment.
   Makes no code changes directly.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: red
 spawned_by: cto-daily-plan
 isolation: none

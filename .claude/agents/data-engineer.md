@@ -1,7 +1,7 @@
 ---
 name: data-engineer
 description: "Worker. Executes SQL queries, designs metric definitions, and implements event tracking for Beeond. All queries run via Supabase MCP — never inline LLM estimation. Spawned by CBO for metric work. Returns verified numbers with sanity checks."
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Bash, Glob, Grep]
 maxTurns: 20
 color: teal

@@ -1,7 +1,7 @@
 ---
 name: adversary-engineer
 description: "Worker. Adversarial security reviewer. Spawned by QA-Lead on Full/Irreversible tiers. Simulates a malicious user or hostile reviewer to surface worst-case attack scenarios. Reads and audits only — never writes or fixes code."
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Glob, Grep, Bash, WebSearch]
 maxTurns: 15
 color: red

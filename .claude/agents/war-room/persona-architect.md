@@ -4,7 +4,7 @@ description: >
   Board meeting persona. Invoked via @architect in a board meeting comment.
   Evaluates technical feasibility, system design trade-offs, and build-vs-buy
   decisions. Uses Context7 for BOM grounding against real library docs.
-model: claude-opus-4-7
+model: claude-opus-5
 color: teal
 invoke_via: "@architect"
 round_protocol: "round-1-feasibility"
