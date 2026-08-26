@@ -1,32 +1,35 @@
 # Skills Library Source
 
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
+
 ## Source
 
 - **Upstream:** [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
-- **Location:** `.agent/skills/`
+- **Location:** `.claude/skills/` — 154 curated skills, indexed by `.claude/skills/MANIFEST.json`
+
+## Discovery
+
+Agents find skills by reading `MANIFEST.json` and filtering the `skills` array by `tags`.
+Never `ls | grep` the directory. Load 3-5 SKILL.md files for CEO/C-suite/leads, 2-3 for workers,
+and only on demand — never preload.
 
 ## Update Skills
 
 To pull the latest skills from upstream:
 
 ```bash
-cd .agent/skills
-git pull origin main
+npx antigravity-awesome-skills --path .claude/skills
 ```
 
-Or reinstall via npx:
-
-```bash
-npx antigravity-awesome-skills --path .agent/skills
-```
+Re-generate `MANIFEST.json` after any add/remove so discovery stays accurate.
 
 ## Compatibility
 
-Skills work with:
-- Claude Code
-- Cursor
-- Antigravity IDE
-- Gemini CLI
-- Codex CLI
-
-See [.agent/skills/docs/GETTING_STARTED.md](.agent/skills/docs/GETTING_STARTED.md) for tool-specific paths.
+This project targets **Claude Code**. The skills format is also readable by Cursor,
+Antigravity IDE, Gemini CLI, and Codex CLI, but no mirrored copy is maintained here —
+`.claude/skills/` is the single location.

@@ -1,7 +1,7 @@
 ---
 name: parallel-builder
 description: "Worker. Implements a scoped feature or fix in an isolated worktree. Creates a PR on completion. Does not merge — QA gate is structural. Spawned by cto-daily-plan or CEO."
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Bash, Glob, Grep]
 maxTurns: 20
 color: blue

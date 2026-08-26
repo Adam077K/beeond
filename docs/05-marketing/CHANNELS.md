@@ -1,5 +1,15 @@
 # Channels
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 Marketing channels, budgets, performance tracking, and experiment log.
 
 <!-- Agent: growth-lead + data-lead | When: Channel strategy setup, monthly performance review, or when activating/pausing a channel | Instructions: Channel Overview table is the source of truth for what is active and what budget is allocated. Update it before and after any budget change. CAC must come from real attribution data — do not estimate. Channel Experiments Log is append-only: add new rows, never delete old ones. Data-lead should verify all metrics against the analytics source of truth before updating this doc. -->

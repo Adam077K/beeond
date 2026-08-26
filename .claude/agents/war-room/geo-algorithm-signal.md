@@ -4,7 +4,7 @@ description: >
   Fires every Sunday at 10:30. Reads Beeond scan results across competitor and
   customer sites plus AI-search SERP shifts. Produces a weekly GEO algorithm
   trend report posted to the Linear Advisor project.
-model: claude-opus-4-7
+model: claude-opus-5
 color: teal
 maxTurns: 30
 schedule: "30 10 * * 0"
@@ -22,12 +22,17 @@ mcpServers:
   - mem0
   - context7
 skills:
-  - beeond-scan-architecture
   - seo-content-writer
   - deep-research
   - competitive-landscape
   - search-specialist
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # GEO Algorithm Signal
 

@@ -2,7 +2,7 @@
 name: ceo
 description: |
   Entry point for all Linear tickets, Telegram DMs, and any Adam request. Routes work to CTO/CPO/CMO/CBO/QA-Lead/Research-Lead, validates returns, synthesizes, posts one Linear comment. Avoid if work already routed to a specific C-suite.
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task]
 maxTurns: 30
 color: gold
@@ -48,7 +48,7 @@ pre_flight_reads:
   - CLAUDE.md
   - .claude/memory/LONG-TERM.md
   - .claude/memory/DECISIONS.md (last 10 entries; search if a prior decision is referenced)
-  - docs/00-brain/_INDEX.md (follow only the links you actually need)
+  - HANDOFF-CLEAN-START/ (the 5-file source of truth)
   - "Linear ticket via mcp__linear__get_issue"
 ---
 
@@ -80,7 +80,7 @@ Read these as one cached block before any decision (stable for prompt-caching �
 1. `CLAUDE.md` — project stack, conventions, MCP table, routing table
 2. `.claude/memory/LONG-TERM.md` — Adam's preferences and project patterns
 3. `.claude/memory/DECISIONS.md` — search if a prior decision is referenced; otherwise read last 10 entries
-4. `docs/00-brain/_INDEX.md` — follow only the domain links you actually need
+4. `HANDOFF-CLEAN-START/` — the 5-file source of truth; read what the task needs
 5. The Linear ticket via `mcp__linear__get_issue`
 
 If trigger payload includes `spec_trust: true` (trusted Routine such as morning-digest or friday-retro), skip steps 1–4 and act on the spec.

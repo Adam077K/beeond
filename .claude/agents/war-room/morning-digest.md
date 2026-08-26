@@ -4,7 +4,7 @@ description: >
   Fires daily at 05:35. Reads open Linear tickets, last EOD Sync, current sprint
   goals, and Mem0. Posts a prioritized 3-5 bullet day-ahead briefing as a
   Linear ticket comment.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: yellow
 maxTurns: 30
 schedule: "35 5 * * 2-5"

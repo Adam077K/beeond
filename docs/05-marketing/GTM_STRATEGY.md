@@ -1,5 +1,15 @@
 # GTM Strategy
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 Go-to-market plan covering target segments, launch phases, distribution channels, and early adopter acquisition.
 
 <!-- Agent: growth-lead + business-lead | When: Pre-launch planning or strategy revision | Instructions: Fill in all placeholder sections. GTM Summary must be exactly 3 sentences: who the customer is, how we reach them, and what we say. Launch Phases table must have concrete dates, not relative ones. Early Adopter Strategy must describe a specific repeatable method, not generic advice. Update Distribution Channels table as channels are activated. -->

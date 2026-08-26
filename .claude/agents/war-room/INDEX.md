@@ -14,20 +14,26 @@ Per the war-room governance decision: only the 12 Routines are provisioned in cl
 
 ## 12 Routines (provisioned in claude.ai)
 
+> **Budget figures are stale.** They were estimated against `claude-sonnet-4-6` /
+> `claude-opus-4-7`; the Model column was bumped to Sonnet 5 / Opus 5 on 2026-08-26
+> without re-pricing. Re-derive before relying on any number here. Note also that
+> these Routines depend on Linear, Supabase and Mem0, none of which exist in this
+> project — see CLAUDE.md.
+
 | Filename | Role | Model | Schedule / Trigger | Budget |
 |---|---|---|---|---|
-| `advisor-daily-thinking.md` | Multi-domain Advisor Brief — business, tech, GTM, contrarian synthesis | claude-opus-4-7 | Daily 05:30 (`30 5 * * *`) | $2.00 |
-| `morning-digest.md` | Day-ahead briefing — 3-5 bullet Linear comment | claude-sonnet-4-6 | Tue-Fri 05:35 (`35 5 * * 2-5`) — Q7 Mon suppression | $0.30 |
-| `competitor-pulse.md` | Competitor diff monitor — silent on no-change days | claude-sonnet-4-6 | Daily 05:40 (`40 5 * * *`) | $0.40 |
-| `cto-daily-plan.md` | Daily work proposal (Adam reviews + dispatches interactively) | claude-opus-4-7 | Daily 10:30 (`30 10 * * *`) | $1.50 |
-| `content-idea-generator.md` | 3 ranked content ideas with hooks — Linear "Content" tickets | claude-sonnet-4-6 | Daily 10:35 (`35 10 * * *`) | $0.50 |
-| `monday-standup.md` | Week-ahead sprint plan — Linear sprint planning ticket | claude-sonnet-4-6 | Monday 10:40 (`40 10 * * 1`) | $0.50 |
-| `geo-algorithm-signal.md` | Weekly GEO algorithm trend report from Beeond scan data | claude-opus-4-7 | Sunday 10:30 (`30 10 * * 0`) — Q4 moved from 05:45 | $2.50 |
-| `friday-retro.md` | Weekly retro — what shipped, slipped, learned + action items | claude-sonnet-4-6 | Friday 15:30 (`30 15 * * 5`) | $0.75 |
-| `eod-sync.md` | Day recap + tomorrow's priorities — Linear ticket | claude-sonnet-4-6 | Daily 20:30 (`30 20 * * *`) | $0.30 |
-| `security-watcher.md` | Daily CVE + secret-rotation + audit_log anomaly scan — Q11 NEW | claude-sonnet-4-6 | Daily 20:45 (`45 20 * * *`) | $0.30 |
-| `auto-unblock.md` | Self-healing for stuck Routines + workers — 3 cascade max | claude-sonnet-4-6 | event-triggered (`routine.timeout`, `worker.stuck`) | $1.00 |
-| `synthesizer.md` | Board meeting synthesis — locked decision JSON + DECISIONS.md update | claude-opus-4-7 | event-triggered (`@board` comment OR `agent:synthesizer` label) | $2.50 |
+| `advisor-daily-thinking.md` | Multi-domain Advisor Brief — business, tech, GTM, contrarian synthesis | claude-opus-5 | Daily 05:30 (`30 5 * * *`) | $2.00 |
+| `morning-digest.md` | Day-ahead briefing — 3-5 bullet Linear comment | claude-sonnet-5 | Tue-Fri 05:35 (`35 5 * * 2-5`) — Q7 Mon suppression | $0.30 |
+| `competitor-pulse.md` | Competitor diff monitor — silent on no-change days | claude-sonnet-5 | Daily 05:40 (`40 5 * * *`) | $0.40 |
+| `cto-daily-plan.md` | Daily work proposal (Adam reviews + dispatches interactively) | claude-opus-5 | Daily 10:30 (`30 10 * * *`) | $1.50 |
+| `content-idea-generator.md` | 3 ranked content ideas with hooks — Linear "Content" tickets | claude-sonnet-5 | Daily 10:35 (`35 10 * * *`) | $0.50 |
+| `monday-standup.md` | Week-ahead sprint plan — Linear sprint planning ticket | claude-sonnet-5 | Monday 10:40 (`40 10 * * 1`) | $0.50 |
+| `geo-algorithm-signal.md` | Weekly GEO algorithm trend report from Beeond scan data | claude-opus-5 | Sunday 10:30 (`30 10 * * 0`) — Q4 moved from 05:45 | $2.50 |
+| `friday-retro.md` | Weekly retro — what shipped, slipped, learned + action items | claude-sonnet-5 | Friday 15:30 (`30 15 * * 5`) | $0.75 |
+| `eod-sync.md` | Day recap + tomorrow's priorities — Linear ticket | claude-sonnet-5 | Daily 20:30 (`30 20 * * *`) | $0.30 |
+| `security-watcher.md` | Daily CVE + secret-rotation + audit_log anomaly scan — Q11 NEW | claude-sonnet-5 | Daily 20:45 (`45 20 * * *`) | $0.30 |
+| `auto-unblock.md` | Self-healing for stuck Routines + workers — 3 cascade max | claude-sonnet-5 | event-triggered (`routine.timeout`, `worker.stuck`) | $1.00 |
+| `synthesizer.md` | Board meeting synthesis — locked decision JSON + DECISIONS.md update | claude-opus-5 | event-triggered (`@board` comment OR `agent:synthesizer` label) | $2.50 |
 
 **Cron exemption:** All 12 Routines are cron-exempt from the 15-fires/24h cap (per ROUTINE-ROSTER §Schedule constraints).
 
@@ -35,7 +41,7 @@ Per the war-room governance decision: only the 12 Routines are provisioned in cl
 
 ## 6 Worker templates (Task subagents — NOT Routines)
 
-Workers run inside interactive CEO sessions or are spawned by `cto-daily-plan`'s "work proposal" (Adam-approved). They have NO `routine_id_env_key` and need NO wrangler secrets. Model: claude-sonnet-4-6.
+Workers run inside interactive CEO sessions or are spawned by `cto-daily-plan`'s "work proposal" (Adam-approved). They have NO `routine_id_env_key` and need NO wrangler secrets. Model: claude-sonnet-5.
 
 | Filename | Role | Isolation | Budget cap |
 |---|---|---|---|
@@ -50,7 +56,7 @@ Workers run inside interactive CEO sessions or are spawned by `cto-daily-plan`'s
 
 ## 4 Persona templates (Task subagents inside Synthesizer session)
 
-Personas are invoked inside Synthesizer's 4-round board-meeting protocol. They are NOT Routines and have NO trigger labels. Synthesizer dispatches them via the Task tool. Model: claude-opus-4-7.
+Personas are invoked inside Synthesizer's 4-round board-meeting protocol. They are NOT Routines and have NO trigger labels. Synthesizer dispatches them via the Task tool. Model: claude-opus-5.
 
 | Filename | Role | Invoke via |
 |---|---|---|

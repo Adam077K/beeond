@@ -12,7 +12,7 @@ fi
 
 # Verify structure
 test -d .claude || (echo "Error: .claude missing" && exit 1)
-test -d .agent/skills || (echo "Error: .agent/skills missing" && exit 1)
+test -d .claude/skills || (echo "Error: .claude/skills missing" && exit 1)
 
 # Ensure memory files exist
 for f in .claude/memory/DECISIONS.md .claude/memory/CODEBASE-MAP.md .claude/memory/USER-INSIGHTS.md; do

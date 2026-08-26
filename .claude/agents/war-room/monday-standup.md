@@ -4,7 +4,7 @@ description: >
   Fires every Monday at 10:40. Reads last week's EOD Syncs, last Friday Retro,
   and current sprint backlog. Produces a week-ahead plan posted to a Linear sprint
   planning ticket.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: cyan
 maxTurns: 30
 schedule: "40 10 * * 1"

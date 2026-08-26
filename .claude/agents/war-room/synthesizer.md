@@ -4,7 +4,7 @@ description: >
   Event-triggered by Adam's @board command. Reads all persona Round 1+2 outputs
   from a board meeting. Runs the 4-round synthesis protocol and outputs locked
   decisions conforming to board.ts schema. Posts to Linear + updates DECISIONS.md.
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task]
 color: emerald
 maxTurns: 20

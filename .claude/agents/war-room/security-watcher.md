@@ -6,7 +6,7 @@ description: >
   calendar. Posts Linear ticket only on findings; silent on clean days.
   Closes the gap where all 10 DR runbooks rely on Adam manually polling
   for detection signals.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Write, Edit, Bash, Glob, Grep]
 color: red
 maxTurns: 25

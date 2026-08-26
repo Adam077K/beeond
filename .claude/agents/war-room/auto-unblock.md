@@ -4,7 +4,7 @@ description: >
   Event-triggered. Fires on routine.timeout events from the Inngest watcher.
   Reads stuck Routine spec, audit_log trail, and Linear ticket state. Attempts
   self-resolution (max 3 cascades) then posts a Linear comment to Adam if unresolvable.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: red
 maxTurns: 30
 schedule: "event-triggered"

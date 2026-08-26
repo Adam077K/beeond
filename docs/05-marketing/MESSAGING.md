@@ -1,5 +1,15 @@
 # Messaging
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 Brand messaging and copywriting — the canonical source of truth for all customer-facing language.
 
 <!-- Agent: growth-lead + nova (if available) | When: Pre-launch, brand refresh, or any time copy is being written for landing pages / ads / emails | Instructions: Fill every section before writing any customer-facing copy. The chosen tagline must appear in the Tagline section with a note on why it was selected. Tone of Voice must be specific enough that any agent can pass or fail a piece of copy against it. Do not leave placeholder text in place once this doc is active — blank sections mean the brand voice is undefined. -->

@@ -1,5 +1,15 @@
 # Beeond — Startup Overview
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 > The single consolidated snapshot of the business, the idea, and the startup as it stands. Pulls together every decision made across the founding discovery + Wave 1/2 work into one readable source of truth.
 > **As of:** 2026-07-03 · Authored by CEO (ceo-beeond-discovery) · Status: strategy + brand + offer locked; pre-revenue; website not yet built by choice.
 > Deep detail lives in the linked docs; this is the map.
@@ -94,7 +104,7 @@ Detail: `docs/02-competitive/COMPETITIVE_LANDSCAPE.md`
 - **Brand vibe:** warm & natural (bee/hive/honey) × futuristic tech × friendly. Concept: **"Warm Hive Futurism."** Deliberately anti-template (honey/cream/espresso palette, *no* SaaS blue/purple) to prove the "AI that doesn't look generic" promise.
 - **Identity:** distinctive composite mark (hive-cell + friendly bee device) + designed logotype (honeycomb-cell "o"); Rubik (true HE+EN parity). Full bilingual one-page landing designed (EN LTR + HE RTL), passed independent design-critic (anti-generic PASS) after one revision. Design is build-ready but **not built** and **not launched**.
 - **Delivery now:** mostly manual, AI-assisted, by the two founders → codify flows → progressively replace with swarms; humans keep strategy/creative/comms.
-- Detail: `docs/05-marketing/BRAND_AND_LANDING_DESIGN.md` + `brand-assets/`
+- Detail: ~~`docs/05-marketing/BRAND_AND_LANDING_DESIGN.md` + `brand-assets/`~~ — **deleted 2026-08-26** with all retired visual direction. Recover via `git show pre-clean-start-2026-08-26:<path>`.
 
 ---
 
@@ -137,7 +147,7 @@ Detail: `docs/02-competitive/COMPETITIVE_LANDSCAPE.md`
 | Business model & pricing | `docs/01-foundation/BUSINESS_MODEL.md` |
 | Offer spec (tiers, DoD) | `docs/04-features/OFFER_SPEC.md` |
 | Positioning & copy | `docs/05-marketing/POSITIONING.md` |
-| Brand & landing design | `docs/05-marketing/BRAND_AND_LANDING_DESIGN.md` |
+| Brand & landing design | ~~`docs/05-marketing/BRAND_AND_LANDING_DESIGN.md`~~ — deleted 2026-08-26 (retired direction) |
 | Competitive landscape | `docs/02-competitive/COMPETITIVE_LANDSCAPE.md` |
 | Domain availability | `docs/02-competitive/DOMAIN_AVAILABILITY.md` |
 | Name clearance | `docs/02-competitive/NAME_CLEARANCE.md` |

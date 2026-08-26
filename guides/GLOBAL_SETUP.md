@@ -1,5 +1,12 @@
 # Global Setup — Startup Kit
 
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
+
 Install the agent team, skills, and commands once — available in every project on your machine.
 
 ---
@@ -60,7 +67,7 @@ mkdir -p ~/.agent
 mkdir -p ~/.claude/agents
 
 # Skills — symlink (stays in sync with updates)
-ln -sf <path-to-kit>/.agent/skills ~/.agent/skills
+ln -sf <path-to-kit>/.claude/skills ~/.claude/skills
 
 # Agents, Commands, Workflows — copy (or symlink)
 cp -r <path-to-kit>/.claude/agents/* ~/.claude/agents/
@@ -78,7 +85,7 @@ To use skills with `@skill-name` in Cursor:
 npx antigravity-awesome-skills --cursor --path ~/.cursor/skills
 ```
 
-Or symlink specific sub-directories from `.agent/skills/` to `~/.cursor/skills/`.
+Or symlink specific sub-directories from `.claude/skills/` to `~/.cursor/skills/`.
 
 ### Step 3: Global Rules for Cursor (optional)
 

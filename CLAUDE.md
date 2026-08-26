@@ -1,46 +1,83 @@
 # Beeond — Project Context
 *Auto-loaded by Claude Code on every session.*
 
-> This is a TEMPLATE adapted from the Beamix agent system (2026-05-16 rethink baseline). Replace every `{{PLACEHOLDER}}` and the "Project State" section before first use. See [TEMPLATE-USAGE.md](TEMPLATE-USAGE.md).
+> **Source of truth: [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/)** — five files, read in order. Nothing in this repo overrides them. If something here contradicts them, they win and this file is wrong.
+
+---
+
+## What Beeond is
+
+A done-for-you marketing and growth service: a swarm of AI agents executes at speed and scale, a client-facing transparency dashboard shows exactly what was done / at what volume / and why, and a human oversees the process for quality. Two founders: **Adam** (systems, agent swarms) and **Yarden Morgan** (marketing and growth; calibrates everything client-facing — "drafted by the swarm · calibrated by Yarden").
+
+## Honest state — 2026-08-26
+
+- **No revenue, no signed clients, zero customer interviews.** Two warm prospects still un-called.
+- **No product.** No database (zero `.sql`, no `supabase/`), no auth, no API routes, no billing, no dashboard.
+- **The marketing site is being rebuilt from scratch.** `apps/web` is an empty instrumented Next 16 shell. Every prior direction (v3–v7) is retired.
+- `beeond.ai` unsecured. Trademark **MEDIUM risk, never cleared** — gates any public launch.
+
+### Open — never state these as settled
+
+**ICP** (two branches: B2B/SaaS/tech, or Hebrew-market lead-gen) · **offer and service catalog** · **pricing and tiers** · **language/geography scope** · **market sizing**.
+
+The ICP blocks offer → pricing → positioning. It is resolved by interviewing the two warm prospects, not by more desk research.
+
+### The rule that matters
+
+Seven website directions were locked and superseded in 14 days; none reached a customer. (The handoff is careful here: v3–v6.2 were partly amendments to one evolving surface, so the precise count is looser than seven separate builds — the *tempo* is the undisputed part.) **No direction gets locked and shipped — merged, put in front of a customer, or treated as the plan of record — without a customer signal earned since the last one closed.** This does not restrict exploration, sketching, or cheap tests framed as tests.
+
+### Evidence discipline
+
+A claim ships only if **FOUNDER-decided**, **SOURCED** (URL + date + confidence), **MEASURED**, or **METHOD**. Every untested number was stripped from the handoff and replaced with the method for deriving it. Do not reintroduce estimates as facts.
+
+---
+
+## Current focus
+
+- **Now:** plan → gather references → design → build a brand-new marketing website at the highest design, quality and conversion grade.
+- **Then:** marketing — put Beeond's thinking in front of the market and read the reaction.
+- **Then:** collect leads into an internal waitlist / book-a-call.
+- **After (or in parallel, but second):** the product — agent system and the transparency dashboard, which is day-one offer scope and build target #1.
+- **Blockers:** ICP undecided · trademark uncleared · `beeond.ai` unsecured.
 
 ---
 
 ## The Team
 
-This project runs as an autonomous C-suite company. **Every task starts at the CEO.**
+Every task starts at the CEO.
 
 ```
-Layer 1 — Entry
-  CEO  (Founder-driven or ticket-triggered; orchestrates only, never implements)
+Layer 1  CEO — orchestrates only, never implements
 
-Layer 2 — C-suite
-  CTO   · CPO   · CMO   · CBO   · QA-Lead   · Research-Lead
-  Design-Lead reports under CPO.
+Layer 2  CTO · CPO · CMO · CBO · CCO · QA-Lead · Research-Lead
+         Design-Lead reports under CPO.
 
-Layer 3 — Workers (13)
-  backend-engineer · frontend-engineer · database-engineer · ai-engineer
-  devops-engineer  · data-engineer     · security-engineer · test-engineer
-  code-reviewer    · researcher        · technical-writer
-  product-designer · design-critic
+Layer 3  Workers
+         backend-engineer · frontend-engineer · database-engineer · ai-engineer
+         devops-engineer  · data-engineer     · security-engineer · test-engineer
+         code-reviewer    · researcher        · technical-writer
+         product-designer · design-critic     · design-polisher
+         qa-engineer      · adversary-engineer · supabase-cleaner
 ```
 
-**Slash commands:** `/build` `/fix` `/design` `/review` `/daily` `/plan` `/ship` `/audit` `/research`
+Canonical definitions live in [`.claude/agents/`](.claude/agents/). Routing table in [AGENTS.md](AGENTS.md).
+
+`.claude/agents/war-room/` holds 25 additional agents. **The 17 cron/routine agents depend on Linear, Supabase `audit_log`, Mem0, Inngest and Telegram — none of which exist in this project**, so they will fail or hallucinate around the gap. The seven board personas (`persona-*`) and `synthesizer` work on files alone and are usable as-is; the protocol they run is documented in `.claude/skills/board-meeting-protocol/`.
+
+**Slash commands:** `/build` `/fix` `/design` `/review` `/debug` `/daily` `/plan` `/ship` `/audit` `/research` `/board-meeting`
 **Identity:** `/color [name]` · `/name [session-slug]` — set at the start of every session.
-
-See [AGENTS.md](AGENTS.md) for the full routing table and [.claude/agents/](.claude/agents/) for canonical agent definitions.
 
 ---
 
-## Skills Library
+## Skills
 
-**147 curated skills** at `.claude/skills/[skill-name]/SKILL.md`.
+**154 skills** at `.claude/skills/[skill-name]/SKILL.md`. This is the only location — the `.agent/` mirror was retired 2026-08-26.
 
-**Discovery — read MANIFEST.json, never `ls | grep`:**
+**Discovery — read the manifest, never `ls | grep`:**
 
 ```
-Step 1: Read .claude/skills/MANIFEST.json — filter `skills` array by `tags` matching task domain
-Step 2: Load 3-5 matching SKILL.md files (CEO, C-suite, leads)
-        Load 2-3 matching SKILL.md files (workers)
+1. Read .claude/skills/MANIFEST.json — filter the `skills` array by `tags`
+2. Load 3-5 SKILL.md files (CEO, C-suite, leads) · 2-3 (workers)
 ```
 
 Skills load **on demand only** — never preload.
@@ -49,18 +86,19 @@ Skills load **on demand only** — never preload.
 
 ## Stack
 
-> Replace this block with your actual stack. The defaults below were inherited from the source project and are reasonable starting points; agents reference them when generating code.
+**Nothing below the frontend is wired.** These are intentions, not facts on the ground — do not write code that assumes any of them exists without checking first.
 
 ```
-Frontend:   Next.js 16 (App Router), React 19, TypeScript strict, Tailwind, Shadcn/UI
-Backend:    Next.js API Routes / Server Actions, Zod validation on all inputs
-Database:   Supabase (auth, DB, RLS)
-Payments:   Stripe        # e.g., Paddle / Stripe / LemonSqueezy
-Email:      Resend          # e.g., Resend / Postmark / SendGrid
-Jobs:       Inngest           # e.g., Inngest / Trigger.dev / Temporal
-Hosting:    Vercel
-AI:         OpenAI, Claude, Gemini (direct API integration)
-Memory:     Mem0 (primary) + Anthropic Memory Tool (auto-fallback after 3 retries)
+BUILT
+  Frontend:  Next.js 16 (App Router), React 19, TypeScript strict, Tailwind 4
+  Testing:   Playwright · Lighthouse + CDP trace + axe harness in apps/web/scripts/
+  Hosting:   Vercel (preview only — no production domain wired)
+  MCP:       Playwright (see .mcp.json — the only server configured)
+
+INTENDED, DOES NOT EXIST YET
+  Database / auth:  Supabase        Payments: Stripe
+  Email:            Resend          Jobs:     Inngest
+  AI:               OpenAI / Claude / Gemini direct API
 ```
 
 ---
@@ -69,118 +107,99 @@ Memory:     Mem0 (primary) + Anthropic Memory Tool (auto-fallback after 3 retrie
 
 | File | Purpose | Updated by |
 |------|---------|-----------|
-| `.claude/memory/DECISIONS.md` | Architecture & strategy decisions, append-only, 50-entry cap | Any agent making a decision affecting others |
+| `.claude/memory/DECISIONS.md` | Decisions affecting others. Append-only, 50-entry cap. | Any agent making such a decision |
+| `.claude/memory/DECISIONS_ARCHIVE.md` | Pre-2026-08-08 decisions. **Historical only.** | Nobody — frozen |
 | `.claude/memory/CODEBASE-MAP.md` | Key files, patterns, tech debt | code-reviewer |
-| `.claude/memory/USER-INSIGHTS.md` | Customer language, pain phrases, JTBD | CMO + CPO (only authorized writers) |
-| `.claude/memory/LONG-TERM.md` | Cross-session facts: user prefs, recurring patterns | CEO after each session |
-| `.claude/memory/sessions/` | Lead session summaries (`YYYY-MM-DD-[lead]-[task].md`) | Each C-suite / Lead |
+| `.claude/memory/USER-INSIGHTS.md` | Customer language, pain phrases, JTBD | CMO + CPO only |
+| `.claude/memory/LONG-TERM.md` | Cross-session facts. 100-line cap. | CEO after each session |
+| `.claude/memory/AUDIT_LOG.md` | Deploys and irreversible actions | devops-engineer |
 
-**Hard caps:** DECISIONS.md ≤ 50 entries (archive when full); LONG-TERM.md ≤ 100 lines; session summaries ≤ 10 lines each.
+**Session files go in `docs/08-agents_work/sessions/`** — not under `.claude/memory/`.
 
----
-
-## Models (May 2026)
-
-| Tier | Model | Use for |
-|------|-------|---------|
-| Opus 4.7 | `claude-opus-4-7` | CEO + research synthesis + design + orchestration heavy |
-| Sonnet 4.6 | `claude-sonnet-4-6` | **Default** — C-suite, leads, most workers |
-| Haiku 4.5 | `claude-haiku-4-5` | Simple/lookup — test runs, lint, log parsing, classification |
-
-CEO specifies the model in every brief. Workers default to Sonnet if unspecified.
+**Caps:** DECISIONS.md ≤ 50 entries · LONG-TERM.md ≤ 100 lines · session summaries ≤ 10 lines.
 
 ---
 
-## Risk-Tiered QA Gate (4-tier)
+## Models
 
-Every PR is risk-tiered. **No merge without QA-Lead PASS.** The CEO and CTO cannot override.
+| Tier | Use for | What the agent files actually specify |
+|------|---------|----------------------------------------|
+| Opus | CEO, research synthesis, design, heavy orchestration | `claude-opus-5` (19 files) |
+| Sonnet | **Default** — C-suite, leads, most workers | `claude-sonnet-5` (30 files) |
+| Haiku | Lookup only — lint, log parsing, classification. Not judgment. | `claude-haiku-4-5` (2 files) |
 
-| Tier | Trigger | Review pipeline | Required label |
-|------|---------|-----------------|----------------|
-| **Trivial** | Typo, single-line, comment-only | Haiku schema-lint hook only (auto-pass) | none |
-| **Lite** | Isolated feature, < 300 LOC, no API/DB/auth | code-reviewer + qa-engineer + semgrep | `risk:lite` |
-| **Full** | API/DB/auth/billing touched, ≥ 300 LOC | Lite + security-engineer + craft-reviewer + Codex CLI second opinion | `risk:full` |
-| **Irreversible** | DB migration, workflow file, agent definition, billing flow | Full + 2-of-3 multi-judge + Founder sign-off | `risk:irreversible` |
+The CEO names the model in every brief. Workers default to Sonnet.
 
-Auto-classification: see [.claude/qa-tier-floor.yml](.claude/qa-tier-floor.yml). Enforced by [.github/workflows/qa-lead-pass.yml](.github/workflows/qa-lead-pass.yml) (not installed by default — copy from `.archive/pre-beamix-bundle-2026-05-25/` or the upstream bundle when you wire CI).
-
----
-
-## Context Budget — Hard Limits
-
-- `DECISIONS.md`: ≤ 50 entries (archive when full)
-- `LONG-TERM.md`: ≤ 100 lines (compress quarterly)
-- Session summaries: ≤ 10 lines each
-- Agent handoffs: ≤ 500 tokens (summarize, never forward raw conversation)
-- Skills per task: **3-5 for CEO/C-suite/leads · 2-3 for workers** — never preload
-- Pre-flight reads: cache as **one block** (avoid mid-session re-reads — they break 90% of prompt-cache savings)
+> **Bumped 2026-08-26 (founder-approved).** All 51 agent definitions moved from
+> `claude-sonnet-4-6` / `claude-opus-4-7` to the current Sonnet 5 / Opus 5 families.
+> `.claude/hooks/schema-lint.js` validates `model:` against this exact set — change both
+> together or every agent file fails the lint.
 
 ---
 
-## Cost Optimization
+## Risk-Tiered QA Gate
 
-- `/clear` between unrelated tasks — saves 40-70%
-- Sonnet 4.6 is the default — escalate to Opus only for synthesis, design, orchestration
-- Haiku 4.5 for trivial subagent tasks
-- Subagents run in isolated contexts — return summaries, not raw data dumps
-- Use memory files (`.claude/memory/*.md`) for shared state, not handoff payloads
+Every PR is risk-tiered. **No merge without QA-Lead PASS.** CEO and CTO cannot override.
+
+| Tier | Trigger | Pipeline |
+|------|---------|----------|
+| **Trivial** | Typo, single line, comment-only | schema-lint hook (auto-pass) |
+| **Lite** | Isolated feature, < 300 LOC, no API/DB/auth | code-reviewer + qa-engineer |
+| **Full** | API/DB/auth/billing touched, ≥ 300 LOC | Lite + security-engineer + design/craft review |
+| **Irreversible** | DB migration, agent definition, root config, billing | Full + multi-judge + founder sign-off |
+
+Auto-classification: [`.claude/qa-tier-floor.yml`](.claude/qa-tier-floor.yml). **There is no CI** — no `.github/` directory exists; the gate is enforced by agents, not by a workflow.
 
 ---
 
-## Layer Contract — Hard Rules
+## Layer Contract
 
 ### CEO
 | DO | DO NOT |
 |----|--------|
 | Plan, ask, delegate, synthesize | Write source code |
 | Structured briefs with all required fields | Vague "build the thing" |
-| Validate C-suite returns (workers_spawned, qa_verdict, session_file) | Accept returns missing required fields |
-| Set `/color` + `/name` at session start | Run unnamed/uncolored |
+| Validate returns (workers_spawned, qa_verdict, session_file) | Accept returns missing required fields |
 
 ### C-suite + Leads
 | DO | DO NOT |
 |----|--------|
-| Explore, plan, brief workers | Edit `.ts`, `.tsx`, `.sql` directly |
-| Spawn the right worker for each task | Do a worker's job to "save turns" |
+| Explore, plan, brief workers | Edit `.ts` / `.tsx` / `.sql` directly |
 | Verify branches via `git branch --list` | Trust worker summaries blindly |
-| Spawn QA-Lead before merge | Merge anything without QA-Lead PASS |
-| Write session file at task close | Complete a task with no session file |
+| Spawn QA-Lead before merge | Merge without QA-Lead PASS |
+| Write a session file at task close | Close a task with no session file |
 
-### Workers (Layer 3)
+### Workers
 | DO | DO NOT |
 |----|--------|
 | One focused task per worktree | Touch files outside scope |
-| Return structured JSON (branch, worktree, files_changed) | Return vague "done" |
-| Auto-fix type errors, missing imports (Deviation Rules 1-3) | Make architectural decisions — return BLOCKED instead |
+| Return structured JSON (branch, worktree, files_changed) | Return a vague "done" |
+| Auto-fix type errors and missing imports | Make architectural calls — return BLOCKED instead |
 | Atomic commits per logical change | Commit to `main` or a lead's branch |
 
 ---
 
-## Rules (All Agents)
+## Rules
 
 1. **Read before acting.** Glob/Grep before creating; check memory before deciding.
-2. **Own your domain.** Don't do another agent's work.
-3. **Source claims.** Researchers source; no agent invents data.
-4. **Leave breadcrumbs.** Append to DECISIONS.md when choices affect others.
-5. **Iterate, don't overwrite.** Understand existing code before replacing.
-6. **No placeholder UI.** Zero tolerance for stubs / TODOs in deliverables.
-7. **Worktrees for code.** Every code worker creates a worktree.
-8. **QA gate is sacred.** No merge without QA-Lead PASS + user confirmation.
+2. **Own your domain.** Don't do another agent's job.
+3. **Source claims.** No agent invents data. See Evidence discipline above.
+4. **Leave breadcrumbs.** Append to DECISIONS.md when a choice affects others.
+5. **Iterate, don't overwrite.** Understand existing code before replacing it.
+6. **No placeholder UI.** Zero tolerance for stubs or TODOs in deliverables.
+7. **Worktrees for code.** Every code worker creates one.
+8. **QA gate is sacred.** No merge without QA-Lead PASS + founder confirmation.
+9. **Don't resurrect dead direction.** v3–v7 sites, the Blueprint spec, the Footprint-Audit wizard and every prior brand system are retired. They survive only under `docs/07-history/pre-reset-archive/`, which is never current instruction.
 
 ---
 
 ## Git Worktree Protocol
 
 ```bash
-# Detect — you may already be inside a worktree
 git worktree list
 MAIN_REPO=$(git worktree list | head -1 | awk '{print $1}')
-
-# Create child worktree FROM the main repo root
 git -C "$MAIN_REPO" worktree add "$MAIN_REPO/.worktrees/[slug]" -b feat/[slug]
 cd "$MAIN_REPO/.worktrees/[slug]"
-
-# Atomic commits
 git commit -m "feat(scope): description"
 ```
 
@@ -188,46 +207,35 @@ git commit -m "feat(scope): description"
 
 ---
 
-## Agent Identity — Colors & Session Naming
+## Identity — Colors & Session Naming
 
-### Color
 | Role | Color |
 |------|-------|
-| CEO (primary) | `gold` |
-| CEO (parallel #2/3/4) | `orange` / `teal` / `lime` |
-| CTO | `blue` · CPO `green` · CMO `yellow` · CBO `emerald` · QA-Lead `red` · Research-Lead `purple` · Design-Lead `pink` |
-| backend-engineer | `blue` · frontend-engineer `pink` · database-engineer `teal` · ai-engineer `purple` |
-| security-engineer | `red` · test-engineer `yellow` · code-reviewer `gray` · researcher `purple` · technical-writer `gray` |
+| CEO | `gold` (parallel: `orange` / `teal` / `lime`) |
+| CTO `blue` · CPO `green` · CMO `yellow` · CBO `emerald` · CCO `cyan` | QA-Lead `red` · Research-Lead `purple` · Design-Lead `pink` |
+| backend `blue` · frontend `pink` · database `teal` · ai `purple` · security `red` · test `yellow` · code-reviewer `gray` · researcher `purple` · writer `gray` |
 
-### Naming
 ```
-CEO:    /name ceo-[task-slug]       e.g., /name ceo-onboarding-flow
-C-suite: /name [role]-[task-slug]   e.g., /name cto-scan-engine
-Workers: /name [role]-[task-slug]   e.g., /name backend-engineer-rate-limit
+CEO:     /name ceo-[task-slug]
+C-suite: /name [role]-[task-slug]
+Workers: /name [role]-[task-slug]
 ```
 
 ### Documentation Gate
+
 No task is COMPLETE without a session file at:
+
 ```
 docs/08-agents_work/sessions/YYYY-MM-DD-[role]-[task-slug].md
 ```
-With frontmatter including `qa_verdict: PASS` and (when applicable) `tier: full|irreversible`.
+
+with frontmatter including `qa_verdict: PASS` and, when applicable, `tier: full|irreversible`.
 
 ---
 
-## Project State
+## Context Budget
 
-> **Fill this in per project.** This is the only section the agents read to know "where are we right now."
-
-- **Current focus:** Building MVP
-- **Active sprint:** Sprint 1 — foundation
-- **Blockers:** None
-- **Next milestone:** First demo
-
----
-
-## Template Provenance
-
-Adopted from the Beamix agent system snapshot dated **2026-05-25**.
-Pre-template variant archived at [.archive/pre-beamix-bundle-2026-05-25/](.archive/pre-beamix-bundle-2026-05-25/).
-See [TEMPLATE-USAGE.md](TEMPLATE-USAGE.md) for the placeholder list and first-run checklist.
+- Skills per task: **3-5** for CEO/C-suite/leads · **2-3** for workers. Never preload.
+- Agent handoffs ≤ 500 tokens — summarize, never forward raw conversation.
+- Pre-flight reads: cache as one block; mid-session re-reads break prompt caching.
+- `/clear` between unrelated tasks. Sonnet is the default; escalate deliberately.

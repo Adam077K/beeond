@@ -1,5 +1,15 @@
 # Beeond — Founding Brief
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 > The single source of truth from the founding discovery session. Every C-suite team reads this before starting work. Authored by CEO (orchestrator) from a structured founder interview with Adam on 2026-06-29.
 > **Status:** Strategy locked on core direction; pricing, customer names, and detailed personas are open and assigned to teams below.
 

@@ -44,7 +44,7 @@ when_to_use: |
 schedule: "30 10 * * *"           # cron expression (UTC)
 routine_id_env_key: ROUTINE_CTO_DAILY_PLAN_ID
 routine_token_env_key: ROUTINE_CTO_DAILY_PLAN_TOKEN
-model: claude-sonnet-4-6           # or claude-opus-4-7 for depth Routines
+model: claude-sonnet-5           # or claude-opus-5 for depth Routines
 tools: [Read, Write, Edit, Bash, Glob, Grep, Task]
 maxTurns: 25
 color: blue                        # matches CTO color
@@ -78,7 +78,7 @@ escalates_to: ceo                   # on BLOCKED or over-budget
 | `schedule` | Yes (for cron Routines) | Standard cron expression, UTC |
 | `routine_id_env_key` | Yes | Env var name storing the Routine ID. Value set via Wrangler secrets. |
 | `routine_token_env_key` | Yes | Env var name storing the per-Routine bearer token. |
-| `model` | Yes | `claude-sonnet-4-6` default. `claude-opus-4-7` for advisor/synthesis Routines. |
+| `model` | Yes | `claude-sonnet-5` default. `claude-opus-5` for advisor/synthesis Routines. |
 | `budget.max_cost_usd` | Yes | Hard ceiling. Inngest runaway-watcher enforces this. |
 | `budget.max_runtime_minutes` | Yes | Inngest timeout-watcher fires Auto-Unblock if exceeded. |
 | `trust_spec_parsing` | Conditional | Set `true` if this Routine can receive an inbound trust spec via `/fire`. Must validate HMAC. |

@@ -1,4 +1,11 @@
 # TEMPLATE-USAGE.md
+
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
 *First-run checklist for adopting this kit on a new project.*
 
 This kit ships the **Beamix agent system (2026-05-16 rethink baseline)**, generalized:
@@ -12,7 +19,7 @@ placeholders and review a small set of files by hand.
 ## 1 — Fast path (recommended)
 
 Run the interactive init script. It prompts for every placeholder and runs the
-substitution across `.claude/`, `.agent/`, and the root template files.
+substitution across `.claude/` and the root template files.
 
 ```bash
 bash bin/init-from-template.sh
@@ -110,7 +117,7 @@ across all agent files — the examples are written assuming specific API shapes
 
 ## 5 — Skill library (147 → 144 after scrub)
 
-3 Beamix-only skills were archived to `.archive/pre-beamix-bundle-2026-05-25/beamix-only-skills/`:
+3 Beamix-only skills were excluded from the install (the `.archive/pre-beamix-bundle-2026-05-25/` path referenced here **does not exist** in this repo):
 - `beamix-scan-architecture` — Beamix's GEO scan pipeline (project-specific)
 - `beamix-voice-canon` — Beamix Model B voice canon (project-specific)
 - `beamix-brand-quality-bar` — Beamix design system v4.0 (project-specific)
@@ -131,22 +138,22 @@ of the conversation that produced this kit (or write your own walk).
 
 ## 6 — CI (not installed by default)
 
-The Beamix kit shipped `.github/workflows/qa-lead-pass.yml` and `promptfoo-eval.yml`.
-They are staged in `new agents-skills-workflows-system/.github/workflows/` but not
-copied to `.github/` at the repo root, because the workflow references conventions
-(session-file frontmatter, label vocabulary) you should validate first.
+**No longer available in this repo.** The kit shipped `qa-lead-pass.yml` and
+`promptfoo-eval.yml` staged under `new agents-skills-workflows-system/.github/workflows/`.
+That directory was deleted on 2026-08-26 (it was a different company's agent kit and a
+documented brand-contamination source), so those workflow files are no longer on disk.
 
-When ready:
+They remain recoverable:
 
 ```bash
-mkdir -p .github/workflows
-cp "new agents-skills-workflows-system/.github/workflows/"*.yml .github/workflows/
+git show pre-clean-start-2026-08-26:"new agents-skills-workflows-system/.github/workflows/qa-lead-pass.yml"
 ```
 
-Then read both YAML files and confirm:
-- Required GitHub labels (`risk:lite`, `risk:full`, `risk:irreversible`) exist in your repo settings
+There is currently **no `.github/` directory and no CI in this repo** — the QA gate is
+enforced by agents, not by a workflow. If you wire CI later, confirm:
+- Required GitHub labels (`risk:lite`, `risk:full`, `risk:irreversible`) exist in repo settings
 - Required secrets are configured (Claude API key for the multi-judge step)
-- The session-file path convention (`docs/08-agents_work/sessions/`) matches your docs layout
+- The session-file path convention (`docs/08-agents_work/sessions/`) matches the docs layout
 
 ---
 
@@ -154,10 +161,7 @@ Then read both YAML files and confirm:
 
 | Path | What it is |
 |------|------------|
-| `.archive/pre-beamix-bundle-2026-05-25/` | The pre-existing GSA Startup Kit (31 agents, 426 skills, 10 commands) — preserved verbatim. Use as reference, do not modify. |
-| `.archive/pre-beamix-bundle-2026-05-25/beamix-only-skills/` | The 3 Beamix-specific skills that were too project-bound to template. |
-| `new agents-skills-workflows-system/` | The raw Beamix bundle as imported (5.2 MB). Useful for diff or re-install. Safe to delete once you're confident in the installed `.claude/` + `.agent/`. |
-| `.claude/` and `.agent/` | The active agent system. Identical mirrors. |
+| `.claude/` | The active agent system. Single source of truth (the `.agent/` mirror was retired 2026-08-26). |
 | `CLAUDE.md` | Auto-loaded by Claude Code every session. |
 | `AGENTS.md` | Routing table. |
 

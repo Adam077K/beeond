@@ -1,110 +1,118 @@
 # AGENTS.md — Routing Table
-*3-layer agent system: CEO → Team Leads → Workers*
+*3 layers: CEO → C-suite/Leads → Workers. Verified against `.claude/agents/` on 2026-08-26 — every agent listed here exists.*
+
+> Project context and the layer contract live in [CLAUDE.md](CLAUDE.md). Source of truth for the business is [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/).
 
 ---
 
-## How to Route
+## How to route
 
-**Always start with CEO.** The CEO reads memory, asks questions, and assembles the right team.
+**Always start with the CEO.** The CEO reads memory, asks questions, and assembles the right team.
 
-| Request type | Start here |
-|-------------|-----------|
-| Any task | CEO |
-| Slash commands | `/build` `/fix` `/design` `/review` `/daily` `/plan` `/ship` `/audit` `/research` |
-
----
-
-## Layer 1: CEO
-
-| Agent | File | Job | Model |
-|-------|------|-----|-------|
-| **CEO** | `ceo.md` | Entry point for ALL tasks. Questions → team assembly → delegate → synthesize. | Sonnet 4.6 |
+| Request | Start here |
+|---|---|
+| Anything | CEO |
+| Slash commands | `/build` `/fix` `/design` `/review` `/debug` `/daily` `/plan` `/ship` `/audit` `/research` `/board-meeting` |
 
 ---
 
-## Layer 2: C-suite
-
-The C-suite is dispatched by CEO. Each owns one organizational domain end-to-end. The legacy 9-lead model was retired on 2026-05-16; build-lead/product-lead/growth-lead/business-lead folded into CTO/CPO/CMO/CBO. devops-lead/data-lead were demoted to -engineer workers under CTO.
-
-| Agent | File | Domain | Model |
-|-------|------|--------|-------|
-| **CTO** | `cto.md` | All engineering: code, infra, architecture. Spawns engineering workers. | Sonnet 4.6 |
-| **CPO** | `cpo.md` | Product: PRDs, roadmap, RICE, acceptance criteria, spec compliance. | Sonnet 4.6 |
-| **CMO** | `cmo.md` | Growth: copy, SEO/GEO, email, GTM, CRO. Requires USER-INSIGHTS.md (hard gate). | Sonnet 4.6 |
-| **CBO** | `cbo.md` | Business: pricing, financials, OKRs, unit econ, legal/compliance. Numbers first. | Sonnet 4.6 |
-| **CCO** | `cco.md` | Customer: support, onboarding, retention, churn analysis, customer voice. | Sonnet 4.6 |
-| **QA-Lead** | `qa-lead.md` | Independent quality gate. 4-tier risk classification, PASS/BLOCK verdict. Cannot be overridden. | Sonnet 4.6 (Opus on Full) |
-| **Research-Lead** | `research-lead.md` | All research: competitive, market sizing, tech eval, user research. Reports to CEO directly. | Opus 4.7 |
-| **Design-Lead** | `design-lead.md` | UI/UX: screens, components, design systems, design audits. Reports under CPO. | Sonnet 4.6 |
-
----
-
-## Layer 3: Workers
-
-Workers receive structured briefs from leads, create worktrees (for code), execute atomically, and return completion signals.
-
-### New Worker Agents
-
-| Agent | File | Job | Model |
-|-------|------|-----|-------|
-| **Backend Developer** | `backend-engineer.md` | API routes, server logic. TypeScript strict, Zod validation. Git worktrees. | Sonnet 4.6 |
-| **Frontend Developer** | `frontend-engineer.md` | React components, Tailwind + Shadcn/UI. Pencil MCP for designs. Git worktrees. | Sonnet 4.6 |
-| **Database Engineer** | `database-engineer.md` | Schema design, migrations, queries. Supabase MCP. Never drops without confirmation. | Sonnet 4.6 |
-| **AI Engineer** | `ai-engineer.md` | LLM integration, RAG, embeddings. Every feature ships with eval + cost logging. | Opus 4.6 |
-| **Security Engineer** | `security-engineer.md` | OWASP audit, injection testing, auth review, npm audit. Structured severity findings. | Sonnet 4.6 |
-| **Test Engineer** | `test-engineer.md` | Unit, integration, E2E tests. Playwright MCP for browser tests. TDD from specs. | Sonnet 4.6 |
-| **Code Reviewer** | `code-reviewer.md` | Code quality, patterns, tech debt. P1/P2/P3 findings. Diff-scoped only. | Sonnet 4.6 |
-| **Researcher** | `researcher.md` | Deep research on 1 specific question. Sources every claim. HIGH/MEDIUM/LOW confidence. | Opus 4.6 |
-| **Technical Writer** | `technical-writer.md` | Documentation, READMEs, PR descriptions, API docs. | Sonnet 4.6 |
-
-### GSD Execution Agents (Worker Backbone)
-
-These agents are the execution backbone. Dispatched by leads for structured project work.
+## Layer 1 — CEO
 
 | Agent | File | Job |
-|-------|------|-----|
-| **GSD Executor** | `executor.md` | Executes PLAN.md files atomically with deviation handling and checkpoint protocols |
-| **GSD Planner** | `planner.md` | Creates detailed phase plans with goal-backward methodology and dependency graphs |
-| **GSD Debugger** | `debugger.md` | Root cause investigation using scientific method, persistent DEBUG.md state |
-| **GSD Verifier** | `verifier.md` | Goal-backward verification: exists → substantive → wired (3-level check) |
-| **GSD Roadmapper** | `roadmapper.md` | Project roadmap creation with requirement traceability and success criteria |
-| **GSD Codebase Mapper** | `codebase-mapper.md` | Codebase exploration and documentation (STACK.md, ARCHITECTURE.md, etc.) |
-| **GSD Integration Checker** | `integration-checker.md` | Cross-phase integration and E2E flow verification |
-| **GSD Plan Checker** | `plan-checker.md` | Pre-execution plan quality gate (8 verification dimensions) |
-| **GSD Phase Researcher** | `phase-researcher.md` | Phase-specific technology research (RESEARCH.md) |
-| **GSD Project Researcher** | `project-researcher.md` | Domain ecosystem research before roadmap creation |
-| **GSD Research Synthesizer** | `research-synthesizer.md` | Consolidates parallel research outputs into SUMMARY.md |
-| **GSD Nyquist Auditor** | `nyquist-auditor.md` | Validation gap filling for Nyquist compliance |
+|---|---|---|
+| **CEO** | `ceo.md` | Entry point for all tasks. Questions → team assembly → delegate → synthesize. Never implements. |
 
 ---
 
-## Routing Examples
+## Layer 2 — C-suite and Leads
 
-| What you need | Who handles it |
-|--------------|----------------|
-| "Build a new feature" | CEO → Build Lead → Backend Developer + Frontend Developer |
-| "Research competitors" | CEO → Research Lead → Researcher (x2-3) |
-| "Design a new screen" | CEO → Design Lead → Frontend Developer |
-| "Write copy for landing page" | CEO → Growth Lead |
-| "Decide on pricing" | CEO → Business Lead |
-| "Write a PRD for new feature" | CEO → Product Lead |
-| "Deploy to production" | CEO → DevOps Lead (needs QA PASS first) |
-| "Analyze our SQL queries" | CEO → Data Lead → Database Engineer |
-| "Fix a bug" | CEO → Build Lead → gsd-debugger → Backend/Frontend Developer |
-| "Security audit" | CEO → QA Lead → Security Engineer |
-| "Write tests for feature" | CEO → Build Lead → Test Engineer |
-| "Review my PR" | CEO → Code Reviewer + Security Engineer |
-| "New project from scratch" | CEO → gsd-roadmapper → gsd-planner → Build Lead |
+| Agent | File | Domain |
+|---|---|---|
+| **CTO** | `cto.md` | All engineering: code, infra, architecture. Spawns engineering workers. |
+| **CPO** | `cpo.md` | Product: PRDs, roadmap, RICE, acceptance criteria, spec compliance. |
+| **CMO** | `cmo.md` | Growth: copy, SEO/GEO, email, GTM, CRO. Reads USER-INSIGHTS.md as a hard gate. |
+| **CBO** | `cbo.md` | Business: pricing, financials, OKRs, unit economics, legal/compliance. |
+| **CCO** | `cco.md` | Customer: support, onboarding, retention, churn, customer voice. |
+| **QA-Lead** | `qa-lead.md` | Independent quality gate. Risk-tiers the diff, issues PASS/BLOCK. Cannot be overridden. |
+| **Research-Lead** | `research-lead.md` | Competitive, market sizing, tech eval, user research. Reports to CEO. |
+| **Design-Lead** | `design-lead.md` | Screens, components, design systems, design audits. Reports under CPO. |
 
 ---
 
-## Memory Files
+## Layer 3 — Workers
+
+Workers take a structured brief, create a worktree for code, execute atomically, and return structured JSON.
+
+| Agent | File | Job |
+|---|---|---|
+| **backend-engineer** | `backend-engineer.md` | API routes, server logic. TypeScript strict, Zod on all inputs. |
+| **frontend-engineer** | `frontend-engineer.md` | React components, Tailwind, Shadcn/UI. All 4 states, no placeholder UI. |
+| **database-engineer** | `database-engineer.md` | Migrations, RLS, indexes, schema. Never drops a column without double confirmation. |
+| **ai-engineer** | `ai-engineer.md` | LLM integration, prompts, evals, RAG. Every feature ships with eval + cost logging. |
+| **devops-engineer** | `devops-engineer.md` | Deploys, CI/CD, infra. Staging first; rollback plan before every forward migration. |
+| **data-engineer** | `data-engineer.md` | SQL, metric definitions, event tracking. Verified numbers, never estimates. |
+| **security-engineer** | `security-engineer.md` | OWASP audit, dependency scan, auth review, RLS check. |
+| **test-engineer** | `test-engineer.md` | Unit, integration, E2E. TDD-red from a spec; coverage-green from code. |
+| **qa-engineer** | `qa-engineer.md` | Authors tests for the diff under review. Distinct from QA-Lead, which issues verdicts. |
+| **adversary-engineer** | `adversary-engineer.md` | Adversarial security review on Full/Irreversible tiers. Reads only, never writes. |
+| **code-reviewer** | `code-reviewer.md` | P1/P2/P3 findings on changed files only. Maintains CODEBASE-MAP.md. |
+| **researcher** | `researcher.md` | One bounded question. Sources every claim with URL + date + confidence. |
+| **technical-writer** | `technical-writer.md` | Docs, READMEs, PR descriptions, changelogs. Reads the code, not the brief. |
+| **product-designer** | `product-designer.md` | Builds a screen to spec with pixel fidelity. First paint. |
+| **design-critic** | `design-critic.md` | Judges an implemented design. Never edits. |
+| **design-polisher** | `design-polisher.md` | Adds craft density to a working build. Runs in the build→critic→polish loop. |
+| **supabase-cleaner** | `supabase-cleaner.md` | Audits the Supabase schema. Emits reviewed SQL for a human to apply — never runs destructive SQL. |
+
+`.claude/agents/_seeds/` holds shorter seed variants of the C-suite definitions.
+
+---
+
+## war-room agents — read the caveat
+
+`.claude/agents/war-room/` holds 25 more agents. They split cleanly:
+
+**Usable now (8)** — work on files alone:
+`persona-visionary` · `persona-strategist` · `persona-architect` · `persona-risk-modeler` · `persona-customer-voice` · `persona-broad-adversary` · `persona-aria` · `synthesizer`
+
+These run the board-meeting protocol (`/board-meeting`, documented in `.claude/skills/board-meeting-protocol/`). The handoff credits that protocol with catching a bad sequencing bet before any code was written.
+
+**Not usable (17)** — cron/routine and parallel-execution agents that read **Linear, Supabase `audit_log` and `claude_progress`, Mem0, Inngest, and Telegram. None of that infrastructure exists in this project** (zero `.sql`, no `supabase/`, no `.env`; `.mcp.json` configures only Playwright):
+`advisor-daily-thinking` · `auto-unblock` · `competitor-pulse` · `content-idea-generator` · `cto-daily-plan` · `eod-sync` · `friday-retro` · `geo-algorithm-signal` · `monday-standup` · `morning-digest` · `security-watcher` · `parallel-builder` · `parallel-critic` · `parallel-deployer` · `parallel-researcher` · `parallel-tester` · `parallel-watcher`
+
+Kept by founder decision. Don't spawn them expecting them to work.
+
+---
+
+## Routing examples
+
+| What you need | Route |
+|---|---|
+| Build a feature | CEO → CTO → backend-engineer + frontend-engineer |
+| Design a screen | CEO → CPO → Design-Lead → product-designer → design-critic → design-polisher |
+| Marketing-site work | CEO → CPO → Design-Lead (+ CMO for copy) |
+| Research competitors | CEO → Research-Lead → researcher ×2-3 |
+| Landing-page copy | CEO → CMO |
+| Pricing decision | CEO → CBO |
+| Write a PRD | CEO → CPO |
+| Deploy | CEO → CTO → devops-engineer (needs QA-Lead PASS) |
+| Metrics / SQL | CEO → CBO → data-engineer |
+| Fix a bug | CEO → CTO → the relevant engineer |
+| Security audit | CEO → QA-Lead → security-engineer (+ adversary-engineer on Full/Irreversible) |
+| Write tests | CEO → CTO → test-engineer |
+| Review a diff | CEO → QA-Lead → code-reviewer + qa-engineer |
+| Stress-test a plan | CEO → `/board-meeting` → the 7 personas → synthesizer |
+
+---
+
+## Memory files
 
 | File | Written by | Read by |
-|------|-----------|---------|
-| `.claude/memory/DECISIONS.md` | Any agent | CEO, all leads |
-| `.claude/memory/CODEBASE-MAP.md` | Code Reviewer | Build Lead, CEO |
-| `.claude/memory/USER-INSIGHTS.md` | Research Lead | Growth Lead, Product Lead, CEO |
-| `.claude/memory/LONG-TERM.md` | CEO | CEO (every session) |
-| `.claude/memory/sessions/` | Each lead | CEO (for daily) |
-| `.claude/memory/specs/` | Product Lead | Build Lead |
+|---|---|---|
+| `.claude/memory/DECISIONS.md` | Any agent making a decision that affects others | CEO, all leads |
+| `.claude/memory/DECISIONS_ARCHIVE.md` | Frozen — nobody | Historical reference only |
+| `.claude/memory/CODEBASE-MAP.md` | code-reviewer | CTO, CEO |
+| `.claude/memory/USER-INSIGHTS.md` | CMO + CPO only | CMO, CPO, CEO |
+| `.claude/memory/LONG-TERM.md` | CEO | CEO, every session |
+| `.claude/memory/AUDIT_LOG.md` | devops-engineer | CTO, CEO |
+
+**Session files:** `docs/08-agents_work/sessions/YYYY-MM-DD-[role]-[task-slug].md`. Not under `.claude/memory/`.

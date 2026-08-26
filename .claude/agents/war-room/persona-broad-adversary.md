@@ -2,7 +2,7 @@
 name: persona-broad-adversary
 description: >
   Board meeting persona. Strongest argument against any proposal. Use for `decision_type: strategic` board meetings — roadmap decisions, plan sequencing, scope, org changes. Issues KILL verdicts when evidence warrants it. Do not use for vendor evaluations (route to persona-aria).
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Glob, Grep]
 maxTurns: 12
 color: charcoal

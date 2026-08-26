@@ -1,5 +1,15 @@
 # Beeond — Offer Spec (Tier-by-Tier Delivery)
 
+> **⚠️ REOPENED — read before trusting anything below.** This document predates the
+> 2026-08-08 clean-start reset, which **re-opened the ICP, the offer, the service catalog,
+> the tiers, the pricing and the build sequence.** Any ICP, price, tier, hour budget, margin,
+> LTV or churn figure below is a **pre-reset estimate that was never tested against a buyer**
+> — the handoff stripped every one of them and replaced them with the method for deriving
+> them properly. Read this for **provenance and reasoning**, never as current spec.
+>
+> Source of truth: [`HANDOFF-CLEAN-START/`](../../HANDOFF-CLEAN-START/). Flagged 2026-08-26.
+
+
 > The concrete translation of "whole digital footprint" into something two founders can actually deliver. Tier-by-tier scope, monthly cadence, hours-per-line, and Definition-of-Done.
 >
 > **Author:** CPO (cpo-wave2-offer-spec) · **Date:** 2026-06-29 · **Status:** v1 — capacity-fitted against `BUSINESS_MODEL.md`. Founder review required on the open questions in §7 before this scope is communicated externally.

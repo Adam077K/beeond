@@ -2,7 +2,7 @@
 name: persona-risk-modeler
 description: >
   Board meeting persona. Failure-mode enumeration and probabilistic risk scoring. Use for `decision_type: strategic` or `decision_type: vendor` board meetings. Produces FM-N catalogs with probability × severity rankings and mitigation prescriptions. Does not issue KILL — only ranks and prescribes.
-model: claude-opus-4-7
+model: claude-opus-5
 tools: [Read, Write, Glob, Grep]
 maxTurns: 12
 color: silver

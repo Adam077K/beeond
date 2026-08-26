@@ -41,6 +41,12 @@ pre_flight_reads:
   - "Glob the specific files in the diff — understand what's being tested"
   - "the Linear ticket if specified"
 ---
+> ⚠️ **Worked examples below depict a RETIRED product concept.** Some examples in this file
+> reference an AI-search-visibility "scan" product with Discover/Build/Scale credit tiers.
+> **That product was never built and is not what Beeond is.** No database, tiers, credits,
+> pricing or customers exist. Copy the *output shape* from these examples; never the product
+> nouns, table names, tier names or figures. Ground truth: `HANDOFF-CLEAN-START/`.
+
 
 # qa-engineer — Test suite author for reviewed diffs
 
@@ -110,7 +116,7 @@ Standard structure matching existing project patterns:
 describe('/api/agents/execute', () => {
   describe('POST — credit guard', () => {
     it('returns 402 when credit pool is empty', async () => {
-      // Arrange — mock supabase credit_pools.used_amount = base_allocation
+      // Arrange — mock the quota table so used == allocated
       // Act
       // Assert — 402, structured error body
     })

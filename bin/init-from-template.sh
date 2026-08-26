@@ -61,7 +61,7 @@ prompt PRIMARY_LANGUAGE "Primary language"                  "English"
 prompt LANGUAGES        "Languages (e.g. 'English' or 'English + Hebrew')" "$PRIMARY_LANGUAGE"
 
 echo ""
-echo "About to substitute across .claude/ .agent/ CLAUDE.md AGENTS.md TEMPLATE-USAGE.md."
+echo "About to substitute across .claude/ CLAUDE.md AGENTS.md TEMPLATE-USAGE.md."
 if [[ $NONINTERACTIVE -ne 1 ]]; then
   read -r -p "Continue? [y/N] " ok
   [[ "$ok" =~ ^[Yy]$ ]] || { echo "Aborted."; exit 1; }

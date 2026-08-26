@@ -1,5 +1,12 @@
 # Getting Started — Startup Kit
 
+> **⚠️ Not about Beeond.** This file documents the external agent **starter kit** this
+> repo's `.claude/` system was adapted from — not Beeond the company. It is kept for
+> provenance and for the kit machinery in `bin/` and `scripts/`. For what this project
+> actually is, read [`HANDOFF-CLEAN-START/`](HANDOFF-CLEAN-START/) and [README.md](README.md).
+> Flagged 2026-08-26 during the clean-start decontamination.
+
+
 A complete starter kit for building startups with an AI-native agent team. Get from idea to running product faster than any other setup.
 
 ---
@@ -28,7 +35,7 @@ cd <repo-name>
 | Tool | How to Open |
 |------|-------------|
 | **Claude Code** | Open the folder; `CLAUDE.md` loads automatically |
-| **Antigravity** | Open the folder as workspace; skills load from `.agent/skills/` |
+| **Antigravity** | Open the folder as workspace; skills load from `.claude/skills/` |
 
 ### 3. Start Building
 

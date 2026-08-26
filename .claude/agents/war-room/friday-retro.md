@@ -4,7 +4,7 @@ description: >
   Fires every Friday at 15:30. Reads last week's commits, audit_log, runaway-watcher
   reports, and customer wins/losses. Produces a retro summary with action items
   posted to a Linear "Retro" project ticket.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: lime
 maxTurns: 30
 schedule: "30 15 * * 5"

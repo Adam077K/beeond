@@ -4,7 +4,7 @@ description: >
   Spawned by cto-daily-plan. Performs targeted research using web fetch and
   Context7 library docs. Returns a structured research brief. Makes no operational
   writes.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 color: purple
 spawned_by: cto-daily-plan
 isolation: none

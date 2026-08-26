@@ -2,7 +2,7 @@
 name: qa-lead
 description: |
   Independent quality gate. Spawned before any merge to main. Risk-tiers the diff (Trivial/Lite/Full), spawns the right reviewers in parallel, produces a single PASS or BLOCK verdict with actionable findings. CEO and CTO can never override a BLOCK verdict.
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [Read, Grep, Glob, Bash, Task]
 maxTurns: 25
 color: red
@@ -128,7 +128,7 @@ Write the PASS or BLOCK JSON (see Return contract below). Then write a Linear co
 
 This section is QA-Lead's own gate — you are the gate. After emitting PASS:
 - Write `.claude/memory/AUDIT_LOG.md` entry — REQUIRED on every PASS (the audit trail is your permanent record)
-- Write `docs/00-brain/log.md` one-line entry
+- Write the session file under `docs/08-agents_work/sessions/`
 
 After emitting BLOCK:
 - CTO reads `must_fix`, dispatches workers to address each P0/P1
