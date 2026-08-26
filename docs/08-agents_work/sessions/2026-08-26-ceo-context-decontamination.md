@@ -18,6 +18,6 @@ recovery_anchor: pre-clean-start-2026-08-26
 
 **Kept by founder ruling.** `war-room/` + dashboards · the kit machinery (banner-flagged) · ~20 empty template docs · all 25 war-room agents (17 depend on infrastructure that doesn't exist) · the user-global `~/CLAUDE.md`.
 
-**Verified.** md 2,076 → 761 · `docs/` 114MB → 63MB · build ✓ lint ✓ e2e 2/2 ✓ · 154/154 skill paths resolve · 51/51 agent references resolve · 35/35 cited paths exist · recovery drill from tag confirmed.
+**Verified.** md 2,076 → 762 · `docs/` 114MB → 63MB · build ✓ lint ✓ e2e 2/2 ✓ · 154/154 skill paths resolve · 51/51 agent references resolve · 35/35 cited paths exist · recovery drill from tag confirmed.
 
 **Fully reversible** via `git checkout pre-clean-start-2026-08-26 -- <path>` (tag pushed to origin).

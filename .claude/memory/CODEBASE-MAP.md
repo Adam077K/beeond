@@ -6,14 +6,14 @@
 ## Shape
 
 A near-empty product surface attached to a large agent system. Post-cleanup the repo
-holds ~778 markdown files against a placeholder Next app — the ratio is deliberate for
+holds 762 markdown files against a placeholder Next app — the ratio is deliberate for
 now: the agent system is the working tooling, the product has not been built.
 
 | Path | What | State |
 |---|---|---|
 | `HANDOFF-CLEAN-START/` | Source of truth, 5 files | Current |
 | `apps/web/` | Marketing site | **Empty instrumented shell** |
-| `.claude/` | Agent system — 26 agents + 25 war-room, 147 skills, 13 commands, 7 hooks, 4 workflows | Working |
+| `.claude/` | Agent system — 26 agents + 25 war-room, 154 skills, 13 commands, 7 hooks, 4 workflows | Working |
 | `docs/` | Foundation, competitive, offer, marketing refs, history | Mixed (see below) |
 | `war-room/`, `war-room-dashboard/` | Internal swarm visualiser, Vite/React | Scaffolded, not wired |
 | `bin/`, `scripts/`, `guides/` | Upstream starter-kit machinery | Not about Beeond — banner-flagged |

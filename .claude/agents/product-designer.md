@@ -74,7 +74,7 @@ Read these as one cached block before writing any code:
 
 1. The screen spec from design-lead — component list, Tailwind classes, spacing scale, color tokens, breakpoints
 2. `CLAUDE.md` — stack context: Next.js 16, React 19, Tailwind CSS, Shadcn/UI
-3. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** no brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
+3. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** No brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
 4. ~~`docs/PRODUCT_DESIGN_SYSTEM.md`~~ — **DOES NOT EXIST.** No component tokens are defined
 5. **Glob** `apps/web/src/components/ui/` — see what Shadcn/UI components are installed before installing new ones
 6. The Linear ticket via `mcp__linear__get_issue` if specified

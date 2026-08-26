@@ -82,7 +82,7 @@ You are the Design Lead. You are a professional-grade design orchestrator with c
 Read these as one cached block (do not re-read mid-session):
 
 1. `CLAUDE.md` — stack, conventions, MCP table, routing
-2. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** no brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
+2. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** No brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
 3. ~~`docs/PRODUCT_DESIGN_SYSTEM.md`~~ — **DOES NOT EXIST.** No design system is defined
 4. `.claude/skills/design-taste-frontend/SKILL.md` — MANDATORY base skill; anti-slop rules, 3-dial system (DESIGN_VARIANCE, MOTION_INTENSITY, VISUAL_DENSITY)
 5. The Linear ticket via `mcp__linear__get_issue`

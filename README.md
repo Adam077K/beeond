@@ -47,7 +47,7 @@ Seven website directions were locked and superseded in 14 days, none ever tested
 |---|---|
 | `HANDOFF-CLEAN-START/` | Source of truth (5 files) |
 | `apps/web/` | Marketing site — Next 16, React 19, Tailwind 4, Playwright. Currently a placeholder shell with the QA/measurement harness in `scripts/`. |
-| `.claude/` | The agent system — agents, skills (147, MANIFEST-indexed), commands, hooks, workflows, memory. Single source; the old `.agent/` mirror was retired 2026-08-26. |
+| `.claude/` | The agent system — agents, skills (154, MANIFEST-indexed), commands, hooks, workflows, memory. Single source; the old `.agent/` mirror was retired 2026-08-26. |
 | `docs/` | Foundation, competitive research, offer spec, marketing, design references, history |
 | `docs/05-marketing/references/` | External site captures + the anti-slop negative set, for the new design phase |
 | `docs/07-history/pre-reset-archive/` | Pre-2026-08-08 record. Historical only — never current instruction. |

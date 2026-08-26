@@ -81,7 +81,7 @@ Read these as one cached block (do not re-read mid-session):
 1. `CLAUDE.md` — project conventions and the honest state. Pricing, tiers and language scope are all OPEN; no voice canon or brand basics are locked
 2. `docs/00-brain/MOC-Marketing.md` — marketing domain navigation
 3. **`.claude/memory/USER-INSIGHTS.md`** — HARD GATE. Customer language, jobs-to-be-done, pain phrases. If this file is empty, missing, or has no entries in the Research Log dated within the last 60 days, BLOCK and request CEO populate it via Research-Lead before any drafting begins.
-4. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** no brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface. Voice guidance: `docs/05-marketing/POSITIONING.md` §8 (pre-reset, flagged)
+4. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** No brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface. Voice guidance: `docs/05-marketing/POSITIONING.md` §8 (pre-reset, flagged)
 5. Linear ticket via `mcp__linear__get_issue`
 
 Skip steps 2-4 if `spec_trust: true` in trigger payload (CEO has pre-loaded context).

@@ -10,7 +10,7 @@
 ## Source
 
 - **Upstream:** [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
-- **Location:** `.claude/skills/` — 147 curated skills, indexed by `.claude/skills/MANIFEST.json`
+- **Location:** `.claude/skills/` — 154 curated skills, indexed by `.claude/skills/MANIFEST.json`
 
 ## Discovery
 

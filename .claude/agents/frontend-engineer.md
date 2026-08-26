@@ -71,7 +71,7 @@ Read these as one cached block before any code edit:
 
 1. The structured brief from CTO (passed via your Task call)
 2. `CLAUDE.md` — stack defaults (Next.js 16, Tailwind, Shadcn/UI)
-3. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** no brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
+3. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** No brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
 4. ~~`docs/PRODUCT_DESIGN_SYSTEM.md`~~ — **DOES NOT EXIST.** No component tokens are defined
 5. **Glob** `apps/web/src/components/` — identify existing components before creating new ones
 6. The Linear ticket via `mcp__linear__get_issue` (if specified in brief)

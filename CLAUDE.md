@@ -71,7 +71,7 @@ Canonical definitions live in [`.claude/agents/`](.claude/agents/). Routing tabl
 
 ## Skills
 
-**147 skills** at `.claude/skills/[skill-name]/SKILL.md`. This is the only location — the `.agent/` mirror was retired 2026-08-26.
+**154 skills** at `.claude/skills/[skill-name]/SKILL.md`. This is the only location — the `.agent/` mirror was retired 2026-08-26.
 
 **Discovery — read the manifest, never `ls | grep`:**
 

@@ -69,7 +69,7 @@ Read these as one cached block before any screenshot or evaluation:
 
 1. The brief from Design-Lead — which feature, which pages, which references were used, specific concerns
 2. `CLAUDE.md` — product context. ICP is OPEN (two branches: B2B/SaaS/tech, or Hebrew-market lead-gen) — do not presuppose a segment; no brand basics are locked
-3. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** no brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
+3. ~~`docs/BRAND_GUIDELINES.md`~~ — **DOES NOT EXIST.** No brand guidelines exist — visual identity is OPEN (2026-08-26); do not assume a palette or typeface
 4. ~~`docs/PRODUCT_DESIGN_SYSTEM.md`~~ — **DOES NOT EXIST.** No component tokens are defined
 5. `.claude/memory/DECISIONS.md` — search for any locked design decisions on the component being reviewed
 
