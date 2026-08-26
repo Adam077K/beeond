@@ -98,7 +98,12 @@ anyone.
 ## Context the next CEO should know but that does not belong in the prompt
 
 - **G1 produced 11 full-page mockups** (GPT Image 2, 77 credits, in the founder's Higgsfield feed, 2026-08-26). They are *not* the direction — the founder judged them as one reference's world each rather than the combination, which is what produced the design language. Treat them as discarded exploration, not as candidates.
-- **The CEO in this session could not view generated images.** Download, `file:` URLs, a local http server and Playwright screenshots were all blocked. If G3 needs visual verification of generated art, solve that first or the critic loop cannot run.
+- **Viewing generated images DOES work — use Playwright.** `curl`, `file:` URLs and a local http server are all blocked, but this works and is the method for G3:
+  1. `mcp__playwright__browser_navigate` to the raw image URL
+  2. `mcp__playwright__browser_take_screenshot` with `fullPage: true` and an explicit `filename`
+  3. The PNG lands in the **worktree root** — then `Read` it normally
+  The CEO in this session wrongly concluded it was blocked (a bad `find` invocation) and shipped two rounds of mockups unreviewed. **The design-critic and anti-slop loops CAN run at G3.** Move the file out of the repo root afterwards; `.playwright-mcp/` is now gitignored.
+- **One G1 mockup is kept** at `docs/05-marketing/g1-directions/A-crossstitch-poster.png` — the cross-stitch poster. It is the only one that was actually reviewed, and it lands close to the locked language (bone ground, editorial serif, mono eyebrow, restrained chrome) despite cross-stitch sitting on the "not used" list. Worth putting in front of the founder if that decision is revisited.
 - **Seven of the founder's own reference notes disagreed with their images.** In every case his instinct was right and his recollection drifted. When he describes a reference, verify against the file before acting.
 - **The `_brief-0*.md` and `_techniques-*.md` files under `references/founder-brain/` are the useful layer.** Read those, not the 105 images.
 - **`apps/web` is a bare instrumented Next 16 shell.** The measurement harness in `apps/web/scripts/` survived and includes `scrub-fps.mjs` and `swarm-frames.mjs`, which are purpose-built for verifying the scroll set-piece.
