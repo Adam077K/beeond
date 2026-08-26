@@ -39,7 +39,7 @@ The ICP blocks everything downstream and is resolved by interviewing the two war
 
 ### The rule that matters
 
-Seven website directions were locked and superseded in 14 days, none ever tested against a customer. **No direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration, sketching and cheap tests are not restricted; treating something as the plan of record is.
+Seven website directions were locked and superseded in 14 days; none reached a customer. (The handoff is careful here: v3–v6.2 were partly amendments to one evolving surface, so the precise count is looser than seven separate builds — the *tempo* is the undisputed part.) **No direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration, sketching and cheap tests are not restricted; treating something as the plan of record is.
 
 ## Layout
 

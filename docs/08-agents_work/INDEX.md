@@ -37,7 +37,7 @@ No revenue. No signed clients. **Zero customer interviews**; both warm prospects
 
 ## Gate on any new direction
 
-Seven site directions were locked and superseded in 14 days; none reached a customer. **No direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration and cheap tests are not restricted — treating something as the plan of record is.
+Seven website directions were locked and superseded in 14 days; none reached a customer. (The handoff is careful here: v3–v6.2 were partly amendments to one evolving surface, so the precise count is looser than seven separate builds — the *tempo* is the undisputed part.) **No direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration and cheap tests are not restricted — treating something as the plan of record is.
 
 ---
 
@@ -52,7 +52,7 @@ Seven site directions were locked and superseded in 14 days; none reached a cust
 
 ## History
 
-Everything before the 2026-08-08 reset — 21 sessions, 7 briefs, the v7 board review, the v7 build handoff — is archived at [`docs/07-history/pre-reset-archive/`](../07-history/pre-reset-archive/). **Historical only, never current instruction.**
+Everything before the 2026-08-08 reset — 18 sessions, 7 briefs, the v7 board review, the v7 build handoff — is archived at [`docs/07-history/pre-reset-archive/`](../07-history/pre-reset-archive/). **Historical only, never current instruction.**
 
 ---
 

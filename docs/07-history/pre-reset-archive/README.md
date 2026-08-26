@@ -24,7 +24,7 @@ Everything here was written while a different plan was in force. They are confid
 
 | Path | What |
 |---|---|
-| `sessions/` | 21 session records, 2026-06-29 → 2026-07-13 |
+| `sessions/` | 18 session records, 2026-06-29 → 2026-07-13 |
 | `briefs/` | 7 build and strategy briefs (v3 through v7) |
 | `board-review/` | The 2026-07-13 v7 Phase-3 board review, R1–R3 |
 | `2026-07-12-v7-phase3-build-handoff.md` | The paste-ready v7 build prompt that was never run |

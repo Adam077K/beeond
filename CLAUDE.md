@@ -24,7 +24,7 @@ The ICP blocks offer → pricing → positioning. It is resolved by interviewing
 
 ### The rule that matters
 
-Seven website directions were locked and superseded in 14 days; none reached a customer. **No direction gets locked and shipped — merged, put in front of a customer, or treated as the plan of record — without a customer signal earned since the last one closed.** This does not restrict exploration, sketching, or cheap tests framed as tests.
+Seven website directions were locked and superseded in 14 days; none reached a customer. (The handoff is careful here: v3–v6.2 were partly amendments to one evolving surface, so the precise count is looser than seven separate builds — the *tempo* is the undisputed part.) **No direction gets locked and shipped — merged, put in front of a customer, or treated as the plan of record — without a customer signal earned since the last one closed.** This does not restrict exploration, sketching, or cheap tests framed as tests.
 
 ### Evidence discipline
 

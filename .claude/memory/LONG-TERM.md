@@ -28,7 +28,7 @@
 - **Founder runway / living-cost figures** — requested at founding, never supplied. Sets the real urgency behind everything.
 
 ## Recurring patterns
-- **Supersession is the documented failure mode.** Seven site directions locked and superseded in 14 days, ~2-day average lifespan, none ever tested against a customer. A board convened to stop it was itself declared moot 23 days later, with 0 of its 6 cheap gates executed. **The rule now: no direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration and cheap tests are not restricted.
+- **Supersession is the documented failure mode.** Seven site directions locked and superseded in 14 days, ~2-day average lifespan, none ever tested against a customer — though the handoff notes v3–v6.2 were partly amendments to one evolving surface, so the count is looser than seven separate builds; the tempo is the undisputed part. A board convened to stop it was itself declared moot 23 days later, with 0 of its 6 cheap gates executed. **The rule now: no direction gets locked and shipped without a customer signal earned since the last one closed.** Exploration and cheap tests are not restricted.
 - **Planning depth vastly exceeds customer contact.** The QA and board machinery is genuinely rigorous and has never been the bottleneck. Demand validation has never happened at all.
 - **"Locked" has never functioned as a commitment device** — a written rule asking someone to hold a line has already been tried and already failed. Any replacement needs to be external and mechanical.
 - **Evidence discipline:** a claim ships only if FOUNDER-decided, SOURCED (URL + date + confidence), MEASURED, or METHOD. Do not reintroduce stripped estimates as facts.

@@ -29,7 +29,7 @@ The new direction is undecided. Nothing here pre-commits it.
 | `board-*.png` (12) | Craft references captured 2026-07-04: Anthropic, Linear, Family, Emil Kowalski, Godly, basement.studio, Rauno Freiberg, Stripe, Igloo, Lusion, Resend, Mercury |
 | `negative-*.png` (4) | The **anti-slop set** — Landio, Nexus, Omrix, HiView. Diff any new design against these; resemblance means redo. The most reusable asset in this folder. |
 | `REFERENCES.md` | Per-board annotations (borrow / avoid) |
-| `site-captures/` | Full desktop+mobile captures of 7 sites — Speakeasy (incl. the founder-picked full page), Jasper, RZLT, Oriol, basement, Mailchimp — plus `rtl/` (Bezalel, DA Magazine, alefalefalef) and `_moodboard/` |
+| `site-captures/` | 7 directories covering 9 external sites — Speakeasy (incl. the founder-picked full page), Jasper, RZLT, Oriol, basement, Mailchimp, plus `rtl/` (Bezalel, DA Magazine, alefalefalef) — and `_moodboard/` |
 | `site-captures/README.md` | Per-site teardown |
 | `site-captures/speakeasy/NOTES.md` | Deep teardown of the founder's pick |
 
