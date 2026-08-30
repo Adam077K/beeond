@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "description": "Beeond — a done-for-you marketing and growth service run by a coordinated swarm of AI agents with human oversight. Monorepo: marketing site (apps/web) + the agent system (.claude/).",
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "design-probe": "node scripts/design-probe.mjs",
+    "test:build-tokens": "node --test scripts/build-tokens.test.mjs",
+    "test:design-lib": "node --test scripts/design-lib.test.mjs",
+    "test:design-probe": "node --test scripts/design-probe.test.mjs",
+    "test:extract-reference": "node --test scripts/extract-reference.test.mjs"
+  },
   "engines": {
     "node": ">=18"
   },
