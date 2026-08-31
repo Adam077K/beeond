@@ -27,6 +27,25 @@
 // script's. Accessibility floors (contrast, target size, reflow) are the exception and are cited to
 // WCAG rather than to the token file, because they are law-shaped, not taste-shaped.
 //
+// ── THIS IS NOT THE SAME CHECK AS apps/web/scripts/brand-lint.mjs ───────────────────────────────
+//
+// Both compare colour against design/tokens/, so they read as duplicates. They are not, and
+// deleting either as duplication loses coverage the other cannot supply:
+//
+//   design-probe (here) reads COMPUTED STYLE out of a real browser, on a page that has actually
+//   been laid out. It is the only one of the two that can see a colour arriving by INHERITANCE,
+//   through the CASCADE, from a FONT FALLBACK, or from a component library's own default — none
+//   of which appear as a hex in this repository's source at all. It needs Chromium, it needs a
+//   page to be running, and it says UNRESOLVED when it cannot have one.
+//
+//   brand-lint reads SOURCE TEXT. It catches a hex someone TYPED, in a .ts/.tsx/.css/.mjs file,
+//   whether or not that line ever renders — including a file nobody imports, a branch nobody has
+//   opened, and a page that does not build. It needs no browser and finishes in milliseconds.
+//
+// A hardcoded #ededed in an unimported file is invisible to this probe. A Tailwind default grey
+// painting half the page is invisible to brand-lint. Neither one is a weaker version of the other;
+// they are a static reading and a dynamic one, and the interesting failures live in the gap.
+//
 // ── THE RULE THAT WAS DELETED, AND WHY IT IS RECORDED RATHER THAN QUIETLY REMOVED ────────────────
 //
 // REMOVED 2026-08-29: `MIN_STEP_RATIO = 1.125`, the `scaleGaps()` adjacent-ratio analysis, and the

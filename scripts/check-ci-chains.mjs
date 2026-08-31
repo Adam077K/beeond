@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+// POSTURE: BLOCKS, IN ITS OWN RIGHT. `check:ci-chains` is a STEP of `npm run check` and a step of
+// .github/workflows/ci.yml here, so this file's exit code fails a build on its own.
+//
+// *Corrected for beeond 2026-08-31, and this one UNDER-claimed rather than over-claimed. It read
+// "POSTURE: entry point. The BLOCKING assertion is in `scripts/check-suite.test.mjs`, which is a
+// step of `npm run check`; this script is the same property runnable on its own." That describes
+// agentvibe, where the identical script is EXCLUDED precisely so one property is not asserted under
+// two names. Here it is not a duplicate of anything: `scripts/check-suite.test.mjs` is EXCLUDED,
+// so this file is the ONLY thing in beeond that reads the workflow at all. It survives that
+// exclusion because `ciChainFindings()` is pure over the workflow text and holds no assertion
+// about which steps a repository has — which is exactly the coupling that put the other file out.
+// NOTE WHAT IT DOES AND DOES NOT COVER: the shell-chain predicate, and nothing else. The
+// `!cancelled()` guard on every step, `continue-on-error` never appearing as a key, every STEP
+// having a counterpart step, and no step invoking a runner directly are all assertions of the
+// excluded file, and none of them runs today. When it is re-ported and green, this becomes the
+// duplicate agentvibe says it is and belongs back in EXCLUDED. The reasoning is written out at the
+// `check:ci-chains` entry in STEPS, in scripts/lib/check-suite.js.*
+//
+// scripts/check-ci-chains.mjs — report `run:` values in .github/workflows/ci.yml that put more than
+// one command behind one exit code.
+//
+// ── WHY THIS EXISTS ──────────────────────────────────────────────────────────────────────────────
+// The suite's operator check only ever saw package.json script bodies, reached through
+// resolveChain(scripts, step). The workflow's raw `run:` text was never fed to it, so
+// `run: npm run a && npm run b` written straight into the workflow bypassed package.json and STEPS
+// entirely — `&&` skips the rest on the first failure, and `;`, `|` and `&` hand back the LAST
+// command's status so the failure disappears with no red step at all.
+//
+// The predicate and the allowlist live in scripts/lib/check-suite.js, next to the STEPS rules they
+// mirror, and ciChainFindings() is pure over both of its inputs so the tests can drive it against
+// mutated workflow text. This file is only the file read and the exit code.
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const { ciChainFindings, CI_CHAINS_ALLOWED, UNPARSED_PREFIX } = require('./lib/check-suite.js');
+
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+// An optional path argument, so THIS SCRIPT'S OWN BRANCHES CAN BE RUN. Without it the file it reads
+// is fixed at its own location, both failure branches below are unreachable from a test, and a
+// script whose failure path has never executed is a script that reports success by construction.
+// It changes no verdict that matters: `npm run check:ci-chains` passes no argument, and the BLOCKING
+// assertion is the chain case in scripts/check-suite.test.mjs, which reads the real file directly.
+const CI_PATH = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : path.join(REPO, '.github', 'workflows', 'ci.yml');
+
+if (!fs.existsSync(CI_PATH)) {
+  // Absent is UNRESOLVED, not clean: a check that cannot read its subject has not checked it.
+  console.error(`check:ci-chains UNRESOLVED — ${CI_PATH} does not exist, so nothing was checked.`);
+  process.exit(1);
+}
+
+const findings = ciChainFindings(fs.readFileSync(CI_PATH, 'utf8'));
+
+if (findings.length) {
+  console.error(`check:ci-chains: ${findings.length} finding${findings.length > 1 ? 's' : ''}\n`);
+  for (const f of findings) console.error(`  ${f}`);
+  // TWO KINDS OF FINDING, TWO REMEDIES, AND EACH IS PRINTED ONLY FOR ITS OWN KIND. Printing both
+  // always was the smaller half of this defect: a refusal-only run still got the chain remedy
+  // appended, telling the reader to add a string to an allowlist that cannot hold it. The kinds are
+  // told apart by UNPARSED_PREFIX, a constant both files import — not by matching a substring of
+  // the message, which is what this did until 2026-08-26 and which a reword would have broken in
+  // silence.
+  const refusals = findings.filter((f) => f.startsWith(UNPARSED_PREFIX));
+  if (refusals.length) {
+    console.error(
+      `\nAn ${UNPARSED_PREFIX} finding is the YAML layer, not the shell one: this parser reads a \`run:\`/\`if:\` ` +
+        'value in exactly two shapes — a plain single-line scalar, or a block scalar with no explicit ' +
+        'indentation indicator — and refuses the rest rather than implementing YAML. It has NO allowlist ' +
+        'entry by design.\n' +
+        '  · QUOTED?  UNQUOTE IT. That is the fix for nearly every one of these, and it is the whole fix ' +
+        'for an `if:` — `if: ${{ !cancelled() }}` needs no quotes and a block scalar there would be bizarre.\n' +
+        '  · CANNOT unquote, because the value carries a `: ` or starts with an indicator? Write it as a ' +
+        'block scalar (`run: |-`), which has no quoting rules and no escapes, so anything expressible is ' +
+        'expressible there — but WITHOUT an indentation indicator: `|2` is refused too, because the body ' +
+        'baseline is read off the first content line rather than off the indicator.\n' +
+        '  · SPLIT OVER SEVERAL LINES? Join it, or make it a block scalar. A continuation is refused ' +
+        'because this parser has not read all of the value, not because the value is wrong.\n' +
+        '  · A WHOLE LINE refused — the message names a line rather than a key? Then the KEY is what ' +
+        'could not be read, not the value, so there is nothing to unquote and no scalar to rewrite. ' +
+        'WRITE THE LINE AS A PLAIN `key: value` PAIR. That covers every shape that reaches this ' +
+        'refusal, including ones the message does not enumerate: no quotes around the key ' +
+        '(`"run":`), no space before the colon (`run :`), no flow mapping (`- {run: …}`), no merge ' +
+        'key (`- <<: *base`), and no item that carries only a comment or nothing at all (`- # note`, ' +
+        'a bare `-`) — give the item its first key on the same line. A `steps:` refused this way is ' +
+        'either a flow sequence, which belongs on the lines below it, or a `steps` key spelled in a ' +
+        'form this parser does not open a block for.'
+    );
+  }
+  if (refusals.length < findings.length) {
+    console.error(
+      '\nA step is ONE command and the workflow reads ONE exit code from it. Split it into two steps, or ' +
+        'add the exact run string to CI_CHAINS_ALLOWED in scripts/lib/check-suite.js with the reason written ' +
+        'down — an entry there fails if it stops matching a live step, so an exemption cannot rot.'
+    );
+  }
+  process.exit(1);
+}
+
+const n = Object.keys(CI_CHAINS_ALLOWED).length;
+console.log(`check:ci-chains: no unexempted chained \`run:\` values (${n} allowlisted).`);

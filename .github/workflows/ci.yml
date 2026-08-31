@@ -1,0 +1,156 @@
+# POSTURE: BLOCKS. Every check here is deterministic — it executes code and compares the result
+# to the repository, so a failure is a fact, not a judgment.
+#
+# THIS IS THE FIRST WORKFLOW beeond HAS EVER RUN. Before it, `.github/` did not exist as a
+# directory. Everything under scripts/ — the token generator's 54 tests, the design probe's 90,
+# the drift guard over the suite itself — ran only on a machine where somebody typed the command.
+# A check nobody runs is a check that does not exist, and until this file landed that was the
+# literal state of every check in the tree.
+#
+# WHAT "BLOCKS" MEANS HERE, AND WHAT IT DOES NOT. This job fails loudly. Whether a red job
+# physically stops a merge is a repository setting that no file can state — branch protection is
+# not readable from inside a workflow — so it is not claimed here. Treat `.github/workflows/**` as
+# unprotected against a direct push until CODEOWNERS or a push restriction is added. Both are
+# repository settings and only the founder can set them.
+#
+# ── ONE STEP PER CHECK, AND THAT IS THE WHOLE DESIGN ─────────────────────────────────────────
+# There is no `npm run check` step in this file and there must never be one. The suite runner
+# reports its own honest tally locally, but as a single workflow step it would nest every check
+# behind ONE exit code — a red build naming one failure and hiding the rest. Each check gets a
+# step, so the run page names exactly which ones failed. `scripts/check-suite.test.mjs` is what
+# ASSERTED that every entry of STEPS has a counterpart step here — it is EXCLUDED today, so that
+# correspondence is currently maintained by hand. It held when last checked, on 2026-08-31.
+#
+# ── WHY EVERY CHECK STEP CARRIES `if: ${{ !cancelled() }}` ───────────────────────────────────
+# GitHub's default inside a job is fail-fast: the first failing step SKIPS every step after it.
+# This is one job of sequential checks, so without the guard a failure in the first would report
+# one red step and six unknowns. agentvibe measured this shape before fixing it: a build failing at
+# step 18 of 30 skipped the twelve after it, including the ledger's whole enforcement, on four
+# consecutive runs.
+#
+# `!cancelled()` and not `always()`: a run someone cancelled must actually stop.
+#
+# WHAT THIS DOES NOT DO, because the distinction is the whole risk of the change: it does not make
+# a failure survivable. `if:` decides whether a step RUNS. Only `continue-on-error: true` stops a
+# failed step from failing the job, and it appears nowhere in this file as a key — every step still
+# goes red on its own failure, and one red step still fails the job. The change is that the other
+# six checks produce a result instead of a skip.
+#
+# NOTHING CHECKS EITHER HALF OF THAT SENTENCE RIGHT NOW. `scripts/check-suite.test.mjs` is what
+# asserted the guard on every `run:` step and `continue-on-error` present as a word and absent as a
+# key, and it is EXCLUDED — see the note above the first step. Both properties were verified by
+# hand against this file on 2026-08-31 and both hold; that is a measurement, not a mechanism, and
+# it will not notice the next edit.
+#
+# ── AND NO STEP HERE IS AN `&&` CHAIN ────────────────────────────────────────────────────────
+# A step-level `if:` cannot reach inside a `run:` value, so `npm run a && npm run b` written into
+# one step restores the short-circuit one level down: `&&` skips the rest on the first failure,
+# and `;`, `|` and `&` hand back the LAST command's status, so the failure vanishes with no red
+# step at all. `scripts/check-suite.js`'s `ciChainFindings()` reads this file and refuses any
+# chained `run:` that is not in `CI_CHAINS_ALLOWED`, which is EMPTY — every step below is a single
+# `npm run <name>`. `npm run check:ci-chains` is that same predicate as a step, below.
+#
+# ── NO INSTALL STEP, AND THAT IS MEASURED, NOT ASSUMED ───────────────────────────────────────
+# The root package.json declares ZERO dependencies and every script below is plain Node against
+# the standard library, so there is nothing to install and `npm ci` would fail for want of a
+# lockfile. `node_modules/` is not even in `.gitignore` here, which is worth knowing before anyone
+# adds one.
+#
+# WHAT IS THEREFORE NOT CHECKED, stated so its absence is not read as coverage: `apps/web` is a
+# separate package with its own pnpm lockfile, and its `lint` (eslint + eslint-config-next) needs
+# a full install of Next, React and Playwright. It is deliberately absent from this file rather
+# than added unverified — adding a step whose result nobody has seen is a claim, not a check. It
+# is also the one candidate step that would need an entry in `CI_CHAINS_ALLOWED`, because install
+# and lint belong in one step: with `!cancelled()` on both, a failed install would NOT stop the
+# lint running against absent dependencies.
+#
+# `apps/web/scripts/brand-lint.mjs` is likewise absent, and for a different reason: it needs no
+# install at all, but as of 2026-08-31 it reports three real off-palette hexes in the Next.js
+# scaffold's `globals.css`. Wiring it today would make beeond's first CI red on arrival, which is
+# a decision about the site's readiness rather than about the harness. See its header.
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Deterministic checks
+    runs-on: ubuntu-latest
+    steps:
+      # No `fetch-depth: 0`. Nothing below reads git history: the manifest check and the token
+      # check both compare committed files against a fresh generation from the working tree, and
+      # the design tests construct every fixture they read. A shallow clone is enough, and asking
+      # for full history that no check uses is a cost with no assertion behind it.
+      - uses: actions/checkout@v4
+
+      # 24, because 24.11.1 is the version every figure quoted in scripts/lib/check-suite.js's
+      # EXCLUDED entries was measured on. package.json's `engines` says >=18 and that is the
+      # SUPPORT claim; this is the TESTED claim, and they are different sentences. Pinning the
+      # major rather than `latest` so a Node release cannot turn main red on a PR that changed
+      # nothing.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      # ── THE TWO STRUCTURAL GUARDS ARE NOT HERE, AND THAT IS THE GAP TO KNOW ABOUT ──────────
+      # `test:protected-write` and `test:check-suite` are the checks that say whether the other
+      # checks are being watched, and both are EXCLUDED in scripts/lib/check-suite.js because the
+      # ported files assert against agentvibe's literal STEPS and EXCLUDED contents rather than
+      # against the mechanism. Their steps are removed from here in the same change, because an
+      # excluded check must run nowhere: a step left in this file knowing it is red would make
+      # beeond's first CI red on arrival for a reason nobody intends to fix here, and a build that
+      # is always red is a build nobody reads. THE COST IS REAL AND IS WRITTEN OUT IN THOSE TWO
+      # ENTRIES — chiefly that nothing now asserts that every STEP has a step here, or that every
+      # `run:` below carries its guard. Both entries name the one event that ends this: the
+      # upstream fix, then a re-port. Put both steps back in the same commit that deletes them.
+      #
+      # The chain predicate over THIS file, run as its own entry point. agentvibe excludes the
+      # identical script because its drift guard asserts the same property; while that drift guard
+      # is excluded here this is not a duplicate of anything — it is the only thing in beeond that
+      # reads this workflow at all. See STEPS.
+      - name: CI shell-chain check
+        if: ${{ !cancelled() }}
+        run: npm run check:ci-chains
+
+      # ── The skills manifest ────────────────────────────────────────────────────────────────
+      # MANIFEST.json is generated from disk. This fails when the two disagree — a skill added or
+      # removed without regenerating.
+      - name: Skills manifest matches disk
+        if: ${{ !cancelled() }}
+        run: npm run check:skills-manifest
+
+      # ── The token pipeline: mutation gate first, then the checker it guards ────────────────
+      # A green `check:tokens` beside a red `test:build-tokens` means the drift comparison is
+      # unproven, not that the tokens are fine. Read the failure list, not the tally.
+      - name: Token generator tests
+        if: ${{ !cancelled() }}
+        run: npm run test:build-tokens
+
+      - name: Generated tokens match seeds.json
+        if: ${{ !cancelled() }}
+        run: npm run check:tokens
+
+      # ── The remaining design instruments ───────────────────────────────────────────────────
+      # Each is hermetic: it constructs what it reads, needs no network, and skips its one
+      # Playwright-dependent case when Chromium is absent — which it is on this runner, because no
+      # browser is installed here on purpose. `test:design-probe` therefore reports 89 pass and 1
+      # skip rather than 90 pass, and the skip is the honest answer, not a silent pass.
+      - name: Design library — shared luminance and contrast
+        if: ${{ !cancelled() }}
+        run: npm run test:design-lib
+
+      - name: Design probe tests
+        if: ${{ !cancelled() }}
+        run: npm run test:design-probe
+
+      - name: Reference extractor tests
+        if: ${{ !cancelled() }}
+        run: npm run test:extract-reference

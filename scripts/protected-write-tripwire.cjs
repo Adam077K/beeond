@@ -1,0 +1,227 @@
+// POSTURE: BLOCKS in CI, for every `node --test` step of `npm run check` — FOUR of the seven steps
+// in .github/workflows/ci.yml (test:build-tokens, test:design-lib, test:design-probe,
+// test:extract-reference), each of which invokes its npm script and therefore carries the
+// `--require` preload. Derive that figure with the command below rather than trusting it; a first
+// draft of this line said three and was wrong by one, which is what the command is for. It does NOT block a binding QA gate here, because beeond has no gate that
+// runs `npm run check` as an oracle; that half of agentvibe's posture is not true in this
+// repository and is deliberately not claimed.
+//
+// AND NOTHING CHECKS THE WIRING RIGHT NOW. `scripts/protected-write.test.mjs` is what asserted that
+// every reachable `node --test` step preloads this file, and it is EXCLUDED — see
+// EXCLUDED['test:protected-write'] in scripts/lib/check-suite.js. This guard still FIRES; what is
+// unwatched is whether the next test script added to package.json is put behind it. Until that
+// exclusion is lifted, the preload is a convention a reviewer has to remember, not a checked fact.
+//
+// Derive the count rather than trusting this comment — the suite is STEPS in
+// scripts/lib/check-suite.js, and the rule is "reachable from STEPS, runs `node --test`":
+//
+//   node -e "const{STEPS,reachable}=require('./scripts/lib/check-suite.js');
+//     const p=JSON.parse(require('fs').readFileSync('package.json','utf8')).scripts;
+//     const t=[...reachable(p,STEPS)].filter(n=>/\bnode\b[^&|]*--test\b/.test(p[n]));
+//     console.log(t.length, t.filter(n=>p[n].includes('protected-write-tripwire')).length)"
+//
+// scripts/protected-write-tripwire.cjs — a test may not write where the armed sandbox refuses.
+//
+// ── WHERE IT ACTUALLY BINDS, counted rather than assumed (2026-08-24) ────────────────────────
+//   • THE GATE — .claude/workflows/qa.js names `npm run check` as the oracle that BLOCKs before
+//     any panel agent is dispatched, and `test:protected-write` is first in that chain. This is
+//     the environment the defect lived in, so this is the one that matters.
+//   • CI — .github/workflows/ci.yml invokes 16 of the 26 by name via `npm run`, and those carry
+//     the preload. Re-counted 2026-08-24 when the suite moved from an `&&` chain to
+//     scripts/run-checks.mjs; the previous reading of 14 of 25 was taken before `test:pre-tool-use`
+//     was wired into ci.yml the same day, and before `test:check-suite` existed.
+//   • NOT ci.yml for `test:check-suite`, the suite's own drift guard — adding it edits a workflow
+//     file, which is `irreversible` tier. Same known gap, same reason, as the two below.
+//   • NOT ci.yml's "Gate logic tests" step, which runs
+//     `node --test .claude/workflows/lib/gate-logic.test.mjs` DIRECTLY rather than through
+//     `test:gate`. That script carries the preload and CI does not use it, so that one file is
+//     run unpreloaded on a runner. A KNOWN GAP, left open deliberately: closing it edits a
+//     workflow file, which takes a test fix from `full` to `irreversible` tier and puts a
+//     founder sign-off in front of it. Queued for the irreversible follow-up.
+//   • NOT CI for this file's own assertions either — `test:protected-write` is not named in
+//     ci.yml, so the wiring check runs in the gate and locally, not on a runner.
+//
+// WHAT WENT WRONG, AND WHY A COMMENT WOULD NOT HAVE CAUGHT IT. Two tests in `npm run check`
+// built their fixtures inside .claude/agents/ and .claude/hooks/. Arming the OS sandbox (#94)
+// made those directories write-denied in the session the binding QA gate runs in — arming it
+// protects them precisely BECAUSE writing there disarms the harness. So `npm run check`, which
+// is the gate's own oracle, became unpassable in the only place it runs, and the gate BLOCKed
+// on its oracle for every diff before any reviewer was dispatched. CI stayed green throughout,
+// because CI runs unsandboxed, and nothing noticed for a day: no PR had ever completed a gate
+// run. Neither test was wrong and neither change was wrong. Two correct requirements collided,
+// and no mechanism was watching the seam.
+//
+// This preload turns the next collision into a red test, in the gate's own oracle, with the
+// reason attached.
+//
+// ── THE RULE ────────────────────────────────────────────────────────────────────────────────
+// A write is refused when it lands inside a directory this repo's own harness lives in:
+//
+//     <repo>/.claude/agents      <repo>/.claude/commands     <repo>/.claude/hooks
+//     <repo>/.claude/skills      <repo>/.claude/workflows    <repo>/.claude/settings.json
+//     <repo>/design/tokens       ~/.claude
+//
+// That is ONE armed session's deny set, measured 2026-08-24 at the SESSION ROOT under
+// `sandbox.enabled: true` + `failIfUnavailable: true`. It is not a reading of the sandbox's own
+// rule, which belongs to the binary and is not exposed to a process. Everything else under
+// .claude/ was writable in the same probe — memory/, playbooks/, lenses.yml, review-lenses.yml,
+// qa-tier-floor.yml, mcp-policy.json — as was the repo root.
+//
+// AND THE DENY SET IS PER SESSION ROOT, WHICH IS THE TRAP. The same probe run inside a NESTED
+// worktree reported .claude/hooks, .claude/skills and .claude/workflows as WRITABLE, because the
+// deny entries name the open project's paths literally. A test can therefore pass in a child
+// worktree and EPERM at the session root, which is where the gate runs — that is how the
+// .claude/hooks half of this defect was nearly scoped out as "not reproducing". This list is a
+// floor over both locations rather than a mirror of either, which is also why it is stated as a
+// floor in limit 1 and not as the sandbox's answer.
+//
+// Fixture writes elsewhere in the tree are left alone — scripts/lenses.test.mjs writes
+// .lens-fixture-*.yml at the repo root and is not doing anything wrong. The paths are anchored
+// at the REAL repo root, so a test that copies the tree into os.tmpdir() and edits
+// .claude/hooks/ THERE is unaffected. That is the seam this guard is asking for.
+//
+// ── WHAT IT CATCHES ─────────────────────────────────────────────────────────────────────────
+// A synchronous `fs` mutation, from the preloaded process or any Node child that inherits the
+// flag, that resolves into one of those paths. It catches it however the path was spelled — a
+// constant, a join, a variable — because it checks the resolved argument at call time.
+//
+// ── WHAT IT DOES NOT CATCH, STATED SO NOBODY OVER-READS IT ──────────────────────────────────
+//   1. It is a HARDCODED list, not a reading of the sandbox. The runtime's real deny set is
+//      not exposed to a process, and settings.json does not hold these entries — they are the
+//      binary's own protections. If the runtime widens its deny set, this list will not follow;
+//      treat it as a floor.
+//   2. Only SYNCHRONOUS fs mutators — the list below. A callback or promise write
+//      (fs.writeFile, fs.promises.writeFile, fs.createWriteStream) passes unnoticed.
+//      scripts/protected-write.test.mjs asserts textually that no guarded test file reaches for
+//      one; that assertion is a grep and indirection defeats it.
+//   3. Non-Node children. A test that shells out to `sed` or a shell redirect writes freely.
+//   4. Only the npm scripts that preload it — every `node --test` step of `npm run check`. A
+//      non-test step of that chain is unguarded. beeond's ci.yml has no direct `node --test`
+//      invocation, and scripts/check-suite.test.mjs refuses one, so there is no unguarded test
+//      step on the runner today; that is a property to keep, not a permanent fact.
+//   5. It says nothing about reads, and nothing about the credential `denyRead` paths.
+
+'use strict';
+
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+
+const REPO = path.resolve(__dirname, '..');
+
+/**
+ * The paths whose CONTENTS are the harness, or are the trust boundary of a generated artifact.
+ *
+ * REPOINTED FOR beeond 2026-08-31. The `.claude/**` entries are carried over unchanged and every
+ * one of them exists here — they are the directories a probe found write-denied at agentvibe's
+ * session root on 2026-08-24, and the deny set belongs to the runtime rather than to a repository,
+ * so it does not change when the repository does. `design/tokens` is beeond's own addition and is
+ * the only entry that is not agentvibe's.
+ *
+ * WHY design/tokens IS HERE, AND WHY IT IS THE DIRECTORY RATHER THAN JUST seeds.json.
+ * `.claude/qa-tier-floor.yml` floors `design/tokens/seeds.json` at `full` and calls it "THE TRUST
+ * BOUNDARY of the token pipeline", because every generated artifact descends from that one
+ * hand-authored file and `build-tokens --check` cannot see a poisoned seed by construction — it
+ * compares the committed output against a fresh generation from those same seeds, so poisoned
+ * seeds yield a poisoned file the comparison calls correct. A test that wrote a fixture into
+ * seeds.json would be forging that boundary.
+ *
+ * The GENERATED files beside it are protected for a second, independent reason: design/tokens/
+ * tokens.json is the oracle scripts/design-probe.mjs measures rendered pages against, and
+ * tokens.ts is imported by the app build. A test that rewrote either would not make a check fail —
+ * it would make the probe PASS against an oracle the test had authored, and `check:tokens` would
+ * then report drift that looks like a designer's edit. Both failure modes are silent, which is the
+ * property that puts a path on this list.
+ *
+ * IT COSTS NOTHING TODAY AND THE COST IS WORTH NAMING ANYWAY: `npm run build:tokens` regenerates
+ * files inside this directory and is NOT affected, because it carries no `--require` preload — the
+ * tripwire only loads inside `node --test` steps. What WOULD be refused is a preloaded test that
+ * invokes the generator in-process against the real output directory. No test does that today
+ * (scripts/build-tokens.test.mjs writes every fixture into os.tmpdir()), and if one ever needs to,
+ * the remedy is a temp root, not an entry removed from here.
+ */
+const PROTECTED = [
+  path.join(REPO, '.claude', 'agents'),
+  path.join(REPO, '.claude', 'commands'),
+  path.join(REPO, '.claude', 'hooks'),
+  path.join(REPO, '.claude', 'skills'),
+  path.join(REPO, '.claude', 'workflows'),
+  path.join(REPO, '.claude', 'settings.json'),
+  path.join(REPO, 'design', 'tokens'),
+];
+if (os.homedir()) PROTECTED.push(path.join(os.homedir(), '.claude'));
+
+const isProtected = (p) => PROTECTED.some((r) => p === r || p.startsWith(r + path.sep));
+
+function targetPath(arg) {
+  if (typeof arg === 'string') return path.resolve(arg);
+  if (Buffer.isBuffer(arg)) return path.resolve(arg.toString());
+  if (arg instanceof URL && arg.protocol === 'file:') return path.resolve(arg.pathname);
+  return null; // a file descriptor, or something this guard cannot read — see limit 2
+}
+
+function refuse(fn, resolved) {
+  const err = new Error(
+    `[protected-write-tripwire] BLOCKED ${fn} -> ${resolved}\n` +
+    `A test may not write inside the harness it is testing. The armed OS sandbox denies this ` +
+    `path in the session the binding QA gate runs in, so a fixture written here makes ` +
+    `\`npm run check\` — the gate's own oracle — unpassable exactly where the gate needs it, ` +
+    `while CI stays green because CI runs unsandboxed. Build the fixture in a throwaway root ` +
+    `under os.tmpdir() and point the tool under test at THAT root: schema-lint.js resolves its ` +
+    `paths from process.cwd(), and check-registration.mjs from its own location, so a copy of ` +
+    `either inside a temp tree checks the temp tree. scripts/skill-clamp.test.mjs and ` +
+    `scripts/check-registration.test.mjs both do this and are worth reading first.`
+  );
+  err.code = 'EPROTECTEDWRITE';
+  throw err;
+}
+
+/** name → indices of the arguments that name a write target. */
+const MUTATORS = {
+  appendFileSync: [0],
+  chmodSync: [0],
+  chownSync: [0],
+  copyFileSync: [1],
+  cpSync: [1],
+  linkSync: [1],
+  mkdirSync: [0],
+  mkdtempSync: [0],
+  renameSync: [0, 1],
+  rmSync: [0],
+  rmdirSync: [0],
+  symlinkSync: [1],
+  truncateSync: [0],
+  unlinkSync: [0],
+  utimesSync: [0],
+  writeFileSync: [0],
+};
+
+for (const [name, indices] of Object.entries(MUTATORS)) {
+  const original = fs[name];
+  if (typeof original !== 'function') continue;
+  fs[name] = function guarded(...args) {
+    for (const i of indices) {
+      const resolved = targetPath(args[i]);
+      if (resolved !== null && isProtected(resolved)) refuse(name, resolved);
+    }
+    return original.apply(this, args);
+  };
+}
+
+// openSync is a mutator only when the flags ask to write. Reading must stay free, or a guarded
+// test could not read the roster it is asserting about.
+const openSync = fs.openSync;
+fs.openSync = function guardedOpen(file, flags = 'r', ...rest) {
+  const writes = typeof flags === 'number'
+    ? (flags & (fs.constants.O_WRONLY | fs.constants.O_RDWR | fs.constants.O_CREAT)) !== 0
+    : /[wa+]/.test(String(flags));
+  if (writes) {
+    const resolved = targetPath(file);
+    if (resolved !== null && isProtected(resolved)) refuse('openSync', resolved);
+  }
+  return openSync.call(this, file, flags, ...rest);
+};
+
+// Exported for scripts/protected-write.test.mjs, which makes the tripwire actually trip rather
+// than trusting that a guard nobody has watched fire is a guard.
+module.exports = { REPO, PROTECTED, isProtected, MUTATORS };

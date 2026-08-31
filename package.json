@@ -2,16 +2,27 @@
   "name": "beeond",
   "version": "0.1.0",
   "private": true,
-  "description": "Beeond — a done-for-you marketing and growth service run by a coordinated swarm of AI agents with human oversight. Monorepo: marketing site (apps/web) + the agent system (.claude/).",
+  "description": "Beeond \u2014 a done-for-you marketing and growth service run by a coordinated swarm of AI agents with human oversight. Monorepo: marketing site (apps/web) + the agent system (.claude/).",
   "scripts": {
     "build:skills-manifest": "node scripts/build-skills-manifest.mjs",
     "build:tokens": "node scripts/build-tokens.mjs",
+    "check": "node scripts/run-checks.mjs",
+    "check:ci-chains": "node scripts/check-ci-chains.mjs",
     "check:skills-manifest": "node scripts/build-skills-manifest.mjs --check",
+    "check:tokens": "node scripts/build-tokens.mjs --check",
+    "classify": "node scripts/classify.mjs",
     "design-probe": "node scripts/design-probe.mjs",
-    "test:build-tokens": "node --test scripts/build-tokens.test.mjs",
-    "test:design-lib": "node --test scripts/design-lib.test.mjs",
-    "test:design-probe": "node --test scripts/design-probe.test.mjs",
-    "test:extract-reference": "node --test scripts/extract-reference.test.mjs"
+    "test:build-tokens": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/build-tokens.test.mjs",
+    "test:check-suite": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/check-suite.test.mjs",
+    "test:claims": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/claims.test.mjs",
+    "test:classifier": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/classifier.test.mjs",
+    "test:design-lib": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/design-lib.test.mjs",
+    "test:design-probe": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/design-probe.test.mjs",
+    "test:extract-reference": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/extract-reference.test.mjs",
+    "test:ledger": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/ledger.test.mjs",
+    "test:merge-gate": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/merge-gate.test.mjs",
+    "test:protected-write": "node --require ./scripts/protected-write-tripwire.cjs --test scripts/protected-write.test.mjs",
+    "verdict": "node scripts/verdict.mjs"
   },
   "engines": {
     "node": ">=18"

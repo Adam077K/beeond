@@ -1,0 +1,230 @@
+# Review lenses — the dimensions work is judged along.
+#
+# Distinct from .claude/lenses.yml: a domain lens says how to PRODUCE something, a review
+# lens says how to JUDGE it. The reviewer engine is read-only and loads only these.
+#
+# THE RULE THIS FILE EXISTS TO ENFORCE
+# A lens marked `independent: true` must say HOW it is independent, via `independence:`.
+# A panel of one family is one opinion wearing several hats, and reading it as agreement is
+# how a review comes back confidently wrong. That diagnosis is right and is not being
+# softened. What changed on 2026-08-15 is the cure.
+#
+#   independence: vendor      — >= 2 distinct model families, checked by independenceIssue()
+#                               in scripts/lib/claims.js, the same function that enforces it
+#                               for `risk: high` claims.
+#   independence: provenance  — ONE family is permitted, but the judge must not see the
+#                               producer's reasoning, its self-assessment, or its claims
+#                               about its own work. Independence of EVIDENCE, not of vendor.
+#
+# WHY THE SECOND MODE EXISTS. `vendor` was unsatisfiable here — no second family is
+# configured, so three lenses declared a capability that could not run, which is worse than
+# not declaring it. And the evidence says vendor identity is a weak proxy for error
+# independence: correlation persists across providers, while FRAMING dominates. In one
+# study, telling a reviewer the code was believed correct collapsed defect detection from
+# 97.2% to 3.6%; redacting that framing recovered it to 94-100%
+# (arXiv:2603.18740, accessed 2026-08-15). A judge that never saw the producer's case
+# cannot be primed by it. That is buildable today, for nothing.
+#
+# THE SECOND-FAMILY QUESTION IS CLOSED as of 2026-08-23 — it read "deferred, not closed" and cited a
+# 34-PASS-0-BLOCK record until then; both are stale. See MODEL-DIVERSITY.md. Do not re-litigate.
+# `independence: vendor` remains valid and is what a lens should declare if a second family
+# is ever provisioned.
+#
+# `blocking_severities` is deliberately narrow. Every source agent for these lenses says
+# the same thing in its own words: keep the blocking signal clean, or reviewers learn to
+# route around it.
+#
+# Lint: node .claude/hooks/schema-lint.js
+
+version: 1
+
+review_lenses:
+  - id: correctness
+    summary: "Does the code do what it claims, on the paths that matter"
+    checks:
+      - "Business logic matches the stated intent, not merely the tests"
+      - "Inputs crossing a trust boundary are validated"
+      - "Error paths return rather than continuing on bad state"
+      - "The change does not silently alter behaviour outside its stated scope"
+    blocking_severities: [p1]
+    scope: diff-only
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/code-reviewer.md@cda6de9"]
+
+  - id: security
+    summary: "Is the change exploitable"
+    checks:
+      - "No secret, key or token committed in the diff"
+      - "No user-controlled value reaching a query or a shell without escaping"
+      - "Authorisation checked at the boundary, not assumed from the caller"
+      - "New dependencies carry no known high-severity advisory"
+    blocking_severities: [critical, high]
+    scope: diff-only
+    independent: true
+    independence: provenance
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/security-engineer.md@cda6de9", "git:.claude/agents/adversary-engineer.md@cda6de9"]
+
+  - id: adversarial
+    summary: "How would a hostile user weaponise this"
+    checks:
+      - "Name a concrete attacker and what they gain"
+      - "Give reproduction steps a reader can follow"
+      - "Prefer three specific scenarios over ten vague ones"
+      - "Label a scenario low-confidence when it cannot be reproduced"
+    blocking_severities: [critical, high]
+    scope: diff-only
+    independent: true
+    independence: provenance
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/adversary-engineer.md@cda6de9"]
+
+  # CRAFT IS NARROWED TO CONFORMANCE, DELIBERATELY, AND QUALITY IS NOT IN IT.
+  #
+  # It used to block at p1 on "Spacing, type scale and colour match the written system" —
+  # against a written system that, for type, did not exist. A blocking check whose reference
+  # is missing is not strict; it is unsatisfiable, and an unsatisfiable check is one people
+  # learn to route around.
+  #
+  # The line these checks are drawn on: CONFORMANCE CAN BIND, QUALITY CAN ONLY INFORM.
+  # A design-quality judge scores about 0.543 against a five-designer panel that is itself
+  # only 0.741 self-consistent, so a PASS/BLOCK on quality is a biased coin on the merge
+  # path — reproducible and invalid, the failure mode that looks most like a working
+  # mechanism. Weak judges are excellent FINDERS and useless SCORERS: the union of a panel
+  # is worth having, the average is not. So no lens in this file carries a scoring
+  # instruction, and a design panel returns findings.
+  # Sources and figures: docs/03-system-design/DESIGN-CAPABILITY.md sections 6.1 and 15.3.
+  #
+  # What is left here is what an instrument produces the same way twice: a value is in the
+  # token file or it is not, content reflows at 320px or it does not, a target is 44px or it
+  # is 31px, a contrast figure is computed. Taste judgements moved out of the blocking set
+  # rather than into a softer wording of it.
+  #
+  # This sentence used to close on "an animation's duration equals a declared token" — an
+  # example of the deterministic kind, drawn from a check that no longer exists here. Struck
+  # in the same edit that struck the check, because a preamble advertising coverage the list
+  # below does not carry is the same rot one paragraph up.
+  #
+  # ONE COVERAGE LOSS, NAMED RATHER THAN HIDDEN: "All states are handled: empty, loading,
+  # error, populated" is gone. Nothing enumerates the states of a screen deterministically,
+  # so it was a judgement wearing a conformance label. It has no home in this file today —
+  # an advisory review lens cannot be expressed here, because the rule that asks for
+  # `blocking_severities: []` is the same rule that refuses an empty list.
+  # TWO MORE COVERAGE LOSSES, 2026-08-29 — AND THEY ARE THE DEFECT THIS BLOCK OPENS BY NAMING,
+  # committed by the change that was removing it. Two checks landed here demanding tokens that
+  # design/tokens/tokens.json does not declare, so both were unsatisfiable at p1 on the day they
+  # were written — "a blocking check whose reference is missing", exactly as above.
+  #
+  #   · SPACING, struck from "Every type, spacing and colour value ... resolves to a token". The
+  #     token file has no spacing group at all: its top-level keys are `font` and `color`, and
+  #     design/system/space.md is `status: unanswered`. Type and colour STAY and are not a
+  #     courtesy — `font.size`, `font.lineHeight` and `font.letterSpacing` all exist, twelve
+  #     `color.*` tokens exist, and scripts/design-probe.mjs measures the type half of it.
+  #   · MOTION, the whole check "Every animation's duration and easing equal a declared motion
+  #     token". There is no duration group and no easing group — read through the probe's own
+  #     indexer, `duration.present=false` and `easing.present=false` — and design/system/motion.md
+  #     is `status: unanswered`. There is nothing for an animation to equal.
+  #
+  # THE LOSS IS REAL AND NOTHING REPLACES IT: no lens in this file now asks anything about motion,
+  # and off-system spacing is ungoverned here. That is the honest state, and it is visible in one
+  # other place — the probe reports both as NOT CHECKED rather than as conforming, so silence is
+  # labelled where it is produced.
+  #
+  # EXIT CONDITION, so this is a deferral and not a deletion: restore each word the moment the
+  # token file declares its group. The question is mechanical — index tokens.json through
+  # `tokenIndex` from scripts/design-probe.mjs and read `.present` — and the `status:` line of
+  # design/system/{space,motion}.md is the same signal from the other end.
+  - id: craft
+    summary: "Does the rendered result conform to the written design system, by measurement"
+    checks:
+      - "Every type and colour value in the render resolves to a token, with no literal one-off"
+      - "Type sizes step by the increment the token file states, and neither band is interpolated from the other"
+      - "Content reflows at 320px with no horizontal scrolling, measured rather than assumed"
+      - "Interactive targets equal or exceed the stated minimum size, in CSS pixels"
+      - "Each text and background pair carries a computed contrast figure against the stated threshold"
+      - "Every finding is a measured difference from a stated rule, and never a score"
+    blocking_severities: [p1]
+    scope: rendered-output
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/design-critic.md@cda6de9"]
+
+  - id: evidence
+    summary: "Is every assertion in the change actually checked"
+    checks:
+      - "Each figure is marked verified or estimated"
+      - "Each external fact carries a source and an access date"
+      - "Each durable claim carries an expiry and a way to recheck it"
+      - "Claims about library or runtime behaviour were executed, not recalled"
+      - "Each citation resolves: the cited path and line range exist and say what the citing sentence claims"
+    blocking_severities: [p1]
+    scope: diff-only
+    independent: true
+    independence: provenance
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/researcher.md@cda6de9", "git:.claude/agents/research-lead.md@cda6de9"]
+
+  - id: voice
+    summary: "Does customer-facing copy sound like this company and like its customers"
+    checks:
+      - "At least one phrase drawn verbatim from captured customer language"
+      - "No buzzword from the banned list: leverage, unlock, seamless, robust, best-in-class, synergy"
+      - "No AI self-labelling such as AI-generated or powered by AI"
+      - "The call to action names the specific outcome, measured against what the page delivers"
+    blocking_severities: [p1]
+    scope: rendered-output
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/cmo.md@cda6de9"]
+
+  - id: accessibility
+    summary: "Can this be used by someone not using it the way you do"
+    checks:
+      - "Interactive elements reachable and operable by keyboard alone"
+      - "Text contrast measured against the stated ratio, not judged by eye"
+      - "Images and icons carry text alternatives where they carry meaning"
+      - "Small-screen rendering verified, not assumed from the wide layout"
+    blocking_severities: [p1]
+    scope: rendered-output
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/design-critic.md@cda6de9"]
+
+  - id: risk
+    summary: "What are the failure modes, ranked by probability times severity"
+    checks:
+      - "Enumerate failure modes as a numbered catalog, not a paragraph of worries"
+      - "Score each on probability and severity, and say which input drove the score"
+      - "Prescribe one mitigation per mode, owned and dated"
+      - "State the modes you considered and dismissed, with why"
+    blocking_severities: [critical]
+    scope: whole-artifact
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/war-room/persona-risk-modeler.md@ac88494"]
+
+  - id: customer-value
+    summary: "Does the person paying get value, and what would make them leave"
+    checks:
+      - "Name the archetype affected, not 'the user'"
+      - "State the churn trigger this creates or removes, in the customer's own words"
+      - "Quantify the cost of the failure to them: time, money, or trust"
+      - "Say when the answer is 'no customer is affected' rather than inventing one"
+    blocking_severities: [high]
+    scope: whole-artifact
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/war-room/persona-customer-voice.md@ac88494"]
+
+  - id: scope
+    summary: "Did the change stay inside what was asked for"
+    checks:
+      - "Files outside the stated scope are untouched"
+      - "Findings raised outside the diff are noted once, not expanded into a second review"
+      - "No placeholder, stub or TODO shipped as a deliverable"
+    blocking_severities: [p1]
+    scope: diff-only
+    independent: false
+    model_families: [anthropic]
+    sources: ["git:.claude/agents/code-reviewer.md@cda6de9", "git:.claude/agents/security-engineer.md@cda6de9"]

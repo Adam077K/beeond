@@ -1,8 +1,15 @@
-// POSTURE: ADVISORY HERE, AND SAY SO. Run by `npm run test:design-probe`, which names this file and
-// nothing else. NO CI STEP RUNS IT YET — the npm script is the whole of its wiring, so nothing fails
-// if it goes red. The paragraph replaced on the port said the opposite ("POSTURE: BLOCKS", wired
-// through `npm run test:probe-readonly` alongside scripts/probe-readonly.test.mjs), which was true
-// in the source repository and would be a false claim about enforcement in this one.
+// POSTURE: BLOCKS. Wired to .github/workflows/ci.yml as `npm run test:design-probe`, a STEP of
+// `npm run check` and a step of its own on the runner — this file alone, no shared argv.
+//
+// *Corrected for beeond 2026-08-31. This read "through `npm run test:probe-readonly`, which runs
+// this file alongside scripts/probe-readonly.test.mjs", and explained that it rides a shared step
+// because a new governed name would need a workflow counterpart and editing the step list is
+// irreversible tier — with `scripts/check-suite.test.mjs` asserting the argv still names both
+// files, so a dropped filename could not silently take its assertions with it. NONE of that
+// transfers: beeond has no probe-readonly.test.mjs and no test:probe-readonly, and the step list
+// was authored from nothing in the same change, so a name of its own was free. THE HAZARD THAT
+// ARGUMENT NAMES IS REAL AND IS SIMPLY ABSENT HERE — this file cannot lose its assertions to
+// someone else's argv, because it does not share one.*
 //
 // scripts/design-probe.test.mjs — the negative controls that make the design probe binding.
 //
@@ -571,19 +578,19 @@ test('the census sums to the 45 it is described as, and re-derives from the corp
   assert.equal(res.offenders.length, 4, 'and all four sizes are off-system against 11 12 13 14 15 20');
   assert.deepEqual(res.offenders.map((o) => o.value).sort((a, b) => a - b), [10, 11.5, 12.5, 13.5]);
 
-  // ── EXCLUSION WITH A REASON — ADDED ON THE PORT, AND A SKIP IS NOT A PASS ─────────────────────
-  // The arm below re-derives the census from mission-control/client/src, which exists ONLY in
-  // agentvibe. This repository has no such surface, so the arm is unrunnable here — and it used to
-  // say so by throwing ENOENT out of readdirSync, which reads as a broken test rather than as an
-  // absent subject. It now declines explicitly and names what is missing.
+  // ── EXCLUSION WITH A REASON, AND A SKIP IS NOT A PASS ────────────────────────────────────────
+  // The arm below re-derives the census from mission-control/client/src, which exists only in this
+  // repository. Ported into a project with no such surface it threw ENOENT out of readdirSync,
+  // which reads as a BROKEN TEST rather than as an absent subject — so it declines explicitly and
+  // names what is missing instead.
   //
   // WHAT STILL RUNS ABOVE THIS LINE, EVERYWHERE: the fixture must sum to 45 and conform() must find
   // exactly the four off-system sizes. That arithmetic is portable and is the assertion that caught
   // the 44-vs-45 drift recorded above, so it is deliberately NOT inside the guard.
   //
-  // In agentvibe the directory exists, the guard is false, and this test runs exactly as it always
-  // has. Do not satisfy this guard by creating the directory: a fabricated fixture that makes a
-  // census test pass is worse than a skip, because it re-derives a real number from invented source.
+  // Here the directory exists, the guard is false, and this test runs exactly as it always has. Do
+  // not satisfy the guard by creating the directory: a fabricated fixture that makes a census test
+  // pass is worse than a skip, because it re-derives a real number from invented source.
   const CENSUS_CORPUS = path.join(REPO_ROOT, 'mission-control', 'client', 'src');
   if (!fs.existsSync(CENSUS_CORPUS)) {
     t.skip(

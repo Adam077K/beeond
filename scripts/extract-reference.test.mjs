@@ -73,10 +73,11 @@ import {
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 // ── A FIXTURE DIRECTORY THAT DOES NOT DEPEND ON THE AMBIENT TMPDIR ──────────────────────────────
-// PORTED CHANGE. These call sites read `fs.mkdtempSync(path.join(os.tmpdir(), …))` in the source
-// repository, and that made the verdict a function of an environment variable nobody sets
-// deliberately: identical bytes scored 48/48 with TMPDIR pointing at a session scratchpad and
-// 26/48 with TMPDIR at the macOS default `/var/folders/…`, where the sandbox denies the write.
+// These call sites read `fs.mkdtempSync(path.join(os.tmpdir(), …))`, and that made the verdict a
+// function of an environment variable nobody sets deliberately: identical bytes scored 48/48 with
+// TMPDIR pointing at a session scratchpad and 26/48 with TMPDIR at the macOS default
+// `/var/folders/…`, where the armed sandbox denies the write. A suite whose result depends on
+// where the OS happens to put temp files is not measuring the code.
 //
 // The repo root is the base instead — it is writable wherever this suite is allowed to run at all.
 // Dotted so it is invisible to an ordinary listing. Cleanup is an `after()` HOOK rather than a

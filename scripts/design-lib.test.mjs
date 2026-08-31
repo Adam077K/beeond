@@ -12,9 +12,11 @@
 // the same FUNCTION OBJECT proves there is only one implementation to disagree with, on every input
 // including the ones nobody enumerated.
 //
-// Run by `npm run test:design-lib`, which names this file and nothing else. No CI step runs it yet,
-// so it blocks nothing. The paragraph replaced on the port explained why it rode `test:lenses`
-// alongside scripts/build-tokens.test.mjs in the source repository.
+// Run by `test:lenses` (see package.json), alongside `scripts/build-tokens.test.mjs`. It rides an
+// existing step rather than taking a governed `test:*` name of its own, because a new governed name
+// must appear in `scripts/lib/check-suite.js` STEPS and that file is `irreversible` tier — the same
+// trade b1ab4ce made for produce-verdict. `scripts/check-suite.test.mjs` carries the counterweight
+// assertion that buys back what the trade gives up.
 
 import assert from 'node:assert/strict';
 import test from 'node:test';

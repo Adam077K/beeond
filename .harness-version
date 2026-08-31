@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "source_repo": "agentvibe",
+  "source_sha": "c3d336ffa11e4da21ee648a87799b73cb1daa7b0",
+  "source_dirty": false,
+  "manifest_path": "fleet/MANIFEST.yml",
+  "manifest_sha256": "2f24c9818c0a3accf342f5bc2e64d746395870d1127713425a21484254174d77",
+  "waves": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "installed_at": "2026-08-31T10:27:36.720Z",
+  "installed_by": "bin/fleet-install.mjs",
+  "files": {
+    ".claude/gates.yml": {
+      "wave": 3,
+      "sha256": "4c11f577485e8a0e9bbd970b1a032efa91e96389d9e22393fd8c5790e8d839e3"
+    },
+    ".claude/hooks/schema-lint.js": {
+      "wave": 3,
+      "sha256": "e1a0dbfac832960e63f0fc276357122ad85c660b964a64399ad818691635ad65"
+    },
+    ".claude/lenses.yml": {
+      "wave": 3,
+      "sha256": "c46893050e11399fb16515606944b7785e6fa2bb5767011aa5b4507e9c2b409d"
+    },
+    ".claude/playbooks/design-pass.yml": {
+      "wave": 3,
+      "sha256": "a06f03cc64f0bcaf89c111c216f4d15b856a632425bd92e8ee4d6390eaa2feb5"
+    },
+    ".claude/playbooks/launch-landing-page.yml": {
+      "wave": 3,
+      "sha256": "6cb7f8b4ccd943b7a361b14bbc48524504f4b4ebf9835d5b6746cd557d9b3349"
+    },
+    ".claude/playbooks/price-a-product.yml": {
+      "wave": 3,
+      "sha256": "172eee7d71cfbf517c4a6a075b81449e060a0294a7148bd47338c8643d304d43"
+    },
+    ".claude/playbooks/research-question.yml": {
+      "wave": 3,
+      "sha256": "f12ef891e721553708b0697e1fd129cbb261f1cf0e4546da8966fe0d46390bac"
+    },
+    ".claude/playbooks/ship-feature.yml": {
+      "wave": 3,
+      "sha256": "53967715e21c507af0e1d3f18645c91e37b2e99a021ff53bb44f4f13aec82246"
+    },
+    ".claude/playbooks/validate-a-market.yml": {
+      "wave": 3,
+      "sha256": "a1bb1d3000262d2eb9a87cc30e3306e25090aa2e09c71d230b44643285a31245"
+    },
+    ".claude/review-lenses.yml": {
+      "wave": 3,
+      "sha256": "ff272f12521145888bd338c31cc241ea4d8d740790e8291e6f933a5545215f42"
+    },
+    "design/references/docs-stripe-com/SOURCE.yml": {
+      "wave": 1,
+      "sha256": "c379566da1f8a2e7c062c66bb82b86a7ef3afa36205a6891df4ed9ba09942c33"
+    },
+    "design/references/docs-stripe-com/measured.json": {
+      "wave": 1,
+      "sha256": "8e864c2729ec4dca28b4dd4c38a37ca7ecc9277f942f6db7fe2de7cc56a622c6"
+    },
+    "design/references/docs-stripe-com/seeds.suggestion.json": {
+      "wave": 1,
+      "sha256": "0d74d97915e4d540e000be32ddb7fb8de2cace7cc9e86d1a2d6ad6fc5da51870"
+    },
+    "design/references/linear-app/SOURCE.yml": {
+      "wave": 1,
+      "sha256": "4018902ef95714561c3c4c9f587bf16c8abfeec0f5590e7ce732e9f553c4bde5"
+    },
+    "design/references/linear-app/measured.json": {
+      "wave": 1,
+      "sha256": "99fb75b54663437adbf5afae98f44953cb1115dd138f8c4451ae4b84dc99664e"
+    },
+    "design/references/linear-app/seeds.suggestion.json": {
+      "wave": 1,
+      "sha256": "67c631af8666d4f7add3acc5296f53a79cb16b937b02e150af5a7ebe1f53e45b"
+    },
+    "design/references/play-grafana-org/SOURCE.yml": {
+      "wave": 1,
+      "sha256": "1b30250adbb2635a952f88ebff789962070703caa96fffb0917b786d1c919e50"
+    },
+    "design/references/play-grafana-org/measured.json": {
+      "wave": 1,
+      "sha256": "aabc0cb4a67f293dd9743ab7637eb43f4f50974bffb875e013c18794ef1cfe8c"
+    },
+    "design/references/play-grafana-org/seeds.suggestion.json": {
+      "wave": 1,
+      "sha256": "8022090092bfadf4cfb164ca12bf9beaee8b65f5e224d6ada2569c5164afcebd"
+    },
+    "design/references/stripe-com/SOURCE.yml": {
+      "wave": 1,
+      "sha256": "0ec96733e27c9aa5fe203de75bbb99f7daa1c6d4afc4a16343e5d04efcc4162b"
+    },
+    "design/references/stripe-com/measured.json": {
+      "wave": 1,
+      "sha256": "f8fcefa4a99f64069665748d9eef0e97a0cfc07d47a7bb7d07ed42ad888299a2"
+    },
+    "design/references/stripe-com/seeds.suggestion.json": {
+      "wave": 1,
+      "sha256": "e7a6da382ae1b209440d40c2c784ccaf4e02b054b713d62f804757500c4ce54b"
+    },
+    "design/references/vercel-com/SOURCE.yml": {
+      "wave": 1,
+      "sha256": "85275c87ec7493c6ab41d532534541b7fbe1af5ac6cbc1cc65e59c0a03880b29"
+    },
+    "design/references/vercel-com/measured.json": {
+      "wave": 1,
+      "sha256": "74354a756a23ae6089b1598ab01dbffa7bf06af61c69b626d958e128c1bf9813"
+    },
+    "design/references/vercel-com/seeds.suggestion.json": {
+      "wave": 1,
+      "sha256": "43893435bf6d96703a31cb9bac3459a40f554ef66e1d192a1c3f16d3361c49ec"
+    },
+    "design/rules/type-scale.rules.json": {
+      "wave": 1,
+      "sha256": "669a63c15296f105056e417e03058e78bb34a82064597f883ca75493927d872c"
+    },
+    "scripts/build-tokens.mjs": {
+      "wave": 1,
+      "sha256": "a97439da553e9b3feb7266bc0b25dd6206e6f4c49b317703e4ac039363bf5d77"
+    },
+    "scripts/build-tokens.test.mjs": {
+      "wave": 1,
+      "sha256": "7c6eb6b5998c3e3cc226dcd4e0f998f9bd37b9e8a6be1060ef0aba758cc6b573"
+    },
+    "scripts/check-ci-chains.mjs": {
+      "wave": 2,
+      "sha256": "87f26bf9936b317ac2c45299c65e5b354d546cccd72bdf541a6c604dffcacad4"
+    },
+    "scripts/check-gates.mjs": {
+      "wave": 3,
+      "sha256": "4217649059f9547463612941d3d36ba2c5cc1c686a1eaf0f73da44a29cd47695"
+    },
+    "scripts/check-suite.test.mjs": {
+      "wave": 2,
+      "sha256": "267a4918ee63c92f2b43ff6af45a44cbc42cbe2e27893248b51deb785196765f"
+    },
+    "scripts/claims.test.mjs": {
+      "wave": 4,
+      "sha256": "130b526bf4b00be177cd5dc6d81559400efcd887ea878bce7a815a3f4f81a008"
+    },
+    "scripts/classifier.test.mjs": {
+      "wave": 4,
+      "sha256": "fc70fd34eb56237d18d68b0ee1f7076dabaeab35c1679c773222bec476dbf49f"
+    },
+    "scripts/classify.mjs": {
+      "wave": 4,
+      "sha256": "02db1ea4050a3466ced9d5afdbafa9db21d1c2b1c7db3be25e1973fe70b92232"
+    },
+    "scripts/design-lib.mjs": {
+      "wave": 1,
+      "sha256": "0b50817f0d0b4871b94c7e01cbcd9248ee852b326ca03b5b510799c7e1689a4d"
+    },
+    "scripts/design-lib.test.mjs": {
+      "wave": 1,
+      "sha256": "8c2f846d4ece8aec04724b1b4994bf90e26ae5904e0ee713f6ad18866f0f2995"
+    },
+    "scripts/design-probe.mjs": {
+      "wave": 1,
+      "sha256": "4e8322c04c1eccb37757c7c06c2245cf3104a4b5d0459b44dd8184d889f526ae"
+    },
+    "scripts/design-probe.test.mjs": {
+      "wave": 1,
+      "sha256": "5b9170fd107d24ef6f44d4507a3886cda8aaf2ecd21add7b07f4b96ce9de4feb"
+    },
+    "scripts/extract-reference.mjs": {
+      "wave": 1,
+      "sha256": "f2ea663814182e8e962503d1fb7c76d51de7d7aec177c9e0de0b0497155125b8"
+    },
+    "scripts/extract-reference.test.mjs": {
+      "wave": 1,
+      "sha256": "0378837cf863e39ba5406b90864c252af1253b86b6db03a14acc314fdf4cb76b"
+    },
+    "scripts/gates.test.mjs": {
+      "wave": 3,
+      "sha256": "3906e7b2078bf9ff46ecbc3cef0b8960b68e599a5296c54e044f36e056a60235"
+    },
+    "scripts/ledger.mjs": {
+      "wave": 4,
+      "sha256": "c33f2df2fbbe1de058be5e568971680da1529f43bf59fbe07c3649f37573733f"
+    },
+    "scripts/ledger.test.mjs": {
+      "wave": 4,
+      "sha256": "8da9392bb44f6224a7931764a4d929d1163a0462e928ed7f65ad01a48af031d5"
+    },
+    "scripts/lenses.test.mjs": {
+      "wave": 3,
+      "sha256": "2da9dc5124292c4e91db72df35dbe56427abb29293691c205353a4de3d17964d"
+    },
+    "scripts/lib/claims.js": {
+      "wave": 4,
+      "sha256": "94be02508aa0c56bee33b2908ef0a66d346fde92d72262d93b9651f2278e73aa"
+    },
+    "scripts/lib/classifier.js": {
+      "wave": 4,
+      "sha256": "d6147beb8147a1fe9c28658938621ea975298ec7a541372d1ceea5b5bf22f562"
+    },
+    "scripts/lib/events.js": {
+      "wave": 4,
+      "sha256": "69d8af7a41313af0d8025b47dcdcba4c21281909f42abe3482d4fe5cd1069214"
+    },
+    "scripts/lib/judges.js": {
+      "wave": 4,
+      "sha256": "5907252ab3e95e0ca7446161e0266182dbaa1f37cd37131f6f7028e12072c5e0"
+    },
+    "scripts/lib/resolvers.js": {
+      "wave": 4,
+      "sha256": "0c56c8ef0e7b9280f2bfffd790c82135a2d0af5d41d92d3bfc3fd19aae1df8d7"
+    },
+    "scripts/merge-gate.test.mjs": {
+      "wave": 4,
+      "sha256": "f2b71d5567932727323e72e4727c9eb47aaf2e3cd69240c471175b7b1a0b32f9"
+    },
+    "scripts/playbooks.test.mjs": {
+      "wave": 3,
+      "sha256": "e18a2661b8b3172b1abcefc516a4c5b90a39bbdf069f9e77a3e180633351e294"
+    },
+    "scripts/protected-write-tripwire.cjs": {
+      "wave": 2,
+      "sha256": "0b1d6d1e095e231d0ae466251899b366e1b66d0fff21441d6bcc0162e745582c"
+    },
+    "scripts/protected-write.test.mjs": {
+      "wave": 2,
+      "sha256": "291e548df95f1684f3b89942ea2e9b6c5d049a599469ff5e401835ae57b0750d"
+    },
+    "scripts/run-checks.mjs": {
+      "wave": 2,
+      "sha256": "63c155334a7ccbee53a5378bd77bacb97676b63c1f1e6d3b93dc80b4c0e3627d"
+    },
+    "scripts/verdict.mjs": {
+      "wave": 4,
+      "sha256": "d81008731da2befc2c9b62affc4ed0fce3e9ee016d9d51cf7566ff3e75480ee4"
+    }
+  }
+}
