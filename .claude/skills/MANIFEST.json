@@ -1,8 +1,8 @@
 {
   "version": "3.0.0",
-  "generated": "2026-05-25",
-  "note": "Regenerated after Beamix \u2192 template scrub. 3 Beamix-only skills archived; 2 renamed (-beamix \u2192 -conventions).",
-  "totalSkills": 154,
+  "generated": "2026-08-31",
+  "note": "Generated from disk by scripts/build-skills-manifest.mjs. Every path resolves to a top-level .claude/skills/<name>/SKILL.md. Do not hand-edit — run the script.",
+  "totalSkills": 147,
   "skills": [
     {
       "name": "agent-evaluation",
@@ -30,13 +30,13 @@
     },
     {
       "name": "ai-engineer",
-      "description": "|",
+      "description": "Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations. Use PROACTIVELY for LLM features, chatbots, AI agents, or AI-powered applications.",
       "tags": [],
       "path": ".claude/skills/ai-engineer/SKILL.md"
     },
     {
       "name": "anthropic-routines",
-      "description": "How to write a Beeond Routine .md file: required frontmatter fields (schedule, routine_id_env_key, budget, trust-spec parsing), body conventions, and MCP grant patterns. Use when authoring o...",
+      "description": "How to write a Beeond Routine .md file: required frontmatter fields (schedule, routine_id_env_key, budget, trust-spec parsing), body conventions, and MCP grant patterns. Use when authoring or refining any file under .claude/agents/_routines/.",
       "tags": [
         "orchestration",
         "beeond-specific",
@@ -94,8 +94,61 @@
       "path": ".claude/skills/auth-implementation-patterns/SKILL.md"
     },
     {
+      "name": "aws-compliance-checker",
+      "description": "Automated compliance checking against CIS, PCI-DSS, HIPAA, and SOC 2 benchmarks",
+      "tags": [
+        "aws",
+        "compliance",
+        "audit",
+        "cis",
+        "pci-dss",
+        "hipaa",
+        "kiro-cli"
+      ],
+      "path": ".claude/skills/aws-compliance-checker/SKILL.md"
+    },
+    {
+      "name": "aws-iam-best-practices",
+      "description": "IAM policy review, hardening, and least privilege implementation",
+      "tags": [
+        "aws",
+        "iam",
+        "security",
+        "access-control",
+        "kiro-cli",
+        "least-privilege"
+      ],
+      "path": ".claude/skills/aws-iam-best-practices/SKILL.md"
+    },
+    {
+      "name": "aws-secrets-rotation",
+      "description": "Automate AWS secrets rotation for RDS, API keys, and credentials",
+      "tags": [
+        "aws",
+        "secrets-manager",
+        "security",
+        "automation",
+        "kiro-cli",
+        "credentials"
+      ],
+      "path": ".claude/skills/aws-secrets-rotation/SKILL.md"
+    },
+    {
+      "name": "aws-security-audit",
+      "description": "Comprehensive AWS security posture assessment using AWS CLI and security best practices",
+      "tags": [
+        "aws",
+        "security",
+        "audit",
+        "compliance",
+        "kiro-cli",
+        "security-assessment"
+      ],
+      "path": ".claude/skills/aws-security-audit/SKILL.md"
+    },
+    {
       "name": "board-meeting-protocol",
-      "description": "The Beeond 4-round board-meeting protocol: R0 framing, R1 independent verdicts, R2 cross-critique, R3 fresh-context synthesis. Includes JSON output schema per round, persona routing rules, a...",
+      "description": "The Beeond 4-round board-meeting protocol: R0 framing, R1 independent verdicts, R2 cross-critique, R3 fresh-context synthesis. Includes JSON output schema per round, persona routing rules, and Zod validation requirements. Use for any strategic or irreversible decision.",
       "tags": [
         "orchestration",
         "beeond-specific",
@@ -160,7 +213,7 @@
     },
     {
       "name": "code-reviewer",
-      "description": "Elite code review expert specializing in modern AI-powered code",
+      "description": "Elite code review expert specializing in modern AI-powered code analysis, security vulnerabilities, performance optimization, and production reliability. Masters static analysis tools, security scanning, and configuration review with 2024/2025 best practices. Use PROACTIVELY for code quality assurance.",
       "tags": [],
       "path": ".claude/skills/code-reviewer/SKILL.md"
     },
@@ -172,7 +225,7 @@
     },
     {
       "name": "competitive-landscape",
-      "description": "|",
+      "description": "This skill should be used when the user asks to \\\\\\\"analyze competitors\", \"assess competitive landscape\", \"identify differentiation\", \"evaluate market positioning\", \"apply Porter's Five Forces\", or requests competitive strategy analysis.",
       "tags": [],
       "path": ".claude/skills/competitive-landscape/SKILL.md"
     },
@@ -184,7 +237,7 @@
     },
     {
       "name": "copywriting",
-      "description": ">",
+      "description": "Use this skill when writing, rewriting, or improving marketing copy for any page (homepage, landing page, pricing, feature, product, or about page). This skill produces clear, compelling, and testable copy while enforcing alignment, honesty, and conversion best practices.",
       "tags": [],
       "path": ".claude/skills/copywriting/SKILL.md"
     },
@@ -202,7 +255,7 @@
     },
     {
       "name": "data-engineer",
-      "description": "|",
+      "description": "Build scalable data pipelines, modern data warehouses, and real-time streaming architectures. Implements Apache Spark, dbt, Airflow, and cloud-native data platforms. Use PROACTIVELY for data pipeline design, analytics infrastructure, or modern data stack implementation.",
       "tags": [],
       "path": ".claude/skills/data-engineer/SKILL.md"
     },
@@ -226,7 +279,7 @@
     },
     {
       "name": "debugger",
-      "description": "|",
+      "description": "Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.",
       "tags": [],
       "path": ".claude/skills/debugger/SKILL.md"
     },
@@ -249,12 +302,6 @@
       "path": ".claude/skills/deploy-to-vercel/SKILL.md"
     },
     {
-      "name": "deploy-to-vercel",
-      "description": "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\", or \"create a preview deployment\".",
-      "tags": [],
-      "path": ".claude/skills/deploy-to-vercel/deploy-to-vercel/SKILL.md"
-    },
-    {
       "name": "deployment-procedures",
       "description": "Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts.",
       "tags": [],
@@ -262,13 +309,13 @@
     },
     {
       "name": "design-orchestration",
-      "description": "",
+      "description": "Orchestrates design workflows by routing work through brainstorming, multi-agent review, and execution readiness in the correct order. Prevents premature implementation, skipped validation, and unreviewed high-risk designs.",
       "tags": [],
       "path": ".claude/skills/design-orchestration/SKILL.md"
     },
     {
       "name": "design-taste-frontend",
-      "description": "Senior UI/UX Engineer. Architect digital interfaces overriding default LLM biases. Enforces metric-based rules, strict component architecture, CSS hardware acceleration, and balanced design engineerin...",
+      "description": "Senior UI/UX Engineer. Architect digital interfaces overriding default LLM biases. Enforces metric-based rules, strict component architecture, CSS hardware acceleration, and balanced design engineering.",
       "tags": [],
       "path": ".claude/skills/design-taste-frontend/SKILL.md"
     },
@@ -315,7 +362,7 @@
     },
     {
       "name": "email-systems",
-      "description": "Email has the highest ROI of any marketing channel. $36 for every $1 spent. Yet most startups treat it as an afterthought - bulk blasts, no personalization, landing in spam folders.  This skill cov...",
+      "description": "Email has the highest ROI of any marketing channel. $36 for every $1 spent. Yet most startups treat it as an afterthought - bulk blasts, no personalization, landing in spam folders. This skill cov...",
       "tags": [],
       "path": ".claude/skills/email-systems/SKILL.md"
     },
@@ -327,15 +374,9 @@
     },
     {
       "name": "emilkowal-animations",
-      "description": "Emil Kowalski's animation best practices for web interfaces. Use when writing, reviewing, or implementing animations in React, CSS, or Framer Motion. Triggers on tasks involving transitions, easing, g...",
+      "description": "Emil Kowalski's animation best practices for web interfaces. Use when writing, reviewing, or implementing animations in React, CSS, or Framer Motion. Triggers on tasks involving transitions, easing, gestures, toasts, drawers, or motion.",
       "tags": [],
       "path": ".claude/skills/emilkowal-animations/SKILL.md"
-    },
-    {
-      "name": "emilkowal-animations",
-      "description": "Emil Kowalski's animation best practices for web interfaces. Use when writing, reviewing, or implementing animations in React, CSS, or Framer Motion. Triggers on tasks involving transitions, easing, g...",
-      "tags": [],
-      "path": ".claude/skills/emilkowal-animations/emilkowal-animations/SKILL.md"
     },
     {
       "name": "error-handling-patterns",
@@ -357,7 +398,7 @@
     },
     {
       "name": "form-cro",
-      "description": ">",
+      "description": "Optimize any form that is NOT signup or account registration — including lead capture, contact, demo request, application, survey, quote, and checkout forms. Use when the goal is to increase form completion rate, reduce friction, or improve lead quality without breaking compliance or downstream workflows.",
       "tags": [],
       "path": ".claude/skills/form-cro/SKILL.md"
     },
@@ -375,13 +416,13 @@
     },
     {
       "name": "frontend-developer",
-      "description": "|",
+      "description": "Build React components, implement responsive layouts, and handle client-side state management. Masters React 19, Next.js 15, and modern frontend architecture. Optimizes performance and ensures accessibility. Use PROACTIVELY when creating UI components or fixing frontend issues.",
       "tags": [],
       "path": ".claude/skills/frontend-developer/SKILL.md"
     },
     {
       "name": "full-output-enforcement",
-      "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged outp...",
+      "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output.",
       "tags": [],
       "path": ".claude/skills/full-output-enforcement/SKILL.md"
     },
@@ -405,13 +446,13 @@
     },
     {
       "name": "high-end-visual-design",
-      "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make...",
+      "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look cheap or generic.",
       "tags": [],
       "path": ".claude/skills/high-end-visual-design/SKILL.md"
     },
     {
       "name": "humanizer",
-      "description": "|",
+      "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, and excessive conjunctive phrases.",
       "tags": [],
       "path": ".claude/skills/humanizer/SKILL.md"
     },
@@ -429,7 +470,7 @@
     },
     {
       "name": "linear-mvp-recipe",
-      "description": "Beeond's locked Linear label vocabulary, sub-ticket creation pattern, and single-synthesis-comment style. Use whenever any CEO or C-suite agent interacts with Linear tickets, creates sub-tic...",
+      "description": "Beeond's locked Linear label vocabulary, sub-ticket creation pattern, and single-synthesis-comment style. Use whenever any CEO or C-suite agent interacts with Linear tickets, creates sub-tickets, or posts comments.",
       "tags": [
         "workflow",
         "beeond-specific",
@@ -452,7 +493,7 @@
     },
     {
       "name": "market-sizing-analysis",
-      "description": "|",
+      "description": "This skill should be used when the user asks to \\\\\\\"calculate TAM\\\\\\\", \"determine SAM\", \"estimate SOM\", \"size the market\", \"calculate market opportunity\", \"what's the total addressable market\", or requests market sizing analysis for a startup or business opportunity.",
       "tags": [],
       "path": ".claude/skills/market-sizing-analysis/SKILL.md"
     },
@@ -470,7 +511,7 @@
     },
     {
       "name": "mem0-patterns",
-      "description": "Mem0 episodic memory write/read patterns for Beeond agents: mandatory metadata fields, retry policy, and fallback to Anthropic Memory Tool after 3 failures. Use when any C-suite or lead agen...",
+      "description": "Mem0 episodic memory write/read patterns for Beeond agents: mandatory metadata fields, retry policy, and fallback to Anthropic Memory Tool after 3 failures. Use when any C-suite or lead agent reads or writes episodic memory during pre-flight or post-task.",
       "tags": [
         "memory",
         "beeond-specific",
@@ -487,7 +528,7 @@
     },
     {
       "name": "multi-agent-brainstorming",
-      "description": "",
+      "description": "Use this skill when a design or idea requires higher confidence, risk reduction, or formal review. This skill orchestrates a structured, sequential multi-agent design review where each agent has a strict, non-overlapping role. It prevents blind spots, false confidence, and premature convergence.",
       "tags": [],
       "path": ".claude/skills/multi-agent-brainstorming/SKILL.md"
     },
@@ -529,7 +570,7 @@
     },
     {
       "name": "paddle-integration",
-      "description": "Beeond billing patterns using Paddle: webhook signature verification, checkout session creation, customer portal URL generation, price ID conventions, and subscription lifecycle. Stripe is n...",
+      "description": "Beeond billing patterns using Paddle: webhook signature verification, checkout session creation, customer portal URL generation, price ID conventions, and subscription lifecycle. Stripe is not used — Paddle is the only payment provider.",
       "tags": [
         "billing",
         "beeond-specific",
@@ -540,7 +581,7 @@
     },
     {
       "name": "page-cro",
-      "description": ">",
+      "description": "Analyze and optimize individual pages for conversion performance. Use when the user wants to improve conversion rates, diagnose why a page is underperforming, or increase the effectiveness of marketing pages (homepage, landing pages, pricing, feature pages, or blog posts). This skill focuses on diagnosis, prioritization, and testable recommendations— not blind optimization.",
       "tags": [],
       "path": ".claude/skills/page-cro/SKILL.md"
     },
@@ -552,13 +593,13 @@
     },
     {
       "name": "payment-integration",
-      "description": "|",
+      "description": "Integrate Stripe, PayPal, and payment processors. Handles checkout flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when implementing payments, billing, or subscription features.",
       "tags": [],
       "path": ".claude/skills/payment-integration/SKILL.md"
     },
     {
       "name": "pgvector-rag-conventions",
-      "description": "Querying Beeond's five RAG corpora stored in Supabase pgvector: DECISIONS, sessions, codebase, brain, and skills. Use when any CEO, CTO, or Research-Lead agent needs semantic search over int...",
+      "description": "Querying Beeond's five RAG corpora stored in Supabase pgvector: DECISIONS, sessions, codebase, brain, and skills. Use when any CEO, CTO, or Research-Lead agent needs semantic search over internal knowledge during pre-flight or research.",
       "tags": [
         "rag",
         "beeond-specific",
@@ -570,7 +611,7 @@
     },
     {
       "name": "pitch-deck-visuals",
-      "description": "Investor pitch deck structure with slide-by-slide framework, visual design rules, and data presentation. Covers the 12-slide framework, chart types, team slides, and common investor turn-offs. Use for...",
+      "description": "Investor pitch deck structure with slide-by-slide framework, visual design rules, and data presentation. Covers the 12-slide framework, chart types, team slides, and common investor turn-offs. Use for: fundraising decks, investor presentations, startup pitch, demo day, grant proposals. Triggers: pitch deck, investor deck, startup pitch, fundraising deck, demo day, pitch presentation, investor presentation, seed deck, series a deck, pitch slides, startup presentation, vc pitch, investor meeting",
       "tags": [],
       "path": ".claude/skills/pitch-deck-visuals/SKILL.md"
     },
@@ -624,7 +665,7 @@
     },
     {
       "name": "qa-gate-protocol",
-      "description": "Beeond's 4-tier QA gate: Trivial/Lite/Full/Irreversible classification, reviewer assignment, evaluator-optimizer pattern, multi-judge setup, Codex CLI graceful degradation, and bypass rules....",
+      "description": "Beeond's 4-tier QA gate: Trivial/Lite/Full/Irreversible classification, reviewer assignment, evaluator-optimizer pattern, multi-judge setup, Codex CLI graceful degradation, and bypass rules. Use when QA-Lead is classifying a PR or CTO is routing a task to the correct tier.",
       "tags": [
         "quality",
         "beeond-specific",
@@ -665,7 +706,7 @@
     },
     {
       "name": "redesign-existing-projects",
-      "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS ...",
+      "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS.",
       "tags": [],
       "path": ".claude/skills/redesign-existing-projects/SKILL.md"
     },
@@ -683,7 +724,7 @@
     },
     {
       "name": "search-specialist",
-      "description": "Expert web researcher using advanced search techniques and",
+      "description": "Expert web researcher using advanced search techniques and synthesis. Masters search operators, result filtering, and multi-source verification. Handles competitive analysis and fact-checking. Use PROACTIVELY for deep research, information gathering, or trend analysis.",
       "tags": [],
       "path": ".claude/skills/search-specialist/SKILL.md"
     },
@@ -692,59 +733,6 @@
       "description": "Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive credentials, rotating secrets, or securing CI/CD ...",
       "tags": [],
       "path": ".claude/skills/secrets-management/SKILL.md"
-    },
-    {
-      "name": "aws-compliance-checker",
-      "description": "Automated compliance checking against CIS, PCI-DSS, HIPAA, and SOC 2 benchmarks",
-      "tags": [
-        "aws",
-        "compliance",
-        "audit",
-        "cis",
-        "pci-dss",
-        "hipaa",
-        "kiro-cli"
-      ],
-      "path": ".claude/skills/security/aws-compliance-checker/SKILL.md"
-    },
-    {
-      "name": "aws-iam-best-practices",
-      "description": "IAM policy review, hardening, and least privilege implementation",
-      "tags": [
-        "aws",
-        "iam",
-        "security",
-        "access-control",
-        "kiro-cli",
-        "least-privilege"
-      ],
-      "path": ".claude/skills/security/aws-iam-best-practices/SKILL.md"
-    },
-    {
-      "name": "aws-secrets-rotation",
-      "description": "Automate AWS secrets rotation for RDS, API keys, and credentials",
-      "tags": [
-        "aws",
-        "secrets-manager",
-        "security",
-        "automation",
-        "kiro-cli",
-        "credentials"
-      ],
-      "path": ".claude/skills/security/aws-secrets-rotation/SKILL.md"
-    },
-    {
-      "name": "aws-security-audit",
-      "description": "Comprehensive AWS security posture assessment using AWS CLI and security best practices",
-      "tags": [
-        "aws",
-        "security",
-        "audit",
-        "compliance",
-        "kiro-cli",
-        "security-assessment"
-      ],
-      "path": ".claude/skills/security/aws-security-audit/SKILL.md"
     },
     {
       "name": "security-audit",
@@ -766,7 +754,7 @@
     },
     {
       "name": "seo-content-writer",
-      "description": "|",
+      "description": "Writes SEO-optimized content based on provided keywords and topic briefs. Creates engaging, comprehensive content following best practices. Use PROACTIVELY for content creation tasks.",
       "tags": [],
       "path": ".claude/skills/seo-content-writer/SKILL.md"
     },
@@ -790,19 +778,19 @@
     },
     {
       "name": "startup-financial-modeling",
-      "description": "|",
+      "description": "This skill should be used when the user asks to \\\\\\\"create financial projections\", \"build a financial model\", \"forecast revenue\", \"calculate burn rate\", \"estimate runway\", \"model cash flow\", or requests 3-5 year financial planning for a startup.",
       "tags": [],
       "path": ".claude/skills/startup-financial-modeling/SKILL.md"
     },
     {
       "name": "startup-metrics-framework",
-      "description": "|",
+      "description": "This skill should be used when the user asks about \\\\\\\"key startup metrics\", \"SaaS metrics\", \"CAC and LTV\", \"unit economics\", \"burn multiple\", \"rule of 40\", \"marketplace metrics\", or requests guidance on tracking and optimizing business performance metrics.",
       "tags": [],
       "path": ".claude/skills/startup-metrics-framework/SKILL.md"
     },
     {
       "name": "stitch-design-taste",
-      "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards \u2014 strict typography, calibrated color, asymmetric layouts, perp...",
+      "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
       "tags": [],
       "path": ".claude/skills/stitch-design-taste/SKILL.md"
     },
@@ -814,7 +802,7 @@
     },
     {
       "name": "supabase-rls-conventions",
-      "description": "Beeond RLS conventions: per-user row-level security, service-role bypass patterns for Inngest jobs, war-room table deny-all policies, and audit_log write permissions. Use when writing or rev...",
+      "description": "Beeond RLS conventions: per-user row-level security, service-role bypass patterns for Inngest jobs, war-room table deny-all policies, and audit_log write permissions. Use when writing or reviewing any Supabase migration or RLS policy in this project.",
       "tags": [
         "database",
         "beeond-specific",
@@ -843,7 +831,7 @@
     },
     {
       "name": "tdd-orchestrator",
-      "description": "|",
+      "description": "Master TDD orchestrator specializing in red-green-refactor discipline, multi-agent workflow coordination, and comprehensive test-driven development practices. Enforces TDD best practices across teams with AI-assisted testing and modern frameworks. Use PROACTIVELY for TDD implementation and governance.",
       "tags": [],
       "path": ".claude/skills/tdd-orchestrator/SKILL.md"
     },
@@ -867,7 +855,7 @@
     },
     {
       "name": "trust-spec-contracts",
-      "description": "The Beeond R3.x security model for agent-to-agent trust: HMAC signature verification, nonce replay prevention, sentinel-bracketed spec parsing, and issuer allowlists. Use when building or au...",
+      "description": "The Beeond R3.x security model for agent-to-agent trust: HMAC signature verification, nonce replay prevention, sentinel-bracketed spec parsing, and issuer allowlists. Use when building or auditing the Cloudflare bridge, writing trust spec validation code, or authoring agents that accept inbound specs.",
       "tags": [
         "security",
         "beeond-specific",
@@ -878,7 +866,7 @@
     },
     {
       "name": "ui-visual-validator",
-      "description": "|",
+      "description": "Rigorous visual validation expert specializing in UI testing, design system compliance, and accessibility verification. Masters screenshot analysis, visual regression testing, and component validation. Use PROACTIVELY to verify UI modifications have achieved their intended goals through comprehensive visual analysis.",
       "tags": [],
       "path": ".claude/skills/ui-visual-validator/SKILL.md"
     },
@@ -902,27 +890,15 @@
     },
     {
       "name": "vercel-cli-with-tokens",
-      "description": "Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login \u2014 e.g. \"deploy to vercel\", \"set up vercel\", \"a...",
+      "description": "Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login — e.g. \"deploy to vercel\", \"set up vercel\", \"add environment variables to vercel\".",
       "tags": [],
       "path": ".claude/skills/vercel-cli-with-tokens/SKILL.md"
     },
     {
-      "name": "vercel-cli-with-tokens",
-      "description": "Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login \u2014 e.g. \"deploy to vercel\", \"set up vercel\", \"a...",
-      "tags": [],
-      "path": ".claude/skills/vercel-cli-with-tokens/vercel-cli-with-tokens/SKILL.md"
-    },
-    {
       "name": "vercel-composition-patterns",
-      "description": "",
+      "description": "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes.",
       "tags": [],
       "path": ".claude/skills/vercel-composition-patterns/SKILL.md"
-    },
-    {
-      "name": "vercel-composition-patterns",
-      "description": "",
-      "tags": [],
-      "path": ".claude/skills/vercel-composition-patterns/vercel-composition-patterns/SKILL.md"
     },
     {
       "name": "vercel-deployment",
@@ -932,43 +908,25 @@
     },
     {
       "name": "vercel-react-best-practices",
-      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patter...",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
       "tags": [],
       "path": ".claude/skills/vercel-react-best-practices/SKILL.md"
     },
     {
-      "name": "vercel-react-best-practices",
-      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patter...",
-      "tags": [],
-      "path": ".claude/skills/vercel-react-best-practices/vercel-react-best-practices/SKILL.md"
-    },
-    {
       "name": "vercel-react-native-skills",
-      "description": "",
+      "description": "React Native and Expo best practices for building performant mobile apps. Use when building React Native components, optimizing list performance, implementing animations, or working with native modules. Triggers on tasks involving React Native, Expo, mobile performance, or native platform APIs.",
       "tags": [],
       "path": ".claude/skills/vercel-react-native-skills/SKILL.md"
     },
     {
-      "name": "vercel-react-native-skills",
-      "description": "",
-      "tags": [],
-      "path": ".claude/skills/vercel-react-native-skills/vercel-react-native-skills/SKILL.md"
-    },
-    {
       "name": "vercel-react-view-transitions",
-      "description": "Guide for implementing smooth, native-feeling animations using React's View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS view transition pseudo-elements). Use this skill ...",
+      "description": "Guide for implementing smooth, native-feeling animations using React's View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS view transition pseudo-elements). Use this skill whenever the user wants to add page transitions, animate route changes, create shared element animations, animate enter/exit of components, animate list reorder, implement directional (forward/back) navigation animations, or integrate view transitions in Next.js. Also use when the user mentions view transitions, `startViewTransition`, `ViewTransition`, transition types, or asks about animating between UI states in React without third-party animation libraries.",
       "tags": [],
       "path": ".claude/skills/vercel-react-view-transitions/SKILL.md"
     },
     {
-      "name": "vercel-react-view-transitions",
-      "description": "Guide for implementing smooth, native-feeling animations using React's View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS view transition pseudo-elements). Use this skill ...",
-      "tags": [],
-      "path": ".claude/skills/vercel-react-view-transitions/vercel-react-view-transitions/SKILL.md"
-    },
-    {
       "name": "war-room-orchestration",
-      "description": "How CEO and C-suite dispatch work through the Beeond war-room trust-spec system: Linear label routing, Cloudflare bridge, HMAC-signed specs, fan-out/fan-in via Inngest, and audit_log enforce...",
+      "description": "How CEO and C-suite dispatch work through the Beeond war-room trust-spec system: Linear label routing, Cloudflare bridge, HMAC-signed specs, fan-out/fan-in via Inngest, and audit_log enforcement. Use when authoring or debugging any CEO/C-suite dispatch flow.",
       "tags": [
         "orchestration",
         "beeond-specific",
@@ -997,7 +955,7 @@
     },
     {
       "name": "worktree-isolation-pattern",
-      "description": "The exact git worktree create, detect, and clean pattern for Beeond workers: detect-or-create from main-repo-root, child worktree commands, branch naming conventions (feat/fix/chore), atomic...",
+      "description": "The exact git worktree create, detect, and clean pattern for Beeond workers: detect-or-create from main-repo-root, child worktree commands, branch naming conventions (feat/fix/chore), atomic commits, and .worktrees/ gitignore enforcement.",
       "tags": [
         "git",
         "beeond-specific",

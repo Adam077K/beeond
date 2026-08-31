@@ -1,100 +1,258 @@
-# File-path tier-floor map — QA-Lead enforcement (template)
-# Adopted from Beeond agent system; retune patterns for your repo layout.
+# THE classifier's data file for beeond. One file computes the risk tier of a path.
 #
-# Used by .github/workflows/qa-lead-pass.yml to set the MINIMUM risk tier
-# any PR touching the matching files must carry. Workers may upgrade; never downgrade.
+# CONSUMER — and be honest about where it lives today. This file is read by
+# `scripts/lib/classifier.js`, which beeond does NOT yet have; it arrives with the
+# harness port. Until it does, this file is authored and validated against agentvibe's
+# copy of that classifier and nothing in beeond executes it. It is written now because a
+# tier map authored after the risky files exist is a tier map written too late.
 #
-# Tiers (ascending severity): trivial < lite < full < irreversible
-# Match order: first match wins (most-specific patterns FIRST).
+# WHAT REPLACED WHAT. The previous version of this file was orphaned in three ways at
+# once, and each is worth naming so it is not reintroduced:
+#   1. It named `.github/workflows/qa-lead-pass.yml` as its consumer. That workflow does
+#      not exist in this repository — `git ls-files .github` returns nothing.
+#   2. Its header said "first match wins (most-specific patterns FIRST)". The classifier
+#      does not do that and never did. It takes the STRICTEST matching rule. The two
+#      agree only while the file happens to be ordered strictest-first, so the stated
+#      semantics would have become wrong the moment anyone reordered it.
+#   3. Its patterns described the source template's layout — `packages/**`, `src/**`,
+#      `**/inngest/**`, `**/lib/credit*/**`. beeond has none of those directories. A rule
+#      that matches nothing is not harmful, but a file made mostly of them describes
+#      another repository, and it left beeond's real risks (`design/tokens/seeds.json`,
+#      `.claude/workflows/qa.js`, `scripts/**`, `.mcp.json`) matching nothing at all and
+#      classifying `lite` by default.
 #
-# Update protocol: append-only; if a pattern's tier changes, add a `supersedes:`
-# entry and keep the old one commented for one release cycle.
+# Each rule answers up to four questions about a path:
+#   tier                  minimum review tier — workers may upgrade, never downgrade
+#   enforcement           block = fails the build today · shadow = logs would_block only
+#   resolvers             which claim resolvers must run over claims in that file
+#   required_claim_kinds  which kinds of claim that file must carry
+#
+# `resolvers:` AND `required_claim_kinds:` ARE DELIBERATELY ABSENT FROM EVERY RULE BELOW.
+# They name entries in the claim ledger's registries, and beeond has no ledger — no
+# `scripts/lib/claims.js`, no `resolvers.js`, no `ledger.mjs`, no `.qa/`. Declaring
+# `resolvers: [claim-command]` here today would name a mechanism that nothing in this
+# repository runs, which is the exact defect agentvibe's classifier header warns about.
+# They belong in the SAME pull request that lands the ledger, not before it. The
+# registries are closed and the classifier throws on an unknown name, so this is checked,
+# not merely intended.
+#
+# `enforcement: block` IS retained on the non-revertible group, because it records a
+# decision about beeond rather than a reference to an implementation — see ADR-001's
+# carve-out: every gate ships in shadow EXCEPT migration, deploy and harness self-edit,
+# which block from day one because `git revert` does not undo them. Note it only bites
+# files that actually carry claims, so it is inert until the ledger lands.
+#
+# Tiers (ascending): trivial < lite < full < irreversible
+#
+# MATCH SEMANTICS — as implemented, not as wished:
+#   tier                 → the STRICTEST matching rule wins (this is a floor)
+#   enforcement          → strictest of all matching rules (block beats shadow)
+#   resolvers / kinds    → union of all matching rules
+#   no match             → tier: lite
+# On a TIE the earliest matching rule supplies the reported `reason`, so a rule with a
+# sharper reason is placed above the general rule it shares a tier with.
+#
+# Globs: `**/` = zero or more path segments · `*` = within one segment, does NOT cross `/`.
+#
+# Update protocol: append-only; if a pattern's tier changes, add a `supersedes:` entry and
+# keep the old one commented for one release cycle.
 
-version: 1
-generated: 2026-05-25
+version: 2
+generated: 2026-08-31
 
 rules:
   # ──────────────── IRREVERSIBLE ────────────────
-  # Money flows, schema changes, workflow definitions, agent identity.
+  # Schema changes, workflow definitions, agent identity, the runtime's own boundaries.
   # Require: tier:full review + 2-of-3 multi-judge + Founder sign-off.
+  #
+  # The test for this group is ADR-001's, and it is not "how bad is the bug". It is
+  # whether `git revert` undoes the consequence. A migration has already replayed, a
+  # workflow has already merged something, an MCP entry has already spawned a process.
+
   - pattern: "**/supabase/migrations/**"
     tier: irreversible
-    reason: "DB schema change — destructive replay impossible"
+    enforcement: block
+    reason: "DB schema change — destructive replay impossible. beeond HAS NO DATABASE TODAY and no migration directory exists; docs/03-system-design/TECH_STACK.md is still an unfilled template, so even the vendor is undecided. The rule is here before the first migration on purpose — a tier map that gains a migration rule in the same PR as its first migration gained it one review too late"
   - pattern: "**/prisma/migrations/**"
     tier: irreversible
-    reason: "Prisma schema migrations"
+    enforcement: block
+    reason: "Prisma schema migrations — same reasoning as the Supabase rule above; which of the three vendors beeond ends up on is not yet decided, so all three are floored rather than guessed"
   - pattern: "**/drizzle/migrations/**"
     tier: irreversible
-    reason: "Drizzle schema migrations"
+    enforcement: block
+    reason: "Drizzle schema migrations — same reasoning as the two rules above"
+
   - pattern: ".github/workflows/**"
     tier: irreversible
-    reason: "CI/CD changes affect every PR; bad workflow blocks merges"
+    enforcement: block
+    reason: "Harness self-edit — CI/CD definitions decide what is allowed to merge, so a weakened workflow does not fail loudly, it PASSES things, and the merges it waved through are already on the branch by the time anyone notices. NO WORKFLOW EXISTS IN beeond YET and this rule matches nothing today; that is precisely why it is written now, because the PR that adds the first workflow is the one that most needs to be tiered by a rule it did not author"
+
   - pattern: ".claude/agents/**"
     tier: irreversible
-    reason: "Agent definitions; bad prompt cascades across every spawn"
-  - pattern: ".claude/settings.json"
-    tier: irreversible
-    reason: "Runtime permission boundary"
-  - pattern: ".claude/qa-tier-floor.yml"
-    tier: irreversible
-    reason: "This file itself — bad tier map silently downgrades reviews"
+    enforcement: block
+    reason: "Harness self-edit — agent definitions; a bad prompt cascades across every spawn and no revert un-runs the sessions it already shaped. 61 files in beeond today"
   - pattern: ".claude/hooks/**"
     tier: irreversible
-    reason: "PostToolUse / SessionStart hooks execute on every action"
+    enforcement: block
+    reason: "Harness self-edit — these execute on every action, not when someone chooses to run them. beeond's pre-tool-use.sh is the write boundary itself and stop.sh and post-edit-typecheck.sh run unattended, so an edit here changes what every future session is permitted to do"
+  - pattern: ".claude/settings.json"
+    tier: irreversible
+    enforcement: block
+    reason: "Harness self-edit — the runtime permission boundary. 20 allow rules and 6 deny rules plus four hook registrations decide what every session in this repository may do without being asked"
+  - pattern: ".mcp.json"
+    tier: irreversible
+    enforcement: block
+    reason: "Harness self-edit — the OTHER runtime permission boundary. Every entry starts a process for every session in this repository. beeond's single entry is `npx -y @playwright/mcp@latest`, and `-y` with `@latest` resolves and executes whatever version is published at session start, so the code that runs is not the code that was reviewed. A revert restores the JSON without un-executing what already ran, which is the ADR-001 test"
+  - pattern: ".claude/qa-tier-floor.yml"
+    tier: irreversible
+    enforcement: block
+    reason: "This file itself — a bad tier map does not raise an alarm, it silently downgrades every review that follows it, including the review of the change that downgraded it"
+
+  - pattern: ".claude/workflows/qa.js"
+    tier: irreversible
+    enforcement: block
+    reason: "Harness self-edit — the merge gate's own source. A change here changes what can merge, and no session may override the verdict it emits"
+  - pattern: ".claude/workflows/lib/gate-logic.mjs"
+    tier: irreversible
+    enforcement: block
+    reason: "Harness self-edit — the verdict arithmetic that turns findings into PASS or BLOCK. It is floored separately from qa.js because it is NOT imported by qa.js; the Workflow runtime gives those scripts no module import, so the two hold mirrored copies of one implementation kept in sync by hand. That RAISES the tier of an edit to either, because a change to one copy is only correct if the other changes with it"
+
   - pattern: "**/api/billing/**"
     tier: irreversible
-    reason: "Payment/billing flow — silent failure = lost revenue"
+    enforcement: block
+    reason: "Payment flow — a silent failure is lost revenue and a silent success is an unauthorised charge, neither of which a revert refunds. No such route exists in beeond yet; beeond sells a paid service, so the floor is set before the route is written rather than after"
   - pattern: "**/api/webhooks/**"
     tier: irreversible
-    reason: "External webhook handlers — idempotency-critical"
+    enforcement: block
+    reason: "External webhook handlers — idempotency-critical, and a replayed or forged delivery has already had its effect by the time the handler is reverted. Pre-emptive, as above"
   - pattern: "**/api/payments/**"
     tier: irreversible
-    reason: "Payment processing endpoints"
+    enforcement: block
+    reason: "Payment processing endpoints — pre-emptive, as above"
 
   # ──────────────── FULL ────────────────
-  # API routes, auth, agent business logic, DB queries from app code.
+  # Security-sensitive or execution-bearing surfaces. Lite + security lens + a second
+  # opinion. These are revertible; what they are not is safe to read casually.
+
+  - pattern: ".claude/workflows/**"
+    tier: full
+    enforcement: block
+    reason: "Harness self-edit — the rest of the workflow directory. qa.js and lib/gate-logic.mjs are floored irreversible above; coding.js, design.js and research.js dispatch real work and are floored here so that nothing under this directory can classify as ordinary source"
+  - pattern: ".claude/commands/**"
+    tier: full
+    reason: "Slash commands are instructions that dispatch work, not documentation about work. beeond has 13. They sit one tier below agent definitions because a command names a playbook for one invocation while an agent definition governs every spawn"
+  - pattern: ".claude/settings.json.proposed"
+    tier: full
+    reason: "The staging copy of the permission boundary. It grants nothing while it carries this name, which is why it is not irreversible — but it is promoted by a rename, and a rename is the change least visible in a diff review. Reviewing it as a proposal is the only point at which it is cheap to review"
+
   - pattern: "**/api/**"
     tier: full
-    reason: "Public API surface; security + correctness"
-  - pattern: "**/lib/agents/**"
-    tier: full
-    reason: "Agent execution + LLM routing"
-  - pattern: "**/lib/auth/**"
-    tier: full
-    reason: "Auth helpers — session + role checks"
+    reason: "Public API surface — security and correctness. apps/web has no route handlers today; the floor is set so the first one cannot land as ordinary app source"
   - pattern: "**/middleware.ts"
     tier: full
-    reason: "Every request runs through middleware"
+    reason: "Every request runs through middleware, including the ones the author was not thinking about"
   - pattern: "**/middleware.js"
     tier: full
-    reason: "Every request runs through middleware"
-  - pattern: "**/inngest/**"
+    reason: "Every request runs through middleware, including the ones the author was not thinking about"
+  - pattern: "apps/web/next.config.ts"
     tier: full
-    reason: "Background jobs — failures retry silently"
-  - pattern: "**/lib/credit*/**"
+    reason: "Build and response configuration — security headers, redirects, rewrites and remote image origins are set here, so an edit changes every response the site serves without touching a single component"
+
+  - pattern: "**/pnpm-lock.yaml"
     tier: full
-    reason: "Credit / quota logic — pricing-critical"
+    reason: "Dependency resolution decides which third-party code the build executes. A lockfile bump is arbitrary code entering the bundle and it is invisible to a review of the application source, which is where reviewer attention naturally goes"
+  - pattern: "**/package.json"
+    tier: full
+    reason: "The other half of the supply chain — the dependency ranges and the lifecycle scripts. An added `postinstall` runs on every machine that installs, including CI, before any test does"
+
+  - pattern: "design/tokens/seeds.json"
+    tier: full
+    reason: "THE TRUST BOUNDARY of the token pipeline, and its own generator says so. Every generated artifact descends from this one hand-authored file, and design/tokens/tokens.ts is imported by the app build — so a crafted colour NAME here reaches four sinks in four languages and was confirmed BY EXECUTION on 2026-08-29 to set a global from the generated object literal. What makes it a review problem rather than a lint problem is that `build-tokens --check` cannot see it by construction, because it compares the committed output against a fresh generation from these same seeds; poisoned seeds yield a poisoned file the comparison calls correct. Deliberately NOT irreversible — this is the working file of every design iteration, and a floor that demands founder sign-off on a colour tweak is a floor people learn to route around"
+  - pattern: "scripts/build-tokens.mjs"
+    tier: full
+    reason: "The generator that enforces the seeds trust boundary above — assertFamilySafe and the colour-name allow-list live here. Weakening a guard in this file does not fail; it widens what seeds.json is permitted to contain, and the drift check is blind to the result for the reason given in the seeds rule"
+  - pattern: "design/tokens/**"
+    tier: full
+    reason: "Generated token artifacts. tokens.ts is imported by the app build, so a hand-edit here is code in the bundle rather than a styling mistake. A hand-edit IS caught by `build-tokens --check` — unlike a poisoned seeds file — but beeond has no CI running that check today, so the floor does not yet have a machine standing behind it"
+
+  - pattern: "scripts/build-tokens.test.mjs"
+    tier: full
+    reason: "The tests that pin the seeds guards. Floored explicitly rather than as a side effect of `scripts/**` below, because a deleted assertion here removes a control while every remaining test stays green"
+  - pattern: "scripts/**"
+    tier: full
+    reason: "These execute on a developer's or CI machine with that machine's permissions, outside anything the app sandboxes — the token generator, the design probe, the reference extractor, and setup.sh / init-repo.sh / gsa-install-global.sh, which are installers. Note this covers the *.test.mjs files beside them as a side effect of covering the directory, which is a consequence rather than a decision anyone made"
+  - pattern: "bin/**"
+    tier: full
+    reason: "Installers and the template initialiser — install.js, install-war-room.sh and init-from-template.sh run on a machine before anyone has reviewed the tree they produce"
+  - pattern: "apps/web/scripts/**"
+    tier: full
+    reason: "Same class as `scripts/**` — art generation, CDP tracing, screenshotting and three Python image tools that run locally with the developer's permissions. Not on the request path, which is why the reasoning has to be spelled out rather than inherited from the app source rule below"
+
+  - pattern: "war-room/bin/**"
+    tier: full
+    reason: "Launcher templates that generate and run a multi-session war room. PROJECT_NAME.tmpl is seeded into every generated project, so a defect here is copied forward rather than fixed forward"
+  - pattern: "war-room/tmux/**"
+    tier: full
+    reason: "tmux configuration is a list of commands a terminal runs on attach — configuration in name, execution in effect"
+  - pattern: "war-room/dashboard/server/**"
+    tier: full
+    reason: "A local server with route handlers and collectors that read the repository and the agent sessions. It is trusted by whatever renders it"
+  - pattern: "war-room-dashboard/server/**"
+    tier: full
+    reason: "The duplicate copy of war-room/dashboard/server. Floored identically ON PURPOSE — two copies of one server, and a rule that covered only one of them would tier the same code differently depending on which path a change happened to touch"
+
+  - pattern: "docs/05-marketing/DESIGN-LANGUAGE.md"
+    tier: full
+    reason: "The locked build contract for the site. It is prose and it executes nothing, and it is still floored here because it is the document every design deliverable is judged against — an unreviewed edit does not break a build, it silently redefines what `correct` means for every review that follows, which is the same failure shape as an edit to this tier map"
 
   # ──────────────── LITE ────────────────
-  # General app code: UI components, pages, utilities.
-  - pattern: "**/components/**"
+  # Ordinary work. Reviewer plus static analysis. This is also the default for anything
+  # unmatched, so the rules here exist to LIFT files above the trivial rules at the
+  # bottom, not to lower anything.
+
+  - pattern: "apps/web/src/**"
     tier: lite
-    reason: "UI components; visual review sufficient"
-  - pattern: "apps/**/src/**"
+    reason: "Application source — the only real product code in the repository. Its API, middleware and config branches are floored higher above, so what is left is components, pages and styles"
+  - pattern: "apps/web/public/**"
     tier: lite
-    reason: "Monorepo app source — auth/api branches caught above"
-  - pattern: "src/**"
+    reason: "Static assets served verbatim to every visitor — fonts, and llms.txt, which is a published document rather than an internal note"
+  - pattern: "apps/web/tests/**"
     tier: lite
-    reason: "Root app source — auth/api branches caught above"
-  - pattern: "packages/**"
+    reason: "Test CASES. A test change that matters arrives beside the code it covers, and that code floors the whole change set higher — the classifier takes the maximum across the diff, so the tier cannot be dodged by splitting a file out. THE RESIDUAL, NAMED RATHER THAN LEFT TO BE FOUND: a test-ONLY pull request that weakens smoke.spec.ts still classifies lite. The alternative floors every snapshot update at full, which buys one case and charges for it on all the others"
+  - pattern: "**/*.spec.ts"
     tier: lite
-    reason: "Shared packages — affect all consumers"
+    reason: "Playwright specs anywhere in the tree — same reasoning and same named residual as the rule above"
+
+  - pattern: ".claude/skills/**"
+    tier: lite
+    reason: "147 skills, loaded into agent context on demand, so a poisoned SKILL.md is prompt-injection surface with a real path to an agent. Floored at lite EXPLICITLY rather than left to default, because these are markdown and the `**/*.md` rule at the bottom would otherwise class them trivial. Not higher, because skills are curated in bulk — a single tree cleanup touches hundreds of files — and the injection still has to survive a reviewer reading the diff"
+  - pattern: ".claude/memory/**"
+    tier: lite
+    reason: "DECISIONS.md, LONG-TERM.md, USER-INSIGHTS.md and the audit log are read back into agent context at session start, which makes them injection surface for the same reason skills are. They are append-heavy by design, so the floor stays at lite"
+  - pattern: "HANDOFF-CLEAN-START/**"
+    tier: lite
+    reason: "The company source of truth — the idea, the problem, the market, the product, where we stand. Lifted above the docs rules because every downstream agent decision cites it, and deliberately not higher, because what it needs is a human who knows the business reading it, not a security lens"
+  - pattern: "docs/03-system-design/**"
+    tier: lite
+    reason: "Architecture, API contracts, schema and ADRs — the contracts other work is written against. Much of it is still unfilled template today, which is itself a reason to read a change rather than wave it through"
+  - pattern: "docs/05-marketing/**"
+    tier: lite
+    reason: "The design language's supporting corpus — the reference boards, the founder's briefs and the site captures the build is matched against. DESIGN-LANGUAGE.md itself is floored at full above"
+  - pattern: ".template.env"
+    tier: lite
+    reason: "Names the project's secret surface without holding a secret. Adding a key here is how a new credential enters the project, and that is worth one deliberate read"
 
   # ──────────────── TRIVIAL ────────────────
-  # Docs, planning, brand guidelines — text only, no executable risk.
+  # Prose with no executable surface and nothing downstream binding to it.
+  # Note these are the LOWEST rules and cannot pull anything down: `.claude/agents/*.md`
+  # is markdown and stays irreversible, because the strictest matching rule wins.
+
   - pattern: "docs/**"
     tier: trivial
-    reason: "Documentation — Haiku schema-lint sufficient"
+    reason: "Documentation — the branches that other work binds to are lifted above; what remains is prose"
+  - pattern: "guides/**"
+    tier: trivial
+    reason: "Getting-started and quick-reference guides for humans"
   - pattern: "**/*.md"
     tier: trivial
     reason: "Markdown — text only"
@@ -104,6 +262,6 @@ rules:
   - pattern: "README*"
     tier: trivial
     reason: "Readme edits"
-
-# Default tier for unmatched files: lite
-# (set in qa-lead-pass.yml workflow; do not duplicate here)
+  - pattern: "LICENSE"
+    tier: trivial
+    reason: "Licence text — a change here is a founder decision expressed in a file, not a review problem"
