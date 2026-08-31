@@ -6,16 +6,23 @@
 // event that ends the exclusion are in EXCLUDED['test:protected-write'] in
 // scripts/lib/check-suite.js.
 //
-// *THE FAILURE IS AN AGENTVIBE PIN, NOT A TRIPWIRE DEFECT — beeond, 2026-08-31. This file arrived
-// byte-identical from agentvibe, and one of its controls is `assert.ok(scripts.size > 20)` over the
-// scripts reachable from STEPS. agentvibe's suite is 48 steps; beeond's is 9, so that control fires
-// on a correct suite. `files.length >= 24` in the last case does the same. Both are scale floors
-// written to catch a walk that had stopped finding anything, and against a nine-step suite a floor
-// of twenty asserts only that this is a different repository. THE THREE SUBSTANTIVE CASES — the
-// refusal, the permitted fixture write, and the preload wiring over every reachable `node --test`
-// step — are the ones to read, and they are unaffected. Re-scale the two floors to beeond's suite
-// (derive them, do not type them) and this goes green; do NOT delete them, because a walk that
-// finds nothing is exactly what they exist to catch.*
+// *RE-PORTED 2026-08-31, AND THE REASON GIVEN FOR THE EXCLUSION IS GONE. This header used to say
+// both failures were agentvibe scale pins — `scripts.size > 20` and `files.length >= 24`, calibrated
+// to a 48-step suite and firing on beeond's, which is 8 steps and not the 9 that sentence claimed.
+// Upstream fixed exactly that: both floors are DERIVED from the suite under test now. Every STEP
+// that names a script must come back from the walk, and the `--test` argument scan is cross-checked
+// against a raw token scan of the same commands. They are full strength here and no longer assert
+// only that this is a different repository. Measured before and after, same command: 4 of 6 pass,
+// then 5 of 6.
+//
+// THE ONE REMAINING FAILURE IS THE EXCLUSION ASSERTING ITSELF, and it has to be read before anyone
+// acts on that EXCLUDED entry. "this file is itself in the chain — a guard outside the chain guards
+// nothing" fails with `test:protected-write is not in STEPS`, which is TRUE, and which is precisely
+// what excluding it means. So the entry's own falsifying instruction — run it, and 6 of 6 means the
+// entry must not survive — CANNOT return 6 of 6 while the entry stands. The reachable reading is
+// 5 of 6 with the sixth naming the exclusion, and the decision it asks for is to put this name into
+// STEPS with a matching step under .github/workflows/; 6 of 6 is then the check that the decision
+// was right, not the evidence for taking it.*
 //
 // scripts/protected-write.test.mjs — proof that scripts/protected-write-tripwire.cjs fires.
 //
@@ -39,6 +46,10 @@
 //   ~ no guarded test reaches for an fs API the tripwire does not wrap — this one is a GREP.
 //     It reads the source for the async and promise write APIs. Indirection defeats it, and it
 //     says nothing about a test that shells out.
+//   ✓ BOTH FLOORS ARE DERIVED FROM THE SUITE UNDER TEST, not from this repository's size. They
+//     were `scripts.size > 20` and `files.length >= 24`, calibrated against 48 steps, and a
+//     nine-step port failed them with nothing wrong anywhere. A floor that only holds at one
+//     repository's scale reports the port as broken and says nothing about the walk.
 //   ✗ nothing here checks the runtime's real deny set. The tripwire's list is a hardcoded floor,
 //     measured 2026-08-24; if the sandbox widens, this suite will not notice.
 
@@ -221,18 +232,33 @@ test('the protected list names the directories whose contents ARE the harness', 
  * implementations of "what does the suite run" would disagree, and this file's whole job is to
  * notice when a test joins the suite unguarded.
  */
+const PKG_SCRIPTS = JSON.parse(fs.readFileSync(path.join(REPO, 'package.json'), 'utf8')).scripts
+
 function reachableScripts() {
-  const pkg = JSON.parse(fs.readFileSync(path.join(REPO, 'package.json'), 'utf8'))
-  return new Map([...reachable(pkg.scripts, STEPS)].map((name) => [name, pkg.scripts[name]]))
+  return new Map([...reachable(PKG_SCRIPTS, STEPS)].map((name) => [name, PKG_SCRIPTS[name]]))
 }
+
+/** The command shape this file guards: a step that runs `node --test`. */
+const RUNS_TESTS = /\bnode\b[^&|]*--test\b/
 
 test('every node --test step reachable from `npm run check` preloads the tripwire', () => {
   const scripts = reachableScripts()
-  assert.ok(scripts.size > 20, `only ${scripts.size} scripts reachable from check — the walk is not finding them`)
+
+  // ── THE NON-VACUITY FLOOR, DERIVED FROM THE SUITE UNDER TEST ───────────────────────────────
+  // It read `scripts.size > 20`, a number calibrated to a 48-step suite. Ported to a nine-step
+  // project it fired on a correct suite — a floor of twenty against nine asserts only that this is
+  // a different repository, which is not a property of the walk. What it was reaching for is that
+  // the walk RESOLVES: every STEP that exists as a script must come back from it. That fails the
+  // same way a walk which has stopped finding anything fails, and it holds at any suite size.
+  const declared = STEPS.filter((s) => Object.prototype.hasOwnProperty.call(PKG_SCRIPTS, s))
+  assert.ok(declared.length > 0, 'no STEP names a script in package.json — the suite is not wired at all')
+  for (const step of declared) {
+    assert.ok(scripts.has(step), `${step} is a STEP and the walk did not reach it — the walk is not finding them`)
+  }
 
   const unguarded = []
   for (const [name, cmd] of scripts) {
-    if (!/\bnode\b[^&|]*--test\b/.test(cmd)) continue
+    if (!RUNS_TESTS.test(cmd)) continue
     if (!cmd.includes(PRELOAD)) unguarded.push(name)
   }
   assert.deepEqual(
@@ -272,11 +298,37 @@ test('no guarded test reaches for an fs write API the tripwire does not wrap', (
   // than trusting the convention. Indirection (`const w = fs.writeFile`) defeats it.
   const ASYNC_WRITE = /\bfs\.(?:promises\b|createWriteStream\b|(?:writeFile|appendFile|mkdir|mkdtemp|rename|symlink|rm|rmdir|unlink|copyFile|cp|truncate|chmod)\s*\()/g
   const files = guardedTestFiles()
-  assert.ok(
-    files.includes(path.join(REPO, '.claude', 'workflows', 'lib', 'gate-logic.test.mjs')),
-    'the scan is not reaching outside scripts/ — gate-logic.test.mjs is guarded and must be read'
+
+  // ── THE SCOPE CONTROL, EXPRESSED AGAINST THE SUITE UNDER TEST ──────────────────────────────
+  // This used to name one path — .claude/workflows/lib/gate-logic.test.mjs — as proof the scan
+  // reaches outside scripts/, and `files.length >= 24` as proof it is finding anything at all.
+  // Both are facts about one repository: the path is absent from a port, and the count fires on a
+  // correct nine-step suite. The property is that the scan's SCOPE is the `--test` ARGUMENTS and
+  // not a glob of scripts/, so it is cross-checked against a raw token scan of the same commands —
+  // an extraction wrong in a different way, the same idiom the ci.yml parser is held to. A scan
+  // narrowed to a directory still drops every guarded file outside it, and now says so wherever
+  // the suite names one.
+  const rawNamed = new Set()
+  let testScripts = 0
+  for (const cmd of reachableScripts().values()) {
+    if (!RUNS_TESTS.test(cmd)) continue
+    testScripts += 1
+    for (const token of cmd.split(/\s+/)) {
+      if (/\.test\.[cm]?js$/.test(token)) rawNamed.add(path.join(REPO, token))
+    }
+  }
+  assert.ok(testScripts > 0, 'no reachable script runs `node --test` — the walk is not finding them')
+  assert.deepEqual(
+    files, [...rawNamed].sort(),
+    'the argument scan and a raw token scan disagree about which files the suite runs — a scan whose ' +
+    'scope is a directory rather than the `--test` arguments silently drops every guarded test file ' +
+    'that lives outside it'
   )
-  assert.ok(files.length >= 24, `only ${files.length} test files found — the argument scan is missing some`)
+  assert.ok(
+    files.length >= testScripts,
+    `${testScripts} reachable scripts run \`node --test\` and only ${files.length} files came back — ` +
+    'the argument scan is missing some'
+  )
 
   const offenders = []
   for (const file of files) {

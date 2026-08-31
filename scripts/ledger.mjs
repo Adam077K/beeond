@@ -4,12 +4,25 @@
 // and `ledger verify` exits 1 when a claim on an `enforcement: block` path fails or cannot be
 // resolved. But beeond registers no `check:ledger-*` script and .github/workflows/ci.yml has no
 // step for one, so nothing ever reads those codes. An exit path nobody calls enforces nothing.
+// Re-checked against the tree after the re-port of 2026-08-31: package.json holds no ledger script
+// under any spelling, and the workflow's eight `run:` steps are the eight STEPS, none of them this.
 //
 // *Corrected for beeond 2026-08-31. This read "Both run in .github/workflows/ci.yml", which was
 // true in agentvibe and false the moment this file was copied into a repository whose `.github/`
-// directory did not yet exist. Wiring it means three governed scripts, three STEPS and three
-// workflow steps — and `test:ledger`, its mutation gate, cannot load at all today (see that file's
-// own header), so wiring the checker first would put a green checker beside a gate that never ran.*
+// directory did not yet exist. beeond HAS a workflow now, and the correction stands unchanged —
+// which is the point of re-checking rather than assuming the old reason still holds. Wiring it
+// means three governed scripts, three STEPS and three workflow steps, and `test:ledger`, its
+// mutation gate, still cannot load at all (see that file's own header), so wiring the checker first
+// would put a green checker beside a gate that has never run.*
+//
+// *WHAT THE RE-PORT BROUGHT, and it is what makes this file safe to hold here at all: the exemption
+// table stopped being `const UNRESOLVABLE_CITATIONS` inside this script and became
+// .claude/unresolvable-citations.yml, written per project. beeond HAS NO SUCH FILE AND NEEDS NONE.
+// An absent list is read as zero exemptions, is never announced, and lints clean — measured after
+// the re-port: `node scripts/ledger.mjs lint` reports 0 project claims, 4 global claims, 0 prose
+// citations, "clean", exit 0. fleet/MANIFEST.yml declares that file author-required for the same
+// reason: copied, it would declare eight agentvibe ids this repository cites nowhere, and the
+// ratchet below would fire on every one.*
 //
 // scripts/ledger.mjs — the claim ledger.
 //

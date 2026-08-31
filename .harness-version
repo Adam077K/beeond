@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "source_repo": "agentvibe",
-  "source_sha": "c3d336ffa11e4da21ee648a87799b73cb1daa7b0",
+  "source_sha": "b2cabad80ecc38e80f67c6d9b2a77a944a4153f8",
   "source_dirty": false,
   "manifest_path": "fleet/MANIFEST.yml",
-  "manifest_sha256": "2f24c9818c0a3accf342f5bc2e64d746395870d1127713425a21484254174d77",
+  "manifest_sha256": "3217c2ed4f54035b021ab983361a3b1dec93912ed24ce4878026b340a952edfa",
   "waves": [
     1,
     2,
     3,
     4
   ],
-  "installed_at": "2026-08-31T10:27:36.720Z",
+  "installed_at": "2026-08-31T11:48:41.869Z",
   "installed_by": "bin/fleet-install.mjs",
   "files": {
     ".claude/gates.yml": {
@@ -136,7 +136,7 @@
     },
     "scripts/check-suite.test.mjs": {
       "wave": 2,
-      "sha256": "267a4918ee63c92f2b43ff6af45a44cbc42cbe2e27893248b51deb785196765f"
+      "sha256": "36f318cd50e7dfa61624e40fa1d57596038425c17b4bad4a4232810e05f44130"
     },
     "scripts/claims.test.mjs": {
       "wave": 4,
@@ -180,11 +180,11 @@
     },
     "scripts/ledger.mjs": {
       "wave": 4,
-      "sha256": "c33f2df2fbbe1de058be5e568971680da1529f43bf59fbe07c3649f37573733f"
+      "sha256": "746b5fa55a0cce26598936ac245e8d88d52c29ca142c5f6c56396fa6cbe7447e"
     },
     "scripts/ledger.test.mjs": {
       "wave": 4,
-      "sha256": "8da9392bb44f6224a7931764a4d929d1163a0462e928ed7f65ad01a48af031d5"
+      "sha256": "358ca943d2b4f5a2d5a2f66efcd5dfac4e51e988bd945f2892c9ea50bc74cc25"
     },
     "scripts/lenses.test.mjs": {
       "wave": 3,
@@ -224,7 +224,7 @@
     },
     "scripts/protected-write.test.mjs": {
       "wave": 2,
-      "sha256": "291e548df95f1684f3b89942ea2e9b6c5d049a599469ff5e401835ae57b0750d"
+      "sha256": "c3b94e3d2e0e2da0e9e1080436e6b3c137e17b12b2dffffff111299d8a84a02a"
     },
     "scripts/run-checks.mjs": {
       "wave": 2,
