@@ -8,7 +8,9 @@ export const meta = {
 }
 
 // args: { slices: [{ id, agentType, brief, files }], tier?: "full"|"irreversible", ref?: string }
-// agentType ∈ backend-engineer | frontend-engineer | database-engineer | ai-engineer | devops-engineer
+// agentType is `builder` for every slice. The nine engineers this line used to enumerate shared one
+// procedure and differed only in which lens verified the result — so the LENS goes in the brief, and the
+// agentType does not vary. Naming a shim here would dispatch into a 24-line pointer with no tools.
 // args may arrive as an object OR a JSON string — normalize either way.
 // NOTE: this normalizer is duplicated across all .claude/workflows/*.js — keep the 4 copies in sync (the Workflow runtime has no shared-module import).
 let A = args
@@ -51,7 +53,7 @@ const built = await parallel(SLICES.map(s => () =>
   agent(buildPrompt(s), {
     label: `build:${s.id}`,
     phase: 'Build',
-    agentType: s.agentType || 'backend-engineer',
+    agentType: s.agentType || 'builder',
     model: 'sonnet',
     isolation: 'worktree',
     schema: SLICE_SCHEMA,
@@ -71,13 +73,13 @@ const blocked = slices.filter(s => s.status === 'BLOCKED')
 const branches = slices.filter(s => s.status === 'COMPLETE').map(s => s.branch)
 
 if (blocked.length) {
-  log(`${blocked.length}/${SLICES.length} slices BLOCKED — skipping QA gate, returning for CEO re-brief.`)
+  log(`${blocked.length}/${SLICES.length} slices BLOCKED — skipping QA gate, returning for orchestrator re-brief.`)
   return { status: 'BLOCKED', slices, blocked: blocked.map(b => ({ branch: b.branch, blockers: b.blockers })), branches }
 }
 
 // ── Phase 2: chain the combined work into the binding QA gate ──
 // LIMITATION: slices build in ISOLATED worktrees, so their commits live on separate branches
-// (see each slice's `branch`). The default REF (origin/main...HEAD) reflects the CEO worktree,
+// (see each slice's `branch`). The default REF (origin/main...HEAD) reflects the orchestrator worktree,
 // NOT the slice work — so the caller MUST pass `args.ref` spanning the integrated slice diff
 // (merge the slice branches into an integration branch first, then pass that range). If the
 // default REF is in use with >0 slices, warn loudly: qa.js may otherwise review an empty/wrong diff.

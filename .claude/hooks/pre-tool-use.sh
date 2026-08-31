@@ -78,7 +78,7 @@ except Exception:
 
     # ── BLOCK: chmod +x ──────────────────────────────────────────────────────
     if printf '%s' "$command" | grep -qE 'chmod\s+\+x'; then
-      block "chmod +x is blocked. Use 'chmod 755 <file>' for explicit permissions, or ask the CEO to approve."
+      block "chmod +x is blocked. Use 'chmod 755 <file>' for explicit permissions, or ask the founder to approve."
     fi
 
     # ── BLOCK: npm install -g ────────────────────────────────────────────────
@@ -88,12 +88,12 @@ except Exception:
 
     # ── BLOCK: pip install ───────────────────────────────────────────────────
     if printf '%s' "$command" | grep -qE 'pip\s+install|pip3\s+install'; then
-      block "pip install is blocked. Python deps are not part of the Beeond stack. Confirm with the CEO if this is intentional."
+      block "pip install is blocked. Python deps are not part of the Beeond stack. Confirm with the founder if this is intentional."
     fi
 
     # ── BLOCK: wget ──────────────────────────────────────────────────────────
     if printf '%s' "$command" | grep -qE '\bwget\b'; then
-      block "wget is blocked. Use 'curl -fsSL <url>' for controlled downloads, or ask the CEO to approve wget usage."
+      block "wget is blocked. Use 'curl -fsSL <url>' for controlled downloads, or ask the founder to approve wget usage."
     fi
 
     # ── BLOCK: curl to external URLs (allow localhost / 127.0.0.1) ───────────
@@ -117,7 +117,7 @@ except Exception:
     # ── BLOCK: git push --force to main/master ────────────────────────────────
     if printf '%s' "$command" | grep -qE 'git\b.*push\b.*(--force|-f)\b.*(main|master)' || \
        printf '%s' "$command" | grep -qE 'git\b.*push\b.*(main|master).*(--force|-f)'; then
-      block "Force-push to main/master is blocked. Create a PR instead, or ask the CEO to approve the force-push explicitly."
+      block "Force-push to main/master is blocked. Create a PR instead, or ask the founder to approve the force-push explicitly."
     fi
 
     # ── BLOCK: git reset --hard (allow git reset HEAD for staging) ────────────

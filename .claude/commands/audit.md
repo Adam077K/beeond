@@ -11,7 +11,8 @@ Map the codebase and produce a structured health report.
 ## What This Does
 
 ### Step 1 — Codebase Mapping
-CEO dispatches code-reviewer (in mapper mode) to walk the repo and update `.claude/memory/CODEBASE-MAP.md`:
+`orchestrator` dispatches `reviewer` (lenses `correctness`, `scope`) to walk the repo. `reviewer` holds no
+`Write` or `Edit`, so it **returns** the map and `builder` writes `.claude/memory/CODEBASE-MAP.md`:
 - `architecture` focus: top-level structure, module boundaries, dependency graph
 - `quality` focus: conventions adherence, test coverage gaps, lint debt
 - `security` focus: auth boundaries, secret usage, dependency risk
@@ -19,14 +20,14 @@ CEO dispatches code-reviewer (in mapper mode) to walk the repo and update `.clau
 
 Output written to `.claude/memory/CODEBASE-MAP.md` (refreshes the in-repo map).
 
-### Step 2 — Code Review (Quality + Tech Debt)
-Code Reviewer scans entire codebase:
+### Step 2 — Quality + tech debt
+`reviewer` under the `correctness` lens scans the entire codebase:
 - P1 issues: broken logic, security holes, data loss risk
 - P2 issues: tech debt, duplication, missing error handling
 - P3 notes: optimization opportunities
 
-### Step 3 — Security Engineer (OWASP)
-Security Engineer runs OWASP audit on all source files:
+### Step 3 — Security (OWASP)
+`reviewer` under the `security` and `adversarial` lenses runs an OWASP audit on all source files:
 - Authentication/authorization gaps
 - Injection vulnerabilities
 - Exposed secrets or misconfigured env
@@ -34,8 +35,8 @@ Security Engineer runs OWASP audit on all source files:
 
 Both Step 2 and 3 run in parallel.
 
-### Step 4 — QA Lead Synthesizes
-QA Lead aggregates all findings into prioritized report:
+### Step 4 — Synthesis
+`orchestrator` aggregates all findings into a prioritized report:
 
 ```
 ## Codebase Audit — [Date]
@@ -64,5 +65,5 @@ QA Lead aggregates all findings into prioritized report:
 
 ## Notes
 - CODEBASE-MAP.md updated with current state after audit
-- QA Lead verdict: PASS (healthy, no critical issues) / NEEDS ATTENTION (critical issues found)
-- If Critical issues found: CEO recommends routing to `/fix` immediately
+- Verdict: PASS (healthy, no critical issues) / NEEDS ATTENTION (critical issues found)
+- If Critical issues found: `orchestrator` recommends routing to `/fix` immediately

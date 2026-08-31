@@ -9,63 +9,48 @@ Set the badge color of the current session in the Claude Code UI. Use this to vi
 
 ## Color Palette
 
-### Layer 1 — CEO
-| Instance | Color | When to use |
-|----------|-------|-------------|
-| Primary CEO | `gold` | First / only CEO session |
-| Second parallel CEO | `orange` | Second CEO in a parallel worktree |
-| Third parallel CEO | `teal` | Third CEO in a parallel worktree |
-| Fourth parallel CEO | `lime` | Fourth CEO in a parallel worktree |
+Seven engines, seven assignments. **Derive it rather than trusting this table** —
+`grep -H '^color:' .claude/agents/*.md` reads what the engines actually declare, and a shim declares none.
 
-### Layer 2 — Team Leads
-| Agent | Color |
-|-------|-------|
-| cto | `blue` |
-| research-lead | `purple` |
-| design-lead | `pink` |
-| qa-lead | `red` |
-| research-lead | `purple` |
-| design-lead | `pink` |
-| qa-lead | `red` |
-| devops-engineer | `orange` |
-| data-engineer | `teal` |
-| cpo | `green` |
-| cmo | `yellow` |
-| cbo | `emerald` |
-| cco | `amber` |
+| Engine | Color | When |
+|--------|-------|------|
+| `orchestrator` | `gold` | Primary / only orchestrator session |
+| `orchestrator` #2 | `orange` | Second orchestrator, parallel worktree |
+| `orchestrator` #3 | `teal` | Third orchestrator, parallel worktree |
+| `orchestrator` #4 | `lime` | Fourth orchestrator, parallel worktree |
+| `framer` | `green` | Framing, specs, decisions |
+| `sourcer` | `purple` | Evidence and research |
+| `builder` | `blue` | Any produced artifact |
+| `designer` | `pink` | The perception loop |
+| `reviewer` | `gray` | Judgement, out of band |
+| `reviewer-readonly` | `gray` | The binding QA gate |
 
-### Layer 3 — Workers
-| Agent | Color |
-|-------|-------|
-| backend-engineer | `blue` |
-| frontend-engineer | `pink` |
-| database-engineer | `teal` |
-| ai-engineer | `purple` |
-| security-engineer | `red` |
-| test-engineer | `yellow` |
-| code-reviewer | `gray` |
-| researcher | `purple` |
-| technical-writer | `gray` |
-| design-critic | `gray` |
-| supabase-cleaner | `teal` |
+`reviewer` and `reviewer-readonly` share `gray` deliberately: they are one procedure and differ only in
+whether a shell is present. If two of them run at once, distinguish them by `/name`, not by colour.
+
+> **Superseded 2026-08-31.** This section listed colours for a 3-layer roster — a "Layer 1 — CEO" block and
+> two tables covering `cto` `cpo` `cmo` `cbo` `cco` `qa-lead` `research-lead` `design-lead` and eleven
+> workers. Those names are shims now, and **a shim declares no colour** because it never runs. The
+> `design-lead`/`qa-lead`/`research-lead` rows were also duplicated verbatim in the old table, which is the
+> ordinary fate of a hand-maintained roster list.
 
 ## Rules
 
 1. **Every session must have a color.** Default is no color — always set it explicitly.
-2. **Parallel CEOs MUST use different colors.** This is how you tell them apart at a glance.
+2. **Parallel orchestrators MUST use different colors.** This is how you tell them apart at a glance.
 3. **Set color immediately** at the start of the identity_setup step, before any work.
-4. **Color matches role** — use the table above, don't invent new assignments.
+4. **Color matches engine** — use the table above, don't invent new assignments.
 
 ## Example
 ```
-/color gold       → CEO primary instance
-/color blue       → cto or backend-engineer
-/color red        → qa-lead or security-engineer
+/color gold       → orchestrator, primary instance
+/color blue       → builder
+/color gray       → reviewer or reviewer-readonly
 ```
 
 ## Combined with /name
 Always set both color AND name together:
 ```
 /color gold
-/name ceo-auth-redesign
+/name orchestrator-auth-redesign
 ```

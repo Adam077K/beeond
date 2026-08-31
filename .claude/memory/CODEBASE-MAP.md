@@ -1,7 +1,9 @@
 # Codebase Map
-*Key files, patterns, tech debt. Maintained by code-reviewer after each audit.*
+*Key files, patterns, tech debt. `reviewer` audits and returns findings; `builder` writes them here —
+`reviewer` holds no `Write` or `Edit`.*
 
-*Last updated 2026-08-26 (clean-start context decontamination).*
+*Last updated 2026-08-31 — the `.claude/` row and the CI row only, as part of the seven-engine swap.
+Everything below them still dates from the 2026-08-26 clean-start audit and has NOT been re-verified.*
 
 ## Shape
 
@@ -13,7 +15,7 @@ now: the agent system is the working tooling, the product has not been built.
 |---|---|---|
 | `HANDOFF-CLEAN-START/` | Source of truth, 5 files | Current |
 | `apps/web/` | Marketing site | **Empty instrumented shell** |
-| `.claude/` | Agent system — 26 agents + 25 war-room, 154 skills, 13 commands, 7 hooks, 4 workflows | Working |
+| `.claude/` | Agent system — **7 engines + 26 shims** (`.claude/agents/*.md`), 25 war-room routines + an INDEX, 10 paste seeds, 147 skills in 6 router namespaces, 13 commands, 8 hooks, 6 workflows | Working |
 | `docs/` | Foundation, competitive, offer, marketing refs, history | Mixed (see below) |
 | `war-room/`, `war-room-dashboard/` | Internal swarm visualiser, Vite/React | Scaffolded, not wired |
 | `bin/`, `scripts/`, `guides/` | Upstream starter-kit machinery | Not about Beeond — banner-flagged |
@@ -55,6 +57,6 @@ Tests: `tests/smoke.spec.ts` (placeholder). Playwright runs desktop 1440×900 + 
 | `brand-lint.mjs` allowlist is stale | Will flag the placeholder shell until repointed |
 | 17 of 25 `war-room` agents reference Linear / Supabase `audit_log` / Mem0 / Inngest / Telegram | None of that infrastructure exists — they will fail or hallucinate. Kept by founder decision. |
 | ~20 unfilled generic-SaaS template docs in `docs/` | Grep returns confident-looking scaffolding instead of nothing. Kept by founder decision. |
-| No CI | No `.github/` directory. The QA gate is enforced by agents, not a workflow. |
+| CI is thin, not absent | `.github/workflows/ci.yml` exists and runs the deterministic checks. The **verdict** half of the QA gate is still enforced by agents, not by a workflow. *This row read "No CI · No `.github/` directory" until 2026-08-31; that stopped being true when the harness waves landed and nobody edited it.* |
 | 11 skills document infrastructure that doesn't exist | `paddle-integration`, `supabase-rls-conventions`, `pgvector-rag-conventions`, `mem0-patterns`, `linear-mvp-recipe`, `anthropic-routines`, `war-room-orchestration`, `trust-spec-contracts`, `qa-gate-protocol`, `board-meeting-protocol`, `worktree-isolation-pattern` all name Beeond and assume Paddle/Supabase/Mem0/Linear are wired. None are. (An earlier audit claimed `grep -rli beeond .claude/skills` returned zero — it returns 12 including MANIFEST.json. Corrected 2026-08-26.) They are reference patterns, not instructions, so they were left in place. |
 | `war-room/dashboard/` duplicates `war-room-dashboard/` | 6 files differ; each carries the same 6.8MB PNG |

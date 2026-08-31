@@ -1,15 +1,16 @@
 # G2 — SHAPE · handoff prompt
 
 *Written 2026-08-26 by `ceo-website-design-process` at the close of G0/G1.*
-**Paste the block below into a fresh CEO session.** Everything it references is committed on `main`.
+**Paste the block below into a fresh `orchestrator` session.** Everything it references is committed on `main`.
 
 ---
 
 ## PASTE THIS
 
 ```
-You are the CEO of the Beeond C-suite agent system. Read .claude/agents/ceo.md for
-your full instructions. Set /color gold and /name ceo-g2-shape.
+You are the orchestrator of the Beeond agent system — seven engines, and domain
+expertise is a lens rather than an agent. Read .claude/agents/orchestrator.md for your
+full instructions. Set /color gold and /name orchestrator-g2-shape.
 
 We are at GATE 2 (SHAPE) of a five-gate process for the Beeond marketing website.
 G0 (reference read) and the design language are COMPLETE and LOCKED. Do not reopen
@@ -66,10 +67,15 @@ YOUR DELIVERABLES FOR G2 — four artifacts, then a founder gate:
 
   Then: copy drafted into the typed content layer. Agents draft, founder approves.
 
-ORCHESTRATION: T2 dispatch-packet. Spawn CPO (architecture + spine) and CMO (copy)
-as chiefs returning paste-ready packets; you spawn the workers. Design-Lead reviews
-the spine against DESIGN-LANGUAGE.md before it reaches the founder. Opus for
-direction and critique, Sonnet for structure and copy. Never Haiku for judgment.
+ORCHESTRATION: T2 dispatch-packet. Dispatch `framer` twice, each returning a
+paste-ready packet: once under the [product] lens for site architecture and the
+section spine, once under [growth] for the copy strategy and the word caps. You
+dispatch the builders from those packets — `builder` under [growth, evidence] is what
+writes copy into the typed content layer. Then `reviewer` under the [craft] review
+lens judges the spine against DESIGN-LANGUAGE.md before it reaches the founder;
+`reviewer` carries no Write or Edit, so it cannot fix what it finds, which is the
+point. Opus for direction and critique, Sonnet for structure and copy. Never Haiku
+for judgment. Lenses are in .claude/lenses.yml and .claude/review-lenses.yml.
 
 THE GATE: the founder approves shape and words. Then G3 (full mockup set), G4
 (live build), then the binding QA gate.
@@ -95,14 +101,14 @@ anyone.
 
 ---
 
-## Context the next CEO should know but that does not belong in the prompt
+## Context the next orchestrator should know but that does not belong in the prompt
 
 - **G1 produced 11 full-page mockups** (GPT Image 2, 77 credits, in the founder's Higgsfield feed, 2026-08-26). They are *not* the direction — the founder judged them as one reference's world each rather than the combination, which is what produced the design language. Treat them as discarded exploration, not as candidates.
 - **Viewing generated images DOES work — use Playwright.** `curl`, `file:` URLs and a local http server are all blocked, but this works and is the method for G3:
   1. `mcp__playwright__browser_navigate` to the raw image URL
   2. `mcp__playwright__browser_take_screenshot` with `fullPage: true` and an explicit `filename`
   3. The PNG lands in the **worktree root** — then `Read` it normally
-  The CEO in this session wrongly concluded it was blocked (a bad `find` invocation) and shipped two rounds of mockups unreviewed. **The design-critic and anti-slop loops CAN run at G3.** Move the file out of the repo root afterwards; `.playwright-mcp/` is now gitignored.
+  The `ceo-website-design-process` session wrongly concluded it was blocked (a bad `find` invocation) and shipped two rounds of mockups unreviewed. **The critique and anti-slop loops CAN run at G3** — that is `reviewer` under the [craft] and [accessibility] review lenses, and `designer`, which is the only engine with a perception loop. Move the file out of the repo root afterwards; `.playwright-mcp/` is now gitignored.
 - **One G1 mockup is kept** at `docs/05-marketing/g1-directions/A-crossstitch-poster.png` — the cross-stitch poster. It is the only one that was actually reviewed, and it lands close to the locked language (bone ground, editorial serif, mono eyebrow, restrained chrome) despite cross-stitch sitting on the "not used" list. Worth putting in front of the founder if that decision is revisited.
 - **Seven of the founder's own reference notes disagreed with their images.** In every case his instinct was right and his recollection drifted. When he describes a reference, verify against the file before acting.
 - **The `_brief-0*.md` and `_techniques-*.md` files under `references/founder-brain/` are the useful layer.** Read those, not the 105 images.

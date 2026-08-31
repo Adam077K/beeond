@@ -1,6 +1,6 @@
 # /debug — Scientific Bug Investigation
 
-Atlas investigates a bug using systematic hypothesis testing. You report symptoms; Atlas finds the cause.
+`builder` investigates a bug using systematic hypothesis testing. You report symptoms; `builder` finds the cause.
 
 ## Usage
 ```
@@ -23,9 +23,9 @@ You (the founder) provide:
 - Error messages seen
 - When it started / if it ever worked
 
-**You do NOT need to know the cause.** Atlas investigates.
+**You do NOT need to know the cause.** `builder` investigates.
 
-## Atlas's Debug Process
+## The debug process
 
 ### Phase 1 — Evidence Gathering
 Build a picture from observable facts:

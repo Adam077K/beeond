@@ -1,9 +1,9 @@
 export const meta = {
   name: 'design',
-  description: 'Beeond T5 design workflow — generates N independent design variations from different angles, scores each with parallel design-critic judges against the brand bar, and synthesizes a winning direction (grafting the best ideas from runners-up). Optimizes for craft/quality, not speed.',
+  description: 'Beeond T5 design workflow — generates N independent design variations from different angles, scores each with parallel reviewer judges (craft lens) against the brand bar, and synthesizes a winning direction (grafting the best ideas from runners-up). Optimizes for craft/quality, not speed.',
   phases: [
     { title: 'Explore', detail: 'N independent design directions, distinct angles' },
-    { title: 'Critique', detail: 'design-critic scores each variation' },
+    { title: 'Critique', detail: 'reviewer (craft lens) scores each variation' },
     { title: 'Synthesize', detail: 'pick winner + graft best runner-up ideas', model: 'opus' },
   ],
 }
@@ -66,7 +66,7 @@ const SYNTH_SCHEMA = {
     winning_angle: { type: 'string' },
     final_direction: { type: 'string' },
     grafted_ideas: { type: 'array', items: { type: 'string' }, description: 'ideas pulled from runner-up variations' },
-    spec: { type: 'string', description: 'a build-ready description product-designer/frontend-engineer can implement' },
+    spec: { type: 'string', description: 'a build-ready description designer or builder can implement' },
   },
 }
 
@@ -84,14 +84,14 @@ Honor the project's brand bar (accent color, type scale, spacing, motion budget)
 phase('Explore')
 const judged = await pipeline(
   chosen,
-  angle => agent(explorePrompt(angle), { label: `explore:${angle.split(' ')[0]}`, phase: 'Explore', agentType: 'product-designer', model: 'sonnet', schema: VARIATION_SCHEMA }).catch(() => null),
+  angle => agent(explorePrompt(angle), { label: `explore:${angle.split(' ')[0]}`, phase: 'Explore', agentType: 'designer', model: 'sonnet', schema: VARIATION_SCHEMA }).catch(() => null),
   (variation) => variation
     ? agent(
         `Score this Beeond design variation against the brand quality bar and the brief.
 Brief: ${BRIEF}
 Variation: ${JSON.stringify(variation, null, 2)}
 Score each axis 0-10 (brand_fidelity, craft, usability, brief_fit), give total, name the single best idea worth keeping even if this loses, and a one-line verdict. Be a demanding critic — billion-dollar bar.`,
-        { label: `critique:${variation.angle?.split(' ')[0] ?? 'unknown'}`, phase: 'Critique', agentType: 'design-critic', model: 'sonnet', schema: SCORE_SCHEMA }
+        { label: `critique:${variation.angle?.split(' ')[0] ?? 'unknown'}`, phase: 'Critique', agentType: 'reviewer', model: 'sonnet', schema: SCORE_SCHEMA }
       ).then(score => ({ variation, score })).catch(() => null)
     : null
 )

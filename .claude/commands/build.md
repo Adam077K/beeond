@@ -1,50 +1,35 @@
-# /build — Full Build Pipeline
+---
+playbook: ship-feature
+enter_at: frame
+---
 
-Build a feature end-to-end with the full agent pipeline.
+# /build — ship a feature
+
+Runs the **`ship-feature`** playbook: [.claude/playbooks/ship-feature.yml](../playbooks/ship-feature.yml).
 
 ## Usage
+
 ```
-/build [feature description]
+/build [what you want built]
 ```
 
-## What This Does
+## Where the pipeline lives
 
-### Step 1 — CEO Intake
-CEO reads memory (LONG-TERM.md + DECISIONS.md), asks clarifying questions until success criteria are unambiguous, assigns complexity tier (Quick/Medium/Complex).
+**Here, and nowhere else:** the stages, their exit criteria, the risk tiering and the dispatch are all in
+the playbook. This file used to restate all of it in fifty lines of prose naming CEO, Product Lead, Build
+Lead, QA Lead and five workers — two descriptions of one pipeline, and two descriptions of one thing
+disagree silently, in the direction nobody is looking.
 
-### Step 2 — Product Lead (if vague)
-If the request is a feature idea without a spec, CEO dispatches Product Lead to write a PRD with acceptance criteria. Spec must pass completeness gate before build starts.
+Read the playbook to know what happens. Read [.claude/lenses.yml](../lenses.yml) to know the standard each
+stage is held to, and [.claude/review-lenses.yml](../review-lenses.yml) for how it is judged.
 
-### Step 3 — Build Lead Plans
-Build Lead explores codebase (Glob/Grep existing patterns), maps independent vs sequential tasks, assigns workers to isolated git worktrees.
+## What this command adds
 
-Workers run in parallel where possible (max 3 at once):
-- Backend Developer → API routes in `feat/[task]-api`
-- Frontend Developer → UI components in `feat/[task]-ui`
-- Database Engineer → Schema/migrations in `feat/[task]-db`
+Nothing. It is an invocation. If you find yourself editing this file to change how a build works, the
+change belongs in the playbook.
 
-### Step 4 — QA Gate (Required)
-QA Lead runs in parallel:
-- Security Engineer: OWASP check on all changed files
-- Test Engineer: coverage check on all changed code
+## Two things the old prose said that are still true
 
-**PASS** = proceed. **BLOCK** = workers fix issues, QA re-checks. No merge until PASS.
-
-### Step 5 — Human Confirmation
-Build Lead presents merge table showing all branches, files changed, QA status. User confirms before any merge.
-
-### Step 6 — Merge + Memory
-After confirmation: branches merged, worktrees cleaned, session summary written to `.claude/memory/sessions/`.
-
-### Step 7 — Deploy (optional)
-If `--deploy` flag: CEO dispatches DevOps Lead to deploy to staging. User confirms production.
-
-## Abort Conditions
-- QA Lead returns BLOCK with Critical/High findings → workers fix, re-check
-- Worker returns BLOCKED → Build Lead re-briefs with more context or escalates to CEO
-- Architectural change needed → CEO asks user for decision, resumes after
-
-## Notes
-- Quick tasks (1 file, 1 change) skip Lead layer: CEO → worker directly
-- Always uses git worktrees — never touches main branch during work
-- Merge table shown before any merge — no silent merges
+- **Worktrees, always.** `builder` and `designer` declare `isolation: worktree` and never touch `main`.
+- **No silent merges.** The merge table goes in front of the founder before anything merges, and a PASS
+  verdict is required first.

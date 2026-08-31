@@ -13,14 +13,15 @@ Review all changes in the current branch before merging.
 ### Step 1 — Get Diff
 Identify what changed: `git diff --name-only main...HEAD` (or specified branch).
 
-### Step 2 — Code Reviewer
-Code Reviewer reviews all changed files:
+### Step 2 — reviewer, correctness lens
+`reviewer` reviews all changed files. It carries no `Write` and no `Edit`: an agent that can edit what it
+reviews will review what it can edit.
 - **P1 (Must fix)**: security issues, data loss risk, broken logic, missing validation
 - **P2 (Should fix)**: duplication, unclear naming, missing error handling, performance
 - **P3 (Nice to have)**: style, optimization, comments
 
-### Step 3 — Security Engineer (parallel with Step 2)
-Security Engineer runs OWASP check on changed files:
+### Step 3 — reviewer, security lens (parallel with Step 2)
+A second `reviewer` dispatch runs an OWASP check on changed files:
 - Injection vulnerabilities
 - Auth/authz gaps
 - Hardcoded secrets
@@ -53,5 +54,7 @@ Both run in parallel.
 
 ## Notes
 - Only reviews files in the diff — not the whole codebase
+- The two dispatches carry different **lenses**, not different agents. That is the whole of what changed:
+  the five reviewers this file used to name differed only in which lens they carried
 - P2/P3 and Medium/Low security don't block merge — they're informational
 - Can be run standalone or as part of `/ship`

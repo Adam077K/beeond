@@ -13,7 +13,7 @@ Use this command when a decision is irreversible-tier or board-grade — archite
 |---|---|
 | Architectural decision >$1M reversible cost | "Migrate from Mem0 to custom MCP" |
 | Strategic pivot or new initiative | "Launch B2C tier", "Open-source the agent layer" |
-| Risk-tier shift on irreversible change | "Auto-merge >100-line PRs without QA-Lead" |
+| Risk-tier shift on irreversible change | "Auto-merge >100-line PRs without a QA verdict" |
 | Competitor signal threshold | "Profound launches X — do we respond?" |
 | Vendor decision | "Drop Paddle for Stripe?" → Aria persona activated |
 
@@ -21,7 +21,7 @@ Use this command when a decision is irreversible-tier or board-grade — archite
 
 The full protocol is specified in `docs/08-agents_work/ORCHESTRATION.md` §2F. Quick version:
 
-1. **Round 0 — De-anchored framings.** CEO writes 5 differently-framed versions of the topic, one per persona, to prevent topic-prompt anchoring.
+1. **Round 0 — De-anchored framings.** `orchestrator` writes 5 differently-framed versions of the topic, one per persona, to prevent topic-prompt anchoring.
 2. **Round 1 — Independent.** 6 personas spawned in parallel via Task. Each sees only its own framing. Returns Zod-validated JSON.
 3. **Round 2 — Cross-critique.** Each persona reads the other 5 outputs. Returns updated JSON with `changed_mind_on`, `peer_critiques`, `remaining_dissent`.
 4. **Round 3 — Synthesizer (Opus, fresh-context Routine).** Reads all 12 R1+R2 outputs. Returns `locked_decisions` with mandatory `source_persona_round` traceability — mechanical anti-hallucination guard.
@@ -50,7 +50,12 @@ After Round 3: **Adam-veto checkpoint.** Synthesizer posts to a Linear ticket an
 /board-meeting <topic-slug>
 ```
 
-CEO drafts the topic statement, Adam approves, CEO dispatches.
+`orchestrator` drafts the topic statement, Adam approves, `orchestrator` dispatches.
+
+The personas live in `.claude/agents/war-room/` and are **not** engines — they are on a different schema and
+`schema-lint.js` does not read that directory. The seven-engine swap did not touch them, and two of them
+(`persona-risk-modeler`, `persona-customer-voice`) are cited as provenance for the `risk` and
+`customer-value` review lenses.
 
 ### Linear ticket (autonomous)
 File a Linear ticket with labels:
@@ -58,7 +63,7 @@ File a Linear ticket with labels:
 - `agent:strategist`
 - `decision_type:vendor` OR `decision_type:strategic`
 
-The Cloudflare bridge sees the labels, fires CEO with `trust_mode: true` synth-only spec to run the protocol unattended.
+The Cloudflare bridge sees the labels, fires `orchestrator` with a `trust_mode: true` synth-only spec to run the protocol unattended.
 
 ## Hard caps
 

@@ -11,41 +11,38 @@ Name or rename the current session. Use this to identify agents, distinguish par
 
 ### Pattern
 ```
-[agent-type]-[task-slug]
+[engine]-[task-slug]
 ```
 
 Where `task-slug` is a short kebab-case description of the current task.
 
-### Examples by layer
+### Examples by engine
 
-**CEO:**
 ```
-/name ceo-auth-redesign
-/name ceo-scan-engine-fix
-/name ceo-pricing-analysis
+/name orchestrator-auth-redesign
+/name orchestrator-pricing-analysis
+
+/name framer-scan-feature-spec
+/name framer-pricing-model
+
+/name sourcer-competitor-deep-dive
+
+/name builder-auth-api
+/name builder-dashboard-nav
+/name builder-schema-migration
+
+/name designer-dashboard-overview
+
+/name reviewer-auth-audit
+/name reviewer-readonly-merge-gate
 ```
 
-**Team Leads:**
-```
-/name build-auth-redesign
-/name research-competitor-deep-dive
-/name design-dashboard-overview
-/name qa-auth-redesign
-/name devops-staging-deploy
-/name data-retention-metrics
-/name product-scan-feature-spec
-/name growth-onboarding-email
-/name business-pricing-model
-```
+The slug says what the task is, not which domain it belongs to — domain is a lens the engine loads, and it
+does not appear in the name.
 
-**Workers:**
-```
-/name backend-auth-api
-/name frontend-dashboard-nav
-/name database-schema-migration
-/name security-auth-audit
-/name test-scan-engine
-```
+> **Superseded 2026-08-31.** These examples were grouped "CEO / Team Leads / Workers" and used prefixes
+> like `build-`, `qa-`, `devops-`, `product-`, `growth-`, `business-` — nine of which named a role rather
+> than an agent that existed even then. The prefix is the engine now, and there are seven of them.
 
 ## Rules
 
@@ -53,13 +50,13 @@ Where `task-slug` is a short kebab-case description of the current task.
 2. **Name at the start** of identity_setup, right after /color.
 3. **Keep names short** — under 40 characters. Task slug should be 2-4 words max.
 4. **Rename mid-task if scope changes** — `/name` can be called at any time.
-5. **Parallel CEOs** must have names that reflect their distinct tasks, not just instance numbers.
+5. **Parallel orchestrators** must have names that reflect their distinct tasks, not just instance numbers.
 
-## Parallel CEO example
+## Parallel orchestrator example
 ```
-Worktree 1: /color gold  → /name ceo-feature-auth
-Worktree 2: /color orange → /name ceo-fix-scan-engine
-Worktree 3: /color teal  → /name ceo-research-competitors
+Worktree 1: /color gold  → /name orchestrator-feature-auth
+Worktree 2: /color orange → /name orchestrator-fix-scan-engine
+Worktree 3: /color teal  → /name orchestrator-research-competitors
 ```
 
 ## Combined with /color
