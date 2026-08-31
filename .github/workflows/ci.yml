@@ -127,6 +127,17 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm run check:skills-manifest
 
+      # ── The skill routers ──────────────────────────────────────────────────────────────────
+      # .claude/skills/routers/ is generated from .claude/skills/CURATION.yml, MANIFEST.json and
+      # the skills directory. This fails when the committed routers differ from a fresh
+      # generation, and it fails BEFORE writing anything when the namespace map leaves a skill
+      # unrouted, routes one twice, or names one that is not on disk. A wrong router is silent at
+      # read time — an agent follows it to a skill that is not there, or never finds one that is —
+      # so it is made loud here.
+      - name: Skill routers match CURATION.yml
+        if: ${{ !cancelled() }}
+        run: npm run check:skill-routers
+
       # ── The token pipeline: mutation gate first, then the checker it guards ────────────────
       # A green `check:tokens` beside a red `test:build-tokens` means the drift comparison is
       # unproven, not that the tokens are fine. Read the failure list, not the tally.

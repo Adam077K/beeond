@@ -1,0 +1,247 @@
+# Skills namespaces — the discovery tier, authored FOR beeond FROM beeond's own library.
+#
+# ── WHY THIS FILE WAS AUTHORED AND NOT COPIED ────────────────────────────────────────────────
+#
+# agentvibe has a file of this name whose `namespaces:` map indexes ITS 134 skills. Copying it
+# was measured before it was rejected, and it is wrong in both directions at once:
+#
+#     agentvibe's routed skills                     134
+#       ... of those, also present in beeond         92
+#       ... MISSING from beeond                      42   -> 42 pointers to nothing
+#     beeond skills in NO agentvibe namespace        55   -> 55 skills invisible to discovery
+#
+# Re-derive rather than trusting those figures:
+#   comm -12 <(ls -d .claude/skills/*/ | sed 's|.*skills/||;s|/$||' | sort) \
+#            <(cd ../agentvibe && ls -d .claude/skills/*/ | sed 's|.*skills/||;s|/$||' | sort) | wc -l
+#
+# This is the fourth instance in this port of ONE pattern: a curated list describes exactly one
+# repository. `STEPS`, the tier map, the ledger exemptions, and now this. The cure is the same
+# every time — generate from local truth, or author locally. This file is the "author locally"
+# half; `scripts/build-skill-routers.mjs` is the "generate from local truth" half, and it reads
+# this file plus MANIFEST.json plus the directory itself.
+#
+# ── WHAT THIS FILE IS NOT, SAID PLAINLY SO ITS ABSENCE IS NOT READ AS A DECISION ──────────────
+#
+# agentvibe's CURATION.yml is mostly a CUT RECORD: every skill removed from its corpus, with the
+# test that removed it (`role_duplicate`, `near_duplicate`, `reconstructible`, `dead_subject`)
+# and a reason a reviewer can argue with. NONE OF THAT IS HERE, and none of it is implied. That
+# editorial pass has never been run against beeond's 147 skills. Inventing entries for it would
+# be fabricating a review nobody did, which is worse than having no cut record at all.
+#
+# Consequently `scripts/curate-skills.mjs` is DELIBERATELY NOT PORTED. It exists to prove the
+# skills directory matches a cut record; with no cut record it would either fail on every skill
+# or, worse, pass vacuously. When someone actually curates beeond's library, port it then — the
+# generator below does not need it and never reads those keys.
+#
+# ── THE `thinking` NAMESPACE IS ABSENT, AND THAT IS A MEASUREMENT ─────────────────────────────
+#
+# agentvibe routes 28 `thinking-*` skills. beeond has ZERO of them:
+#   ls -d .claude/skills/thinking*/ 2>/dev/null | wc -l   ->   0
+# So the namespace is omitted rather than declared empty. An empty namespace would still get an
+# INDEX.md row and a `thinking.md` file — a signposted route to nothing, paid for on every
+# lookup. If the thinking library is ever installed here, add the key back and regenerate.
+# `scripts/build-skill-routers.mjs` has a HEADLINE for `thinking` already, so that is one line.
+#
+# ── HOW THE 55 beeond-ONLY SKILLS WERE CLASSIFIED ────────────────────────────────────────────
+#
+# The 92 shared with agentvibe INHERIT its assignment unchanged. That decision was already made
+# with care upstream; re-deciding it would be waste and would make the two repositories disagree
+# about where one skill lives.
+#
+# The other 55 were classified by reading each `SKILL.md` frontmatter `description`, never the
+# directory name — names mislead. Three that would have been misfiled by name alone:
+#   `design-mirror`      reference EXTRACTION, not design       (inherited: frontend-design)
+#   `search-specialist`  research procedure, not site search    (ai-agents, beside deep-research)
+#   `humanizer`          prose editing, nothing to do with UX   (business-growth, see below)
+#
+# The six genuinely contestable calls are marked `# JUDGEMENT` inline below, with the reasoning
+# on the line. They are marked rather than smoothed over because the next reader deserves to
+# know which lines are settled and which are one person's reading of a description.
+#
+# ── THE ARITHMETIC, AND WHAT ENFORCES IT ─────────────────────────────────────────────────────
+#
+#   engineering       28  (16 inherited + 12 new)
+#   frontend-design   26  (19 inherited +  7 new)
+#   quality-security  28  (17 inherited + 11 new)
+#   ai-agents         27  (14 inherited + 13 new)
+#   ops-delivery      21  (13 inherited +  8 new)
+#   business-growth   17  (13 inherited +  4 new)
+#   ----------------------------------------------
+#   TOTAL            147  (92 inherited + 55 new)  == skills on disk
+#
+# A skill in NO namespace is unreachable through the routers; a skill in TWO makes the routers
+# disagree about where it lives. Both are silent at read time, so `npm run check:skill-routers`
+# makes them loud at build time — it refuses to write anything while an orphan, a duplicate or a
+# ghost exists, and CI runs it as its own step. Do not fix a failure by deleting the name it
+# reports; the name is the finding.
+#
+# Assignment is DATA, not a heuristic over skill names. A regex inferring "security" from a
+# filename works until `sharp-edges` or `trust-spec-contracts`, and is then silently wrong.
+
+version: 1
+authored_on: 2026-08-31
+source_count: 147
+
+# Each namespace's one-line summary lives ONCE, in HEADLINE in scripts/build-skill-routers.mjs,
+# because that is the text a reader actually meets in INDEX.md. It is deliberately not restated
+# here: two descriptions of one thing disagree silently, which is the defect this whole port
+# keeps finding. This file answers WHICH SKILLS; the generator answers WHAT THE NAMESPACE IS FOR.
+namespaces:
+  engineering:
+    - api-design-principles
+    - api-documentation
+    - api-documentation-generator
+    - architecture
+    - architecture-decision-records
+    - architecture-patterns
+    - code-documentation-code-explain
+    - code-refactoring-tech-debt
+    - data-engineer
+    - database
+    - database-design
+    - debugger
+    - debugging-strategies
+    - documentation
+    - documentation-templates
+    - domain-driven-design
+    - error-handling-patterns
+    - full-output-enforcement
+    - nodejs-backend-patterns
+    - pgvector-rag-conventions
+    - postgresql
+    - prisma-expert
+    - readme
+    - sharp-edges
+    - sql-optimization-patterns
+    - supabase-rls-conventions
+    - systematic-debugging
+    - trust-spec-contracts
+
+  frontend-design:
+    - core-components
+    - design-orchestration
+    - design-taste-frontend
+    - emilkowal-animations
+    - frontend-design
+    - frontend-dev-guidelines
+    - frontend-developer
+    - high-end-visual-design
+    - minimalist-ui
+    - nextjs-app-router-patterns
+    - nextjs-best-practices
+    - pitch-deck-visuals
+    - radix-ui-design-system
+    - react-patterns
+    - react-ui-patterns
+    - redesign-existing-projects
+    - stitch-design-taste
+    - tailwind-design-system
+    - tailwind-patterns
+    - ui-visual-validator
+    - vercel-composition-patterns
+    - vercel-react-best-practices
+    - vercel-react-native-skills
+    - vercel-react-view-transitions
+    - wcag-audit-patterns
+    - web-design-guidelines
+
+  quality-security:
+    - api-security-testing
+    - auth-implementation-patterns
+    - aws-compliance-checker
+    - aws-iam-best-practices
+    - aws-secrets-rotation
+    - aws-security-audit
+    - broken-authentication
+    - cc-skill-coding-standards
+    - cc-skill-security-review
+    - code-review-excellence
+    - code-reviewer
+    - e2e-testing
+    - e2e-testing-patterns
+    - find-bugs
+    - gdpr-data-handling
+    - playwright-skill
+    - production-code-audit
+    - qa-gate-protocol
+    - requesting-code-review
+    - secrets-management
+    - security-audit
+    - security-scanning-security-dependencies
+    - tdd-orchestrator
+    - tdd-workflow
+    - testing-patterns
+    - unit-testing-test-generate
+    - web-security-testing
+    - xss-html-injection
+
+  ai-agents:
+    - agent-evaluation
+    - agent-memory-systems
+    - agent-tool-builder
+    - ai-agents-architect
+    - ai-engineer
+    - anthropic-routines
+    - board-meeting-protocol  # JUDGEMENT: a 4-round multi-agent protocol with a JSON schema per round. Reads as decision-making; it is orchestration, so it sits beside multi-agent-patterns rather than in a thinking namespace beeond does not have
+    - brainstorming
+    - context-compression
+    - deep-research
+    - dispatching-parallel-agents
+    - embedding-strategies
+    - llm-app-patterns
+    - llm-evaluation
+    - mcp-builder
+    - mem0-patterns
+    - multi-agent-brainstorming
+    - multi-agent-patterns
+    - parallel-agents
+    - prompt-caching
+    - prompt-engineering-patterns
+    - rag-engineer
+    - search-specialist
+    - tool-design
+    - vector-database-engineer
+    - war-room-orchestration  # JUDGEMENT: names Cloudflare, HMAC and Inngest, so ops-delivery is arguable. Its SUBJECT is how agents dispatch work to each other; the infrastructure is the medium
+    - writing-plans
+
+  ops-delivery:
+    - clerk-auth
+    - cloud-devops
+    - commit
+    - create-pr
+    - deploy-to-vercel
+    - deployment-procedures
+    - email-systems
+    - finishing-a-development-branch
+    - git-pr-workflows-git-workflow
+    - github-actions-templates
+    - inngest
+    - linear-mvp-recipe  # JUDGEMENT: agentvibe CUT this one (dead_subject: Linear never configured). beeond DOES use Linear — see war-room-orchestration — so here it is live, not inherited
+    - nextjs-supabase-auth
+    - paddle-integration
+    - payment-integration
+    - segment-cdp
+    - stripe-integration
+    - using-git-worktrees
+    - vercel-cli-with-tokens
+    - vercel-deployment
+    - worktree-isolation-pattern
+
+  business-growth:
+    - competitive-landscape
+    - copywriting
+    - data-storytelling  # JUDGEMENT: could be frontend-design for the visualisation half. Filed by audience — stakeholders and executives — beside startup-metrics-framework
+    - form-cro
+    - humanizer  # JUDGEMENT, and the weakest fit in this file. Prose editing, not growth. Filed with the other content skills (copywriting, seo-content-writer, social-content) because that is where a writing task looks; say so if you move it
+    - launch-strategy
+    - market-sizing-analysis
+    - marketing-psychology
+    - onboarding-cro
+    - page-cro
+    - pricing-strategy
+    - product-manager-toolkit
+    - screenshots  # JUDGEMENT: Playwright over the app UI, so frontend-design is arguable. Filed by output — Product Hunt and launch assets — beside launch-strategy
+    - seo-content-writer
+    - social-content
+    - startup-financial-modeling
+    - startup-metrics-framework

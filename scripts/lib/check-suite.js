@@ -58,8 +58,12 @@
  * failure; it does not stop at the first.
  *
  * Ordering intent: the workflow's chain check comes first because it is the only structural check
- * left in the suite, then the two disk-vs-generated comparisons, then the design instruments. The
+ * left in the suite, then the three disk-vs-generated comparisons, then the design instruments. The
  * whole list is under ten seconds on a cold tree with no installs.
+ *
+ * *This read "the two disk-vs-generated comparisons" until `check:skill-routers` joined them. The
+ * number is in the prose because the ordering RULE is what matters and a bare count would not say
+ * why those steps sit together; it is corrected rather than removed for the same reason.*
  *
  * *This paragraph read "the two structural guards come first — the tripwire's own wiring proof and
  * this file's drift guard — so a suite that has stopped describing the repository fails loudly
@@ -99,6 +103,14 @@ const STEPS = [
   'check:ci-chains',
   // The skills manifest: MANIFEST.json is generated from disk, and this fails when the two differ.
   'check:skills-manifest',
+  // The skill routers: .claude/skills/routers/ is generated from .claude/skills/CURATION.yml plus
+  // the manifest plus the directory, and this fails when the committed files differ from a fresh
+  // generation. It ALSO fails, before writing anything, when the namespace map has a skill in no
+  // namespace, a skill in two, or a name that is not on disk — the three states that make the
+  // discovery tier silently wrong at READ time. Its generator half, `build:skill-routers`, is
+  // ungoverned on purpose: this entry is its assertive counterpart, the same arrangement
+  // `check:tokens` has with `build:tokens`.
+  'check:skill-routers',
   // The token pipeline. Gate first, then the checker it guards.
   'test:build-tokens',
   'check:tokens',

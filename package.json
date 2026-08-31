@@ -4,10 +4,12 @@
   "private": true,
   "description": "Beeond \u2014 a done-for-you marketing and growth service run by a coordinated swarm of AI agents with human oversight. Monorepo: marketing site (apps/web) + the agent system (.claude/).",
   "scripts": {
+    "build:skill-routers": "node scripts/build-skill-routers.mjs",
     "build:skills-manifest": "node scripts/build-skills-manifest.mjs",
     "build:tokens": "node scripts/build-tokens.mjs",
     "check": "node scripts/run-checks.mjs",
     "check:ci-chains": "node scripts/check-ci-chains.mjs",
+    "check:skill-routers": "node scripts/build-skill-routers.mjs --check",
     "check:skills-manifest": "node scripts/build-skills-manifest.mjs --check",
     "check:tokens": "node scripts/build-tokens.mjs --check",
     "classify": "node scripts/classify.mjs",
