@@ -24,6 +24,34 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-09-01 — G3 PRODUCTION METHOD: Higgsfield + an image AI model (FOUNDER-decided)
+
+**Context:** G2 (SHAPE) planning surfaced the production method for G3 (the full mockup set) as an open question. `orchestrator` had recommended a different combination — a machine-enforced design system generated from `DESIGN-LANGUAGE.md`, with Higgsfield demoted to photography and set-piece video only — on the reasoning that G1's failure was a prose-prompted image model collapsing to one reference's world rather than the locked combination.
+**Options considered:** Stitch carrying the design system from `DESIGN-LANGUAGE.md` (recommended by `orchestrator`) / a Figma library built from the same file, highest fidelity and highest setup cost / **Higgsfield with an image AI model** (chosen).
+**Decision (founder):** **G3 produces mockups with Higgsfield and an image AI model.** Not Stitch, not Figma. This is settled input, not a recommendation awaiting evaluation.
+**Rationale:** Founder call. The `orchestrator` recommendation and the G1 precedent were both stated before the decision was taken; the founder decided with them in view.
+**Reversibility:** reversible — no code, no tokens, no design artefact is affected. It selects the tool G3 renders with.
+**Owner:** founder, via `team-lead`, relayed to `orchestrator` (orchestrator-g2-shape)
+**Affects:** G3 (`designer` produces the full mockup set on this method) · `orchestrator` (production method is no longer a G2 gate item; the G2 gate carries shape only).
+**The risk this carries, stated once and logged — not to be repeated at every gate:** Higgsfield is the method that produced G1's eleven mockups, each of which the founder judged as *one reference's world* rather than the locked combination. The mitigation is not a different tool; it is that **G2's role assignments bind each of the 7 signature moments to exactly one section**, so no generator is ever asked to invent the combination — it is asked to render one section carrying one named moment. The G3 method note in the session file records the four controls: condition on reference images rather than prose alone; full-fidelity full-page only; run the critique loop G1 skipped; verify accent tokens mechanically, never by eye (`#57B295` on bone `#F0EDE6` is 2.19 : 1 and fails).
+**Known constraint, not a reopening:** no engine can reach an MCP server — every `tools:` list in `.claude/agents/` is a closed enumeration with zero `mcp__*` entries. Higgsfield is therefore reachable from the parent session only, not from `designer`. Two honest options exist and neither is chosen here: the parent session drives generation and hands files to `designer` for the perception loop, or the founder authorises a tools-list change (`.claude/agents/**`, irreversible tier). Does not block G2.
+**Detail:** `docs/08-agents_work/sessions/2026-09-01-orchestrator-g2-shape.md` §5
+
+
+## 2026-09-01 — RUN G2 (SHAPE) NOW, over the orchestrator's own ranking (FOUNDER-decided)
+
+**Context:** `orchestrator` opened the session with a state briefing and ranked the highest-leverage next moves. It placed G2 **fourth**, behind calling the two warm prospects, repairing the harness gate, and commissioning the trademark search — on the reasoning that everything downstream of the ICP is still unvalidated after seven superseded directions and zero customer interviews.
+**Options considered:** call the two warm prospects first (ranked #1 by `orchestrator`) / repair the harness gate first (#2) / **run G2 SHAPE now** (#3 by `orchestrator`, chosen by the founder) / commission the trademark search (#4).
+**Decision (founder):** **Run G2 SHAPE now.** The ranking was seen, including the explicit statement that G2 was the fourth-best use of the session, and G2 was chosen anyway.
+**Rationale:** Founder call, taken with the recommendation in view. This is the knowing sequencing override the handoff predicts and the project's own history documents; it is logged here as deliberate rather than as an oversight, per `HANDOFF-CLEAN-START/05-WHERE-WE-STAND.md` §8 item 5 and the 2026-08-26 entry's "Founder overrides, logged as deliberate" line.
+**Reversibility:** reversible — G2 produces two markdown documents and a typed content layer, all tier `lite`. Every artifact is marked **SHAPE PROPOSED — NOT PLAN OF RECORD**, so nothing is locked and nothing is shipped to a customer.
+**The rule it does NOT violate, and why that is not a technicality:** *"No direction gets locked and shipped without a customer signal earned since the last one closed."* Producing a spine is exploration; treating it as the plan of record is the locking. The SHAPE PROPOSED markers are the mechanism keeping those apart, and they are the reason this is authorised rather than a repeat of the documented failure.
+**Not authorised in the same session, stated so the scope is unambiguous:** the harness gate repair · the trademark search · any edit to `.claude/settings.json`, `.mcp.json`, `CLAUDE.md`, `.github/workflows/ci.yml`, `.claude/lenses.yml`, `scripts/run-checks.mjs` or `.claude/agents/**`. Reported on, not touched.
+**Owner:** founder, via `team-lead`, relayed to `orchestrator` (orchestrator-g2-shape)
+**Affects:** `framer` `designer` `builder` `reviewer` (all dispatched under G2) · the decision queue in `HANDOFF-CLEAN-START/05-WHERE-WE-STAND.md` §7, whose items 1-5 remain open and unaddressed by this work.
+**Still open and untouched by this decision:** ICP · offer and service catalog · pricing · trademark · market sizing · the two un-called warm prospects.
+**Detail:** `docs/08-agents_work/sessions/2026-09-01-orchestrator-g2-shape.md`
+
 ## 2026-08-26 — WEBSITE DESIGN PROCESS + DESIGN LANGUAGE locked
 
 **Context:** Founder opened the marketing-site work: plan → references → design → build, at the highest craft grade. Session was scoped to the *process*, then grew to cover G0 (the reference read) and the design language itself.
