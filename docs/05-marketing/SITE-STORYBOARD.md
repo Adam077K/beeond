@@ -129,6 +129,10 @@ G0 and G1 are closed and locked. Phase 1 stays text-only, but every "WHAT HE SEE
 
 **Reading budget for an engine:** the design language (Layers 1–3, 5), the art-direction brief, the founder notes, `_brief-03-artistic-direction.md`, and the three feeling indexes — then up to eight images, chosen by their index names, only where a section's "what he sees" needs one. Never the whole image set.
 
+### §0.6b The experience principle — FOUNDER 2026-09-02
+
+*"Easy to understand, easy to learn, easy to use."* The founder's own words for what the visitor must get from the site, stated mid-session, verbatim in substance. It governs R2 and R3 above every device: a section that is clever but not immediately understood is cut; the journey is judged on how little the visitor has to work. Phase 1 is text, storytelling and the user experience; Phase 2 — visuals, images, motion, animation, video, components per section, style and references — opens only after the text and storytelling are settled, per the founder.
+
 ### §0.7 The exception every framer brief carries
 
 The `growth`, `product` and `customer` lenses all carry `requires_claims: [user-language]`. That claim cannot be satisfied: ICP is OPEN by founder decision, zero interviews, `USER-INSIGHTS.md` empty by design. The logged exception is `WEBSITE-DESIGN-PROCESS.md` §10 (line 194: *"Copy is the weakest layer. It will be written from our own thesis, not from anything a buyer has said"*) and §9 row 6 (line 188: ICP *"stays broad until this lands"*). Structural work proceeds; voice is PROVISIONAL.
