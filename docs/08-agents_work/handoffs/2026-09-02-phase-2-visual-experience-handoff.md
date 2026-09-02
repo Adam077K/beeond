@@ -92,8 +92,9 @@ ENGINES, LENSES, SKILLS
   reviewer [craft] [accessibility] — conformance by measurement. Opus.
   builder                         — G4 only, on founder approval.
   Skills, on demand, 2–3 per engine via .claude/skills/routers/frontend-design.md:
-  high-end-visual-design · design-taste-frontend · emilkowal-animations ·
-  12-principles-of-animation · ui-typography (global). Do not load MANIFEST.json whole.
+  high-end-visual-design · design-taste-frontend · emilkowal-animations (project) ·
+  12-principles-of-animation · ui-typography (both global, at ~/.claude/skills/, absent from
+  the project router — verified present 2026-09-02). Do not load MANIFEST.json whole.
 
 THE DELIVERABLES
   docs/05-marketing/ROLE-ASSIGNMENTS.md · VISUAL-SPEC.md · MOTION-SPEC.md · the mockup set
