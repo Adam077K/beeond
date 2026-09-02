@@ -9,7 +9,7 @@
 | Session | `orchestrator-site-thinking` · gold · branch `ceo-1-1788359253` · started 2026-09-02 |
 | Founder | Adam, present, reacting per round |
 | Source of truth | `HANDOFF-CLEAN-START/` (5 files). Nothing here overrides it. |
-| Locked and not reopened | G0 reference read · G1 design language (`DESIGN-LANGUAGE.md`) · the site's job |
+| Locked and not reopened | G0 reference read · G1 design language (`DESIGN-LANGUAGE.md`). The site's job was re-shaped by the founder on 2026-09-02 — see §0.1 |
 | One input, not the answer | `docs/08-agents_work/packets/2026-09-01-g2-product-architecture-spine.md` |
 | Markers | **FOUNDER** (a founder decision, dated) · **OPEN** (undecided) · **PROVISIONAL** (a voice string written from founder thesis, not customer language) |
 
@@ -19,10 +19,17 @@
 
 ## §0 — THE FRAME (R0 · closed 2026-09-02)
 
-### §0.1 The one job
+### §0.1 The one job — REVISED 2026-09-02 (founder, R0 grill)
 
-Convert a stranger into a **booked call**. The waitlist is fallback capture, never a competing ask: not in the nav; it lives inside Book a Call ("not ready yet?") and in the footer.
-FOUNDER 2026-08-26 (`WEBSITE-DESIGN-PROCESS.md` §1, §3). Nav placement inherited from the G2 spine §A as the default — open to strike in R2.
+The site's primary action is a **free footprint audit request**: the visitor submits his URL and email; the audit is prepared and sent; he is invited to a call to present it. The call is still the destination — the audit is the on-ramp to it, not a substitute for it.
+
+- **Persistent nav CTA:** the free audit. One ask everywhere.
+- **The ask page** (formerly "Book a Call"): the audit request dominates; a quiet *"already sure? book a call directly"* line serves S4 and anyone evaluating who does not want to wait.
+- **Waitlist: retired.** The audit request is the low-commitment capture; a waitlist has no job left and would be a competing ask.
+
+FOUNDER 2026-09-02, three decisions in sequence, each an override or acceptance taken with the orchestrator's recommendation in view: (1) the ask is a free footprint audit, not a working call; (2) delivery is two-step (submit → audit sent → call), not audit-on-the-call; (3) nav = audit, waitlist retired. This supersedes the "Book a Call · waitlist as fallback" line of the 2026-08-26 lock (`WEBSITE-DESIGN-PROCESS.md` §3) — logged as deliberate.
+
+Risk, stated once and not repeated: the board's 2026-07-13 finding was against a *templated site wizard*; this audit is founder-prepared and real, which is a different thing, but it spends founder time per lead before any call exists, and capacity is bounded by sales time (`04-THE-PRODUCT.md` §3). Every audit sent is also a proof artefact the site can later point to — that is the upside.
 
 ### §0.2 Arrival states — by state, never by persona
 
@@ -137,3 +144,6 @@ The `growth`, `product` and `customer` lenses all carry `requires_claims: [user-
 | 2026-09-02 | R0 | No founder-written vision. R1 runs as written. |
 | 2026-09-02 | R0 | Arrival states: three axes, S1–S5, five cross-cutting rules — accepted. |
 | 2026-09-02 | R0 | "Monteshoder" = text-first. |
+| 2026-09-02 | R0 grill | **The ask is a FREE FOOTPRINT AUDIT**, not a working call. Founder override of the orchestrator's recommendation (working call), taken with the board's 2026-07-13 templated-audit finding and the funnel's CBO-proposal status in view. The audit is founder-delivered, not a site wizard. |
+| 2026-09-02 | R0 grill | **Audit delivery is two-step**: submit URL + email → audit prepared and sent → invitation to a call to present it. Founder override of the recommendation (book first, audit on the call). Risk stated once: founder time is spent per lead before any call is booked; capacity is bounded by sales time (`04-THE-PRODUCT.md` §3). |
+| 2026-09-02 | R0 grill | **Nav CTA = the free audit. Waitlist retired.** The ask page carries the audit request plus a quiet direct-booking line for S4. Accepted the orchestrator's recommendation. Supersedes the 2026-08-26 "book a call · waitlist fallback" line, logged as deliberate. |
