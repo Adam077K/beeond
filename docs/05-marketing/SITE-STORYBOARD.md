@@ -226,7 +226,7 @@ Home after the map: 8 sections + 1 beat (H1 H3 H4 H5 H6 H7 · H8 beat · H9 H10 
 - **C's objection register** (18 rows) is the checklist R3 walks: every row must be answered by a surviving section, deferred as OPEN, or acknowledged as unanswerable.
 - **G's per-state fold jobs** for Home and its ask-position counts per page feed R3.
 - **P's chapter subtitles** and **client-experience pairing** are the "easy to learn" devices; R2 writes them out.
-- The **sourcer's ten-site read** is appended below when it lands; its counts (where the ask sits, how proof is done without logos) are checked against the map before R2 dispatch and any conflict is noted once.
+- The **sourcer's ten-site read** (`packets/2026-09-02-r1-sourcer-agency-site-structure.md`, PARTIAL: ten fetched, Tuff Growth lost to a 403) landed after R2 was dispatched; the spine framer did not see it. Checked against §2 afterwards by the orchestrator, on the file: **ask in the hero body** (9 of 10) — met, H1 carries the CTA · **one label everywhere** (5 of 10, the rest vary) — met, one label site-wide · **ask in the nav** (9 of 10) — met · **the ask repeats three or more times** (9 of 10; mode nav · hero · mid · close) — met on Home (nav, hero, beat, close) · **client-identity proof at section two** (8 of 10; logos 10 of 10) — Beeond has none and, by founder decision, section two is the mechanism; the thin-proof sites' substitutes are a shown process (7 of 10 — H5, A3), a homepage FAQ handling cost, timeline and fit (5 of 5 — H9, D4), named humans (6 of 10 — B1, B2) and risk-reversal (their guarantees and published prices; here, the free audit itself and H10's "yours whether we end up working together or not") · **a comparison table on the homepage** (2 of 10, both AI-native entrants) — H7 keeps Beeond in that company · **a dedicated CTA block before the footer** (6 of 10) — met on every page. One conflict, noted once: **8 of 10 carry a proof destination in the nav** (Case Studies, Results, Portfolio); Beeond's nav has none and cannot honestly have one, so About and Approach carry that job between them.
 
 ## §2 — R2 SPINE
 
@@ -247,10 +247,29 @@ Home after the map: 8 sections + 1 beat (H1 H3 H4 H5 H6 H7 · H8 beat · H9 H10 
 ### §2.0 — Nav and footer
 
 **NAV — persistent, every page, unchanged as you scroll.**
-Logo left. Two links: **Approach · About**. One accent-filled button right: **"Get your free footprint audit."** Nothing else. No waitlist, no second CTA, no dropdown, no announcement bar. The button is the site's only ask and it is reachable from any scroll position on any page, which is what satisfies cross-cutting rule 1 (§0.2) — no visitor has to scroll to convert. On The Ask page the nav button is redundant with the page itself; it stays for consistency rather than being suppressed, and it scrolls to the form rather than reloading.
+Logo left, links centre-right, ask far right — the arrangement every visitor already knows, so none of his attention is spent learning it (Jakob's law). Two links only: **Approach · About**. Then the ask. Nothing else. No waitlist, no second CTA, no dropdown, no announcement bar, no services menu — and that last one is a deliberate departure: eight of the sourcer's ten sites carry a services or solutions item, and the two that don't are the two single-offer productized businesses, which is what Beeond is. Coverage is a section on Home, not a destination. Reachable from any scroll position on any page, which is cross-cutting rule 1 satisfied. On The Ask page the nav ask scrolls to the form rather than reloading.
 
-**FOOTER — quiet, low, no ask of its own.**
-Wordmark. The same two links, Approach and About, plus a plain text link to the audit page (text, not a button — the footer must not read as a second CTA). One contact address. The sign-off line **"drafted by the swarm · calibrated by Yarden"**, set small in the utility face — it is the operating pattern, §0.4-sanctioned, and it is the one place the mechanism gets stated as a signature rather than an argument. A privacy link, OPEN — page does not exist yet. Copyright line. **No waitlist. No newsletter. No logo strip. No social proof band.**
+**ONE LABEL, EVERYWHERE: "Get your free footprint audit."**
+Every instance of the ask on every page carries these exact words — nav, hero, mid-page beat, close, and the form's own submit button. Five of the sourcer's ten sites reuse one label and five vary it; one of the varying sites uses four different labels for the same ask. Varying it is how a single ask starts reading as several. This is Hick's law in one decision: one ask, one label, nothing to choose between.
+
+**THE ACCENT BUDGET — a real conflict, resolved here rather than left to Phase 2.**
+Layer 1 of the design language is a hard rule: one accent, only on the primary CTA, **at most twice per page**. The sourcer's mode is **four** ask placements on a homepage (nav, hero, mid, close). Both survive, because *placement* and *accent fill* are different things:
+
+| Position | Treatment | Accent fill? |
+|---|---|---|
+| Nav | Outlined in the accent, not filled — it is chrome, present always, and does not need to shout | No |
+| Hero | **Accent-filled button** | **Yes — one of two** |
+| Mid-page beat | Text link, accent as text colour (measured 8.2:1 AAA on both grounds, so this is supported, not a compromise) | No |
+| Close | **Accent-filled button** | **Yes — two of two** |
+
+Four placements, two fills. The fill is the page's one visually distinct element (von Restorff), and it lands at the two moments that matter: the first screen and the last. Everything else on the page earns attention through scale, ground and photography, never through colour.
+
+**FOOTER — quiet, low, no ask of its own.** Three groups, nothing loose:
+- **Where to go** — Approach · About · the audit page, as a plain text link, never a button.
+- **Who to reach** — one contact address, and the sign-off line **"drafted by the swarm · calibrated by Yarden"**, set small in the utility face. §0.4-sanctioned, and the one place the mechanism appears as a signature rather than an argument.
+- **The small print** — wordmark, copyright, privacy link. `[OPEN — no privacy page exists]`
+
+**No waitlist. No newsletter. No logo strip. No social proof band. No awards row.**
 
 ---
 
@@ -260,7 +279,18 @@ Wordmark. The same two links, Approach and About, plus a plain text link to the 
 
 **Arrival states served.** S1 (burned by generic AI output, browsing) and S3 (nobody owns marketing, evaluating) are the states this page is built for end to end. S2 (paying an agency, evaluating) is served from section two onward and takes his ask at the mid-page beat. S4 (warm, ready) does not read this page — he uses the nav button or goes to About. S5 is FUTURE.
 
-**Where the ask appears — three instances of one ask, never a second one.** The persistent nav button (position zero, no scroll). The mid-page beat at item 7, immediately after the comparison. The close at item 9. Count: **3**.
+**Where the ask appears — four instances of one ask, never a second one.** The nav (outlined, position zero, no scroll). **The hero body**, accent-filled. The mid-page beat at item 7, as accent text. The close at item 9, accent-filled. Count: **4** — which is the sourcer's mode exactly (nav, hero, mid, close), and an ask sits in the hero body in nine of its ten sites. Two accent fills, per Layer 1.
+
+> **The proof problem, and what carries it.** Client-identity proof sits at section two in eight of the sourcer's ten sites, and **no site of the ten carries none.** Beeond has none and, by founder decision, section two is the mechanism instead. The sourcer's own finding is that its three thinnest-proof sites answer with structural substitutes rather than evidence — a shown process (seven of ten), a homepage FAQ that handles cost, timeline and fit (five of five FAQs found), named humans (six of ten), and risk-reversal. All four are available to Beeond and all four are load-bearing here, so they are named rather than left to happen:
+>
+> | Substitute | Carried by | Note |
+> |---|---|---|
+> | A shown process | **H5**, and H3 for the mechanism behind it | Free — it is true and costs nothing to state |
+> | An FAQ handling cost, timeline and fit | **H9**, rebuilt to cover all three | Every FAQ the sourcer found handles exactly these |
+> | Named humans | **H3 block two** names Yarden on Home, About names both | Available to any company that has people |
+> | Risk-reversal | **The free audit itself** — stated in the hero, in H10, on the ask page | The only form available: no guarantee and no price may be used |
+>
+> Two of the sourcer's substitutes are closed to us and stay closed: a **guarantee** (three of ten) and a **published price** (four of ten). Both are on the never-claim list. That leaves Beeond running the thin-proof playbook with two of its five instruments missing, which is worth knowing rather than discovering in Phase 2.
 
 ---
 
@@ -268,7 +298,9 @@ Wordmark. The same two links, Approach and About, plus a plain text link to the 
 
 **THE JOB.** Say what he gets, in words a stranger understands in one read, with a person on screen.
 
-**WHAT HE SEES.** One photograph, full-bleed, running off at least two edges of the frame — a real person, warm, shot from low against open sky, the kind of light that is clearly a real afternoon and not a studio. It is not a desk, not a laptop, not a screen. Over it: a short headline and one line beneath it. Nothing else on the screen except the nav and its button. The text sits in the open part of the frame and never crosses the person. He reads the headline first, the line second, and the button is already in his eye because it is the only piece of colour on the page. *Phase 2 note: this section pulls toward Layer 3 moment 1 (the glyph field masked to the subject) at the dramatic end of the dial — the through-line's "humanity constant, tech dialled" is at its loudest here. Not assigned.*
+**WHAT HE SEES.** One photograph, full-bleed, running off at least two edges of the frame — a real person, warm, shot from low against open sky, the kind of light that is clearly a real afternoon and not a studio. It is not a desk, not a laptop, not a screen. Over it, set in the open part of the frame and never crossing the person: a short headline, one line beneath it, **and the accent-filled button directly under that** — the ask is in the hero body, not only in the nav, because an ask sits in the hero body in nine of the sourcer's ten sites. One quiet line under the button carries the risk-reversal, which is the only such instrument the never-claim list leaves open. Nothing else on the screen. He reads the headline first, the line second, and the button is already in his eye because it is the only piece of colour on the page.
+
+*The register, per the founder: expensive, minimal, futuristic, clean, human. The loudness is entirely in the image; the words stay quiet. No exclamation, no superlative, no verb that strains. If a line could appear on a discount landing page it is wrong here.* *Phase 2 note: pulls toward Layer 3 moment 1 (the glyph field masked to the subject) at the dramatic end of the dial — human against sky with the technological layer over it is the through-line at its loudest. Not assigned. Instrument texture — a running head, a section index, the ticking local-time stamp with its "(Scroll)" cue — belongs here if anywhere; it is a visual device, never a claim.*
 
 **TEXT (PROVISIONAL).**
 
@@ -277,6 +309,8 @@ Wordmark. The same two links, Approach and About, plus a plain text link to the 
 > **Deck** — Every channel handled, month after month — and you see exactly what was done.
 >
 > **CTA** — Get your free footprint audit
+>
+> **Under the button** — Free, and yours to keep either way.
 
 *Two alternates the founder may prefer, with the reason each loses.* (B) *"We run your marketing. All of it. And we show you every piece."* — better rhythm, and it puts transparency in the headline; loses because it carries two ideas into a LOUD slot. (C) *"Everything your marketing needs, run as one."* — closest to the founder's own "like a single, coordinated agency"; loses because it describes us rather than what he gets, and the founder's decision was outcome first.
 
@@ -381,7 +415,7 @@ Wordmark. The same two links, Approach and About, plus a plain text link to the 
 
 **THE JOB.** Let him find his own channel in a list and decide for himself whether this covers him.
 
-**WHAT HE SEES.** A plain scannable list, set in columns, no icons, no cards, no ticks. The quietest thing on the page and deliberately so — it is a reference, not an argument. One line above it and one below.
+**WHAT HE SEES.** A plain scannable list in four labelled groups, set in columns, no icons, no cards, no ticks. The quietest thing on the page and deliberately so — it is a reference, not an argument. One line above it and one below. **The grouping is the section's whole design decision:** a flat run of a dozen channel names is a dozen things to hold, and nobody holds a dozen. Four groups of three or four is Miller's law applied literally, and it converts a list into a shape a visitor can scan for himself in one pass.
 
 **TEXT (PROVISIONAL).**
 
@@ -389,7 +423,13 @@ Wordmark. The same two links, Approach and About, plus a plain text link to the 
 >
 > **Headline** — What "whole footprint" actually covers.
 >
-> **List** — SEO content · Technical SEO and schema · Rank tracking · Visibility in AI answers · LinkedIn and social · Founder-led content · Paid ads · Email lifecycle and deliverability · Landing pages and CRO · Website build · Reporting · Brand monitoring
+> **Getting found** — SEO content · Technical SEO and schema · Visibility in AI answers · Rank tracking
+>
+> **Being worth reading** — LinkedIn and social · Founder-led content · Email lifecycle and deliverability
+>
+> **Turning visits into conversations** — Paid ads · Landing pages and CRO · Website build
+>
+> **Knowing what happened** — Reporting · Brand monitoring
 >
 > **Closing line** — Not all of it, for everyone. It starts narrow and widens, scoped to what your footprint actually needs.
 
