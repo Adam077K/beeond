@@ -63,9 +63,11 @@ Knows: he asked a question ("done-for-you marketing", "AI marketing agency") and
 **Cross-cutting rules, derived from the states:**
 1. **Fast path.** Anyone already ready reaches Book a Call in one click from anywhere — the persistent nav CTA. No state has to scroll to convert.
 2. **The fold explains before it persuades.** For every COLD state the first screen answers "what is this" in plain words; the offer is invisible and has no screenshot (`WEBSITE-DESIGN-PROCESS.md` §2).
-3. **Honest status precedes the proof question.** "We are new, here is exactly how we work" appears before any state reaches "who have you done this for."
+3. **The proof question is answered by method, never by fake proof — and never by a stated status.** REVISED 2026-09-02 (founder): Beeond's stage is *implied only* — the named founders, the absence of logos and case studies, and the method shown in full say it; no sentence states "we are new" or "no clients yet." Where an arrival state reaches "who have you done this for," the answer is how we work, not a status line.
 4. **Forwardability.** Decision power is unknown (interview cluster A tests whether he decides alone or sells it up). Approach must read as a document one person can send to another.
 5. **The language/market objection has a reserved place.** "Do you work in my market, in my language?" is real for any Israeli visitor and the answer is OPEN (`01-THE-IDEA.md` §6). The storyboard reserves the slot; it does not decide the answer.
+
+**Struck by rule 3's revision:** any "honest status" section, badge or block (the G2 spine's device 7 included). Framers proposing one in R1 will see it cut in R2.
 
 **Not designed for, and why:** agency-owner/reseller (untested offer shape, `02` §4) · enterprise (excluded by the service-fit filter, `03` step 2) · curious peers, competitors, investors, candidates (not buyers; honest status keeps the founders from embarrassment in front of them, nothing is optimised for them).
 
@@ -96,9 +98,36 @@ The founder positioning statement verbatim (`01` §1) · two named founders and 
 - **FOUNDER — arrival states:** first draft returned with *"think more about that"*; the revision in §0.2 accepted.
 - **FOUNDER — "Monteshoder":** the text-first reading is right. No specific method or document is named.
 
-### §0.6 Rules for this session
+### §0.6 Rules for this session — REVISED 2026-09-02 (founder)
 
-Text only · commit after every round · every engine writes its packet to disk and returns ≤150 words plus the path · a risk is stated once and logged, never repeated · markers PROVISIONAL / FOUNDER / OPEN are mandatory · no engine returns BLOCKED on `user-language` (§0.7) · the orchestrator writes no section itself: it frames, dispatches, merges and holds the founder loop.
+Text only · commit after every round · every engine writes its packet to disk and returns ≤150 words plus the path · a risk is stated once and logged, never repeated · markers PROVISIONAL / FOUNDER / OPEN / ORCHESTRATOR are mandatory · no engine returns BLOCKED on `user-language` (§0.7) · the orchestrator writes no section itself: it frames, dispatches, merges and holds the loop.
+
+**FOUNDER 2026-09-02, mid-session, verbatim in substance:** *stop discussing the small details; go with the orchestrator's vision and the agents' thinking; the founder reviews the final outputs and edits the text then; go deeper into text — what should appear and what is said; earlier decisions may be changed where they do not align with the vision or the storytelling.* Consequences:
+- The founder loop moves to the end. R2 strike-through and R3 acceptance are the orchestrator's, marked **ORCHESTRATOR**, and the founder reacts to the finished 1.0.
+- **Text depth is raised.** Every section in §2 carries a **TEXT (PROVISIONAL)** field — headline, deck, and the body in full where the section is wordy — not only an intent line. Still no numbers, no invented customer language, nothing on the §0.3 list. `copywriting` may now be loaded for it.
+- Remaining grill items closed by orchestrator decision, OPEN to the founder's edit at the end: Yarden reads the finished storyboard with Adam, before Phase 2 · the bar (a percent) is named by the founder on the finished 1.0 · voice is "we" for the company, first person for each founder on About · the audit's turnaround expectation is set in the confirmation after submitting, never as a number on the page · the four-page architecture stands unless R2 finds a reason.
+
+### §0.8 The feeling — evidence base for WHAT HE SEES
+
+G0 and G1 are closed and locked. Phase 1 stays text-only, but every "WHAT HE SEES" line is conceived inside the locked feeling, so the engines read the analysis, not only the frame. All of it is committed in this worktree; the founder's `docs/design-brain/` folders (105 files, untracked in the main checkout) are byte-identical subsets of `references/founder-brain/` (verified by checksum 2026-09-02: 68/68, 20/20, 17/17), which also carries the meaning-named copies and the indexes.
+
+| Read | What it is |
+|---|---|
+| `docs/05-marketing/DESIGN-LANGUAGE.md` | The build contract. Layer 1 invariants, Layer 2 the through-line ("real photography with a light technological layer — humanity constant, tech dialled"), Layer 3 the seven signature moments, Layer 5 the attention budget |
+| `docs/05-marketing/references/ART-DIRECTION-BRIEF.md` | The art-direction read: the founder's taste stated back as rules |
+| `docs/05-marketing/references/FOUNDER-REFERENCE-NOTES.md` | The founder's own notes on the references — which are spec and which are vibe |
+| `docs/05-marketing/references/founder-brain/_brief-01..05-*.md` | The founder's five briefs: websites · branding · artistic direction · dreamy nature grids · addendum |
+| `docs/05-marketing/references/founder-brain/_techniques-branding.md` · `_techniques-landing.md` | Techniques mined from the set |
+| `docs/05-marketing/references/founder-brain/branding-feeling/_index-A.md` · `_index-B.md` · `_index-C.md` | Index of the 68 feeling images, each named by its meaning |
+| `docs/05-marketing/references/founder-brain/landing-page/_index-landing.md` | Index of the 20 landing-page references |
+| `docs/05-marketing/references/founder-brain/logo/_index-logo.md` | Index of the 17 logo images; the mark is locked |
+| `docs/05-marketing/references/REFERENCES.md` | 12 craft boards (borrow / avoid) and the 4-image anti-slop negative set |
+| `docs/05-marketing/references/site-captures/README.md` · `speakeasy/NOTES.md` | Teardowns of 9 external sites; Speakeasy is the founder's pick |
+| `docs/05-marketing/g1-directions/A-crossstitch-poster.png` | The one surviving G1 direction image (cross-stitch is on the not-used list; context only) |
+| `design/tokens/contrast.md` · `design/references/README.md` | The measured token contrast table |
+| `docs/08-agents_work/sessions/2026-08-26-ceo-website-design-process.md` | The G0/G1 session record |
+
+**Reading budget for an engine:** the design language (Layers 1–3, 5), the art-direction brief, the founder notes, `_brief-03-artistic-direction.md`, and the three feeling indexes — then up to eight images, chosen by their index names, only where a section's "what he sees" needs one. Never the whole image set.
 
 ### §0.7 The exception every framer brief carries
 
@@ -132,7 +161,8 @@ The `growth`, `product` and `customer` lenses all carry `requires_claims: [user-
 
 - OPEN · S5 (search / AI-answer arrival) — FUTURE; no SEO/GEO exists.
 - OPEN · the language/market answer (rule 5 in §0.2).
-- OPEN · nav labels, booking-widget implementation, FAQ content, "why now" framing on About — carried from the G2 spine §F.
+- OPEN · the two founder credential facts — founder supplies before Phase 2 (decided 2026-09-02).
+- OPEN · nav labels, audit-form implementation, FAQ content, "why now" framing on About — carried from the G2 spine §F.
 
 ---
 
@@ -147,3 +177,11 @@ The `growth`, `product` and `customer` lenses all carry `requires_claims: [user-
 | 2026-09-02 | R0 grill | **The ask is a FREE FOOTPRINT AUDIT**, not a working call. Founder override of the orchestrator's recommendation (working call), taken with the board's 2026-07-13 templated-audit finding and the funnel's CBO-proposal status in view. The audit is founder-delivered, not a site wizard. |
 | 2026-09-02 | R0 grill | **Audit delivery is two-step**: submit URL + email → audit prepared and sent → invitation to a call to present it. Founder override of the recommendation (book first, audit on the call). Risk stated once: founder time is spent per lead before any call is booked; capacity is bounded by sales time (`04-THE-PRODUCT.md` §3). |
 | 2026-09-02 | R0 grill | **Nav CTA = the free audit. Waitlist retired.** The ask page carries the audit request plus a quiet direct-booking line for S4. Accepted the orchestrator's recommendation. Supersedes the 2026-08-26 "book a call · waitlist fallback" line, logged as deliberate. |
+| 2026-09-02 | R0 grill | **Audit content = the four-part audit** from `04-THE-PRODUCT.md` §7: technical SEO scan · GEO/AI-search readiness · content and LinkedIn gap · competitor snapshot, as a short written document. The site says what it covers, never how many findings, pages, or days. Accepted the recommendation. |
+| 2026-09-02 | R0 grill | **Honest status is IMPLIED ONLY.** Nothing on the site states "we're new" or "no clients yet"; the founders, the absence of logos, and the method say it. Founder override of the recommendation (plain words on Home and About), taken with the buyer-trust finding (`02-THE-PROBLEM.md` §2b, LOW confidence) in view. Risk stated once: S2's "where are your case studies" goes unanswered on the page and must be answered by method alone; a transparency company that does not state its own stage carries a tension a sharp visitor may notice. Rule 3 in §0.2 rewritten. |
+| 2026-09-02 | R0 grill | **Founders named with roles; credential facts supplied by the founder before Phase 2 opens.** Adam: systems and the swarm. Yarden: marketing and growth, the calibration layer. One dated, verifiable fact each, no adjectives (spec: the 2026-07-03 pre-session pack §2, archived). Accepted the recommendation. OPEN until the facts arrive — About's founder section reserves the slot. |
+| 2026-09-02 | R0 grill | **Dashboard: promise the practice, not the product.** "Every month you see exactly what was done, how much, and why" stated as how Beeond works, human sign-off in the same breath; no screenshot, no product name, no "see it live", no "coming soon". Accepted the recommendation. |
+| 2026-09-02 | R0 grill | **Fold = outcome first; the swarm and the human arrive at section two.** Screen one says what he gets (his whole footprint, run for him — PROVISIONAL intent, not copy); the mechanism is the second beat. Founder override of the recommendation (name the swarm on screen one). Never "AI-powered" as a label anywhere. Consequence for R2: cross-cutting rule 2 ("the fold explains before it persuades") is satisfied by the outcome statement, and S2's one-screen differentiation moves to section two. |
+| 2026-09-02 | R0 grill | **Pricing: one sentence of how, no figure**, in the ask page's FAQ — monthly, scoped to the footprint, told on the call after the audit. No tiers, no "starting at", no range. Accepted the recommendation. |
+| 2026-09-02 | R0 grill | **Language/market slot stays empty, marked OPEN.** The storyboard reserves the place; nothing fills it until ICP and language scope land. Accepted the recommendation. |
+| 2026-09-02 | R0 grill → close | **FOUNDER: stop the grill; go with the orchestrator's vision and the agents' thinking; review the finished outputs; go deeper into text.** Founder loop moves to the end; text depth raised (§0.6). Feeling evidence base handed to every engine (§0.8). Remaining grill items closed by orchestrator decision, OPEN to the founder's edit. |
