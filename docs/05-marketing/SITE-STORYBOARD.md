@@ -5,7 +5,7 @@
 
 | Field | Value |
 |---|---|
-| Version | **0.3 — R2 spine v1** (0.1 R0 frame · 0.2 R1 candidate map · 0.4 R3 journey · 1.0 gate) |
+| Version | **0.4 — R3 journey** (0.1 R0 frame · 0.2 R1 candidate map · 0.3 R2 spine · 1.0 gate) |
 | Session | `orchestrator-site-thinking` · gold · branch `ceo-1-1788359253` · started 2026-09-02 |
 | Founder | Adam, present, reacting per round |
 | Source of truth | `HANDOFF-CLEAN-START/` (5 files). Nothing here overrides it. |
@@ -1455,14 +1455,31 @@ Two sections do nothing for a particular state and each has a state that needs i
 
 ---
 
-## §4 — OPEN
+## §4 — OPEN (as of R3, 2026-09-02)
 
-- OPEN · S5 (search / AI-answer arrival) — FUTURE; no SEO/GEO exists.
-- OPEN · the language/market answer (rule 5 in §0.2).
-- OPEN · the two founder credential facts — founder supplies before Phase 2 (decided 2026-09-02).
-- OPEN · nav labels, audit-form implementation, FAQ content, "why now" framing on About — carried from the G2 spine §F.
+**Founder-owned**
+- OPEN · **The two founder credential facts** — one dated, verifiable fact each, under the names on About (B1, B2). The founder supplies both before Phase 2. §3.4 rates this the highest-value OPEN in the document: the warm referral's central belief currently rests on two blank slots.
+- OPEN · **The language/market answer** (rule 5; D4 row five) — waits on ICP and language scope.
+- OPEN · **Pause / stop terms** (D4 row four) — `04-THE-PRODUCT.md` §11; the row names the question and defers it to the call. No engine invents a policy.
+- OPEN · **The referral landing URL** — the About page is what the spine assumes a founder sends (§3.4). If the root is sent instead, the warm visitor never sees the two faces. A founder habit, not a build item.
 
----
+**Phase 2 (visual experience) must resolve**
+- OPEN · **The accent budget.** `DESIGN-LANGUAGE.md` Layer 1 caps the accent at twice per page, on the primary CTA only. §2.0 resolves four ask placements as two fills (hero, close) plus an outlined nav button and a mid-page beat; §3.6 asks for that beat to be an outlined button. Phase 2 verifies the outline and any accent text against the letter of Layer 1; if they count, nav and beat use ink, not accent. The storyboard does not override the design language.
+- OPEN · **The closing photograph** (H10: meadow, flowers, sky) is derived from the reference corpus and the founder's vibe line, never from the deleted 2026-09-02 build's "golden-hour meadow" vision (§0.3 item 12).
+- OPEN · **H4's rejected line must read as a rejection at a glance** — if the struck-through buzzword line reads as copy, the section inverts against the visitor it exists for (§3.1).
+- OPEN · **D3 within the first screen of the ask page**, not merely "beside or beneath the form" (§3.4).
+- OPEN · Signature-moment assignment (Layer 3), the scroll set-piece's subject and pin (Layer 4b; H5 is the natural pull), and every "Phase 2 note" in §2 — pull, not assignment.
+- OPEN · **S5 (search / AI-answer arrival)** — FUTURE. §3.5 records what would change and finds the spine does not need rebuilding for it; one structural gap noted: no single self-contained sentence defining Beeond exists on any page.
+
+**Build (Phase 2 or later) must resolve**
+- OPEN · **Form endpoint, storage, and the confirmation message** — the confirmation carries the audit's turnaround expectation by founder decision (§0.6), so its copy is a real deliverable, not plumbing.
+- OPEN · **The direct-booking destination** (D3) — nothing is wired; §3.4: the two-click path for the only channel that exists currently ends nowhere.
+- OPEN · The ask page slug (`/audit` preferred, `/start`, `/get-your-audit`) · a privacy page for the footer link.
+
+**Consequences recorded, not to be re-argued**
+- The waitlist's retirement leaves the price-sensitive visitor (S3) with no "later" — he takes the audit, reads Approach, or leaves with nothing (§3.3). The free audit is the founder's intended replacement and is a larger step than the one removed.
+- Status implied only: the evaluator with a shortlist (S2) assembles the proof case himself from the absence of logos, a two-person About and the method shown in full; his "where are your case studies" is answered by method alone (§3.2, §2.5).
+- No proof destination in the nav (8 of 10 agency sites have one): About and Approach carry that job between them.
 
 ## §5 — FOUNDER DECISION LOG (this document)
 
@@ -1484,3 +1501,5 @@ Two sections do nothing for a particular state and each has a state that needs i
 | 2026-09-02 | R0 grill | **Language/market slot stays empty, marked OPEN.** The storyboard reserves the place; nothing fills it until ICP and language scope land. Accepted the recommendation. |
 | 2026-09-02 | R0 grill → close | **FOUNDER: stop the grill; go with the orchestrator's vision and the agents' thinking; review the finished outputs; go deeper into text.** Founder loop moves to the end; text depth raised (§0.6). Feeling evidence base handed to every engine (§0.8). Remaining grill items closed by orchestrator decision, OPEN to the founder's edit. |
 | 2026-09-02 | R2 | **FOUNDER: the vibe** — expensive, technology, minimalistic, futuristic, clean, human; bee, flowers, ink, ASCII and dot layers, numbers as texture, human and sky. Recorded as §0.8b, the register for all text and for Phase 2. **FOUNDER: include the UX laws** and how the brain reacts to interaction, visuals, text, layout, motion — recorded as §0.9, applied to text and journey now and to Phase 2 later. |
+| 2026-09-02 | R2 | ORCHESTRATOR: spine v1 written by `framer` [product] on Opus (text is the deliverable); v2 applied the sourcer's counted patterns, the vibe register and the UX laws. Attention marks changed from §1 with reasons written beside them: A3, A4, A5, B4 run QUIET because prose lives in quiet sections. Language row on D4 only; pricing *why* on H9, *how* on D4. |
+| 2026-09-02 | R3 | ORCHESTRATOR: journey walked by `framer` [growth] on Opus for S1–S4, S5 noted not walked. 25 gaps, one section on no law (B4). Three changes to fight for, in priority: H8 as an outlined button with a Fitts's row in §2.7 · H4 cut to one card · one in-body route from Home to Approach. Routed to the v3 spine pass together with the reviewer's findings. |
