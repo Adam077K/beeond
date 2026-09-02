@@ -24,6 +24,19 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-09-02 — ONE-RUN WEBSITE BUILD REJECTED; BACK TO PLANNING, FOUNDER WRITES THE VISION (FOUNDER-decided)
+
+**Context:** After a `/grill-me` session the founder asked for a single Fable 5.1 run to build the whole marketing site. `builder` (fable-website-build) delivered it on `feat/website-fable`: 13 commits, four pages, the two renderers, a typed content layer, and 24 full-page renders under three photographic visions (Open Field · Night Studio · Overcast Coast). The 24 photographs were generated from the parent session via Higgsfield `soul_2` (3 credits) after the OpenAI key returned `429 insufficient_quota`. Every check the builder ran was green; QA verdict was PENDING, nothing reached `main`.
+**Decision (founder), by eye, on the live site and the renders:** **"I don't like the designs."** The build is deleted — branch, generated photographs, web assets, renders, session file — and the process returns to planning. **The founder writes the site's main things himself first**; the team then develops from that, adds sections, and plans the site from there.
+**What is KEPT, by explicit instruction:** the whole G0/G1 design brain — `DESIGN-LANGUAGE.md`, `WEBSITE-DESIGN-PROCESS.md`, `ART-DIRECTION-BRIEF.md`, `FOUNDER-REFERENCE-NOTES.md`, the indexed reference corpus under `references/` (152 images on disk), the 2026-08-26 session record, `LONG-TERM.md`, and every earlier DECISIONS entry — plus the G2 spine packet (`docs/08-agents_work/packets/2026-09-01-g2-product-architecture-spine.md`) and the G2 plan file, which are planning, not design output.
+**What is GONE:** `feat/website-fable` (was `4d3ff5b`; recoverable from reflog for a while, then not) · `apps/web/art-src/`, `apps/web/public/images/`, `apps/web/build-evidence/` (moved to the session scratchpad, not the repo) · `VISIONS.md` · `ROLE-ASSIGNMENTS.md` · `g4-visions/`. `apps/web` is the 111-line shell again.
+**Rationale:** Founder judges by eye and reacts only to finished work; this was finished work and it did not land. No argument was made against the call.
+**Reversibility:** the deletion is irreversible once the reflog expires; the decision to return to planning is reversible at any time.
+**Owner:** founder, via `team-lead`
+**Affects:** G2/G3/G4 — all reopened. The 2026-09-01 "G3 = Higgsfield" entry is not revoked, but nothing currently depends on it. The next input is the founder's own written vision, not an agent brief.
+**Recorded once, not to be repeated:** this is the eighth website direction built and set aside since June (v3–v7, G1's eleven mockups, and now this). The rule that matters in `CLAUDE.md` — no direction locked without a customer signal — was not violated, because nothing was locked; but the tempo is the same. Two warm prospects remain un-called.
+**Detail:** the session transcript; no session file survives for the build itself.
+
 ## 2026-09-01 — G3 PRODUCTION METHOD: Higgsfield + an image AI model (FOUNDER-decided)
 
 **Context:** G2 (SHAPE) planning surfaced the production method for G3 (the full mockup set) as an open question. `orchestrator` had recommended a different combination — a machine-enforced design system generated from `DESIGN-LANGUAGE.md`, with Higgsfield demoted to photography and set-piece video only — on the reasoning that G1's failure was a prose-prompted image model collapsing to one reference's world rather than the locked combination.
