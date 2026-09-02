@@ -326,6 +326,8 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE JOB.** Turn one blurry claim into three named parts, each paired with what he would actually experience from it.
 
+> **This section sits where client proof sits on eight of the sourcer's ten sites, and it has none to offer.** Two of the four available substitutes are deliberately loaded here rather than left to chance. **Named humans** (six of ten): block two names Yarden, which is the first and earliest point on the site where a person is attached to a promise — it is not decoration and it must not be softened to "a human" or "our team." **A shown mechanism**, which is the honest half of what a process device buys. What this section cannot do is carry identity proof, and it must not try: no "trusted by," no implied roster, no volume figure standing in for a client count.
+
 **WHAT HE SEES.** Three blocks read top to bottom as a sequence, not a grid of equal peers — the second follows from the first, the third follows from the second, and the layout has to say so. Each block is a plain-language label, one line of what it is, and one line of what it means for him. Light ground, hairlines exposing the column grid, no icons, no feature cards. Short enough that all three can be held at once.
 
 **TEXT (PROVISIONAL).**
@@ -388,6 +390,8 @@ Four placements, two fills. The fill is the page's one visually distinct element
 #### H5 · The shape of it — MEDIUM
 
 **THE JOB.** Let him picture what he is signing up for, without a calendar.
+
+> **This is the shown-process substitute, and it is the cheapest proof on the site.** Seven of the sourcer's ten sites show a step-by-step process; the three that don't are the three traditional agencies, which have case studies instead. Beeond is in the first group by necessity. The device costs nothing, requires no client, and is entirely true — which is exactly why it must stay specific. A process section that softens into "we work closely with you throughout" stops being a substitute for proof and becomes the thing it was meant to replace.
 
 **WHAT HE SEES.** Three named phases as a horizontal strip, each a label and one line. Low text, plainly sequential, no dates, no numbers, no progress bar. *Phase 2 note: this is the natural pin for the Layer 4b scroll set-piece — the sequence is already a scrub. It is below the fold, which the budget requires. Not assigned.*
 
@@ -471,11 +475,11 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE JOB.** Take S2's ask at the exact moment the comparison lands, without putting a button inside the comparison.
 
-**WHAT HE SEES.** One line and the same button, set small, immediately under the comparison on the same ground. It has no argument of its own and is visually subordinate to what it follows.
+**WHAT HE SEES.** One line and the ask as accent-coloured text, not a filled button — set small, immediately under the comparison on the same ground. It has no argument of its own and is visually subordinate to what it follows. This is the third of four ask placements and the second of the two that carry no accent fill, which is what keeps Layer 1's two-fills-per-page rule intact while still taking S2's ask at the moment §0.2 places it.
 
 **TEXT (PROVISIONAL).**
 
-> **Line** — Want to see where yours actually stands?
+> **Line** — See where yours stands.
 >
 > **CTA** — Get your free footprint audit
 
@@ -489,28 +493,36 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 #### H9 · Before you ask — QUIET
 
-**THE JOB.** Answer the three sharpest doubts plainly, in his words, before he has to go looking.
+**THE JOB.** Do the work a case-study wall would do. Answer cost, timeline and fit plainly, before he has to go looking for any of them.
 
-**WHAT HE SEES.** The page's one prose home. Three question-and-answer rows, hairline-separated, questions in the display face and answers in running text near sixty-five characters. Nothing visual. This is where the text budget is spent.
+**WHAT HE SEES.** The page's one prose home. Five question-and-answer rows, hairline-separated, questions in the display face and answers in running text near sixty-five characters. Nothing visual. This is where the page's text budget is spent.
+
+> **Rebuilt against the sourcer's finding, and this is the section that changed most.** Every homepage FAQ in the ten-site read handles **cost, timeline and fit** — five of five, without exception. The first draft of this section had cost and neither of the other two. It now carries all three. Five rows is Miller's ceiling, so nothing more may be added here without something leaving. Order is by serial position: the sharpest objection opens, the decision-shaped one closes, evidence sits in the middle.
 
 **TEXT (PROVISIONAL).**
 
 > **Headline** — Before you ask.
 >
 > **Q. Is this just AI tools with a markup?**
-> A. The agents do the volume — that part is a machine and we're not going to pretend otherwise. What makes it worth paying for is the standard it gets held to and the person who holds it there. Without that check the work would look like everyone else's, which is the thing we built this to avoid.
+> A. The agents do the volume — that part is a machine and we're not going to pretend otherwise. What makes it worth paying for is the standard the work gets held to, and the person who holds it there. Without that check it would read like everything else produced this way, which is the thing we built this to avoid.
 >
 > **Q. I already have an agency. What's different?**
 > A. Mostly, what you can see. Every month you get the record of what was done, how much of it, and why, with a name attached to the sign-off. That's the part we'd want to see if we were the ones paying.
 >
+> **Q. How soon does anything actually happen?**
+> A. Foundation comes first and it's quiet — the audit, your voice, the plumbing — and you'll see comparatively little while it runs. Output starts in the phase after it. We won't put a date on that here, because at this point we'd be inventing one.
+>
 > **Q. Why isn't there a price on this site?**
-> A. Because it depends on how much footprint there is to run, and we haven't seen yours. Look at your site first — that's what the audit is — and the number comes on the call after it.
+> A. Because it depends on how much footprint there is to run, and we haven't seen yours. We look at your site first — that's what the audit is — and the number comes on the call after it.
+>
+> **Q. Is this right for a company like mine?**
+> A. It fits if you have more channels than attention, and nobody whose whole job is holding them together. It fits badly if what you want is one channel run deeply by a specialist in it — that's a different purchase, and there are people who do it well.
 
-**THE BELIEF AFTER.** They answered the awkward ones without dodging, and one of the answers was "we don't know yet."
+**THE BELIEF AFTER.** They answered the awkward ones without dodging, they told me where it doesn't fit, and one of the answers was "we'd be making that up."
 
-**ARRIVAL STATES.** S1 (row one) · S2 (row two) · S3 (row three).
-**OBJECTIONS ANSWERED.** O1 · O3 · O8 (the short form; the founder's full sentence of *how* lives on The Ask, D4) · O14 reinforced.
-**MUST NOT CLAIM.** §0.3.4 — these are founder-anticipated questions, structurally inferred, not things a buyer has said. §0.3.10 — row three explains *why* there is no price and must never drift into *how much*, a range, or "starting at." §0.3.5 — row one must not become "and here's how well it has worked."
+**ARRIVAL STATES.** S1 (row one) · S2 (row two) · S3 (rows three and four) · every COLD state (row five).
+**OBJECTIONS ANSWERED.** O1 · O3 · O7 as timeline · O8 (the short form; the founder's full sentence of *how* lives on The Ask, D4) · O14 reinforced. Row five is the site's only explicit disqualification, and it is the register's answer to fit.
+**MUST NOT CLAIM.** §0.3.4 — these are founder-anticipated questions, structurally inferred, not things a buyer has said. §0.3.1 — **row three is the most number-tempting line on Home and gets none**; "comparatively little" and "the phase after it" are the honest ceiling. §0.3.10 — row four explains *why* there is no price and must never drift into *how much*, a range, or "starting at." §0.3.3 — **row five must answer fit by shape, never by segment.** "More channels than attention" is a situation; "for B2B SaaS founders" is a persona and is banned. §0.3.5 — row one must not become "and here's how well it has worked."
 
 ---
 
@@ -518,13 +530,13 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE JOB.** One ask, no recap.
 
-**WHAT HE SEES.** A last full-bleed photograph and very little on it: one line and the button. No summary of the page, no feature list, no new argument. *Phase 2 note: pulls toward Layer 3 moment 7, the knockout logotype cut out of a photograph and cropped hard by both edges — a closing signature rather than a closing argument. Not assigned.*
+**WHAT HE SEES.** A last full-bleed photograph — a meadow, flowers, sky, the warm end of the palette — and very little on it: one line, one supporting line, and the second of the page's two accent-filled buttons. No summary of the page, no feature list, no new argument. Peak-end says this is the page's second-best moment and it gets built like one, not appended like a footer. *Phase 2 note: pulls toward Layer 3 moment 7, the knockout logotype cut out of a photograph and cropped hard by both edges — a closing signature rather than a closing argument. Not assigned.*
 
 **TEXT (PROVISIONAL).**
 
 > **Headline** — Start with a look at what you've got.
 >
-> **Deck** — Free, real, and yours whether we end up working together or not.
+> **Deck** — It's free, and it's yours to keep whether we work together or not.
 >
 > **CTA** — Get your free footprint audit
 
@@ -552,7 +564,9 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **LOUD positions: 1, 6, 9.** Three, inside the 1–3 budget.
 **Adjacency: passes.** Gaps of four and two. The two items between 6 and 9 are both QUIET.
-**Loud-or-wordy: passes, counted.** H1 is a headline and one line. H7 is a headline and four rows averaging fourteen words. H10 is a headline and one line. No LOUD section on this page carries a paragraph. Prose — continuous running sentences — appears in exactly one place on Home, H9, which is QUIET. That is the rule satisfied rather than asserted.
+**Loud-or-wordy: passes, counted.** H1 is a headline, one line and one line under the button. H7 is a headline and four rows averaging fourteen words. H10 is a headline and one line. No LOUD section on this page carries a paragraph. Prose — continuous running sentences — appears in exactly one place on Home, H9, which is QUIET. That is the rule satisfied rather than asserted.
+**Accent fills: 2** — H1 and H10, per Layer 1. **Ask placements: 4** — nav, H1, H8, H10, per the sourcer's mode. **One label at all four.**
+**Miller's law: passes, counted.** Largest group on the page is four: H6's largest sub-group, H7's four rows. H3 has three blocks, H5 three phases, H9 five rows at the stated ceiling. Nothing on Home asks the visitor to hold more than five of anything.
 
 ---
 
@@ -674,7 +688,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 >
 > **Who signed it off.** A name. The person who read it before you did.
 >
-> This is how the work runs, not a report we send if you chase us for one. It is the same record we use to run your account — you are looking at the actual thing, not a summary of it made for you.
+> This is how the work runs, not a report you have to ask for. It is the same record we use to run your account — you are looking at the actual thing, not a version of it made for you.
 
 **THE BELIEF AFTER.** The transparency claim has a real shape, and it's an operating habit rather than a feature.
 
@@ -891,9 +905,11 @@ Four placements, two fills. The fill is the page's one visually distinct element
 > **Field one** — Your website
 > **Field two** — Where to send it
 >
-> **Submit** — Send me the audit
+> **Submit** — Get your free footprint audit
 >
 > **Trust line, under the button** — We use your address to send the audit and to talk to you about it. That's all it's for.
+
+*The submit button carries the site's one label rather than a form-specific one ("Send me the audit," "Submit," "Request"). Five of the sourcer's ten sites reuse a single label everywhere and the worst offender uses four. The button is the ask, so it says what the ask says. Field order — website, then email — is the order he expects (Jakob's law); reversing it costs nothing and gains nothing.*
 
 **THE BELIEF AFTER.** That was easy, and I know what happens to what I just typed in.
 
@@ -935,17 +951,19 @@ Four placements, two fills. The fill is the page's one visually distinct element
 > **Q. What's actually in it?**
 > A. A technical read of your site. A check on whether AI answer engines can find you and cite you. A look at your content and your LinkedIn against the gaps we can see. And a snapshot of what the people you compete with are doing. Written in plain language, not a scored report.
 >
-> **Q. When will I hear back?**
-> A. A person writes this, so it goes out when it's genuinely ready rather than on a timer. You'll get a note the moment we start, and that note will tell you when to expect it.
->
-> **Q. What does it cost, if we end up working together?**
-> A. It's monthly, and it's scoped to how much footprint there is to run. We tell you the number on the call, once you've seen the audit and we've seen your site. There's no price on this website because anything we put here would be a guess about you.
->
 > **Q. What if I want to stop?** `[OPEN — terms not decided]`
 > A. Worth asking on the call, and we'd rather agree it with you than post terms here that don't fit what you're actually buying.
 >
 > **Q. Do you work in my market, in my language?** `[OPEN — §0.2 rule 5; the reserved slot lands here]`
 > A. Ask us directly. It's a fair question and the honest answer depends on your market, so we'd rather tell you straight than make a blanket claim on a webpage.
+>
+> **Q. What does it cost, if we end up working together?**
+> A. It's monthly, and it's scoped to how much footprint there is to run. We tell you the number on the call, once you've seen the audit and we've seen your site. There's no price on this website because anything we put here would be a guess about you.
+>
+> **Q. When will I hear back?**
+> A. A person writes this, so it goes out when it's genuinely ready rather than on a timer. You'll get a note the moment we start, and that note will tell you when to expect it.
+
+*Row order is serial position, and it changed after the first draft. The strongest row opens. **The two OPEN rows sit in the middle**, where the least attention lands, rather than at either end. The page then ends on the next thing that actually happens to him — which is peak-end applied to a page whose peak is the form above it. Ending on "we don't know yet," as the first draft did, spent the end position on the site's weakest sentence.*
 
 **THE BELIEF AFTER.** They answered the awkward ones, and where they didn't have an answer they said so instead of making one up.
 
@@ -996,6 +1014,34 @@ Every row of the customer packet's objection register (O1–O18), and where it l
 | O18 | "Is this a sales trap?" | D1 · D2 · H10 · D4 | Answered |
 
 **The one thing R2 has to say plainly about this table.** Under the founder's revision, O4, O9 and O10 have no sentence anywhere on the site. The risk was stated once at §5 and is not restated as an argument here; what R2 adds is the mechanical consequence, which is that **H4 and A4 are now load-bearing in a way they were not in any R1 set.** They are the only places a skeptical S2 gets anything in exchange for the proof he came looking for. If either gets cut or softened in Phase 2, the site loses its answer to O4 entirely and gets nothing back.
+
+---
+
+### §2.6 — THE REGISTER THE WORDS ARE WRITTEN IN
+
+**FOUNDER 2026-09-02, verbatim in substance:** *expensive, technology, minimalistic, futuristic, but clean; a human vibe. Human and sky and bee and flowers, with a technological layer — ASCII, dots, ink — over it.*
+
+Applied to text, that is one instruction: **the image is loud and the words are quiet.** The extravagance is spent entirely in the picture, which is also what the art-direction brief already says about type. So every line above is spare, exact and unhurried. No exclamation appears anywhere in this spine. No superlative. No verb that strains — nothing is unleashed, supercharged, transformed or elevated. No sentence that would read correctly on a discount landing page. Where a line had energy that came from volume rather than from precision it was cut: *"Want to see where yours actually stands?"* became *"See where yours stands."*, and *"Free, real, and yours whether…"* became *"It's free, and it's yours to keep whether…"* — the second in each pair is the more expensive sentence, and it is shorter.
+
+**Where the images sit, per the founder's four nouns.** Human at H1, B1 and B2. Sky at H1. Flowers at H10. The bee is the mark and lives in the nav and the footer, never as an illustration in a section. The technological layer — glyph, dot, ink — is the dial, dramatic at H1 and H10, subtle at B1's portraits, absent at A5 where any interface-shaped rectangle would imply a product that does not exist.
+
+---
+
+### §2.7 — THE UX LAWS, AND WHERE EACH ONE CHANGED SOMETHING
+
+Not a list of principles the spine happens to agree with. Each row names the decision that would have gone the other way.
+
+| Law | Where it changed a decision |
+|---|---|
+| **Hick's** | One label at every ask position site-wide, including the form's submit button — which was "Send me the audit" until this rule. Nav carries two links, not a services menu. The comparison has no Beeond row, so it stays an elimination rather than a five-way choice. |
+| **Miller's** | **H6 was a flat run of a dozen channel names.** It is now four groups of three or four, which is the single largest structural change in this revision. H9 capped at five rows; H3 three; H5 three; H7 four; A1 three; D4 five. |
+| **Serial position** | **H9's rows were reordered** so the sharpest objection opens and the fit question closes, evidence in between. **D4's rows were reordered** so the two OPEN answers sit in the middle rather than at an end. Each page's first and last sections carry its belief; the middles carry evidence. |
+| **Von Restorff** | Resolved the accent conflict in §2.0: four ask placements, **two** accent fills. The fill is the one distinct element per page, so it cannot also be the nav's default state — the nav ask is outlined, and the mid-page beat is accent text. |
+| **Cognitive load** | One idea per section, and the H1 alternates were judged on it — option (B) lost the hero specifically for carrying two ideas into a LOUD slot. Every headline in this spine is meant to land on one read; any that needs a second is wrong and should be marked. |
+| **Jakob's** | Logo left, links centre-right, ask far right. Website field before email field. Neither is interesting, and that is the point. |
+| **Progressive disclosure** | Home states, Approach deepens, the ask page resolves. H4 shows one rule catching one thing; A4 gives the rules in full. H5 is three lines; A3 is three paragraphs. H3 names the monthly record; A5 breaks it into its parts. **Home never carries the full explanation of anything.** |
+| **Peak-end** | H10 gets a photograph, a ground change and the second accent fill rather than being a strip under the FAQ. A6 and B5 are built as closes, not as sign-offs. D4's last row was changed so the ask page ends on what happens next instead of on an unanswered question. |
+| **Aesthetic-usability** | **Noted for Phase 2, not acted on here.** It predicts that a site this carefully made will be judged as easier to use than it is, which is a reason to keep the underlying flows genuinely simple rather than a licence to decorate. No text decision was made on it. |
 
 <!-- R2 SPINE END -->
 
