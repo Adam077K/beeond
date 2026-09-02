@@ -1050,7 +1050,407 @@ Not a list of principles the spine happens to agree with. Each row names the dec
 ## §3 — R3 THE JOURNEY
 
 <!-- R3 JOURNEY START -->
-*Not yet written. One walk per arrival state S1–S4 (S5 FUTURE), scroll by scroll, page by page.*
+
+**How to read this section.** Four walks — S1, S2, S3, S4 — each written as the visitor moves, scroll by scroll, page by page. Then §3.5 on S5, which is not walked. Then §3.6 across all four.
+
+Three rules govern what is below. **Every quoted line is verbatim from §2** — if it is in quotation marks it is on the spine, and if a walk needs a line that is not on the spine it appears only inside GAPS FOUND, marked as a suggestion. **Every belief is tested against the specific state**, which means the spine's own BELIEF AFTER is treated as a claim to check, not a fact to repeat: several sections turn out to earn their belief for the state they were written for and not for the other states listed beside it, and that is recorded rather than smoothed. **Every scroll names the §0.9 law it leans on**, and where a section leans on none, that is written as "none" and carried into GAPS FOUND, per §0.9's closing instruction.
+
+Two things this section is not allowed to do and does not do. It does not edit §2, even where a walk finds a defect in it — each one is recorded as a proposed fix addressed to the §2 revision and routed by the orchestrator. And it does not invent a visitor: the states are what he knows, weighs and fears, per §0.2, and where a section does nothing for a state the walk says so instead of manufacturing someone it helps.
+
+**The register.** Objection numbers are the customer packet's (O1–O18, Part 1 of `packets/2026-09-02-r1-framer-customer.md`); §2.5 is where each one lands on the spine. A walk marks each objection it meets as **answered**, **deferred (OPEN)**, or **standing**.
+
+### §3.1 — S1 · COLD · burned by generic AI output · browsing
+
+**Where he lands, and why.** Home, from a link — the only cold channel that exists. He knows nothing of Beeond and a great deal about what machine-written marketing looks like, because he has shipped some. He is weighing whether paying anyone beats what tools already give him free. He is afraid of paying for a wrapper, and of his brand sounding like everyone else's. Before he reads a word the nav has already spent Hick's law on his behalf: two links and one ask, nothing to choose between.
+
+**Scroll 1 · H1 · Hero — LOUD.**
+*Reads first:* "Your whole marketing footprint, run for you." Then "Every channel handled, month after month — and you see exactly what was done." Then the button, then "Free, and yours to keep either way."
+*Believes after:* the spine claims "I know what they would do for me, and there is a person in this somewhere." The first half holds. **The second half does not hold for this visitor.** The person is a photograph, and a warm human photograph over confident copy is the precise pairing he has been inoculated against — it is what the output he already distrusts looks like. What he actually believes is narrower: someone will run all his channels, and he will get a list of what they did. §0.2 requires this fold to "put the human in the loop on screen one" for him; the founder's later decision at §5 puts the human at section two. Both are binding and they disagree. Escalated below rather than resolved here.
+*Law:* Serial position effect (the page's first section carrying its belief) · Von Restorff effect (the single accent fill).
+*Register:* O1 "this is just AI" goes live on the first line. This section answers nothing, by design. **Standing.**
+
+**Scroll 2 · H3 · How the work gets done — MEDIUM.**
+*Reads first:* "What happens, in order, every time." Then block one, "A swarm of agents runs the output: content, pages, posts, technical fixes, campaigns, across every channel at once, coordinated as one thing rather than a pile of tools."
+*Believes after:* the order is right for him. The machine is named before the person, so nothing is being hidden, and that is what buys block two its hearing: "Yarden reads every piece against a written standard before it reaches you or your audience. Not a spot check — a standard, written down, that a piece has to clear before it counts as finished." The spine's belief holds here — he is the state it was written for. It holds **provisionally**: one named person reading everything is a claim about capacity, and a visitor who knows how much output a swarm produces will silently ask whether one reader can clear it. Home never touches that, and neither does Approach.
+*Law:* Miller's law (three blocks) · Progressive disclosure.
+*Register:* O1 **answered** · O14 **answered**.
+
+**Scroll 3 · H4 · What "done" means — MEDIUM.**
+*Reads first:* "A piece of work isn't finished because it got produced." Then card one, "A post can't open on a buzzword," and the line it caught.
+*Believes after:* "There's an actual bar here, and I've now seen it stop something." This is the section that converts him, and it earns its belief more completely for S1 than for any other state, because the struck-through line is a sentence he has personally written or deleted. It is recognition rather than persuasion, which is the cheapest form of belief there is.
+*Cost:* two cards, each carrying three registers — the rule, the line it caught, the rewrite. Six things at the moment his decision is being made. §2.7 states that "H4 shows one rule catching one thing"; H4 shows two. The spine contradicts itself here and it resolves in the direction of less work.
+*Law:* Progressive disclosure · Von Restorff effect **at a scale §0.9 does not define** — the struck line is the one thing in the section that looks like it failed, but §0.9 assigns Von Restorff per page, and Home's page-level distinctness is already spent on the LOUD sections and the accent.
+*Register:* O2 — method shown, outcome not promised, which is as far as honesty goes. His literal question, "will *my* brand sound generic," stays **UNANSWERABLE as asked**, correctly.
+
+**Scroll 4 · H5 · The shape of it — MEDIUM.**
+*Reads first:* "It doesn't all switch on at once."
+*Believes after:* nothing he needed. **This section does nothing for S1** and that is the honest reading rather than a defect — he is browsing, not buying, and phasing answers a question he has not yet asked. It belongs to S3. Recorded here because the brief requires it to be said rather than a beneficiary invented.
+*Law:* Miller's law (three phases).
+*Register:* none live for him.
+
+**Scroll 5 · H6 · What's covered — QUIET.**
+*Reads first:* "What 'whole footprint' actually covers." Then the group labels.
+*Believes after:* weakly, yes. He scans for the channels he has already tried and failed at, and finds them under "Being worth reading — LinkedIn and social · Founder-led content." The four-group revision matters for him specifically: he is scanning, not reading, and a grouped list survives a scan where a flat dozen does not.
+*Law:* Miller's law (four groups of three or four).
+*Register:* O7, the scope half. Not his live question.
+
+**Scroll 6 · H7 · What you're choosing between — LOUD.**
+*Reads first:* "What you're choosing between." His eye goes to "Doing it yourself — It gets done in the weeks you have time. Marketing doesn't work in the weeks you don't."
+*Believes after:* only partly. §0.2 puts his substitute at "DIY with AI tools" — and that substitute is split across two rows here, "A stack of tools" and "Doing it yourself," neither of which names the combination. The spine's belief, "I can see where this sits against my real options," requires him to read two rows as one. The row that would land hardest for him, the one about doing it yourself *with tools that write for you*, is the row the table does not have.
+*Law:* Miller's law (four rows) · Von Restorff effect (the ground change).
+*Register:* O3 is not his.
+
+**Scroll 7 · H8 · The ask beat — QUIET.**
+*Reads first:* "See where yours stands."
+*Believes after:* the spine assigns this beat to "S2 primarily · S3." By §0.2's own rule S1's ask comes "late, after mechanism and proof-of-method" — and he has had the mechanism at scroll 2 and the proof-of-method at scroll 3. **He qualifies here and the spine does not list him.**
+*Law:* Fitts's law — **leaned on and contradicted.** §0.9 states plainly that the CTA is a button, not a text link. This instance is accent-coloured text.
+*Register:* none. It is the ask, not an answer.
+
+**Scroll 8 · H9 · Before you ask — QUIET.**
+*Reads first:* "Q. Is this just AI tools with a markup?" — which is his own sentence, nearly verbatim, and the reason he keeps reading. The answer opens "The agents do the volume — that part is a machine and we're not going to pretend otherwise."
+*Believes after:* more than anywhere else on the page. The answer concedes before it argues, and every vendor who has sold to him has done the opposite. Rows three and four are not his. Row five lets him disqualify himself without asking anyone, which costs him nothing and buys the site credibility.
+*Law:* Serial position effect (his row opens the set) · Miller's law (five rows, at the stated ceiling).
+*Register:* O1 **answered** a third time, at its plainest.
+
+**Scroll 9 · H10 · Close — LOUD.**
+*Reads first:* "Start with a look at what you've got." Then "It's free, and it's yours to keep whether we work together or not."
+*Believes after:* the spine claims the next step costs him nothing. True as to money, and money is not his risk. **His risk is that the audit is itself machine-generated** — that he hands over a URL and gets back the same output he can already produce for free. The sentence that kills that fear is "not an automatic report that gets generated the second you hit send," and it is on D1, one click past the decision it would have unlocked.
+*Law:* Peak-end rule · Serial position effect.
+*Register:* O18 pre-empted.
+
+**By the fold.** Someone will run every channel for him and show him what was done; whether a machine writes it is still open, and that is the question he is reading on to settle.
+
+**His first objection.** O1, live on the first line of H1, unanswered for one scroll, then answered three times with rising specificity — H3 block two, H4, H9 row one. That escalation is the strongest sequence on Home for any state.
+
+**Where the ask appears for him.** Four placements. He is honestly ready at H8 and the spine does not offer him that instance by name; he is unambiguously ready at H10, after H9 row one has done its work. He takes the close.
+
+**If he is not ready.** The waitlist is retired, so there is no low-commitment capture left for a browsing visitor. His two honest exits are the Approach page for A4, the deepest answer the site has to his fear, or **leaving with nothing** — which is what a browsing S1 who is not persuaded by H4 actually does. That is stated plainly because it is true for a real share of this state.
+
+**How the supporting pages feed back to the ask.** Home → Approach is one click, on the nav. A4 sits at scroll 3 of that page and A6's close is the ask: **two clicks from Home to the ask by way of his deepest answer.** The path works and nothing on Home points at it — no section of Home links to Approach in body copy, while B2 on About does exactly that ("which you can read on the approach page").
+
+**The experience test.** Three places he has to work. H4 asks him to hold six things (two cards, three registers each) at the moment his decision turns. H7 asks him to read two rows as one to find his own substitute. And at the exit he has to guess that the nav word "Approach" is where the standard is explained in full, because Home never says so. Against "easy to understand, easy to learn, easy to use," the first and third are real costs and the middle one is a comprehension cost he may simply not pay.
+
+**The vibe test.** Mostly right. H9 row one — "that part is a machine and we're not going to pretend otherwise" — is the most expensive-sounding sentence he reads, because confidence that concedes is the register the founder asked for. The exception is H4: the struck-through line "In today's rapidly evolving landscape, unlocking growth means…" is the cheapest-sounding sentence on the site, and it carries the site's most load-bearing argument. It works only if Phase 2 makes the rejection unmissable at a glance. If it reads as copy rather than as a line being killed, the section inverts against precisely this visitor.
+
+**GAPS FOUND — S1.**
+
+1. **H1's belief is half-earned, and the cause is a §0-level contradiction, not a §2 defect.** §0.2 requires the fold to put the human in the loop on screen one for S1; §5's later founder decision puts the human at section two. The later decision governs. *Proposed fix — routed to the orchestrator, not to §2:* amend §0.2's S1 fold line to match the founder's decision, so the spine is not measured against a requirement that was superseded. **No change to H1 is proposed, because the human's position on screen one is founder-decided.**
+2. **H4 shows two cards; §2.7 says it shows one.** *Proposed fix to §2:* H4 carries card one only. The founder-led-content rule already appears in full at A4, so nothing is lost from the site, and Home's densest moment halves at the exact scroll where S1 decides.
+3. **H7 has no row for his actual substitute.** DIY-with-AI-tools spans "A stack of tools" and "Doing it yourself." *Proposed fix to §2 — PROVISIONAL suggestion, not copy:* the tools row could name the case where the tools also write, along the lines of *"A stack of tools — You still have to run them, they still sound like themselves, and none of them joins your channels up."* Keeps four rows, so Miller's law is untouched.
+4. **H8 does not list S1 among its arrival states.** By §0.2's own ordering he is ready here. *Proposed fix to §2:* add S1 to H8's ARRIVAL STATES as a secondary, changing no copy.
+5. **The argument that converts S1 is one click past his decision.** D1's "not an automatic report that gets generated the second you hit send" is the answer to his specific fear about the audit itself. *Proposed fix to §2:* nothing on Home should promise it, but H10's MUST NOT CLAIM should record that this sentence is load-bearing for S1 and cannot be cut from D1 in Phase 2.
+6. **Home never routes to Approach in body copy**, though §2.7's progressive-disclosure row makes Approach the necessary continuation of every Home section. *Proposed fix to §2:* one plain in-body link, in the manner B2 already uses.
+
+### §3.2 — S2 · COLD · paying an agency or freelancer now · evaluating
+
+**Where he lands, and why.** Home, cold, from a link, with a shortlist or a proposal already in hand. He knows what a retainer costs and how little of the work he actually sees. He is weighing Beeond against two or three others and is afraid of another opaque, slow, siloed vendor and of the switching cost. He is the only state that arrives with a comparison already running, which changes what every section has to do: it is not competing with nothing, it is competing with a named incumbent.
+
+**One departure, said once.** Eight of the sourcer's ten sites carry a dedicated proof destination in the nav — Case Studies, Results, Portfolio, Wall of Love, Before/After. This nav has Approach and About. **He looks for proof in the nav first, because that is where every site he has just evaluated keeps it, and there is no such destination here.** He will not read that as restraint; he will read it as absence. The spine knows this and answers by method instead, which is the founder's decision and is not reopened.
+
+**Scroll 1 · H1 · Hero — LOUD.**
+*Reads first:* "Your whole marketing footprint, run for you." Then "Every channel handled, month after month — and you see exactly what was done."
+*Believes after:* the headline is category language to him — his current agency claims exactly this, in these words. **The only new information on screen one is the deck's second clause.** §0.2 asks this fold to "differentiate in one screen, mechanism over adjectives," and it does, but on a subordinate clause of the second line rather than on the headline. What he believes is "another full-service pitch, with one clause I have not heard before." That is enough to earn scroll two, which is all the fold owes him, but the spine's stated belief — "there is a person in this somewhere" — is not what he takes from it. He is not looking for a person yet. He is looking for a difference.
+*Law:* Serial position effect · Von Restorff effect (the accent fill).
+*Register:* O3 "I already pay an agency — what's different?" goes live immediately. **Standing**, by design.
+
+**Scroll 2 · H3 · How the work gets done — MEDIUM.**
+*Reads first:* block three, not block one. His eye goes to "You see all of it" and "Every month you see exactly what was done, how much of it, and why — with the name of the person who signed it off."
+*Believes after:* the spine's belief for this section is "I can see which one stops it being generic" — **which is S1's question, not his.** Genericness is not what he fears; opacity is. What he actually believes is that the record is the differentiator and that it is monthly rather than on request. The belief as written is a single-state belief asserted for three states. His partial answer to O3 arrives here, four scrolls before the section the spine credits with answering it.
+*Law:* Miller's law (three blocks).
+*Register:* O5 **answered** in outline · O3 **partially answered**, earlier than §2.5 records.
+
+**Scroll 3 · H4 · What "done" means — MEDIUM.**
+*Reads first:* "A piece of work isn't finished because it got produced."
+*Believes after:* he believes there is a standard. He does not believe what he came for. He came for evidence that it has worked for someone, and a rule shown catching an invented example is a method, not a track record. §2.5 already states this and it is confirmed by the walk: **O4 is left standing for him and no later section picks it up.** What H4 buys is narrower and still real — a vendor who shows a written rule is a vendor with a written rule, which is more than adjectives, and he can check it against his current agency's answer to the same question.
+*Law:* Progressive disclosure · Von Restorff effect at within-section scale.
+*Register:* O4 **standing** · O2 method shown.
+
+**Scroll 4 · H5 · The shape of it — MEDIUM.**
+*Reads first:* "It doesn't all switch on at once."
+*Believes after:* yes, and for a reason the spine does not name. His fear is switching cost, and a phased start is the answer to it — the section reads to him as "you will not have to rip everything out on day one." §2 lists him as secondary here on the grounds that the engagement has a shape. The stronger reason is switching cost, and it is the one thing on Home that speaks to it.
+*Law:* Miller's law (three phases).
+*Register:* O7, the shape half. Switching cost has no register row at all.
+
+**Scroll 5 · H6 · What's covered — QUIET.**
+*Reads first:* the group labels, scanning for the channels his current agency handles badly.
+*Believes after:* yes, with a reservation. The closing line — "Not all of it, for everyone. It starts narrow and widens, scoped to what your footprint actually needs" — reads to an evaluator as a scoping caveat, which is honest and also slightly deflating at the exact moment he is checking coverage.
+*Law:* Miller's law (four groups).
+*Register:* O7, the scope half.
+
+**Scroll 6 · H7 · What you're choosing between — LOUD.**
+*Reads first:* "What you're choosing between." His row is "An agency retainer — The work happens somewhere you can't see, at whatever pace their team has room for."
+*Believes after:* the spine claims "it isn't arguing against a straw man." For most of this state, correct — it names the two things he already resents. **For the S2 whose agency is genuinely transparent, the row is wrong about his experience**, and a site that is wrong about his experience in a LOUD section loses more than the row was worth. Said once, not repeated: this is the one row on Home that can be falsified by the visitor's own life.
+*A counted departure, said once.* A comparison table appears on two of the sourcer's ten homepages, and both are the AI-native entrants arguing against the incumbent category. **This device places Beeond with the challengers**, which is where it belongs and which he will recognise — he has probably just read one of those two sites. The risk is that a challenger claim with no proof behind it is the one shape of argument he is most practised at discounting.
+*Law:* Miller's law (four rows) · Von Restorff effect (the ground change).
+*Register:* O3 **answered** by elimination.
+
+**Scroll 7 · H8 · The ask beat — QUIET.**
+*Reads first:* "See where yours stands."
+*Believes after:* "This is a reasonable moment to just ask about my own situation" — and it is, exactly as §0.2 places it. **This is the single most conversion-critical instance of the ask on the site, and it is the one rendered with the weakest affordance.** §0.9's Fitts's row says the CTA is a button, not a text link; this is accent-coloured text, set small, immediately under a LOUD section, on the same ground, and deliberately subordinate to what it follows. The spine defends the treatment on Layer 1's two-fills-per-page rule — but the nav ask is an *outlined* button and carries no fill, so the rule does not force a text link. The constraint is the fill, not the button.
+*Law:* Fitts's law — **leaned on and contradicted**, at the state's designated ask moment. §2.7 has no Fitts's row at all.
+*Register:* none.
+
+**Scroll 8 · H9 · Before you ask — QUIET.**
+*Reads first:* "Q. I already have an agency. What's different?" Answer: "Mostly, what you can see."
+*Believes after:* this is his second answer to O3 and it arrives one scroll after his ask. That is not a defect — H7 answered him at scroll 6, so the beat follows an answer rather than preceding one, and row two functions as the second chance for the S2 who did not take the beat. Row five, the fit row, is the site's only explicit disqualification, which two of the ten sites do and which reads to an evaluator as confidence rather than as hedging.
+*Law:* Serial position effect (rows reordered so the fit question closes) · Miller's law (five rows at the ceiling).
+*Register:* O3 **answered** again · fit **answered**.
+
+**Scroll 9 · H10 · Close — LOUD.**
+*Reads first:* "Start with a look at what you've got." Then "It's free, and it's yours to keep whether we work together or not."
+*Believes after:* for an evaluator holding a proposal, a free read of his own site is a low-cost way to sample the vendor's actual judgment — which is worth more to him than to any other state, because he has a comparison to run it against. He may well take the audit purely as a work sample.
+*Law:* Peak-end rule.
+*Register:* O18 pre-empted.
+
+**Then Approach, which is his page.** He clicks it from the nav, either to read or to forward.
+
+**A1 · Reading this cold — QUIET.** *Reads:* "If someone sent you this, you don't need anything else to read it. This is the whole thing, in order." *Believes:* he knows what the document is and how long it is. **This section is not written for him** — it is written for the person he forwards it to, who is not one of the five arrival states. That is stated rather than resolved: §0.2 defines no state for the forwarded-to reader, and A1 exists for rule 4's downstream audience. *Law:* Miller's law (three anchors) · Serial position effect. *Register:* none.
+
+**A3 · The work gets done — QUIET.** *Reads:* "A footprint doesn't get switched on. It gets built, and the order matters." *Believes:* the operating shape is real and specific enough to compare against a proposal. *Law:* Progressive disclosure (Home's strip becomes paragraphs) · Miller's law. *Register:* O7 at full depth.
+
+**A4 · A person signs off on it — QUIET.** *Reads:* "That on its own is just a promise to care about quality, and every agency makes it. So here is the thing underneath it." *Believes:* the pre-emption works on him specifically, because he has been told exactly that promise by the vendor he is paying. Then two rules in full. *Believes after:* there is a checkable standard. Still not a track record. *Law:* Progressive disclosure · Von Restorff at within-section scale. *Register:* O2, O14 **answered** · O4 still **standing**.
+
+**A5 · You see all of it — QUIET.** *Reads:* "This is how the work runs, not a report you have to ask for. It is the same record we use to run your account — you are looking at the actual thing, not a version of it made for you." *Believes after:* this is his section and it earns its belief. The distinction between the operating record and a report made for the client is one he can evaluate immediately, because he receives the second kind every month. **The asymmetry is worth stating and cannot be fixed in copy:** he is comparing a described practice against a delivered artefact from his current vendor, and §0.3.6 rightly forbids the site from showing or promising the thing. He weighs a sentence against a document. That is the cost of the founder's decision, and the decision is sound. *Law:* Miller's law (four labelled parts, at the cap). *Register:* O5 **answered** in full.
+
+**A6 · Close — LOUD.** *Reads:* "That's the whole of it." *Believes:* "I now have the document I'd send to whoever decides this with me" — which is the truer half of the spine's belief for him, since decision power is untested (§0.2 rule 4). *Law:* Peak-end rule. *Register:* none new.
+
+**Then About, as the trust check before shortlisting.** *Reads:* "Adam and Yarden." and the split. *Believes:* two specific people, roles clear. **Then he reads two visibly empty credential slots.** For an evaluator, About's job is to convert names into people with histories, and the slots that would do it are `[OPEN]` by design until the founder supplies them. B2's first-person bios carry more weight than B1 for him — "a system you can't inspect is just a promise with more steps" is the sentence that sounds like a person rather than a company. **B4 leans on no §0.9 law at the scale §0.9 defines**: its distinctness is typographic and within-page, while About's page-level Von Restorff is already spent on B1's portraits and B5's fill. For him B4 is a thesis he mostly agrees with and does not need.
+
+**Then The Ask.** D1 tells him the flow. D2 takes the URL and the email; the trust line answers O15 where it fires. **D3 is his secondary route** — the spine names him there as "the evaluator who has finished comparing," and it is correct: an S2 who has read Approach may not want the on-ramp at all. D4's five rows close on when he hears back.
+
+**By the fold.** Another full-service pitch with one unfamiliar clause about seeing the work, and no proof destination anywhere in the navigation.
+
+**His first objection.** O3, live at H1, partially answered at H3 block three (scroll 2), answered by elimination at H7 (scroll 6), answered plainly at H9 row two (scroll 8). Three passes, escalating. **O4 is his second objection and it is never answered** — by founder decision, and the walk confirms §2.5's warning that H4 and A4 are the only things he gets in exchange.
+
+**Where the ask appears for him.** Four on Home; his is the beat at scroll 7. He is ready there because H7 landed one scroll earlier, and unready only in the sense that the affordance is a text link.
+
+**If he is not ready.** Approach, which is the honest fallback for an evaluator and the one page built for him. No waitlist, and none is wanted here — a visitor comparing three vendors does not want a mailing list, he wants a document. The site serves him correctly.
+
+**How the supporting pages feed back to the ask, counted.** Home → Approach (nav, one click) → the ask at A6 or the nav (one click) = **two clicks**. Home → the beat at H8 = **one click**. Forwarded path: his colleague lands on Approach cold, A1 addresses that reader in its second line, and reaches the ask in **one click**. All three verified against the spine's own ask counts: Home four, Approach two, About two.
+
+**The experience test.** He has to do one piece of work no other state has to do: **assemble the proof case himself.** No section states the company's stage, so he must infer it from the absence of logos, the two-person About and the method shown in full, then decide what that adds up to. That is the founder's decision working as intended, and it is still work, and he is the visitor least inclined to do it for a vendor. Second cost: "what was done, how much of it, and why, with a name attached" is a four-part structure he meets three times — H3 block three, H9 row two, A5. Repetition helps him; each instance sits at Miller's cap.
+
+**The vibe test.** H7's rows are the most expensive-sounding lines he reads, spare and structural with no adjective doing the work. A5's "Not agent logs, not raw activity — those are our problem, not yours" is confident and human. One line is off-register: H6's group label **"Turning visits into conversations"** is agency-deck phrasing in a document that otherwise refuses it, and it sits two lines from "Being worth reading," which is exactly right.
+
+**GAPS FOUND — S2.**
+
+1. **H8's ask is a text link at the one moment §0.2 designates for this state.** *Proposed fix to §2:* render the mid-page beat as an outlined button in the nav's treatment — no accent fill, so Layer 1's two-fills rule is untouched and §0.9's Fitts's row is satisfied. The spine's own nav proves outlined buttons are compatible with the budget.
+2. **§2.7 omits Fitts's law and the Zeigarnik effect**, both of which §0.9 assigns work in text. Fitts's is the law H8 contradicts; Zeigarnik is in fact applied, uncredited, at D4's closing row and in D2's confirmation note. *Proposed fix to §2:* add both rows so the table covers every law §0.9 says applies now.
+3. **H3's BELIEF AFTER is written for S1 and asserted for three states.** *Proposed fix to §2:* state the belief per block and per state, since each block is aimed at a different one — the section already names which block serves which state and the belief line does not follow suit.
+4. **H7's agency row can be falsified by his own experience.** *Proposed fix to §2 — PROVISIONAL suggestion, not copy:* the row could describe the structure rather than assert his case, along the lines of *"An agency retainer — What you see is what they choose to show you, at whatever pace their team has room for."* Same length, same register, no longer a claim about his vendor.
+5. **Switching cost has no home.** It is one of two fears §0.2 names for this state and it appears in no register row and no section's objections-answered line, though H5 answers it incidentally. *Proposed fix to §2:* record switching cost against H5 in its ARRIVAL STATES line, so Phase 2 cannot cut the phasing without knowing what else goes with it.
+6. **A1 serves a reader no arrival state describes.** No fix to §2 proposed and none needed — recorded so that §0.2's state list, not the spine, is where the gap is answered if the orchestrator wants it answered.
+7. **H6's "Turning visits into conversations" is off-register.** *Proposed fix to §2 — PROVISIONAL suggestion:* a plainer label in the register of its neighbours, such as *"Getting a reply."*
+
+### §3.3 — S3 · COLD · nobody owns marketing, considering a first hire · evaluating, price-sensitive
+
+**Where he lands, and why.** Home, cold, from a link. He knows something should be happening and is not, and that a hire is slow and expensive. He is weighing a hire against an agency against "later," and he is afraid of committing to a retainer before knowing what he gets each month — and, separately, of being the only person in his company who cares about this. He is the least marketing-fluent of the four, which makes him the state the experience principle is really about.
+
+**One departure, said once.** Eight of the sourcer's ten sites carry a services or solutions item in the nav. He is the visitor most likely to look for one, because he does not know the category's conventions and simply wants to see what he would be buying. There is no such destination; coverage is a section five scrolls down. The spine's reason is sound — Beeond is a single-offer business, and the two sites of the ten without a services item are the two that are also single-offer — but **the cost lands on this state specifically**, and it is a scroll he has to take on trust.
+
+**Scroll 1 · H1 · Hero — LOUD.**
+*Reads first:* "Your whole marketing footprint, run for you."
+*Believes after:* **this is the closest match between any headline and any state's requirement in the whole document.** §0.2 asks the fold to "make the offer legible as 'your whole footprint, run for you'" and the headline is that sentence. Then the deck, "Every channel handled, month after month," which glosses "footprint" as "every channel" on the very next line — the term the site is named around gets defined one line after it is first used, which is what keeps it legible for the state least likely to know it. He believes he is looking at someone who will do all of it. The residual cost is the nav, where "Get your free footprint audit" sits from second one with no gloss beside it, for a visitor who has not yet scrolled.
+*Law:* Serial position effect · Cognitive load (a headline understood in one read — this one, for this visitor, genuinely is).
+*Register:* O7 "what do I actually get, month to month" goes live, and O8 with it. Both **standing**.
+
+**Scroll 2 · H3 · How the work gets done — MEDIUM.**
+*Reads first:* block one, "The work gets done," and under it "*What that means for you:* the work happens without you managing it."
+*Believes after:* the spine assigns him block one as the answer to "who does the work." The line that actually lands is the pairing beneath it. **His second fear is being the only one who cares, and "the work happens without you managing it" is the site's answer to it** — the engagement does not depend on his attention. That fear appears in no register row and this section answers it anyway, uncredited.
+*Law:* Miller's law (three blocks) · Cognitive load (each block one idea, paired with one consequence).
+*Register:* O14 **answered**. The unregistered fear — being the only one who cares — **answered**.
+
+**Scroll 3 · H4 · What "done" means — MEDIUM.**
+*Reads first:* "A piece of work isn't finished because it got produced."
+*Believes after:* little that he needed. **This section does close to nothing for S3.** He has not been burned by generic AI output, because he has not produced any; a written standard is a reassurance about a problem he has not had. It is not wasted on him — a vendor with written rules reads as a vendor with a method — but the belief the spine claims for it is S1's, and the two-card version costs this visitor twice as much attention for the same small return. He is the strongest evidence for cutting Home's second card.
+*Law:* Progressive disclosure · Von Restorff at within-section scale.
+*Register:* none of his.
+
+**Scroll 4 · H5 · The shape of it — MEDIUM.**
+*Reads first:* "It doesn't all switch on at once." Then "Foundation — We learn how you sound, audit what you already have, and wire up the record-keeping. Quiet on the surface. Most of this phase is underneath it."
+*Believes after:* this is his named must-believe and it is met. He can picture the first stretch without being given a calendar he would not have believed anyway. **One cost, and it is his:** of the three phase labels, "Foundation" explains itself and "Content Engine" and "Amplification" do not. He is the visitor least equipped to guess them, and this is his most important section. The one-line descriptions carry him, which means the labels are doing no work and are still charging him for the attempt.
+*Law:* Miller's law (three phases) · Progressive disclosure.
+*Register:* O7, the shape half, **answered**.
+
+**Scroll 5 · H6 · What's covered — QUIET.**
+*Reads first:* "What 'whole footprint' actually covers." Then the four group labels.
+*Believes after:* this is where he finally gets what a services page would have given him in the nav, and the grouping is what makes it work for him. He cannot evaluate twelve channel names — he does not know what half of them cost or take. He can evaluate four groups. **The four-group revision is worth more to S3 than to any other state**, because he is the one who was going to bounce off a flat list.
+*Law:* Miller's law (four groups of three or four).
+*Register:* O7, the scope half, **answered**.
+
+**Scroll 6 · H7 · What you're choosing between — LOUD.**
+*Reads first:* "An in-house hire — You get the skills of the person you hired, and nothing ships until they start."
+*Believes after:* the hire row is the sharpest sentence on the site for him, because it names the two costs of hiring he has already worked out for himself and one he may not have — that a single hire's ceiling is that person's own skill set. His third option, "later," has no row of its own; "Doing it yourself — It gets done in the weeks you have time. Marketing doesn't work in the weeks you don't" addresses inaction in effect without naming it. **His real competitor is doing nothing, and the table argues against doing it badly.** That is close, and it is not the same thing.
+*Law:* Miller's law (four rows) · Von Restorff effect (the ground change).
+*Register:* O3 answered, though it was never his.
+
+**Scroll 7 · H8 · The ask beat — QUIET.**
+*Reads first:* "See where yours stands."
+*Believes after:* he is listed here as secondary and he is genuinely close, because the word "free" has been in the ask label since scroll one. **That is the quiet achievement of the one-label decision for this state:** the price-sensitive visitor has been reading a price on every screen since the fold, and it is zero. He still may not take it, because §0.2 puts his ask on the ask page and his live question is what the engagement costs, not what the audit costs.
+*Law:* Fitts's law — leaned on and contradicted, as for S2.
+*Register:* none.
+
+**Scroll 8 · H9 · Before you ask — QUIET.**
+*Reads first:* "Q. How soon does anything actually happen?" Then, one row later, "Q. Why isn't there a price on this site?"
+*Believes after:* **this section changed most for him and it shows.** Both of his live questions are now here, adjacent, and both are answered without a number: "We won't put a date on that here, because at this point we'd be inventing one," and "Because it depends on how much footprint there is to run, and we haven't seen yours." A price-sensitive visitor who is told plainly why there is no price, and told that the reason is about him rather than about them, does not read it as evasion. Then row five: "It fits if you have more channels than attention, and nobody whose whole job is holding them together." **That is his situation described back to him without a persona being named** — the clearest statement on the site that he is the intended buyer, achieved inside §0.3.3.
+*Law:* Serial position effect (the fit row closing the set) · Miller's law (five rows at the ceiling).
+*Register:* O7 as timeline **answered** · O8 **answered as why** · fit **answered**.
+
+**Scroll 9 · H10 · Close — LOUD.**
+*Reads first:* "Start with a look at what you've got." Then "It's free, and it's yours to keep whether we work together or not."
+*Believes after:* the next step has no price and no commitment, which is the only shape of next step this state was ever going to take first. He converts here or at the ask page.
+*Law:* Peak-end rule.
+*Register:* O18 pre-empted.
+
+**Then The Ask, which is where §0.2 puts his ask.**
+
+**D1 · Header — QUIET.** *Reads:* "Tell us your website. We read it, write up what we find, and send it to you. Then, if you want it, we get on a call and go through it together." *Believes:* he knows the whole flow before he types anything, including that the call is optional. **His third must-believe was "a call is a diagnosis, not a pitch," and under the two-step decision that belief has migrated:** the diagnosis is now the audit, and the call is where it gets explained. D1's second paragraph — "It's a real read of your site by the people who'd be doing the work" — is what carries the migrated belief. *Law:* Progressive disclosure · Zeigarnik effect (the loop opens here). *Register:* O16 opened · O18 **answered**.
+
+**D2 · The audit request — LOUD.** *Reads:* "Where should we look?" then two fields, then the trust line. *Believes:* "That was easy." Two fields is the lowest-friction capture the site could honestly ask for, and for a visitor who is not sure he is ready, every field removed is a real gain. *Law:* Fitts's law (a large near target, correctly applied here) · Jakob's law (website before email) · Hick's law (one button). *Register:* O15 **answered** where it fires.
+
+**D4 · What to expect — QUIET.** *Reads:* row one on what is in the audit, then the cost row: "It's monthly, and it's scoped to how much footprint there is to run. We tell you the number on the call, once you've seen the audit and we've seen your site." *Believes:* he now knows the shape of the commitment — monthly, scoped, told on a call — which is the most a price-sensitive visitor can be given without a figure, and more than he had at scroll one. The page then closes on when he hears back, which leaves him with a next step rather than an open question. *Law:* Serial position effect · Peak-end rule · Miller's law (five rows). *Register:* O8 in full · O16, O17 **answered** · O6, O13 **deferred (OPEN)**, correctly.
+
+**By the fold.** Someone will run every channel for him, the whole thing has a name he now understands, and the first step costs nothing.
+
+**His first objection.** O7 and O8 together — what do I get, and what does it cost — both live from scroll one. O7 is answered progressively at H5 and H6 (scrolls 4 and 5) and completed at A3 if he goes there. **O8 stays live for eight scrolls**, mitigated the whole way by the word "free" sitting in every instance of the ask, and answered at H9 row four. That mitigation is real and it is worth naming, because without it this state would be reading an unpriced page for eight scrolls.
+
+**Where the ask appears for him.** Four on Home; §0.2 puts his conversion on the ask page, and the walk agrees — he arrives there from H10 with both of his questions answered, which is not true of him at H8.
+
+**If he is not ready.** The waitlist is retired, so a price-sensitive visitor who wants to think about it has no way to stay in contact. **He leaves with nothing, or he reads Approach.** For this state that is the sharpest consequence of the waitlist decision anywhere in the four walks: he is the one most likely to want to come back later, and the site now has no mechanism for later. The free audit is the intended answer and it is a bigger step than a waitlist was.
+
+**How the supporting pages feed back to the ask, counted.** Home → the ask page from H10 or the nav = **one click**. Home → Approach (nav) → A3 for the full phase detail → the ask at A6 = **two clicks**. Nothing on Home tells him A3 exists, which is the same routing gap S1 hits.
+
+**The experience test.** Four places he works, more than any other state. The nav label carries "footprint" before anything defines it. Two of three phase labels in his most important section are terms he has to infer from the line beneath them. There is no services destination, so he takes five scrolls on trust before he sees coverage. And H4 spends two cards of his attention on a fear he does not have. Against "easy to understand, easy to learn, easy to use," he is the state the site currently costs the most, and he is the state §0.2 describes as least equipped to pay.
+
+**The vibe test.** Right more often than not. "Quiet on the surface. Most of this phase is underneath it" is calm and expensive and exactly the register the founder asked for. "Because at this point we'd be inventing one" is human, and a visitor who has been quoted confident timelines by an agency will notice. Off-register: **"Content Engine" and "Amplification"** are the two most category-sounding words on the site, and they sit inside the section built for the visitor least able to decode them.
+
+**GAPS FOUND — S3.**
+
+1. **H5's phase labels are jargon for the state the section is built for.** *Proposed fix to §2 — PROVISIONAL suggestion, not copy:* keep the phase structure and plain the labels, along the lines of *Foundation · Output · Compounding*, or let the existing one-line descriptions serve as the labels. §0.3.7 bans coined terms and these are inherited rather than coined, so this is a legibility fix, not a compliance one.
+2. **H4 does close to nothing for S3 and costs him two cards.** *Proposed fix to §2:* the same single-card fix S1's walk proposes, reinforced here — one card serves S1 fully and costs S3 half as much.
+3. **H7 has no row for "later," which is this state's real alternative.** *Proposed fix to §2:* record in H7's ARRIVAL STATES that the DIY row carries inaction for S3, so Phase 2 does not rewrite it into something narrower. A fifth row is not proposed — four rows is Miller's cap and the elimination shape is founder-endorsed.
+4. **The waitlist's retirement leaves this state with no "later."** No fix to §2 is proposed, because the waitlist is a founder decision and the audit is its intended replacement. Recorded so the consequence is visible: **S3 is the state that leaves with nothing most often**, and the ask he is offered is larger than the one that was removed.
+5. **Nothing on Home routes to A3**, which is the full version of his must-believe. Same fix as S1's gap 6 — one in-body link.
+6. **The nav ask carries "footprint" with no gloss** for a visitor who has not scrolled. No fix to §2 proposed: the one-label decision is Hick's law applied deliberately and the term is glossed at H1's second line, which is as early as it can honestly be. Recorded because it is a real cost for this state and because it is the argument against ever making the label longer.
+
+### §3.4 — S4 · WARM · sent by Adam or Yarden · ready, or one push from it
+
+**Where he lands, and why.** A link sent by a founder — the only channel that exists today, and the one both warm prospects will arrive through. He already knows the pitch and the people. He is weighing whether to take the call that has effectively already been offered, and he is afraid the company is too new, that there is nothing behind it, and that he will waste a meeting. §0.2 and §2.3 both assume he opens **About**.
+
+**An assumption that has to be stated before the walk starts.** Which URL a founder sends is not decided anywhere in this document. The spine is built on About being that URL. If the root is sent instead, he lands on H1 — a page §2.1 explicitly says he does not read — and reaches the bypass in two clicks anyway via the nav, but **without ever seeing the two faces, which is the only thing he came to confirm.** The walk below assumes the About link. The alternative is not broken; it is emptier.
+
+**Scroll 1 · B1 · Adam and Yarden — MEDIUM.**
+*Reads first:* "Adam and Yarden." Then "Adam builds the systems and the swarm. Yarden owns marketing and growth, and she is the last read on everything that reaches a client."
+*Believes after:* the spine claims "these are two specific people, not a team page." True, and for him it is confirmation rather than information — he was told these names by one of them. The section does the job §0.2 sets, which is to confirm rather than repeat. **Then his eye reaches two visibly empty credential slots.** His central fear is that there is nothing behind this, and the one element on the site designed to answer it is `[OPEN]` until the founder supplies both facts. That is correctly marked and correctly unfilled — no engine may invent them — and it means **this state's most important belief currently rests on two blank spaces.**
+*Law:* Serial position effect (the page's first section carrying its belief) · Von Restorff effect (the blob-cropped portraits as the page's one distinct element).
+*Register:* O12 **answered** · O9 and O10 **implication only**, per the founder's rule-3 revision.
+
+**Scroll 2 · B2 · In their own words — QUIET.**
+*Reads first:* Adam's block, ending "a system you can't inspect is just a promise with more steps." Then Yarden's, "Whether a piece sounds like you, and whether it's worth putting your name on, is a judgment call, and that one is mine."
+*Believes after:* **this is the section that actually confirms him, more than B1.** A referral arrives holding a memory of how a person talked, and first-person prose is the only thing on the site that can match against it. If the bios sound like the people who pitched him, the referral holds; if they sound like a company describing its staff, it weakens. The spine's voice decision — first person here and nowhere else — is doing real work for this state and no other.
+*Law:* Cognitive load (prose confined to a QUIET section) · Miller's law (two blocks).
+*Register:* O12 at depth · O14 **answered**.
+
+**Scroll 3 · B4 · Why now — QUIET.**
+*Reads first:* "Why we're doing this now." Then "We're not claiming nobody else could build this. Plenty could."
+*Believes after:* very little that is new. **This is the third time he meets the thesis** — once from the founder who sent him, once implicitly in B1's deck, and now in full. §2 credits it to him as "the reason to talk now," and for a visitor who has not heard the pitch that is right. For S4 it confirms tone rather than adding an argument. The concession — "Plenty could" — is the one part that earns its place with him, because a referral is primed to hear overclaiming and does not.
+*Law:* **none, at the scale §0.9 defines.** Its distinctness is typographic and within-page, while About's page-level Von Restorff is already spent on B1's portraits and B5's fill. Serial position places evidence in the middle of a page; B4 carries an argument. This is the one section in the four walks that leans on no law.
+*Register:* O11 conceded, not resolved.
+
+**Scroll 4 · B5 · Close — LOUD.**
+*Reads first:* "Now you know who you'd be working with." Then "The next step is a free look at your own footprint," then the accent-filled button.
+*Believes after:* the spine claims "right, that's the next step, and it's one click." Mostly true, with one seam: **the headline assumes he learned something on this page**, and he arrived already knowing it. For every other state that line closes a loop; for the state the page is built for it slightly overstates what just happened. The deck then offers him the audit, which is not the step he wants — he wants the call — and the button's label says audit too.
+*Law:* Peak-end rule · Fitts's law (a button, correctly).
+*Register:* none new.
+
+**Click one — About to The Ask.** He takes B5's button or the nav ask; both carry the same label and both land him on the ask page.
+
+**Scroll 5 · D1 and D2, skimmed.** He reads "A free look at your footprint," registers that this page is about the audit rather than the call, and scans past the form. The two-step explanation he skims is written for a visitor who needs persuading, which he does not. *Law:* Progressive disclosure, working against him here — the page discloses the on-ramp he was trying to skip.
+
+**Scroll 5 · D3 · Already sure? — QUIET.** *Reads:* "Already sure? Book a call directly." *Believes:* "I don't have to sit through a step I don't need," which is exactly right and is the belief the section was written for. *Law:* **Fitts's law, deliberately inverted** — §0.9 states in terms that "the direct-booking line is visibly smaller by design," so this is the law correctly applied rather than violated. The consequence is still worth naming: **the site's only ready-to-buy state is given its smallest, lowest-affordance target**, and that is the price of §0.3.11's single-ask rule. The price is worth paying and it is not free.
+
+**Click two — the bypass, taken.** *Destination:* `[OPEN]`. §2.4 records that the **booking mechanism is not wired**, so his two-click path currently terminates on a link with nothing behind it. That is an implementation gap, not a storyboard gap, and it is the single most consequential unbuilt thing for the only channel Beeond has.
+
+**By the fold.** Two real people, the roles he was told, in a voice that matches the person who sent him.
+
+**His first objection.** "You have no clients yet," in its sharper private form: is there anything behind this. It surfaces at B1 the moment he reaches the empty credential slots. **No section answers it**, by founder decision — the site implies its stage and never states it — and the two facts that would speak to it are `[OPEN]`. The register records this as O9 and O10, implication only, and the walk confirms it: for S4 the implication is carried entirely by B2's voice.
+
+**Where the ask appears for him.** Two on About, nav and close, and he needs neither for its own sake — both are routes to a page whose bypass is what he wants.
+
+**If he is not ready.** §0.2 is explicit and the walk confirms it: **no fallback on the site. The referral does the follow-up.** That is honest and it is the correct design — a warm prospect who does not book is a founder's phone call, not a form. Nothing on the site needs to catch him.
+
+**How the supporting pages feed back to the ask, counted and verified against the spine.** From About: **one click** reaches the ask page, where D3 sits beside the form; **the second click is the bypass itself.** So the direct-booking line is *visible* in one click and *taken* in two, which satisfies §0.2's two-click requirement with a click to spare. Verified against B5's own arrival-states line, which describes the same path, and against §2.4's placement of D3 beside the form rather than after the FAQ. Two frictions ride on it. **Both click-one targets are labelled "Get your free footprint audit,"** so nothing tells him the page also books a call — he takes the audit link on faith that it leads somewhere useful, which is a guess. And §2.4 places D3 "beside or beneath the form," which leaves open whether it is on his first screen.
+
+**The experience test.** He works in two places, and both are label-guessing rather than reading. He has to infer that the audit ask leads to a page that also holds a call, because the site's one label cannot say both. And he has to find a deliberately quiet line on a page whose entire visual weight is a form he does not intend to fill in. Against "easy to understand, easy to learn, easy to use," his path is short and slightly opaque — three sections he does not need, then a guess.
+
+**The vibe test.** B2 is the most human writing on the site and it is the right thing in the right place for a referral. B4's concession is confident in the way the founder asked for. Off-register for him alone: **"Now you know who you'd be working with"** tells a man who already knew what he now knows.
+
+**GAPS FOUND — S4.**
+
+1. **His central belief rests on two `[OPEN]` credential slots.** No fix is proposed and none is possible here — the founder supplies both facts or the site ships without them, and no engine may fill them. Recorded as the highest-value OPEN in the document for the only channel that exists.
+2. **The referral landing URL is undecided.** *Proposed fix to §2:* record in §2.3 that About is the intended referral destination, so the assumption the page is built on is written down rather than implied. If the root is sent instead, S4 never sees the faces.
+3. **B4 leans on no §0.9 law and adds little for the state About is built for.** *Proposed fix to §2:* not a cut — it earns its place for S2 — but B4's ARRIVAL STATES should say plainly that it confirms tone for S4 rather than supplying his reason to act, so Phase 2 does not treat it as load-bearing for the warm path.
+4. **B5's headline assumes he learned something.** *Proposed fix to §2 — PROVISIONAL suggestion, not copy:* a close that works for both states, along the lines of *"That's the two of us."* The current line is right for S2 and slightly wrong for the state the page serves first.
+5. **Nothing signals that the ask page also books a call.** *Proposed fix to §2:* no second label and no second ask — §0.3.11 governs. Instead, §2.4 should require **D3 to sit within the first screen of the ask page**, not merely "beside or beneath the form," so a visitor arriving for the call finds it without scrolling past a form he does not want.
+6. **The bypass has no destination.** Implementation, not storyboard. Recorded because the two-click path the site is designed around currently ends nowhere, and it ends nowhere for the only visitors Beeond actually has.
+
+---
+
+### §3.5 — S5 · FUTURE · search or AI-answer arrival
+
+**Not walked, and deliberately.** S5 is OPEN — FUTURE by founder decision. No SEO or GEO work exists, no queries are known, and §0.2 records the evidence for this state as "none today." Walking it would mean inventing what he searched for, which is the one thing a walk cannot do. What follows is only **what would have to change** when the channel exists, so that it can be checked against the spine rather than rebuilt from it.
+
+- **The fold would have to answer a query, not open an argument.** H1 leads with an outcome — "Your whole marketing footprint, run for you." A visitor who typed "done-for-you marketing agency" needs his own words in the first line to know he landed right. That is a copy change gated on knowing the queries, which is gated on the channel existing.
+- **His arrival state is a mix the three axes do not currently produce.** An AI answer has already told him what Beeond is, so he is warm on content and cold on trust — the opposite of S1. **His fold job would be to verify, not to explain**, and verification is the thing this site is least equipped to do: no logos, no case studies, and two credential slots still `[OPEN]`.
+- **Three parts of the spine are already well shaped for extraction and should not be undone.** D4 and H9 are question-and-answer pairs, which is the most quotable structure on the site. H6's four labelled groups are cleanly parseable scope. A5's refusal to show an interface leaves a description in words rather than a picture, which a machine can read and a screenshot cannot.
+- **The one structural gap.** No page carries a single self-contained sentence defining what Beeond is — the definition is split across H1's headline and its deck, which reads well and quotes badly. That is the thing an answer engine would need and the thing the site does not have.
+- **Nothing above justifies changing the spine now.** Every item is either a copy decision that needs the queries first, or a strength already present. **The site as specified does not need rebuilding when S5 arrives**, which was the requirement §0.2 set for it.
+
+---
+
+### §3.6 — Across the four walks
+
+**Tally.** Twenty-five gaps across four walks — S1 six, S2 seven, S3 six, S4 six. **One section leans on no §0.9 law** at the scale §0.9 defines: B4, met in two of the four walks. Four further scrolls lean on the Von Restorff effect at a within-section scale that §0.9 assigns per page — H4 in three walks and A4 in one — which is a gap in the law table's granularity rather than in the sections.
+
+#### Load-bearing — the sections every state leans on
+
+**H3 and H9 are the site's load-bearing pair, and for the same reason:** each gives every cold state its own entry point. H3 hands S1 block two, S2 block three and S3 block one; H9 hands S1 row one, S2 row two, S3 rows three and four, and every state row five. No other section on the site serves three states without one of them reading someone else's answer. **If Phase 2 cuts or compresses either, it removes a different state's only answer three times over.** H9 is also the section the sourcer's finding rebuilt, and the walks confirm the rebuild: cost, timeline and fit are now three separate live questions belonging to three different states.
+
+**H1 and H10 are load-bearing structurally rather than argumentatively** — every state that reads Home meets both, and neither earns its stated belief for every state. H1's belief holds fully only for S3, whose fold requirement it quotes almost exactly.
+
+**D1 and D2 carry every conversion on the site.** D1's "not an automatic report that gets generated the second you hit send" is load-bearing for S1 specifically and sits one click past the moment it would have converted him.
+
+**B2 is load-bearing for the only channel that exists.** First-person prose is the only thing on the site that can match against a referral's memory of how a founder talks, and S4's walk is where that becomes visible.
+
+#### Sections no state needed — and the honest answer
+
+**No whole section is unneeded by every state.** Two come close and neither is a cut:
+
+- **A1** is needed by a reader §0.2 does not define — the person the page was forwarded to. The gap is in the state list, not in the section, and rule 4 is the page's reason to exist.
+- **B4** is needed by no state's must-believe. It adds a thesis for S2, who mostly agrees already, and confirms tone for S4, who has heard it. It is also the one section leaning on no law. **Still not a cut** — About with only bios and a close has no argument in it at all.
+
+**The one genuine cut is not a section.** It is **H4's second card**, which three of four walks independently argue against: it serves S1's fear twice over, does nothing for S3, does not answer what S2 came for, and its rule already appears in full at A4. §2.7 states that H4 shows one rule; H4 shows two.
+
+Two sections do nothing for a particular state and each has a state that needs it, which is stated rather than smoothed: **H5 does nothing for S1**, and **H4 does close to nothing for S3.** Neither is a defect. A four-page site serving four states will always have sections a given visitor scrolls past, and the test is whether every section is somebody's answer. Every one of them is.
+
+#### Laws most and least used
+
+**Most used, by a distance: Miller's law.** It shapes H3, H5, H6, H7, H9, A1, A3, A5, B2 and D4 — and after this revision it is the law that changed the most on the page, since H6's four groups are worth more to S3 than any other single structural decision in the spine. **Serial position, peak-end and Von Restorff** follow, all three concentrated at page openings and closes. **Progressive disclosure** is the law that makes the four-page architecture cohere, and it is the law the walks found unenforced: it depends on visitors moving from Home to Approach, and Home never routes them there in body copy.
+
+**Least used, in three different senses.** **Aesthetic-usability and the Doherty threshold** are zero by §0.9's own instruction — one is Phase 2, the other does not apply to text. **Hick's law** is used exactly once and permanently, at the nav and the single label, after which no section leans on it again; that is the law working, not the law idle. **Fitts's law and the Zeigarnik effect are the real finding:** both are assigned text work by §0.9, both appear in the walks — Fitts's three times, at D2 correctly, at D3 correctly inverted, and at H8 contradicted — and **neither has a row in §2.7.** The law table omits the two laws that produced the most consequential per-scroll findings in this section.
+
+#### The three changes to §2 I would fight for
+
+**In priority order, and all three are reversible.**
+
+1. **Render H8's ask as an outlined button, not accent text — and give §2.7 a Fitts's law row.** This is the ask instance at the exact scroll §0.2 designates for S2, the state most likely to be actively evaluating, and it is the only instance on the site with a weak affordance. §0.9 says the CTA is a button, not a text link. The spine defends the text treatment on Layer 1's two-fills-per-page rule, but **the nav ask is already an outlined button carrying no fill**, which proves the rule constrains the fill and not the button. The fix costs no accent, breaks no budget, and changes no copy.
+2. **Cut H4 to one card.** §2.7 already claims this is what H4 does. Three walks argue for it independently, the second rule survives in full at A4, and Home's densest moment — six things held at the scroll where S1 decides — halves. This is the cheapest real improvement to the site's experience that the four walks found.
+3. **Give Home one in-body route to Approach.** The waitlist's retirement made Approach the only honest fallback for S1, S2 and S3, and §2.7's own progressive-disclosure row makes it the necessary continuation of every Home section. Home currently points at it only from the nav, while B2 on About already does exactly the thing being asked for. Without it, the fallback for three of four states is a nav word they have to guess the meaning of.
+
+#### One escalation, which is not a §2 change
+
+**§0.2 and §5 disagree about the fold, and §2 is being measured against the losing side.** §0.2 requires S1's fold to "put the human in the loop on screen one." §5's later founder decision puts the swarm *and the human* at section two. The later decision governs, so H1 is correct as written and **S1's stated fold requirement cannot be met by design.** The consequence is real: S1's belief at H1 is half-earned, and the human on his screen one is a photograph — the exact pairing that visitor is inoculated against. **No change to H1 is proposed**, because the human's position is founder-decided and reopening it is not this engine's call. What is proposed is that the orchestrator route the contradiction: amend §0.2's S1 fold line to match the founder's decision, so the spine stops carrying a requirement that was superseded three decisions later.
+
 <!-- R3 JOURNEY END -->
 
 ---
