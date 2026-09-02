@@ -1450,11 +1450,123 @@ Two sections do nothing for a particular state and each has a state that needs i
 2. **Cut H4 to one card.** §2.7 already claims this is what H4 does. Three walks argue for it independently, the second rule survives in full at A4, and Home's densest moment — six things held at the scroll where S1 decides — halves. This is the cheapest real improvement to the site's experience that the four walks found.
 3. **Give Home one in-body route to Approach.** The waitlist's retirement made Approach the only honest fallback for S1, S2 and S3, and §2.7's own progressive-disclosure row makes it the necessary continuation of every Home section. Home currently points at it only from the nav, while B2 on About already does exactly the thing being asked for. Without it, the fallback for three of four states is a nav word they have to guess the meaning of.
 
+#### A fourth priority, added by the orchestrator after review
+
+**Wire the direct-booking destination and the audit form before the first link goes to a warm prospect.** §3.4 rates the unwired bypass "the single most consequential unbuilt thing for the only channel Beeond has" and then classifies it out of the storyboard's remit; the customer-value review (§3.7, finding 2) names that omission as a high finding. It is a build item, not a spine change, and it belongs on this list because the two-click path the site is designed around ends nowhere until it is done. Owner: founder (a calendar link is enough); builder for the form. Trigger: before the first referral link is sent.
+
 #### One escalation, which is not a §2 change
 
 **§0.2 and §5 disagree about the fold, and §2 is being measured against the losing side.** §0.2 requires S1's fold to "put the human in the loop on screen one." §5's later founder decision puts the swarm *and the human* at section two. The later decision governs, so H1 is correct as written and **S1's stated fold requirement cannot be met by design.** The consequence is real: S1's belief at H1 is half-earned, and the human on his screen one is a photograph — the exact pairing that visitor is inoculated against. **No change to H1 is proposed**, because the human's position is founder-decided and reopening it is not this engine's call. What is proposed is that the orchestrator route the contradiction: amend §0.2's S1 fold line to match the founder's decision, so the spine stops carrying a requirement that was superseded three decisions later.
 
 <!-- R3 JOURNEY END -->
+
+### §3.7 — Reviewer findings, verbatim (`reviewer`, lenses `customer-value` + `risk`, Opus, 2026-09-02)
+
+*Pasted verbatim from the reviewer's return, in three parts as it arrived (the first return truncated in the channel after finding 4). Line numbers are the reviewer's, against the file as it stood at commit `4998441`; later edits have moved lines. Disposition follows the findings.*
+
+```json
+{
+  "status": "COMPLETE",
+  "lenses_applied": ["customer-value", "risk"],
+  "findings": [
+    {"lens": "customer-value", "severity": "high", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1056,
+     "issue": "§2 opens with a standing PROVISIONAL banner (line 235); §3 opens with none. §3's rules instead say each belief is 'tested against the specific state' and the walks return verdict language — 'earns its belief' (1080), 'does not hold' (1068), 'his situation described back to him' (1295). Nothing at the head of §3 says every walk is simulated rather than observed. §3.6 then produces a ranked change list (1442) that reads as a validated backlog. This is the mechanism by which founder thesis becomes plan of record, which is the exact failure CLAUDE.md's customer-signal rule exists to prevent. Fix is one banner line in §2's own wording.",
+     "state_affected": "none — no customer is affected. Beeond has zero customers and zero interviews; all five states are constructs. Only S1's fear carries a sourced input (line 49, verified). S2 and S3 are marked 'inferred' at lines 52 and 55, S5 'none today' at 61.",
+     "confidence": "high"},
+    {"lens": "customer-value", "severity": "high", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1372,
+     "issue": "S4's designed two-click path terminates on a link with nothing behind it — §2.4 line 937 records 'Booking mechanism OPEN — nothing is wired.' §3.4 calls this 'the single most consequential unbuilt thing for the only channel Beeond has' and then classifies it out of the storyboard's remit (1395), so it does not appear in §3.6's three changes (1442). The artifact rates an item most consequential and then omits it from its own priority list. Cost to the visitor, in kind: he acts on the one instruction the site gives a ready buyer and gets nothing, spending trust that a warm referral was the sole source of.",
+     "state_affected": "S4 — and this is the closest the document comes to a real person. Two warm prospects exist (line 58); they are prospects, not customers, and neither has been called.",
+     "confidence": "high"},
+    {"lens": "customer-value", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1323,
+     "issue": "§3.3 finds S3 pays four comprehension costs, more than any state, and is the state §0.2 describes as least equipped to pay them: 'footprint' in the nav before it is glossed, two of three phase labels he must infer inside his most important section, five scrolls before coverage, and two H4 cards on a fear he does not have. §3.3 proposes a plain-label fix (1329). §3.6's priority list (1442) carries the H4 cut and the Approach route but drops the label fix — the one change aimed at the state the artifact says the site costs most. Churn trigger, in the register's founder-thesis wording: O7 'What do I get, month to month?' (line 1003) stays legible only through the one-line descriptions, while the labels charge attention and return none.",
+     "state_affected": "S3 — hypothetical. No actual customer is affected today.",
+     "confidence": "high"},
+    {"lens": "customer-value", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1390,
+     "issue": "S4's central fear is answered by two credential slots that are `[OPEN]` (1344, 765-766, 785-788). §3.4 calls this 'the highest-value OPEN in the document' and says 'no fix is proposed and none is possible here.' Correct that no engine may fill them (772). Not correct that nothing is possible: an OPEN whose resolver is the founder needs an owner and a trigger, and within §0–§3 it carries neither. Cost, in kind: the only belief S4 came to confirm currently rests on two blank spaces, on the only channel that exists.",
+     "state_affected": "S4 — the two warm prospects arrive through this path.",
+     "confidence": "medium"},
+    {"lens": "customer-value", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 49,
+     "issue": "The escalated conflict. §0.2 requires S1's fold to put the human in the loop on screen one; H1 puts a photographed human there (301) and forbids naming the mechanism (321), so the human in the loop arrives at H3 block two (344). A depicted human is not a human in the loop — S1's must-believe is that a named human calibrates every piece, and an unnamed portrait does not deliver it. Full reasoning in part B.",
+     "state_affected": "S1 — hypothetical, though S1 is the one state built on a verified figure.", "confidence": "high"},
+    {"lens": "risk", "severity": "high", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1376,
+     "issue": "FM-1: Status-implied-only and no-proof-destination compound. §2.5 records O9 and O10 as having no sentence anywhere on the site (1005-1006); S2 reads the missing nav proof destination as absence, not restraint (1148); S4's version surfaces at two empty credential slots and no section answers it (1376).",
+     "probability": "high",
+     "severity_driver": "The referral channel is the entire pipeline and its visitors arrive with exactly this fear (58). Second input, from a source the storyboard itself cites at line 92: 02-THE-PROBLEM.md §2b names transparency-about-being-small as the trust device for a vendor with no track record, LOW confidence.",
+     "mitigation": "Founder supplies both credential facts. This sits inside the founder decision, not against it — a dated verifiable fact is not a status statement.",
+     "owner": "founder", "when": "Trigger — before the first link is sent to either warm prospect.", "confidence": "high"},
+    {"lens": "risk", "severity": "high", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 32,
+     "issue": "FM-2: The free audit is the sole ask and spends founder time per lead before any call exists. §0.1 states this once and correctly does not repeat it. What §0–§3 add is pressure: four placements on Home, one label site-wide, and the close of all four pages, all pointing at the most expensive-to-fulfil ask the company has. §3.2 line 1201 predicts S2 may take the audit purely as a work sample.",
+     "probability": "medium",
+     "severity_driver": "§0.1's own note that capacity is bounded by sales time. Theoretical today because no traffic exists; high the day marketing starts.",
+     "mitigation": "Name a per-week audit capacity ceiling and the behaviour when it is hit.",
+     "owner": "founder", "when": "Trigger — before the first non-referral traffic reaches the site.", "confidence": "high"},
+    {"lens": "risk", "severity": "high", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 697,
+     "issue": "FM-3: Promise-the-practice-not-the-product makes A5 and H3 block three a present-tense description of a monthly record no system produces. §2 is scrupulous about tense (355, 637), so the risk is not dishonest copy — §0.3.6 forbids saying it does not exist, so the site describes an operating habit never run. §3.2 line 1213 names the resulting asymmetry for S2 and rightly says copy cannot fix it.",
+     "probability": "high that it becomes a delivery obligation on signature; medium that a prospect discounts it before then",
+     "severity_driver": "The only promise on the site creating an operational commitment rather than describing an existing capability, against a repo with no database and no dashboard.",
+     "mitigation": "The monthly record must exist in some deliverable form, a written document being sufficient, before it is owed to anyone.",
+     "owner": "founder, with builder for whatever produces it", "when": "Trigger — before the first signed engagement, not before launch.", "confidence": "high"},
+    {"lens": "risk", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1452,
+     "issue": "FM-4: Outcome-first leaves S1's live objection unanswered for one scroll, and §0.2 line 49 permanently carries a fold requirement H1 cannot satisfy, so every future review re-derives the same escalation.",
+     "probability": "high that the contradiction recurs in review; low-to-medium that the one-scroll delay costs anything",
+     "severity_driver": "§3.1 line 1123 records O1 answered three times with rising specificity from scroll 2 — the delay is bounded and that sequence is the strongest on Home for the state.",
+     "mitigation": "Amend §0.2's S1 fold line to match the founder decision, exactly as §3.6 proposes.",
+     "owner": "orchestrator", "when": "Next revision, same pass as the §3 provisional banner.", "confidence": "high"},
+    {"lens": "risk", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1016,
+     "issue": "FM-5: §2.5 flags H4 and A4 as the only exchange a skeptical S2 gets for the proof he came for and warns that cutting or softening either loses O4 entirely. §3.6's priority 2 cuts H4 by half (1447). Its argument that the second rule survives at A4 is sound, but the two passages are never reconciled in writing, so a reader applying priority 2 has no record it touches the section §2.5 marks no-cut.",
+     "probability": "medium",
+     "severity_driver": "O4 is already standing for S2 with no answer anywhere (1223), so this widens an acknowledged gap rather than creating one.",
+     "mitigation": "Encode the no-cut flag in H4 and A4 themselves, where §2.5 currently argues it only in prose.",
+     "owner": "orchestrator", "when": "Next revision of §2.", "confidence": "medium"},
+    {"lens": "risk", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1319,
+     "issue": "FM-6: The waitlist's retirement leaves no later-capture. §3.3 records S3 as the state that leaves with nothing most often; §3.1 line 1127 says the same for a browsing S1 unpersuaded by H4. Both walks state it plainly instead of inventing a fallback, which is the right handling.",
+     "probability": "high that browsing and price-sensitive visitors leave uncaptured",
+     "severity_driver": "Zero cost today with no traffic; scales directly with the marketing phase. The audit is the intended replacement and is a larger step than the one removed.",
+     "mitigation": "Do not re-add a capture. Instrument abandonment on the ask page so the consequence is measured rather than argued.",
+     "owner": "builder", "when": "At Phase 2 build, before first non-referral traffic.", "confidence": "high"},
+    {"lens": "risk", "severity": "medium", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 344,
+     "issue": "FM-7: Yarden reads every piece against a written standard is a present-tense capacity claim, repeated at 652 and 787. True at zero clients, false at some client count nobody has named. §3.1 line 1074 identifies the silent question and notes neither Home nor Approach touches it.",
+     "probability": "medium",
+     "severity_driver": "It is the site's answer to O1 and O14, the two objections §2.5 marks answered. If it becomes untrue, the strongest claim on the site is the one that fails.",
+     "mitigation": "Decide how many engagements one calibration layer serves, and write the copy so it survives that number.",
+     "owner": "founder", "when": "Trigger — before the second signed client.", "confidence": "medium"},
+    {"lens": "risk", "severity": "low", "file": "docs/05-marketing/SITE-STORYBOARD.md", "line": 1406,
+     "issue": "FM-8: No page carries a self-contained sentence defining what Beeond is; the definition splits across H1's headline and deck. §3.5 identifies this as the one structural gap for a future search or answer-engine arrival.",
+     "probability": "low today, high the day the channel exists",
+     "severity_driver": "§3.5's analysis is sound and the fix is one sentence, gated on queries that do not exist.",
+     "mitigation": "Recheck §3.5's five bullets against the spine rather than rebuilding from it.",
+     "owner": "orchestrator", "when": "Trigger — when the first SEO or GEO task is briefed.", "confidence": "high"}
+  ],
+  "dismissed_modes": [
+    "FM-a: H7 places Beeond with AI-native challengers and invites practised discounting (raised at 1183) — dismissed. A consequence the elimination-table decision already accepts, stated once per §0.6, with no new information available until a real evaluator sees it.",
+    "FM-b: H4's struck-through buzzword line ships as copy, or a lint pass strips it — dismissed as controlled. The instruction to the Phase 2 editor is written at the point of use (386), which is where a mitigation belongs.",
+    "FM-c: Four ask placements plus one label reads as pressure — dismissed. Four is the sourcer's mode across ten sites (282) and two of the four carry no accent fill.",
+    "FM-d: A1 serves a reader no arrival state defines (1207, 1429) — dismissed as a gap in §0.2's state list, not a risk. Rule 4 is the page's reason to exist and the section is correct as written.",
+    "FM-e: D2 collects a URL and an email with no privacy page (270, 918) — dismissed from this pass. Real, but a security and evidence question about an unbuilt form, not a customer-value or risk finding about the text."
+  ],
+  "concur_with_3_6": [
+    {"change": "Render H8's ask as an outlined button and give §2.7 a Fitts's law row", "concur": true,
+     "why": "The stated defence of the text link does not survive its own file: §2.0's accent table makes the nav ask an outlined button with no fill (261), proving Layer 1 constrains the fill and not the shape, and the 8.2:1 measurement at 262 answers legibility, not affordance, which is what Fitts's law is about."},
+    {"change": "Cut H4 to one card", "concur": true,
+     "why": "Concur with one condition: §2.5 line 1016 flags H4 as load-bearing and §3.6 never reconciles the two in writing. It still holds, because one demonstrated rule establishes that they have written rules, which is the whole of what §3.2 line 1164 says S2 actually takes from the section."},
+    {"change": "Give Home one in-body route to Approach", "concur": true,
+     "why": "Progressive disclosure is the law the four-page architecture depends on and the only one the walks found unenforced (1438), Approach is the honest fallback for three of four states now the waitlist is gone, and B2 already does exactly this (787) — a consistency fix, not a new device."}
+  ],
+  "escalated_conflict_verdict": "It is a defect for S1, and it is medium by this lens, not high. A photographed human is not a human in the loop: S1's must-believe at line 49 is that a named human calibrates every piece, and an unnamed warm portrait delivers a mood, not a mechanism. §0.2's fold requirement is genuinely unmet and §3.1 line 1068 is right to refuse to call it met. What holds severity at medium is that the cost is one scroll and H3 spends it well — naming the machine before the person is what buys block two its hearing (1074), and O1 is then answered three times with rising specificity (1123). The defect is also not the one §0.2's wording implies: the requirement is miswritten, not the copy. It was drafted before the founder decided outcome-first, and a superseded requirement no artifact can satisfy will regenerate this finding on every future pass. I concur with §3.6's escalation and with its refusal to change H1. One caution: §3.1 and §3.6 both go further and assert that a warm photograph over confident copy is the exact pairing that visitor is inoculated against. That is founder thesis stated in the register of a finding, with no source and no marker, and it is the strongest single instance of the pattern behind the first customer-value finding.",
+  "verdict": {"customer-value": "fail", "risk": "pass"},
+  "out_of_scope_notes": [
+    "Single model family, single reviewer. This is not an independent panel. Both lenses declare independent: false, so no independence mode was owed and none is claimed.",
+    "risk PASS does not mean low risk. The lens blocks only at critical and nothing in §0–§3 reaches it: nothing is public, no code exists, no data is collected. Three modes sit at high, and FM-1 and FM-3 both carry triggers that fire before any revenue.",
+    "customer-value FAIL rests on two high findings, both cheap to clear: one banner line at the head of §3, and one entry in §3.6's priority list. It is not a judgement on the quality of the artifact.",
+    "Bounded citation checks, both permitted by the brief and both resolving. HANDOFF-CLEAN-START/02-THE-PROBLEM.md line 30 carries the 53% and 52% HubSpot figures at HIGH confidence, matching §0.2 line 49 exactly. I also read lines 44 and 173 of that file because the storyboard cites §2b at line 92 — its LOW-confidence characterisation is accurate, and line 44's named-founders and transparency-about-being-small pattern is the second input behind FM-1's score. HANDOFF-CLEAN-START/01-THE-IDEA.md line 25 carries the founder positioning statement including 'like a single, coordinated agency', matching H1 alternate (C) at line 315. Nothing else was carried out of either file.",
+    "§4 and §5 were not opened. Findings that say an OPEN carries no owner or trigger are scoped to §0–§3; if §4 assigns one, the fourth customer-value finding weakens. The packets were not opened, so every claim attributed to the sourcer or a framer is read as the storyboard reports it.",
+    "What already works and should survive the next revision. §3 says plainly when a section does nothing for a state — H5 for S1 (1087), H4 for S3 (1265) — instead of inventing a beneficiary, which is the fourth customer-value check satisfied at section granularity and is rare. §2.5 marks O2 and O10 UNANSWERABLE rather than claiming coverage. Both walks reaching an unpersuaded visitor say he leaves with nothing (1127, 1319). §2's OPEN slots stay visibly empty with an explicit ban on any engine filling them (772, 972), and the walks respect it. The counting note at 239 corrects §1's own arithmetic against itself rather than propagating it. §3.4's statement that the referral landing URL is undecided (1340) is the kind of assumption most storyboards leave silent."
+  ]
+}
+```
+
+**Disposition (orchestrator, 2026-09-02).** Finding 1 (§3 banner) — **closed**, commit `a23c71b`. Finding 2 (the unwired bypass off the priority list) — **closed**, added to §3.6 as a fourth priority with owner and trigger. Finding 3 (S3's plain-label fix dropped) — **routed to the v3 spine pass**. Finding 4 (credential facts need owner and trigger) — **closed**, §0.5 and §4. Finding 5 and FM-4 (the fold conflict) — **closed**, §0.2 amended `a23c71b`; H1 unchanged, as the reviewer and §3.6 both concur. FM-1, FM-2, FM-3, FM-7 — **founder triggers, recorded in §4**, not spine changes. FM-5 (H4/A4 no-cut flag) — **routed to v3**. FM-6 (instrument abandonment) — **build item, §4**. FM-8 — **§4, with §3.5**. All three §3.6 concurrences — **routed to v3**. The reviewer's caution on §3.1/§3.6's "inoculated against" line is covered by the §3 banner and is not otherwise edited: the walks are the framer's text. **The customer-value verdict is FAIL on the artifact as reviewed; both high findings are closed on the file. This is a text storyboard, tier lite, not a merge to `main`; no binding QA gate is invoked, and the founder reviews the finished 1.0.**
+
 
 ---
 
@@ -1466,6 +1578,12 @@ Two sections do nothing for a particular state and each has a state that needs i
 - OPEN · **Pause / stop terms** (D4 row four) — `04-THE-PRODUCT.md` §11; the row names the question and defers it to the call. No engine invents a policy.
 - OPEN · **The referral landing URL** — the About page is what the spine assumes a founder sends (§3.4). If the root is sent instead, the warm visitor never sees the two faces. A founder habit, not a build item.
 
+**Founder triggers from the risk review (§3.7), recorded once**
+- OPEN · **FM-2 — audit capacity.** Name a per-week audit capacity ceiling and what the site or the confirmation says when it is hit. Trigger: before the first non-referral traffic.
+- OPEN · **FM-3 — the monthly record must exist in some deliverable form** (a written document is enough) before it is owed to a signed client. Trigger: before the first signed engagement.
+- OPEN · **FM-7 — how many engagements one calibration layer serves**, and whether "Yarden reads every piece" survives that number. Trigger: before the second signed client.
+- OPEN · **FM-1 — the credential facts** (above) are also the mitigation for the compounding of status-implied-only with no proof destination. Trigger: before the first link is sent to a warm prospect.
+
 **Phase 2 (visual experience) must resolve**
 - OPEN · **The accent budget.** `DESIGN-LANGUAGE.md` Layer 1 caps the accent at twice per page, on the primary CTA only. §2.0 resolves four ask placements as two fills (hero, close) plus an outlined nav button and a mid-page beat; §3.6 asks for that beat to be an outlined button. Phase 2 verifies the outline and any accent text against the letter of Layer 1; if they count, nav and beat use ink, not accent. The storyboard does not override the design language.
 - OPEN · **The closing photograph** (H10: meadow, flowers, sky) is derived from the reference corpus and the founder's vibe line, never from the deleted 2026-09-02 build's "golden-hour meadow" vision (§0.3 item 12).
@@ -1475,6 +1593,7 @@ Two sections do nothing for a particular state and each has a state that needs i
 - OPEN · **S5 (search / AI-answer arrival)** — FUTURE. §3.5 records what would change and finds the spine does not need rebuilding for it; one structural gap noted: no single self-contained sentence defining Beeond exists on any page.
 
 **Build (Phase 2 or later) must resolve**
+- OPEN · **FM-6 — instrument abandonment on the ask page** so the waitlist's absence is measured, not argued (builder, at Phase 2 build).
 - OPEN · **Form endpoint, storage, and the confirmation message** — the confirmation carries the audit's turnaround expectation by founder decision (§0.6), so its copy is a real deliverable, not plumbing.
 - OPEN · **The direct-booking destination** (D3) — nothing is wired; §3.4: the two-click path for the only channel that exists currently ends nowhere.
 - OPEN · The ask page slug (`/audit` preferred, `/start`, `/get-your-audit`) · a privacy page for the footer link.
@@ -1507,3 +1626,4 @@ Two sections do nothing for a particular state and each has a state that needs i
 | 2026-09-02 | R2 | ORCHESTRATOR: spine v1 written by `framer` [product] on Opus (text is the deliverable); v2 applied the sourcer's counted patterns, the vibe register and the UX laws. Attention marks changed from §1 with reasons written beside them: A3, A4, A5, B4 run QUIET because prose lives in quiet sections. Language row on D4 only; pricing *why* on H9, *how* on D4. |
 | 2026-09-02 | R3 | ORCHESTRATOR: journey walked by `framer` [growth] on Opus for S1–S4, S5 noted not walked. 25 gaps, one section on no law (B4). Three changes to fight for, in priority: H8 as an outlined button with a Fitts's row in §2.7 · H4 cut to one card · one in-body route from Home to Approach. Routed to the v3 spine pass together with the reviewer's findings. |
 | 2026-09-02 | R3 → review | ORCHESTRATOR: the §0.2/§5 fold conflict resolved in favour of the founder's later decision — S1's fold line amended; H1 stands. §3 given the same PROVISIONAL / simulated banner §2 carries (reviewer finding 1). Credential facts given an owner and a trigger (reviewer finding 4). |
+| 2026-09-02 | Review | ORCHESTRATOR: `reviewer` (customer-value + risk) — customer-value FAIL on two high findings, both closed on the file; risk PASS with three high modes carried as founder triggers in §4. Findings pasted verbatim at §3.7 with disposition. Reviewer concurs with all three §3.6 changes; a fourth (wire the bypass and the form before the first referral link) added. |
