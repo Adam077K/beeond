@@ -5,7 +5,7 @@
 
 | Field | Value |
 |---|---|
-| Version | **0.4 — R3 journey** (0.1 R0 frame · 0.2 R1 candidate map · 0.3 R2 spine · 1.0 gate) |
+| Version | **1.0 — for founder review** (0.1 R0 frame · 0.2 R1 candidate map · 0.3 R2 spine · 0.4 R3 journey · reviewed · v3 applied). The gate percent is the founder's; Phase 2 opens only on his word. |
 | Session | `orchestrator-site-thinking` · gold · branch `ceo-1-1788359253` · started 2026-09-02 |
 | Founder | Adam, present, reacting per round |
 | Source of truth | `HANDOFF-CLEAN-START/` (5 files). Nothing here overrides it. |
@@ -14,6 +14,19 @@
 | Markers | **FOUNDER** (a founder decision, dated) · **OPEN** (undecided) · **PROVISIONAL** (a voice string written from founder thesis, not customer language) |
 
 **Every voice string in this document is PROVISIONAL.** ICP is OPEN by founder decision, zero customer interviews exist, `USER-INSIGHTS.md` is empty by design. Site copy, when it is eventually written, carries the claim `c-site-copy-is-founder-thesis-not-customer-language`.
+
+
+```claims
+claims:
+  - id: c-site-copy-is-founder-thesis-not-customer-language
+    assert: "Every voice line in the site storyboard is PROVISIONAL founder thesis; no customer language exists because no customer interview has happened"
+    kind: internal-fact
+    scope: project
+    verified_by: command
+    evidence: {cmd: "test $(grep -c 'PROVISIONAL' docs/05-marketing/SITE-STORYBOARD.md) -gt 0 && grep -q 'EMPTY BY DESIGN' .claude/memory/USER-INSIGHTS.md", expect_exit: 0}
+    valid_until: 2026-12-31
+    confidence: 0.99
+```
 
 ---
 
@@ -239,7 +252,7 @@ Home after the map: 8 sections + 1 beat (H1 H3 H4 H5 H6 H7 · H8 beat · H9 H10 
 
 > **Counting note.** §1's Home summary line reads "9 sections + 1 beat." The surviving KEEP/MERGE rows are H1, H3, H4, H5, H6, H7, H9, H10 — **eight** sections, plus H8 as the beat. H2 was cut. The rows are the authority; the summary line is an arithmetic slip. R2 builds eight.
 
-> **Reading the TEXT fields.** Everything after a `>` inside a **TEXT (PROVISIONAL)** block is proposed site copy. Everything in bold before an em-dash is a **structural label for this document, not copy** — "Block one," "Card two," "Anchor three," "Field one," "Eyebrow," "Deck," "Headline," "CTA." None of those words appear on the page. Anything in `[square brackets and code style]` is an OPEN slot: it stays visibly empty until the founder fills it, and **no engine fills one with a plausible-sounding substitute.**
+> **Reading the TEXT fields.** Everything after a `>` inside a **TEXT (PROVISIONAL)** block is proposed site copy. Everything in bold before an em-dash is a **structural label for this document, not copy** — "Block one," "The rule," "Anchor three," "Field one," "Eyebrow," "Deck," "Headline," "CTA." None of those words appear on the page. Anything in `[square brackets and code style]` is an OPEN slot: it stays visibly empty until the founder fills it, and **no engine fills one with a plausible-sounding substitute.**
 >
 > **Counts appear nowhere in the copy, deliberately.** Not "three parts," not "two founders," not "four things in the audit." §0.3.1 bans counts and the brief for this round repeats the ban without §0.3.1's exception, so R2 wrote every line without one. Where a count would have been the natural connective, the copy names the things instead. This is the rule that most shaped the sentences below, and it is worth knowing before reading them as odd.
 
@@ -260,7 +273,7 @@ Layer 1 of the design language is a hard rule: one accent, only on the primary C
 |---|---|---|
 | Nav | Outlined in the accent, not filled — it is chrome, present always, and does not need to shout | No |
 | Hero | **Accent-filled button** | **Yes — one of two** |
-| Mid-page beat | Text link, accent as text colour (measured 8.2:1 AAA on both grounds, so this is supported, not a compromise) | No |
+| Mid-page beat | **Outlined in the accent, not filled** — the nav's own treatment, set smaller. R2 had this as a text link; the accent measures 8.2:1 AAA as text on both grounds, so legibility was never the question and affordance was. A text link is not a target (Fitts's law), and this is the one ask instance §0.2 designates for an actively evaluating visitor | No |
 | Close | **Accent-filled button** | **Yes — two of two** |
 
 Four placements, two fills. The fill is the page's one visually distinct element (von Restorff), and it lands at the two moments that matter: the first screen and the last. Everything else on the page earns attention through scale, ground and photography, never through colour.
@@ -280,7 +293,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **Arrival states served.** S1 (burned by generic AI output, browsing) and S3 (nobody owns marketing, evaluating) are the states this page is built for end to end. S2 (paying an agency, evaluating) is served from section two onward and takes his ask at the mid-page beat. S4 (warm, ready) does not read this page — he uses the nav button or goes to About. S5 is FUTURE.
 
-**Where the ask appears — four instances of one ask, never a second one.** The nav (outlined, position zero, no scroll). **The hero body**, accent-filled. The mid-page beat at item 7, as accent text. The close at item 9, accent-filled. Count: **4** — which is the sourcer's mode exactly (nav, hero, mid, close), and an ask sits in the hero body in nine of its ten sites. Two accent fills, per Layer 1.
+**Where the ask appears — four instances of one ask, never a second one.** The nav (outlined, position zero, no scroll). **The hero body**, accent-filled. The mid-page beat at item 7, as an outlined button in the nav's treatment, carrying no fill. The close at item 9, accent-filled. Count: **4** — which is the sourcer's mode exactly (nav, hero, mid, close), and an ask sits in the hero body in nine of its ten sites. Two accent fills, per Layer 1.
 
 > **The proof problem, and what carries it.** Client-identity proof sits at section two in eight of the sourcer's ten sites, and **no site of the ten carries none.** Beeond has none and, by founder decision, section two is the mechanism instead. The sourcer's own finding is that its three thinnest-proof sites answer with structural substitutes rather than evidence — a shown process (seven of ten), a homepage FAQ that handles cost, timeline and fit (five of five FAQs found), named humans (six of ten), and risk-reversal. All four are available to Beeond and all four are load-bearing here, so they are named rather than left to happen:
 >
@@ -349,11 +362,15 @@ Four placements, two fills. The fill is the page's one visually distinct element
 > Every month you see exactly what was done, how much of it, and why — with the name of the person who signed it off.
 > *What that means for you:* you never have to ask what you're paying for.
 
-**THE BELIEF AFTER.** This isn't "AI does everything." It's three specific things, and I can see which one stops it being generic.
+**THE BELIEF AFTER.** Stated per block and per state. R2 wrote one line here for all three, and it was S1's line — the section already names which block serves which state, and the belief has to follow suit or Phase 2 will optimise this section for one visitor and quietly cost the other two.
+- **Block one → S3.** The work actually gets done by someone, and that someone isn't going to be me.
+- **Block two → S1.** A named person reads it before my audience does, so this isn't just AI output with a markup on it.
+- **Block three → S2.** I'd see what was done without having to ask, which is the part I don't get today.
 
 **ARRIVAL STATES.** S1 (block two is the answer to "this is just AI") · S2 (block three is the answer to agency opacity) · S3 (block one is the answer to "who does the work").
 **OBJECTIONS ANSWERED.** O1 · O5 · O14.
 **MUST NOT CLAIM.** §0.3.5 — the hardest temptation on this page. Every verb here is present-tense *how we work*; not one is *how it went*. §0.3.6 — block three describes the practice and **never names a product, never says "dashboard", never implies a thing to log into, never says "coming."** §0.3.8 — "a swarm of agents" is the mechanism and is allowed; "AI-powered" is a label and is not.
+**Block two carries a founder trigger (FM-7), and the copy is not weakened for it.** *"Yarden reads every piece"* is a present-tense capacity claim: true at zero clients, untrue at some number of engagements nobody has named. It stays exactly as written, because it is the site's answer to O1 and O14 and hedging it would forfeit both. What is recorded instead is when it gets revisited: **the founder decides how many engagements one calibration layer serves, before the second signed client**, and this sentence is rewritten then if the answer requires it — not softened now against a number that does not exist yet.
 
 ---
 
@@ -361,7 +378,9 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE JOB.** Show one written rule catching one real thing, so the standard is an object rather than a promise.
 
-**WHAT HE SEES.** One or two artefact cards — hard rectangles at the system radius, overlapping at slightly different depths, shadow and overlap doing the depth rather than any glass. Each card holds a fragment of work mid-calibration: a draft line struck through with the rule that killed it set beside it in the utility face, and the rewritten line under it. Small caption under the set. The eye lands on the struck-through line first because it is the only thing on the page that looks like it failed. *Phase 2 note: pulls toward Layer 3 moment 6, the blueprint / construction overlay — the page showing its own working is exactly this section's argument. Not assigned.*
+> **Cut from two cards to one in this revision.** Three of the four §3 walks argued the second card independently: it served S1's fear twice over, did close to nothing for S3, and did not answer what S2 came for. Its rule survives in full at A4, so **nothing leaves the site** — it moves one click deeper, which is what progressive disclosure is for. §2.7's progressive-disclosure row already described this section as showing one rule; it now does. Home's densest moment halves at the exact scroll where S1 decides, and that is the cheapest real improvement the four walks found.
+
+**WHAT HE SEES.** One artefact card — a hard rectangle at the system radius, sitting slightly off the column grid, shadow and tilt doing the depth rather than any glass. It holds a fragment of work mid-calibration: a draft line struck through, the rule that killed it set beside it in the utility face, and the rewritten line under it. Small caption beneath. The eye lands on the struck-through line first because it is the only thing on the page that looks like it failed. One card, and a second is not a Phase 2 addition — the depth version is the approach page, not a longer section here. *Phase 2 note: pulls toward Layer 3 moment 6, the blueprint / construction overlay — the page showing its own working is exactly this section's argument. Not assigned.*
 
 **TEXT (PROVISIONAL).**
 
@@ -369,22 +388,24 @@ Four placements, two fills. The fill is the page's one visually distinct element
 >
 > **Headline** — A piece of work isn't finished because it got produced.
 >
-> **Deck** — It's finished when it clears a written rule. Here's what that looks like, and what it catches:
+> **Deck** — It's finished when it clears a written rule. Here's one of them, and what it caught:
 >
-> **Card one — rule:** A post can't open on a buzzword.
+> **The rule** — A post can't open on a buzzword.
 > *Caught:* "In today's rapidly evolving landscape, unlocking growth means…" → sent back, rewritten to open on the thing that actually happened.
 >
-> **Card two — rule:** A founder's post is written from the founder — interview, draft, their edit. Never the company post with a name swapped in.
-> *Caught:* the same paragraph running on both accounts → sent back, rewritten as one post from the founder and a different one from the company.
->
 > **Caption** — Illustrative. Made to show the rule, not taken from a client's work.
+>
+> **After the caption** — Every service line has rules like this one, written down. You can read more of them on the approach page.
+
+*The last line is **the site's one in-body route from Home to Approach**, and it is deliberately the whole of it. Home points at Approach from the nav and nowhere else, which makes progressive disclosure — the law the four-page architecture depends on — unenforced for every visitor who does not already know what the nav word means. It lands here rather than at H5 or H3 for three reasons: this is the section the single-card cut just made shallower, so the promise of more is true and specific rather than a generic "learn more"; A4 is the deepest answer on the site to the fear S1 and S2 both arrive with; and B2 on About already routes this way in these words, so the device is consistent rather than new. **One route, not two**, and the sentence stays a sentence.*
 
 **THE BELIEF AFTER.** There's an actual bar here, and I've now seen it stop something.
 
 **ARRIVAL STATES.** S1 primarily — the sharpest thing on the site against "it'll look generic." S2 secondarily.
 **OBJECTIONS ANSWERED.** O2 (as far as it can honestly go — a method shown, not an outcome promised) · O1 reinforced · O4 answered by method rather than by status, which is the whole of what the founder's rule-3 revision left this page.
-**MUST NOT CLAIM.** §0.3.2 — the caption is load-bearing; without it an artefact card reads as client work. §0.3.5 — the rules exist and are real; **they have not been run against a paying client's deliverable and nothing here may suggest they have.** No pass rate, no "we catch N% of…", no guarantee that your brand won't sound generic.
-*Note for the Phase 2 editor: card one deliberately contains banned buzzwords ("rapidly evolving landscape," "unlocking growth"). They appear only inside the struck-through line, as the thing the rule rejects. This is the one place on the site where a §0.3.8 word is correct, and a lint pass that strips it removes the section's entire demonstration.*
+**MUST NOT CLAIM.** §0.3.2 — the caption is load-bearing; without it an artefact card reads as client work. §0.3.5 — the rules exist and are real; **they have not been run against a paying client's deliverable and nothing here may suggest they have.** No pass rate, no "we catch N% of…", no guarantee that your brand won't sound generic. §0.3.11 — the approach-page line is a plain sentence with a link and **must never become a button, an accent, or a second ask**; the moment it is styled it is a competing CTA at the site's densest scroll.
+**No-cut flag (FM-5), and it binds Phase 2.** Under the founder's rule-3 revision, O4 — "where are your case studies" — has no sentence anywhere on the site. **H4 and A4 are the only exchange a skeptical S2 gets for the proof he came for, and neither may be cut or softened in Phase 2 without a replacement answer to O4.** The single-card cut above sits inside this flag rather than against it: one demonstrated rule still establishes that written rules exist, which is the whole of what S2 takes from the section. A second cut leaves nothing, and the site loses its answer to O4 entirely and gets nothing back.
+*Note for the Phase 2 editor: the card deliberately contains banned buzzwords ("rapidly evolving landscape," "unlocking growth"). They appear only inside the struck-through line, as the thing the rule rejects. This is the one place on the site where a §0.3.8 word is correct, and a lint pass that strips it removes the section's entire demonstration.*
 
 ---
 
@@ -404,13 +425,14 @@ Four placements, two fills. The fill is the page's one visually distinct element
 >
 > **Foundation** — We learn how you sound, audit what you already have, and wire up the record-keeping. Quiet on the surface. Most of this phase is underneath it.
 >
-> **Content Engine** — Output starts moving. The first channels go live and the first month's record lands in front of you.
+> **Output** — The first channels go live, the work starts moving, and the first month's record lands in front of you.
 >
-> **Amplification** — The footprint is fully on, and the work turns from starting things to making them better.
+> **Compounding** — The footprint is fully on, and the work turns from starting things to making them better.
+
 
 **THE BELIEF AFTER.** I know roughly what the first stretch looks like, and nobody is pretending it all lights up on day one.
 
-**ARRIVAL STATES.** S3 primarily — this is his named must-believe. S2 secondarily (the engagement has a shape).
+**ARRIVAL STATES.** S3 primarily — this is his named must-believe. S2 secondarily (the engagement has a shape). **Switching cost — S2's second fear in §0.2 — is answered here, incidentally, by the phasing itself** rather than by any sentence, and it is answered nowhere else: no register row carries it and no other section's objections line names it. Recorded so Phase 2 cannot cut or flatten the phases without knowing what else goes with them.
 **OBJECTIONS ANSWERED.** O7 (the shape half).
 **MUST NOT CLAIM.** §0.3.1 — **no weeks, no days, no months-to-results, no phase durations.** The source flags the original timeline as an untested hypothesis; the phases survive, the calendar does not. No price attached to a phase.
 
@@ -432,11 +454,13 @@ Four placements, two fills. The fill is the page's one visually distinct element
 >
 > **Being worth reading** — LinkedIn and social · Founder-led content · Email lifecycle and deliverability
 >
-> **Turning visits into conversations** — Paid ads · Landing pages and CRO · Website build
+> **Getting a reply** — Paid ads · Landing pages and CRO · Website build
 >
 > **Knowing what happened** — Reporting · Brand monitoring
 >
 > **Closing line** — Not all of it, for everyone. It starts narrow and widens, scoped to what your footprint actually needs.
+
+*The third group label changed in this revision.* It read *"Turning visits into conversations"* — the one label on the list written in the register of a marketing deck rather than of its own neighbours, which are three plain verbs a stranger reads without translating. Four groups, unchanged; same three items inside this one.
 
 **THE BELIEF AFTER.** This covers the thing I actually care about, and they're not claiming to do everything for everyone.
 
@@ -458,15 +482,17 @@ Four placements, two fills. The fill is the page's one visually distinct element
 >
 > **An in-house hire** — You get the skills of the person you hired, and nothing ships until they start.
 >
-> **An agency retainer** — The work happens somewhere you can't see, at whatever pace their team has room for.
+> **An agency retainer** — What you see is what they choose to show you, at whatever pace their team has room for.
 >
-> **A stack of tools** — You still have to run them, and none of them joins your channels up.
+> **A stack of tools** — You still have to run them, they still sound like themselves, and none of them joins your channels up.
 >
 > **Doing it yourself** — It gets done in the weeks you have time. Marketing doesn't work in the weeks you don't.
 
+*Two rows were rewritten in this revision, both PROVISIONAL.* The agency row read *"The work happens somewhere you can't see"* — a claim about S2's own vendor, and the one line on the site he can falsify from his inbox: he may well see plenty, and one row he knows to be wrong discredits the three he cannot check. The new line describes the **structure** instead, which holds whether or not his agency shows him a lot: what he sees is selected by them. The tools row named only the running of the tools and missed the case that S1 actually lives in, which is the tools **also writing** — that is where his fear sits, and the row that omits it leaves his real substitute split across two rows and answered by neither. Four rows either way; no fifth row, so this stays an elimination rather than a scorecard.
+
 **THE BELIEF AFTER.** I can see where this sits against my real options, and it isn't arguing against a straw man.
 
-**ARRIVAL STATES.** S2 primarily — §0.2 places his ask right here. S3 secondarily (hire vs agency vs later).
+**ARRIVAL STATES.** S2 primarily — §0.2 places his ask right here. S3 secondarily (hire vs agency vs later). **The DIY row carries "later" for S3**, which is his real alternative and has no row of its own: four rows is Miller's cap and the elimination shape is founder-endorsed, so *"It gets done in the weeks you have time"* is doing that work by implication. Recorded so Phase 2 does not rewrite it into something narrower — a row about tools he already owns, or about his own skill — and silently remove the only answer this state's actual choice gets.
 **OBJECTIONS ANSWERED.** O3.
 **MUST NOT CLAIM.** §0.3.1 — no figures on either side; no "cheaper than an agency," no hours, no percentages, no implied price. No named competitor. Nothing that reads as a slur on a category rather than a structural observation about it.
 
@@ -476,7 +502,9 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE JOB.** Take S2's ask at the exact moment the comparison lands, without putting a button inside the comparison.
 
-**WHAT HE SEES.** One line and the ask as accent-coloured text, not a filled button — set small, immediately under the comparison on the same ground. It has no argument of its own and is visually subordinate to what it follows. This is the third of four ask placements and the second of the two that carry no accent fill, which is what keeps Layer 1's two-fills-per-page rule intact while still taking S2's ask at the moment §0.2 places it.
+**WHAT HE SEES.** One line and the ask as an **outlined button** — the nav's exact treatment, accent on the border and the label, no fill — set small, immediately under the comparison on the same ground. It has no argument of its own and is visually subordinate to what it follows, by scale rather than by shape. This is the third of four ask placements and the second of the two that carry no accent fill, so Layer 1's two-fills-per-page rule is intact and untouched.
+
+> **Changed in this revision, from accent text to an outlined button.** This is the ask instance at the exact scroll §0.2 designates for S2, the state most likely to be actively evaluating, and R2 made it the only instance on the site with a weak affordance. §0.9's Fitts's row says the CTA is a button, not a text link. The defence R2 gave — Layer 1's two-fill budget — does not survive its own file: **the nav ask is already an outlined button carrying no fill**, which proves the rule constrains the fill and not the button. The 8.2:1 measurement R2 cited answers legibility, and legibility was not the objection. The change costs no accent, breaks no budget, and changes no copy.
 
 **TEXT (PROVISIONAL).**
 
@@ -486,7 +514,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE BELIEF AFTER.** This is a reasonable moment to just ask about my own situation.
 
-**ARRIVAL STATES.** S2 primarily · S3.
+**ARRIVAL STATES.** S2 primarily · S3 · **S1 secondarily** — by §0.2's own ordering his ask sits after mechanism and proof-of-method, and both are behind him by this scroll, so he is ready here too. Recorded because R2 omitted him, and because it changes no copy: the beat serves him as it stands.
 **OBJECTIONS ANSWERED.** None. It is the ask, not an answer.
 **MUST NOT CLAIM.** §0.3.11 — this is the same ask restated, never a second one. A button inside the comparison table would read as a fifth alternative, which is why this is a beat and not a row.
 
@@ -546,6 +574,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 **ARRIVAL STATES.** All. This is the terminus for every state that read the page.
 **OBJECTIONS ANSWERED.** O18 pre-emptively — "yours whether we work together or not" is the honest answer to "is this a trap," and it is true.
 **MUST NOT CLAIM.** §0.3.1 — no turnaround, no "in 48 hours," no count of what the audit contains. No manufactured scarcity or urgency; nothing about limited slots. No new claim that wasn't earned above.
+**Load-bearing elsewhere, recorded here because this is where S1 decides.** The sentence that actually converts him is not on this page: it is D1's *"not an automatic report that gets generated the second you hit send,"* which answers his specific fear about the audit itself and sits one click past the moment he would have converted. Home may not promise it — a turnaround or a quality claim here would be exactly the §0.3.1 breach this section is guarded against — and **D1 may not lose that sentence in Phase 2.** It is the only line on the site that answers the fear the free audit itself provokes in the one state built on a verified figure.
 
 ---
 
@@ -565,9 +594,9 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **LOUD positions: 1, 6, 9.** Three, inside the 1–3 budget.
 **Adjacency: passes.** Gaps of four and two. The two items between 6 and 9 are both QUIET.
-**Loud-or-wordy: passes, counted.** H1 is a headline, one line and one line under the button. H7 is a headline and four rows averaging fourteen words. H10 is a headline and one line. No LOUD section on this page carries a paragraph. Prose — continuous running sentences — appears in exactly one place on Home, H9, which is QUIET. That is the rule satisfied rather than asserted.
-**Accent fills: 2** — H1 and H10, per Layer 1. **Ask placements: 4** — nav, H1, H8, H10, per the sourcer's mode. **One label at all four.**
-**Miller's law: passes, counted.** Largest group on the page is four: H6's largest sub-group, H7's four rows. H3 has three blocks, H5 three phases, H9 five rows at the stated ceiling. Nothing on Home asks the visitor to hold more than five of anything.
+**Loud-or-wordy: passes, re-counted after this revision.** H1 is a headline, one line and one line under the button. H7 is a headline and four rows of 15, 18, 19 and 17 words — **69 in total, averaging seventeen**, up from sixty-one and fifteen, because two rows were rewritten to be structural rather than falsifiable. Every row is still one line and the section still carries no paragraph, which is the rule; it is now the wordiest LOUD section on the site and that is the ceiling, not the target. H10 is a headline and one line. Prose — continuous running sentences — appears in exactly one place on Home, H9, which is QUIET.
+**Accent fills: 2** — H1 and H10, per Layer 1, unchanged by H8 becoming an outlined button. **Ask placements: 4** — nav, H1, H8, H10, per the sourcer's mode. **One label at all four.** **Buttons: 4, fills: 2** — nav and H8 outlined, H1 and H10 filled. **H8 stays QUIET and stays off the LOUD budget:** an outlined button set small under the page's darkest ground is an affordance, not a distinct element, and the one distinct element per page (von Restorff) is still the fill.
+**Miller's law: passes, re-counted.** Largest group on the page is four: H6's largest sub-group, H7's four rows. H3 has three blocks, H5 three phases, **H4 one card** (two before this revision), H9 five rows at the stated ceiling. Nothing on Home asks the visitor to hold more than five of anything, and the scroll where S1 decides now holds half of what it held before, which is the single-card cut showing up in the count rather than only in the argument for it.
 
 ---
 
@@ -625,10 +654,10 @@ Four placements, two fills. The fill is the page's one visually distinct element
 > **Foundation.** We take a brand and voice intake, audit the site technically and for whether AI answer engines can read it, set up schema, wire the tracking and the monthly record, and get your voice calibrated and signed off before a single piece ships. It ends on a kickoff call.
 > *What changes for you:* not much you can see. This is the phase where we learn how you sound and where the gaps are, so nothing that ships later has to be walked back.
 >
-> **Content Engine.** Output starts moving. Content goes to a cadence, the first channels turn on — LinkedIn first, then the paid, email and landing-page work where those are in scope — and the first month's record lands.
+> **Output.** Work starts moving. Content goes to a cadence, the first channels turn on — LinkedIn first, then the paid, email and landing-page work where those are in scope — and the first month's record lands.
 > *What changes for you:* you start seeing work, and at the same time you start seeing the account of the work.
 >
-> **Amplification.** The footprint is fully on and the job changes from starting things to improving them. Placements land, ads optimise against real conversions, the reporting widens.
+> **Compounding.** The footprint is fully on and the job changes from starting things to improving them. Placements land, ads optimise against real conversions, the reporting widens.
 > *What changes for you:* your question stops being "is it running" and starts being "what's working."
 
 **THE BELIEF AFTER.** I could explain to someone else what the first stretch of this actually involves.
@@ -665,6 +694,8 @@ Four placements, two fills. The fill is the page's one visually distinct element
 **ARRIVAL STATES.** S1 primarily — the deepest answer the site has to "will it sound generic." S2 secondarily.
 **OBJECTIONS ANSWERED.** O2 (as far as honesty allows — the method, not the outcome) · O14 · O1 at depth.
 **MUST NOT CLAIM.** §0.3.5 — **these standards have never been run against a paying client's deliverable.** Nothing here may imply a track record of catching things for clients. No pass rate, no "we reject N in ten." §0.3.10 — no guarantee that your brand will not sound generic; the standard is the mechanism meant to prevent it, not a warranty.
+**No-cut flag (FM-5), and it binds Phase 2.** Under the founder's rule-3 revision, O4 — "where are your case studies" — has no sentence anywhere on the site. **A4 and H4 are the only exchange a skeptical S2 gets for the proof he came for, and neither may be cut or softened in Phase 2 without a replacement answer to O4.** This chapter now carries more of that weight than it did: H4 was cut to one card in this revision on the explicit ground that the second rule survives here in full. If the two rules below are trimmed to one, summarised, or turned into a description of having standards rather than the standards themselves, the site loses its answer to O4 entirely and gets nothing back.
+**Founder trigger (FM-7), and the copy is not weakened for it.** *"She is the last read before anything reaches you or your audience"* is a present-tense capacity claim, the same one H3 block two makes: true at zero clients, untrue at some number of engagements nobody has named. It stays as written — it is the deepest form of the site's answer to O1 and O14. **The founder decides how many engagements one calibration layer serves, before the second signed client**, and this passage is revisited then.
 
 ---
 
@@ -733,7 +764,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **LOUD positions: 5.** One, inside the 1–3 budget.
 **Adjacency: passes trivially** — there is only one LOUD.
-**Loud-or-wordy: passes, counted.** The one LOUD section carries a headline and one line. All four prose-bearing sections are QUIET. This page holds the site's prose, which is why every section on it that carries a paragraph is quiet by construction rather than by luck.
+**Loud-or-wordy: passes, re-counted after this revision.** The one LOUD section carries a headline and one line. All four prose-bearing sections are QUIET. This page holds the site's prose, which is why every section on it that carries a paragraph is quiet by construction rather than by luck. **Nothing on this page changed volume in the v3 pass:** A4's two additions are MUST NOT CLAIM flags, which are instructions to Phase 2 and never reach the page.
 
 ---
 
@@ -742,6 +773,8 @@ Four placements, two fills. The fill is the page's one visually distinct element
 **The page's job.** Put the two names and the two faces on the site, and make the mechanism stop being abstract — each part of it has a person attached.
 
 **Arrival states served.** S4 primarily — this is the page a warm referral opens first, and it has to confirm rather than re-pitch. S2 secondarily, as the trust check before shortlisting.
+
+**About is the intended referral landing URL** — stated because the whole page is built on the assumption that a founder sends *this* page rather than the root, and an assumption a page depends on belongs on the file rather than in the heads of the two people sending the links. If the root goes out instead, the warm visitor lands on a page written to explain the offer to a stranger and never sees the faces he came to check.
 
 **Where the ask appears — two.** The persistent nav button, and the close. Count: **2**.
 
@@ -816,7 +849,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE BELIEF AFTER.** There's a real reason these two are doing this, and they didn't oversell it to me.
 
-**ARRIVAL STATES.** S4 (the reason to talk now) · S2 (the sophisticated reader who came to this page looking for exactly this).
+**ARRIVAL STATES.** S2 primarily — the sophisticated reader who came to this page looking for exactly this. **S4: it confirms tone, it does not supply his reason to act.** R2 had it as "the reason to talk now," and that is the one thing it cannot be for him: he heard the thesis from the founder who sent him, so this section reads back a conviction he already has rather than giving him a new one. Recorded so Phase 2 does not treat B4 as load-bearing for the warm path and build it up on his behalf. It stays as it is — About with only bios and a close has no argument in it at all.
 **OBJECTIONS ANSWERED.** O11 — acknowledged, not resolved. The honest moat assessment says every claimed source has a counter-argument; this section concedes the point in one clause and moves, rather than staging the objection and knocking it down.
 **MUST NOT CLAIM.** No moat. **No "proprietary," no "unmatched," no "nobody else can," no "compounds over competitors."** §0.3.1 — the anti-generic fear is real and there is sourced data on it, but the data is a number and numbers do not go on this site; the belief is stated as ours. §0.3.5 — "the part we started with" describes what we built first, not what we have delivered. And under the founder's rule-3 revision: **no sentence here states we are new or have no clients.**
 
@@ -830,11 +863,13 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **TEXT (PROVISIONAL).**
 
-> **Headline** — Now you know who you'd be working with.
+> **Headline** — That's the two of us.
 >
 > **Deck** — The next step is a free look at your own footprint.
 >
 > **CTA** — Get your free footprint audit
+
+*One alternate, with the reason it loses.* (B) *"Now you know who you'd be working with."* — the line R2 carried. It is right for S2, who arrived cold and did just learn something on this page. It loses because About is built for S4 first, and **he learned nothing here**: he was sent by one of these two people and came to check the faces against what he was already told. A close that tells a warm visitor he now knows something misreads the visitor the page serves first, and it is the last thing he reads before the button. The primary line closes for both — it lands as a plain sign-off for S2 without claiming anything about what S4 took from the page.
 
 **THE BELIEF AFTER.** Right, that's the next step, and it's one click.
 
@@ -855,7 +890,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **LOUD positions: 4.** One, inside the budget.
 **Adjacency: passes trivially** — one LOUD.
-**Loud-or-wordy: passes, counted.** B5 is a headline and one line. Both prose-bearing sections, B2 and B4, are QUIET. B1 carries a headline, one line and two bracketed slots — no paragraph.
+**Loud-or-wordy: passes, re-counted after this revision.** B5's headline changed and is still a headline and one line — four words now where there were seven, so the page's one LOUD section got shorter rather than longer. The alternate beneath it is document prose and never reaches the page. Both prose-bearing sections, B2 and B4, are QUIET. B1 carries a headline, one line and two bracketed slots — no paragraph.
 
 ---
 
@@ -865,7 +900,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **Arrival states served.** All of them. S1, S2 and S3 arrive here having been argued into it. S4 arrives here directly and takes the quiet bypass.
 
-**Where the ask appears — one, plus one bypass.** The form is the page. The nav button scrolls to it. The direct-booking line sits beside the form, deliberately subordinate, and is the site's only bypass — one bypass, one location. Count: **1 + 1**.
+**Where the ask appears — one, plus one bypass.** The form is the page. The nav button scrolls to it. The direct-booking line sits beside the form, deliberately subordinate, and is the site's only bypass — one bypass, one location. Count: **1 + 1**. **The bypass must fall within the first screen**, which is a requirement of this page rather than a preference of Phase 2's; the reason is written out at D3.
 
 **Slug: OPEN.** `/audit` reads as the thing rather than the transaction and is the working preference; `/start` and `/get-your-audit` are the alternatives. Not decided here.
 
@@ -925,7 +960,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **THE JOB.** Route the visitor who doesn't need the on-ramp, without making it look like a second choice.
 
-**WHAT HE SEES.** One line and a text link, set small, beside or beneath the form and visually subordinate to it by construction — smaller type, no fill, no border, muted rather than accent. It is findable by someone looking for it and skippable by someone who isn't.
+**WHAT HE SEES.** One line and a text link, set small and visually subordinate to the form by construction — smaller type, no fill, no border, muted rather than accent. It is findable by someone looking for it and skippable by someone who isn't. **It sits within the first screen of the page**, beside the form rather than beneath it wherever the viewport forces the choice. R2 said "beside or beneath," which leaves the two treatments equivalent and they are not: **S4 arrives on this page for the call he was already offered**, and the one instruction the site gives a ready buyer must not be reachable only by scrolling past a form he does not want to fill in. Subordination is carried by type, weight and colour, all of which cost him nothing; distance is the one form of it that does, and it is spent on the state the site can least afford to lose.
 
 **TEXT (PROVISIONAL).**
 
@@ -985,7 +1020,7 @@ Four placements, two fills. The fill is the page's one visually distinct element
 
 **LOUD positions: 2.** One, inside the budget.
 **Adjacency: passes trivially** — one LOUD.
-**Loud-or-wordy: passes, counted.** D2 carries two field labels, a button label and one line of eighteen words. No paragraph. The two prose-bearing sections, D1 and D4, are both QUIET. This is deliberately the most concentrated page on the site: one job, one loud moment.
+**Loud-or-wordy: passes, re-counted after this revision.** D2 carries two field labels, a button label and one line of eighteen words. No paragraph. The two prose-bearing sections, D1 and D4, are both QUIET. **No copy changed on this page in the v3 pass** — D3's new first-screen requirement is a placement rule, and its one line of copy is untouched. This is deliberately the most concentrated page on the site: one job, one loud moment.
 
 ---
 
@@ -1037,11 +1072,13 @@ Not a list of principles the spine happens to agree with. Each row names the dec
 | **Hick's** | One label at every ask position site-wide, including the form's submit button — which was "Send me the audit" until this rule. Nav carries two links, not a services menu. The comparison has no Beeond row, so it stays an elimination rather than a five-way choice. |
 | **Miller's** | **H6 was a flat run of a dozen channel names.** It is now four groups of three or four, which is the single largest structural change in this revision. H9 capped at five rows; H3 three; H5 three; H7 four; A1 three; D4 five. |
 | **Serial position** | **H9's rows were reordered** so the sharpest objection opens and the fit question closes, evidence in between. **D4's rows were reordered** so the two OPEN answers sit in the middle rather than at an end. Each page's first and last sections carry its belief; the middles carry evidence. |
-| **Von Restorff** | Resolved the accent conflict in §2.0: four ask placements, **two** accent fills. The fill is the one distinct element per page, so it cannot also be the nav's default state — the nav ask is outlined, and the mid-page beat is accent text. |
+| **Von Restorff** | Resolved the accent conflict in §2.0: four ask placements, **two** accent fills. The fill is the one distinct element per page, so it cannot also be the nav's default state — the nav ask is outlined, and the mid-page beat is outlined in the same treatment. *(Amended in this revision: the beat was accent text until the Fitts's row below.)* |
 | **Cognitive load** | One idea per section, and the H1 alternates were judged on it — option (B) lost the hero specifically for carrying two ideas into a LOUD slot. Every headline in this spine is meant to land on one read; any that needs a second is wrong and should be marked. |
 | **Jakob's** | Logo left, links centre-right, ask far right. Website field before email field. Neither is interesting, and that is the point. |
 | **Progressive disclosure** | Home states, Approach deepens, the ask page resolves. H4 shows one rule catching one thing; A4 gives the rules in full. H5 is three lines; A3 is three paragraphs. H3 names the monthly record; A5 breaks it into its parts. **Home never carries the full explanation of anything.** |
 | **Peak-end** | H10 gets a photograph, a ground change and the second accent fill rather than being a strip under the FAQ. A6 and B5 are built as closes, not as sign-offs. D4's last row was changed so the ask page ends on what happens next instead of on an unanswered question. |
+| **Fitts's** | **H8's ask was accent text and is now an outlined button** — the law contradicted at the one scroll §0.2 designates for an actively evaluating visitor, and the row this table was missing when the contradiction was written. The two-fill budget was the stated defence and it does not hold: the nav ask is already an outlined button with no fill, so Layer 1 constrains the fill and not the shape. Applied correctly at **D2**, where the ask is the largest target on the site and the fields are generously sized, and correctly **inverted at D3**, where the bypass is deliberately small and unfilled so it is findable without competing — the same law used to make one thing easy to hit and one thing easy to skip. |
+| **Zeigarnik** | Already applied and previously uncredited. **D4's closing row** was reordered to end the page on what happens next, so the loop the visitor opened by submitting stays open on purpose rather than closing on an unanswered question. **D2's confirmation note** is the same law: the founder's decision to put the turnaround expectation in the confirmation rather than on the page keeps the started task alive with a next step attached, which is why that confirmation copy is a real deliverable and not an afterthought. The two-step audit is itself the open loop — the site's structural bet, not a copy device. |
 | **Aesthetic-usability** | **Noted for Phase 2, not acted on here.** It predicts that a site this carefully made will be judged as easier to use than it is, which is a reason to keep the underlying flows genuinely simple rather than a licence to decorate. No text decision was made on it. |
 
 <!-- R2 SPINE END -->
@@ -1627,3 +1664,4 @@ Two sections do nothing for a particular state and each has a state that needs i
 | 2026-09-02 | R3 | ORCHESTRATOR: journey walked by `framer` [growth] on Opus for S1–S4, S5 noted not walked. 25 gaps, one section on no law (B4). Three changes to fight for, in priority: H8 as an outlined button with a Fitts's row in §2.7 · H4 cut to one card · one in-body route from Home to Approach. Routed to the v3 spine pass together with the reviewer's findings. |
 | 2026-09-02 | R3 → review | ORCHESTRATOR: the §0.2/§5 fold conflict resolved in favour of the founder's later decision — S1's fold line amended; H1 stands. §3 given the same PROVISIONAL / simulated banner §2 carries (reviewer finding 1). Credential facts given an owner and a trigger (reviewer finding 4). |
 | 2026-09-02 | Review | ORCHESTRATOR: `reviewer` (customer-value + risk) — customer-value FAIL on two high findings, both closed on the file; risk PASS with three high modes carried as founder triggers in §4. Findings pasted verbatim at §3.7 with disposition. Reviewer concurs with all three §3.6 changes; a fourth (wire the bypass and the form before the first referral link) added. |
+| 2026-09-02 | v3 → 1.0 | ORCHESTRATOR: spine v3 applied all fourteen routed changes (framer-spine-v3, Opus); verified on the file — H4 one card, H8 outlined button, Home→Approach route in H4, H5 labels Foundation · Output · Compounding, H7 rows rewritten, §2.7 Fitts's and Zeigarnik rows, D3 first screen, About as referral landing, no-cut flags on H4/A4, FM-7 trigger on H3/A4. A3's chapter heads synced to the new labels by the orchestrator (consistency edit, one word of copy: "Work starts moving"). Storyboard set to **1.0 — for founder review**. The percent is the founder's. |
