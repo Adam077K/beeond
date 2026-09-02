@@ -308,3 +308,42 @@ Everything not struck through goes into `ROLE-ASSIGNMENTS.md` as V0.
 - **The founders' portraits** are the only assets no engine or tool can produce, and About ships blank without them and without the two credential facts (storyboard §4).
 - **No engine reaches Higgsfield.** The parent session drives generation and hands frames to `designer`, or the founder authorises a tools-list change — irreversible tier, not decided here (DECISIONS 2026-09-01).
 - **This is still founder thesis.** Two warm prospects remain un-called; nothing here is a customer signal, and the storyboard's own claim says so.
+
+---
+
+## 17. Three more, from looking at the references again · PROVISIONAL (added 2026-09-02, founder: "suggest about three more ideas")
+
+Six images opened directly, not read from the index: `L20` Speakeasy full page · `B17` Atmos turbine · `A15` zine spread · `B16` aerial playground · `A18` botanical prints · `L09` Axial hero.
+
+### 17.1 The sentence around the picture — `L20` · `B17`
+
+**Seen.** Speakeasy sets "Craft exceptional" top-left and "API experiences." bottom-right with the particle sculpture between them; the artwork sits *inside* the sentence. Atmos scatters six words across open sky around a glyph-drawn turbine so the question assembles as the eye travels, then lands on one small serif line at the foot: *In short, it's complicated.*
+
+**For Beeond — the hero.** The headline splits at its own comma. *Your whole marketing footprint,* top-left on the black ground. The person, the raised hand and the glyph bee in the middle. *run for you.* bottom-right on the black. The eye passes through the hand-meets-swarm moment mid-sentence, which is the thesis read in the order it should be believed. The risk-reversal line under the button takes the Atmos device: small, serif, italic, the one quiet punchline — *Free, and yours to keep either way.*
+
+**Why it fits.** Type stays quiet while the image is loud (the words never cross the person); the art is the layout, which six of the founder's seven website picks do; serial position gets the two halves of the promise at the two positions the eye remembers. **Cost:** none — typographic. **Mobile:** the split stacks, first half above the photograph, second half below. **What it may cost the storyboard:** with the split doing the work, the hero deck may be one line too many; that is a PROVISIONAL edit for the founder, not a Phase 2 decision.
+
+### 17.2 The survey layer — `A15` · `B16` · `B10`
+
+**Seen.** A weather-contour line traced over a blurred meadow with temperature call-outs and a mono day-label; one thin white circle and a scale bar over an aerial photograph of children; a plotted-dot circle over blurred foliage. Flat line-work that ignores perspective and turns a candid photo into evidence. The design language's own reserve names it *conceptually the best fit for a transparency pitch* and rates it EASY.
+
+**For Beeond — annotate, never decorate.** Thin ink line-work at hairline weight drawn over photographs as if the frame had been surveyed:
+- **H5, the flower set-piece:** the three phase labels stop being captions and become **plotted call-outs** — a contour line across the bud, *Foundation* pinned to a point on it; as the scrub advances the line redraws across the parting petals and *Output* pins; fully open, *Compounding*. The record — what was done, how much, why — is a survey of a real field, and here the site surveys one.
+- **B1, the founders:** name and role pinned to each portrait as a survey call-out with a leader line, in mono, rather than set beneath as a caption.
+- **Approach, as plates:** Speakeasy frames every section in a visible hairline grid with corner ticks, like plates in a technical manual. The Approach page — the document one person sends another — takes the same frame: corner ticks, plate numbers `01 · 02 · 03`, nothing else.
+
+**Why it fits.** It is additive, opaque line-work with the photograph at full strength through the gaps, so it obeys the compositing rules; it is derived from the subject (it measures *this* flower, names *this* person); and it says *observational, precise* — which is the feeling the transparency promise needs and no glyph field gives. **Cost:** SVG paths and mono labels, art-directable per breakpoint, still under reduced motion. **Budget:** it takes the slot the unspent double-exposure was holding — adding one means removing one. **The one rule:** the call-outs carry **words**, never figures. A15 plots temperatures; Beeond cannot plot a number that could be mistaken for a claim.
+
+### 17.3 Light from the edges — `L09` · `C18` · `B09`
+
+**Seen.** Axial's hero is two dot fields entering from the left and right page edges, thinning to nothing toward an enormous empty centre, three tiny captions anchoring the corners and a "[Scroll to Explore]" cue. Endex, founder-confirmed: *very minimal, no centrepiece, just colour and a beam of light.* The Creation-of-Adam poster: the gesture alone, three-quarters of the frame empty.
+
+**For Beeond — H7, the black chapter.** *What you're choosing between* currently carries nothing but ground and type. Give it its light from the edges: two fields of bone dots enter from the bottom-left and top-right corners along the flight-line diagonal and dissolve to nothing well before the centre, where the four hairline rows sit in the dark. No hue — there is no photograph here, and photography owns colour. The dots breathe at the slowest rate on the site; nothing else in the chapter moves.
+
+**Why it fits, and the rule it uses.** *Once = a moment, twice = a style.* The dot screen is spent as a moment at H5; a second appearance makes dots a *style* on Home, which the language permits by name and which nothing on the site has yet used. It is the Endex lesson the founder confirmed — empty the centre, let the light come in from a corner — and it keeps H7 loud by subtraction. Honest note: its job is compositional (light, edge, emptiness) rather than derived from a subject, because the chapter has none. It is the weakest of the three on the law and the strongest on feeling. **Cost:** the glyph-field renderer already exists for the hero; this is the same renderer with no mask. **Alternative placement:** the 404 page, where the emptiness is the message.
+
+### 17.4 Off the site — the pressed-flower audit · `A18`
+
+**Seen.** Four botanical prints on a near-empty page, each a *different* period process — cyanotype blue, sun-print orange, faded silver, a bleached green — with tiny mono captions and enormous air. *Collected moments of bloom.*
+
+**For Beeond — the one artefact every lead receives.** The free footprint audit has no design, and it is the thing that actually reaches the visitor's hands. Give it a cover in this register: one botanical print, a different process per audit so no two look alike, the visitor's domain set small in mono beneath it, nothing else on the page. The audit as a specimen pressed from the visitor's own field. It makes the write-up forwardable — which is the storyboard's rule 4 applied to the deliverable rather than the page — and it carries the brand into the only place a prospect looks at it for longer than a scroll. **Cost:** a two-colour gradient map and paper grain over a soft botanical photograph; a small rotating set of source photographs. **The rule:** the cover is a frame; the audit inside is human-written, exactly as D1 promises. **Scope:** not the website — recorded here because the founder asked for brand fit, and this is where the feeling meets the customer.
