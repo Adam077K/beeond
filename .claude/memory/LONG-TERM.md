@@ -17,6 +17,7 @@
 - **Stage:** Pre-revenue. **Zero signed clients. Zero customer interviews.** Two warm prospects still un-called. One real delivered piece of work ever: an email-marketing strategy brief for Bonim Atid (בונים עתיד) — status unconfirmed since 2026-07-03.
 - **Product:** Does not exist. No database, no auth, no API, no billing, no dashboard. The transparency dashboard is day-one offer scope and **build target #1** — zero lines written.
 - **Site:** Being rebuilt from scratch as of 2026-08-26. `apps/web` is an empty instrumented Next 16 shell.
+- **Site storyboard 1.0 (2026-09-02):** `docs/05-marketing/SITE-STORYBOARD.md` — text only, not a design, not plan of record. Four pages; the ask is a **free footprint audit, two-step**, one label, no waitlist; status **implied only**; outcome-first fold; the monthly record promised as a practice. Phase 2 (visuals) opens only on the founder's percent; handoff drafted.
 - **Domain:** `beeond.ai` **unsecured**. `.com` held by an unrelated party.
 - **Trademark:** **MEDIUM collision risk, never cleared.** Exact-spelling Brazilian ad agency in Class 35 + two phonetic twins; six registries never queried. **Gates any public launch.**
 

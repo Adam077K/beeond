@@ -24,6 +24,23 @@
 
 <!-- Entries below this line, most-recent first. -->
 
+## 2026-09-02 — SITE STORYBOARD 1.0: the site's ask, status, fold and record decided; text-first Phase 1 closed for founder review (FOUNDER-decided, five items; orchestrator-run rounds)
+
+**Context:** After the one-run build was rejected the same morning, the founder opened a text-only thinking session: decide what the site says and what the visitor goes through before anything is designed. Pre-flight, R0 frame, an eleven-question grill, three parallel framers plus a sourcer (R1), a candidate map, a spine with full provisional text (R2, three passes), a journey walk per arrival state (R3), a review under `customer-value` + `risk`, and one consolidated v3. Mid-session the founder moved the loop to the end: *"go with your vision and the agents' thinking; I review the final outputs and edit the text."*
+**Decisions (founder), in sequence, each taken with the orchestrator's recommendation in view:**
+1. **The ask is a free footprint audit**, not a booked call — the four-part audit of `04-THE-PRODUCT.md` §7, founder-prepared, in kind, never in number. Override.
+2. **Delivery is two-step**: submit URL + email → audit prepared and sent → invited to a call. Override.
+3. **Nav CTA = the audit, one label site-wide; the waitlist is retired.** Accepted. Supersedes the "book a call · waitlist fallback" line of the 2026-08-26 lock — logged as deliberate.
+4. **Honest status is implied only** — no sentence says "we're new" or "no clients"; the named founders, the absence of logos and the method shown in full carry it. Override; risk stated once in the storyboard.
+5. **Fold = outcome first; the swarm and the human arrive at section two.** Override. Also accepted: the monthly record promised as a practice, never a product · founders named with roles, one verifiable fact each supplied by the founder before Phase 2 · pricing as one sentence of how, no figure · the language/market slot stays OPEN.
+**Also founder-stated and recorded:** the vibe (expensive, technology, minimalistic, futuristic, clean, human; bee, flowers, ink, ASCII and dot layers, numbers as texture, human and sky) and the instruction to write the UX laws into the plan — both in the storyboard §0.8b / §0.9.
+**Rationale:** founder calls, taken fast, on complete proposals. None reopens G0/G1; the design language is untouched.
+**Reversibility:** reversible — one markdown document, tier lite, no code, nothing public. The storyboard is marked NOT A DESIGN and NOT PLAN OF RECORD; per `CLAUDE.md` no direction is locked without a customer signal, and none has been earned. Two warm prospects remain un-called.
+**Owner:** founder, via `orchestrator` (orchestrator-site-thinking)
+**Affects:** Phase 2 (`designer`, `framer` [design], `reviewer` craft/accessibility) — its single input is `docs/05-marketing/SITE-STORYBOARD.md` 1.0 and its prerequisites are in §4 · `builder` (form endpoint, confirmation copy carrying the turnaround expectation, the direct-booking destination) · the founder (credential facts before the first referral link; audit capacity before non-referral traffic; the monthly record in deliverable form before the first signed engagement).
+**Review verdict, recorded honestly:** `customer-value` FAIL on two high findings (a missing simulated/provisional banner on the journey; the unwired booking bypass absent from the priority list), both closed on the file the same hour; `risk` PASS with three high modes carried as founder triggers. Single model family, not an independent panel. No binding QA gate was invoked: nothing merges to `main`.
+**Detail:** `docs/05-marketing/SITE-STORYBOARD.md` (1.0) · `docs/08-agents_work/packets/2026-09-02-r1-*.md` (four) · `docs/08-agents_work/handoffs/2026-09-02-phase-2-visual-experience-handoff.md` (DRAFT until the percent) · session `docs/08-agents_work/sessions/2026-09-02-orchestrator-site-thinking.md`
+
 ## 2026-09-02 — ONE-RUN WEBSITE BUILD REJECTED; BACK TO PLANNING, FOUNDER WRITES THE VISION (FOUNDER-decided)
 
 **Context:** After a `/grill-me` session the founder asked for a single Fable 5.1 run to build the whole marketing site. `builder` (fable-website-build) delivered it on `feat/website-fable`: 13 commits, four pages, the two renderers, a typed content layer, and 24 full-page renders under three photographic visions (Open Field · Night Studio · Overcast Coast). The 24 photographs were generated from the parent session via Higgsfield `soul_2` (3 credits) after the OpenAI key returned `429 insufficient_quota`. Every check the builder ran was green; QA verdict was PENDING, nothing reached `main`.

@@ -21,6 +21,7 @@ No revenue. No signed clients. **Zero customer interviews**; both warm prospects
 | Task | Lead | Status | Started | Branch |
 |---|---|---|---|---|
 | Context decontamination — clean codebase + docs | ceo | Done | 2026-08-26 | `ceo-1-1787747601` |
+| Website thinking session — Phase 1 text-first storyboard 1.0, for founder review | orchestrator | Done — awaiting founder percent | 2026-09-02 | `ceo-1-1788359253` |
 
 ---
 
@@ -56,4 +57,4 @@ Everything before the 2026-08-08 reset — 18 sessions, 7 briefs, the v7 board r
 
 ---
 
-_Last updated: 2026-08-26 · ceo (context decontamination)_
+_Last updated: 2026-09-02 · orchestrator (site thinking)_
