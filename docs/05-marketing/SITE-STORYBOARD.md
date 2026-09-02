@@ -5,7 +5,7 @@
 
 | Field | Value |
 |---|---|
-| Version | **0.1 — R0 frame** (0.2 R1 candidate map · 0.3 R2 spine vN · 0.4 R3 journey · 1.0 gate) |
+| Version | **0.2 — R1 candidate map** (0.1 R0 frame · 0.3 R2 spine vN · 0.4 R3 journey · 1.0 gate) |
 | Session | `orchestrator-site-thinking` · gold · branch `ceo-1-1788359253` · started 2026-09-02 |
 | Founder | Adam, present, reacting per round |
 | Source of truth | `HANDOFF-CLEAN-START/` (5 files). Nothing here overrides it. |
@@ -139,11 +139,67 @@ The `growth`, `product` and `customer` lenses all carry `requires_claims: [user-
 
 ---
 
-## §1 — R1 CANDIDATE MAP
+## §1 — R1 CANDIDATE MAP (v0.2 · 2026-09-02)
 
-*Not yet written. Filled after R1: every distinct section idea across the three framer sets, deduplicated, tagged by which set(s) proposed it, with the sourcer precedent beside it and a blank column for the founder.*
+Three framers returned complete sites: **P** = `framer` [product] (mechanism-first, `packets/2026-09-02-r1-framer-product.md`), **G** = `framer` [growth] (conversion-first, `…-growth.md`), **C** = `framer` [customer] (objection-first, with an 18-row objection register, `…-customer.md`). Every distinct section idea across the three is one row below, deduplicated conservatively. The strike-through is the orchestrator's, by founder delegation (§0.6), and every CUT traces to a FOUNDER decision in §5 or to the attention budget. Nothing here is a new idea of the orchestrator's; MERGE rows combine two proposals into one section, which is what the founder asked for over "pick one of three".
 
----
+**Two founder decisions did most of the cutting:** honest status is *implied only* (three "honest status" sections and two About "company-state" blocks go), and the waitlist is *retired* (one section goes). **One founder decision re-shaped the top of Home:** outcome first, mechanism at section two.
+
+### Home
+
+| # | Section idea | By | Decision | Why | Attention |
+|---|---|---|---|---|---|
+| H1 | **Hero / opening statement** — what this is, in plain words, over a real human photograph, one line under it, the nav CTA beside it | P G C | **KEEP, re-shaped** | FOUNDER: outcome first. The hero states what he gets (his whole footprint, run for him) and puts a human on screen one; it does not name the swarm. G's per-state fold jobs carried into R3 | LOUD |
+| H2 | **Honest status / honest ground** — two founders, no clients yet, stated before any proof | P G C | **CUT** | FOUNDER: status implied only. The belief it carried ("they are not hiding that they are new") moves to About's named founders and to the method shown in full | — |
+| H3 | **The mechanism** — swarm executes · human calibrates · dashboard proves, as three named parts | P G C | **KEEP at section two** | FOUNDER: mechanism at section two. ORCHESTRATOR picks P's variant (A): each part paired with what the client concretely experiences from it, in sequence — that pairing is what makes it *easy to understand* (§0.6b). G/C's three-parallel-beats variant is the fallback if it runs wordy | MEDIUM |
+| H4 | **The standard, shown on a real piece** — a proof substitute that is true | P3 P4 G4 C4 | **MERGE** | Two ideas competed for one slot: the Definition-of-Done preview (P3, G4 recommended) and illustrative artefact cards (P4, C4 recommended). Merged: one or two artefacts *mid-calibration*, each showing a written rule being applied to a real draft (a hook line rejected for opening on a buzzword; a founder-voice post sent back because it was a company post with a name swapped). The object makes it tangible, the rule makes it true. Caption states it is illustrative, not client work | MEDIUM |
+| H5 | **The process** — Foundation · Content Engine · Amplification, in kind, no durations | P G C | **KEEP** | Unanimous; S3's must-believe. Framed as "what a month looks like", never a calendar | MEDIUM |
+| H6 | **What's covered** — the CORE catalog as a scannable self-qualification list, GEO not leading | P G C | **KEEP, as its own section** | P and C both offered folding it into H3 (G2 spine §F.8); ORCHESTRATOR keeps it separate because self-qualification ("does this cover me") is a different job from "how it runs", and folding makes H3 wordy at MEDIUM. Low text: a list | QUIET |
+| H7 | **Comparison by elimination** — in-house hire · agency retainer · point tools · doing it yourself, subtraction only | P G C | **KEEP** | Unanimous; the one evidence-backed device (`04` §10). LOUD and low-text, ~20 words a row | LOUD |
+| H8 | **Mid-page ask beat** — one line and the CTA, right after the comparison, not inside it | G | **KEEP, as a beat** | S2's ask sits here by §0.2. G's argument holds: a CTA inside the table reads as a fifth alternative. A beat, not a section with an argument; not counted against the LOUD budget | QUIET |
+| H9 | **Objection handling** — three or four quiet FAQ rows | P G C | **KEEP** | The prose-bearing QUIET section Layer 5 expects. Rows: "is this just AI tools" · "I already have an agency" · "why no price" (the one FOUNDER sentence of *how*) · the reserved language/market row (OPEN, rule 5) | QUIET |
+| H10 | **Close + CTA** — one line, the audit ask, no recap | P G C | **KEEP** | Unanimous | LOUD |
+
+Home after the map: 9 sections + 1 beat. LOUD at H1, H7, H10 — never adjacent. (Before the map: 10/9/10 across the three sets; H2 cut, H3+H4 collapsed from up to three sections into two.)
+
+### Approach
+
+| # | Section idea | By | Decision | Why | Attention |
+|---|---|---|---|---|---|
+| A1 | **Reading this cold** — header that makes the page stand alone for someone it was forwarded to, with the three chapter anchors as its table of contents | G1 + P1 | **MERGE** | Rule 4 (forwardability) is the page's reason to exist; G's "reading this cold" framing and P's chapter anchors are one header | QUIET |
+| A2 | **Page structure: three chapters keyed to the mechanism** (Executes · Calibrates · Proves) with onboarding inside Executes, the standard inside Calibrates, the monthly view inside Proves | P | **KEEP over the flat sequence** | G and C kept the G2 spine's flat six-section list. ORCHESTRATOR takes P's chapters: one idea per chapter, the same three words as Home H3, forwardable as "here is exactly how it works". P's own risk (a reader scanning for "onboarding" or "quality" by name) is met by plain-word chapter subtitles, e.g. *Executes — how the work runs, phase by phase* | — |
+| A3 | **Executes** — the three phases in full, what changes for the client in each, no durations | P2 G3 C3 | **KEEP** inside chapter 1 | Unanimous content | MEDIUM |
+| A4 | **Calibrates** — Yarden named as the calibration layer; the Definition-of-Done method with its two sharpest rules | P3 G4 C4 | **KEEP** inside chapter 2 | Unanimous; the deepest honest answer to "will my brand sound generic" | MEDIUM |
+| A5 | **Proves** — what he sees every month: what was done, how much, why, with the human sign-off | P4 G5 C5 | **KEEP, rewritten** | All three wrote it as "the dashboard, honestly: build target #1, not built yet". FOUNDER: promise the practice, not the product — so this chapter describes the monthly practice as how Beeond works; no product name, no screenshot, no "not built yet", no "coming" | MEDIUM |
+| A6 | **Close + CTA** | P G C | **KEEP** | Unanimous | LOUD |
+
+### About
+
+| # | Section idea | By | Decision | Why | Attention |
+|---|---|---|---|---|---|
+| B1 | **Two people, named** — Adam and Yarden by name and photograph, one line on the split | P G C | **KEEP** | FOUNDER: named with roles. The credential-fact slot (one dated, verifiable fact each) is reserved here, OPEN until the founder supplies them | MEDIUM |
+| B2 | **What each of them actually does** — two bios, tied to the mechanism part each owns | P G C | **KEEP** | P's tie to Executes/Calibrates makes About evidence for Home. ORCHESTRATOR: written in each founder's first person | QUIET |
+| B3 | **Honest company-state block** — zero clients, stated plainly | P C, G (merged with why-now) | **CUT** | FOUNDER: status implied only | — |
+| B4 | **Why now** — timing and conviction, no moat claim | P4 C4 G3 | **KEEP, at the understated setting** | P's "founder motivation" framing and C's (B) are the same move; C's (A) blunt moat-assessment is rejected by all three. Says why these two are doing this now; claims no moat (`01` §5); states no status | MEDIUM |
+| B5 | **Close + CTA** | P G C | **KEEP** | Unanimous | LOUD |
+
+### The ask page (formerly Book a Call — slug OPEN)
+
+| # | Section idea | By | Decision | Why | Attention |
+|---|---|---|---|---|---|
+| D1 | **Header** — the two-step flow stated plainly: submit → audit sent → a call to go through it | P C | **KEEP** | Answers "is this a sales trap" (C's O18) before the form | QUIET |
+| D2 | **The audit request** — URL and email, the dominant element, with one trust line at the point of friction saying what the URL and email are used for | P C | **KEEP, merged** | C's trust line beside the form (O15 fires there, not in a distant FAQ) merged into P's form section | LOUD |
+| D3 | **Already sure? book a call directly** — a quiet line beside the form for S4 | P C | **KEEP** | FOUNDER: the direct-booking line. Beside the form, not after the FAQ, because S4 wants speed | QUIET |
+| D4 | **What to expect** — four or five FAQ rows | P C G | **KEEP** | Rows: what is in the audit (the four parts, in kind) · when you will hear back (in kind, never a number) · why no price (FOUNDER: one sentence of how) · what if I want to stop (OPEN: names the question, defers terms to the call; no invented policy) · my market and language (OPEN slot). G's ordering rule kept in spirit: the FAQ comes before any exit | QUIET |
+| D5 | **Not ready yet? / waitlist** | G | **CUT** | FOUNDER: waitlist retired | — |
+
+### Carried from the three sets into R2, not as sections
+
+- **Nav** (all three): logo · Approach · About · the audit CTA, persistent. No waitlist anywhere.
+- **C's objection register** (18 rows) is the checklist R3 walks: every row must be answered by a surviving section, deferred as OPEN, or acknowledged as unanswerable.
+- **G's per-state fold jobs** for Home and its ask-position counts per page feed R3.
+- **P's chapter subtitles** and **client-experience pairing** are the "easy to learn" devices; R2 writes them out.
+- The **sourcer's ten-site read** is appended below when it lands; its counts (where the ask sits, how proof is done without logos) are checked against the map before R2 dispatch and any conflict is noted once.
 
 ## §2 — R2 SPINE
 
