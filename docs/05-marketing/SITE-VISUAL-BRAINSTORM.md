@@ -7,6 +7,7 @@
 | **Version** | 0.1 — for the founder to strike through |
 | **Written** | 2026-09-02 by `orchestrator-site-thinking`, at the founder's word: *"wanted to talk about the design and to do a brainstorm"* — Phase 2 opened in-session, in text, before the Phase 1 percent was named. Recorded in §5 of the storyboard's decision log by the founder, not here. |
 | **Input** | `SITE-STORYBOARD.md` 1.0 (structure and text) · `DESIGN-LANGUAGE.md` (locked) · `references/ART-DIRECTION-BRIEF.md` · the five founder briefs and two technique files under `references/founder-brain/` · the three image indexes · the founder's vibe line (storyboard §0.8b) · the UX laws (§0.9) |
+| **Read with** | `SITE-IDEA-BANK.md` (2026-09-02, later the same day): 217 ideas mined from every reference image by six framers, with a twenty-item shortlist, thirteen founder forks and the corrections to locked files. Where the bank supersedes a line here (ground boundaries dissolve rather than cut; the resting particle field replaces §17.3's corner fields; moment 1's mode is a fork), the bank is later and wins. |
 | **What becomes of it** | What survives the founder's strike-through is cut into `ROLE-ASSIGNMENTS.md` (V0), then `VISUAL-SPEC.md` and `MOTION-SPEC.md` (V1). Nothing here is generated, rendered or built. |
 | **Markers** | **PROVISIONAL** — every proposal, unless marked otherwise · **LOCKED** — inherited, not reopened · **OPEN** — founder-owned · **RISK** — stated once |
 
