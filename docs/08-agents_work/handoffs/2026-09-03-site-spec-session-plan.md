@@ -107,3 +107,39 @@ Plus the colour question from §4A, asked as the thirteenth.
 ## 8. Rules for this session
 
 Text first, then code — no more image mockups as a gate · the spec is the target and every version is judged against a line of it · the founder edits copy directly; agents never overwrite a FOUNDER line · one ask, one label, no numbers as claims, no invented customer language (unchanged) · commit after every round · every engine returns a file path and under 150 words · a risk is stated once.
+
+---
+
+## 9. Founder reactions, 2026-09-03 — and what they change
+
+Recorded verbatim in substance. Each is a FOUNDER decision unless marked otherwise.
+
+1. **The readback (§3) is accepted in full.** *"I agree with everything you said about the references and about how the website should look."* Every statement in §3 is now a line of the spec.
+2. **The structure must be an immersive experience, not a landing-page section list.** *"Animations and cards flowing and images and movement and text showing and appearing … it needs to feel more immersive and like an award-winning website and not like a basic landing page."* §3 item 9 (the saved page structure) survives as the *order of beliefs*, not as a list of static sections. **Changes Step 1(b), Step 3 and Step 4.**
+3. **System visuals are allowed.** *"We can show a dashboard or include visuals as flowchart explanations or company levels or examples or cards and nodes or text … that are not necessarily in the references. But we need to do it correctly and not overuse them and leave space for the art, for the feeling, for the brand."* **Supersedes** the storyboard's §0.3.6 as a hard ban. Orchestrator note, said once: these are *designed illustrations of the mechanism* — the dashboard as it will work, the flow as it runs — never a fake product screenshot carrying fake client data. The honesty line moves; it does not disappear.
+4. **Colour is deferred** to the coded site: *"we can leave it for when we have a website and test then."* The thirteenth question is withdrawn; DESIGN-LANGUAGE's tokens stand until the first coded hero exists, and are tested there.
+5. **Assets: real shoot as reference, then generate** *"to make sure it's 100% what we are looking for."* And: *"we don't want to overuse human images or sky images"* — include other textures, backgrounds, assets, **the company's own work** (posts, videos, websites, systems — *"all the things that we make as a company"*), and **every asset must carry a meaning**: the visitor should *feel, understand or see* something from it. Not *"a human in the sky, and that's it."*
+6. **Spec first, then code.** *"When we speak all the visions we will go to code and skip the static generated images."* Tension C accepted.
+7. **On the six concepts (2026-09-02):** *"They were not personal, looks overall the same, and there is no connection to the company beyond the feeling, the style, the brand. And the hero section was bad — a static page with some texture and some image."* The idea bank is fine.
+
+**What item 7 changes, and it is the biggest change.** The concepts were assemblies of the corpus's moods — a hand, a field, a face — with Beeond attached only by the mark. The corpus is the **how it looks**. The company is the **what it shows**. Every scene in the spec must be derived from a Beeond mechanism — the swarm gathering into one finished piece, a person stopping a piece and sending it back, the record writing itself, the footprint lighting up channel by channel, the audit being drawn for the visitor's own URL — and the corpus's treatments are applied *to those*. A scene that would work for any company is cut.
+
+## 10. The experience thesis — a hypothesis for Step 2, not a decision
+
+**The visitor watches Beeond work.** Instead of reading sections, he scrolls through scenes in which the system does its job in front of him, and the art carries the feeling while the system carries the meaning. One Beeond-specific idea per scene; art and system alternate so neither is overused.
+
+Candidate scenes, to be chosen and ordered in Step 2:
+
+| Scene | The mechanism it shows | What moves (sketch) | Art or system |
+|---|---|---|---|
+| The gathering | The swarm: many small things coordinated into one | Marks scatter across the first screen and, on scroll, assemble into one finished piece of work — a post, a page, an email — that then sits still | art → system |
+| The hand that stops it | A person signs off | One piece is caught: a line struck through, the rule beside it, the rewrite under it; a real hand or eye in frame | system + human |
+| The record | Transparency: what was done, how much, why | A ledger writes itself line by line as you scroll — the dashboard as it will work, labelled as the record, no fake data claims | system |
+| The footprint | Whole-footprint coverage | Channels light up as nodes joining into one shape; the mark's geometry as the map | system |
+| One place, one day | The three phases without a calendar | The same field at three times of day, the light crossing it | art |
+| Your own footprint | The ask: the free audit | The audit document drawn for the URL the visitor types; the form dissolves into the result | system → ask |
+| The close | Peak-end | A photo close with one line, the wordmark huge in the footer | art |
+
+**Step 2 questions, revised.** Q11 (assets) becomes two: *which of the company's own work is shown* (an inventory of what exists: the agent system, plans, this site, posts, videos) and *what is shot as reference for generation*. Q13 (colour) is withdrawn. Two added: *the scenes — which of the table above, in what order, and what is missing*; and *the system visuals — how far a dashboard or flow illustration goes, and the honesty label it carries*. Twelve questions still; one sitting.
+
+**Step 1(b), revised.** The sourcer reads award-grade immersive sites for *scenes, transitions and the cost of motion*, not for section order — section order is already known. **Step 4, revised:** the hero *and* one system scene are built first in code, so the first thing judged is the combination, not the mood.
