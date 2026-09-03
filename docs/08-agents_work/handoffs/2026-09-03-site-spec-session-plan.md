@@ -143,3 +143,16 @@ Candidate scenes, to be chosen and ordered in Step 2:
 **Step 2 questions, revised.** Q11 (assets) becomes two: *which of the company's own work is shown* (an inventory of what exists: the agent system, plans, this site, posts, videos) and *what is shot as reference for generation*. Q13 (colour) is withdrawn. Two added: *the scenes — which of the table above, in what order, and what is missing*; and *the system visuals — how far a dashboard or flow illustration goes, and the honesty label it carries*. Twelve questions still; one sitting.
 
 **Step 1(b), revised.** The sourcer reads award-grade immersive sites for *scenes, transitions and the cost of motion*, not for section order — section order is already known. **Step 4, revised:** the hero *and* one system scene are built first in code, so the first thing judged is the combination, not the mood.
+
+---
+
+## 11. Step 2 — decisions as they land (FOUNDER unless marked)
+
+| # | Question | Decision | Date |
+|---|---|---|---|
+| 1 | The scenes and their order | **Five system scenes + two art breathers:** 1 the gathering (hero) · 2 the hand that stops it · *breather: one field, one day* · 3 the record · 4 the footprint · *breather: what you're choosing between (dark chapter)* · 5 your own footprint (the ask) · photo close, wordmark huge | 2026-09-03 |
+| 2 | "Company levels" | Dropped — *"idk, skip this."* | 2026-09-03 |
+| 3 | The company's own work | No inventory given. Instead a **vision for scene 4**, verbatim in substance: *the whole system runs — the agents working together, coordination, the steps they do, creating content — show real work: ads, campaigns, websites, brands, SEO, GEO, AEO, articles, posts on every platform with the platforms' logos, designing in the product, writing plans, analysis, getting data, competitors, working environment, copywriting, UX/UI, branding; and the footprint itself: social accounts, business profile, content published, e-commerce presence, reviews and ratings, customer-service channels, media coverage, third-party mentions, brand and identity — "and more that I didn't say. All of it is an open idea, a vision for a section, part of the user journey."* Orchestrator note, once: no client work exists; the pieces shown are the swarm's real outputs for Beeond and illustrative samples, labelled as such — the honesty line from §9 item 3. | 2026-09-03 |
+| 4 | Hero ground | **A real sky photograph**, full-bleed off two edges, no horizon; white marks; the sky dissolves into cream at the bottom edge tile by tile; the page runs on cream after it. | 2026-09-03 |
+| 5 | What the marks assemble into | **A finished piece of work** — a real post, ad, page or article with its platform logo — cycling through a few kinds while the visitor watches. | 2026-09-03 |
+| 6 | Human in the hero | **One hand, entering as the marks gather.** The swarm becomes one thing because a person is there. One warm sleeve. No face until scene 2. | 2026-09-03 |
