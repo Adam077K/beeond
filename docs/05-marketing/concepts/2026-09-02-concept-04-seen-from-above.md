@@ -332,9 +332,10 @@ claims:
     confidence: 0.95
   - id: c-concept-04-survey-layer-three-sites
     assert: "Concept 04 spends the survey line at exactly three sites (H1, H5, About B1) and its hero needs a real aerial shoot"
-    kind: judgment
+    kind: internal-fact
     scope: project
-    verified_by: founder
+    verified_by: command
+    evidence: {cmd: "grep -q 'H1, H5, and B1' docs/05-marketing/concepts/2026-09-02-concept-04-seen-from-above.md", expect_exit: 0}
     valid_until: 2026-10-31
     confidence: 0.8
 ```
