@@ -157,48 +157,48 @@ claims:
   - id: c-attention-front-loaded-first-two-screenfuls
     assert: "NN/g eyetracking of 120 participants and 130,000+ fixations found 74% of page-viewing time falls in the first two screenfuls"
     kind: external-fact
-    scope: site-design
-    verified_by: claim-source
+    scope: project
+    verified_by: source
     evidence:
       url: "https://www.nngroup.com/articles/scrolling-and-attention/"
       quote: "74% of the viewing time was spent in the first two screenfuls"
-    accessed: 2026-09-03
+      accessed: 2026-09-03
     valid_until: 2027-09-03
     confidence: 0.9
 
   - id: c-speed-lifts-lead-gen-form-progression
     assert: "In the Google/Deloitte study of 37 sites and 30M+ sessions, a 0.1s mobile speed improvement moved lead-generation form-submission progression by 21.6%"
     kind: external-fact
-    scope: site-performance
-    verified_by: claim-source
+    scope: project
+    verified_by: source
     evidence:
       url: "https://web.dev/case-studies/milliseconds-make-millions"
       quote: "A 21.6% improvement in the number of users that progressed to the Form Submission Page."
-    accessed: 2026-09-03
+      accessed: 2026-09-03
     valid_until: 2027-09-03
     confidence: 0.9
 
   - id: c-ui-animations-usually-too-long
     assert: "NN/g's guidance is that UI animation duration errs long, with 100-400ms the practical band"
     kind: external-fact
-    scope: site-motion
-    verified_by: claim-source
+    scope: project
+    verified_by: source
     evidence:
       url: "https://www.nngroup.com/articles/animation-duration/"
       quote: "It is far more common for animations to be too long than too short"
-    accessed: 2026-09-03
+      accessed: 2026-09-03
     valid_until: 2027-09-03
     confidence: 0.9
 
   - id: c-decorative-images-are-ignored
     assert: "NN/g eyetracking finds purely decorative images are ignored while information-carrying images are attended"
     kind: external-fact
-    scope: site-assets
-    verified_by: claim-source
+    scope: project
+    verified_by: source
     evidence:
       url: "https://www.nngroup.com/articles/photos-as-web-content/"
       quote: "This is typically the case for big feel-good images that are purely decorative."
-    accessed: 2026-09-03
+      accessed: 2026-09-03
     valid_until: 2027-09-03
     confidence: 0.85
 ```
