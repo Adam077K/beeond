@@ -22,6 +22,7 @@ No revenue. No signed clients. **Zero customer interviews**; both warm prospects
 |---|---|---|---|---|
 | Context decontamination — clean codebase + docs | ceo | Done | 2026-08-26 | `ceo-1-1787747601` |
 | Website thinking session — Phase 1 text-first storyboard 1.0, for founder review | orchestrator | Done — awaiting founder percent | 2026-09-02 | `ceo-1-1788359253` |
+| Site spec session — references re-read, co-spec with the founder, SITE-SPEC 1.0 | orchestrator | Done — awaiting founder edits, then Step 4 | 2026-09-03 | `ceo-2-1788359254` |
 
 ---
 

@@ -37,3 +37,4 @@
 ## Vendor lock-ins (accepted)
 <!-- vendor · why · review trigger date · export-path commitment -->
 - None. No paid infrastructure is wired.
+- **Site spec 1.0 (2026-09-03):** `docs/05-marketing/SITE-SPEC.md` — the home page as seven scenes the visitor watches; hero = sky, swarm → finished piece, one hand; record shown live (founder override); three coded versions differ on the mark only. Founder edits text in place; six OPEN slots before Step 4 builds. Still founder thesis; not plan of record.
